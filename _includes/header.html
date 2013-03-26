@@ -1,0 +1,40 @@
+<header class="header">
+  <nav class="header-nav">
+    <div class="inner">
+      <p class="logo"><a href="/"><img class="logo" src="{{ site.url }}/img/policy-climate-interactive-logo.png" alt="The Policy Climate Interactive" /></a></p>
+
+      <ul>
+        <li class="nav-item"><a href="#" class="regions selected">Regions</a></li>
+        <li class="nav-item"><a href="#" class="last">Sectors</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="inner">
+    <h2 class="title">{{ page.region }}</h1>
+    <p class="description">{{ page.description }}</p>
+
+    <div class="nav-item scroll">
+      <a href="javascript:void(0)" class="nav-link"><em></em>Scroll to explore</a>
+      <h2 class="nav-title">{{ page.region }}</h2>
+    </div>
+  </div>
+
+  <div class="navbar clearfix">
+    <nav class="inner">
+      <ul>
+        <li class="menu-item"><a href="#" class="first">By subject</a></li>
+        <li class="menu-item"><a href="#">Emissions</a></li>
+        <li class="menu-item"><a href="#">Emission drivers</a></li>
+        <li class="menu-item"><a href="#">Policy</a></li>
+      </ul>
+
+      <ul class="last">
+        <li class="menu-item"><a href="#" class="first">By sector</a></li>
+        <li class="menu-item"><a href="#" class="{% if page.sector == 'transportation' %}selected{% endif %}">Transportation</a></li>
+        <li class="menu-item"><a href="#">Agriculture</a></li>
+      </ul>
+    </nav>
+    <div class="scroll-shadow"></div>
+  </div>
+</header>

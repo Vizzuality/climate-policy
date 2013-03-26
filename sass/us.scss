@@ -1,0 +1,6 @@
+@import "main";
+
+.header {
+  background-color: #F8DF8D;
+  @include background(image-url('pattern.png'), image-url('us-bg.png') 100% 0 / cover);
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>The Policy Climate Interactive</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link href="/css/main.css" rel="stylesheet" />
+  <!--[if IE]>
+    <link href="/css/ie.css" rel="stylesheet" />
+  <![endif]-->
+  <script src="js/vendor/modernizr-2.6.2.min.js" /></script>
+  <script type="text/javascript" src="//use.typekit.net/opp1nwp.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+  {{ content }}
+
+  <script src="/js/vendor/jquery-1.9.1.js"></script>
+  <script src="/js/vendor/jquery.scrollTo.js"></script>
+  <script src="/js/vendor/jquery.tipsy.js"></script>
+  <script src="/js/vendor/d3.v3.js"></script>
+  <script src="/js/sources/{{ page.source }}.json"></script>
+  <script src="/js/main.js"></script>
+
+  <!-- Google Analytics -->
+  <script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+  </body>
+</html>
+  
