@@ -31,29 +31,9 @@
 
       <ul class="last">
         <li class="menu-item"><a href="#" class="first">By sector</a></li>
-        {% if page.region == 'china' %}
-          <li class="menu-item"><a href="#" class="{% if page.sector == 'buildings' %}selected{% endif %}">Buildings</a></li>
-          <li class="menu-item"><a href="#" class="{% if page.sector == 'power' %}selected{% endif %}">Power</a></li>
-          <li class="menu-item"><a href="#" class="{% if page.sector == 'industry' %}selected{% endif %}">Industry</a></li>
-        {% elsif page.region == 'us' %}
-          <li class="menu-item"><a href="#" class="{% if page.sector == 'buildings' %}selected{% endif %}">Buildings</a></li>
-          <li class="menu-item"><a href="#" class="{% if page.sector == 'transportation' %}selected{% endif %}">Transportation</a></li>
-          <li class="menu-item"><a href="#" class="{% if page.sector == 'power' %}selected{% endif %}">Power</a></li>
-          <li class="menu-item"><a href="#" class="{% if page.sector == 'industry' %}selected{% endif %}">Industry</a></li>
-        {% elsif page.region == 'brazil' %}
-          <li class="menu-item"><a href="#" class="{% if page.sector == 'forestry' %}selected{% endif %}">Forestry</a></li>
-          <li class="menu-item"><a href="#" class="{% if page.sector == 'agriculture' %}selected{% endif %}">Agriculture</a></li>
-        {% elsif page.region == 'india' %}
-          <li class="menu-item"><a href="#" class="{% if page.sector == 'agriculture' %}selected{% endif %}">Agriculture</a></li>
-          <li class="menu-item"><a href="#" class="{% if page.sector == 'power' %}selected{% endif %}">Power</a></li>
-          <li class="menu-item"><a href="#" class="{% if page.sector == 'industry' %}selected{% endif %}">Industry</a></li>
-        {% elsif page.region == 'eu' %}
-          <li class="menu-item"><a href="#" class="{% if page.sector == 'power' %}selected{% endif %}">Power</a></li>
-          <li class="menu-item"><a href="#" class="{% if page.sector == 'industry' %}selected{% endif %}">Industry</a></li>
-          <li class="menu-item"><a href="#" class="{% if page.sector == 'agriculture' %}selected{% endif %}">Agriculture</a></li>
-          <li class="menu-item"><a href="#" class="{% if page.sector == 'buildings' %}selected{% endif %}">Buildings</a></li>
-          <li class="menu-item"><a href="#" class="{% if page.sector == 'transportation' %}selected{% endif %}">Transportation</a></li>
-        {% endif %}
+        {% for item in page.sectors %}
+          <li class="menu-item"><a href="/regions/{{ page.region }}/{{ item }}.html" class="{% if page.sector == item %}selected{% endif %}">{{ item }}</a></li>
+        {% endfor %}
       </ul>
     </nav>
     <div class="scroll-shadow"></div>
