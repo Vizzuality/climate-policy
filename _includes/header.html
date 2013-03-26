@@ -35,7 +35,7 @@
           <li class="menu-item"><a href="#" class="{% if page.sector == 'buildings' %}selected{% endif %}">Buildings</a></li>
           <li class="menu-item"><a href="#" class="{% if page.sector == 'power' %}selected{% endif %}">Power</a></li>
           <li class="menu-item"><a href="#" class="{% if page.sector == 'industry' %}selected{% endif %}">Industry</a></li>
-        {% if page.region == 'us' %}
+        {% elsif page.region == 'us' %}
           <li class="menu-item"><a href="#" class="{% if page.sector == 'buildings' %}selected{% endif %}">Buildings</a></li>
           <li class="menu-item"><a href="#" class="{% if page.sector == 'transportation' %}selected{% endif %}">Transportation</a></li>
           <li class="menu-item"><a href="#" class="{% if page.sector == 'power' %}selected{% endif %}">Power</a></li>
