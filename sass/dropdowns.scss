@@ -1,0 +1,16 @@
+.qtip-content { padding: 10px 20px; }
+
+.tooltip_dropdown {
+  border: none;
+  background: rgba(#000, .8);
+  width: 175px;
+
+  a {
+    display: block;
+    font: 300 18px/2.4 "open-sans", sans-serif;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  li + li a { border-top: 1px solid rgba(#fff, .25); }
+}

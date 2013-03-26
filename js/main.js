@@ -129,6 +129,42 @@ $(document).ready(function() {
     $(window).scrollTo('0px', 500);
   });
 
+  // dropdowns
+  $('.dropdown_link').on('click', function(e) {
+    e.preventDefault();
+
+    var self = $(this);
+
+    self.qtip({
+      overwrite: false,
+      content: {
+        text: self.next('.navbar_dropdown')
+      },
+      position: {
+        my: 'top center',
+        at: 'bottom center',
+        adjust: { y: -10 }
+      },
+      show: {
+        event: event.type,
+        ready: true,
+        effect: function() {
+          $(this).show().css('opacity', '0').animate({ opacity: 1, "top": "-=10px" }, { duration: 100 });
+        }
+      },
+      hide: {
+        event: 'unfocus click',
+        effect: function() {
+          $(this).animate({ opacity: 0, "top": "+=10px" }, { duration: 100 });
+        }
+      },
+      style: {
+        classes: 'tooltip_dropdown',
+        tip: { width: 14, height: 6, corner: 'top center',  mimic: 'center' }
+      }
+    });
+  });
+
   // d3
   svg = d3.select(".graph").append("svg").attr("width", w).attr("height", h);
   var subjectSelector = document.getElementById("subjectSelector");
