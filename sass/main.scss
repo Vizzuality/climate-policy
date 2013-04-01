@@ -2,6 +2,7 @@
 @import "compass/css3";
 @import "vendor/jquery.qtip";
 @import "dropdowns";
+@import "slider";
 
 
 .clearfix:before,
@@ -161,11 +162,20 @@ body { background: #F4F4F4; }
   border-top: 0;
   background: #fff;
   @include box-shadow(0 0 10px rgba(#000, .1));
+
+  .description {
+    width: 790px;
+    font: 16px "open-sans", sans-serif;
+    color: #666;
+  }
+}
+
+.subject,
+.slides {
+  padding: 40px 30px;
 }
 
 .subject {
-  padding: 40px 30px;
-
   .title {
     font: 55px/1.1 "chaparral-pro", serif;
 
@@ -175,12 +185,6 @@ body { background: #F4F4F4; }
       text-transform: uppercase;
       color: #BABABA;
     }
-  }
-
-  .description {
-    width: 790px;
-    font: 16px "open-sans", sans-serif;
-    color: #666;
   }
 }
 
@@ -207,8 +211,6 @@ body { background: #F4F4F4; }
 
 .years {
   border: 1px solid rgba(#000, .1);
-  border-left: 0;
-  border-right: 0;
   padding: 0 40px;
   background: rgba(#F0532C, .15);
   font: bold 13px/50px "open-sans", sans-serif;
@@ -222,26 +224,19 @@ body { background: #F4F4F4; }
   display: inline-block;
 }
 
-.year {
-  width: 40px;
-}
-
-.gap {
-  width: 258px;
-}
+.year { width: 40px; }
+.gap { width: 257px; }
 
 .graph { height: 388px; }
 
-.content-footer {
-  padding: 45px 0;
-  text-align: center;
-}
+.content-footer { text-align: center; }
 
 .scroll-top {
-  background: image-url('scroll-top-icon.png') no-repeat;
+  background: image-url('scroll-top-icon.png') no-repeat center;
   display: inline-block;
-  width: 71px;
-  height: 70px;
+  border-top: 1px solid #ddd;
+  width: 200px;
+  height: 150px;
 
   span { display: none; }
 }
