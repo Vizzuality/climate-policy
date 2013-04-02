@@ -20,6 +20,7 @@ body { background: #F4F4F4; }
 
 .header {
   position: absolute;
+  z-index: 1;
   width: 100%;
   min-width: 1040px;
   height: 660px;
@@ -227,7 +228,60 @@ body { background: #F4F4F4; }
 .year { width: 40px; }
 .gap { width: 257px; }
 
-.graph { height: 388px; }
+.graph {
+  padding: 30px 0;
+  height: 328px;
+
+  + .graph { border-top: 1px solid #ddd;}
+}
+
+.graph-title,
+.graph-sep,
+.graph-description {
+  margin-left: 30px;
+}
+
+.graph-title {
+  font: 27px/1.1 "open-sans", sans-serif;
+  color: #666;
+
+  span {
+    display: block;
+    font: bold 17px "open-sans", sans-serif;
+    text-transform: uppercase;
+    color: #222;
+  }
+
+  a {
+    text-decoration: none;
+    color: #F0522C;
+  }
+}
+
+.graph-link:after {
+  position: relative;
+  top: -4px;
+  padding-left: 10px;
+  content: "▼";
+  font-size: 7px;
+}
+
+.graph-sep {
+  float: left;
+  clear: both;
+  border: 0;
+  height: 1px;
+  width: 160px;
+  background: #ddd;
+}
+
+.graph-description {
+  clear: left;
+  font: 300 19px "cronos-pro";
+  color: #999;
+}
+
+.graph_dropdown .graph-title { margin-left: 0; }
 
 .content-footer { text-align: center; }
 
@@ -282,4 +336,5 @@ body { background: #F4F4F4; }
   a { color: #999; }
 }
 
-.navbar_dropdown { display: none; }
+.navbar_dropdown,
+.graph_dropdown { display: none; }

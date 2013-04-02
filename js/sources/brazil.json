@@ -1,0 +1,66 @@
+var datasets = {
+  "sectors": [
+    { "name": "forestry",
+      "subjects": [
+        {
+          "datasets": [
+            {
+              "subject": "emissions",
+              "name": "Deforestation rate",
+              "table": "deforestation_rate",
+              "description": "",
+              "x_axis": "years",
+              "series": [
+                { "name": "Deforestation rate", "column": "", "class": "line", "y_extent": [0,10000] }
+              ]
+            }
+          ]
+        },
+        {
+          "datasets": [
+            {
+              "subject": "emission_drivers",
+              "name": "Commodity prices",
+              "table": "commodity_prices",
+              "description": "",
+              "x_axis": "years",
+              "series": [
+                {"name": "Corn Prices", "column": "", "class": "line", "y_extent": [0,10000]},
+                {"name": "Soybean Price", "column": "", "class": "line", "y_extent": [0,10000]}
+              ]
+            },
+            {
+              "subject": "emission_drivers",
+              "name": "Deforestation polygons ind",
+              "table": "deforestation_polygons",
+              "description": "",
+              "x_axis": "years",
+              "series": [
+                {"name": "< 25 Hectares", "column": "", "class": "line", "y_extent": [0,10000]},
+                {"name": "25-100 Hectares", "column": "", "class": "line", "y_extent": [0,10000]},
+                {"name": "100-500 Hectares", "column": "", "class": "line", "y_extent": [0,10000]},
+                {"name": "500-1000 Hectares", "column": "", "class": "line", "y_extent": [0,10000]},
+                {"name": "> 1000 Hectares", "column": "", "class": "line", "y_extent": [0,10000]}
+              ]
+            }
+          ]
+        },
+        {
+          "datasets": [
+            {
+              "subject": "emission_policy",
+              "name": "Protected lands",
+              "table": "protected_lands",
+              "description": "",
+              "x_axis": "years",
+              "series": [
+                {"name": "Integral Protection", "column": "", "class": "area", "y_extent": [0,10000]},
+                {"name": "Sustainable Use", "column": "", "class": "area", "y_extent": [0,10000]}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

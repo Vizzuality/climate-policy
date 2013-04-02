@@ -2,8 +2,8 @@
 
 .tooltip_dropdown {
   border: none;
-  background: rgba(#000, .8);
   width: 175px;
+  background: rgba(#000, .8);
 
   a {
     display: block;
@@ -13,4 +13,14 @@
   }
 
   li + li a { border-top: 1px solid rgba(#fff, .25); }
+}
+
+.graph_tooltip_dropdown {
+  border: none;
+  padding: 10px 0;
+  width: 350px;
+  background: #fff;
+  @include box-shadow(0 0 3px rgba(#000, .3));
+
+  li + li { margin-top: 10px; }
 }
