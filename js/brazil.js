@@ -29,7 +29,9 @@ $(document).ready(function() {
     drawLineChart(3, std_domain);
   })
 
-  //Draws a lineChart (index:index of the table on the json, std_domain: specific domain - keep undefined for showing the chart's own domain)
+  //Draws a lineChart
+  //index:index of the table on the json, 
+  //std_domain: specific domain - keep undefined for showing the chart's own domain
   function drawLineChart(index,domain){
 
     d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+subject[index].table+"%20order%20by%20"+subject[index].x_axis+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
@@ -78,12 +80,12 @@ $(document).ready(function() {
           .enter()
           .append("circle")
           .attr("class", 'linedot')
-          .attr("style",'fill:'+strokeColor)
+          //This shows only the first point during each year
+          .attr("style",function(d){ var _fill = (new Date(d.date_processed).getMonth() + 1 == 1) ? 'fill:'+strokeColor : 'display: none'; return _fill;})
           .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
           .attr("cy", function(d){return y_scale(d[y_col])})
           .attr("r", LINE_DOT_R);
-
-          console.log("#"+subject[index].table)
+        
         $("#"+subject[index].table).parent().find(".graph-data-legend ul").append('<li><div class="legend-item" style="background-color:'+strokeColor+'"></div><span>'+y_col_name+'</span></li>')
       }
     });
