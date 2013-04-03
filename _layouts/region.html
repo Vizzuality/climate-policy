@@ -15,13 +15,16 @@
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
-  {% include header.html %}
+  <div class="wrapper">
+    {% include header.html %}
 
-  <div class="content">
-    {{ content }}
+    <div class="content">
+      {{ content }}
+    </div>
+
+    {% include footer.html %}
   </div>
 
-  {% include footer.html %}
   <script src="/js/vendor/jquery-1.9.1.js"></script>
   <script src="/js/vendor/jquery-migrate-1.1.1.min.js"></script>
   <script src="/js/vendor/jquery.scrollTo.js"></script>
