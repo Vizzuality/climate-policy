@@ -10,7 +10,11 @@
 .clearfix:after { clear: both; }
 
 
-body { background: #F4F4F4; }
+.wrapper {
+  overflow: auto;
+  min-width: 1040px;
+  background: #F4F4F4;
+}
 
 .inner {
   width: 960px;
@@ -282,16 +286,44 @@ body { background: #F4F4F4; }
 
 .graph_dropdown .graph-title { margin-left: 0; }
 
-.content-footer { text-align: center; }
-
-.scroll-top {
-  background: image-url('scroll-top-icon.png') no-repeat center;
-  display: inline-block;
+.content-footer {
+  margin: 0 auto;
   border-top: 1px solid #ddd;
   width: 200px;
-  height: 150px;
+  text-align: center;
+}
+
+.scroll-controls {
+  display: block;
+  padding: 40px 20px;
+  height: 71px;
+  @include opacity(.6);
+
+  &:hover { @include opacity(.8); }
+  &:active { @include opacity(1); }
+
+  i {
+    display: inline-block;
+    height: 71px;
+    width: 71px;
+    background: image-url('scroll-sprite.png') no-repeat;
+  }
 
   span { display: none; }
+}
+
+.scroll-prev {
+  float: left;
+  margin-left: -150px;
+
+  i { background-position: 0 -71px; }
+}
+
+.scroll-next {
+  float: right;
+  margin-right: -150px;
+
+  i { background-position: 0 -142px; }
 }
 
 .footer {
