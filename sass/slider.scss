@@ -1,6 +1,19 @@
 .slider { margin-bottom: 45px; }
 
+.slides {
+  overflow: hidden;
+  width: 958px;
+}
+
+.slides-inner {
+  overflow: hidden;
+  width: 3114px;
+}
+
 .slide {
+  float: left;
+  width: 958px;
+
   .description { margin-bottom: 45px; }
 
   h3 { font: 300 30px/1.1 "chaparral-pro", serif; }
@@ -40,9 +53,10 @@
     float: left;
     width: 365px;
 
-    &.short { width: 305px; }
+    &.short { width: 306px; }
 
     &.first a { border: 0; }
+    &.last a { border: 0; }
 
     &.selected a {
       margin-bottom: -1px;

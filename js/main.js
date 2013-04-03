@@ -22,15 +22,6 @@ function positionScroll() {
   }
 }
 
-function updateGraph(dataset) {
-  var graph = $('#'+dataset);
-
-  if(graph.not(':visible')) {
-    graph.siblings('.graph-canvas').hide();
-    graph.show();
-  }
-}
-
 $(document).ready(function() {
   // position scroll link on load
   positionScroll();
@@ -56,11 +47,11 @@ $(document).ready(function() {
     .resize(positionScroll)
 
   $('.nav-link').on("click", function() {
-    $(window).scrollTo('570px', 500);
+    $(window).scrollTo('570px', 500, {axis:'y'});
   });
 
   $('.scroll-top').on("click", function() {
-    $(window).scrollTo('0px', 500);
+    $(window).scrollTo('0px', 500, {axis:'y'});
   });
 
   // dropdowns
@@ -136,10 +127,28 @@ $(document).ready(function() {
   });
 
   $('.graph_dropdown').on('click', 'a', function(e) {
-    var dataset = $(this).attr('data-rel');
+    var graph = $('#'+$(this).attr('data-rel'));
 
     e.preventDefault();
 
-    updateGraph(dataset);
+    if(graph.not(':visible')) {
+      graph.siblings('.graph-canvas').hide();
+      graph.show();
+    }
+  });
+
+  // slider
+  $('.tabs').on('click', 'a', function(e) {
+    var slide = "#"+$(this).attr('data-rel');
+
+    e.preventDefault();
+
+    if(!$(this).hasClass('selected')) {
+      $(this).closest('li')
+        .addClass('selected')
+        .siblings().removeClass('selected');
+
+      $('.slides').scrollTo(slide, 500, {axis:'x'});
+    }
   });
 });

@@ -172,9 +172,7 @@ body { background: #F4F4F4; }
 }
 
 .subject,
-.slides {
-  padding: 40px 30px;
-}
+.slide { padding: 40px; }
 
 .subject {
   .title {
@@ -232,7 +230,7 @@ body { background: #F4F4F4; }
 
 .graph-legend {
   position: absolute;
-  margin: 30px;
+  margin: 40px;
 }
 
 .graph-canvas {
