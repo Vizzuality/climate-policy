@@ -6,7 +6,7 @@ var datasets = {
           "name": "Deforestation rate",
           "table": "deforestation_rate_copy_test_matallo",
           "description": "",
-          "x_axis": "year",
+          "x_axis": "date_processed",
           "series": [
             { "name": "Deforestation rate", "column": "units_km2_year", "class": "line", "y_extent": [0,30000] }
           ]

@@ -24,7 +24,7 @@ foreman start
 
 And access normally in your browser to the next address:
 
-* http://0.0.0.0:4000
+* http://0.0.0.0:4000/regions/brazil/forestry.html
 
 For more information:
 
