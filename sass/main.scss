@@ -278,9 +278,27 @@ body { background: #F4F4F4; }
   clear: left;
   font: 300 19px "cronos-pro";
   color: #999;
+  width: 250px;
 }
 
 .graph_dropdown .graph-title { margin-left: 0; }
+
+.graph-data-legend{
+
+  li{
+    display: inline;
+    font: 14px "cronos-pro", sans-serif;
+    color: #999999;
+    margin: 0 0 0 12px;
+
+    div.legend-item{
+      width: 13px;
+      height: 2px;
+      display: inline-block;
+      margin: 0 7px 3px 0;
+    }
+  }
+}
 
 .content-footer { text-align: center; }
 

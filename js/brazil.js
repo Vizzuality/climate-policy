@@ -1,5 +1,5 @@
 var margin = 30;
-var top_margin = 140;
+var top_margin = 150;
 var h = 380;
 var w = 1038;
 var subject = [];
@@ -11,6 +11,7 @@ $(document).ready(function() {
 
   var _domainq = 'http://cpi.cartodb.com/api/v2/sql?q=SELECT%20min(min)%20as%20min,%20max(max)%20as%20max%20FROM%20(';
 
+  //Creates the query needed for calculating the default domain for the charts
   for (var i = 0; i < datasets.sectors[0].subjects.length; i++){
     if(i!=0){
       _domainq = _domainq + '%20UNION%20'
@@ -28,7 +29,7 @@ $(document).ready(function() {
     drawLineChart(3, std_domain);
   })
 
-
+  //Draws a lineChart (index:index of the table on the json, std_domain: specific domain - keep undefined for showing the chart's own domain)
   function drawLineChart(index,domain){
 
     d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+subject[index].table+"%20order%20by%20"+subject[index].x_axis+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
@@ -50,8 +51,9 @@ $(document).ready(function() {
       for (var i = 0; i < subject[index].series.length; i++) {
         // append one group per series
         var g = svg[index].append("svg:g");
+        var strokeColor = subject[index].series[i].strokeColor;
         var y_col = subject[index].series[i].column;
-        var srokeColor = subject[index].series[i].strokeColor;
+        var y_col_name = subject[index].series[i].name;
 
         var y_scale = d3.scale.linear()
           .range([h-margin, top_margin])
@@ -69,17 +71,20 @@ $(document).ready(function() {
         g.append("svg:path")
           .attr("d", line(data_col))
           .attr("class", 'lineStyle')
-          .attr("style",'stroke:'+srokeColor);
+          .attr("style",'stroke:'+strokeColor);
 
         g.selectAll("circle")
           .data(data_col)
           .enter()
           .append("circle")
           .attr("class", 'linedot')
-          .attr("style",'fill:'+srokeColor)
+          .attr("style",'fill:'+strokeColor)
           .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
           .attr("cy", function(d){return y_scale(d[y_col])})
           .attr("r", LINE_DOT_R);
+
+          console.log("#"+subject[index].table)
+        $("#"+subject[index].table).parent().find(".graph-data-legend ul").append('<li><div class="legend-item" style="background-color:'+strokeColor+'"></div><span>'+y_col_name+'</span></li>')
       }
     });
   }
