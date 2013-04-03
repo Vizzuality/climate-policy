@@ -3,61 +3,45 @@ var datasets = {
     { "name": "forestry",
       "subjects": [
         {
-          "datasets": [
-            {
-              "subject": "emissions",
-              "name": "Deforestation rate",
-              "table": "deforestation_rate",
-              "description": "",
-              "x_axis": "years",
-              "series": [
-                { "name": "Deforestation rate", "column": "", "class": "line", "y_extent": [0,10000] }
-              ]
-            }
+          "name": "Deforestation rate",
+          "table": "deforestation_rate_copy_test_matallo",
+          "description": "",
+          "x_axis": "year",
+          "series": [
+            { "name": "Deforestation rate", "column": "units_km2_year", "class": "line", "y_extent": [0,30000] }
           ]
         },
         {
-          "datasets": [
-            {
-              "subject": "emission_drivers",
-              "name": "Commodity prices",
-              "table": "commodity_prices",
-              "description": "",
-              "x_axis": "years",
-              "series": [
-                {"name": "Corn Prices", "column": "", "class": "line", "y_extent": [0,10000]},
-                {"name": "Soybean Price", "column": "", "class": "line", "y_extent": [0,10000]}
-              ]
-            },
-            {
-              "subject": "emission_drivers",
-              "name": "Deforestation polygons ind",
-              "table": "deforestation_polygons",
-              "description": "",
-              "x_axis": "years",
-              "series": [
-                {"name": "< 25 Hectares", "column": "", "class": "line", "y_extent": [0,10000]},
-                {"name": "25-100 Hectares", "column": "", "class": "line", "y_extent": [0,10000]},
-                {"name": "100-500 Hectares", "column": "", "class": "line", "y_extent": [0,10000]},
-                {"name": "500-1000 Hectares", "column": "", "class": "line", "y_extent": [0,10000]},
-                {"name": "> 1000 Hectares", "column": "", "class": "line", "y_extent": [0,10000]}
-              ]
-            }
+          "name": "Commodity prices",
+          "table": "commodity_prices_copy_test_matallo",
+          "description": "",
+          "x_axis": "date_processed",
+          "series": [
+            {"name": "Corn Prices", "column": "corn", "class": "line", "y_extent": [0,1100]},
+            {"name": "Soybean Price", "column": "soybeans", "class": "line", "y_extent": [0,1100]}
           ]
         },
         {
-          "datasets": [
-            {
-              "subject": "emission_policy",
-              "name": "Protected lands",
-              "table": "protected_lands",
-              "description": "",
-              "x_axis": "years",
-              "series": [
-                {"name": "Integral Protection", "column": "", "class": "area", "y_extent": [0,10000]},
-                {"name": "Sustainable Use", "column": "", "class": "area", "y_extent": [0,10000]}
-              ]
-            }
+          "name": "Deforestation polygons ind",
+          "table": "deforestation_polygons_ind_copy_test_matallo",
+          "description": "",
+          "x_axis": "years",
+          "series": [
+            {"name": "< 25 Hectares", "column": "_25_hectares", "class": "line", "y_extent": [0,110]},
+            {"name": "25-100 Hectares", "column": "_25_100_hectares", "class": "line", "y_extent": [0,110]},
+            {"name": "100-500 Hectares", "column": "_100_500_hectares", "class": "line", "y_extent": [0,110]},
+            {"name": "500-1000 Hectares", "column": "_500_1000_hectares", "class": "line", "y_extent": [0,110]},
+            {"name": "> 1000 Hectares", "column": "_1000_hectares", "class": "line", "y_extent": [0,110]}
+          ]
+        },
+        {
+          "name": "Protected lands",
+          "table": "protected_lands_copy_test_matallo",
+          "description": "",
+          "x_axis": "year",
+          "series": [
+            {"name": "Integral Protection", "column": "integral_protection", "class": "area", "y_extent": [0,750]},
+            {"name": "Sustainable Use", "column": "sustainable_use", "class": "area", "y_extent": [0,750]}
           ]
         }
       ]

@@ -22,6 +22,15 @@ function positionScroll() {
   }
 }
 
+function updateGraph(dataset) {
+  var graph = $('#'+dataset);
+
+  if(graph.not(':visible')) {
+    graph.siblings('.graph-canvas').hide();
+    graph.show();
+  }
+}
+
 $(document).ready(function() {
   // position scroll link on load
   positionScroll();
@@ -124,5 +133,13 @@ $(document).ready(function() {
         tip: false
       }
     });
+  });
+
+  $('.graph_dropdown').on('click', 'a', function(e) {
+    var dataset = $(this).attr('data-rel');
+
+    e.preventDefault();
+
+    updateGraph(dataset);
   });
 });
