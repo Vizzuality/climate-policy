@@ -4,10 +4,9 @@ title: Brazil Forestry
 description: Textual description of Brazil. The highest deforestation rate in the world, and as of 2005 still has the largest area of forest removed annually and the highest GDP growth rate.
 region: brazil
 type: sector
-sector: Forestry
+sector: Agriculture
 sectordescription: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-prevsector: policy
-nextsector: agriculture
+prevsector: forestry
 sectors:
   - Forestry
   - Agriculture
@@ -21,15 +20,24 @@ sectors:
       <div class="graph-legend">
         <h3 class="graph-title">
           <span>Emissions</span>
-          Deforestation rate
+          <a href="#" class="graph-link">Emissions</a>
         </h3>
+
+        <ul class="graph_dropdown">
+          <li><h3 class="graph-title"><a href="#" data-rel="land_use_emissions_copy_test_matallo" class="graph_selector_link">Emissions</a></h3></li>
+          <li><h3 class="graph-title"><a href="#" data-rel="land_use_emissions_copy_test_matallo_2" class="graph_selector_link">Land Use</a></h3></li>
+        </ul>
 
         <hr class="graph-sep"/>
 
         <p class="graph-description">Brief text describing Brazil emission drivers in forestry sector.</p>
       </div>
 
-      <div class="graph-canvas" id="deforestation_rate_copy_test_matallo">
+      <div class="graph-canvas" id="land_use_emissions_copy_test_matallo">
+        <ul class="graph-data-legend"></ul>
+      </div>
+
+      <div class="graph-canvas hidden" id="land_use_emissions_copy_test_matallo_2">
         <ul class="graph-data-legend"></ul>
       </div>
     </div>
@@ -38,12 +46,12 @@ sectors:
       <div class="graph-legend">
         <h3 class="graph-title">
           <span>Emission drivers</span>
-          <a href="#" class="graph-link">Commodity prices</a>
+          <a href="#" class="graph-link">Intensity indices</a>
         </h3>
 
         <ul class="graph_dropdown">
-          <li><h3 class="graph-title"><a href="#" data-rel="commodity_prices_copy_test_matallo" class="graph_selector_link">Commodity prices</a></h3></li>
-          <li><h3 class="graph-title"><a href="#" data-rel="deforestation_polygons_ind_copy_test_matallo" class="graph_selector_link">Deforestation polygons ind</a></h3></li>
+          <li><h3 class="graph-title"><a href="#" data-rel="emissions_drivers_copy_test_matallo" class="graph_selector_link">Intensity indices</a></h3></li>
+          <li><h3 class="graph-title"><a href="#" data-rel="brazil_ag_2_exports_copy_test_matallo" class="graph_selector_link">Exports</a></h3></li>
         </ul>
 
         <hr class="graph-sep"/>
@@ -51,11 +59,11 @@ sectors:
         <p class="graph-description">Brief text describing Brazil emission drivers in forestry sector.</p>
       </div>
 
-      <div class="graph-canvas" id="commodity_prices_copy_test_matallo">
+      <div class="graph-canvas" id="emissions_drivers_copy_test_matallo">
         <ul class="graph-data-legend"></ul>
       </div>
 
-      <div class="graph-canvas hidden" id="deforestation_polygons_ind_copy_test_matallo">
+      <div class="graph-canvas hidden" id="brazil_ag_2_exports_copy_test_matallo">
         <ul class="graph-data-legend"></ul>
       </div>
     </div>
@@ -64,7 +72,7 @@ sectors:
       <div class="graph-legend">
         <h3 class="graph-title">
           <span>Policy</span>
-          Protected lands
+          Credit
         </h3>
 
         <hr class="graph-sep"/>
@@ -72,30 +80,10 @@ sectors:
         <p class="graph-description">Brief text describing Brazil emission drivers in forestry sector.</p>
       </div>
 
-      <div class="graph-canvas" id="protected_lands_copy_test_matallo">
+      <div class="graph-canvas" id="brazil_ag_3_credit_subsidies_copy_test_matallo">
         <ul class="graph-data-legend"></ul>
       </div>
     </div>
-
-
-      <div class="graph">
-      <div class="graph-legend">
-        <h3 class="graph-title">
-          <span>US Power Test</span>
-          US Power Test
-        </h3>
-
-        <hr class="graph-sep"/>
-
-        <p class="graph-description">TEST!.</p>
-      </div>
-
-      <div class="graph-canvas" id="grid_impact_1_copy_diego_2">
-        <ul class="graph-data-legend"></ul>
-      </div>
-    </div>
-
-
   </div>
 
   {% include years.html %}

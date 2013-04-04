@@ -24,4 +24,6 @@
   @include box-shadow(0 0 3px rgba(#000, .3));
 
   li + li { margin-top: 10px; }
+
+  a { display: block; }
 }

@@ -131,3 +131,17 @@
   visibility: hidden;
   fill: #000;
 }
+
+.axis {
+  font-size: 8pt;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.axis path {
+  fill: none;
+  stroke: black;
+}
+
+.tick {
+  display: none;
+}

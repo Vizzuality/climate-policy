@@ -19,6 +19,8 @@
     {% include header.html %}
 
     <div class="content">
+      {% include description.html %}
+
       {{ content }}
     </div>
 
@@ -30,7 +32,7 @@
   <script src="/js/vendor/jquery.scrollTo.js"></script>
   <script src="/js/vendor/jquery.qtip.js"></script>
   <script src="/js/vendor/d3.v3.js"></script>
-  <script src="/js/sources/{{ page.region }}.json"></script>
+  <script src="/js/sources/{{ page.region }}/{{ page.sector }}.json"></script>
   <script src="/js/main.js"></script>
   <script src="/js/{{ page.region }}.js"></script>
 
