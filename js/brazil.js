@@ -87,6 +87,7 @@ $(document).ready(function() {
         // append one group per series
         var g = svg[index].append("svg:g");
         var strokeColor = subject[index].series[i].strokeColor;
+        var fillColor = subject[index].series[i].fillColor;
         var y_col = subject[index].series[i].column;
         var y_col_name = subject[index].series[i].name;
 
@@ -145,7 +146,19 @@ $(document).ready(function() {
           g.append("svg:path")
             .attr("d", area(data_col))                    
             .attr("style",'stroke:'+strokeColor)
-            .attr("style",'fill:'+strokeColor)
+            .attr("style",'fill:'+fillColor);
+
+          var line = d3.svg.line()
+            .x(function(d){return x_scale(new Date(d[x_col]))})
+            .y(function(d){
+              if (previous_stacked_column == null) return y_scale(d[y_col]);
+              return y_scale(d[y_col]+d[previous_stacked_column]);
+            });
+
+          g.append("svg:path")
+            .attr("d", line(data_col))
+            .attr("class", 'lineStyle')
+            .attr("style",'stroke:'+strokeColor);
 
           var g_circles = svg[index].append("svg:g");
           g_circles.attr("class","dataCircles");
@@ -158,11 +171,8 @@ $(document).ready(function() {
             .attr("style",function(d){ var _fill = (new Date(d.date_processed).getMonth() + 1 == 1) ? 'fill:'+strokeColor : 'display: none'; return _fill;})
             .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
             .attr("cy", function(d){
-              var value = y_scale(d[y_col]);
-              if (i>0) {
-                value = y_scale(d[y_col]+d[previous_stacked_column])
-              };
-              return value;
+              if (previous_stacked_column == null) return y_scale(d[y_col]);
+              return y_scale(d[y_col]+d[previous_stacked_column]);
             })
             .attr("r", LINE_DOT_R)
             .attr("name", function(d){return d[y_col]}) //Uses this for tooltip
