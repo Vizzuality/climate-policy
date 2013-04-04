@@ -72,14 +72,11 @@ $(document).ready(function() {
   function drawBarChart(index,domain) {
 
     d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+subject[index].table+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
-      console.log(data);
 
-      // Calculo el domain y range en general para todos los valores            
-      var negat = [];
-      var posit = [];
+      // Graph settings, domain & ranges calculation, scales, etc.
+      var negat = [], posit = [];
 
       data.rows.forEach(function(d){
-        //console.log(d);
         var values = [];
         for (var j = 0; j < subject[index].x_groups.length; j++) {
           var value = d[subject[index].x_groups[j].column];
@@ -89,32 +86,28 @@ $(document).ready(function() {
             negat.push(Math.abs(value));
           }          
         }
-      });
-      
-      var max_negat  = d3.max(negat);
-      var max_posit = d3.max(posit);
-      var max = d3.max([max_negat, max_posit]);
+      });      
 
-      console.log("*"+max_negat);
-      console.log("*"+max_posit);
-      console.log("*"+max);
+      var max_negat  = d3.max(negat),
+        max_posit = d3.max(posit),
+        max = d3.max([max_negat, max_posit]);
 
-      var group_width = 650/subject[index].x_groups.length;
-      var series_step = 200/data.rows.length;
+      var total_graph_area_width = 650;
+      var total_series_height = 200;
+      var group_width = total_graph_area_width/subject[index].x_groups.length;
       var bar_height = 100/data.rows.length;
-      //var max_bar = group_width*(max/(max_negat+max_posit));
-      console.log(">"+parseFloat(max));
-      console.log(">>"+parseFloat(parseFloat(max_negat) + parseFloat(max_posit)));
-      console.log(">>>"+parseFloat(max)/parseFloat(parseFloat(max_negat) + parseFloat(max_posit)));
       var max_bar = group_width*parseFloat(max)/parseFloat(parseFloat(max_negat) + parseFloat(max_posit));
-      console.log(max_bar);
+
+      var series_step = total_series_height/data.rows.length;
+      var series_label_left_margin = 40;
+      var series_label_top_margin = 170;
+      var series_label_width = 363;
 
       var bar_width_scale = d3.scale.linear()
         .domain([0,max])
-        .range([0, max_bar]); // La máxima anchura es la total por la rel del máximo con 
+        .range([0, max_bar]); 
 
-      var zero_pos = bar_width_scale(max_negat); // La posición del cero es igual a la anchura del máximo mínimo
-      console.log("zero_pos: "+zero_pos);
+      var zero_pos = bar_width_scale(max_negat); // Zero position for each group equals the bar of the mazimum negative number
 
       // Series labels
       svg[index].selectAll("text.graph-series-label")
@@ -126,10 +119,10 @@ $(document).ready(function() {
         return d.variable;
       })
       .attr("x", function(d,i) {
-        return 40;
+        return series_label_left_margin;
       })
       .attr("y", function(d,i) {
-        return 170 + (i * series_step);
+        return series_label_top_margin + (i * series_step);
       });
 
       // Group labels
@@ -142,13 +135,13 @@ $(document).ready(function() {
           return d.label;
         })
         .attr("x", function(d,i) {
-          return 363 + group_width*i + zero_pos - 40;
+          return series_label_width + group_width*i + zero_pos - 40;
         })
         .attr("y", function(d,i) {
           return 140;
         });
       
-      // Recorro los x-groups para cada serie
+      // Drawing each x-group
       for (var j = 0; j < subject[index].x_groups.length; j++) {
 
         var group_name = subject[index].x_groups[j].column;
@@ -160,18 +153,18 @@ $(document).ready(function() {
         .attr("class",group_name)
         .attr("x", function(d,i) {
           if (d[group_name] > 0) {
-            return 363 + group_width*j + zero_pos;
+            return series_label_width + group_width*j + zero_pos;
           } else {
-            return 363 + group_width*j + zero_pos - bar_width_scale(Math.abs(d[group_name]));
+            return series_label_width + group_width*j + zero_pos - bar_width_scale(Math.abs(d[group_name]));
           }
         })
         .attr("y", function(d,i) {
-          return 163 + (i * series_step) - bar_height/2;
+          return series_label_top_margin + (i * series_step) - bar_height/2 - 7;
         })
         .attr("width", function(d,i) {
           var bar_width = bar_width_scale(Math.abs(d[group_name]));
-          if (bar_width < 1) bar_width = 2;
-          return bar_width;
+          if (bar_width <= 2) bar_width = 2;
+          return bar_width;          
         })
         .attr("height", function(d,i) {
           return bar_height;
@@ -181,7 +174,7 @@ $(document).ready(function() {
         })
         .attr("name", function(d){
           return Math.round(d[group_name]*1000)/1000;
-        }) //Uses this for tooltip
+        })
         .on("mouseover", function(d) {
           d3.selectAll(".overlay-line").style("visibility", "visible");
           tooltip.style("visibility", "visible")
@@ -192,14 +185,11 @@ $(document).ready(function() {
         .on("mousemove", mousemove)
         .on("mouseout", function(){
           d3.selectAll(".overlay-line").style("visibility", "hidden");
-            tooltip.style("visibility", "hidden");
-          });
-        
+          tooltip.style("visibility", "hidden");
+        });
       }
-  
     });
   }
-
 
   //Draws a lineChart
   //index:index of the table on the json, 
