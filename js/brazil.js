@@ -10,8 +10,6 @@ var LINE_DOT_R = 4;
 $(document).ready(function() {
 
   var _domainq = 'http://cpi.cartodb.com/api/v2/sql?q=SELECT%20min(min)%20as%20min,%20max(max)%20as%20max%20FROM%20(';
-
-  //Creates the query needed for calculating the default domain for the charts
   for (var i = 0; i < datasets.sectors[0].subjects.length; i++){
     if(i!=0){
       _domainq = _domainq + '%20UNION%20'
@@ -81,7 +79,7 @@ $(document).ready(function() {
           .append("circle")
           .attr("class", 'linedot')
           //This shows only the first point during each year
-          .attr("style",function(d){ var _fill = (new Date(d.date_processed).getMonth() + 1 == 1) ? 'fill:'+strokeColor : 'display: none'; return _fill;})
+          .attr("style",function(d){ var _fill = (new Date(d.date_processed).getMonth()==0) ? 'fill:'+strokeColor : 'display: none'; return _fill;})
           .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
           .attr("cy", function(d){return y_scale(d[y_col])})
           .attr("r", LINE_DOT_R);
