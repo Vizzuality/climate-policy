@@ -1,0 +1,78 @@
+---
+layout: region
+description: Textual description of Brazil. The highest deforestation rate in the world, and as of 2005 still has the largest area of forest removed annually and the highest GDP growth rate.
+region: brazil
+type: subject
+sector: emission_drivers
+sectorname: Emission drivers
+sectordescription: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+prevsector: emissions
+nextsector: policy
+sectors:
+  - forestry
+  - agriculture
+---
+
+<div class="graphs">
+  {% include years.html %}
+
+  <div class="graphs-inner">
+    <div class="graph">
+      <div class="graph-legend">
+        <h3 class="graph-title">
+          <span>Forestry</span>
+          <a href="#" class="graph-link">Commodity prices</a>
+        </h3>
+
+        <ul class="graph_dropdown">
+          <li><h3 class="graph-title"><a href="#" data-rel="commodity_prices_copy_test_matallo" class="graph_selector_link">Commodity prices</a></h3></li>
+          <li><h3 class="graph-title"><a href="#" data-rel="deforestation_polygons_ind_copy_test_matallo" class="graph_selector_link">Deforestation polygons ind</a></h3></li>
+        </ul>
+
+        <hr class="graph-sep"/>
+
+        <p class="graph-description">Brief text describing Brazil emission drivers in forestry sector.</p>
+      </div>
+
+      <div class="graph-canvas" id="commodity_prices_copy_test_matallo">
+        <ul class="graph-data-legend"></ul>
+      </div>
+
+      <div class="graph-canvas hidden" id="deforestation_polygons_ind_copy_test_matallo">
+        <ul class="graph-data-legend"></ul>
+      </div>
+    </div>
+
+    <div class="graph">
+      <div class="graph-legend">
+        <h3 class="graph-title">
+          <span>Agriculture</span>
+          <a href="#" class="graph-link">Intensity indices</a>
+        </h3>
+
+        <ul class="graph_dropdown">
+          <li><h3 class="graph-title"><a href="#" data-rel="emissions_drivers_copy_test_matallo" class="graph_selector_link">Intensity indices</a></h3></li>
+          <li><h3 class="graph-title"><a href="#" data-rel="brazil_ag_2_exports_copy_test_matallo" class="graph_selector_link">Exports</a></h3></li>
+        </ul>
+
+        <hr class="graph-sep"/>
+
+        <p class="graph-description">Brief text describing Brazil emission drivers in forestry sector.</p>
+      </div>
+
+      <div class="graph-canvas" id="emissions_drivers_copy_test_matallo">
+        <ul class="graph-data-legend"></ul>
+      </div>
+
+      <div class="graph-canvas hidden" id="brazil_ag_2_exports_copy_test_matallo">
+        <ul class="graph-data-legend"></ul>
+      </div>
+    </div>
+  </div>
+
+  {% include years.html %}
+</div>
+
+<div class="content-footer">
+  <a href="javascript:void(0)" class="scroll-controls scroll-top"><i><span>↑</span></i></a>
+</div>
