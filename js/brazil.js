@@ -92,7 +92,6 @@ $(document).ready(function() {
         var y_scale = d3.scale.linear()
           .range([h-margin, top_margin]) // Esto está mal
           .domain(subject[index].series[i].y_extent);
-          //.domain([0,1000]);
 
         // remove null values
         var data_col = _data.rows.filter(function(d) {
@@ -118,11 +117,14 @@ $(document).ready(function() {
             });
       
         g.append("svg:path")
-          .attr("d", area(data_col))          
+          .attr("d", area(data_col))                    
           .attr("style",'stroke:'+strokeColor)
           .attr("style",'fill:'+strokeColor)
 
-        g.selectAll("circle")
+        var g_circles = svg[index].append("svg:g");
+        g_circles.attr("class","dataCircles");
+
+        g_circles.selectAll("circle")
           .data(data_col)
           .enter()
           .append("circle")
@@ -145,15 +147,14 @@ $(document).ready(function() {
               .style("left", $(this).offset().left-25+"px");
           })
           .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
-          console.log("O");
-        previous_column = y_col; // Para que el siguiente área tenga el dato de partida
+          previous_column = y_col; // Para que el siguiente área tenga el dato de partida
+        }
 
-      }
-    
-    }
-
-    );
-
+        // Reordeno para sacar los círculos por encima
+        svg[index].selectAll("g.dataCircles").each(function(d) {
+          svg[index].node().appendChild(this);
+        });
+      });
   }
 
   //Draws a lineChart
