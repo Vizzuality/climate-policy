@@ -4,12 +4,11 @@ var h = 388;
 var w = 1038;
 var subject = [];
 var svg = [];
-var overlayLine = [];
 
 var LINE_DOT_R = 4;
 
 
-function mousemove(i) {
+function mousemove() {
   d3.selectAll(".overlay-line")
     .attr("cx", d3.mouse(this)[0])
     .attr("transform", "translate(" + d3.mouse(this)[0] + ",0)")
@@ -31,14 +30,10 @@ $(document).ready(function() {
       _domainq = _domainq + '%20UNION%20'
     }
     subject[i] = datasets.sectors[0].subjects[i];
-    svg[i] = d3.select("#"+subject[i].table)
-      .append("svg")
-      .attr("width", w)
-      .attr("height", h);
-
+    svg[i] = d3.select("#"+subject[i].table).append("svg").attr("width", w).attr("height", h);
     _domainq = _domainq + 'SELECT%20min(date_processed)%20as%20min,%20max(date_processed)%20as%20max%20FROM%20'+subject[i].table
 
-    //Creates an overlay
+    //Creates an overlay per subject
     var overlay = svg[i]
       .append("rect")
       .attr("class", "overlay")
@@ -48,12 +43,12 @@ $(document).ready(function() {
       .on("mousemove", mousemove)
       .on("mouseout", function(){d3.selectAll(".overlay-line").style("visibility", "hidden");});
 
-      overlayLine[i] = svg[i]
-        .append("rect")
-        .attr("class", "overlay-line")
-        .attr("width", 2)
-        .attr("height", $('.graphs').height()-$(".slider").height())
-        .style("top", $(".graphs").offset().top);
+    var overlayLine = svg[i]
+      .append("rect")
+      .attr("class", "overlay-line")
+      .attr("width", 2)
+      .attr("height", $('.graphs').height()-$(".slider").height())
+      .style("top", $(".graphs").offset().top);
   }
 
   d3.json(_domainq+')%20as%20aux%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79', function(data) {
@@ -91,6 +86,7 @@ $(document).ready(function() {
         // append one group per series
         var g = svg[index].append("svg:g");
         var strokeColor = subject[index].series[i].strokeColor;
+        var fillColor = subject[index].series[i].fillColor;
         var y_col = subject[index].series[i].column;
         var y_col_name = subject[index].series[i].name;
 
@@ -152,11 +148,11 @@ $(document).ready(function() {
               if (previous_stacked_column == null) return y_scale(d[y_col]);
               return y_scale(d[y_col]+d[previous_stacked_column])
             });
-      
+
           g.append("svg:path")
             .attr("d", area(data_col))                    
             .attr("style",'stroke:'+strokeColor)
-            .attr("style",'fill:'+strokeColor)
+            .attr("style",'fill:'+fillColor)
             .on("mouseover", function(d) {
               d3.selectAll(".overlay-line").style("visibility", "visible");
             })
@@ -164,6 +160,18 @@ $(document).ready(function() {
             .on("mouseout", function(){
               d3.selectAll(".overlay-line").style("visibility", "hidden");
             });
+
+          var line = d3.svg.line()
+            .x(function(d){return x_scale(new Date(d[x_col]))})
+            .y(function(d){
+              if (previous_stacked_column == null) return y_scale(d[y_col]);
+              return y_scale(d[y_col]+d[previous_stacked_column]);
+            });
+
+          g.append("svg:path")
+            .attr("d", line(data_col))
+            .attr("class", 'lineStyle')
+            .attr("style",'stroke:'+strokeColor);
 
           var g_circles = svg[index].append("svg:g");
           g_circles.attr("class","dataCircles");
@@ -176,11 +184,8 @@ $(document).ready(function() {
             .attr("style",function(d){ var _fill = (new Date(d.date_processed).getMonth() + 1 == 1) ? 'fill:'+strokeColor : 'display: none'; return _fill;})
             .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
             .attr("cy", function(d){
-              var value = y_scale(d[y_col]);
-              if (i>0) {
-                value = y_scale(d[y_col]+d[previous_stacked_column])
-              };
-              return value;
+              if (previous_stacked_column == null) return y_scale(d[y_col]);
+              return y_scale(d[y_col]+d[previous_stacked_column]);
             })
             .attr("r", LINE_DOT_R)
             .attr("name", function(d){return d[y_col]}) //Uses this for tooltip
@@ -198,7 +203,6 @@ $(document).ready(function() {
 
               tooltip.style("visibility", "hidden");
             });
-
           previous_stacked_column = y_col;
         }
 
