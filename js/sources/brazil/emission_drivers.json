@@ -3,15 +3,6 @@ var datasets = {
     { "name": "forestry",
       "subjects": [
         {
-          "name": "Deforestation rate",
-          "table": "deforestation_rate_copy_test_matallo",
-          "description": "",
-          "x_axis": "date_processed",
-          "series": [
-            { "name": "Deforestation rate", "column": "units_km2_year", "class": "line", "y_extent": [0,30000], "strokeColor": "#546DBC" }
-          ]
-        },
-        {
           "name": "Commodity prices",
           "table": "commodity_prices_copy_test_matallo",
           "description": "",
@@ -35,13 +26,25 @@ var datasets = {
           ]
         },
         {
-          "name": "Protected lands",
-          "table": "protected_lands_copy_test_matallo",
+          "name": "Intensity indices",
+          "table": "emissions_drivers_copy_test_matallo",
           "description": "",
-          "x_axis": "year",
+          "x_axis": "date_processed",
           "series": [
-            {"name": "Integral Protection", "column": "integral_protection", "class": "area", "y_extent": [0,750], "strokeColor": "#546DBC"},
-            {"name": "Sustainable Use", "column": "sustainable_use", "class": "area", "y_extent": [0,750], "strokeColor": "#F0542C"}
+            { "name": "Food Production per Hectare", "column": "food_production_per_hectare", "class": "line", "y_extent": [0,280], "strokeColor": "#546DBC" },
+            { "name": "Livestock Production per Hectare", "column": "livestock_production_per_hectare", "class": "line", "y_extent": [0,280], "strokeColor": "#F0542C" },
+            { "name": "Non-Food Production per Hectare", "column": "non_food_production_per_hectare", "class": "line", "y_extent": [0,280], "strokeColor": "#00D9A3" },
+            { "name": "Tractor Usage per Hectare", "column": "tractor_usage_per_hectare", "class": "line", "y_extent": [0,280], "strokeColor": "#FFD24D" }
+          ]
+        },
+        {
+          "name": "Exports",
+          "table": "brazil_ag_2_exports_copy_test_matallo",
+          "description": "",
+          "x_axis": "date_processed",
+          "series": [
+            {"name": "Agricultural Raw Materials", "column": "agricultural_raw_materials", "class": "line", "y_extent": [0,55], "strokeColor": "#546DBC"},
+            {"name": "Food", "column": "food", "class": "line", "y_extent": [0,55], "strokeColor": "#F0542C"}
           ]
         }
       ]

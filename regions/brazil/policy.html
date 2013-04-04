@@ -1,0 +1,60 @@
+---
+layout: region
+description: Textual description of Brazil. The highest deforestation rate in the world, and as of 2005 still has the largest area of forest removed annually and the highest GDP growth rate.
+region: brazil
+type: subject
+sector: policy
+sectorname: Policy
+sectordescription: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+prevsector: emission_drivers
+nextsector: forestry
+sectors:
+  - forestry
+  - agriculture
+---
+
+<div class="graphs">
+  {% include years.html %}
+
+  <div class="graphs-inner">
+    <div class="graph">
+      <div class="graph-legend">
+        <h3 class="graph-title">
+          <span>Forestry</span>
+          Protected lands
+        </h3>
+
+        <hr class="graph-sep"/>
+
+        <p class="graph-description">Brief text describing Brazil emission drivers in forestry sector.</p>
+      </div>
+
+      <div class="graph-canvas" id="protected_lands_copy_test_matallo">
+        <ul class="graph-data-legend"></ul>
+      </div>
+    </div>
+
+    <div class="graph">
+      <div class="graph-legend">
+        <h3 class="graph-title">
+          <span>Agriculture</span>
+          Credit
+        </h3>
+
+        <hr class="graph-sep"/>
+
+        <p class="graph-description">Brief text describing Brazil emission drivers in forestry sector.</p>
+      </div>
+
+      <div class="graph-canvas" id="brazil_ag_3_credit_subsidies_copy_test_matallo">
+        <ul class="graph-data-legend"></ul>
+      </div>
+    </div>
+  </div>
+
+  {% include years.html %}
+</div>
+
+<div class="content-footer">
+  <a href="javascript:void(0)" class="scroll-controls scroll-top"><i><span>↑</span></i></a>
+</div>

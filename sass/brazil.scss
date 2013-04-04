@@ -10,9 +10,14 @@
   stroke:red;
   stroke-linecap:round;
   fill: none;
+  pointer-events: none;
 }
 
 .linedot{
   stroke-width:2;
   stroke:white;
+}
+
+.overlay-line {
+  pointer-events: none;
 }

@@ -99,7 +99,7 @@ $(document).ready(function() {
     self.qtip({
       overwrite: false,
       content: {
-        text: $('.graph_dropdown')
+        text: $(this).closest(".graph-legend").find('.graph_dropdown')
       },
       position: {
         my: 'top left',

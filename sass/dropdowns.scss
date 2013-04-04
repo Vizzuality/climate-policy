@@ -16,6 +16,7 @@
 }
 
 .graph_tooltip_dropdown {
+  z-index: 300 !important;
   border: none;
   padding: 10px 0;
   width: 350px;
@@ -23,4 +24,6 @@
   @include box-shadow(0 0 3px rgba(#000, .3));
 
   li + li { margin-top: 10px; }
+
+  a { display: block; }
 }
