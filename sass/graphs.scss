@@ -32,6 +32,17 @@
   }
 }
 
+.graph-series-label{
+  font: 13px/1.1 "open-sans", sans-serif;
+  fill: #aaaaaa;
+}
+
+.graph-groups-label{
+  font: 15px/1.1 "open-sans", sans-serif;
+  fill: #aaaaaa;
+}
+
+
 .graph-link:after {
   position: relative;
   top: -4px;
