@@ -4,8 +4,18 @@ var h = 380;
 var w = 1038;
 var subject = [];
 var svg = [];
+var overlayLine;
 
 var LINE_DOT_R = 4;
+
+
+function mousemove() {
+  overlayLine
+    .attr("cx", d3.mouse(this)[0])
+    .attr("transform", "translate(" + d3.mouse(this)[0] + ",0)")
+    .attr("cy", 0);
+}
+
 
 $(document).ready(function() {
   var _domainq = 'http://cpi.cartodb.com/api/v2/sql?q=SELECT%20min(min)%20as%20min,%20max(max)%20as%20max%20FROM%20(';
@@ -17,6 +27,20 @@ $(document).ready(function() {
     .style("position", "absolute")
     .style("z-index", "10")
     .style("visibility", "hidden");
+
+  //Creates an overlay
+  var overlay = d3.select(".graphs")
+    .append("svg")
+    .attr("class", "overlay")
+    .attr("width", w)
+    .attr("height", $(".graphs").height()-$(".slider").height())
+    .style("top", $(".graphs").offset().top)
+    .on("mousemove", mousemove);
+
+  overlayLine = overlay.append("rect")
+    .attr("class", "overlay-line")
+    .attr("width", 2)
+    .attr("height", $('.graphs').height()-$(".slider").height());
 
   //Creates the query needed for calculating the default domain for the charts
   for (var i = 0; i < datasets.sectors[0].subjects.length; i++) {
@@ -102,7 +126,7 @@ $(document).ready(function() {
           .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
 
         $("#"+subject[index].table).parent().find(".graph-data-legend ul").append('<li><div class="legend-item" style="background-color:'+strokeColor+'"></div><span>'+y_col_name+'</span></li>')
-          .attr("r", LINE_DOT_R)
+          .attr("r", LINE_DOT_R);
       }
     });
   }
