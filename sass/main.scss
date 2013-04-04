@@ -336,6 +336,9 @@
   span { display: none; }
 }
 
+.scroll-prev,
+.scroll-next { margin-top: 60px; }
+
 .scroll-prev {
   float: left;
   margin-left: -150px;
