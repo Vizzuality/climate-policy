@@ -53,10 +53,10 @@ $(document).ready(function() {
 
   d3.json(_domainq+')%20as%20aux%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79', function(data) {
     var std_domain = [new Date(data.rows[0].min),new Date(data.rows[0].max)];
-    drawChart(0, std_domain);
-    drawChart(1, std_domain);
-    drawChart(2, std_domain);
-    drawChart(3, std_domain);
+
+    for (var i = 0; i < datasets.sectors[0].subjects.length; i++) {
+      drawChart(i, std_domain);
+    }
   })
 
   //Draws a lineChart
@@ -65,7 +65,7 @@ $(document).ready(function() {
   function drawChart(index,domain) {
 
     d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+subject[index].table+"%20order%20by%20"+subject[index].x_axis+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
-      
+
       var _data = data;
       if(domain === undefined){
         _data['min_domain'] = d3.min(_data.rows, function(data){return data.date_processed;})
@@ -81,6 +81,7 @@ $(document).ready(function() {
         .domain(_domain);
 
       var previous_stacked_column = null;
+      var min_val = 0;
 
       for (var i = 0; i < subject[index].series.length; i++) {
         // append one group per series
@@ -94,8 +95,12 @@ $(document).ready(function() {
           .range([h-margin, top_margin])
           .domain(subject[index].series[i].y_extent);
 
-        // remove null values
+        // remove null values and find min_val if negative value
         var data_col = _data.rows.filter(function(d) {
+          if(d[y_col] < min_val) {
+            min_val = d[y_col];
+          }
+
           return (d[y_col] != null) && (d[y_col] != 0)
         });
 
@@ -214,6 +219,15 @@ $(document).ready(function() {
       svg[index].selectAll("g.dataCircles").each(function(d) {
         svg[index].node().appendChild(this);
       });
+
+      if(min_val < 0) {
+        var x_axis = d3.svg.axis().scale(x_scale);
+
+        svg[index].append("svg:g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + (h - margin) + ")") // not working
+            .call(d3.svg.axis().scale(x_scale).orient("bottom"));
+      }
 
     });
   }
