@@ -54,18 +54,13 @@ $(document).ready(function() {
   d3.json(_domainq+')%20as%20aux%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79', function(data) {
     var std_domain = [new Date(data.rows[0].min),new Date(data.rows[0].max)];
 
-    drawChart(0, std_domain);
-    drawChart(1, std_domain);
-    drawChart(2, std_domain);
-    drawChart(3, std_domain);
-    drawBarChart(4, std_domain);
-
-  /*
     for (var i = 0; i < datasets.sectors[0].subjects.length; i++) {
       drawChart(i, std_domain);
-    }
-    */
 
+      if (i >= 3) {
+        drawBarChart(4, std_domain);
+      }
+    }
   })
 
 
