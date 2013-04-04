@@ -44,6 +44,26 @@ var datasets = {
             {"name": "Sustainable Use", "column": "sustainable_use", "class": "area", "y_extent": [0,750], "strokeColor": "rgba(79,110,191,1)", "fillColor": "rgba(79,110,191,0.2)"},
             
           ]
+        },
+        {
+          "name": "Grid impact",
+          "table": "grid_impact_1_copy_diego_2",
+          "description": "Test Diego",
+          "x_groups": [
+            {"label": "1980-1990","column": "_1980_1990",},
+            {"label": "1990-2000","column": "_1990_2000",},
+            {"label": "2000-2010","column": "_2000_2010",}
+          ],
+          "y_groups": [
+            {"label": "Transmission",},
+            {"label": "Generation output",},
+            {"label": "Power plant efficiency"}
+          ],
+          "series": [
+            { "name": "Transmission", "strokeColor": "#546DBC" },
+            { "name": "Nuclear", "strokeColor": "#546DBC" },
+            { "name": "Non-hydro", "strokeColor": "#546DBC" },
+          ]
         }
       ]
     }
