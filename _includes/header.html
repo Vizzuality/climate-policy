@@ -9,7 +9,7 @@
           <ul class="navbar_dropdown">
             <li><a href="#">China</a></li>
             <li><a href="#">US</a></li>
-            <li><a href="#">Brazil</a></li>
+            <li><a href="/regions/brazil/emissions.html">Brazil</a></li>
             <li><a href="#">India</a></li>
             <li><a href="#">EU</a></li>
           </ul>
@@ -42,14 +42,14 @@
   <div class="navbar clearfix">
     <nav class="inner">
       <ul>
-        <li class="menu-item"><a href="#" class="first">By subject</a></li>
-        <li class="menu-item"><a href="#">Emissions</a></li>
-        <li class="menu-item"><a href="#">Emission drivers</a></li>
-        <li class="menu-item"><a href="#">Policy</a></li>
+        <li class="menu-item"><a href="/regions/{{ page.region }}/emissions.html" class="first">By subject</a></li>
+        <li class="menu-item"><a href="/regions/{{ page.region }}/emissions.html" class="{% if page.sector == 'emissions' %} selected{% endif %}">Emissions</a></li>
+        <li class="menu-item"><a href="/regions/{{ page.region }}/emission_drivers.html" class="{% if page.sector == 'emission_drivers' %} selected{% endif %}">Emission drivers</a></li>
+        <li class="menu-item"><a href="/regions/{{ page.region }}/policy.html" class="{% if page.sector == 'policy' %} selected{% endif %}">Policy</a></li>
       </ul>
 
       <ul class="last">
-        <li class="menu-item"><a href="#" class="first">By sector</a></li>
+        <li class="menu-item"><a href="/regions/{{ page.region }}/forestry.html" class="first">By sector</a></li>
         {% for item in page.sectors %}
           <li class="menu-item"><a href="/regions/{{ page.region }}/{{ item }}.html" class="{% if page.sector == item %}selected{% endif %}">{{ item }}</a></li>
         {% endfor %}

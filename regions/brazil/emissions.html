@@ -1,0 +1,68 @@
+---
+layout: region
+description: Textual description of Brazil. The highest deforestation rate in the world, and as of 2005 still has the largest area of forest removed annually and the highest GDP growth rate.
+region: brazil
+type: subject
+sector: emissions
+sectorname: Emissions
+sectordescription: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+nextsector: policy
+sectors:
+  - forestry
+  - agriculture
+---
+
+<div class="graphs">
+  {% include years.html %}
+
+  <div class="graphs-inner">
+    <div class="graph">
+      <div class="graph-legend">
+        <h3 class="graph-title">
+          <span>Forestry</span>
+          Deforestation rate
+        </h3>
+
+        <hr class="graph-sep"/>
+
+        <p class="graph-description">Brief text describing Brazil emission drivers in forestry sector.</p>
+      </div>
+
+      <div class="graph-canvas" id="deforestation_rate_copy_test_matallo">
+        <ul class="graph-data-legend"></ul>
+      </div>
+    </div>
+
+    <div class="graph">
+      <div class="graph-legend">
+        <h3 class="graph-title">
+          <span>Emissions</span>
+          <a href="#" class="graph-link">Emissions</a>
+        </h3>
+
+        <ul class="graph_dropdown">
+          <li><h3 class="graph-title"><a href="#" data-rel="land_use_emissions_copy_test_matallo" class="graph_selector_link">Emissions</a></h3></li>
+          <li><h3 class="graph-title"><a href="#" data-rel="land_use_emissions_copy_test_matallo_2" class="graph_selector_link">Land Use</a></h3></li>
+        </ul>
+
+        <hr class="graph-sep"/>
+
+        <p class="graph-description">Brief text describing Brazil emission drivers in forestry sector.</p>
+      </div>
+
+      <div class="graph-canvas" id="land_use_emissions_copy_test_matallo">
+        <ul class="graph-data-legend"></ul>
+      </div>
+
+      <div class="graph-canvas hidden" id="land_use_emissions_copy_test_matallo_2">
+        <ul class="graph-data-legend"></ul>
+      </div>
+    </div>
+  </div>
+
+  {% include years.html %}
+</div>
+
+<div class="content-footer">
+  <a href="javascript:void(0)" class="scroll-controls scroll-top"><i><span>↑</span></i></a>
+</div>
