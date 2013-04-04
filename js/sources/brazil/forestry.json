@@ -50,9 +50,7 @@ var datasets = {
           "table": "grid_impact_1_copy_diego_2",
           "description": "Test Diego",
           "x_groups": [
-            {"label": "1980-1990","column": "_1980_1990",},
-            {"label": "1990-2000","column": "_1990_2000",},
-            {"label": "2000-2010","column": "_2000_2010",}
+            {"label": "1980-1990","column": "_1980_1990",}
           ],
           "y_groups": [
             {"label": "Transmission",},

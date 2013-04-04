@@ -54,19 +54,22 @@ $(document).ready(function() {
   d3.json(_domainq+')%20as%20aux%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79', function(data) {
     var std_domain = [new Date(data.rows[0].min),new Date(data.rows[0].max)];
 
-    for (var i = 0; i < datasets.sectors[0].subjects.length; i++) {
-      drawChart(i, std_domain);
+    drawChart(0, std_domain);
+    drawChart(1, std_domain);
+    drawChart(2, std_domain);
+    drawChart(3, std_domain);
+    drawBarChart(4, std_domain);
 
-      if (i >= 3) {
-        drawBarChart(4, std_domain);
-      }
-    }
   })
 
 
   function drawBarChart(index,domain) {
 
+    console.log("Dibujando bargraph "+subject[index].table);
+
     d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+subject[index].table+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
+
+      console.log(data);
 
       // Graph settings, domain & ranges calculation, scales, etc.
       var negat = [], posit = [];
@@ -190,6 +193,8 @@ $(document).ready(function() {
   //index:index of the table on the json, 
   //std_domain: specific domain - keep undefined for showing the chart's own domain
   function drawChart(index,domain) {
+
+    console.log("Dibujando graph "+subject[index].table);
 
     d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+subject[index].table+"%20order%20by%20"+subject[index].x_axis+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
 
