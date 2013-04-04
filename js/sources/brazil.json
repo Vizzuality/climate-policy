@@ -40,8 +40,9 @@ var datasets = {
           "description": "",
           "x_axis": "year",
           "series": [
-            {"name": "Integral Protection", "column": "integral_protection", "class": "area", "y_extent": [0,750], "strokeColor": "#546DBC"},
-            {"name": "Sustainable Use", "column": "sustainable_use", "class": "area", "y_extent": [0,750], "strokeColor": "#F0542C"}
+          {"name": "Integral Protection", "column": "integral_protection", "class": "area", "y_extent": [0,750], "strokeColor": "#546DBC"},
+            {"name": "Sustainable Use", "column": "sustainable_use", "class": "area", "y_extent": [0,750], "strokeColor": "#F0542C"},
+            
           ]
         }
       ]

@@ -58,16 +58,16 @@ $(document).ready(function() {
 
   d3.json(_domainq+')%20as%20aux%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79', function(data) {
     var std_domain = [new Date(data.rows[0].min),new Date(data.rows[0].max)];
-    drawLineChart(0, std_domain);
-    drawLineChart(1, std_domain);
-    drawLineChart(2, std_domain);
-    drawLineChart(3, std_domain);
+    drawChart(0, std_domain);
+    drawChart(1, std_domain);
+    drawChart(2, std_domain);
+    drawChart(3, std_domain);
   })
 
   //Draws a lineChart
   //index:index of the table on the json, 
   //std_domain: specific domain - keep undefined for showing the chart's own domain
-  function drawLineChart(index,domain) {
+  function drawChart(index,domain) {
 
     d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+subject[index].table+"%20order%20by%20"+subject[index].x_axis+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
       
@@ -85,6 +85,8 @@ $(document).ready(function() {
         .range([margin,w-margin])
         .domain(_domain);
 
+      var previous_stacked_column = null;
+
       for (var i = 0; i < subject[index].series.length; i++) {
         // append one group per series
         var g = svg[index].append("svg:g");
@@ -101,44 +103,114 @@ $(document).ready(function() {
           return (d[y_col] != null) && (d[y_col] != 0)
         });
 
-        var line = d3.svg.line()
-          .x(function(d){return x_scale(new Date(d[x_col]))})
-          .y(function(d){return y_scale(d[y_col])});
+        if (subject[index].series[i].class == "line") {
 
-        g.append("svg:path")
-          .attr("d", line(data_col))
-          .attr("class", 'lineStyle')
-          .attr("style",'stroke:'+strokeColor);
+          var line = d3.svg.line()
+            .x(function(d){return x_scale(new Date(d[x_col]))})
+            .y(function(d){return y_scale(d[y_col])});
 
-        g.selectAll("circle")
-          .data(data_col)
-          .enter()
-          .append("circle")
-          .attr("class", 'linedot linedot'+i)
-          //This shows only the first point during each year
-          .attr("style",function(d){ var _fill = (new Date(d.date_processed).getMonth() + 1 == 1) ? 'fill:'+strokeColor : 'display: none'; return _fill;})
-          .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
-          .attr("cy", function(d){return y_scale(d[y_col])})
-          .attr("r", LINE_DOT_R)
-          .attr("name", function(d){return d[y_col]}) //Uses this for tooltip
-          .on("mouseover", function(d) {
-            d3.selectAll(".overlay-line").style("visibility", "visible");
+          g.append("svg:path")
+            .attr("d", line(data_col))
+            .attr("class", 'lineStyle')
+            .attr("style",'stroke:'+strokeColor);
 
-            tooltip.style("visibility", "visible")
-              .text($(this).attr('name'))
-              .style("top", $(this).offset().top+30+"px")
-              .style("left", $(this).offset().left-25+"px");
-          })
-          .on("mousemove", mousemove)
-          .on("mouseout", function(){
-            d3.selectAll(".overlay-line").style("visibility", "hidden");
+          g.selectAll("circle")
+            .data(data_col)
+            .enter()
+            .append("circle")
+            .attr("class", 'linedot linedot'+i)
+            //This shows only the first point during each year
+            .attr("style",function(d){ var _fill = (new Date(d.date_processed).getMonth() + 1 == 1) ? 'fill:'+strokeColor : 'display: none'; return _fill;})
+            .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
+            .attr("cy", function(d){return y_scale(d[y_col])})
+            .attr("r", LINE_DOT_R)
+            .attr("name", function(d){return d[y_col]}) //Uses this for tooltip
+            .on("mouseover", function(d) {
+              d3.selectAll(".overlay-line").style("visibility", "visible");
 
-            tooltip.style("visibility", "hidden");
-          });
+              tooltip.style("visibility", "visible")
+                .text($(this).attr('name'))
+                .style("top", $(this).offset().top+30+"px")
+                .style("left", $(this).offset().left-25+"px");
+            })
+            .on("mousemove", mousemove)
+            .on("mouseout", function(){
+              d3.selectAll(".overlay-line").style("visibility", "hidden");
+
+              tooltip.style("visibility", "hidden");
+            });
+
+        } else if (subject[index].series[i].class == "area") {
+
+          var area = d3.svg.area()            
+            .x(function(d) {return x_scale(new Date(d[x_col]))})
+            .y0(function(d) {                             
+              if (previous_stacked_column == null) return y_scale(0);
+              return y_scale(d[previous_stacked_column]);
+            })
+            .y1(function(d) {              
+              if (previous_stacked_column == null) return y_scale(d[y_col]);
+              return y_scale(d[y_col]+d[previous_stacked_column])
+            });
+      
+          g.append("svg:path")
+            .attr("d", area(data_col))                    
+            .attr("style",'stroke:'+strokeColor)
+            .attr("style",'fill:'+strokeColor)
+            .on("mouseover", function(d) {
+              d3.selectAll(".overlay-line").style("visibility", "visible");
+            })
+            .on("mousemove", mousemove)
+            .on("mouseout", function(){
+              d3.selectAll(".overlay-line").style("visibility", "hidden");
+            });
+
+          var g_circles = svg[index].append("svg:g");
+          g_circles.attr("class","dataCircles");
+
+          g_circles.selectAll("circle")
+            .data(data_col)
+            .enter()
+            .append("circle")
+            .attr("class", 'linedot linedot'+i)
+            .attr("style",function(d){ var _fill = (new Date(d.date_processed).getMonth() + 1 == 1) ? 'fill:'+strokeColor : 'display: none'; return _fill;})
+            .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
+            .attr("cy", function(d){
+              var value = y_scale(d[y_col]);
+              if (i>0) {
+                value = y_scale(d[y_col]+d[previous_stacked_column])
+              };
+              return value;
+            })
+            .attr("r", LINE_DOT_R)
+            .attr("name", function(d){return d[y_col]}) //Uses this for tooltip
+            .on("mouseover", function(d) {
+              d3.selectAll(".overlay-line").style("visibility", "visible");
+
+              tooltip.style("visibility", "visible")
+                .text($(this).attr('name'))
+                .style("top", $(this).offset().top+30+"px")
+                .style("left", $(this).offset().left-25+"px");
+            })
+            .on("mousemove", mousemove)
+            .on("mouseout", function(){
+              d3.selectAll(".overlay-line").style("visibility", "hidden");
+
+              tooltip.style("visibility", "hidden");
+            });
+
+          previous_stacked_column = y_col;
+        }
 
         $("#"+subject[index].table).find(".graph-data-legend").append('<li><div class="legend-item" style="background-color:'+strokeColor+'"></div><span>'+y_col_name+'</span></li>')
           .attr("r", LINE_DOT_R);
       }
+
+      // Bringing all circles over the areas
+      svg[index].selectAll("g.dataCircles").each(function(d) {
+        svg[index].node().appendChild(this);
+      });
+
     });
   }
 });
