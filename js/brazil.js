@@ -8,11 +8,18 @@ var svg = [];
 var LINE_DOT_R = 4;
 
 $(document).ready(function() {
-
   var _domainq = 'http://cpi.cartodb.com/api/v2/sql?q=SELECT%20min(min)%20as%20min,%20max(max)%20as%20max%20FROM%20(';
 
+  //Creates generic tooltip
+  var tooltip = d3.select("body")
+    .append("div")
+    .attr("class", "tooltip")
+    .style("position", "absolute")
+    .style("z-index", "10")
+    .style("visibility", "hidden");
+
   //Creates the query needed for calculating the default domain for the charts
-  for (var i = 0; i < datasets.sectors[0].subjects.length; i++){
+  for (var i = 0; i < datasets.sectors[0].subjects.length; i++) {
     if(i!=0){
       _domainq = _domainq + '%20UNION%20'
     }
@@ -21,7 +28,7 @@ $(document).ready(function() {
     _domainq = _domainq + 'SELECT%20min(date_processed)%20as%20min,%20max(date_processed)%20as%20max%20FROM%20'+subject[i].table
   }
 
-  d3.json(_domainq+')%20as%20aux%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79', function(data){
+  d3.json(_domainq+')%20as%20aux%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79', function(data) {
     var std_domain = [new Date(data.rows[0].min),new Date(data.rows[0].max)];
     drawLineChart(0, std_domain);
     drawLineChart(1, std_domain);
@@ -30,7 +37,7 @@ $(document).ready(function() {
   })
 
   //Draws a lineChart (index:index of the table on the json, std_domain: specific domain - keep undefined for showing the chart's own domain)
-  function drawLineChart(index,domain){
+  function drawLineChart(index,domain) {
 
     d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+subject[index].table+"%20order%20by%20"+subject[index].x_axis+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
       
@@ -68,6 +75,12 @@ $(document).ready(function() {
           .x(function(d){return x_scale(new Date(d[x_col]))})
           .y(function(d){return y_scale(d[y_col])});
 
+          // return tooltip.style("visibility", "visible")
+          //   .style("width", "500px")
+          //   .style("background", "red")
+          //   .style("top", $(this).offset().top+30+"px")
+          //   .style("left", $(this).offset().left-100+"px");
+
         g.append("svg:path")
           .attr("d", line(data_col))
           .attr("class", 'lineStyle')
@@ -77,14 +90,22 @@ $(document).ready(function() {
           .data(data_col)
           .enter()
           .append("circle")
-          .attr("class", 'linedot')
+          .attr("class", 'linedot linedot'+i)
           .attr("style",'fill:'+strokeColor)
           .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
           .attr("cy", function(d){return y_scale(d[y_col])})
-          .attr("r", LINE_DOT_R);
+          .attr("r", LINE_DOT_R)
+          .attr("name", function(d){return d[y_col]}) //Uses this for tooltip
+          .on("mouseover", function(d) {
+            tooltip.style("visibility", "visible")
+              .text($(this).attr('name'))
+              .style("top", $(this).offset().top+30+"px")
+              .style("left", $(this).offset().left-25+"px");
+          })
+          .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
 
-          console.log("#"+subject[index].table)
         $("#"+subject[index].table).parent().find(".graph-data-legend ul").append('<li><div class="legend-item" style="background-color:'+strokeColor+'"></div><span>'+y_col_name+'</span></li>')
+          .attr("r", LINE_DOT_R)
       }
     });
   }
