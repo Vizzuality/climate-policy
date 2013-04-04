@@ -1,16 +1,16 @@
 var margin = 30;
 var top_margin = 150;
-var h = 380;
+var h = 388;
 var w = 1038;
 var subject = [];
 var svg = [];
-var overlayLine;
+var overlayLine = [];
 
 var LINE_DOT_R = 4;
 
 
-function mousemove() {
-  overlayLine
+function mousemove(i) {
+  d3.selectAll(".overlay-line")
     .attr("cx", d3.mouse(this)[0])
     .attr("transform", "translate(" + d3.mouse(this)[0] + ",0)")
     .attr("cy", 0);
@@ -23,24 +23,7 @@ $(document).ready(function() {
   //Creates generic tooltip
   var tooltip = d3.select("body")
     .append("div")
-    .attr("class", "tooltip")
-    .style("position", "absolute")
-    .style("z-index", "10")
-    .style("visibility", "hidden");
-
-  //Creates an overlay
-  var overlay = d3.select(".graphs")
-    .append("svg")
-    .attr("class", "overlay")
-    .attr("width", w)
-    .attr("height", $(".graphs").height()-$(".slider").height())
-    .style("top", $(".graphs").offset().top)
-    .on("mousemove", mousemove);
-
-  overlayLine = overlay.append("rect")
-    .attr("class", "overlay-line")
-    .attr("width", 2)
-    .attr("height", $('.graphs').height()-$(".slider").height());
+    .attr("class", "tooltip");
 
   //Creates the query needed for calculating the default domain for the charts
   for (var i = 0; i < datasets.sectors[0].subjects.length; i++) {
@@ -48,8 +31,29 @@ $(document).ready(function() {
       _domainq = _domainq + '%20UNION%20'
     }
     subject[i] = datasets.sectors[0].subjects[i];
-    svg[i] = d3.select("#"+subject[i].table).append("svg").attr("width", w).attr("height", h);
+    svg[i] = d3.select("#"+subject[i].table)
+      .append("svg")
+      .attr("width", w)
+      .attr("height", h);
+
     _domainq = _domainq + 'SELECT%20min(date_processed)%20as%20min,%20max(date_processed)%20as%20max%20FROM%20'+subject[i].table
+
+    //Creates an overlay
+    var overlay = svg[i]
+      .append("rect")
+      .attr("class", "overlay")
+      .attr("width", w)
+      .attr("height", h)
+      .on("mouseover", function(d){d3.selectAll(".overlay-line").style("visibility", "visible");})
+      .on("mousemove", mousemove)
+      .on("mouseout", function(){d3.selectAll(".overlay-line").style("visibility", "hidden");});
+
+      overlayLine[i] = svg[i]
+        .append("rect")
+        .attr("class", "overlay-line")
+        .attr("width", 2)
+        .attr("height", $('.graphs').height()-$(".slider").height())
+        .style("top", $(".graphs").offset().top);
   }
 
   d3.json(_domainq+')%20as%20aux%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79', function(data) {
@@ -118,14 +122,21 @@ $(document).ready(function() {
           .attr("r", LINE_DOT_R)
           .attr("name", function(d){return d[y_col]}) //Uses this for tooltip
           .on("mouseover", function(d) {
+            d3.selectAll(".overlay-line").style("visibility", "visible");
+
             tooltip.style("visibility", "visible")
               .text($(this).attr('name'))
               .style("top", $(this).offset().top+30+"px")
               .style("left", $(this).offset().left-25+"px");
           })
-          .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
+          .on("mousemove", mousemove)
+          .on("mouseout", function(){
+            d3.selectAll(".overlay-line").style("visibility", "hidden");
 
-        $("#"+subject[index].table).parent().find(".graph-data-legend ul").append('<li><div class="legend-item" style="background-color:'+strokeColor+'"></div><span>'+y_col_name+'</span></li>')
+            tooltip.style("visibility", "hidden");
+          });
+
+        $("#"+subject[index].table).find(".graph-data-legend").append('<li><div class="legend-item" style="background-color:'+strokeColor+'"></div><span>'+y_col_name+'</span></li>')
           .attr("r", LINE_DOT_R);
       }
     });

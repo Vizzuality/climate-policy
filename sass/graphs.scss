@@ -1,5 +1,87 @@
+.graph-legend {
+  position: absolute;
+  z-index: 300;
+  margin: 40px;
+}
+
+.graph-canvas {
+  position: relative;
+  z-index: 200;
+  height: 388px;
+  width: 1038px;
+
+  &.hidden { display: none; }
+
+  svg { background: transparent; fill: transparent; }
+}
+
+.graph-title {
+  font: 27px/1.1 "open-sans", sans-serif;
+  color: #666;
+
+  span {
+    display: block;
+    font: bold 17px "open-sans", sans-serif;
+    text-transform: uppercase;
+    color: #222;
+  }
+
+  a {
+    text-decoration: none;
+    color: #F0522C;
+  }
+}
+
+.graph-link:after {
+  position: relative;
+  top: -4px;
+  padding-left: 10px;
+  content: "▼";
+  font-size: 7px;
+}
+
+.graph-sep {
+  float: left;
+  clear: both;
+  border: 0;
+  height: 1px;
+  width: 160px;
+  background: #ddd;
+}
+
+.graph-description {
+  clear: left;
+  font: 300 19px "cronos-pro";
+  color: #999;
+  width: 250px;
+}
+
+.graph_dropdown .graph-title { margin-left: 0; }
+
+.graph-data-legend {
+  position: absolute;
+  right: 30px;
+  top: 10px;
+
+  li {
+    display: inline;
+    font: 14px "cronos-pro", sans-serif;
+    color: #999;
+    margin: 0 0 0 12px;
+  }
+}
+
+.legend-item{
+  width: 13px;
+  height: 2px;
+  display: inline-block;
+  margin: 0 7px 3px 0;
+}
+
 .tooltip {
-  z-index: 10;
+  position: absolute;
+  z-index: 300;
+  visibility: hidden;
   border: 2px solid #000;
   padding: 5px;
   width: 46px;
@@ -10,7 +92,7 @@
 
   &:before,
   &:after {
-    z-index: 20;
+    z-index: 300;
     position: absolute;
     top: -6px;
     left: 50%;
@@ -31,16 +113,10 @@
 }
 
 .overlay {
-  position: absolute;
   fill: transparent;
-
-  &:hover .overlay-line {
-    display: block;
-  }
 }
 
 .overlay-line {
-  display: none;
-
+  visibility: hidden;
   fill: #000;
 }
