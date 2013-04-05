@@ -417,12 +417,14 @@ $(document).ready(function() {
       if(min_val < 0) {
         var x_axis = d3.svg.axis().scale(x_scale);
 
-        svg[index].append("svg:g")
-            .attr("class", "x axis")
-            .attr("transform", "translate(0," + (h - margin) + ")") // not working
-            .call(d3.svg.axis().scale(x_scale).orient("bottom"));
+        svg[index].append("line")
+          .attr("class", "zero-mark")
+          .attr("x1", 0)
+          .attr("x2", w)
+          .attr("y1", y_scale(0))
+          .attr("y2", y_scale(0))
+          .style("stroke-dasharray", "8, 4");
       }
-
     });
   }
 });

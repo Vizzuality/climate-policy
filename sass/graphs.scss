@@ -182,26 +182,14 @@
   }
 }
 
-.overlay {
-  fill: transparent;
-}
+.overlay { fill: transparent; }
 
 .overlay-line {
   visibility: hidden;
   fill: #000;
 }
 
-.axis {
-  font-size: 8pt;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.axis path {
-  fill: none;
+.zero-mark {
   stroke: rgba(#000, .1);
   shape-rendering: crispEdges;
-}
-
-.tick {
-  display: none;
 }
