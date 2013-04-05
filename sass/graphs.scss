@@ -1,8 +1,9 @@
 @import "compass/css3";
 
-.horizontal_marks {
-  background-image: image-url('graph_back_gradient.png'), image-url('graph_vertical_marks.png');
-  background-repeat: repeat-y;
+.graph {
+  background: image-url('graph_back_gradient.png') repeat-x bottom;
+
+  + .graph { border-top: 1px solid #ddd; }
 }
 
 .graph-selector {
@@ -108,7 +109,6 @@
   visibility: hidden;
   border: 2px solid #000;
   padding: 5px;
-  width: 46px;
   @include border-radius(5px);
   font: bold 12px "open-sans", sans-serif;
   text-align: center;
@@ -180,6 +180,8 @@
       margin-left: -6px;
     }
   }
+
+  span { font-weight: 400; }
 }
 
 .overlay { fill: transparent; }

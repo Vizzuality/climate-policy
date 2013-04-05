@@ -26,7 +26,6 @@ var tooltip = d3.select("body")
 
 
 function moveOverlayLine() {
-
   var year_marker = d3.selectAll(".year_marker");
   if (year_marker[0].length == 0) {
     d3.selectAll("div.years").each(function(d){
@@ -345,10 +344,11 @@ $(document).ready(function() {
             .attr("r", LINE_DOT_R)
             .attr("name", function(d){return d[y_col]}) //Uses this for tooltip
             .on("mouseover", function(d) {
+              var date = new Date(d[x_col]).getFullYear();
+
               d3.selectAll(".overlay-line").style("visibility", "visible");
-              var date = new Date(d[x_col]);
               tooltip.style("visibility", "visible")
-                .text($(this).attr('name') + "·" + date)
+                .html($(this).attr('name') + "<br /><span>" + date + "</span>")
                 .style("top", $(this).offset().top+30+"px")
                 .style("left", $(this).offset().left-25+"px")
                 .attr("class","tooltip tooltip-top");
@@ -421,6 +421,7 @@ $(document).ready(function() {
               d3.selectAll(".overlay-line").style("visibility", "visible");
               tooltip.style("visibility", "visible")
                 .text($(this).attr('name'))
+                .style(function(){console.log("OLA")})
                 .style("top", $(this).offset().top+30+"px")
                 .style("left", $(this).offset().left-25+"px")
                 .attr("class","tooltip tooltip-top");

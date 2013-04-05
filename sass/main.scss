@@ -153,7 +153,7 @@
   bottom: -60px;
   margin: 0 auto;
   width: 1038px;
-  height: 70px;
+  height: 10px;
   background: image-url('scroll-shadow.png') repeat-x;
 }
 
@@ -234,16 +234,6 @@
     line-height: 23px;
   }
 }
-
-.year,
-.gap {
-  display: inline-block;
-}
-
-.year { width: 40px; }
-.gap { width: 257px; }
-
-.graph + .graph { border-top: 1px solid #ddd; }
 
 .content-footer {
   margin: 0 auto;
