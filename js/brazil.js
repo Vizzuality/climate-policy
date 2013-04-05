@@ -267,9 +267,6 @@ $(document).ready(function() {
                 tooltipClassname =  "tooltip tooltip-right";
                 x_tooltip = $(this).offset().left - 67;
               }
-
-              console.log(x_tooltip);
-
               tooltip.style("visibility", "visible")
                 .text($(this).attr('name'))
                 .attr("class",tooltipClassname)
@@ -301,13 +298,6 @@ $(document).ready(function() {
       }
 
       var x_col = subject[index].x_axis;
-      //var x_scale = d3.scale.linear()
-      /*
-      x_scale = d3.scale.linear()
-        .range([margin,w-margin])
-        .domain(_domain);
-        */
-
       var previous_stacked_column = null;
       var min_val = 0;
 
@@ -360,11 +350,8 @@ $(document).ready(function() {
               tooltip.style("visibility", "visible")
                 .text($(this).attr('name') + "·" + date)
                 .style("top", $(this).offset().top+30+"px")
-                .style("left", $(this).offset().left-25+"px");
-
-
-
-
+                .style("left", $(this).offset().left-25+"px")
+                .attr("class","tooltip tooltip-top");
             })
             .on("mousemove", moveOverlayLine)
             .on("mouseout", function(){
@@ -435,7 +422,8 @@ $(document).ready(function() {
               tooltip.style("visibility", "visible")
                 .text($(this).attr('name'))
                 .style("top", $(this).offset().top+30+"px")
-                .style("left", $(this).offset().left-25+"px");
+                .style("left", $(this).offset().left-25+"px")
+                .attr("class","tooltip tooltip-top");
             })
             .on("mousemove", moveOverlayLine)
             .on("mouseout", function(){
