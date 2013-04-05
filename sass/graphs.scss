@@ -1,5 +1,10 @@
 @import "compass/css3";
 
+.horizontal_marks {
+  background-image: image-url('graph_back_gradient.png'), image-url('graph_vertical_marks.png');
+  background-repeat: repeat-y;
+}
+
 .graph-selector {
   position: absolute;
   z-index: 300;
