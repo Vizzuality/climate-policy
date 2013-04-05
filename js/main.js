@@ -81,7 +81,7 @@ $(document).ready(function() {
       position: {
         my: 'top left',
         at: 'top left',
-        adjust: { y: -8, x: -20 }
+        adjust: { y: -6, x: -20 }
       },
       show: {
         event: event.type,
@@ -107,8 +107,10 @@ $(document).ready(function() {
     var graph = $('#'+$(this).attr('data-rel'));
 
     e.preventDefault();
+    $('.graph_tooltip_dropdown').hide();
 
     if(graph.not(':visible')) {
+      graph.siblings('.graph-selector').find('.graph-link').text(this.text);
       graph.siblings('.graph-canvas').hide();
       graph.show();
     }

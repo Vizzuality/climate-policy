@@ -19,7 +19,7 @@
   z-index: 300 !important;
   border: none;
   padding: 10px 0;
-  width: 350px;
+  max-width: 390px;
   background: #fff;
   @include box-shadow(0 0 3px rgba(#000, .3));
 
