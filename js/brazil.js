@@ -26,23 +26,26 @@ var tooltip = d3.select("body")
 
 
 function moveOverlayLine() {
+
+  var year_marker = d3.selectAll(".year_marker");
+  if (year_marker[0].length == 0) {
+    d3.selectAll("div.years").each(function(d){
+      year_marker = $(this).append("<div class='year_marker'>1990</div>");
+    });
+  };
+
+  var mouse_x = d3.mouse(this)[0];
+  year_marker.each(function() {
+    $(this).css('left',mouse_x-35);
+    var time = new Date(x_scale.invert(mouse_x));
+    d3.selectAll(".year_marker")
+      .text((time.getMonth()+1)+"/"+time.getFullYear());
+  });
+
   d3.selectAll(".overlay-line")
     .attr("cx", d3.mouse(this)[0])
     .attr("transform", "translate(" + d3.mouse(this)[0] + ",0)")
     .attr("cy", 0);
-
-  var mouse_x = d3.mouse(this)[0];
-  if (x_scale) {
-    var time = new Date(x_scale.invert(mouse_x));
-    //console.log(time);
-  }
-
-  /*  
-  var x_scale = d3.scale.linear()
-    .range([margin,w-margin])
-    .domain(_domain);
-    */
-
 }
 
 
@@ -84,31 +87,23 @@ $(document).ready(function() {
   d3.json(_domainq+')%20as%20aux%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79', function(data) {
     var std_domain = [new Date(data.rows[0].min),new Date(data.rows[0].max)];
 
-    // Calculates the x_scale
+    // Calculates the global x_scale
     x_scale = d3.scale.linear()
       .range([margin,w-margin])
       .domain(std_domain);
 
     // Calculates the years for the time axis
-
     var year_step = 2;
-
     d3.selectAll("div.years").each(function(d){
-
       var year_init = parseInt(std_domain[0].getFullYear());
-      var year_end = parseInt(std_domain[1].getFullYear());
-      
+      var year_end = parseInt(std_domain[1].getFullYear());      
       for (var y = year_init; y<=year_end; y += 3) {
         var newYear = new Date();
         newYear.setDate(1);
         newYear.setMonth(0);
         newYear.setFullYear(y);
-
-        // Add each year as a span
         var year_x_position = Math.round(x_scale(newYear)) - 15;
-        console.log(year_x_position);
         $(this).append("<span class='year_label' style='left:"+year_x_position+"px'>"+y+"</span>");        
-
       }
     });
 
@@ -268,6 +263,17 @@ $(document).ready(function() {
                 .text($(this).attr('name'))
                 .style("top", $(this).offset().top+30+"px")
                 .style("left", $(this).offset().left-25+"px");
+  /*var year_marker = d3.selectAll(".year_marker");
+  //console.log(year_marker);
+  if (year_marker[0].length == 0) {
+    d3.selectAll("div.years").each(function(d){
+      //console.log("Añadiendo");
+      year_marker = $(this).append("<div class='year_marker'>1990</div>");
+    });
+  };*/
+
+
+
             })
             .on("mousemove", moveOverlayLine)
             .on("mouseout", function(){
@@ -354,6 +360,10 @@ $(document).ready(function() {
                 .text($(this).attr('name') + "·" + date)
                 .style("top", $(this).offset().top+30+"px")
                 .style("left", $(this).offset().left-25+"px");
+
+
+
+
             })
             .on("mousemove", moveOverlayLine)
             .on("mouseout", function(){
