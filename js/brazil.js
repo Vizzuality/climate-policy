@@ -1,5 +1,5 @@
 var margin = 30;
-var top_margin = 150;
+var top_margin = 100;
 var h = 388;
 var w = 1038;
 var subject = [];
@@ -65,11 +65,7 @@ $(document).ready(function() {
 
   function drawBarChart(index,domain) {
 
-    console.log("Dibujando bargraph "+subject[index].table);
-
     d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+subject[index].table+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
-
-      console.log(data);
 
       // Graph settings, domain & ranges calculation, scales, etc.
       var negat = [], posit = [];
@@ -113,6 +109,9 @@ $(document).ready(function() {
       .enter()
       .append("text")
       .attr("class","graph-series-label")
+      .attr("id",function(d) {
+        return "series_label_"+d.cartodb_id;
+      })
       .text(function(d) {
         return d.variable;
       })
@@ -142,49 +141,59 @@ $(document).ready(function() {
       // Drawing each x-group
       for (var j = 0; j < subject[index].x_groups.length; j++) {
 
-        var group_name = subject[index].x_groups[j].column;
+        var group_name_ = subject[index].x_groups[j].column;
 
-        svg[index].selectAll("rect."+group_name)
-        .data(data.rows)
-        .enter()
-        .append("rect")
-        .attr("class",group_name)
-        .attr("x", function(d,i) {
-          if (d[group_name] > 0) {
-            return series_label_width + group_width*j + zero_pos;
-          } else {
-            return series_label_width + group_width*j + zero_pos - bar_width_scale(Math.abs(d[group_name]));
-          }
-        })
-        .attr("y", function(d,i) {
-          return series_label_top_margin + (i * series_step) - bar_height/2 - 7;
-        })
-        .attr("width", function(d,i) {
-          var bar_width = bar_width_scale(Math.abs(d[group_name]));
-          if (bar_width <= 2) bar_width = 2;
-          return bar_width;          
-        })
-        .attr("height", function(d,i) {
-          return bar_height;
-        })
-        .attr("style",function (d) {
-          return "fill: #546DBC";
-        })
-        .attr("name", function(d){
-          return Math.round(d[group_name]*1000)/1000;
-        })
-        .on("mouseover", function(d) {
-          d3.selectAll(".overlay-line").style("visibility", "visible");
-          tooltip.style("visibility", "visible")
-            .text($(this).attr('name'))
-            .style("top", $(this).offset().top+30+"px")
-            .style("left", $(this).offset().left-25+"px");          
-        })
-        .on("mousemove", mousemove)
-        .on("mouseout", function(){
-          d3.selectAll(".overlay-line").style("visibility", "hidden");
-          tooltip.style("visibility", "hidden");
-        });
+        (function(group_name) { // We need a reference to group_name in runtime, for tooltips
+          
+          svg[index].selectAll("rect."+group_name)
+          .data(data.rows)
+          .enter()
+          .append("rect")
+          .attr("class",group_name)
+          .attr("x", function(d,i) {
+            if (d[group_name] > 0) {
+              return series_label_width + group_width*j + zero_pos;
+            } else {
+              return series_label_width + group_width*j + zero_pos - bar_width_scale(Math.abs(d[group_name]));
+            }
+          })
+          .attr("y", function(d,i) {
+            return series_label_top_margin + (i * series_step) - bar_height/2 - 7;
+          })
+          .attr("width", function(d,i) {
+            var bar_width = bar_width_scale(Math.abs(d[group_name]));
+            if (bar_width <= 2) bar_width = 2;
+            return bar_width;          
+          })
+          .attr("height", function(d,i) {
+            return bar_height;
+          })
+          .attr("style",function (d) {
+            return "fill: #546DBC";
+          })
+          .attr("name", function(d){
+            return Math.round(d[group_name]*1000)/1000;
+          })
+          .on("mouseover", function(d) {
+            var tooltip_x;
+            if (d[group_name] > 0) {
+              tooltip_x = $(this).offset().left+bar_width_scale(Math.abs(d[group_name]))-30;
+            } else {
+              tooltip_x = $(this).offset().left-30;
+            }
+
+            d3.selectAll(".overlay-line").style("visibility", "visible");
+            tooltip.style("visibility", "visible")
+              .text($(this).attr('name'))
+              .style("top", $(this).offset().top+bar_height+"px")
+              .style("left", tooltip_x+"px");
+          })
+          .on("mousemove", mousemove)
+          .on("mouseout", function(){
+            d3.selectAll(".overlay-line").style("visibility", "hidden");
+            tooltip.style("visibility", "hidden");
+          });
+        })(group_name_);
       }
     });
   }
@@ -193,8 +202,6 @@ $(document).ready(function() {
   //index:index of the table on the json, 
   //std_domain: specific domain - keep undefined for showing the chart's own domain
   function drawChart(index,domain) {
-
-    console.log("Dibujando graph "+subject[index].table);
 
     d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+subject[index].table+"%20order%20by%20"+subject[index].x_axis+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
 
@@ -224,7 +231,7 @@ $(document).ready(function() {
         var y_col_name = subject[index].series[i].name;
 
         var y_scale = d3.scale.linear()
-          .range([h-margin, top_margin])
+          .range([h, top_margin])
           .domain(subject[index].series[i].y_extent);
 
         // remove null values and find min_val if negative value
@@ -272,6 +279,11 @@ $(document).ready(function() {
             });
 
         } else if (subject[index].series[i].class == "area") {
+
+          // y_scale needs to be adjusted to the maximum
+          y_scale = d3.scale.linear()
+          .range([h, top_margin])
+          .domain(subject[index].series[i].y_extent);
 
           var area = d3.svg.area()            
             .x(function(d) {return x_scale(new Date(d[x_col]))})
@@ -326,7 +338,6 @@ $(document).ready(function() {
             .attr("name", function(d){return d[y_col]}) //Uses this for tooltip
             .on("mouseover", function(d) {
               d3.selectAll(".overlay-line").style("visibility", "visible");
-
               tooltip.style("visibility", "visible")
                 .text($(this).attr('name'))
                 .style("top", $(this).offset().top+30+"px")
@@ -335,7 +346,6 @@ $(document).ready(function() {
             .on("mousemove", mousemove)
             .on("mouseout", function(){
               d3.selectAll(".overlay-line").style("visibility", "hidden");
-
               tooltip.style("visibility", "hidden");
             });
           previous_stacked_column = y_col;
