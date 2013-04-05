@@ -7,6 +7,17 @@ var svg = [];
 var LINE_DOT_R = 4;
 
 
+//Creates generic tooltip
+//TODO: Create simultaeous tooltips per serie
+var tooltip = d3.select("body")
+  .append("div")
+  // uncomment for left tooltip
+  // .attr("class", "tooltip-right");
+  // uncomment for right tooltip
+  // .attr("class", "tooltip-left")
+  .attr("class", "tooltip");
+
+
 function moveOverlayLine() {
   d3.selectAll(".overlay-line")
     .attr("cx", d3.mouse(this)[0])
@@ -17,11 +28,6 @@ function moveOverlayLine() {
 
 $(document).ready(function() {
   var _domainq = 'http://cpi.cartodb.com/api/v2/sql?q=SELECT%20min(min)%20as%20min,%20max(max)%20as%20max%20FROM%20(';
-
-  //Creates generic tooltip
-  var tooltip = d3.select("body")
-    .append("div")
-    .attr("class", "tooltip");
 
   //Creates the query needed for calculating the default domain for the charts
   for (var i = 0; i < datasets.sectors[0].subjects.length; i++) {
@@ -53,12 +59,13 @@ $(document).ready(function() {
   d3.json(_domainq+')%20as%20aux%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79', function(data) {
     var std_domain = [new Date(data.rows[0].min),new Date(data.rows[0].max)];
 
-    drawChart(0, std_domain);
-    drawChart(1, std_domain);
-    drawChart(2, std_domain);
-    drawChart(3, std_domain);
-    drawBarChart(4, std_domain);
-    drawChart(4, std_domain);
+    for (var i = 0; i < datasets.sectors[0].subjects.length; i++) {
+      if(subject[i].type == 'BarGraph') {
+        drawBarChart(i, std_domain);
+      } else {
+        drawChart(i, std_domain);
+      }
+    }
   })
 
 
