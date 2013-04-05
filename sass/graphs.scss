@@ -145,7 +145,8 @@
 
 .axis path {
   fill: none;
-  stroke: black;
+  stroke: rgba(#000, .1);
+  shape-rendering: crispEdges;
 }
 
 .tick {

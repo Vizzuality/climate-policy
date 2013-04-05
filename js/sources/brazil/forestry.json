@@ -46,6 +46,7 @@ var datasets = {
           ]
         },
         {
+          "type": "BarGraph",
           "name": "Grid impact",
           "table": "grid_impact_1_copy_diego_2",
           "description": "Test Diego",
