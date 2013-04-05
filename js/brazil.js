@@ -26,10 +26,9 @@ function moveOverlayLine() {
     .attr("cy", 0);
 
   var mouse_x = d3.mouse(this)[0];
-  console.log(mouse_x);
   if (x_scale) {
     var time = new Date(x_scale.invert(mouse_x));
-    console.log(time);
+    //console.log(time);
   }
 
   /*  
@@ -73,6 +72,34 @@ $(document).ready(function() {
 
   d3.json(_domainq+')%20as%20aux%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79', function(data) {
     var std_domain = [new Date(data.rows[0].min),new Date(data.rows[0].max)];
+
+    // Calculates the x_scale
+    x_scale = d3.scale.linear()
+      .range([margin,w-margin])
+      .domain(std_domain);
+
+    // Calculates the years for the time axis
+
+    var year_step = 2;
+
+    d3.selectAll("div.years").each(function(d){
+
+      var year_init = parseInt(std_domain[0].getFullYear());
+      var year_end = parseInt(std_domain[1].getFullYear());
+      
+      for (var y = year_init; y<=year_end; y += 3) {
+        var newYear = new Date();
+        newYear.setDate(1);
+        newYear.setMonth(0);
+        newYear.setFullYear(y);
+
+        // Add each year as a span
+        var year_x_position = Math.round(x_scale(newYear)) - 15;
+        console.log(year_x_position);
+        $(this).append("<span class='year_label' style='left:"+year_x_position+"px'>"+y+"</span>");        
+
+      }
+    });
 
     for (var i = 0; i < datasets.sectors[0].subjects.length; i++) {
       if(subject[i].type == 'BarGraph') {
@@ -260,9 +287,11 @@ $(document).ready(function() {
 
       var x_col = subject[index].x_axis;
       //var x_scale = d3.scale.linear()
+      /*
       x_scale = d3.scale.linear()
         .range([margin,w-margin])
         .domain(_domain);
+        */
 
       var previous_stacked_column = null;
       var min_val = 0;
