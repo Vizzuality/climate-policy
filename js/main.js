@@ -8,30 +8,15 @@ function positionScroll() {
 
   // if scrolledup remove stuck header before
   if($(window).scrollTop() >= 570){
-    $(".header").addClass("stuck");
+    $(".wrapper").addClass("stuck");
   } else {
-    $(".header").removeClass("stuck");
+    $(".wrapper").removeClass("stuck");
   }
 }
 
 $(document).ready(function() {
   // position scroll link on load
   positionScroll();
-
-  // detect scroll direction
-  var previousScroll = $(window).scrollTop();
-  $(window).scroll(function() {
-    var currentScroll = $(window).scrollTop();
-    if(currentScroll < previousScroll) {
-      // if stuck header and prevent bounce in the bottom
-      if($(window).scrollTop() >= 570 && ($(window).scrollTop() + $(window).height() < $(document).height())) {
-        $(".header").addClass("scrolledup");
-      }
-    } else {
-      $(".header").removeClass("scrolledup");
-    }
-    previousScroll = currentScroll;
-  });
 
   // position scroll link on scroll and resize
   $(window)

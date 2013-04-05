@@ -1,8 +1,4 @@
-.slider {
-  margin-bottom: 45px;
-
-  + .content-footer { border-top: 1px solid #ddd; }
-}
+.slider + .content-footer { border-top: 1px solid #ddd; }
 
 .slides {
   overflow: hidden;

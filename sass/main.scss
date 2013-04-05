@@ -15,6 +15,16 @@
   overflow: hidden;
   min-width: 1040px;
   background: #F4F4F4;
+
+  &.stuck {
+    .header,
+    .scroll-nav {
+      position: fixed;
+      margin-top: -570px;
+    }
+
+    .scroll-shadow { display: block; }
+  }
 }
 
 .inner {
@@ -30,20 +40,6 @@
   min-width: 1040px;
   height: 660px;
   color: #fff;
-
-  &.stuck {
-    position: fixed;
-    margin-top: -570px;
-
-    .scroll {
-      bottom: 0;
-
-      .nav-link { display: none; }
-      .nav-title { display: block; }
-    }
-
-    .scroll-shadow { display: block; }
-  }
 
   .title {
     margin-top: 75px;
@@ -164,7 +160,6 @@
   @include box-shadow(0 0 10px rgba(#000, .1));
 
   .description {
-    width: 790px;
     font: 16px "open-sans", sans-serif;
     color: #666;
   }
@@ -187,25 +182,6 @@
 }
 
 .nav-link { @include opacity(.5); }
-
-.scroll {
-  position: absolute;
-  bottom: 0;
-  width: 960px;
-
-  &:hover .nav-link { @include opacity(1); }
-
-  em {
-    position: relative;
-    top: 5px;
-    display: inline-block;
-    width: 18px;
-    height: 20px;
-    padding-right: 10px;
-    vertical-align: 1;
-    background: image-url('scroll-icon.png') no-repeat;
-  }
-}
 
 .years {
   border: 1px solid rgba(#000, .1);
@@ -237,9 +213,9 @@
   display: block;
   padding: 40px 20px;
   height: 71px;
-  @include opacity(.4);
+  @include opacity(.2);
 
-  &:hover { @include opacity(.6); }
+  &:hover { @include opacity(.4); }
   &:active { @include opacity(.8); }
 
   i {
@@ -252,12 +228,10 @@
   span { display: none; }
 }
 
-.scroll-prev,
-.scroll-next {
-  @include opacity(.4);
+.scroll-nav {
+  width: 960px;
 
-  &:hover { @include opacity(.8); }
-  &:active { @include opacity(1); }
+  .scroll-controls { padding: 0 20px; }
 }
 
 .scroll-prev {
