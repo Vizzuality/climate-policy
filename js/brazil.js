@@ -5,6 +5,7 @@ var w = 1038;
 var subject = [];
 var svg = [];
 var LINE_DOT_R = 4;
+var x_scale;
 
 
 //Creates generic tooltip
@@ -23,6 +24,20 @@ function moveOverlayLine() {
     .attr("cx", d3.mouse(this)[0])
     .attr("transform", "translate(" + d3.mouse(this)[0] + ",0)")
     .attr("cy", 0);
+
+  var mouse_x = d3.mouse(this)[0];
+  console.log(mouse_x);
+  if (x_scale) {
+    var time = new Date(x_scale.invert(mouse_x));
+    console.log(time);
+  }
+
+  /*  
+  var x_scale = d3.scale.linear()
+    .range([margin,w-margin])
+    .domain(_domain);
+    */
+
 }
 
 
@@ -148,6 +163,14 @@ $(document).ready(function() {
       // Drawing each x-group
       for (var j = 0; j < subject[index].x_groups.length; j++) {
 
+        // Drawing an axis for each group_x
+        var lineGraph = svg[index].append("svg:line")
+          .attr("x1", series_label_width+group_width*j+zero_pos)
+          .attr("y1", 160)
+          .attr("x2", series_label_width+group_width*j+zero_pos)
+          .attr("y2", h-30)
+          .style("stroke", "#DDDDDD");
+
         var group_name_ = subject[index].x_groups[j].column;
 
         (function(group_name) { // We need a reference to group_name in runtime, for tooltips
@@ -236,7 +259,8 @@ $(document).ready(function() {
       }
 
       var x_col = subject[index].x_axis;
-      var x_scale = d3.scale.linear()
+      //var x_scale = d3.scale.linear()
+      x_scale = d3.scale.linear()
         .range([margin,w-margin])
         .domain(_domain);
 
@@ -288,8 +312,9 @@ $(document).ready(function() {
             .attr("name", function(d){return d[y_col]}) //Uses this for tooltip
             .on("mouseover", function(d) {
               d3.selectAll(".overlay-line").style("visibility", "visible");
+              var date = new Date(d[x_col]);
               tooltip.style("visibility", "visible")
-                .text($(this).attr('name'))
+                .text($(this).attr('name') + "·" + date)
                 .style("top", $(this).offset().top+30+"px")
                 .style("left", $(this).offset().left-25+"px");
             })
