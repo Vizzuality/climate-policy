@@ -27,7 +27,7 @@ var datasets = {
           "description": "",
           "x_axis": "date_processed",
           "series": [
-            {"name": "Land Use", "column": "land_use_million_hectares", "class": "line", "y_extent": [0,65], "strokeColor": "#F0542C"}
+            { "name": "Land Use", "column": "land_use_million_hectares", "class": "line", "y_extent": [0,65], "strokeColor": "#F0542C" }
           ]
         }
       ]

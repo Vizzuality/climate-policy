@@ -4,11 +4,10 @@ var h = 388;
 var w = 1038;
 var subject = [];
 var svg = [];
-
 var LINE_DOT_R = 4;
 
 
-function mousemove() {
+function moveOverlayLine() {
   d3.selectAll(".overlay-line")
     .attr("cx", d3.mouse(this)[0])
     .attr("transform", "translate(" + d3.mouse(this)[0] + ",0)")
@@ -40,7 +39,7 @@ $(document).ready(function() {
       .attr("width", w)
       .attr("height", h)
       .on("mouseover", function(d){d3.selectAll(".overlay-line").style("visibility", "visible");})
-      .on("mousemove", mousemove)
+      .on("mousemove", moveOverlayLine)
       .on("mouseout", function(){d3.selectAll(".overlay-line").style("visibility", "hidden");});
 
     var overlayLine = svg[i]
@@ -59,7 +58,7 @@ $(document).ready(function() {
     drawChart(2, std_domain);
     drawChart(3, std_domain);
     drawBarChart(4, std_domain);
-
+    drawChart(4, std_domain);
   })
 
 
@@ -188,7 +187,7 @@ $(document).ready(function() {
               .style("top", $(this).offset().top+bar_height+"px")
               .style("left", tooltip_x+"px");
           })
-          .on("mousemove", mousemove)
+          .on("mousemove", moveOverlayLine)
           .on("mouseout", function(){
             d3.selectAll(".overlay-line").style("visibility", "hidden");
             tooltip.style("visibility", "hidden");
@@ -272,7 +271,7 @@ $(document).ready(function() {
                 .style("top", $(this).offset().top+30+"px")
                 .style("left", $(this).offset().left-25+"px");
             })
-            .on("mousemove", mousemove)
+            .on("mousemove", moveOverlayLine)
             .on("mouseout", function(){
               d3.selectAll(".overlay-line").style("visibility", "hidden");
               tooltip.style("visibility", "hidden");
@@ -303,7 +302,7 @@ $(document).ready(function() {
             .on("mouseover", function(d) {
               d3.selectAll(".overlay-line").style("visibility", "visible");
             })
-            .on("mousemove", mousemove)
+            .on("mousemove", moveOverlayLine)
             .on("mouseout", function(){
               d3.selectAll(".overlay-line").style("visibility", "hidden");
             });
@@ -343,7 +342,7 @@ $(document).ready(function() {
                 .style("top", $(this).offset().top+30+"px")
                 .style("left", $(this).offset().left-25+"px");
             })
-            .on("mousemove", mousemove)
+            .on("mousemove", moveOverlayLine)
             .on("mouseout", function(){
               d3.selectAll(".overlay-line").style("visibility", "hidden");
               tooltip.style("visibility", "hidden");
