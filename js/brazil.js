@@ -88,7 +88,8 @@ $(document).ready(function() {
       var total_graph_area_width = 650;
       var total_series_height = 200;
       var group_width = total_graph_area_width/subject[index].x_groups.length;
-      var bar_height = 100/data.rows.length;
+      //var bar_height = 100/data.rows.length;
+      var bar_height = 2
       var max_bar = group_width*parseFloat(max)/parseFloat(parseFloat(max_negat) + parseFloat(max_posit));
 
       var series_step = total_series_height/data.rows.length;
@@ -143,7 +144,7 @@ $(document).ready(function() {
         var group_name_ = subject[index].x_groups[j].column;
 
         (function(group_name) { // We need a reference to group_name in runtime, for tooltips
-          
+
           svg[index].selectAll("rect."+group_name)
           .data(data.rows)
           .enter()
@@ -173,25 +174,39 @@ $(document).ready(function() {
           .attr("name", function(d){
             return Math.round(d[group_name]*1000)/1000;
           })
-          .on("mouseover", function(d) {
-            var tooltip_x;
-            if (d[group_name] > 0) {
-              tooltip_x = $(this).offset().left+bar_width_scale(Math.abs(d[group_name]))-30;
-            } else {
-              tooltip_x = $(this).offset().left-30;
-            }
 
-            d3.selectAll(".overlay-line").style("visibility", "visible");
-            tooltip.style("visibility", "visible")
-              .text($(this).attr('name'))
-              .style("top", $(this).offset().top+bar_height+"px")
-              .style("left", tooltip_x+"px");
-          })
-          .on("mousemove", moveOverlayLine)
-          .on("mouseout", function(){
-            d3.selectAll(".overlay-line").style("visibility", "hidden");
-            tooltip.style("visibility", "hidden");
-          });
+          svg[index].selectAll("circle."+group_name)
+            .data(data.rows)
+            .enter()
+            .append("circle")
+            .attr("class", group_name+' linedot linedot'+i)
+            .attr("style",'stroke: #546DBC; fill: #ffffff')
+            .attr("cx", function(d){
+              var x = series_label_width + group_width*j + zero_pos;
+              if (d[group_name] > 0) {
+                x += bar_width_scale(Math.abs(d[group_name]));
+              } else {
+                x -= bar_width_scale(Math.abs(d[group_name]))
+              }
+              return x;
+            })
+            .attr("cy", function(d,i){
+              return series_label_top_margin + (i * series_step) - bar_height/2 - 6}
+            )
+            .attr("r", LINE_DOT_R)
+            .attr("name", function(d){return Math.round(d[group_name]*1000)/1000}) //Uses this for tooltip
+            .on("mouseover", function(d) {
+              d3.selectAll(".overlay-line").style("visibility", "visible");
+              tooltip.style("visibility", "visible")
+                .text($(this).attr('name'))
+                .style("top", $(this).offset().top+30+"px")
+                .style("left", $(this).offset().left-25+"px");
+            })
+            .on("mousemove", moveOverlayLine)
+            .on("mouseout", function(){
+              d3.selectAll(".overlay-line").style("visibility", "hidden");
+              tooltip.style("visibility", "hidden");
+            });
         })(group_name_);
       }
     });
