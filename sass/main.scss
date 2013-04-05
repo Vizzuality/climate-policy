@@ -23,6 +23,13 @@
       margin-top: -570px;
     }
 
+    .scroll {
+      bottom: 0;
+
+      .nav-link { display: none; }
+      .nav-title { display: block; }
+    }
+
     .scroll-shadow { display: block; }
   }
 }
@@ -182,6 +189,25 @@
 }
 
 .nav-link { @include opacity(.5); }
+
+.scroll {
+  position: absolute;
+  bottom: 0;
+  width: 960px;
+
+  &:hover .nav-link { @include opacity(1); }
+
+  em {
+    position: relative;
+    top: 5px;
+    display: inline-block;
+    width: 18px;
+    height: 20px;
+    padding-right: 10px;
+    vertical-align: 1;
+    background: image-url('scroll-icon.png') no-repeat;
+  }
+}
 
 .years {
   border: 1px solid rgba(#000, .1);
