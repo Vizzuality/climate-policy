@@ -255,9 +255,9 @@ $(document).ready(function() {
               return series_label_top_margin + (i * series_step) - bar_height/2 - 6}
             )
             .attr("r", LINE_DOT_R)
-            .attr("name", function(d){return Math.round(d[group_name]*1000)/1000}) //Uses this for tooltip
+            .attr("name", function(d){return (Math.round(d[group_name]*1000)/1000) + " " + d["units"]}) //Uses this for tooltip
             .on("mouseover", function(d) {
-
+              d3.select(this).attr("style","fill: #546DBC; stroke: #546DBC");
               var tooltipClassname = "";
               var x_tooltip = 0;
               if (d[group_name] > 0) {
@@ -276,6 +276,7 @@ $(document).ready(function() {
             .on("mousemove", moveOverlayLine)
             .on("mouseout", function(){
               tooltip.style("visibility", "hidden");
+              d3.select(this).attr("style","fill: #ffffff; stroke: #546DBC");
             });
         })(group_name_);
       }
@@ -304,7 +305,7 @@ $(document).ready(function() {
       for (var i = 0; i < subject[index].series.length; i++) {
         // append one group per series
         var g = svg[index].append("svg:g");
-        var strokeColor = subject[index].series[i].strokeColor;
+        var strokeColor_ = subject[index].series[i].strokeColor;
         var fillColor = subject[index].series[i].fillColor;
         var y_col = subject[index].series[i].column;
         var y_col_name = subject[index].series[i].name;
@@ -318,7 +319,6 @@ $(document).ready(function() {
           if(d[y_col] < min_val) {
             min_val = d[y_col];
           }
-
           return (d[y_col] != null) && (d[y_col] != 0)
         });
 
@@ -331,8 +331,9 @@ $(document).ready(function() {
           g.append("svg:path")
             .attr("d", line(data_col))
             .attr("class", 'lineStyle')
-            .attr("style",'stroke:'+strokeColor);
+            .attr("style",'stroke:'+strokeColor_);
 
+          (function(strokeColor){  // We need a reference to strokeColor in runtime, for hover
           g.selectAll("circle")
             .data(data_col)
             .enter()
@@ -352,12 +353,16 @@ $(document).ready(function() {
                 .style("top", $(this).offset().top+30+"px")
                 .style("left", $(this).offset().left-25+"px")
                 .attr("class","tooltip tooltip-top");
+              d3.select(this).attr("style","fill: #ffffff; stroke: #000000");
             })
             .on("mousemove", moveOverlayLine)
-            .on("mouseout", function(){
+            .on("mouseout", function(d){
               d3.selectAll(".overlay-line").style("visibility", "hidden");
               tooltip.style("visibility", "hidden");
+              d3.select(this).attr("style","fill: "+strokeColor+"; stroke: #ffffff");
             });
+          })(strokeColor_);
+
 
         } else if (subject[index].series[i].class == "area") {
 
@@ -379,7 +384,7 @@ $(document).ready(function() {
 
           g.append("svg:path")
             .attr("d", area(data_col))                    
-            .attr("style",'stroke:'+strokeColor)
+            .attr("style",'stroke:'+strokeColor_)
             .attr("style",'fill:'+fillColor)
             .on("mouseover", function(d) {
               d3.selectAll(".overlay-line").style("visibility", "visible");
@@ -399,41 +404,45 @@ $(document).ready(function() {
           g.append("svg:path")
             .attr("d", line(data_col))
             .attr("class", 'lineStyle')
-            .attr("style",'stroke:'+strokeColor);
+            .attr("style",'stroke:'+strokeColor_);
 
           var g_circles = svg[index].append("svg:g");
           g_circles.attr("class","dataCircles");
 
-          g_circles.selectAll("circle")
-            .data(data_col)
-            .enter()
-            .append("circle")
-            .attr("class", 'linedot linedot'+i)
-            .attr("style",function(d){ var _fill = (new Date(d.date_processed).getMonth() + 1 == 1) ? 'fill:'+strokeColor : 'display: none'; return _fill;})
-            .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
-            .attr("cy", function(d){
-              if (previous_stacked_column == null) return y_scale(d[y_col]);
-              return y_scale(d[y_col]+d[previous_stacked_column]);
-            })
-            .attr("r", LINE_DOT_R)
-            .attr("name", function(d){return d[y_col]}) //Uses this for tooltip
-            .on("mouseover", function(d) {
-              d3.selectAll(".overlay-line").style("visibility", "visible");
-              tooltip.style("visibility", "visible")
-                .text($(this).attr('name'))
-                .style("top", $(this).offset().top+30+"px")
-                .style("left", $(this).offset().left-25+"px")
-                .attr("class","tooltip tooltip-top");
-            })
-            .on("mousemove", moveOverlayLine)
-            .on("mouseout", function(){
-              d3.selectAll(".overlay-line").style("visibility", "hidden");
-              tooltip.style("visibility", "hidden");
-            });
+          (function(strokeColor){  // We need a reference to strokeColor in runtime, for hover
+            g_circles.selectAll("circle")
+              .data(data_col)
+              .enter()
+              .append("circle")
+              .attr("class", 'linedot linedot'+i)
+              .attr("style",function(d){ var _fill = (new Date(d.date_processed).getMonth() + 1 == 1) ? 'fill:'+strokeColor : 'display: none'; return _fill;})
+              .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
+              .attr("cy", function(d){
+                if (previous_stacked_column == null) return y_scale(d[y_col]);
+                return y_scale(d[y_col]+d[previous_stacked_column]);
+              })
+              .attr("r", LINE_DOT_R)
+              .attr("name", function(d){return d[y_col]}) //Uses this for tooltip
+              .on("mouseover", function(d) {
+                d3.selectAll(".overlay-line").style("visibility", "visible");
+                tooltip.style("visibility", "visible")
+                  .text($(this).attr('name'))
+                  .style("top", $(this).offset().top+30+"px")
+                  .style("left", $(this).offset().left-25+"px")
+                  .attr("class","tooltip tooltip-top");
+                  d3.select(this).attr("style","fill: #ffffff; stroke: #000000;");
+              })
+              .on("mousemove", moveOverlayLine)
+              .on("mouseout", function(){
+                d3.selectAll(".overlay-line").style("visibility", "hidden");
+                tooltip.style("visibility", "hidden");
+                d3.select(this).attr("style","fill: "+strokeColor+"; stroke: #ffffff;");
+              });
+            })(strokeColor_);
           previous_stacked_column = y_col;
         }
 
-        $("#"+subject[index].table).find(".graph-legend").append('<li><div class="legend-item" style="background-color:'+strokeColor+'"></div><span>'+y_col_name+'</span></li>')
+        $("#"+subject[index].table).find(".graph-legend").append('<li><div class="legend-item" style="background-color:'+strokeColor_+'"></div><span>'+y_col_name+'</span></li>')
           .attr("r", LINE_DOT_R);
       }
 
