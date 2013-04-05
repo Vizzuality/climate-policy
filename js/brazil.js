@@ -2,8 +2,14 @@ var margin = 30;
 var top_margin = 100;
 var h = 388;
 var w = 1038;
+var LINE_DOT_R = 4;
+
+//chart info
 var subject = [];
+
+//svgs for d3
 var svg = [];
+
 var LINE_DOT_R = 4;
 var x_scale;
 
@@ -12,11 +18,11 @@ var x_scale;
 //TODO: Create simultaeous tooltips per serie
 var tooltip = d3.select("body")
   .append("div")
-  // uncomment for left tooltip
-  // .attr("class", "tooltip-right");
-  // uncomment for right tooltip
-  // .attr("class", "tooltip-left")
-  .attr("class", "tooltip");
+  .attr("class", "tooltip tooltip-top");
+  //uncomment for left tooltip
+  // .attr("class", "tooltip tooltip-left");
+  //uncomment for right tooltip
+  // .attr("class", "tooltip tooltip-right");
 
 
 function moveOverlayLine() {
@@ -48,26 +54,31 @@ $(document).ready(function() {
     if(i!=0){
       _domainq = _domainq + '%20UNION%20'
     }
+
     subject[i] = datasets.sectors[0].subjects[i];
-    svg[i] = d3.select("#"+subject[i].table).append("svg").attr("width", w).attr("height", h);
+
+    svg[i] = d3.select("#"+subject[i].table)
+      .append("svg")
+      .attr("width", w)
+      .attr("height", h);
+
     _domainq = _domainq + 'SELECT%20min(date_processed)%20as%20min,%20max(date_processed)%20as%20max%20FROM%20'+subject[i].table
 
-    //Creates an overlay per subject
-    var overlay = svg[i]
-      .append("rect")
-      .attr("class", "overlay")
-      .attr("width", w)
-      .attr("height", h)
-      .on("mouseover", function(d){d3.selectAll(".overlay-line").style("visibility", "visible");})
-      .on("mousemove", moveOverlayLine)
-      .on("mouseout", function(){d3.selectAll(".overlay-line").style("visibility", "hidden");});
+    //Creates an overlay + overlay line per subject unless barchart type
+    if(subject[i].type != 'BarGraph') {
+      svg[i].append("rect")
+        .attr("class", "overlay")
+        .attr("width", w)
+        .attr("height", h)
+        .on("mouseover", function(d){d3.selectAll(".overlay-line").style("visibility", "visible");})
+        .on("mousemove", moveOverlayLine)
+        .on("mouseout", function(){d3.selectAll(".overlay-line").style("visibility", "hidden");});
 
-    var overlayLine = svg[i]
-      .append("rect")
-      .attr("class", "overlay-line")
-      .attr("width", 2)
-      .attr("height", $('.graphs').height()-$(".slider").height())
-      .style("top", $(".graphs").offset().top);
+      svg[i].append("rect")
+        .attr("class", "overlay-line")
+        .attr("width", 2)
+        .attr("height", h)
+    }
   }
 
   d3.json(_domainq+')%20as%20aux%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79', function(data) {
@@ -112,7 +123,6 @@ $(document).ready(function() {
 
 
   function drawBarChart(index,domain) {
-
     d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+subject[index].table+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
 
       // Graph settings, domain & ranges calculation, scales, etc.
@@ -126,9 +136,9 @@ $(document).ready(function() {
             posit.push(value);
           } else {
             negat.push(Math.abs(value));
-          }          
+          }
         }
-      });      
+      });
 
       var max_negat  = d3.max(negat),
         max_posit = d3.max(posit),
@@ -148,28 +158,28 @@ $(document).ready(function() {
 
       var bar_width_scale = d3.scale.linear()
         .domain([0,max])
-        .range([0, max_bar]); 
+        .range([0, max_bar]);
 
       var zero_pos = bar_width_scale(max_negat); // Zero position for each group equals the bar of the mazimum negative number
 
       // Series labels
       svg[index].selectAll("text.graph-series-label")
-      .data(data.rows)
-      .enter()
-      .append("text")
-      .attr("class","graph-series-label")
-      .attr("id",function(d) {
-        return "series_label_"+d.cartodb_id;
-      })
-      .text(function(d) {
-        return d.variable;
-      })
-      .attr("x", function(d,i) {
-        return series_label_left_margin;
-      })
-      .attr("y", function(d,i) {
-        return series_label_top_margin + (i * series_step);
-      });
+        .data(data.rows)
+        .enter()
+        .append("text")
+        .attr("class","graph-series-label")
+        .attr("id",function(d) {
+          return "series_label_"+d.cartodb_id;
+        })
+        .text(function(d) {
+          return d.variable;
+        })
+        .attr("x", function(d,i) {
+          return series_label_left_margin;
+        })
+        .attr("y", function(d,i) {
+          return series_label_top_margin + (i * series_step);
+        });
 
       // Group labels
       svg[index].selectAll("text.graph-groups-label")
@@ -201,50 +211,51 @@ $(document).ready(function() {
         var group_name_ = subject[index].x_groups[j].column;
 
         (function(group_name) { // We need a reference to group_name in runtime, for tooltips
-
           svg[index].selectAll("rect."+group_name)
-          .data(data.rows)
-          .enter()
-          .append("rect")
-          .attr("class",group_name)
-          .attr("x", function(d,i) {
-            if (d[group_name] > 0) {
-              return series_label_width + group_width*j + zero_pos;
-            } else {
-              return series_label_width + group_width*j + zero_pos - bar_width_scale(Math.abs(d[group_name]));
-            }
-          })
-          .attr("y", function(d,i) {
-            return series_label_top_margin + (i * series_step) - bar_height/2 - 7;
-          })
-          .attr("width", function(d,i) {
-            var bar_width = bar_width_scale(Math.abs(d[group_name]));
-            if (bar_width <= 2) bar_width = 2;
-            return bar_width;          
-          })
-          .attr("height", function(d,i) {
-            return bar_height;
-          })
-          .attr("style",function (d) {
-            return "fill: #546DBC";
-          })
-          .attr("name", function(d){
-            return Math.round(d[group_name]*1000)/1000;
-          })
+            .data(data.rows)
+            .enter()
+            .append("rect")
+            .attr("class",group_name)
+            .attr("x", function(d,i) {
+              if (d[group_name] > 0) {
+                return series_label_width + group_width*j + zero_pos;
+              } else {
+                return series_label_width + group_width*j + zero_pos - bar_width_scale(Math.abs(d[group_name]));
+              }
+            })
+            .attr("y", function(d,i) {
+              return series_label_top_margin + (i * series_step) - bar_height/2 - 7;
+            })
+            .attr("width", function(d,i) {
+              var bar_width = bar_width_scale(Math.abs(d[group_name]));
+              if (bar_width <= 2) bar_width = 2;
+              return bar_width;
+            })
+            .attr("height", function(d,i) {
+              return bar_height;
+            })
+            .attr("style",function (d) {
+              return "fill: #546DBC";
+            })
+            .attr("name", function(d){
+              return Math.round(d[group_name]*1000)/1000;
+            })
 
           svg[index].selectAll("circle."+group_name)
             .data(data.rows)
             .enter()
             .append("circle")
             .attr("class", group_name+' linedot linedot'+i)
-            .attr("style",'stroke: #546DBC; fill: #ffffff')
+            .attr("style",'stroke: #546DBC; fill: #fff')
             .attr("cx", function(d){
               var x = series_label_width + group_width*j + zero_pos;
+
               if (d[group_name] > 0) {
                 x += bar_width_scale(Math.abs(d[group_name]));
               } else {
                 x -= bar_width_scale(Math.abs(d[group_name]))
               }
+
               return x;
             })
             .attr("cy", function(d,i){
@@ -253,7 +264,6 @@ $(document).ready(function() {
             .attr("r", LINE_DOT_R)
             .attr("name", function(d){return Math.round(d[group_name]*1000)/1000}) //Uses this for tooltip
             .on("mouseover", function(d) {
-              d3.selectAll(".overlay-line").style("visibility", "visible");
               tooltip.style("visibility", "visible")
                 .text($(this).attr('name'))
                 .style("top", $(this).offset().top+30+"px")
@@ -261,7 +271,6 @@ $(document).ready(function() {
             })
             .on("mousemove", moveOverlayLine)
             .on("mouseout", function(){
-              d3.selectAll(".overlay-line").style("visibility", "hidden");
               tooltip.style("visibility", "hidden");
             });
         })(group_name_);
@@ -273,15 +282,14 @@ $(document).ready(function() {
   //index:index of the table on the json, 
   //std_domain: specific domain - keep undefined for showing the chart's own domain
   function drawChart(index,domain) {
-
     d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+subject[index].table+"%20order%20by%20"+subject[index].x_axis+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
-
       var _data = data;
-      if(domain === undefined){
+
+      if(domain === undefined) {
         _data['min_domain'] = d3.min(_data.rows, function(data){return data.date_processed;})
         _data['max_domain'] = d3.max(_data.rows, function(data){return data.date_processed;})
         _domain = [new Date(_data.min_domain),new Date(_data.max_domain)];
-      }else{
+      } else {
         _domain = domain;
       }
 
