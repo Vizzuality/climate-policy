@@ -244,13 +244,11 @@ $(document).ready(function() {
             .attr("style",'stroke: #546DBC; fill: #fff')
             .attr("cx", function(d){
               var x = series_label_width + group_width*j + zero_pos;
-
               if (d[group_name] > 0) {
                 x += bar_width_scale(Math.abs(d[group_name]));
               } else {
                 x -= bar_width_scale(Math.abs(d[group_name]))
               }
-
               return x;
             })
             .attr("cy", function(d,i){
@@ -259,21 +257,24 @@ $(document).ready(function() {
             .attr("r", LINE_DOT_R)
             .attr("name", function(d){return Math.round(d[group_name]*1000)/1000}) //Uses this for tooltip
             .on("mouseover", function(d) {
+
+              var tooltipClassname = "";
+              var x_tooltip = 0;
+              if (d[group_name] > 0) {
+                tooltipClassname = "tooltip tooltip-left";
+                x_tooltip = $(this).offset().left + 18;
+              } else {                
+                tooltipClassname =  "tooltip tooltip-right";
+                x_tooltip = $(this).offset().left - 67;
+              }
+
+              console.log(x_tooltip);
+
               tooltip.style("visibility", "visible")
                 .text($(this).attr('name'))
-                .style("top", $(this).offset().top+30+"px")
-                .style("left", $(this).offset().left-25+"px");
-  /*var year_marker = d3.selectAll(".year_marker");
-  //console.log(year_marker);
-  if (year_marker[0].length == 0) {
-    d3.selectAll("div.years").each(function(d){
-      //console.log("Añadiendo");
-      year_marker = $(this).append("<div class='year_marker'>1990</div>");
-    });
-  };*/
-
-
-
+                .attr("class",tooltipClassname)
+                .style("top", ($(this).offset().top-11)+"px")
+                .style("left",x_tooltip+"px");
             })
             .on("mousemove", moveOverlayLine)
             .on("mouseout", function(){
