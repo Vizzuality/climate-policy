@@ -7,39 +7,16 @@ function positionScroll() {
   }
 
   // if scrolledup remove stuck header before
-  if($(".header").hasClass("scrolledup")){
-    if($(window).scrollTop() >= 480){
-      $(".header").addClass("stuck");
-    } else {
-      $(".header").removeClass("stuck");
-    }
+  if($(window).scrollTop() >= 570){
+    $(".wrapper").addClass("stuck");
   } else {
-    if($(window).scrollTop() >= 570){
-      $(".header").addClass("stuck");
-    } else {
-      $(".header").removeClass("stuck");
-    }
+    $(".wrapper").removeClass("stuck");
   }
 }
 
 $(document).ready(function() {
   // position scroll link on load
   positionScroll();
-
-  // detect scroll direction
-  var previousScroll = $(window).scrollTop();
-  $(window).scroll(function() {
-    var currentScroll = $(window).scrollTop();
-    if(currentScroll < previousScroll) {
-      // if stuck header and prevent bounce in the bottom
-      if($(window).scrollTop() >= 570 && ($(window).scrollTop() + $(window).height() < $(document).height())) {
-        $(".header").addClass("scrolledup");
-      }
-    } else {
-      $(".header").removeClass("scrolledup");
-    }
-    previousScroll = currentScroll;
-  });
 
   // position scroll link on scroll and resize
   $(window)
@@ -99,12 +76,12 @@ $(document).ready(function() {
     self.qtip({
       overwrite: false,
       content: {
-        text: $(this).closest(".graph-legend").find('.graph_dropdown')
+        text: $(this).closest(".graph-selector").find('.graph_dropdown')
       },
       position: {
         my: 'top left',
         at: 'top left',
-        adjust: { y: -8, x: -20 }
+        adjust: { y: -6, x: -20 }
       },
       show: {
         event: event.type,
@@ -130,8 +107,10 @@ $(document).ready(function() {
     var graph = $('#'+$(this).attr('data-rel'));
 
     e.preventDefault();
+    $('.graph_tooltip_dropdown').hide();
 
     if(graph.not(':visible')) {
+      graph.siblings('.graph-selector').find('.graph-link').text(this.text);
       graph.siblings('.graph-canvas').hide();
       graph.show();
     }

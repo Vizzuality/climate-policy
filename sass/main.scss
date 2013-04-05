@@ -15,6 +15,23 @@
   overflow: hidden;
   min-width: 1040px;
   background: #F4F4F4;
+
+  &.stuck {
+    .header,
+    .scroll-nav {
+      position: fixed;
+      margin-top: -570px;
+    }
+
+    .scroll {
+      bottom: 0;
+
+      .nav-link { display: none; }
+      .nav-title { display: block; }
+    }
+
+    .scroll-shadow { display: block; }
+  }
 }
 
 .inner {
@@ -31,39 +48,22 @@
   height: 660px;
   color: #fff;
 
-  &.stuck {
-    position: fixed;
-    margin-top: -570px;
-
-    &.scrolledup {
-      margin-top: -480px;
-      @include transition(all .5s);
-
-      .header-nav {
-        position: absolute;
-        bottom: 90px;
-      }
-    }
-
-    .scroll {
-      bottom: 0;
-
-      .nav-link { display: none; }
-      .nav-title { display: block; }
-    }
-
-    .scroll-shadow { display: block; }
+  .title {
+    margin-top: 75px;
+    font: 300 44px/.9 "chaparral-pro", sans-serif;
+    text-transform: capitalize;
   }
 
-  .title {
-    margin-left: -5px;
-    padding: 150px 0 19px;
-    font: 600 71px/1.1 "open-sans", sans-serif;
+  .tagline {
+    margin: 0 0 30px -5px;
+    font: 700 italic 66px/1.1 "open-sans", sans-serif;
     text-transform: uppercase;
+
+    &:before { content: "“";};
+    &:after { content: "„";};
   }
 
   .description {
-    width: 586px;
     padding-bottom: 50px;
     font: 300 29px/1.1 "chaparral-pro", serif;
   }
@@ -137,10 +137,7 @@
   @extend .nav-item;
   line-height: 60px;
 
-  .first {
-    padding-left: 0;
-    color: rgba(#fff, .3);
-  }
+  &.first { padding: 0 15px 0 0; }
 
   .selected {
     margin-top: -4px;
@@ -170,7 +167,6 @@
   @include box-shadow(0 0 10px rgba(#000, .1));
 
   .description {
-    width: 790px;
     font: 16px "open-sans", sans-serif;
     color: #666;
   }
@@ -235,7 +231,6 @@
 
 .content-footer {
   margin: 0 auto;
-  border-top: 1px solid #ddd;
   width: 200px;
   text-align: center;
 }
@@ -244,10 +239,10 @@
   display: block;
   padding: 40px 20px;
   height: 71px;
-  @include opacity(.6);
+  @include opacity(.2);
 
-  &:hover { @include opacity(.8); }
-  &:active { @include opacity(1); }
+  &:hover { @include opacity(.4); }
+  &:active { @include opacity(.8); }
 
   i {
     display: inline-block;
@@ -257,6 +252,12 @@
   }
 
   span { display: none; }
+}
+
+.scroll-nav {
+  width: 960px;
+
+  .scroll-controls { padding: 0 20px; }
 }
 
 .scroll-prev {

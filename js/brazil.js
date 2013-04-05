@@ -368,7 +368,7 @@ $(document).ready(function() {
           previous_stacked_column = y_col;
         }
 
-        $("#"+subject[index].table).find(".graph-data-legend").append('<li><div class="legend-item" style="background-color:'+strokeColor+'"></div><span>'+y_col_name+'</span></li>')
+        $("#"+subject[index].table).find(".graph-legend").append('<li><div class="legend-item" style="background-color:'+strokeColor+'"></div><span>'+y_col_name+'</span></li>')
           .attr("r", LINE_DOT_R);
       }
 
