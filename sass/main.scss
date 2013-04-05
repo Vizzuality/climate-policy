@@ -35,16 +35,6 @@
     position: fixed;
     margin-top: -570px;
 
-    &.scrolledup {
-      margin-top: -480px;
-      @include transition(all .5s);
-
-      .header-nav {
-        position: absolute;
-        bottom: 90px;
-      }
-    }
-
     .scroll {
       bottom: 0;
 
@@ -56,14 +46,21 @@
   }
 
   .title {
-    margin-left: -5px;
-    padding: 150px 0 19px;
-    font: 600 71px/1.1 "open-sans", sans-serif;
+    margin-top: 75px;
+    font: 300 44px/.9 "chaparral-pro", sans-serif;
+    text-transform: capitalize;
+  }
+
+  .tagline {
+    margin: 0 0 30px -5px;
+    font: 700 italic 66px/1.1 "open-sans", sans-serif;
     text-transform: uppercase;
+
+    &:before { content: "“";};
+    &:after { content: "„";};
   }
 
   .description {
-    width: 586px;
     padding-bottom: 50px;
     font: 300 29px/1.1 "chaparral-pro", serif;
   }
@@ -137,10 +134,7 @@
   @extend .nav-item;
   line-height: 60px;
 
-  .first {
-    padding-left: 0;
-    color: rgba(#fff, .3);
-  }
+  &.first { padding: 0 15px 0 0; }
 
   .selected {
     margin-top: -4px;
@@ -235,7 +229,6 @@
 
 .content-footer {
   margin: 0 auto;
-  border-top: 1px solid #ddd;
   width: 200px;
   text-align: center;
 }
@@ -244,10 +237,10 @@
   display: block;
   padding: 40px 20px;
   height: 71px;
-  @include opacity(.6);
+  @include opacity(.4);
 
-  &:hover { @include opacity(.8); }
-  &:active { @include opacity(1); }
+  &:hover { @include opacity(.6); }
+  &:active { @include opacity(.8); }
 
   i {
     display: inline-block;
@@ -257,6 +250,14 @@
   }
 
   span { display: none; }
+}
+
+.scroll-prev,
+.scroll-next {
+  @include opacity(.4);
+
+  &:hover { @include opacity(.8); }
+  &:active { @include opacity(1); }
 }
 
 .scroll-prev {

@@ -1,7 +1,9 @@
-.graph-legend {
+.graph-selector {
   position: absolute;
   z-index: 300;
-  margin: 40px;
+  margin: 30px;
+  padding: 10px;
+  background: rgba(#fff, .8);
 }
 
 .graph-canvas {
@@ -34,12 +36,12 @@
 
 .graph-series-label{
   font: 13px/1.1 "open-sans", sans-serif;
-  fill: #aaaaaa;
+  fill: #aaa;
 }
 
 .graph-groups-label{
   font: 15px/1.1 "open-sans", sans-serif;
-  fill: #aaaaaa;
+  fill: #aaa;
 }
 
 
@@ -57,25 +59,29 @@
   border: 0;
   height: 1px;
   width: 160px;
-  background: #ddd;
+  background: rgba(#000, .1);
 }
 
 .graph-description {
   clear: left;
   font: 300 19px "cronos-pro";
   color: #999;
-  width: 250px;
+  width: 240px;
+
+  &.long { width: 480px; }
 }
 
 .graph_dropdown .graph-title { margin-left: 0; }
 
-.graph-data-legend {
+.graph-legend {
   position: absolute;
-  right: 30px;
-  top: 10px;
+  right: 40px;
+  top: 40px;
+  width: 480px;
+  text-align: right;
 
   li {
-    display: inline;
+    display: inline-block;
     font: 14px "cronos-pro", sans-serif;
     color: #999;
     margin: 0 0 0 12px;

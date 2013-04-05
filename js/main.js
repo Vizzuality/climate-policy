@@ -7,18 +7,10 @@ function positionScroll() {
   }
 
   // if scrolledup remove stuck header before
-  if($(".header").hasClass("scrolledup")){
-    if($(window).scrollTop() >= 480){
-      $(".header").addClass("stuck");
-    } else {
-      $(".header").removeClass("stuck");
-    }
+  if($(window).scrollTop() >= 570){
+    $(".header").addClass("stuck");
   } else {
-    if($(window).scrollTop() >= 570){
-      $(".header").addClass("stuck");
-    } else {
-      $(".header").removeClass("stuck");
-    }
+    $(".header").removeClass("stuck");
   }
 }
 
@@ -99,7 +91,7 @@ $(document).ready(function() {
     self.qtip({
       overwrite: false,
       content: {
-        text: $(this).closest(".graph-legend").find('.graph_dropdown')
+        text: $(this).closest(".graph-selector").find('.graph_dropdown')
       },
       position: {
         my: 'top left',
