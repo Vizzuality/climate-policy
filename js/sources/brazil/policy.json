@@ -8,8 +8,8 @@ var datasets = {
           "description": "",
           "x_axis": "year",
           "series": [
-            {"name": "Integral Protection", "column": "integral_protection", "class": "area", "y_extent": [0,750], "strokeColor": "rgba(238,87,41,1)", "fillColor": "rgba(238,87,41,0.2)"},
-            {"name": "Sustainable Use", "column": "sustainable_use", "class": "area", "y_extent": [0,750], "strokeColor": "rgba(79,110,191,1)", "fillColor": "rgba(79,110,191,0.2)"},
+            {"name": "Integral Protection", "column": "integral_protection", "class": "area", "y_extent": [0,1300], "strokeColor": "rgba(238,87,41,1)", "fillColor": "rgba(238,87,41,0.2)"},
+            {"name": "Sustainable Use", "column": "sustainable_use", "class": "area", "y_extent": [0,1300], "strokeColor": "rgba(79,110,191,1)", "fillColor": "rgba(79,110,191,0.2)"},
           ]
         },
         {
@@ -18,9 +18,9 @@ var datasets = {
           "description": "",
           "x_axis": "date_processed",
           "series": [
-            {"name": "Credit Subsidies", "column": "credit_subsidies", "class": "line", "y_extent": [0,17400], "strokeColor": "#546DBC"},
-            {"name": "Non-Credit Subsidies", "column": "non_credit_producer_subsidies", "class": "line", "y_extent": [0,17400], "strokeColor": "#F0542C"},
-            {"name": "Total Subsidies to Producers", "column": "total_producer_support", "class": "line", "y_extent": [0,17400], "strokeColor": "#00D9A3"}
+            {"name": "Credit Subsidies", "column": "credit_subsidies", "class": "line", "y_extent": [-4800,17400], "strokeColor": "#546DBC"},
+            {"name": "Non-Credit Subsidies", "column": "non_credit_producer_subsidies", "class": "line", "y_extent": [-4800,17400], "strokeColor": "#F0542C"},
+            {"name": "Total Subsidies to Producers", "column": "total_producer_support", "class": "line", "y_extent": [-4800,17400], "strokeColor": "#00D9A3"}
           ]
         }
       ]

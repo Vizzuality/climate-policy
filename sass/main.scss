@@ -153,7 +153,7 @@
   bottom: -60px;
   margin: 0 auto;
   width: 1038px;
-  height: 70px;
+  height: 10px;
   background: image-url('scroll-shadow.png') repeat-x;
 }
 
@@ -208,42 +208,6 @@
     background: image-url('scroll-icon.png') no-repeat;
   }
 }
-
-.years {
-  position: relative;
-  border: 1px solid rgba(#000, .1);
-  padding: 0 40px;
-  background: rgba(#F0532C, .15);
-  font: bold 13px/50px "open-sans", sans-serif;
-  text-align: center;
-  letter-spacing: 1px;
-  color: rgba(#000, .3);
-
-  span.year_label {
-    position:absolute;
-  }  
-
-  .year_marker {
-    position: absolute;
-    display: block;    
-    width: 70px;
-    height: 23px;
-    background: #000000;
-    top: 14px;
-    color: #FFFFFF;
-    line-height: 23px;
-  }
-}
-
-.year,
-.gap {
-  display: inline-block;
-}
-
-.year { width: 40px; }
-.gap { width: 257px; }
-
-.graph + .graph { border-top: 1px solid #ddd; }
 
 .content-footer {
   margin: 0 auto;

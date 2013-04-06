@@ -1,8 +1,59 @@
 @import "compass/css3";
 
-.horizontal_marks {
-  background-image: image-url('graph_back_gradient.png'), image-url('graph_vertical_marks.png');
-  background-repeat: repeat-y;
+.years {
+  position: relative;
+  border: 1px solid rgba(#000, .1);
+  border-bottom: 0;
+  padding: 0 40px;
+  background: rgba(#F0532C, .15);
+  font: bold 13px/50px "open-sans", sans-serif;
+  text-align: center;
+  letter-spacing: 1px;
+  color: rgba(#000, .3);
+
+  &.first .year_marker:before,
+  &.last .year_marker:after { display: none; }
+}
+
+.year_label { position: absolute; }  
+
+.year_marker {
+  position: absolute;
+  z-index: 10;
+  display: block;
+  visibility: hidden;
+  width: 70px;
+  height: 23px;
+  background: #000;
+  top: 14px;
+  color: #fff;
+  line-height: 23px;
+  @include border-radius(2px);
+
+  &:before {
+    border-left: 2px solid #000;
+    content: " ";
+    height: 15px;
+    display: block;
+    position: absolute;
+    top: -15px;
+    left: 34px;
+  }
+
+  &:after {
+    border-left: 2px solid #000;
+    content: " ";
+    height: 15px;
+    display: block;
+    position: absolute;
+    bottom: -15px;
+    left: 34px;
+  }
+}
+
+.graph {
+  border-top: 1px solid #ddd;
+  background: image-url('graph_back_gradient.png') repeat-x bottom;
 }
 
 .graph-selector {
@@ -84,8 +135,9 @@
   position: absolute;
   right: 40px;
   top: 40px;
-  width: 480px;
+  width: 600px;
   text-align: right;
+  pointer-events: none;
 
   li {
     display: inline-block;
@@ -108,7 +160,6 @@
   visibility: hidden;
   border: 2px solid #000;
   padding: 5px;
-  width: 46px;
   @include border-radius(5px);
   font: bold 12px "open-sans", sans-serif;
   text-align: center;
@@ -180,6 +231,22 @@
       margin-left: -6px;
     }
   }
+
+  span { font-weight: 400; }
+}
+
+.lineStyle{
+  stroke-width: 3;
+  stroke: red;
+  stroke-linecap: round;
+  fill: none;
+  pointer-events: none;
+}
+
+.linedot {
+  cursor: pointer;
+  stroke-width:2;
+  stroke: white;
 }
 
 .overlay { fill: transparent; }
@@ -187,6 +254,7 @@
 .overlay-line {
   visibility: hidden;
   fill: #000;
+  pointer-events: none;
 }
 
 .zero-mark {

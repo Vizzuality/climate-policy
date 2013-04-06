@@ -1,4 +1,8 @@
-.slider + .content-footer { border-top: 1px solid #ddd; }
+.slider {
+  border-top: 1px solid #ddd;
+
+  + .content-footer { border-top: 1px solid #ddd; }
+}
 
 .slides {
   overflow: hidden;

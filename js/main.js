@@ -112,7 +112,7 @@ $(document).ready(function() {
     if(graph.not(':visible')) {
       graph.siblings('.graph-selector').find('.graph-link').text(this.text);
       graph.siblings('.graph-canvas').hide();
-      graph.show();
+      graph.fadeIn();
     }
   });
 

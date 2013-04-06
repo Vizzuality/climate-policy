@@ -14,67 +14,63 @@ sectors:
   - agriculture
 ---
 
-<div class="graphs">
-  {% include years.html %}
+{% include years_first.html %}
 
-  <div class="graphs-inner">
-    <div class="graph">
-      <div class="graph-selector">
-        <h3 class="graph-title">
-          <span>Forestry</span>
-          <a href="#" class="graph-link">Commodity prices</a>
-        </h3>
+<div class="graph">
+  <div class="graph-selector">
+    <h3 class="graph-title">
+      <span>Forestry</span>
+      <a href="#" class="graph-link">Commodity prices</a>
+    </h3>
 
-        <ul class="graph_dropdown">
-          <li><h3 class="graph-title"><a href="#" data-rel="commodity_prices_copy_test_matallo">Commodity prices</a></h3></li>
-          <li><h3 class="graph-title"><a href="#" data-rel="deforestation_polygons_ind_copy_test_matallo">Deforestation polygons ind</a></h3></li>
-        </ul>
+    <ul class="graph_dropdown">
+      <li><h3 class="graph-title"><a href="#" data-rel="commodity_prices_copy_test_matallo">Commodity prices</a></h3></li>
+      <li><h3 class="graph-title"><a href="#" data-rel="deforestation_polygons_ind_copy_test_matallo">Deforestation polygons ind</a></h3></li>
+    </ul>
 
-        <hr class="graph-sep"/>
+    <hr class="graph-sep"/>
 
-        <p class="graph-description">Common drivers of deforestation, such as commodity prices, and land protection appear to have changed deforestation patterns, with large scale deforestation declining much more rapidly than small scale (e.g. tracts of less than 25 hectares).</p>
-      </div>
-
-      <div class="graph-canvas" id="commodity_prices_copy_test_matallo">
-        <ul class="graph-legend"></ul>
-      </div>
-
-      <div class="graph-canvas hidden" id="deforestation_polygons_ind_copy_test_matallo">
-        <ul class="graph-legend"></ul>
-      </div>
-    </div>
-
-    {% include years.html %}
-
-    <div class="graph">
-      <div class="graph-selector">
-        <h3 class="graph-title">
-          <span>Agriculture</span>
-          <a href="#" class="graph-link">Intensity indices</a>
-        </h3>
-
-        <ul class="graph_dropdown">
-          <li><h3 class="graph-title"><a href="#" data-rel="emissions_drivers_copy_test_matallo">Intensity indices</a></h3></li>
-          <li><h3 class="graph-title"><a href="#" data-rel="brazil_ag_2_exports_copy_test_matallo">Exports</a></h3></li>
-        </ul>
-
-        <hr class="graph-sep"/>
-
-        <p class="graph-description">Although the intensity of food production per hectare increased, mechanization did not increase.</p>
-      </div>
-
-      <div class="graph-canvas" id="emissions_drivers_copy_test_matallo">
-        <ul class="graph-legend"></ul>
-      </div>
-
-      <div class="graph-canvas hidden" id="brazil_ag_2_exports_copy_test_matallo">
-        <ul class="graph-legend"></ul>
-      </div>
-    </div>
+    <p class="graph-description">Common drivers of deforestation, such as commodity prices, and land protection appear to have changed deforestation patterns, with large scale deforestation declining much more rapidly than small scale (e.g. tracts of less than 25 hectares).</p>
   </div>
 
-  {% include years.html %}
+  <div class="graph-canvas" id="commodity_prices_copy_test_matallo">
+    <ul class="graph-legend"></ul>
+  </div>
+
+  <div class="graph-canvas hidden" id="deforestation_polygons_ind_copy_test_matallo">
+    <ul class="graph-legend"></ul>
+  </div>
 </div>
+
+{% include years.html %}
+
+<div class="graph">
+  <div class="graph-selector">
+    <h3 class="graph-title">
+      <span>Agriculture</span>
+      <a href="#" class="graph-link">Intensity indices</a>
+    </h3>
+
+    <ul class="graph_dropdown">
+      <li><h3 class="graph-title"><a href="#" data-rel="emissions_drivers_copy_test_matallo">Intensity indices</a></h3></li>
+      <li><h3 class="graph-title"><a href="#" data-rel="brazil_ag_2_exports_copy_test_matallo">Exports</a></h3></li>
+    </ul>
+
+    <hr class="graph-sep"/>
+
+    <p class="graph-description">Although the intensity of food production per hectare increased, mechanization did not increase.</p>
+  </div>
+
+  <div class="graph-canvas" id="emissions_drivers_copy_test_matallo">
+    <ul class="graph-legend"></ul>
+  </div>
+
+  <div class="graph-canvas hidden" id="brazil_ag_2_exports_copy_test_matallo">
+    <ul class="graph-legend"></ul>
+  </div>
+</div>
+
+{% include years_last.html %}
 
 <div class="content-footer">
   <a href="javascript:void(0)" class="scroll-controls scroll-top"><i><span>↑</span></i></a>

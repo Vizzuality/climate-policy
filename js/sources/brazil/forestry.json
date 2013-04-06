@@ -78,7 +78,7 @@ var datasets = {
           "x_axis": "date_processed",
           "series": [
             { "name": "Methane", "column": "methane_mmtco2e", "class": "line", "y_extent": [0,310], "strokeColor": "rgba(238,87,41,1)" },
-            { "name": "Nitrous Oxide", "column": "nitrous_oxide_mmtco2e", "class": "line", "y_extent": [0,160], "strokeColor": "rgba(79,110,191,1)" }
+            { "name": "Nitrous Oxide", "column": "nitrous_oxide_mmtco2e", "class": "line", "y_extent": [0,310], "strokeColor": "rgba(79,110,191,1)" }
           ]
         },
         {
