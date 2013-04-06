@@ -14,94 +14,89 @@ sectors:
   - agriculture
 ---
 
-<div class="graphs">
-  {% include years.html %}
+{% include years_first.html %}
 
-  <div class="graphs-inner">
-    <div class="graph">
-      <div class="graph-selector">
-        <h3 class="graph-title">
-          <span>Emissions</span>
-          Deforestation rate
-        </h3>
+<div class="graph">
+  <div class="graph-selector">
+    <h3 class="graph-title">
+      <span>Emissions</span>
+      Deforestation rate
+    </h3>
 
-        <hr class="graph-sep"/>
+    <hr class="graph-sep"/>
 
-        <p class="graph-description">Deforestation declined rapidly, particularly after major policy changes in 2004 and again in 2008.</p>
-      </div>
-
-      <div class="graph-canvas" id="deforestation_rate_copy_test_matallo">
-        <ul class="graph-legend"></ul>
-      </div>
-    </div>
-
-    {% include years.html %}
-
-    <div class="graph">
-      <div class="graph-selector">
-        <h3 class="graph-title">
-          <span>Emission drivers</span>
-          <a href="#" class="graph-link">Commodity prices</a>
-        </h3>
-
-        <ul class="graph_dropdown">
-          <li><h3 class="graph-title"><a href="#" data-rel="commodity_prices_copy_test_matallo">Commodity prices</a></h3></li>
-          <li><h3 class="graph-title"><a href="#" data-rel="deforestation_polygons_ind_copy_test_matallo">Deforestation polygons ind</a></h3></li>
-        </ul>
-
-        <hr class="graph-sep"/>
-
-        <p class="graph-description">Common drivers of deforestation, such as commodity prices, and land protection appear to have changed deforestation patterns, with large scale deforestation declining much more rapidly than small scale (e.g. tracts of less than 25 hectares).</p>
-      </div>
-
-      <div class="graph-canvas" id="commodity_prices_copy_test_matallo">
-        <ul class="graph-legend"></ul>
-      </div>
-
-      <div class="graph-canvas hidden" id="deforestation_polygons_ind_copy_test_matallo">
-        <ul class="graph-legend"></ul>
-      </div>
-    </div>
-
-    {% include years.html %}
-
-    <div class="graph">
-      <div class="graph-selector">
-        <h3 class="graph-title">
-          <span>Policy</span>
-          Protected lands
-        </h3>
-
-        <hr class="graph-sep"/>
-
-        <p class="graph-description">As an example of increased Brazilian policy efforts, Brazil has increased efforts to reduce deforestation, and the amount of land under government protection has increased significantly since 2001.</p>
-      </div>
-
-      <div class="graph-canvas" id="protected_lands_copy_test_matallo">
-        <ul class="graph-legend"></ul>
-      </div>
-    </div>
-
-    {% include years.html %}
-
-    <div class="graph">
-      <div class="graph-selector">
-        <h3 class="graph-title">
-          <span>Bar graph test</span>
-          Bar graph test
-        </h3>
-
-        <hr class="graph-sep"/>
-
-        <p class="graph-description">TEST!.</p>
-      </div>
-
-      <div class="graph-canvas" id="grid_impact_1_copy_diego_2">
-        <ul class="graph-legend"></ul>
-      </div>
-    </div>
+    <p class="graph-description">Deforestation declined rapidly, particularly after major policy changes in 2004 and again in 2008.</p>
   </div>
 
+  <div class="graph-canvas" id="deforestation_rate_copy_test_matallo">
+    <ul class="graph-legend"></ul>
+  </div>
+</div>
+
+{% include years.html %}
+
+<div class="graph">
+  <div class="graph-selector">
+    <h3 class="graph-title">
+      <span>Emission drivers</span>
+      <a href="#" class="graph-link">Commodity prices</a>
+    </h3>
+
+    <ul class="graph_dropdown">
+      <li><h3 class="graph-title"><a href="#" data-rel="commodity_prices_copy_test_matallo">Commodity prices</a></h3></li>
+      <li><h3 class="graph-title"><a href="#" data-rel="deforestation_polygons_ind_copy_test_matallo">Deforestation polygons ind</a></h3></li>
+    </ul>
+
+    <hr class="graph-sep"/>
+
+    <p class="graph-description">Common drivers of deforestation, such as commodity prices, and land protection appear to have changed deforestation patterns, with large scale deforestation declining much more rapidly than small scale (e.g. tracts of less than 25 hectares).</p>
+  </div>
+
+  <div class="graph-canvas" id="commodity_prices_copy_test_matallo">
+    <ul class="graph-legend"></ul>
+  </div>
+
+  <div class="graph-canvas hidden" id="deforestation_polygons_ind_copy_test_matallo">
+    <ul class="graph-legend"></ul>
+  </div>
+</div>
+
+{% include years.html %}
+
+<div class="graph">
+  <div class="graph-selector">
+    <h3 class="graph-title">
+      <span>Policy</span>
+      Protected lands
+    </h3>
+
+    <hr class="graph-sep"/>
+
+    <p class="graph-description">As an example of increased Brazilian policy efforts, Brazil has increased efforts to reduce deforestation, and the amount of land under government protection has increased significantly since 2001.</p>
+  </div>
+
+  <div class="graph-canvas" id="protected_lands_copy_test_matallo">
+    <ul class="graph-legend"></ul>
+  </div>
+</div>
+
+{% include years_last.html %}
+
+<div class="graph">
+  <div class="graph-selector">
+    <h3 class="graph-title">
+      <span>Bar graph test</span>
+      Bar graph test
+    </h3>
+
+    <hr class="graph-sep"/>
+
+    <p class="graph-description">TEST!.</p>
+  </div>
+
+  <div class="graph-canvas" id="grid_impact_1_copy_diego_2">
+    <ul class="graph-legend"></ul>
+  </div>
 </div>
 
 <div class="slider">

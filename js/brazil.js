@@ -26,24 +26,40 @@ var tooltip = d3.select("body")
 
 
 function moveOverlayLine() {
-  var year_marker = d3.selectAll(".year_marker");
-  if (year_marker[0].length == 0) {
-    d3.selectAll("div.years").each(function(d){
-      year_marker = $(this).append("<div class='year_marker'>1990</div>");
-    });
-  };
-
   var mouse_x = d3.mouse(this)[0];
-  year_marker.each(function() {
-    $(this).css('left',mouse_x-35);
-    var time = new Date(x_scale.invert(mouse_x));
-    d3.selectAll(".year_marker")
-      .text((time.getMonth()+1)+"/"+time.getFullYear());
-  });
+  var time = new Date(x_scale.invert(mouse_x));
+
+  d3.selectAll(".year_marker")
+    .text((time.getMonth()+1)+"/"+time.getFullYear())
+
+  $(".year_marker").css('left',mouse_x-35);
+
+  if(mouse_x < -2 || mouse_x > 1038) {
+    d3.selectAll(".year_marker").style("visibility", "hidden");
+  };
 
   d3.selectAll(".overlay-line")
     .attr("cx", d3.mouse(this)[0])
-    .attr("transform", "translate(" + d3.mouse(this)[0] + ",0)")
+    .attr("transform", "translate(" + mouse_x + ",0)")
+    .attr("cy", 0);
+}
+
+function moveOverlayLineSelector() {
+  var mouse_x = d3.mouse(this)[0]+30;
+  var time = new Date(x_scale.invert(mouse_x));
+
+  d3.selectAll(".year_marker")
+    .text((time.getMonth()+1)+"/"+time.getFullYear())
+
+  $(".year_marker").css('left',mouse_x-35);
+
+  if(mouse_x < -2 || mouse_x > 1038) {
+    d3.selectAll(".year_marker").style("visibility", "hidden");
+  };
+
+  d3.selectAll(".overlay-line")
+    .attr("cx", d3.mouse(this)[0])
+    .attr("transform", "translate(" + mouse_x + ",0)")
     .attr("cy", 0);
 }
 
@@ -72,9 +88,15 @@ $(document).ready(function() {
         .attr("class", "overlay")
         .attr("width", w)
         .attr("height", h)
-        .on("mouseover", function(d){d3.selectAll(".overlay-line").style("visibility", "visible");})
+        .on("mouseover", function(d) {
+          d3.selectAll(".overlay-line").style("visibility", "visible");
+          d3.selectAll(".year_marker").style("visibility", "visible");
+        })
         .on("mousemove", moveOverlayLine)
-        .on("mouseout", function(){d3.selectAll(".overlay-line").style("visibility", "hidden");});
+        .on("mouseout", function() {
+          d3.selectAll(".overlay-line").style("visibility", "hidden");
+          d3.selectAll(".year_marker").style("visibility", "hidden");
+        });
 
       svg[i].append("rect")
         .attr("class", "overlay-line")
@@ -82,6 +104,12 @@ $(document).ready(function() {
         .attr("height", h)
     }
   }
+
+  //Creates year marker on every years timeline
+  d3.selectAll(".years").each(function(d){
+    year_marker = $(this).append("<div class='year_marker'>1990</div>");
+  });
+
 
   d3.json(_domainq+')%20as%20aux%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79', function(data) {
     var std_domain = [new Date(data.rows[0].min),new Date(data.rows[0].max)];
@@ -114,7 +142,6 @@ $(document).ready(function() {
       }
     }
   })
-
 
   function drawBarChart(index,domain) {
     d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+subject[index].table+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
@@ -200,7 +227,7 @@ $(document).ready(function() {
           .attr("y1", 160)
           .attr("x2", series_label_width+group_width*j+zero_pos)
           .attr("y2", h-30)
-          .style("stroke", "#DDDDDD");
+          .style("stroke", "#ddd");
 
         var group_name_ = subject[index].x_groups[j].column;
 
@@ -256,15 +283,14 @@ $(document).ready(function() {
             .attr("r", LINE_DOT_R)
             .attr("name", function(d){return Math.round(d[group_name]*1000)/1000}) //Uses this for tooltip
             .on("mouseover", function(d) {
-
               var tooltipClassname = "";
               var x_tooltip = 0;
               if (d[group_name] > 0) {
                 tooltipClassname = "tooltip tooltip-left";
-                x_tooltip = $(this).offset().left + 18;
+                x_tooltip = $(this).offset().left + 23;
               } else {                
                 tooltipClassname =  "tooltip tooltip-right";
-                x_tooltip = $(this).offset().left - 67;
+                x_tooltip = $(this).offset().left - 64;
               }
               tooltip.style("visibility", "visible")
                 .text($(this).attr('name'))
@@ -344,18 +370,19 @@ $(document).ready(function() {
             .attr("r", LINE_DOT_R)
             .attr("name", function(d){return d[y_col]}) //Uses this for tooltip
             .on("mouseover", function(d) {
-              var date = new Date(d[x_col]).getFullYear();
 
               d3.selectAll(".overlay-line").style("visibility", "visible");
+              d3.selectAll(".year_marker").style("visibility", "visible");
               tooltip.style("visibility", "visible")
-                .html($(this).attr('name') + "<br /><span>" + date + "</span>")
+                .html($(this).attr('name'))
                 .style("top", $(this).offset().top+30+"px")
-                .style("left", $(this).offset().left-25+"px")
+                .style("left", $(this).offset().left-$(".tooltip").width()/2-2+"px")
                 .attr("class","tooltip tooltip-top");
             })
             .on("mousemove", moveOverlayLine)
             .on("mouseout", function(){
               d3.selectAll(".overlay-line").style("visibility", "hidden");
+              d3.selectAll(".year_marker").style("visibility", "hidden");
               tooltip.style("visibility", "hidden");
             });
 
@@ -383,10 +410,12 @@ $(document).ready(function() {
             .attr("style",'fill:'+fillColor)
             .on("mouseover", function(d) {
               d3.selectAll(".overlay-line").style("visibility", "visible");
+              d3.selectAll(".year_marker").style("visibility", "visible");
             })
             .on("mousemove", moveOverlayLine)
             .on("mouseout", function(){
               d3.selectAll(".overlay-line").style("visibility", "hidden");
+              d3.selectAll(".year_marker").style("visibility", "hidden");
             });
 
           var line = d3.svg.line()
@@ -419,16 +448,17 @@ $(document).ready(function() {
             .attr("name", function(d){return d[y_col]}) //Uses this for tooltip
             .on("mouseover", function(d) {
               d3.selectAll(".overlay-line").style("visibility", "visible");
+              d3.selectAll(".year_marker").style("visibility", "visible");
               tooltip.style("visibility", "visible")
                 .text($(this).attr('name'))
-                .style(function(){console.log("OLA")})
                 .style("top", $(this).offset().top+30+"px")
-                .style("left", $(this).offset().left-25+"px")
+                .style("left", $(this).offset().left-28+"px")
                 .attr("class","tooltip tooltip-top");
             })
             .on("mousemove", moveOverlayLine)
             .on("mouseout", function(){
               d3.selectAll(".overlay-line").style("visibility", "hidden");
+              d3.selectAll(".year_marker").style("visibility", "hidden");
               tooltip.style("visibility", "hidden");
             });
           previous_stacked_column = y_col;
@@ -443,10 +473,11 @@ $(document).ready(function() {
         svg[index].node().appendChild(this);
       });
 
+      //Add zero-line if negative value
       if(min_val < 0) {
         var x_axis = d3.svg.axis().scale(x_scale);
 
-        svg[index].append("line")
+        svg[index].append("svg:line")
           .attr("class", "zero-mark")
           .attr("x1", 0)
           .attr("x2", w)
@@ -456,4 +487,27 @@ $(document).ready(function() {
       }
     });
   }
+
+  //Add areas where overlay line is still active
+  d3.selectAll(".years")
+    .on("mouseover", function(d) {
+      d3.selectAll(".overlay-line").style("visibility", "visible");
+      d3.selectAll(".year_marker").style("visibility", "visible");
+    })
+    .on("mousemove", moveOverlayLine)
+    .on("mouseout", function(){
+      d3.selectAll(".overlay-line").style("visibility", "hidden");
+      d3.selectAll(".year_marker").style("visibility", "hidden");
+    });
+
+    d3.selectAll(".graph-selector")
+      .on("mouseover", function(d) {
+        d3.selectAll(".overlay-line").style("visibility", "visible");
+        d3.selectAll(".year_marker").style("visibility", "visible");
+      })
+      .on("mousemove", moveOverlayLineSelector)
+      .on("mouseout", function(){
+        d3.selectAll(".overlay-line").style("visibility", "hidden");
+        d3.selectAll(".year_marker").style("visibility", "hidden");
+      });
 });

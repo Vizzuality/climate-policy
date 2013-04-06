@@ -4,18 +4,3 @@
   background-color: #F8DF8D;
   background: image-url('pattern.png'), image-url('brazil-bg.png') 100% 0;
 }
-
-.lineStyle{
-  stroke-width: 3;
-  stroke: red;
-  stroke-linecap: round;
-  fill: none;
-  pointer-events: none;
-}
-
-.linedot {
-  stroke-width:2;
-  stroke: white;
-}
-
-.overlay-line { pointer-events: none; }

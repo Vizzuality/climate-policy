@@ -209,32 +209,6 @@
   }
 }
 
-.years {
-  position: relative;
-  border: 1px solid rgba(#000, .1);
-  padding: 0 40px;
-  background: rgba(#F0532C, .15);
-  font: bold 13px/50px "open-sans", sans-serif;
-  text-align: center;
-  letter-spacing: 1px;
-  color: rgba(#000, .3);
-
-  span.year_label {
-    position:absolute;
-  }  
-
-  .year_marker {
-    position: absolute;
-    display: block;    
-    width: 70px;
-    height: 23px;
-    background: #000000;
-    top: 14px;
-    color: #FFFFFF;
-    line-height: 23px;
-  }
-}
-
 .content-footer {
   margin: 0 auto;
   width: 200px;

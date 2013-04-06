@@ -13,86 +13,82 @@ sectors:
   - agriculture
 ---
 
-<div class="graphs">
-  {% include years.html %}
+{% include years_first.html %}
 
-  <div class="graphs-inner">
-    <div class="graph">
-      <div class="graph-selector">
-        <h3 class="graph-title">
-          <span>Emissions</span>
-          <a href="#" class="graph-link">Emissions</a>
-        </h3>
+<div class="graph">
+  <div class="graph-selector">
+    <h3 class="graph-title">
+      <span>Emissions</span>
+      <a href="#" class="graph-link">Emissions</a>
+    </h3>
 
-        <ul class="graph_dropdown">
-          <li><h3 class="graph-title"><a href="#" data-rel="land_use_emissions_copy_test_matallo">Emissions</a></h3></li>
-          <li><h3 class="graph-title"><a href="#" data-rel="land_use_emissions_copy_test_matallo_2">Land Use</a></h3></li>
-        </ul>
+    <ul class="graph_dropdown">
+      <li><h3 class="graph-title"><a href="#" data-rel="land_use_emissions_copy_test_matallo">Emissions</a></h3></li>
+      <li><h3 class="graph-title"><a href="#" data-rel="land_use_emissions_copy_test_matallo_2">Land Use</a></h3></li>
+    </ul>
 
-        <hr class="graph-sep"/>
+    <hr class="graph-sep"/>
 
-        <p class="graph-description">Brief text describing Brazil emission drivers in forestry sector.</p>
-      </div>
-
-      <div class="graph-canvas" id="land_use_emissions_copy_test_matallo">
-        <ul class="graph-legend"></ul>
-      </div>
-
-      <div class="graph-canvas hidden" id="land_use_emissions_copy_test_matallo_2">
-        <ul class="graph-legend"></ul>
-      </div>
-    </div>
-
-    {% include years.html %}
-
-    <div class="graph">
-      <div class="graph-selector">
-        <h3 class="graph-title">
-          <span>Emission drivers</span>
-          <a href="#" class="graph-link">Intensity indices</a>
-        </h3>
-
-        <ul class="graph_dropdown">
-          <li><h3 class="graph-title"><a href="#" data-rel="emissions_drivers_copy_test_matallo">Intensity indices</a></h3></li>
-          <li><h3 class="graph-title"><a href="#" data-rel="brazil_ag_2_exports_copy_test_matallo">Exports</a></h3></li>
-        </ul>
-
-        <hr class="graph-sep"/>
-
-        <p class="graph-description">Brief text describing Brazil emission drivers in forestry sector.</p>
-      </div>
-
-      <div class="graph-canvas" id="emissions_drivers_copy_test_matallo">
-        <ul class="graph-legend"></ul>
-      </div>
-
-      <div class="graph-canvas hidden" id="brazil_ag_2_exports_copy_test_matallo">
-        <ul class="graph-legend"></ul>
-      </div>
-    </div>
-
-    {% include years.html %}
-
-    <div class="graph">
-      <div class="graph-selector">
-        <h3 class="graph-title">
-          <span>Policy</span>
-          Credit
-        </h3>
-
-        <hr class="graph-sep"/>
-
-        <p class="graph-description">Brief text describing Brazil emission drivers in forestry sector.</p>
-      </div>
-
-      <div class="graph-canvas" id="brazil_ag_3_credit_subsidies_copy_test_matallo">
-        <ul class="graph-legend"></ul>
-      </div>
-    </div>
+    <p class="graph-description">Brief text describing Brazil emission drivers in forestry sector.</p>
   </div>
 
-  {% include years.html %}
+  <div class="graph-canvas" id="land_use_emissions_copy_test_matallo">
+    <ul class="graph-legend"></ul>
+  </div>
+
+  <div class="graph-canvas hidden" id="land_use_emissions_copy_test_matallo_2">
+    <ul class="graph-legend"></ul>
+  </div>
 </div>
+
+{% include years.html %}
+
+<div class="graph">
+  <div class="graph-selector">
+    <h3 class="graph-title">
+      <span>Emission drivers</span>
+      <a href="#" class="graph-link">Intensity indices</a>
+    </h3>
+
+    <ul class="graph_dropdown">
+      <li><h3 class="graph-title"><a href="#" data-rel="emissions_drivers_copy_test_matallo">Intensity indices</a></h3></li>
+      <li><h3 class="graph-title"><a href="#" data-rel="brazil_ag_2_exports_copy_test_matallo">Exports</a></h3></li>
+    </ul>
+
+    <hr class="graph-sep"/>
+
+    <p class="graph-description">Brief text describing Brazil emission drivers in forestry sector.</p>
+  </div>
+
+  <div class="graph-canvas" id="emissions_drivers_copy_test_matallo">
+    <ul class="graph-legend"></ul>
+  </div>
+
+  <div class="graph-canvas hidden" id="brazil_ag_2_exports_copy_test_matallo">
+    <ul class="graph-legend"></ul>
+  </div>
+</div>
+
+{% include years.html %}
+
+<div class="graph">
+  <div class="graph-selector">
+    <h3 class="graph-title">
+      <span>Policy</span>
+      Credit
+    </h3>
+
+    <hr class="graph-sep"/>
+
+    <p class="graph-description">Brief text describing Brazil emission drivers in forestry sector.</p>
+  </div>
+
+  <div class="graph-canvas" id="brazil_ag_3_credit_subsidies_copy_test_matallo">
+    <ul class="graph-legend"></ul>
+  </div>
+</div>
+
+{% include years_last.html %}
 
 <div class="slider">
   <ul class="tabs clearfix">
