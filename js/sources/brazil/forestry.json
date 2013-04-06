@@ -8,7 +8,7 @@ var datasets = {
           "description": "",
           "x_axis": "date_processed",
           "series": [
-            { "name": "Deforestation rate", "column": "units_km2_year", "class": "line", "y_extent": [0,30000], "strokeColor": "#546DBC" }
+            { "name": "Deforestation rate", "column": "units_km2_year",  "units": "km^2/year", "class": "line", "y_extent": [0,30000], "strokeColor": "#546DBC" }
           ]
         },
         {
@@ -17,8 +17,8 @@ var datasets = {
           "description": "",
           "x_axis": "date_processed",
           "series": [
-            {"name": "Corn Prices", "column": "corn", "class": "line", "y_extent": [0,1100], "strokeColor": "#546DBC"},
-            {"name": "Soybean Price", "column": "soybeans", "class": "line", "y_extent": [0,1100], "strokeColor": "#F0542C"}
+            {"name": "Corn Prices", "column": "corn", "units": "BRL/Ton", "class": "line", "y_extent": [0,1100], "strokeColor": "#546DBC"},
+            {"name": "Soybean Price", "column": "soybeans", "units": "BRL/Ton", "class": "line", "y_extent": [0,1100], "strokeColor": "#F0542C"}
           ]
         },
         {
@@ -27,7 +27,7 @@ var datasets = {
           "description": "",
           "x_axis": "years",
           "series": [
-            {"name": "< 25 Hectares", "column": "_25_hectares", "class": "line", "y_extent": [0,110], "strokeColor": "#546DBC"},
+            {"name": "< 25 Hectares", "column": "_25_hectares", "units": "Index (2004=100)", "class": "line", "y_extent": [0,110], "strokeColor": "#546DBC"},
             {"name": "25-100 Hectares", "column": "_25_100_hectares", "class": "line", "y_extent": [0,110], "strokeColor": "#F0542C"},
             {"name": "100-500 Hectares", "column": "_100_500_hectares", "class": "line", "y_extent": [0,110], "strokeColor": "#00D9A3"},
             {"name": "500-1000 Hectares", "column": "_500_1000_hectares", "class": "line", "y_extent": [0,110], "strokeColor": "#FFD24D"},
@@ -40,8 +40,8 @@ var datasets = {
           "description": "",
           "x_axis": "year",
           "series": [
-          {"name": "Integral Protection", "column": "integral_protection", "class": "area", "y_extent": [0,1300], "strokeColor": "rgba(238,87,41,1)", "fillColor": "rgba(238,87,41,0.2)"},
-            {"name": "Sustainable Use", "column": "sustainable_use", "class": "area", "y_extent": [0,1300], "strokeColor": "rgba(79,110,191,1)", "fillColor": "rgba(79,110,191,0.2)"},
+          {"name": "Integral Protection", "column": "integral_protection", "units": "Thousand km^2", "class": "area", "y_extent": [0,1300], "strokeColor": "rgba(238,87,41,1)", "fillColor": "rgba(238,87,41,0.2)"},
+            {"name": "Sustainable Use", "column": "sustainable_use", "units": "Thousand km^2", "class": "area", "y_extent": [0,1300], "strokeColor": "rgba(79,110,191,1)", "fillColor": "rgba(79,110,191,0.2)"},
             
           ]
         },
@@ -50,6 +50,7 @@ var datasets = {
           "name": "Grid impact",
           "table": "grid_impact_1_copy_diego_2",
           "description": "Test Diego",
+          "units": "km2",
           "x_groups": [
             {"label": "1980-1990","column": "_1980_1990",},
             {"label": "1990-2000","column": "_1990_2000",},

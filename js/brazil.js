@@ -230,8 +230,9 @@ $(document).ready(function() {
           .style("stroke", "#ddd");
 
         var group_name_ = subject[index].x_groups[j].column;
+        var units_ = subject[index].units;
 
-        (function(group_name) { // We need a reference to group_name in runtime, for tooltips
+        (function(group_name, units) { // We need a reference to group_name in runtime, for tooltips
           svg[index].selectAll("rect."+group_name)
             .data(data.rows)
             .enter()
@@ -281,7 +282,7 @@ $(document).ready(function() {
               return series_label_top_margin + (i * series_step) - bar_height/2 - 6}
             )
             .attr("r", LINE_DOT_R)
-            .attr("name", function(d){return (Math.round(d[group_name]*1000)/1000) + " " + d["units"]}) //Uses this for tooltip
+            .attr("name", function(d){return (Math.round(d[group_name]*1000)/1000) + " " + units}) //Uses this for tooltip
             .on("mouseover", function(d) {
               d3.select(this)
                 .transition()
@@ -311,7 +312,7 @@ $(document).ready(function() {
                 .duration(100)              
                 .attr("r",LINE_DOT_R);
             });
-        })(group_name_);
+        })(group_name_, units_);
       }
     });
   }
@@ -361,12 +362,14 @@ $(document).ready(function() {
             .x(function(d){return x_scale(new Date(d[x_col]))})
             .y(function(d){return y_scale(d[y_col])});
 
+          var units_ = subject[index].series[i].units;
+
           g.append("svg:path")
             .attr("d", line(data_col))
             .attr("class", 'lineStyle')
             .attr("style",'stroke:'+strokeColor_);
 
-          (function(strokeColor){  // We need a reference to strokeColor in runtime, for hover
+          (function(strokeColor, units){  // We need a reference to strokeColor in runtime, for hover
           g.selectAll("circle")
             .data(data_col)
             .enter()
@@ -377,7 +380,7 @@ $(document).ready(function() {
             .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
             .attr("cy", function(d){return y_scale(d[y_col])})
             .attr("r", LINE_DOT_R)
-            .attr("name", function(d){return d[y_col]+ " " + d["units"]}) //Uses this for tooltip
+            .attr("name", function(d){return d[y_col]+ " " + units}) //Uses this for tooltip
             .on("mouseover", function(d) {
 
               d3.selectAll(".overlay-line").style("visibility", "visible");
@@ -396,16 +399,17 @@ $(document).ready(function() {
               tooltip.style("visibility", "hidden");
               d3.select(this).attr("style","fill: "+strokeColor+"; stroke: #ffffff");
             });
-          })(strokeColor_);
+          })(strokeColor_, units_);
 
 
         } else if (subject[index].series[i].class == "area") {
 
-          var extended_data_col = new Array();
-          extended_data_col = jQuery.extend(true,[],data_col);
-          console.log(extended_data_col);
+
+          var units_ = subject[index].series[i].units;
 
           // Insert a value before and after the time range, for the sides gradient
+          var extended_data_col = new Array();
+          extended_data_col = jQuery.extend(true,[],data_col);
           var fake_right = jQuery.extend(true,{},extended_data_col[extended_data_col.length - 1]);
           fake_right[x_col] = (parseInt(fake_right[x_col])+1)+""; 
           extended_data_col.push(fake_right);
@@ -457,7 +461,7 @@ $(document).ready(function() {
           var g_circles = svg[index].append("svg:g");
           g_circles.attr("class","dataCircles");
 
-          (function(strokeColor){  // We need a reference to strokeColor in runtime, for hover
+          (function(strokeColor, units){  // We need a reference to strokeColor in runtime, for hover
             g_circles.selectAll("circle")
               .data(data_col)
               .enter()
@@ -470,7 +474,7 @@ $(document).ready(function() {
                 return y_scale(d[y_col]+d[previous_stacked_column]);
               })
               .attr("r", LINE_DOT_R)
-              .attr("name", function(d){return d[y_col]+ " " + d["units"]}) //Uses this for tooltip
+              .attr("name", function(d){return d[y_col]+ " " + units}) //Uses this for tooltip
               .on("mouseover", function(d) {
                 d3.selectAll(".overlay-line").style("visibility", "visible");
                 d3.selectAll(".year_marker").style("visibility", "visible");
@@ -489,7 +493,7 @@ $(document).ready(function() {
                 tooltip.style("visibility", "hidden");
                 d3.select(this).attr("style","fill: "+strokeColor+"; stroke: #ffffff;");
               });
-            })(strokeColor_);
+            })(strokeColor_, units_);
 
           previous_stacked_column = y_col;
         }
@@ -528,9 +532,7 @@ $(document).ready(function() {
         d.setDate(1);
         d.setMonth(0);        
         d.setFullYear(parseInt(data_col[data_col.length-1][x_col]));
-        console.log(d);
         var right_gradient_x = x_scale(d) + 23;
-        console.log(left_gradient_x,right_gradient_x)
 
         svg[index].append("svg:image")
           .attr("x",left_gradient_x)
