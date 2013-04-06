@@ -496,6 +496,8 @@ $(document).ready(function() {
 
         $("#"+subject[index].table).find(".graph-legend").append('<li><div class="legend-item" style="background-color:'+strokeColor_+'"></div><span>'+y_col_name+'</span></li>')
           .attr("r", LINE_DOT_R);
+
+
       }
 
       // Bringing all circles over the areas
@@ -506,7 +508,6 @@ $(document).ready(function() {
       //Add zero-line if negative value
       if(min_val < 0) {
         var x_axis = d3.svg.axis().scale(x_scale);
-
         svg[index].append("svg:line")
           .attr("class", "zero-mark")
           .attr("x1", 0)
@@ -514,6 +515,37 @@ $(document).ready(function() {
           .attr("y1", y_scale(0))
           .attr("y2", y_scale(0))
           .style("stroke-dasharray", "8, 4");
+      }
+
+      if ((previous_stacked_column != null)&&(previous_stacked_column.length > 0)) {        
+        // If there are any stacked area, we draw the side gradients
+        var d = new Date();
+        d.setDate(1);
+        d.setMonth(0);
+        d.setFullYear(data_col[0][x_col] - 1);
+        var left_gradient_x = x_scale(d) - 5;
+
+        d.setDate(1);
+        d.setMonth(0);        
+        d.setFullYear(parseInt(data_col[data_col.length-1][x_col]));
+        console.log(d);
+        var right_gradient_x = x_scale(d) + 23;
+        console.log(left_gradient_x,right_gradient_x)
+
+        svg[index].append("svg:image")
+          .attr("x",left_gradient_x)
+          .attr("y",0)
+          .attr("width",70)
+          .attr("height",h+2)
+          .attr("xlink:href","/img/left_gradient.png");
+
+        svg[index].append("svg:image")
+          .attr("x",right_gradient_x)
+          .attr("y",0)
+          .attr("width",70)
+          .attr("height",h+2)
+          .attr("xlink:href","/img/right_gradient.png");
+
       }
     });
   }
