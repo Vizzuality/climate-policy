@@ -168,7 +168,6 @@ $(document).ready(function() {
       var total_graph_area_width = 650;
       var total_series_height = 200;
       var group_width = total_graph_area_width/subject[index].x_groups.length;
-      //var bar_height = 100/data.rows.length;
       var bar_height = 2
       var max_bar = group_width*parseFloat(max)/parseFloat(parseFloat(max_negat) + parseFloat(max_posit));
 
@@ -232,7 +231,7 @@ $(document).ready(function() {
         var group_name_ = subject[index].x_groups[j].column;
         var units_ = subject[index].units;
 
-        (function(group_name, units) { // We need a reference to group_name in runtime, for tooltips
+        (function(group_name, units) { // We need a reference to group_name & units in runtime, for tooltips
           svg[index].selectAll("rect."+group_name)
             .data(data.rows)
             .enter()
