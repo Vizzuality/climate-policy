@@ -1,0 +1,38 @@
+
+brazil:
+  id: brazil
+  name: Brazil
+  tagline: Protecting forests through policy
+  description: In any discussion of Brazilian climate policy, the first topic is deforestation. Brazil has seen marked success in climate-related policies and may be a good model for other emerging economies. Roughly half the slowdown in deforestation in the late-2000s was a result of deliberate government policy, while better land productivity has led to increased agricultural output.
+  sectors:
+    forestry:
+      name: Forestry
+      tagline: Lorem ipsum
+      description: The Amazon is the world’s largest rainforest, stretching over an area of over five million square kilometers. Most of the forest is contained within Brazil, where the Amazon originally occupied over four million square kilometers of the country’s territory—an area equivalent to almost half of continental Europe. Roughly half the slowdown in deforestation in the late-2000s was a result of deliberate government policy, while better land productivity has led to increased agricultural output. Having greatly reduced large-scale deforestation, Brazil’s challenge now is to address small-scale deforestation, which may require different policy approaches
+      subjects:
+        emissions:
+          name: Emissions
+          description: Lorem ipsum dolor sit amet to be provided
+
+        emission_drivers:
+          name: Emission Drivers
+          description: Lorem ipsum dolor sit amet to be provided
+        policy:
+          name: Policy
+          description: Lorem ipsum dolor sit amet to be provided
+    agriculture:
+      name: Agriculture
+      tagline: Lorem ipsum
+      description: Continual modernization of agricultural practices in India, Europe, and southern Brazil enabled increased productivity without marked increases in cultivated land. In fact, cultivated land area remained flat or decreased in some cases. Greenhouse gas emissions from agricultural land use followed suit. In India, mechanization-focused policies and increased fertilizer intensity contributed to this pattern, whereas Europe moved beyond increased fertilization and instead improved agricultural practices that lowered fertilizer application. On the other hand, for India and Brazil, exports might have driven increased cropland expansion or agricultural intensification, while northern Brazil maintained more traditional agricultural practices, expanding cultivated land area to keep up with demand. Brazilian deforestation rates spiked in the early 2000s along with emissions from Brazilian agriculture; however, aggressive Brazilian policies helped drive down deforestation rates in the late 2000s.
+      subjects:
+        emissions:
+          name: Emissions
+          description: Lorem ipsum dolor sit amet to be provided
+        emission_drivers:
+          name: Emission Drivers
+          description: Lorem ipsum dolor sit amet to be provided
+        policy:
+          name: Policy
+          description: Lorem ipsum dolor sit amet to be provided
+
+

@@ -1,2 +1,1 @@
-jekyll: jekyll --server --auto
-compass: compass watch
+web: bundle exec rails server thin -p $PORT -e $RACK_ENV

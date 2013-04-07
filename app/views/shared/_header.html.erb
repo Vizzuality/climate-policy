@@ -1,0 +1,66 @@
+<header class="header">
+  <nav class="header-nav">
+    <div class="inner">
+      <p class="logo"><a href="/"><%= image_tag 'policy-climate-interactive-logo.png', alt: 'The Policy Climate Interactive', class: 'logo' %></a></p>
+
+      <ul>
+        <li class="nav-item">
+          <a href="#" class="regions dropdown_link selected">Regions</a>
+          <ul class="navbar_dropdown">
+            <% @regions.each do |region| %>
+              <li>
+                <%= link_to region.name, region_subject_path(region_id: region.id, id: region.first_subject) %>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="dropdown_link last">Sectors</a>
+          <ul class="navbar_dropdown">
+            <% @region.sectors.each do |sector| %>
+              <li>
+                <%= link_to sector.name, sector_subject_path(sector_id: sector.id, id: sector.subjects.first.first) %>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="inner">
+    <p class="title"><%= @main.name %></p>
+    <h2 class="tagline"><%= @main.tagline %></h2>
+    <p class="description"><%= @main.description %></p>
+
+    <div class="nav-item scroll">
+      <a href="javascript:void(0)" class="nav-link"><em></em>Scroll to explore</a>
+      <h2 class="nav-title"><%= @region.id %></h2>
+    </div>
+  </div>
+
+  <div class="navbar clearfix">
+    <nav class="inner">
+      <ul>
+        <li class="menu-item first">By subject</li>
+        <% @main.subjects.each do |subject_id, subject| %>
+          <li class="menu-item">
+            <%= link_to subject['name'], send("#{main_type}_subject_path".to_sym, :"#{main_type}_id" => @main.id, id: subject_id), class: params[:id] == subject_id ? 'selected' : nil %>
+          </li>
+        <% end %>
+      </ul>
+
+      <ul class="last">
+
+        <li class="menu-item first">By <%= @sectors_or_regions.first.type %></li>
+        <% @sectors_or_regions.each do |sector_or_region| %>
+          <li class="menu-item">
+            <%= link_to sector_or_region.name, send("#{@main.type}_#{sector_or_region.type}_path".to_sym, :"#{@main.type}_id" => @main.id, id: sector_or_region.id), class: params[:id] == sector_or_region.id ? 'selected' : nil %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+
+    <div class="scroll-shadow"></div>
+  </div>
+</header>

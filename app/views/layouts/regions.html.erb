@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>The Policy Climate Interactive</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag    params[:region_id], media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "sources/#{ params[:region_id] }/#{ params[:id] }", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+
+    <!--[if IE]>
+    <%= stylesheet_link_tag    "ie", media: "all", "data-turbolinks-track" => true %>
+    <![endif]-->
+    <script type="text/javascript" src="//use.typekit.net/opp1nwp.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <!-- Google Analytics -->
+    <script>
+      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+  </head>
+  <body>
+
+    <div class="wrapper">
+      <%= render 'shared/header' %>
+
+      <div class="content">
+        <%= render 'shared/description' %>
+
+        <%= render 'shared/years_first' %>
+
+        <div class="graph">
+          <div class="graph-selector">
+            <h3 class="graph-title">
+              <span>Forestry</span>
+              Deforestation rate
+            </h3>
+
+            <hr class="graph-sep"/>
+
+            <p class="graph-description">Deforestation declined rapidly, particularly after major policy changes in 2004 and again in 2008.</p>
+          </div>
+
+          <div class="graph-canvas" id="deforestation_rate_copy_test_matallo">
+            <ul class="graph-legend"></ul>
+          </div>
+        </div>
+
+        <%= render 'shared/years' %>
+
+        <div class="graph">
+          <div class="graph-selector">
+            <h3 class="graph-title">
+              <span>Agriculture</span>
+              <a href="#" class="graph-link">Emissions</a>
+            </h3>
+
+            <ul class="graph_dropdown">
+              <li><h3 class="graph-title"><a href="#" data-rel="land_use_emissions_copy_test_matallo">Emissions</a></h3></li>
+              <li><h3 class="graph-title"><a href="#" data-rel="land_use_emissions_copy_test_matallo_2">Land Use</a></h3></li>
+            </ul>
+
+            <hr class="graph-sep"/>
+
+            <p class="graph-description">Both land under cultivation and non-CO2 emissions increased.</p>
+          </div>
+
+          <div class="graph-canvas" id="land_use_emissions_copy_test_matallo">
+            <ul class="graph-legend"></ul>
+          </div>
+
+          <div class="graph-canvas hidden" id="land_use_emissions_copy_test_matallo_2">
+            <ul class="graph-legend"></ul>
+          </div>
+        </div>
+
+        <%= render 'shared/years_last' %>
+
+        <div class="content-footer">
+          <a href="javascript:void(0)" class="scroll-controls scroll-top"><i><span>↑</span></i></a>
+        </div>
+      </div>
+
+      <%= render 'shared/footer' %>
+    </div>
+
+  </body>
+</html>
+
