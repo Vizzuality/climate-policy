@@ -52,8 +52,8 @@ class Sector < ActiveYaml::Base
     self.class.name.downcase
   end
 
-  def graph_configs(region_id, subject_id)
-    GraphConfig.for(region_id, id, subject_id)
+  def graph_configs(region_or_sector_id, subject_id)
+    GraphConfig.for(region_or_sector_id, id, subject_id)
   end
 
   private
