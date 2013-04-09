@@ -45,7 +45,7 @@
         <li class="menu-item first">By subject</li>
         <% @main.subjects.each do |subject_id, subject| %>
           <li class="menu-item">
-            <%= link_to subject['name'], send("#{main_type}_subject_path".to_sym, :"#{main_type}_id" => @main.id, id: subject_id), class: params[:id] == subject_id ? 'selected' : nil %>
+            <%= link_to subject[:name], send("#{@main.type}_subject_path".to_sym, :"#{main_type}_id" => @main.id, id: subject_id), class: params[:id] == subject_id ? 'selected' : nil %>
           </li>
         <% end %>
       </ul>

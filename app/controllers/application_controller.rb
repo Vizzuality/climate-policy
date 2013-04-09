@@ -35,6 +35,7 @@ class ApplicationController < ActionController::Base
   end
 
   def get_item_data
+    @graph_configs      = GraphConfig.all.as_json.map{|gp| gp['attributes']}
     @sectors_or_regions = if main_is_region?
                             @region.sectors
                           else

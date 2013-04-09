@@ -27,71 +27,13 @@
         g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
         s.parentNode.insertBefore(g,s)}(document,'script'));
     </script>
+    <script type="text/javascript">
+      var graph_configs = "<%= @graph_configs.to_json.html_safe %>";
+    </script>
   </head>
   <body>
 
-    <div class="wrapper">
-      <%= render 'shared/header' %>
-
-      <div class="content">
-        <%= render 'shared/description' %>
-
-        <%= render 'shared/years_first' %>
-
-        <div class="graph">
-          <div class="graph-selector">
-            <h3 class="graph-title">
-              <span>Forestry</span>
-              Deforestation rate
-            </h3>
-
-            <hr class="graph-sep"/>
-
-            <p class="graph-description">Deforestation declined rapidly, particularly after major policy changes in 2004 and again in 2008.</p>
-          </div>
-
-          <div class="graph-canvas" id="deforestation_rate_copy_test_matallo">
-            <ul class="graph-legend"></ul>
-          </div>
-        </div>
-
-        <%= render 'shared/years' %>
-
-        <div class="graph">
-          <div class="graph-selector">
-            <h3 class="graph-title">
-              <span>Agriculture</span>
-              <a href="#" class="graph-link">Emissions</a>
-            </h3>
-
-            <ul class="graph_dropdown">
-              <li><h3 class="graph-title"><a href="#" data-rel="land_use_emissions_copy_test_matallo">Emissions</a></h3></li>
-              <li><h3 class="graph-title"><a href="#" data-rel="land_use_emissions_copy_test_matallo_2">Land Use</a></h3></li>
-            </ul>
-
-            <hr class="graph-sep"/>
-
-            <p class="graph-description">Both land under cultivation and non-CO2 emissions increased.</p>
-          </div>
-
-          <div class="graph-canvas" id="land_use_emissions_copy_test_matallo">
-            <ul class="graph-legend"></ul>
-          </div>
-
-          <div class="graph-canvas hidden" id="land_use_emissions_copy_test_matallo_2">
-            <ul class="graph-legend"></ul>
-          </div>
-        </div>
-
-        <%= render 'shared/years_last' %>
-
-        <div class="content-footer">
-          <a href="javascript:void(0)" class="scroll-controls scroll-top"><i><span>↑</span></i></a>
-        </div>
-      </div>
-
-      <%= render 'shared/footer' %>
-    </div>
+    <%= render 'shared/graphs_list' %>
 
   </body>
 </html>

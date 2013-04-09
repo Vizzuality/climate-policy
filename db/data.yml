@@ -13,13 +13,22 @@ brazil:
         emissions:
           name: Emissions
           description: Lorem ipsum dolor sit amet to be provided
+          graph_config:
+            - land_use_emissions_copy_test_matallo
+            - wadus
 
         emission_drivers:
           name: Emission Drivers
           description: Lorem ipsum dolor sit amet to be provided
+          graph_config:
+            - land_use_emissions_copy_test_matallo
+
         policy:
           name: Policy
           description: Lorem ipsum dolor sit amet to be provided
+          graph_config:
+            - land_use_emissions_copy_test_matallo
+
     agriculture:
       name: Agriculture
       tagline: Lorem ipsum
@@ -28,11 +37,19 @@ brazil:
         emissions:
           name: Emissions
           description: Lorem ipsum dolor sit amet to be provided
+          graph_config:
+            - land_use_emissions_copy_test_matallo
+
         emission_drivers:
           name: Emission Drivers
           description: Lorem ipsum dolor sit amet to be provided
+          graph_config:
+            - land_use_emissions_copy_test_matallo
+
         policy:
           name: Policy
           description: Lorem ipsum dolor sit amet to be provided
+          graph_config:
+            - land_use_emissions_copy_test_matallo
 
 

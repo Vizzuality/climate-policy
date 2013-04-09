@@ -1,0 +1,37 @@
+land_use_emissions_copy_test_matallo:
+  id: land_use_emissions_copy_test_matallo
+  name: Land use
+  description: Wadus wadus
+  x_axis: date_processed
+  series:
+    methane_mmtco2e:
+      name: Methane
+      column: methane_mmtco2e
+      class: line
+      y_extent: '[0,310]'
+      strokeColor: 'rgba(238,87,41,1)'
+    nitrous_oxide_mmtco2e:
+      name: Nitrous Oxide
+      column: nitrous_oxide_mmtco2e
+      class: line
+      y_extent: '[0,310]'
+      strokeColor: 'rgba(79,110,191,1)'
+
+wadus:
+  id: wadus
+  name: Wadusss
+  description: lorem ipsum
+  x_axis: date_processed
+  series:
+    methane_mmtco2e:
+      name: Methane
+      column: methane_mmtco2e
+      class: line
+      y_extent: '[0,310]'
+      strokeColor: 'rgba(238,87,41,1)'
+    nitrous_oxide_mmtco2e:
+      name: Nitrous Oxide
+      column: nitrous_oxide_mmtco2e
+      class: line
+      y_extent: '[0,310]'
+      strokeColor: 'rgba(79,110,191,1)'

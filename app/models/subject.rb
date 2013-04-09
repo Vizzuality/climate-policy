@@ -2,7 +2,7 @@ class Subject < ActiveYaml::Base
   set_root_path "db"
   set_filename "data"
 
-  fields :id, :name, :description, :region_id, :sector_id
+  fields :id, :name, :description, :region_id, :sector_id, :graph_config
 
   def self.find_by_id_region_id_and_sector_id(id, region_id, sector_id)
     Region.find_by_id(region_id).find_subject_by_id(id, sector_id)
@@ -34,10 +34,14 @@ class Subject < ActiveYaml::Base
     self.class.name.downcase
   end
 
+  def graph_configs
+    GraphConfig.find graph_config
+  end
+
   private
 
   def current_index
-    related_subjects.index([id, attributes.slice(:name, :description).stringify_keys])
+    related_subjects.index([id, attributes.slice(:name, :description, :graph_config).stringify_keys])
   end
 
   def related_subjects
