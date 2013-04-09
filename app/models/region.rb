@@ -48,8 +48,8 @@ class Region < ActiveYaml::Base
     nil
   end
 
-  def graph_configs
-    GraphConfig.find graph_config
+  def graph_configs(sector_id, subject_id)
+    GraphConfig.for(id, sector_id, subject_id)
   end
 
   private

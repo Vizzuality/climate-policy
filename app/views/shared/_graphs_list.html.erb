@@ -1,11 +1,11 @@
 <%= render 'shared/description' %>
 
-<% @items.each do |item| %>
-  <%= render 'shared/years_first' %>
+<%= render 'shared/years_first' %>
 
+<% @items.each do |item| %>
   <%= render 'shared/graph', :type => 'line', :item => item %>
 
-  <%= render 'shared/years_last' %>
+  <%= render 'shared/years' %>
 <% end %>
 
 <%= render 'shared/years_last' %>

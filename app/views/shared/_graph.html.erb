@@ -1,18 +1,19 @@
+<% graph_configs = item.graph_configs(@main.id, @item.id) %>
 <div class="graph <%= type %>-type">
   <div class="graph-selector">
     <h3 class="graph-title">
       <span><%= item.name %></span>
 
-      <% if item.graph_config.size == 1 %>
-        <%= item.graph_configs.first.name %>
+      <% if graph_configs.size == 1 %>
+        <%= graph_configs.first.name %>
       <% else %>
-        <%= link_to item.graph_configs.first.name, '#', class: 'graph-link' %>
+        <%= link_to graph_configs.first.name, '#', class: 'graph-link' %>
       <% end %>
     </h3>
 
-    <% if item.graph_config.size > 1 %>
+    <% if graph_configs.size > 1 %>
       <ul class="graph_dropdown">
-        <% item.graph_configs.each do |graph_config| %>
+        <% graph_configs.each do |graph_config| %>
           <li>
             <h3 class="graph-title">
               <%= link_to graph_config.name, '#', :'data-rel' => graph_config.id %>
@@ -24,15 +25,15 @@
 
     <hr class="graph-sep"/>
 
-    <% item.graph_configs.each_with_index do |graph_config, index| %>
+    <% graph_configs.each_with_index do |graph_config, index| %>
       <p class="graph-description <%= graph_config.id %> <%= 'hidden' if index > 0 %>"><%= graph_config.description %></p>
     <% end %>
   </div>
 
-  <% item.graph_configs.each_with_index do |graph_config, index| %>
-  <div class="graph-canvas <%= 'hidden' if index > 0 %>" id="<%= graph_config.id %>">
-    <ul class="graph-legend"></ul>
-  </div>
+  <% graph_configs.each_with_index do |graph_config, index| %>
+    <div class="graph-canvas <%= 'hidden' if index > 0 %>" id="<%= graph_config.id %>">
+      <ul class="graph-legend"></ul>
+    </div>
   <% end %>
 
   <div class="graph-gradient"></div>

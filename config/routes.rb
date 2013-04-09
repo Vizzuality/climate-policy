@@ -2,13 +2,13 @@ ClimatePolicy::Application.routes.draw do
 
   with_options(only: :show) do |opts|
     opts.resources :regions do
-      opts.resources :sectors
-      opts.resources :subjects
+      opts.resources :sectors # => subjects
+      opts.resources :subjects # => sectors
     end
 
     opts.resources :sectors do
-      opts.resources :subjects
-      opts.resources :regions
+      opts.resources :subjects # => regions
+      opts.resources :regions # => subjects
     end
   end
 

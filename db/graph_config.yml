@@ -1,8 +1,7 @@
-brazil_emissions_forestry:
-  id: brazil_emissions_forestry
-  table: deforestation_rate_copy_test_matallo
-  name: Deforestation rate
-  description: Deforestation declined rapidly, particularly after major policy changes in 2004 and again in 2008.
+brazil_forestry_emissions:
+  id: brazil_forestry_emissions
+  name: brazil_forestry_emissions
+  description: brazil_forestry_emissions 1 description
   x_axis: date_processed
   series:
     deforestation_rate:
@@ -13,11 +12,10 @@ brazil_emissions_forestry:
       y_extent: '[3000,30000]'
       strokeColor: 'rgba(238,87,41,1)'
 
-brazil_emissions_agriculture:
-  id: brazil_emissions_agriculture
-  table: land_use_emissions_copy_test_matallo
-  name: Emissions
-  description: Both land under cultivation and non-CO2 emissions increased.
+brazil_forestry_emission_drivers:
+  id: brazil_forestry_emission_drivers
+  name: brazil_forestry_emission_drivers
+  description: brazil_forestry_emission_drivers
   x_axis: date_processed
   series:
     methane_mmtco2e:
@@ -35,17 +33,78 @@ brazil_emissions_agriculture:
       y_extent: '[70,350]'
       strokeColor: 'rgba(79,110,191,1)'
 
-brazil_emissions_agriculture_2:
-  id: brazil_emissions_agriculture_2
-  table: land_use_emissions_copy_test_matallo
-  name: Land Use
-  description: Both land under cultivation and non-CO2 emissions increased.
+brazil_forestry_policy:
+  id: brazil_forestry_policy
+  name: brazil_forestry_policy
+  description: brazil_forestry_policy
   x_axis: date_processed
   series:
-    land_use_million_hectares:
-      name: Land Use
-      column: land_use_million_hectares
-      units: million hectares
+    methane_mmtco2e:
+      name: Methane
+      column: methane_mmtco2e
       class: line
-      y_extent: '[35,70]'
+      y_extent: '[0,310]'
       strokeColor: 'rgba(238,87,41,1)'
+    nitrous_oxide_mmtco2e:
+      name: Nitrous Oxide
+      column: nitrous_oxide_mmtco2e
+      class: line
+      y_extent: '[0,310]'
+      strokeColor: 'rgba(79,110,191,1)'
+
+brazil_agriculture_emissions:
+  id: brazil_agriculture_emissions
+  name: brazil_agriculture_emissions
+  description: brazil_agriculture_emissions
+  x_axis: date_processed
+  series:
+    methane_mmtco2e:
+      name: Methane
+      column: methane_mmtco2e
+      class: line
+      y_extent: '[0,310]'
+      strokeColor: 'rgba(238,87,41,1)'
+    nitrous_oxide_mmtco2e:
+      name: Nitrous Oxide
+      column: nitrous_oxide_mmtco2e
+      class: line
+      y_extent: '[0,310]'
+      strokeColor: 'rgba(79,110,191,1)'
+
+brazil_agriculture_emission_drivers:
+  id: brazil_agriculture_emission_drivers
+  name: brazil_agriculture_emission_drivers
+  description: brazil_agriculture_emission_drivers
+  x_axis: date_processed
+  series:
+    methane_mmtco2e:
+      name: Methane
+      column: methane_mmtco2e
+      class: line
+      y_extent: '[0,310]'
+      strokeColor: 'rgba(238,87,41,1)'
+    nitrous_oxide_mmtco2e:
+      name: Nitrous Oxide
+      column: nitrous_oxide_mmtco2e
+      class: line
+      y_extent: '[0,310]'
+      strokeColor: 'rgba(79,110,191,1)'
+
+brazil_agriculture_policy:
+  id: brazil_agriculture_policy
+  name: brazil_agriculture_policy
+  description: brazil_agriculture_policy
+  x_axis: date_processed
+  series:
+    methane_mmtco2e:
+      name: Methane
+      column: methane_mmtco2e
+      class: line
+      y_extent: '[0,310]'
+      strokeColor: 'rgba(238,87,41,1)'
+    nitrous_oxide_mmtco2e:
+      name: Nitrous Oxide
+      column: nitrous_oxide_mmtco2e
+      class: line
+      y_extent: '[0,310]'
+      strokeColor: 'rgba(79,110,191,1)'
