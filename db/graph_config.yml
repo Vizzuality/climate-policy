@@ -1,37 +1,51 @@
-land_use_emissions_copy_test_matallo:
-  id: land_use_emissions_copy_test_matallo
-  name: Land use
-  description: Wadus wadus
+brazil_emissions_forestry:
+  id: brazil_emissions_forestry
+  table: deforestation_rate_copy_test_matallo
+  name: Deforestation rate
+  description: Deforestation declined rapidly, particularly after major policy changes in 2004 and again in 2008.
+  x_axis: date_processed
+  series:
+    deforestation_rate:
+      name: Deforestation rate
+      column: units_km2_year
+      units: km^2/year
+      class: line
+      y_extent: '[3000,30000]'
+      strokeColor: 'rgba(238,87,41,1)'
+
+brazil_emissions_agriculture:
+  id: brazil_emissions_agriculture
+  table: land_use_emissions_copy_test_matallo
+  name: Emissions
+  description: Both land under cultivation and non-CO2 emissions increased.
   x_axis: date_processed
   series:
     methane_mmtco2e:
       name: Methane
       column: methane_mmtco2e
+      units: MTn CO2e
       class: line
-      y_extent: '[0,310]'
+      y_extent: '[70,350]'
       strokeColor: 'rgba(238,87,41,1)'
     nitrous_oxide_mmtco2e:
       name: Nitrous Oxide
       column: nitrous_oxide_mmtco2e
+      units: MTn CO2e
       class: line
-      y_extent: '[0,310]'
+      y_extent: '[70,350]'
       strokeColor: 'rgba(79,110,191,1)'
 
-wadus:
-  id: wadus
-  name: Wadusss
-  description: lorem ipsum
+brazil_emissions_agriculture_2:
+  id: brazil_emissions_agriculture_2
+  table: land_use_emissions_copy_test_matallo
+  name: Land Use
+  description: Both land under cultivation and non-CO2 emissions increased.
   x_axis: date_processed
   series:
-    methane_mmtco2e:
-      name: Methane
-      column: methane_mmtco2e
+    land_use_million_hectares:
+      name: Land Use
+      column: land_use_million_hectares
+      units: million hectares
       class: line
-      y_extent: '[0,310]'
+      y_extent: '[35,70]'
       strokeColor: 'rgba(238,87,41,1)'
-    nitrous_oxide_mmtco2e:
-      name: Nitrous Oxide
-      column: nitrous_oxide_mmtco2e
-      class: line
-      y_extent: '[0,310]'
-      strokeColor: 'rgba(79,110,191,1)'

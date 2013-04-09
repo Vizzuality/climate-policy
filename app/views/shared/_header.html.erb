@@ -50,7 +50,6 @@
       </ul>
 
       <ul class="last">
-        <li class="menu-item first">By <%= @sectors_or_regions.first.type %></li>
         <% @sectors_or_regions.each do |sector_or_region| %>
           <li class="menu-item">
             <%= link_to sector_or_region.name, send("#{@main.type}_#{sector_or_region.type}_path".to_sym, :"#{@main.type}_id" => @main.id, id: sector_or_region.id), class: params[:id] == sector_or_region.id ? 'selected' : nil %>

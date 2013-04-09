@@ -4,9 +4,9 @@
       <span><%= item.name %></span>
 
       <% if item.graph_config.size == 1 %>
-        <%= item.name %>
+        <%= item.graph_configs.first.name %>
       <% else %>
-        <%= link_to item.name, '#', class: 'graph-link' %>
+        <%= link_to item.graph_configs.first.name, '#', class: 'graph-link' %>
       <% end %>
     </h3>
 
@@ -22,9 +22,7 @@
       </ul>
     <% end %>
 
-
     <hr class="graph-sep"/>
-
 
     <% item.graph_configs.each_with_index do |graph_config, index| %>
       <p class="graph-description <%= graph_config.id %> <%= 'hidden' if index > 0 %>"><%= graph_config.description %></p>

@@ -26,11 +26,23 @@
         s.parentNode.insertBefore(g,s)}(document,'script'));
     </script>
     <script type="text/javascript">
-      var graph_configs = <%= @graph_configs.to_json.html_safe %>;
+      var graphs = <%= @graph_configs.to_json.html_safe %>;
     </script>
   </head>
   <body>
-    <%= render 'shared/graphs_list' %>
+    <div class="wrapper">
+      <%= render 'shared/header' %>
+
+      <div class="content">
+        <%= render 'shared/graphs_list' %>
+
+        <div class="content-footer">
+          <a href="javascript:void(0)" class="scroll-controls scroll-top"><i><span>↑</span></i></a>
+        </div>
+      </div>
+
+      <%= render 'shared/footer' %>
+    </div>
   </body>
 </html>
 

@@ -1,24 +1,12 @@
-<div class="wrapper">
-  <%= render 'shared/header' %>
+<%= render 'shared/description' %>
 
-  <div class="content">
-    <%= render 'shared/description' %>
+<% @items.each do |item| %>
+  <%= render 'shared/years_first' %>
 
-    <%#= render 'shared/years_first' %>
+  <%= render 'shared/graph', :type => 'line', :item => item %>
 
+  <%= render 'shared/years_last' %>
+<% end %>
 
-    <% @items.each do |item| %>
-      <%= render 'shared/graph', :type => 'line', :item => item %>
-    <% end %>
+<%= render 'shared/years_last' %>
 
-    <%#= render 'shared/years' %>
-
-    <%#= render 'shared/years_last' %>
-
-    <div class="content-footer">
-      <a href="javascript:void(0)" class="scroll-controls scroll-top"><i><span>↑</span></i></a>
-    </div>
-  </div>
-
-  <%= render 'shared/footer' %>
-</div>
