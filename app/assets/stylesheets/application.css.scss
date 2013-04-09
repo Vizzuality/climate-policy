@@ -4,7 +4,6 @@
 //= require slider
 //= require graphs
 
-@import "compass";
 @import "compass/reset";
 @import "compass/css3";
 
@@ -133,6 +132,8 @@
       float: right;
       margin-right: -39px;
     }
+
+    &.first { margin-left: -39px; }
   }
 }
 

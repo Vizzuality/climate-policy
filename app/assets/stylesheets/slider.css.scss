@@ -1,4 +1,6 @@
 .slider {
+  position: relative;
+  z-index: 100;
   border-top: 1px solid #ddd;
 
   + .content-footer { border-top: 1px solid #ddd; }
@@ -6,7 +8,7 @@
 
 .slides {
   overflow: hidden;
-  width: 958px;
+  width: 1038px;
 }
 
 .slides-inner {
@@ -29,8 +31,8 @@
 
     &.first {
       margin-left: 0;
-      padding-right: 80px;
-      width: 220px;
+      padding-right: 20px;
+      width: 280px;
     }
 
     li {

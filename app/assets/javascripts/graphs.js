@@ -1,8 +1,9 @@
-var margin = 30;
-var top_margin = 100;
+var margin = 40;
+var margin_top = 80;
 var h = 388;
 var w = 1038;
 var LINE_DOT_R = 4;
+var INTERPOLATE_METHOD = "cardinal";
 
 //chart info
 var subject = [];
@@ -13,16 +14,10 @@ var svg = [];
 var LINE_DOT_R = 4;
 var x_scale;
 
-
 //Creates generic tooltip
-//TODO: Create simultaeous tooltips per serie
 var tooltip = d3.select("body")
   .append("div")
-  .attr("class", "tooltip tooltip-top");
-  //uncomment for left tooltip
-  // .attr("class", "tooltip tooltip-left");
-  //uncomment for right tooltip
-  // .attr("class", "tooltip tooltip-right");
+  .attr("class", "tooltip generic_tooltip tooltip-top");
 
 
 function moveOverlayLine() {
@@ -38,10 +33,9 @@ function moveOverlayLine() {
     d3.selectAll(".year_marker").style("visibility", "hidden");
   };
 
-  d3.selectAll(".overlay-line")
-    .attr("cx", d3.mouse(this)[0])
+  $(".overlay-line")
     .attr("transform", "translate(" + mouse_x + ",0)")
-    .attr("cy", 0);
+    .attr("css", "visibility: visible;");
 }
 
 function moveOverlayLineSelector() {
@@ -52,15 +46,7 @@ function moveOverlayLineSelector() {
     .text((time.getMonth()+1)+"/"+time.getFullYear())
 
   $(".year_marker").css('left',mouse_x-35);
-
-  if(mouse_x < -2 || mouse_x > 1038) {
-    d3.selectAll(".year_marker").style("visibility", "hidden");
-  };
-
-  d3.selectAll(".overlay-line")
-    .attr("cx", d3.mouse(this)[0])
-    .attr("transform", "translate(" + mouse_x + ",0)")
-    .attr("cy", 0);
+  $(".overlay-line").css('left',mouse_x-35);
 }
 
 
@@ -78,31 +64,9 @@ $(document).ready(function() {
     svg[i] = d3.select("#"+subject[i].table)
       .append("svg")
       .attr("width", w)
-      .attr("height", h);
+      .attr("height", h+margin);
 
     _domainq = _domainq + 'SELECT%20min(date_processed)%20as%20min,%20max(date_processed)%20as%20max%20FROM%20'+subject[i].table
-
-    //Creates an overlay + overlay line per subject unless barchart type
-    if(subject[i].type != 'BarGraph') {
-      svg[i].append("rect")
-        .attr("class", "overlay")
-        .attr("width", w)
-        .attr("height", h)
-        .on("mouseover", function(d) {
-          d3.selectAll(".overlay-line").style("visibility", "visible");
-          d3.selectAll(".year_marker").style("visibility", "visible");
-        })
-        .on("mousemove", moveOverlayLine)
-        .on("mouseout", function() {
-          d3.selectAll(".overlay-line").style("visibility", "hidden");
-          d3.selectAll(".year_marker").style("visibility", "hidden");
-        });
-
-      svg[i].append("rect")
-        .attr("class", "overlay-line")
-        .attr("width", 2)
-        .attr("height", h)
-    }
   }
 
   //Creates year marker on every years timeline
@@ -112,6 +76,7 @@ $(document).ready(function() {
 
 
   d3.json(_domainq+')%20as%20aux%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79', function(data) {
+
     var std_domain = [new Date(data.rows[0].min),new Date(data.rows[0].max)];
 
     // Calculates the global x_scale
@@ -123,14 +88,14 @@ $(document).ready(function() {
     var year_step = 2;
     d3.selectAll("div.years").each(function(d){
       var year_init = parseInt(std_domain[0].getFullYear());
-      var year_end = parseInt(std_domain[1].getFullYear());      
+      var year_end = parseInt(std_domain[1].getFullYear());
       for (var y = year_init; y<=year_end; y += 3) {
         var newYear = new Date();
         newYear.setDate(1);
         newYear.setMonth(0);
         newYear.setFullYear(y);
         var year_x_position = Math.round(x_scale(newYear)) - 15;
-        $(this).append("<span class='year_label' style='left:"+year_x_position+"px'>"+y+"</span>");        
+        $(this).append("<span class='year_label' style='left:"+year_x_position+"px'>"+y+"</span>");
       }
     });
 
@@ -154,9 +119,9 @@ $(document).ready(function() {
         for (var j = 0; j < subject[index].x_groups.length; j++) {
           var value = d[subject[index].x_groups[j].column];
           if (value > 0) {
-            posit.push(value);
+            posit.push(parseFloat(value));
           } else {
-            negat.push(Math.abs(value));
+            negat.push(Math.abs(parseFloat(value)));
           }
         }
       });
@@ -169,22 +134,35 @@ $(document).ready(function() {
       var total_series_height = 200;
       var group_width = total_graph_area_width/subject[index].x_groups.length;
       var bar_height = 2
-      var max_bar = group_width*parseFloat(max)/parseFloat(parseFloat(max_negat) + parseFloat(max_posit));
+      
+      var max_bar = 0;
+      if (max_negat != null) {
+        max_bar = group_width*parseFloat(max)/parseFloat(parseFloat(max_negat) + parseFloat(max_posit));
+      } else{
+        max_bar = group_width;
+      }      
 
       var series_step = total_series_height/data.rows.length;
       var series_label_left_margin = 40;
-      var series_label_top_margin = 170;
+      var series_label_top_margin = 70;
       var series_label_width = 363;
+
+      var positive_color = "#546DBC";
+      var negative_color = "#F0542C";
+
 
       var bar_width_scale = d3.scale.linear()
         .domain([0,max])
         .range([0, max_bar]);
 
-      var zero_pos = bar_width_scale(max_negat); // Zero position for each group equals the bar of the mazimum negative number
+      var zero_pos = 0;
+      if (max_negat != null) {
+        zero_pos = bar_width_scale(max_negat); // Zero position for each group equals the bar of the mazimum negative number
+      }
 
       // Series labels
-      svg[index].selectAll("text.graph-series-label")
-        .data(data.rows)
+      svg[index].selectAll("text.graph-series-label")      
+        .data(data.rows)        
         .enter()
         .append("text")
         .attr("class","graph-series-label")
@@ -192,7 +170,7 @@ $(document).ready(function() {
           return "series_label_"+d.cartodb_id;
         })
         .text(function(d) {
-          return d.variable;
+          return d[subject[index].name_column];
         })
         .attr("x", function(d,i) {
           return series_label_left_margin;
@@ -201,21 +179,23 @@ $(document).ready(function() {
           return series_label_top_margin + (i * series_step);
         });
 
-      // Group labels
-      svg[index].selectAll("text.graph-groups-label")
-        .data(subject[index].x_groups)
-        .enter()
-        .append("text")
-        .attr("class","graph-groups-label")
-        .text(function(d) {
-          return d.label;
-        })
-        .attr("x", function(d,i) {
-          return series_label_width + group_width*i + zero_pos - 40;
-        })
-        .attr("y", function(d,i) {
-          return 140;
-        });
+      // Drawing group-x labels if there are more than one
+      if ((subject[index].x_groups).length > 1) {
+        svg[index].selectAll("text.graph-groups-label")
+          .data(subject[index].x_groups)
+          .enter()
+          .append("text")
+          .attr("class","graph-groups-label")
+          .text(function(d) {
+            return d.label;
+          })
+          .attr("x", function(d,i) {          
+            return series_label_width + group_width*i + zero_pos - 40;
+          })
+          .attr("y", function(d,i) {
+            return 30;
+          });
+      }
       
       // Drawing each x-group
       for (var j = 0; j < subject[index].x_groups.length; j++) {
@@ -223,10 +203,11 @@ $(document).ready(function() {
         // Drawing an axis for each group_x
         var lineGraph = svg[index].append("svg:line")
           .attr("x1", series_label_width+group_width*j+zero_pos)
-          .attr("y1", 160)
+          .attr("y1", 50)
           .attr("x2", series_label_width+group_width*j+zero_pos)
-          .attr("y2", h-30)
-          .style("stroke", "#ddd");
+          .attr("y2", h-130)
+          .style("stroke", "#ddd")
+          .style("shape-rendering", "crispEdges");
 
         var group_name_ = subject[index].x_groups[j].column;
         var units_ = subject[index].units;
@@ -256,7 +237,11 @@ $(document).ready(function() {
               return bar_height;
             })
             .attr("style",function (d) {
-              return "fill: #546DBC";
+              if (d[group_name] > 0) {
+                return "fill: "+positive_color;
+              } else {
+                return "fill: "+negative_color;
+              }              
             })
             .attr("name", function(d){
               return Math.round(d[group_name]*1000)/1000;
@@ -267,7 +252,13 @@ $(document).ready(function() {
             .enter()
             .append("circle")
             .attr("class", group_name+' linedot linedot'+i)
-            .attr("style",'stroke: #546DBC; fill: #fff')
+            .attr("style",function(d) {
+              if (d[group_name] > 0) {
+                return "stroke: "+positive_color+"; fill: #fff";
+              } else {
+                return "stroke: "+negative_color+"; fill: #fff";
+              }              
+            })
             .attr("cx", function(d){
               var x = series_label_width + group_width*j + zero_pos;
               if (d[group_name] > 0) {
@@ -283,19 +274,22 @@ $(document).ready(function() {
             .attr("r", LINE_DOT_R)
             .attr("name", function(d){return (Math.round(d[group_name]*1000)/1000) + " " + units}) //Uses this for tooltip
             .on("mouseover", function(d) {
+              var tooltipClassname = "";
+              var x_tooltip = 0;
+
+              if (d[group_name] > 0) {
+                tooltipClassname = "tooltip generic_tooltip tooltip-left";
+                x_tooltip = $(this).offset().left + 24;
+              } else {                
+                tooltipClassname =  "tooltip generic_tooltip tooltip-right";
+                x_tooltip = $(this).offset().left - $(".generic_tooltip").width() - 30;
+              }
+
               d3.select(this)
                 .transition()
                 .duration(100)
                 .attr("r",LINE_DOT_R+1);
-              var tooltipClassname = "";
-              var x_tooltip = 0;
-              if (d[group_name] > 0) {
-                tooltipClassname = "tooltip tooltip-left";
-                x_tooltip = $(this).offset().left + 23;
-              } else {                
-                tooltipClassname =  "tooltip tooltip-right";
-                x_tooltip = $(this).offset().left - 78;
-              }
+
               tooltip.style("visibility", "visible")
                 .text($(this).attr('name'))
                 .attr("class",tooltipClassname)
@@ -305,10 +299,17 @@ $(document).ready(function() {
             .on("mousemove", moveOverlayLine)
             .on("mouseout", function(){
               tooltip.style("visibility", "hidden");
-              d3.select(this).attr("style","fill: #ffffff; stroke: #546DBC");
+
               d3.select(this)
+                .attr("style",function(d) {
+                  if (d[group_name] > 0) {
+                    return "stroke: "+positive_color+"; fill: #fff";
+                  } else {
+                    return "stroke: "+negative_color+"; fill: #fff";
+                  }              
+                })
                 .transition()
-                .duration(100)              
+                .duration(100)
                 .attr("r",LINE_DOT_R);
             });
         })(group_name_, units_);
@@ -317,7 +318,7 @@ $(document).ready(function() {
   }
 
   //Draws a lineChart
-  //index:index of the table on the json, 
+  //index:index of the table on the json,
   //std_domain: specific domain - keep undefined for showing the chart's own domain
   function drawChart(index,domain) {
     d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+subject[index].table+"%20order%20by%20"+subject[index].x_axis+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
@@ -332,7 +333,8 @@ $(document).ready(function() {
       }
 
       var x_col = subject[index].x_axis;
-      var previous_stacked_column = null;
+      //var previous_stacked_column = null;
+      var stacked_area_accumulated = new Array();
       var min_val = 0;
 
       for (var i = 0; i < subject[index].series.length; i++) {
@@ -344,7 +346,7 @@ $(document).ready(function() {
         var y_col_name = subject[index].series[i].name;
 
         var y_scale = d3.scale.linear()
-          .range([h, top_margin])
+          .range([h, margin_top])
           .domain(subject[index].series[i].y_extent);
 
         // remove null values and find min_val if negative value
@@ -355,11 +357,27 @@ $(document).ready(function() {
           return (d[y_col] != null) && (d[y_col] != 0)
         });
 
-        if (subject[index].series[i].class == "line") {
+        // //Creates focus + multiple tooltips per serie
+        // g.append("div")
+        //   .attr("class", "tooltip tooltip-top multiple_tooltip multiple_tooltip_"+index+"_"+i);
+        // g.append("circle")
+        //   .attr("class", 'focus focus_'+index+"_"+i)
+        //   .data(data_col)
+        //   .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
+        //   .attr("cy", function(d){return y_scale(d[y_col])})
+        //   .attr("r", LINE_DOT_R)
 
+        svg[index].append("rect")
+          .attr("class", "overlay-line")
+          .attr("height", h)
+          .attr("width", 2)
+          .attr("cy", 0);
+
+        if (subject[index].series[i].class == "line") {
           var line = d3.svg.line()
             .x(function(d){return x_scale(new Date(d[x_col]))})
-            .y(function(d){return y_scale(d[y_col])});
+            .y(function(d){return y_scale(d[y_col])})
+            .interpolate(INTERPOLATE_METHOD);
 
           var units_ = subject[index].series[i].units;
 
@@ -369,7 +387,7 @@ $(document).ready(function() {
             .attr("style",'stroke:'+strokeColor_);
 
           (function(strokeColor, units){  // We need a reference to strokeColor in runtime, for hover
-          g.selectAll("circle")
+          g.selectAll(".linedot")
             .data(data_col)
             .enter()
             .append("circle")
@@ -379,33 +397,40 @@ $(document).ready(function() {
             .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
             .attr("cy", function(d){return y_scale(d[y_col])})
             .attr("r", LINE_DOT_R)
-            .attr("name", function(d){return d[y_col]+ " " + units}) //Uses this for tooltip
+            .attr("name", function(d){return (Math.round(d[y_col]*1000)/1000)+ " " + units}) //Uses this for tooltip
             .on("mouseover", function(d) {
-
               d3.selectAll(".overlay-line").style("visibility", "visible");
               d3.selectAll(".year_marker").style("visibility", "visible");
+
               tooltip.style("visibility", "visible")
                 .html($(this).attr('name'))
                 .style("top", $(this).offset().top+30+"px")
-                .style("left", $(this).offset().left-$(".tooltip").width()/2-2+"px")
-                .attr("class","tooltip tooltip-top");
-              d3.select(this).attr("style","fill: #ffffff; stroke: #000000");
+                .style("left", $(this).offset().left-$(".generic_tooltip").width()/2-2+"px")
+                .attr("class","tooltip generic_tooltip tooltip-top");
+
+              d3.select(this).attr("style","fill: #fff; stroke: #000")
+                .transition()
+                .duration(100)
+                .attr("r",LINE_DOT_R+1);
             })
             .on("mousemove", moveOverlayLine)
             .on("mouseout", function(d){
               d3.selectAll(".overlay-line").style("visibility", "hidden");
               d3.selectAll(".year_marker").style("visibility", "hidden");
+
               tooltip.style("visibility", "hidden");
-              d3.select(this).attr("style","fill: "+strokeColor+"; stroke: #ffffff");
+
+              d3.select(this).attr("style","fill: "+strokeColor+"; stroke: #fff")
+                .transition()
+                .duration(100)
+                .attr("r",LINE_DOT_R);
             });
           })(strokeColor_, units_);
-
-
         } else if (subject[index].series[i].class == "area") {
-
 
           var units_ = subject[index].series[i].units;
 
+          // Preparing things for the side gradients
           // Insert a value before and after the time range, for the sides gradient
           var extended_data_col = new Array();
           extended_data_col = jQuery.extend(true,[],data_col);
@@ -415,24 +440,39 @@ $(document).ready(function() {
           var fake_left = jQuery.extend(true,{},extended_data_col[0]);
           fake_left[x_col] = (parseInt(fake_left[x_col])-1)+"";
           extended_data_col.unshift(fake_left);
+          var firstDate = new Date("January 1, 2030 00:00:00"); // Max value to make sure we find a minimum
+          var lastDate = new Date("January 1, 1960 00:00:00"); // Min value to make sure we find a maximum
 
           y_scale = d3.scale.linear()
-          .range([h, top_margin])
-          .domain(subject[index].series[i].y_extent);
+            .range([h, margin_top])
+            .domain(subject[index].series[i].y_extent);
 
-          var area = d3.svg.area()            
+          function getAccumulatedValue(d) {
+            var date = (new Date(d[x_col])).getFullYear();
+            var accumulated_value = stacked_area_accumulated[date];
+            if (accumulated_value == null) accumulated_value = 0;
+            var current_value = d[y_col];
+            return y_scale(parseFloat(current_value)+parseFloat(accumulated_value));
+          }
+
+          var area = d3.svg.area()
             .x(function(d) {return x_scale(new Date(d[x_col]))})
-            .y0(function(d) {                             
-              if (previous_stacked_column == null) return y_scale(0);
-              return y_scale(d[previous_stacked_column]);
+            .y0(function(d) {
+              var date = new Date(d[x_col]);
+              if (date < firstDate) firstDate = date;
+              if (date > lastDate) lastDate = date;              
+              var yearStr = date.getFullYear();
+              var accumulated_value = stacked_area_accumulated[yearStr];
+              if (accumulated_value == null) accumulated_value = 0;
+              return y_scale(parseFloat(accumulated_value));
             })
-            .y1(function(d) {              
-              if (previous_stacked_column == null) return y_scale(d[y_col]);
-              return y_scale(d[y_col]+d[previous_stacked_column])
-            });
+            .y1(function(d) {
+              return getAccumulatedValue(d);
+            })
+            .interpolate(INTERPOLATE_METHOD);
 
           g.append("svg:path")
-            .attr("d", area(extended_data_col))                    
+            .attr("d", area(extended_data_col))
             .attr("style",'stroke:'+strokeColor_)
             .attr("style",'fill:'+fillColor)
             .on("mouseover", function(d) {
@@ -448,9 +488,9 @@ $(document).ready(function() {
           var line = d3.svg.line()
             .x(function(d){return x_scale(new Date(d[x_col]))})
             .y(function(d){
-              if (previous_stacked_column == null) return y_scale(d[y_col]);
-              return y_scale(d[y_col]+d[previous_stacked_column]);
-            });
+              return getAccumulatedValue(d);
+            })
+            .interpolate(INTERPOLATE_METHOD);
 
           g.append("svg:path")
             .attr("d", line(extended_data_col))
@@ -469,8 +509,7 @@ $(document).ready(function() {
               .attr("style",function(d){ var _fill = (new Date(d.date_processed).getMonth() + 1 == 1) ? 'fill:'+strokeColor : 'display: none'; return _fill;})
               .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
               .attr("cy", function(d){
-                if (previous_stacked_column == null) return y_scale(d[y_col]);
-                return y_scale(d[y_col]+d[previous_stacked_column]);
+                return getAccumulatedValue(d);                
               })
               .attr("r", LINE_DOT_R)
               .attr("name", function(d){return d[y_col]+ " " + units}) //Uses this for tooltip
@@ -478,39 +517,61 @@ $(document).ready(function() {
                 d3.selectAll(".overlay-line").style("visibility", "visible");
                 d3.selectAll(".year_marker").style("visibility", "visible");
                 
-                tooltip.text($(this).attr('name'));
-                tooltip.style("visibility", "visible")
+                tooltip.text($(this).attr('name'))
+                  .style("visibility", "visible")
                   .style("top", $(this).offset().top+30+"px")
-                  .style("left", $(this).offset().left-$(".tooltip").width()/2-2+"px")
-                  .attr("class","tooltip tooltip-top");
-                  d3.select(this).attr("style","fill: #ffffff; stroke: #000000;");
+                  .style("left", $(this).offset().left-$(".generic_tooltip").width()/2-2+"px")
+                  .attr("class","tooltip generic_tooltip tooltip-top");
+
+                d3.select(this).attr("style","fill: #fff; stroke: #000;")
+                  .transition()
+                  .duration(100)
+                  .attr("r",LINE_DOT_R+1);
               })
               .on("mousemove", moveOverlayLine)
               .on("mouseout", function(){
                 d3.selectAll(".overlay-line").style("visibility", "hidden");
                 d3.selectAll(".year_marker").style("visibility", "hidden");
-                tooltip.style("visibility", "hidden");
-                d3.select(this).attr("style","fill: "+strokeColor+"; stroke: #ffffff;");
-              });
-            })(strokeColor_, units_);
 
-          previous_stacked_column = y_col;
+                tooltip.style("visibility", "hidden");
+
+                d3.select(this).attr("style","fill: "+strokeColor+"; stroke: #fff;")
+                  .transition()
+                  .duration(100)
+                  .attr("r",LINE_DOT_R);
+              });
+          })(strokeColor_, units_);
+
+          // Accumulating this series' values for next stacked areas
+          extended_data_col.forEach(function (d) {
+            var date = (new Date(d[x_col])).getFullYear();
+            var accumulated_value = stacked_area_accumulated[date];
+            if (accumulated_value == null) accumulated_value = 0;
+            var current_value = d[y_col];
+            stacked_area_accumulated[""+date] = parseFloat(accumulated_value) + parseFloat(current_value);
+          });
         }
 
         $("#"+subject[index].table).find(".graph-legend").append('<li><div class="legend-item" style="background-color:'+strokeColor_+'"></div><span>'+y_col_name+'</span></li>')
           .attr("r", LINE_DOT_R);
-
-
       }
 
-      // Bringing all circles over the areas
-      svg[index].selectAll("g.dataCircles").each(function(d) {
-        svg[index].node().appendChild(this);
-      });
+      //Overlay
+      d3.selectAll(".graph-slider")
+        .on("mouseover", function() {
+          d3.selectAll(".overlay-line").style("visibility", "visible");
+          d3.selectAll(".year_marker").style("visibility", "visible");
+        })
+        .on("mousemove", moveOverlayLine)
+        .on("mouseout", function() {
+          d3.selectAll(".overlay-line").style("visibility", "hidden");
+          d3.selectAll(".year_marker").style("visibility", "hidden");
+        })
 
       //Add zero-line if negative value
       if(min_val < 0) {
         var x_axis = d3.svg.axis().scale(x_scale);
+
         svg[index].append("svg:line")
           .attr("class", "zero-mark")
           .attr("x1", 0)
@@ -520,40 +581,34 @@ $(document).ready(function() {
           .style("stroke-dasharray", "8, 4");
       }
 
-      if ((previous_stacked_column != null)&&(previous_stacked_column.length > 0)) {        
+      if (stacked_area_accumulated.length > 0) {
         // If there are any stacked area, we draw the side gradients
-        var d = new Date();
-        d.setDate(1);
-        d.setMonth(0);
-        d.setFullYear(data_col[0][x_col] - 1);
-        var left_gradient_x = x_scale(d) - 5;
-
-        d.setDate(1);
-        d.setMonth(0);        
-        d.setFullYear(parseInt(data_col[data_col.length-1][x_col]));
-        var right_gradient_x = x_scale(d) + 23;
-
+        var left_gradient_x = x_scale(firstDate) - 15;
+        var right_gradient_x = x_scale(lastDate) - 55;
         svg[index].append("svg:image")
           .attr("x",left_gradient_x)
           .attr("y",0)
           .attr("width",70)
-          .attr("height",h+2)
+          .attr("height",h)
           .attr("xlink:href","/img/left_gradient.png");
-
         svg[index].append("svg:image")
           .attr("x",right_gradient_x)
           .attr("y",0)
           .attr("width",70)
-          .attr("height",h+2)
+          .attr("height",h)
           .attr("xlink:href","/img/right_gradient.png");
-
       }
+
+      // Bringing all circles over lines + areas + overlay lines
+      svg[index].selectAll("circle").each(function() {
+        svg[index].node().appendChild(this);
+      });
     });
   }
 
-  //Add areas where overlay line is still active
+  // Year marker
   d3.selectAll(".years")
-    .on("mouseover", function(d) {
+    .on("mouseover", function() {
       d3.selectAll(".overlay-line").style("visibility", "visible");
       d3.selectAll(".year_marker").style("visibility", "visible");
     })
@@ -562,15 +617,4 @@ $(document).ready(function() {
       d3.selectAll(".overlay-line").style("visibility", "hidden");
       d3.selectAll(".year_marker").style("visibility", "hidden");
     });
-
-    d3.selectAll(".graph-selector")
-      .on("mouseover", function(d) {
-        d3.selectAll(".overlay-line").style("visibility", "visible");
-        d3.selectAll(".year_marker").style("visibility", "visible");
-      })
-      .on("mousemove", moveOverlayLineSelector)
-      .on("mouseout", function(){
-        d3.selectAll(".overlay-line").style("visibility", "hidden");
-        d3.selectAll(".year_marker").style("visibility", "hidden");
-      });
 });

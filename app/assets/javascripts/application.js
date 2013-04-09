@@ -126,6 +126,7 @@ $(document).ready(function() {
 
   $('.graph_dropdown').on('click', 'a', function(e) {
     var graph = $('#'+$(this).attr('data-rel'));
+    var desc = $('.'+$(this).attr('data-rel'));
 
     e.preventDefault();
     $('.graph_tooltip_dropdown').hide();
@@ -134,6 +135,8 @@ $(document).ready(function() {
       graph.siblings('.graph-selector').find('.graph-link').text(this.text);
       graph.siblings('.graph-canvas').hide();
       graph.fadeIn();
+      desc.siblings('.graph-description').hide();
+      desc.fadeIn();
     }
   });
 

@@ -7,17 +7,18 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
-    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-    <%= stylesheet_link_tag    params[:sector_id], media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "sources/#{ params[:sector_id] }/#{ params[:id] }", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag params[:region_id] %>
+    <%= javascript_include_tag "sources/#{ params[:region_id] }/#{ params[:id] }" %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
 
     <!--[if IE]>
-    <%= stylesheet_link_tag    "ie", media: "all", "data-turbolinks-track" => true %>
+      <%= stylesheet_link_tag "ie" %>
     <![endif]-->
+
     <script type="text/javascript" src="//use.typekit.net/opp1nwp.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
     <!-- Google Analytics -->
     <script>
       var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
