@@ -135,8 +135,11 @@ $(document).ready(function() {
       graph.siblings('.graph-selector').find('.graph-link').text(this.text);
       graph.siblings('.graph-canvas').hide();
       graph.fadeIn();
-      desc.siblings('.graph-description').hide();
-      desc.fadeIn();
+
+      if(desc.text() != desc.siblings('.graph-description:visible').text()) {
+        desc.siblings('.graph-description').hide();
+        desc.fadeIn();
+      }
     }
   });
 

@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width">
 
     <%= stylesheet_link_tag params[:region_id] %>
-    <%= javascript_include_tag "sources/#{ params[:region_id] }/#{ params[:id] }" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
 
@@ -26,11 +25,12 @@
         g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
         s.parentNode.insertBefore(g,s)}(document,'script'));
     </script>
+    <script type="text/javascript">
+      var graph_configs = "<%= @graph_configs.to_json.html_safe %>";
+    </script>
   </head>
   <body>
-
     <%= render 'shared/graphs_list' %>
-
   </body>
 </html>
 
