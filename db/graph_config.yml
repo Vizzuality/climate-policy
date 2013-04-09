@@ -1,7 +1,7 @@
-land_use_emissions_copy_test_matallo:
-  id: land_use_emissions_copy_test_matallo
-  name: Land use
-  description: Wadus wadus
+brazil_forestry_emissions:
+  id: brazil_forestry_emissions
+  name: brazil_forestry_emissions
+  description: brazil_forestry_emissions 1 description
   x_axis: date_processed
   series:
     methane_mmtco2e:
@@ -17,10 +17,10 @@ land_use_emissions_copy_test_matallo:
       y_extent: '[0,310]'
       strokeColor: 'rgba(79,110,191,1)'
 
-wadus:
-  id: wadus
-  name: Wadusss
-  description: lorem ipsum
+brazil_forestry_emission_drivers:
+  id: brazil_forestry_emission_drivers
+  name: brazil_forestry_emission_drivers
+  description: brazil_forestry_emission_drivers
   x_axis: date_processed
   series:
     methane_mmtco2e:
@@ -35,3 +35,80 @@ wadus:
       class: line
       y_extent: '[0,310]'
       strokeColor: 'rgba(79,110,191,1)'
+
+brazil_forestry_policy:
+  id: brazil_forestry_policy
+  name: brazil_forestry_policy
+  description: brazil_forestry_policy
+  x_axis: date_processed
+  series:
+    methane_mmtco2e:
+      name: Methane
+      column: methane_mmtco2e
+      class: line
+      y_extent: '[0,310]'
+      strokeColor: 'rgba(238,87,41,1)'
+    nitrous_oxide_mmtco2e:
+      name: Nitrous Oxide
+      column: nitrous_oxide_mmtco2e
+      class: line
+      y_extent: '[0,310]'
+      strokeColor: 'rgba(79,110,191,1)'
+
+brazil_agriculture_emissions:
+  id: brazil_agriculture_emissions
+  name: brazil_agriculture_emissions
+  description: brazil_agriculture_emissions
+  x_axis: date_processed
+  series:
+    methane_mmtco2e:
+      name: Methane
+      column: methane_mmtco2e
+      class: line
+      y_extent: '[0,310]'
+      strokeColor: 'rgba(238,87,41,1)'
+    nitrous_oxide_mmtco2e:
+      name: Nitrous Oxide
+      column: nitrous_oxide_mmtco2e
+      class: line
+      y_extent: '[0,310]'
+      strokeColor: 'rgba(79,110,191,1)'
+
+brazil_agriculture_emission_drivers:
+  id: brazil_agriculture_emission_drivers
+  name: brazil_agriculture_emission_drivers
+  description: brazil_agriculture_emission_drivers
+  x_axis: date_processed
+  series:
+    methane_mmtco2e:
+      name: Methane
+      column: methane_mmtco2e
+      class: line
+      y_extent: '[0,310]'
+      strokeColor: 'rgba(238,87,41,1)'
+    nitrous_oxide_mmtco2e:
+      name: Nitrous Oxide
+      column: nitrous_oxide_mmtco2e
+      class: line
+      y_extent: '[0,310]'
+      strokeColor: 'rgba(79,110,191,1)'
+
+brazil_agriculture_policy:
+  id: brazil_agriculture_policy
+  name: brazil_agriculture_policy
+  description: brazil_agriculture_policy
+  x_axis: date_processed
+  series:
+    methane_mmtco2e:
+      name: Methane
+      column: methane_mmtco2e
+      class: line
+      y_extent: '[0,310]'
+      strokeColor: 'rgba(238,87,41,1)'
+    nitrous_oxide_mmtco2e:
+      name: Nitrous Oxide
+      column: nitrous_oxide_mmtco2e
+      class: line
+      y_extent: '[0,310]'
+      strokeColor: 'rgba(79,110,191,1)'
+
