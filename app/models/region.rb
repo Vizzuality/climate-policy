@@ -48,6 +48,10 @@ class Region < ActiveYaml::Base
     nil
   end
 
+  def graph_configs
+    GraphConfig.find graph_config
+  end
+
   private
 
   def current_index
