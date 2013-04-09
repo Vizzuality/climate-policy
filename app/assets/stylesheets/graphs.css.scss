@@ -75,7 +75,7 @@
   z-index: 200;
   margin: 30px;
   padding: 10px;
-  background: rgba(#fff, .8);
+
 }
 
 .graph-gradient {
@@ -93,6 +93,7 @@
   max-width: 360px;
   font: 300 16px "cronos-pro";
   color: #999;
+  text-shadow: 0 0 10px #ffffff;
 
   &.long { max-width: 480px; }
 
@@ -159,11 +160,10 @@ svg {
   text-align: right;
   pointer-events: none;
   padding: 10px;
-  background: rgba(#fff, .8);
 
   li {
     display: inline-block;
-    font: 14px "cronos-pro", sans-serif;
+    font: 14px "Arial", sans-serif;
     color: #999;
     margin: 0 0 0 12px;
   }

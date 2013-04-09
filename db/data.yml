@@ -45,6 +45,7 @@ brazil:
           description: Lorem ipsum dolor sit amet to be provided
           graph_config:
             - brazil_agriculture_emissions
+            - brazil_agriculture_emissions_2
 
         emission_drivers:
           name: Emission Drivers

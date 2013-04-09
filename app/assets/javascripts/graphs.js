@@ -1,18 +1,18 @@
 var margin = 40;
 var margin_top = 80;
-var h = 388;
+var h = 348;
 var w = 1038;
 var LINE_DOT_R = 4;
 var INTERPOLATE_METHOD = "cardinal";
-
-//chart info
-var subject = [];
 
 //svgs for d3
 var svg = [];
 
 var LINE_DOT_R = 4;
 var x_scale;
+
+// Convert objects to arrays
+var _graphs = [];
 
 //Creates generic tooltip
 var tooltip = d3.select("body")
@@ -38,35 +38,28 @@ function moveOverlayLine() {
     .attr("css", "visibility: visible;");
 }
 
-function moveOverlayLineSelector() {
-  var mouse_x = d3.mouse(this)[0]+30;
-  var time = new Date(x_scale.invert(mouse_x));
-
-  d3.selectAll(".year_marker")
-    .text((time.getMonth()+1)+"/"+time.getFullYear())
-
-  $(".year_marker").css('left',mouse_x-35);
-  $(".overlay-line").css('left',mouse_x-35);
-}
-
-
 $(document).ready(function() {
+  var _canvas = $(".graph-canvas").map(function() { return this.id; });
+  var _graphs = [];
+
+  for (var i = 0; i < _canvas.length; i++) {
+    _graphs[i] = $.grep(graphs, function(e){ return e.id === _canvas[i]})[0];
+  }
+
   var _domainq = 'http://cpi.cartodb.com/api/v2/sql?q=SELECT%20min(min)%20as%20min,%20max(max)%20as%20max%20FROM%20(';
 
   //Creates the query needed for calculating the default domain for the charts
-  for (var i = 0; i < datasets.sectors[0].subjects.length; i++) {
+  for (var i = 0; i < _graphs.length; i++) {
     if(i!=0){
       _domainq = _domainq + '%20UNION%20'
     }
 
-    subject[i] = datasets.sectors[0].subjects[i];
-
-    svg[i] = d3.select("#"+subject[i].table)
+    svg[i] = d3.select("#"+_graphs[i].id)
       .append("svg")
       .attr("width", w)
       .attr("height", h+margin);
 
-    _domainq = _domainq + 'SELECT%20min(date_processed)%20as%20min,%20max(date_processed)%20as%20max%20FROM%20'+subject[i].table
+    _domainq = _domainq + 'SELECT%20min(date_processed)%20as%20min,%20max(date_processed)%20as%20max%20FROM%20'+_graphs[i].table
   }
 
   //Creates year marker on every years timeline
@@ -74,10 +67,14 @@ $(document).ready(function() {
     year_marker = $(this).append("<div class='year_marker'>1990</div>");
   });
 
-
   d3.json(_domainq+')%20as%20aux%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79', function(data) {
+    var _data = [];
 
-    var std_domain = [new Date(data.rows[0].min),new Date(data.rows[0].max)];
+    _(data).each(function(elem, key){
+      _data[key] = _(elem).values();
+    });
+
+    var std_domain = [new Date(_data.rows[0].min),new Date(_data.rows[0].max)];
 
     // Calculates the global x_scale
     x_scale = d3.scale.linear()
@@ -99,25 +96,25 @@ $(document).ready(function() {
       }
     });
 
-    for (var i = 0; i < datasets.sectors[0].subjects.length; i++) {
-      if(subject[i].type == 'BarGraph') {
-        drawBarChart(i, std_domain);
+    for (var i = 0; i < _graphs.length; i++) {
+      if(graphs[i].type == 'BarGraph') {
+        drawBarGraph(i, std_domain);
       } else {
-        drawChart(i, std_domain);
+        drawGraph(i, std_domain);
       }
     }
   })
 
-  function drawBarChart(index,domain) {
-    d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+subject[index].table+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
+  function drawBarGraph(graphNum,domain) {
+    d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+_graphs[graphNum].table+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
 
       // Graph settings, domain & ranges calculation, scales, etc.
       var negat = [], posit = [];
 
       data.rows.forEach(function(d){
         var values = [];
-        for (var j = 0; j < subject[index].x_groups.length; j++) {
-          var value = d[subject[index].x_groups[j].column];
+        for (var j = 0; j < _graphs[graphNum].x_groups.length; j++) {
+          var value = d[_graphs[graphNum].x_groups[j].column];
           if (value > 0) {
             posit.push(parseFloat(value));
           } else {
@@ -132,7 +129,7 @@ $(document).ready(function() {
 
       var total_graph_area_width = 650;
       var total_series_height = 200;
-      var group_width = total_graph_area_width/subject[index].x_groups.length;
+      var group_width = total_graph_area_width/_graphs[graphNum].x_groups.length;
       var bar_height = 2
       
       var max_bar = 0;
@@ -150,7 +147,6 @@ $(document).ready(function() {
       var positive_color = "#546DBC";
       var negative_color = "#F0542C";
 
-
       var bar_width_scale = d3.scale.linear()
         .domain([0,max])
         .range([0, max_bar]);
@@ -161,7 +157,7 @@ $(document).ready(function() {
       }
 
       // Series labels
-      svg[index].selectAll("text.graph-series-label")      
+      svg[graphNum].selectAll("text.graph-series-label")
         .data(data.rows)        
         .enter()
         .append("text")
@@ -170,7 +166,7 @@ $(document).ready(function() {
           return "series_label_"+d.cartodb_id;
         })
         .text(function(d) {
-          return d[subject[index].name_column];
+          return d[_graphs[graphNum].name_column];
         })
         .attr("x", function(d,i) {
           return series_label_left_margin;
@@ -180,9 +176,9 @@ $(document).ready(function() {
         });
 
       // Drawing group-x labels if there are more than one
-      if ((subject[index].x_groups).length > 1) {
-        svg[index].selectAll("text.graph-groups-label")
-          .data(subject[index].x_groups)
+      if ((_graphs[graphNum].x_groups).length > 1) {
+        svg[graphNum].selectAll("text.graph-groups-label")
+          .data(_graphs[graphNum].x_groups)
           .enter()
           .append("text")
           .attr("class","graph-groups-label")
@@ -198,10 +194,10 @@ $(document).ready(function() {
       }
       
       // Drawing each x-group
-      for (var j = 0; j < subject[index].x_groups.length; j++) {
+      for (var j = 0; j < _graphs[graphNum].x_groups.length; j++) {
 
         // Drawing an axis for each group_x
-        var lineGraph = svg[index].append("svg:line")
+        var lineGraph = svg[graphNum].append("svg:line")
           .attr("x1", series_label_width+group_width*j+zero_pos)
           .attr("y1", 50)
           .attr("x2", series_label_width+group_width*j+zero_pos)
@@ -209,11 +205,11 @@ $(document).ready(function() {
           .style("stroke", "#ddd")
           .style("shape-rendering", "crispEdges");
 
-        var group_name_ = subject[index].x_groups[j].column;
-        var units_ = subject[index].units;
+        var group_name_ = _graphs[graphNum].x_groups[j].column;
+        var units_ = _graphs[graphNum].units;
 
         (function(group_name, units) { // We need a reference to group_name & units in runtime, for tooltips
-          svg[index].selectAll("rect."+group_name)
+          svg[graphNum].selectAll("rect."+group_name)
             .data(data.rows)
             .enter()
             .append("rect")
@@ -247,7 +243,7 @@ $(document).ready(function() {
               return Math.round(d[group_name]*1000)/1000;
             })
 
-          svg[index].selectAll("circle."+group_name)
+          svg[graphNum].selectAll("circle."+group_name)
             .data(data.rows)
             .enter()
             .append("circle")
@@ -317,11 +313,11 @@ $(document).ready(function() {
     });
   }
 
-  //Draws a lineChart
-  //index:index of the table on the json,
+  //Draws a lineGraph
+  //graphNum:graphNum of the table on the json,
   //std_domain: specific domain - keep undefined for showing the chart's own domain
-  function drawChart(index,domain) {
-    d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+subject[index].table+"%20order%20by%20"+subject[index].x_axis+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
+  function drawGraph(graphNum, domain) {
+    d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+_graphs[graphNum].table+"%20order%20by%20"+_graphs[graphNum].x_axis+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
       var _data = data;
 
       if(domain === undefined) {
@@ -332,22 +328,22 @@ $(document).ready(function() {
         _domain = domain;
       }
 
-      var x_col = subject[index].x_axis;
+      var x_col = _graphs[graphNum].x_axis;
       //var previous_stacked_column = null;
       var stacked_area_accumulated = new Array();
       var min_val = 0;
 
-      for (var i = 0; i < subject[index].series.length; i++) {
+      _.each(_graphs[graphNum].series, function(serie) {
         // append one group per series
-        var g = svg[index].append("svg:g");
-        var strokeColor_ = subject[index].series[i].strokeColor;
-        var fillColor = subject[index].series[i].fillColor;
-        var y_col = subject[index].series[i].column;
-        var y_col_name = subject[index].series[i].name;
+        var g = svg[graphNum].append("svg:g");
+        var strokeColor_ = serie.strokeColor;
+        var fillColor = serie.fillColor;
+        var y_col = serie.column;
+        var y_col_name = serie.name;
 
         var y_scale = d3.scale.linear()
           .range([h, margin_top])
-          .domain(subject[index].series[i].y_extent);
+          .domain([serie.y_min,serie.y_max]);
 
         // remove null values and find min_val if negative value
         var data_col = _data.rows.filter(function(d) {
@@ -359,27 +355,27 @@ $(document).ready(function() {
 
         // //Creates focus + multiple tooltips per serie
         // g.append("div")
-        //   .attr("class", "tooltip tooltip-top multiple_tooltip multiple_tooltip_"+index+"_"+i);
+        //   .attr("class", "tooltip tooltip-top multiple_tooltip multiple_tooltip_"+graphNum+"_"+i);
         // g.append("circle")
-        //   .attr("class", 'focus focus_'+index+"_"+i)
+        //   .attr("class", 'focus focus_'+graphNum+"_"+i)
         //   .data(data_col)
         //   .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
         //   .attr("cy", function(d){return y_scale(d[y_col])})
         //   .attr("r", LINE_DOT_R)
 
-        svg[index].append("rect")
+        svg[graphNum].append("rect")
           .attr("class", "overlay-line")
-          .attr("height", h)
+          .attr("height", h+margin)
           .attr("width", 2)
           .attr("cy", 0);
 
-        if (subject[index].series[i].class == "line") {
+        if (serie.class == "line") {
           var line = d3.svg.line()
             .x(function(d){return x_scale(new Date(d[x_col]))})
             .y(function(d){return y_scale(d[y_col])})
             .interpolate(INTERPOLATE_METHOD);
 
-          var units_ = subject[index].series[i].units;
+          var units_ = serie.units;
 
           g.append("svg:path")
             .attr("d", line(data_col))
@@ -426,9 +422,9 @@ $(document).ready(function() {
                 .attr("r",LINE_DOT_R);
             });
           })(strokeColor_, units_);
-        } else if (subject[index].series[i].class == "area") {
+        } else if (serie.class == "area") {
 
-          var units_ = subject[index].series[i].units;
+          var units_ = serie.units;
 
           // Preparing things for the side gradients
           // Insert a value before and after the time range, for the sides gradient
@@ -445,7 +441,7 @@ $(document).ready(function() {
 
           y_scale = d3.scale.linear()
             .range([h, margin_top])
-            .domain(subject[index].series[i].y_extent);
+            .domain([serie.y_min,serie.y_max]);
 
           function getAccumulatedValue(d) {
             var date = (new Date(d[x_col])).getFullYear();
@@ -497,7 +493,7 @@ $(document).ready(function() {
             .attr("class", 'lineStyle')
             .attr("style",'stroke:'+strokeColor_);
 
-          var g_circles = svg[index].append("svg:g");
+          var g_circles = svg[graphNum].append("svg:g");
           g_circles.attr("class","dataCircles");
 
           (function(strokeColor, units){  // We need a reference to strokeColor in runtime, for hover
@@ -552,12 +548,12 @@ $(document).ready(function() {
           });
         }
 
-        $("#"+subject[index].table).find(".graph-legend").append('<li><div class="legend-item" style="background-color:'+strokeColor_+'"></div><span>'+y_col_name+'</span></li>')
+        $("#"+_graphs[graphNum].table).find(".graph-legend").append('<li><div class="legend-item" style="background-color:'+strokeColor_+'"></div><span>'+y_col_name+'</span></li>')
           .attr("r", LINE_DOT_R);
-      }
+      });
 
       //Overlay
-      d3.selectAll(".graph-slider")
+      d3.selectAll(".graph-line")
         .on("mouseover", function() {
           d3.selectAll(".overlay-line").style("visibility", "visible");
           d3.selectAll(".year_marker").style("visibility", "visible");
@@ -572,7 +568,7 @@ $(document).ready(function() {
       if(min_val < 0) {
         var x_axis = d3.svg.axis().scale(x_scale);
 
-        svg[index].append("svg:line")
+        svg[graphNum].append("svg:line")
           .attr("class", "zero-mark")
           .attr("x1", 0)
           .attr("x2", w)
@@ -585,13 +581,13 @@ $(document).ready(function() {
         // If there are any stacked area, we draw the side gradients
         var left_gradient_x = x_scale(firstDate) - 15;
         var right_gradient_x = x_scale(lastDate) - 55;
-        svg[index].append("svg:image")
+        svg[graphNum].append("svg:image")
           .attr("x",left_gradient_x)
           .attr("y",0)
           .attr("width",70)
           .attr("height",h)
           .attr("xlink:href","/img/left_gradient.png");
-        svg[index].append("svg:image")
+        svg[graphNum].append("svg:image")
           .attr("x",right_gradient_x)
           .attr("y",0)
           .attr("width",70)
@@ -600,8 +596,8 @@ $(document).ready(function() {
       }
 
       // Bringing all circles over lines + areas + overlay lines
-      svg[index].selectAll("circle").each(function() {
-        svg[index].node().appendChild(this);
+      svg[graphNum].selectAll("circle").each(function() {
+        svg[graphNum].node().appendChild(this);
       });
     });
   }

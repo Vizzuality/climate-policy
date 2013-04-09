@@ -14,6 +14,8 @@
 //= require jquery
 //= require jquery-migrate-1.1.1
 //= require jquery_ujs
+//= require jquery_ujs
+//= require underscore
 //= require jquery.scrollTo
 //= require jquery.qtip
 //= require d3.v3
