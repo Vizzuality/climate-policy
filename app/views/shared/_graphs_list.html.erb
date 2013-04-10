@@ -3,7 +3,7 @@
 <%= render 'shared/years_first' %>
 
 <% @items.each do |item| %>
-  <%= render 'shared/graph', :type => 'line', :item => item %>
+  <%= render 'shared/graph', :item => item %>
 
   <%= render @items.last == item ? 'shared/years_last' : 'shared/years' %>
 <% end %>

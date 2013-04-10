@@ -1,5 +1,5 @@
 <% graph_configs = item.graph_configs(@main.id, @item.id) %>
-<div class="graph graph-<%= type %>">
+<div class="graph graph-<%= graph_configs.first.type %>">
   <div class="graph-selector">
     <h3 class="graph-title">
       <span><%= item.name %></span>

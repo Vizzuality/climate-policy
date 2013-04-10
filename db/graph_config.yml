@@ -4,6 +4,7 @@ brazil_forestry_emissions:
   description: Deforestation declined rapidly, particularly after major policy changes in 2004 and again in 2008.
   table: deforestation_rate_copy_test_matallo
   x_axis: date_processed
+  type: line
   series:
     deforestation_rate:
       name: Deforestation rate
@@ -20,6 +21,7 @@ brazil_forestry_emission_drivers:
   description: Common drivers of deforestation, such as commodity prices, and land protection appear to have changed deforestation patterns, with large scale deforestation declining much more rapidly than small scale (e.g. tracts of less than 25 hectares).
   table: commodity_prices_copy_test_matallo
   x_axis: date_processed
+  type: line
   series:
     corn:
       name: Corn price
@@ -44,6 +46,7 @@ brazil_forestry_emission_drivers_2:
   description: Common drivers of deforestation, such as commodity prices, and land protection appear to have changed deforestation patterns, with large scale deforestation declining much more rapidly than small scale (e.g. tracts of less than 25 hectares).
   table: deforestation_polygons_ind_copy_test_matallo
   x_axis: date_processed
+  type: line
   series:
     _25_hectares:
       name: < 25 Hectares
@@ -92,6 +95,7 @@ brazil_forestry_policy:
   description: As an example of increased Brazilian policy efforts, Brazil has increased efforts to reduce deforestation, and the amount of land under government protection has increased significantly since 2001.
   table: protected_lands_copy_test_matallo
   x_axis: date_processed
+  type: line
   series:
     methane_mmtco2e:
       name: Integral Protection
@@ -118,6 +122,7 @@ brazil_agriculture_emissions:
   name: Emissions
   description: Both land under cultivation and non-CO2 emissions increased.
   x_axis: date_processed
+  type: line
   series:
     methane_mmtco2e:
       name: Methane
@@ -142,6 +147,7 @@ brazil_agriculture_emissions_2:
   table: land_use_emissions_copy_test_matallo
   description: Both land under cultivation and non-CO2 emissions increased.
   x_axis: date_processed
+  type: line
   series:
     land_use_million_hectares:
       name: Land Use
@@ -158,6 +164,7 @@ brazil_agriculture_emission_drivers:
   table: emissions_drivers_copy_test_matallo
   description: Although the intensity of food production per hectare increased, mechanization did not increase.
   x_axis: date_processed
+  type: line
   series:
     food:
       name: Food
@@ -198,6 +205,7 @@ brazil_agriculture_emission_drivers_2:
   table: brazil_ag_2_exports_copy_test_matallo
   description: Increasing land use, some of which satisfied export growth, and some of which satisfied population growth (not shown), was a major driver of growing emissions.
   x_axis: date_processed
+  type: line
   series:
     raw_materials:
       name: Agricultural raw materials
@@ -223,6 +231,7 @@ brazil_agriculture_policy:
   description: Brazil made increasing the productivity of agricultural land a priority as a means to reduce expansion into new land and deforestation. Subsidies to producers, in part to modernize their operations, steadily increased over time. In the 1990s, credit subsidies were offset by price controls set below market prices; as these price controls rose above market prices, they became additional effective subsidies.
   description_long: long
   x_axis: date_processed
+  type: line
   series:
     credit:
       name: Credit Subsidies
@@ -257,6 +266,7 @@ us_buildings_emissions:
   table: emissions_mmtco2e_copy_test_matallo
   description: Emissions grew slowly, but steadily, until 2005, when emissions peaked and slowly declined.
   x_axis: date_processed
+  type: line
   series:
     commercial:
       name: Commercial
@@ -281,6 +291,7 @@ us_buildings_emissions_2:
   table: buildings_floorspace_billion_square_meters_copy_test_matallo
   description: Total building stock, as reflected by total floor space statistics, grew steadily, while the increase in residential floor space between 1995 and 2005 was particularly noteworthy.
   x_axis: date_processed
+  type: line
   series:
     commercial:
       name: Commercial
@@ -304,14 +315,15 @@ us_buildings_emissions_drivers:
   name: Building Drivers
   table: changes_in_emissions_drivers_copy_test_matallo
   description: Growth in population and floor space per person were the largest drivers of buildings emissions. In the late 2000’s, energy efficiency gains, particularly in residential heating and cooling caught up with slowing floor space growth.
-  type: BarGraph
+  description_long: longest
+  type: bars
   units: "Million T CO²"
   name_column: variable
   x_groups:
-    commercial:
+    0:
       label: Commercial
       column: commercial
-    residential:
+    1:
       label: Residential
       column: residential
 
@@ -321,6 +333,7 @@ us_buildings_policy:
   table: energy_efficiency_spending_copy_test_matallo
   description: Efficiency spending by federal and local governments increased over the last decade, with a spike due to the 2009 stimulus.
   x_axis: date_processed
+  type: line
   series:
     energy_efficiency_dsm_spending:
       name: Energy Efficiency DSM Spending
@@ -345,6 +358,7 @@ us_buildings_policy_2:
   table: code_building_energy_intensity_index_copy_test_matallo
   description: Building codes tightened steadily - particularly for commercial buildings where the federal government played a larger role.
   x_axis: date_processed
+  type: line
   series:
     commercial:
       name: Commercial

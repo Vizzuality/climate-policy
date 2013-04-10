@@ -13,11 +13,6 @@ var x_scale;
 
 var circle_locked = false;
 
-//Creates generic tooltip
-var tooltip = d3.select("body")
-  .append("div")
-  .attr("class", "tooltip generic_tooltip tooltip-top");
-
 function updateOverlayLine(time) {
   var x = x_scale(time);
   d3.selectAll(".year_marker")
@@ -39,6 +34,11 @@ function moveOverlayLine() {
 }
 
 $(document).ready(function() {
+  //Creates generic tooltip
+  var tooltip = d3.select("body")
+    .append("div")
+    .attr("class", "tooltip generic_tooltip tooltip-top");
+
   var _canvas = $(".graph-canvas").map(function() { return this.id; });
   var _graphs = [];
   var _domainq = 'http://cpi.cartodb.com/api/v2/sql?q=SELECT%20min(min)%20as%20min,%20max(max)%20as%20max%20FROM%20(';
@@ -56,7 +56,7 @@ $(document).ready(function() {
     svg[i] = d3.select("#"+_graphs[i].id)
       .append("svg")
       .attr("width", w)
-      .attr("height", h+margin);
+      .attr("height", h+margin_top);
 
     _domainq = _domainq + 'SELECT%20min(date_processed)%20as%20min,%20max(date_processed)%20as%20max%20FROM%20'+_graphs[i].table
   }
@@ -65,7 +65,6 @@ $(document).ready(function() {
   d3.selectAll(".years").each(function(d) {
     year_marker = $(this).append("<div class='year_marker'>1990</div>");
   });
-
 
   d3.json(_domainq+')%20as%20aux%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79', function(data) {
     var _data = [];
@@ -97,7 +96,7 @@ $(document).ready(function() {
     });
 
     for (var i = 0; i < _graphs.length; i++) {
-      if(graphs[i].type == 'BarGraph') {
+      if(_graphs[i].type == 'bars') {
         drawBarGraph(i, std_domain);
       } else {
         drawGraph(i, std_domain);
@@ -113,24 +112,24 @@ $(document).ready(function() {
 
       data.rows.forEach(function(d){
         var values = [];
-        for (var j = 0; j < _graphs[graphNum].x_groups.length; j++) {
-          var value = d[_graphs[graphNum].x_groups[j].column];
+
+        _.each(_graphs[graphNum].x_groups, function(serie) {
+          var value = d[serie.column];
 
           if (value > 0) {
             posit.push(parseFloat(value));
           } else {
             negat.push(Math.abs(parseFloat(value)));
           }
-        }
+        });
       });
 
       var max_negat  = d3.max(negat),
         max_posit = d3.max(posit),
         max = d3.max([max_negat, max_posit]);
-
       var total_graph_area_width = 650;
       var total_series_height = 200;
-      var group_width = total_graph_area_width/_graphs[graphNum].x_groups.length;
+      var group_width = total_graph_area_width/_.size(_graphs[graphNum].x_groups);
       var bar_height = 2
       var max_bar = 0;
 
@@ -159,7 +158,7 @@ $(document).ready(function() {
 
       // Series labels
       svg[graphNum].selectAll("text.graph-series-label")
-        .data(data.rows)        
+        .data(data.rows)
         .enter()
         .append("text")
         .attr("class","graph-series-label")
@@ -176,26 +175,8 @@ $(document).ready(function() {
           return series_label_top_margin + (i * series_step);
         });
 
-      // Drawing group-x labels if there are more than one
-      if ((_graphs[graphNum].x_groups).length > 1) {
-        svg[graphNum].selectAll("text.graph-groups-label")
-          .data(_graphs[graphNum].x_groups)
-          .enter()
-          .append("text")
-          .attr("class","graph-groups-label")
-          .text(function(d) {
-            return d.label;
-          })
-          .attr("x", function(d,i) {          
-            return series_label_width + group_width*i + zero_pos - 40;
-          })
-          .attr("y", function(d,i) {
-            return 30;
-          });
-      }
-      
       // Drawing each x-group
-      for (var j = 0; j < _graphs[graphNum].x_groups.length; j++) {
+      for (var j = 0; j < _.size(_graphs[graphNum].x_groups); j++) {
 
         // Drawing an axis for each group_x
         var lineGraph = svg[graphNum].append("svg:line")
@@ -210,6 +191,23 @@ $(document).ready(function() {
         var units_ = _graphs[graphNum].units;
 
         (function(group_name, units) { // We need a reference to group_name & units in runtime, for tooltips
+
+          // Drawing group-x labels if there are more than one
+          if (_.size(_graphs[graphNum].x_groups) > 1) {
+            svg[graphNum].selectAll("text.graph-groups-label")
+              .data(data.rows)
+              .enter()
+              .append("text")
+              .attr("class","graph-groups-label")
+              .text(group_name)
+              .attr("x", function(d,i) {
+                return series_label_width + group_width*i + zero_pos - 40;
+              })
+              .attr("y", function(d,i) {
+                return 30;
+              });
+          }
+
           svg[graphNum].selectAll("rect."+group_name)
             .data(data.rows)
             .enter()
@@ -293,7 +291,7 @@ $(document).ready(function() {
                 .style("top", ($(this).offset().top-11)+"px")
                 .style("left",x_tooltip+"px");
 
-              svg[index].selectAll("#series_label_"+d.cartodb_id)
+              svg[graphNum].selectAll("#series_label_"+d.cartodb_id)
                 .transition()
                 .duration(200)
                 .style("fill","#111");
@@ -635,7 +633,7 @@ $(document).ready(function() {
             stacked_area_accumulated[""+date] = parseFloat(accumulated_value) + parseFloat(current_value);
           });
         }
-        console.log(_graphs[graphNum].id);
+
         $("#"+_graphs[graphNum].id).find(".graph-legend").append('<li><div class="legend-item" style="background-color:'+strokeColor_+'"></div><span id='+y_col_+' class="legend-label">'+y_col_name+'</span></li>')
           .attr("r", LINE_DOT_R);
       });
