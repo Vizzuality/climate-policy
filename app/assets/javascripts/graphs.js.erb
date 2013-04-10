@@ -187,6 +187,7 @@ $(document).ready(function() {
           .style("stroke", "#ddd")
           .style("shape-rendering", "crispEdges");
 
+        var group_label_ = _graphs[graphNum].x_groups[j].label;
         var group_name_ = _graphs[graphNum].x_groups[j].column;
         var units_ = _graphs[graphNum].units;
 
@@ -199,7 +200,7 @@ $(document).ready(function() {
               .enter()
               .append("text")
               .attr("class","graph-groups-label")
-              .text(group_name)
+              .text(group_label_)
               .attr("x", function(d,i) {
                 return series_label_width + group_width*i + zero_pos - 40;
               })

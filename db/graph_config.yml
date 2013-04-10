@@ -177,7 +177,7 @@ brazil_agriculture_emission_drivers:
     livestock:
       name: Livestock
       column: livestock_production_per_hectare
-      units: Index (1980=100)      
+      units: Index (1980=100)
       class: line
       y_min: 50
       y_max: 300
@@ -258,7 +258,8 @@ brazil_agriculture_policy:
       y_max: 18000
       strokeColor: "#00D9A3"
 
-# ---------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 us_buildings_emissions:
   id: us_buildings_emissions
@@ -283,7 +284,7 @@ us_buildings_emissions:
       class: line
       y_min: 0
       y_max: 2000
-      strokeColor: "rgba(79,110,191,1)" 
+      strokeColor: "rgba(79,110,191,1)"
 
 us_buildings_emissions_2:
   id: us_buildings_emissions_2
@@ -350,7 +351,7 @@ us_buildings_policy:
       class: line
       y_min: -5000
       y_max: 27500
-      strokeColor: "rgba(79,110,191,1)" 
+      strokeColor: "rgba(79,110,191,1)"
 
 us_buildings_policy_2:
   id: us_buildings_policy_2
@@ -375,4 +376,707 @@ us_buildings_policy_2:
       class: line
       y_min: 40
       y_max: 150
-      strokeColor: "rgba(79,110,191,1)" 
+      strokeColor: "rgba(79,110,191,1)"
+
+us_transportation_emissions:
+  id: us_transportation_emissions
+  name: Emissions & transportation activity 
+  description: Both passenger and freight travel increased since 1980, though passenger travel grew more rapidly than freight. Both modes of travel were sensitive to economic conditions, and activity dropped significantly during the recession.
+  table: emissions_and_miles_traveled_copy_test_matallo
+  x_axis: date_processed
+  type: line
+  series:
+    emissions:
+      name: Emissions
+      column: emissions_mmtco2e
+      units: MM T CO<sup>2</sup>
+      class: line
+      y_min: 1000
+      y_max: 3000
+      strokeColor: "rgba(238,87,41,1)"
+    km_traveled:
+      name: Passenger km traveled
+      column: billion_passenger_kilometers_traveled
+      units: B passenger-km
+      class: line
+      y_min: 1000
+      y_max: 15000
+      strokeColor: "rgba(79,110,191,1)"
+    freight:
+      name: Freight ton-kilometers
+      column: billion_freight_ton_kilometers
+      units: B T-km
+      class: line
+      y_min: 2000
+      y_max: 10000
+      strokeColor: "#00D9A3"
+
+us_transportation_emissions_drivers:
+  id: us_transportation_emission_drivers
+  name: Emissions intensity
+  description: Large gains in vehicle engine and transmission efficiency did not result in significant fuel efficiency gains, as cars became heavier. Fuller flights, more efficient planes, and improved routing improved aviation efficiency. There was little shifting between transport modes (not shown).
+  table: modal_intensities_copy_test_matallo
+  x_axis: date_processed
+  type: line
+  series:
+    sector_wide:
+      name: Sector wide
+      column: sector_wide
+      units: Index (1980=100)
+      class: line
+      y_min: 40
+      y_max: 150
+      strokeColor: "rgba(238,87,41,1)"
+    passenger_car:
+      name: Passenger car
+      column: passenger_car
+      units: Index (1980=100)
+      class: line
+      y_min: 40
+      y_max: 150
+      strokeColor: "rgba(79,110,191,1)"
+    domestic_air:
+      name: Domestic air
+      column: domestic_air
+      units: Index (1980=100)
+      class: line
+      y_min: 40
+      y_max: 150
+      strokeColor: '#00D9A3'
+    trucks:
+      name: Trucks
+      column: trucks
+      units: Index (1980=100)
+      class: line
+      y_min: 40
+      y_max: 150
+      strokeColor: '#FFD24D'
+
+us_transportation_policy:
+  id: us_transportation_policy
+  name: CAFE standards
+  description: Fuel efficiency standards, after tightening rapidly after their inception, remained largely unchanged for over two decades. Starting in 2005, standards for larger passenger vehicles became more demanding. Very recently, standards for smaller passenger cars were revisited.
+  table: cafe_standards_copy_test_matallo
+  x_axis: date_processed
+  type: line
+  series:
+    std_passenger:
+      name: Standards, passenger car
+      column: standards_ac0__passenger_car
+      units:  gal/100 mi
+      class: line
+      y_min: 2
+      y_max: 8
+      strokeColor: "rgba(238,87,41,1)"
+    std_truck:
+      name: Standards, light truck
+      column: standards_ac0__light_truck
+      units: gal/100 mi
+      class: line
+      y_min: 2
+      y_max: 8
+      strokeColor: "rgba(79,110,191,1)"
+    new_passenger:
+      name: New vehicles, passenger car
+      column: new_vehicles_ac0__passenger_car
+      units: gal/100 mi
+      class: line
+      y_min: 2
+      y_max: 8
+      strokeColor: '#00D9A3'
+    new_trucks:
+      name: New vehicles, light truck
+      column: new_vehicles_ac0__light_truck
+      units: gal/100 mi
+      class: line
+      y_min: 2
+      y_max: 8
+      strokeColor: '#FFD24D'
+
+us_power_emissions:
+  id: us_power_emissions
+  name: Emission & generation
+  description: There was steady emissions and generation growth through the mid-2000s. Until recently, emissions grew in tandem with increasing electricity demand.
+  table: emissions_mmtco2e_and_generation_twh_copy_test_matallo
+  x_axis: date_processed
+  type: line
+  series:
+    total_emissions:
+      name: Total Emissions
+      column: total_emissions
+      units:  MM T CO<sup>2</sup>
+      class: line
+      y_min: 700
+      y_max: 4000
+      strokeColor: "rgba(238,87,41,1)"
+    total_net: 
+      name: Total Net Generation
+      column: total_net_generation
+      units:  MM T CO<sup>2</sup>
+      class: line
+      y_min: 700
+      y_max: 4000
+      strokeColor: "rgba(79,110,191,1)"
+
+us_power_emission_drivers:
+  id: us_power_emission_drivers
+  name: Grid Impact
+  description: The expansion and increased availability of nuclear in the 1980s and 1990s offset growing emissions from coal as both were used to meet increasing demand. In the 2000s, most factors were aligned to improve emissions intensity, including increasing renewable energy output and gas replacing coal.
+  description_long: longest
+  table: grid_impact_1_copy_diego_2
+  x_axis: date_processed
+  units: km²
+  name_column: variable
+  type: bars
+  x_groups:
+    0:
+      label: 1980-1990
+      column: _1980_1990
+    1:
+      label: 1990-2000
+      column: _1990_2000
+    2:
+      label: 2000-2010
+      column: _2000_2010
+
+us_power_policy:
+  id: us_power_policy
+  name: Tax expenditures
+  description: Both state and federal governments created policies to support renewable energy. The two most prominent of these were federal renewable energy tax incentives, and state level renewable portfolio standards. These policies, and several other factors, are associated with significant increases in U.S. renewable energy capacity.
+  table: federal_tax_expenditures_for_renewables_copy_test_matallo
+  x_axis: date_processed
+  type: line
+  series:      
+    tax_expenditures:
+      name: Tax expenditures
+      column: tax_expenditures
+      units:  MM USD
+      class: line
+      y_min: 0
+      y_max: 14780
+      strokeColor: "rgba(238,87,41,1)"
+
+us_power_policy_2:
+  id: us_power_policy_2
+  name: State renewable portfolio standards
+  description: Both state and federal governments created policies to support renewable energy. The two most prominent of these were federal renewable energy tax incentives, and state level renewable portfolio standards. These policies, and several other factors, are associated with significant increases in U.S. renewable energy capacity.
+  table: weighted_average_state_portfolio_standards_copy_test_matallo
+  x_axis: date_processed
+  type: line
+  series:
+    weighted_average:
+      name: Weighted average state RPSs
+      column: weighted_average_state_rpss
+      units: "%"
+      class: line
+      y_min: -3
+      y_max: 6
+      strokeColor: "rgba(238,87,41,1)"
+
+us_industry_emissions:
+  id: us_industry_emissions
+  name: Emissions
+  description: Industrial emissions declined even before the recession as industrial production rose.
+  table: us_industry_1_copy_test_matallo
+  x_axis: date_processed
+  type: line
+  series:
+    emissions:
+      name: Emissions
+      column: emissions
+      units: MM T CO<sup>2</sup>
+      class: line
+      y_min: 1300
+      y_max: 2050
+      strokeColor: "rgba(238,87,41,1)"
+
+us_industry_emissions_2:
+  id: us_industry_emissions_2
+  name: Output
+  description: Industrial emissions declined even before the recession as industrial production rose.
+  table: us_industry_1_copy_test_matallo_2
+  x_axis: date_processed
+  type: line
+  series:
+    manufacturing_value_add:
+      name: Manufacturing Value Add
+      column: manufacturing_value_add
+      units: Index (1998=100)
+      class: line
+      y_min: 80
+      y_max: 160
+      strokeColor: "rgba(238,87,41,1)"
+    manufacturing_production:
+      name: Manufacturing Production
+      column: manufacturing_production
+      units: Index (1998=100)
+      class: line
+      y_min: 80
+      y_max: 160
+      strokeColor: "rgba(79,110,191,1)"
+
+us_industry_emission_drivers:
+  id: us_industry_emission_drivers
+  name: Sectoral Intensities
+  description: As manufacturing grew, industrial sectors generally improved their energy intensity, but in some cases performance declined. Structural changes to U.S. industry led to lower emissions intensity.
+  table: us_industry_2_sectoral_intensities_copy_test_matallo
+  x_axis: date_processed
+  series:
+    chemical:
+      name: Chemical
+      column: chemical_manufacturing
+      units: Index (1998=100)
+      class: line
+      y_min: 0.5
+      y_max: 1.3
+      strokeColor: "rgba(238,87,41,1)"
+    food_manufacturing:
+      name: Food manufacturing
+      column: food_manufacturing
+      units: Index (1998=100)
+      class: line
+      y_min: 0.5
+      y_max: 1.3
+      strokeColor: "#F0542C"
+    iron_and_steel:
+      name: Iron and steel
+      column: iron_and_steel
+      units: Index (1998=100)
+      class: line
+      y_min: 0.5
+      y_max: 1.3
+      strokeColor: "#00D9A3"
+    nonmetallic_mineral_product_manufacturing:
+      name: Non-metallic mineral
+      column: nonmetallic_mineral_product_manufacturing
+      units: Index (1998=100)
+      class: line
+      y_min: 0.5
+      y_max: 1.3
+      strokeColor: "#546DBC"
+    paper_manufacturing:
+      name: Paper
+      column: paper_manufacturing
+      units: Index (1998=100)
+      class: line
+      y_min: 0.5
+      y_max: 1.3
+      strokeColor: "rgba(238,87,41,1)"
+    petroleum_and_coal_products_manufacturing:
+      name: Petroleum and coal
+      column: petroleum_and_coal_products_manufacturing
+      units: Index (1998=100)
+      class: line
+      y_min: 0.5
+      y_max: 1.3
+      strokeColor: "#F0542C" 
+    primary_metal_manufacturing:
+      name: Primary metal
+      column: primary_metal_manufacturing
+      units: Index (1998=100)
+      class: line
+      y_min: 0.5
+      y_max: 1.3
+      strokeColor: "#FFD24D"
+
+us_industry_policy:
+  id: us_industry_policy
+  name: Incentive Programs
+  description: There was little cohesive industrial policy. Participation in the federal industrial assessment program declined, while state level programs grew.
+  table: us_industry_3_number_state_incentive_programs_copy_test_matallo
+  x_axis: date_processed
+  type: line
+  series:
+    number_programs:
+      name: Number of local incentive programs
+      column: total
+      units: programs
+      class: line
+      y_min: 0
+      y_max: 3530
+      strokeColor: "rgba(238,87,41,1)"
+
+us_industry_policy_2:
+  id: us_industry_policy_2
+  name: Audit Programs
+  description: There was little cohesive industrial policy. Participation in the federal industrial assessment program declined, while state level programs grew.
+  table: us_industry_3_industrial_assessment_center_copy_test_matallo
+  x_axis: date_processed
+  series:
+    audits:
+      name: Number of audits
+      column: number_of_assessments
+      units: Audits
+      class: line
+      y_min: -50
+      y_max: 1600
+      strokeColor: "rgba(238,87,41,1)"
+    plant_area:
+      name: Average plant area of audited facilities
+      column: average_plant_area_of_facilities_audited
+      units: K ft<sup>2</sup>
+      class: line
+      y_min: -50
+      y_max: 1600
+      strokeColor: "rgba(79,110,191,1)"
+
+india_agriculture_emissions:
+  id: india_agriculture_emissions
+  name: "Lands & emissions"
+  description: TBD
+  table: land_use_and_emissions_copy_diego
+  x_axis: date_processed
+  type: line
+  series:
+    methane:
+      name: Methane
+      column: methane
+      units: million T
+      class: line
+      y_min: 0
+      y_max: 500
+      strokeColor: "#546DBC"
+    nitrous_oxide:
+      name: Nitrous Oxide
+      column: nitrous_oxide
+      units: million T
+      class: line
+      y_min: 0
+      y_max: 500
+      strokeColor: "#F0542C"
+    land_under_cultivation:
+      name: Land Under Cultivation
+      column: land_under_cultivation
+      units: million T
+      class: line
+      y_min: 0
+      y_max: 500
+      strokeColor: "#00D9A3"
+
+india_agriculture_emission_drivers:
+  id: india_agriculture_emission_drivers
+  name: Agricultural exports
+  description: TBD
+  table: ag_exports_million_usd_copy_diego
+  x_axis: date_processed
+  type: line
+  series:
+    agricultural_raw_materials_exports:
+      name: Agricultural raw materials
+      column: agricultural_raw_materials_exports
+      units: million USD
+      class: area
+      y_min: 0
+      y_max: 30000
+      strokeColor: "rgba(238,87,41,1)"
+      fillColor: "rgba(238,87,41,0.2)"
+    food_exports:
+      name: Food exports
+      column: food_exports
+      units: million USD
+      class: area
+      y_min: 0
+      y_max: 30000
+      strokeColor: "rgba(79,110,191,1)"
+      fillColor: "rgba(79,110,191,0.2)"
+
+india_agriculture_emission_drivers_2:
+  id: india_agriculture_emission_drivers_2
+  name: Fertilizer & livestock
+  description: 
+  table: india_ag_2_fertilizer_and_livestock_copy_diego
+  x_axis: date_processed
+  type: line
+  series:
+    total_livestock:
+      name: Total livestock
+      column: total_livestock
+      units: million livestock
+      class: line
+      y_min: 0
+      y_max: 600
+      strokeColor: "#546DBC"
+    total_fertilizer_use_2:
+      name: Total fertilizer use
+      column: total_fertilizer_use_2
+      units: million T
+      class: line
+      y_min: 0
+      y_max: 600
+      strokeColor: "#F0542C"
+
+india_agriculture_emission_drivers_3:
+  id: india_agriculture_emission_drivers_3
+  name: Mechanization
+  description: 
+  table: mechanization_copy_diego
+  x_axis: date_processed
+  type: line
+  series:
+    tractors_sold_1994_100:
+      name: Tractors sold
+      column: tractors_sold_1994_100
+      units: index (1994=100)
+      class: line
+      y_min: 0
+      y_max: 700
+      strokeColor: "#546DBC"
+    power_tillers_1994_100:
+      name: Power tillers sold
+      column: power_tillers_1994_100
+      units: index (1994=100)
+      class: line
+      y_min: 0
+      y_max: 700
+      strokeColor: "#F0542C"
+    pumpsets_connected_to_the_grid_1995_100:
+      name: Pumpsets connected to the grid
+      column: pumpsets_connected_to_the_grid_1995_100
+      units: index (1994=100)
+      class: line
+      y_min: 0
+      y_max: 700
+      strokeColor: "#00D9A3"
+
+india_agriculture_policy:
+  id: india_agriculture_policy
+  name: 
+  description: 
+  table: 
+  x_axis: date_processed
+  type: line
+  series:
+    series_1:
+      name: 
+      column: 
+      units: 
+      class: line
+      y_min: 
+      y_max: 
+      strokeColor: "rgba(238,87,41,1)"
+
+india_power_emissions:
+  id: india_power_emissions
+  name: Generation & emissions
+  description: TBD
+  table: emissions_generation_copy_diego
+  x_axis: date_processed
+  type: line
+  series:
+    series_1:
+      name: Emissions
+      column: emissions
+      units: million tons
+      class: line
+      y_min: 0
+      y_max: 800
+      strokeColor: "#546DBC"
+    series_2:
+      name: Generation
+      column: generation
+      units: TWh
+      class: line
+      y_min: 0
+      y_max: 1000
+      strokeColor: "#F0542C"
+
+india_power_emission_drivers:
+  id: india_power_emissions_drivers
+  name: Fuel sources
+  description: TBD
+  table: fuel_sources_copy_diego
+  x_axis: date_processed
+  type: line
+  series:
+    series_1:
+      name: 
+      column: 
+      units: 
+      class: 
+      y_min: 
+      y_max: 
+      strokeColor: "#546DBC"
+    series_2:
+      name: 
+      column: 
+      units: 
+      class: 
+      y_min: 
+      y_max: 
+      strokeColor: "#546DBC"
+    series_3:
+      name: 
+      column: 
+      units: 
+      class: 
+      y_min: 
+      y_max: 
+      strokeColor: "#546DBC"
+    series_4:
+      name: 
+      column: 
+      units: 
+      class: 
+      y_min: 
+      y_max: 
+      strokeColor: "#546DBC"
+    series_5:
+      name: 
+      column: 
+      units: 
+      class: 
+      y_min: 
+      y_max: 
+      strokeColor: "#546DBC"
+    series_6:
+      name: 
+      column: 
+      units: 
+      class: 
+      y_min: 
+      y_max: 
+      strokeColor: "#546DBC"
+    series_7:
+      name: 
+      column: 
+      units: 
+      class: 
+      y_min: 
+      y_max: 
+      strokeColor: "#546DBC"
+    series_8:
+      name: 
+      column: 
+      units: 
+      class: 
+      y_min: 
+      y_max: 
+      strokeColor: "#546DBC"
+
+#             { "name": "Biomass and waste", "column": "biomass_and_waste", "units": "TWh", "class": "area", "y_extent": [0,2000], "strokeColor": "rgba(238,87,41,1)", "fillColor": "rgba(238,87,41,0.2)"},
+#             { "name": "Solar and renewables", "column": "solar_and_other_renewables", "units": "TWh", "class": "area", "y_extent": [0,2000], "strokeColor": "rgba(79,110,191,1)", "fillColor": "rgba(79,110,191,0.2)"},
+#             { "name": "Wind", "column": "wind", "units": "TWh", "class": "area", "y_extent": [0,2000], "fillColor": "rgba(87,216,159,0.2)"},
+#             { "name": "Low Carbon", "column": "low_carbon", "units": "TWh", "class": "area", "y_extent": [0,2000], "fillColor": "rgba(87,216,159,0.2)"},
+#             { "name": "Nuclear", "column": "nuclear", "units": "TWh", "class": "area", "y_extent": [0,2000], "strokeColor": "rgba(238,87,41,1)", "fillColor": "rgba(87,216,159,0.2)"},
+#             { "name": "Hydro", "column": "hydro", "units": "TWh", "class": "area", "y_extent": [0,2000], "strokeColor": "rgba(238,87,41,1)", "fillColor": "rgba(246,214,44,0.2)"},
+#             { "name": "Conventional thermal", "column": "conventional_thermal", "units": "TWh", "class": "area", "y_extent": [0,2000],"strokeColor": "rgba(79,110,191,1)", "fillColor": "rgba(79,110,191,0.2)"},
+#             { "name": "Major sources", "column": "major_sources", "units": "TWh", "class": "area", "y_extent": [0,2000], "strokeColor": "rgba(238,87,41,1)", "fillColor": "rgba(238,87,41,0.2)"},
+
+
+india_power_policy:
+  id: india_power_policy
+  name: IREDA renewables subsidies
+  description: TBD
+  table: ireda_subsidies_copy_diego
+  x_axis: date_processed
+  type: line
+  series:
+    series_1:
+      name: IREDA distributions
+      column: billion_inr
+      units: billion INR
+      class: line
+      y_min: 0
+      y_max: 15
+      strokeColor: "#546DBC"
+
+india_power_policy_2:
+  id: india_power_policy_2
+  name: Weighted average state RPO targets
+  description: TBD
+  table: state_rpos_copy_diego
+  x_axis: date_processed
+  type: line
+  series:
+    series_1:
+      name: Weighted average state RPO targets
+      column: weighted_average_state_rpo_targets
+      units: "%"
+      class: line
+      y_min: 0
+      y_max: 6
+      strokeColor: "#546DBC"
+
+india_industry_emissions:
+  id: india_industry_emissions
+  name: Emissions
+  description: TBD
+  table: india_ind_1_emissions_production_copy_diego
+  x_axis: date_processed
+  type: line
+  series:
+    emissions_index:
+      name: Emissions
+      column: emissions_index
+      units: index (1993=100)
+      class: line
+      y_min: 0
+      y_max: 200
+      strokeColor: "#546DBC"
+
+india_industry_emissions_2:
+  id: india_industry_emissions_2
+  name: Value index
+  description: TBD
+  table: india_ind_2_value_index_copy_diego
+  x_axis: date_processed
+  type: line
+  series:
+    manufacturing_value_added_index:
+      name: Manufacturing value added
+      column: manufacturing_value_added_index
+      units: index (1995=100)
+      class: line
+      y_min: 0
+      y_max: 300
+      strokeColor: "#546DBC"
+    manufacturing_production_index:
+      name: Manufacturing production
+      column: manufacturing_production_index
+      units: index (1995=100)
+      class: line
+      y_min: 0
+      y_max: 300
+      strokeColor: "#F0542C"
+
+india_industry_emission_drivers:
+  id: india_industry_emission_drivers
+  name: Sectoral emissions intensities
+  description: TBD
+  table: india_ind_2_sectoral_intensities_copy_diego
+  x_axis: date_processed
+  type: line
+  series:
+    iron_and_steel:
+      name:  "Iron & steel"
+      column: iron_and_steel
+      units: index (1993=100)
+      class: line
+      y_min: 0
+      y_max: 150
+      strokeColor: "#546DBC"
+    chemicals:
+      name:  "Chemicals"
+      column: chemicals
+      units: index (1993=100)
+      class: line
+      y_min: 0
+      y_max: 150
+      strokeColor: "#F0542C"
+
+india_industry_policy:
+  id: india_industry_policy
+  name: Number of units participating
+  description: TBD
+  table: ind_ind_3_awards_scheme_copy_diego
+  x_axis: date_processed
+  type: line
+  series:
+    number_of_participating_industrial_units:
+      name: Number of units participating
+      column: number_of_participating_industrial_units
+      units: units
+      class: line
+      y_min: 0
+      y_max: 600
+      strokeColor: "#546DBC"
