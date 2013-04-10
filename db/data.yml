@@ -25,6 +25,7 @@ brazil:
           graph_config:
             - brazil_forestry_policy
             # - brazil_agriculture_policy            
+
     agriculture:
       name: Agriculture
       description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in Brazil
@@ -43,6 +44,7 @@ brazil:
           name: Policy
           graph_config:
             - brazil_agriculture_policy
+
   subjects:
     emissions:
       description: Description for Brazil Emissions
@@ -51,8 +53,10 @@ brazil:
     policy:
       description:  Description for Brazil Policy
 
+
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 us:
   id: us
@@ -78,6 +82,7 @@ us:
           graph_config:
             - us_buildings_policy
             - us_buildings_policy_2
+
     transportation:
       name: Transportation
       description: These graphs show the changes in emissions, emissions drivers, and policy in the Transportation sector in the US
@@ -94,6 +99,7 @@ us:
           name: Policy
           graph_config:
             - us_transportation_policy
+
     power:
       name: Power
       tagline: Tagline for power
@@ -113,6 +119,7 @@ us:
           graph_config:
             - us_power_policy
             - us_power_policy_2
+
     industry:
       name: Industry
       tagline: Tagline for industry
@@ -133,6 +140,7 @@ us:
           graph_config:
             - us_industry_policy
             - us_industry_policy_2
+
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -158,10 +166,11 @@ india:
             - india_agriculture_emission_drivers
             - india_agriculture_emission_drivers_2
             - india_agriculture_emission_drivers_3
-        policy:
-          name: Policy
-          graph_config:
-            - india_agriculture_emissions
+        # policy:
+        #   name: Policy
+        #   graph_config:
+        #     - india_agriculture_emissions # CAMBIAR
+
     power:
       name: Power
       description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in India
@@ -198,6 +207,7 @@ india:
           graph_config:
             - india_industry_policy
 
+
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -227,40 +237,42 @@ china:
             - china_buildings_policy
             - china_buildings_policy_2
 
-    # power:
-    #   name: Power
-    #   tagline: Tagline for Power
-    #   description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in China
-    #   subjects:
-    #     emissions:
-    #       name: Emissions
-    #       graph_config:
-    #         - china_power_emissions
-    #     emission_drivers:
-    #       name: Emission Drivers
-    #       graph_config:
-    #         - china_power_emission_drivers
-    #     policy:
-    #       name: Policy
-    #       graph_config:
-    #         - china_power_policy
-    # industry:
-    #   name: Industry
-    #   tagline: Tagline for Industry
-    #   description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in China 
-    #   subjects:
-    #     emissions:
-    #       name: Emissions
-    #       graph_config:
-    #         - china_industry_emissions
-    #     emission_drivers:
-    #       name: Emission Drivers
-    #       graph_config:
-    #         - china_industry_emission_drivers
-    #     policy:
-    #       name: Policy
-    #       graph_config:
-    #         - china_industry_policy     
+    industry:
+      name: Industry
+      tagline: Tagline for Industry
+      description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in China 
+      subjects:
+        emissions:
+          name: Emissions
+          graph_config:
+            - china_industry_emissions
+        emission_drivers:
+          name: Emission Drivers
+          graph_config:
+            - china_industry_emissions
+        policy:
+          name: Policy
+          graph_config:
+            - china_industry_policy     
+
+    power:
+      name: Power
+      tagline: Tagline for Power
+      description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in China
+      subjects:
+        emissions:
+          name: Emissions
+          graph_config:
+            - china_power_emissions
+        emission_drivers:
+          name: Emission Drivers
+          graph_config:
+            - china_power_emission_drivers
+        policy:
+          name: Policy
+          graph_config:
+            - china_industry_policy # CAMBIAR
+
 eu:
   id: eu
   name: European Union
@@ -299,7 +311,7 @@ eu:
         # policy:
         #   name: Policy
         #   graph_config:
-        #     - eu_industry_policy
+        #     - eu_power_policy
 
     industry:
       name: Industry
@@ -313,10 +325,11 @@ eu:
           name: Emission Drivers
           graph_config:
             - eu_industry_emission_drivers
-#         policy:
-#           name: Policy
-#           graph_config:
-#             - eu_industry_policy
+        # policy:
+        #   name: Policy
+        #   graph_config:
+        #     - eu_industry_policy
+
     agriculture:
       name: Agriculture
       description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in the EU
