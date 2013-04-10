@@ -198,69 +198,69 @@ india:
           graph_config:
             - india_industry_policy
 
-# china:
-#   id: china
-#   name: China
-#   tagline: Pursuing low-carbon growth policy at unprecedented scale
-#   description: China has pursued aggressive climate and energy policies with particular focus on energy efficiency and renewable energy. Closure of inefficient coal-fired power plants saved the equivalent of more than 100 million tonnes of coal, while renewable electricity in China grew 661% between 2000 and 2010. Still, renewable electricity sources in China only produced the equivalent of 0.68% of the electricity from coal sources by the end of 2010. Between 2000 and 2010, China represented 68% of the increase in global energy-related CO2 emissions.
-#   sectors:
-#     buildings:
-#       name: Buildings
-#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in China
-#       subjects:
-#         emissions:
-#           name: Emissions
-#           graph_config:
-#             - brazil_forestry_emissions
-#         emission_drivers:
-#           name: Emission Drivers
-#           graph_config:
-#             - brazil_forestry_emissions
-#         policy:
-#           name: Policy
-#           graph_config:
-#             - brazil_forestry_emissions
-#     power:
-#       name: Power
-#       tagline: Tagline for Power
-#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in China
-#       subjects:
-#         emissions:
-#           name: Emissions
-#           graph_config:
-#             - brazil_forestry_emissions
-#         emission_drivers:
-#           name: Emission Drivers
-#           graph_config:
-#             - brazil_forestry_emissions
-#         policy:
-#           name: Policy
-#           graph_config:
-#             - brazil_forestry_emissions
-#     industry:
-#       name: Industry
-#       tagline: Tagline for Industry
-#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in China 
-#       subjects:
-#         emissions:
-#           name: Emissions
-#           graph_config:
-#             - brazil_forestry_emissions
-#         emission_drivers:
-#           name: Emission Drivers
-#           graph_config:
-#             - brazil_forestry_emissions
-#         policy:
-#           name: Policy
-#           graph_config:
-#             - brazil_forestry_emissions     
-#   subjects:
-#     emissions:
-#       description: 
-#     emission_drivers:
-#       description: 
-#     policy:
-#       description:             
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+china:
+  id: china
+  name: China
+  tagline: Pursuing low-carbon growth policy at unprecedented scale
+  description: China has pursued aggressive climate and energy policies with particular focus on energy efficiency and renewable energy. Closure of inefficient coal-fired power plants saved the equivalent of more than 100 million tonnes of coal, while renewable electricity in China grew 661% between 2000 and 2010. Still, renewable electricity sources in China only produced the equivalent of 0.68% of the electricity from coal sources by the end of 2010. Between 2000 and 2010, China represented 68% of the increase in global energy-related CO2 emissions.
+  sectors:
+    buildings:
+      name: Buildings
+      description: "These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in China"
+      subjects:
+        emissions:
+          name: Emissions
+          graph_config:
+            - china_buildings_emissions 
+        emission_drivers:
+          name: Emission Drivers
+          graph_config:
+            - china_buildings_emission_drivers
+            - china_buildings_emission_drivers_2
+        policy:
+          name: Policy
+          graph_config:
+            - china_buildings_policy
+            - china_buildings_policy_2
+
+    # power:
+    #   name: Power
+    #   tagline: Tagline for Power
+    #   description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in China
+    #   subjects:
+    #     emissions:
+    #       name: Emissions
+    #       graph_config:
+    #         - china_power_emissions
+    #     emission_drivers:
+    #       name: Emission Drivers
+    #       graph_config:
+    #         - china_power_emission_drivers
+    #     policy:
+    #       name: Policy
+    #       graph_config:
+    #         - china_power_policy
+    # industry:
+    #   name: Industry
+    #   tagline: Tagline for Industry
+    #   description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in China 
+    #   subjects:
+    #     emissions:
+    #       name: Emissions
+    #       graph_config:
+    #         - china_industry_emissions
+    #     emission_drivers:
+    #       name: Emission Drivers
+    #       graph_config:
+    #         - china_industry_emission_drivers
+    #     policy:
+    #       name: Policy
+    #       graph_config:
+    #         - china_industry_policy     
 # eu:
 #   id: eu
 #   name: European Union
