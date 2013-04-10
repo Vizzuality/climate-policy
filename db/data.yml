@@ -113,6 +113,27 @@ us:
           graph_config:
             - us_power_policy
             - us_power_policy_2
+    industry:
+      name: Industry
+      tagline: Tagline for industry
+      description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the US
+      graph_config:
+      subjects:
+        emissions:
+          name: Emissions
+          graph_config:
+            - us_industry_emissions
+            - us_industry_emissions_2
+        emission_drivers:
+          name: Emission Drivers
+          graph_config:
+            - us_industry_emission_drivers
+        policy:
+          name: Policy
+          graph_config:
+            - us_industry_policy
+            - us_industry_policy_2
+
 #   subjects:
 #     emissions:
 #       description: 

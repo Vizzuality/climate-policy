@@ -541,7 +541,7 @@ us_power_policy_2:
   table: weighted_average_state_portfolio_standards_copy_test_matallo
   x_axis: date_processed
   series:
-    total_emissions:
+    weighted_average:
       name: Weighted average state RPSs
       column: weighted_average_state_rpss
       units: "%"
@@ -550,5 +550,147 @@ us_power_policy_2:
       y_max: 6
       strokeColor: "rgba(238,87,41,1)"
 
+us_industry_emissions:
+  id: us_industry_emissions
+  name: Emissions
+  description: Industrial emissions declined even before the recession as industrial production rose.
+  table: us_industry_1_copy_test_matallo
+  x_axis: date_processed
+  series:
+    emissions:
+      name: Emissions
+      column: emissions
+      units: MM T CO<sup>2</sup>
+      class: line
+      y_min: 1300
+      y_max: 2050
+      strokeColor: "rgba(238,87,41,1)"
 
+us_industry_emissions_2:
+  id: us_industry_emissions_2
+  name: Output
+  description: Industrial emissions declined even before the recession as industrial production rose.
+  table: us_industry_1_copy_test_matallo_2
+  x_axis: date_processed
+  series:
+    manufacturing_value_add:
+      name: Manufacturing Value Add
+      column: manufacturing_value_add
+      units: Index (1998=100)
+      class: line
+      y_min: 80
+      y_max: 160
+      strokeColor: "rgba(238,87,41,1)"
+    manufacturing_production:
+      name: Manufacturing Production
+      column: manufacturing_production
+      units: Index (1998=100)
+      class: line
+      y_min: 80
+      y_max: 160
+      strokeColor: "rgba(79,110,191,1)"          
+
+us_industry_emission_drivers:
+  id: us_industry_emission_drivers
+  name: Sectoral Intensities
+  description: As manufacturing grew, industrial sectors generally improved their energy intensity, but in some cases performance declined. Structural changes to U.S. industry led to lower emissions intensity.
+  table: us_industry_2_sectoral_intensities_copy_test_matallo
+  x_axis: date_processed
+  series:
+    chemical:
+      name: Chemical
+      column: chemical_manufacturing
+      units: Index (1998=100)
+      class: line
+      y_min: 0.5
+      y_max: 1.3
+      strokeColor: "rgba(238,87,41,1)"      
+    food_manufacturing:
+      name: Food manufacturing
+      column: food_manufacturing
+      units: Index (1998=100)
+      class: line
+      y_min: 0.5
+      y_max: 1.3
+      strokeColor: "#F0542C"
+    iron_and_steel:
+      name: Iron and steel
+      column: iron_and_steel
+      units: Index (1998=100)
+      class: line
+      y_min: 0.5
+      y_max: 1.3
+      strokeColor: "#00D9A3"
+    nonmetallic_mineral_product_manufacturing:
+      name: Non-metallic mineral
+      column: nonmetallic_mineral_product_manufacturing
+      units: Index (1998=100)
+      class: line
+      y_min: 0.5
+      y_max: 1.3
+      strokeColor: "#546DBC"
+    paper_manufacturing:
+      name: Paper
+      column: paper_manufacturing
+      units: Index (1998=100)
+      class: line
+      y_min: 0.5
+      y_max: 1.3
+      strokeColor: "rgba(238,87,41,1)"
+    petroleum_and_coal_products_manufacturing:
+      name: Petroleum and coal
+      column: petroleum_and_coal_products_manufacturing
+      units: Index (1998=100)
+      class: line
+      y_min: 0.5
+      y_max: 1.3
+      strokeColor: "#F0542C" 
+    primary_metal_manufacturing:
+      name: Primary metal
+      column: primary_metal_manufacturing
+      units: Index (1998=100)
+      class: line
+      y_min: 0.5
+      y_max: 1.3
+      strokeColor: "#FFD24D" 
+
+us_industry_policy:
+  id: us_industry_policy
+  name: Incentive Programs
+  description: There was little cohesive industrial policy. Participation in the federal industrial assessment program declined, while state level programs grew.
+  table: us_industry_3_number_state_incentive_programs_copy_test_matallo
+  x_axis: date_processed
+  series:
+    number_programs:
+      name: Number of local incentive programs
+      column: total
+      units: programs
+      class: line
+      y_min: 0
+      y_max: 3530
+      strokeColor: "rgba(238,87,41,1)"     
+
+us_industry_policy_2:
+  id: us_industry_policy_2
+  name: Audit Programs
+  description: There was little cohesive industrial policy. Participation in the federal industrial assessment program declined, while state level programs grew.
+  table: us_industry_3_industrial_assessment_center_copy_test_matallo
+  x_axis: date_processed
+  series:
+    audits:
+      name: Number of audits
+      column: number_of_assessments
+      units: Audits
+      class: line
+      y_min: -50
+      y_max: 1600
+      strokeColor: "rgba(238,87,41,1)"         
+    plant_area:
+      name: Average plant area of audited facilities
+      column: average_plant_area_of_facilities_audited
+      units: K ft<sup>2</sup>
+      class: line
+      y_min: -50
+      y_max: 1600
+      strokeColor: "rgba(79,110,191,1)"
 
