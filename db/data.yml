@@ -141,7 +141,7 @@ us:
 india:
   id: india
   name: India
-  tagline: Tagline for India
+  tagline: BALANCING CLIMATE POLICY AND DEVELOPMENT
   description: India has aggressive renewable energy targets and industry energy efficiency policies, but faces significant infrastructure challenges, which may derail otherwise good policy. India is growing rapidly and represented 8% of the increase in global energy-related CO2 emissions between 2000 and 2010.
   sectors:
     agriculture:
