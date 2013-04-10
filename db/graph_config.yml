@@ -1,8 +1,8 @@
 brazil_forestry_emissions:
   id: brazil_forestry_emissions
   name: Deforestation rate
-  table: deforestation_rate_copy_test_matallo
   description: Deforestation declined rapidly, particularly after major policy changes in 2004 and again in 2008.
+  table: deforestation_rate_copy_test_matallo
   x_axis: date_processed
   series:
     deforestation_rate:
@@ -16,49 +16,104 @@ brazil_forestry_emissions:
 
 brazil_forestry_emission_drivers:
   id: brazil_forestry_emission_drivers
-  name: brazil_forestry_emission_drivers
-  description: brazil_forestry_emission_drivers
+  name: Commodity Prices
+  description: Common drivers of deforestation, such as commodity prices, and land protection appear to have changed deforestation patterns, with large scale deforestation declining much more rapidly than small scale (e.g. tracts of less than 25 hectares).
+  table: commodity_prices_copy_test_matallo
   x_axis: date_processed
   series:
-    methane_mmtco2e:
-      name: Methane
-      column: methane_mmtco2e
+    corn:
+      name: Corn price
+      column: corn
+      units: BRL/Ton
       class: line
       y_min: 0
-      y_max: 310
+      y_max: 1500
       strokeColor: 'rgba(238,87,41,1)'
-    nitrous_oxide_mmtco2e:
-      name: Nitrous Oxide
-      column: nitrous_oxide_mmtco2e
+    soybean:
+      name: Soybean price
+      column: soybeans
+      units: BRL/Ton
       class: line
       y_min: 0
-      y_max: 310
+      y_max: 1500
       strokeColor: 'rgba(79,110,191,1)'
+
+brazil_forestry_emission_drivers_2:
+  id: brazil_forestry_emission_drivers_2
+  name: Deforestation polygons indicator
+  description: Common drivers of deforestation, such as commodity prices, and land protection appear to have changed deforestation patterns, with large scale deforestation declining much more rapidly than small scale (e.g. tracts of less than 25 hectares).
+  table: deforestation_polygons_ind_copy_test_matallo
+  x_axis: date_processed
+  series:
+    _25_hectares:
+      name: < 25 Hectares
+      column: _25_hectares
+      units: Index (2004=100)
+      class: line
+      y_min: -20
+      y_max: 180
+      strokeColor: 'rgba(238,87,41,1)'
+    _25_100_hectares:
+      name: 25-100 Hectares
+      column: _25_100_hectares
+      units: Index (2004=100)
+      class: line
+      y_min: -20
+      y_max: 180
+      strokeColor: "#F0542C"
+    _100_500_hectares:
+      name: 100-500 Hectares
+      column: _100_500_hectares
+      units: Index (2004=100)
+      class: line
+      y_min: -20
+      y_max: 180
+      strokeColor: "#00D9A3"
+    _500_1000_hectares:
+      name: 500-1000 Hectares
+      column: _500_1000_hectares
+      units: Index (2004=100)
+      class: line
+      y_min: -20
+      y_max: 180
+      strokeColor: "#FFD24D"
+    _1000_hectares:
+      name: '> 1000 Hectares'
+      column: _1000_hectares
+      units: Index (2004=100)
+      class: line
+      y_min: -20
+      y_max: 180
+      strokeColor: "#E599FF"
 
 brazil_forestry_policy:
   id: brazil_forestry_policy
-  name: brazil_forestry_policy
-  description: brazil_forestry_policy
+  name: Protected Lands
+  description: As an example of increased Brazilian policy efforts, Brazil has increased efforts to reduce deforestation, and the amount of land under government protection has increased significantly since 2001.
+  table: protected_lands_copy_test_matallo
   x_axis: date_processed
   series:
     methane_mmtco2e:
-      name: Methane
-      column: methane_mmtco2e
-      class: line
+      name: Integral Protection
+      column: integral_protection
+      units: K km<sup>2</sup>
+      class: area
       y_min: 0
-      y_max: 310
+      y_max: 1200
       strokeColor: 'rgba(238,87,41,1)'
+      fillColor: 'rgba(238,87,41,0.2)'
     nitrous_oxide_mmtco2e:
-      name: Nitrous Oxide
-      column: nitrous_oxide_mmtco2e
-      class: line
+      name: Sustainable Use
+      column: sustainable_use
+      units: K km<sup>2</sup>
+      class: area
       y_min: 0
-      y_max: 310
+      y_max: 1200
       strokeColor: 'rgba(79,110,191,1)'
+      fillColor: 'rgba(79,110,191,0.2)'
 
 brazil_agriculture_emissions:
   id: brazil_agriculture_emissions
-  name: brazil_agriculture_emissions
   table: land_use_emissions_copy_test_matallo
   name: Emissions
   description: Both land under cultivation and non-CO2 emissions increased.
@@ -99,41 +154,96 @@ brazil_agriculture_emissions_2:
 
 brazil_agriculture_emission_drivers:
   id: brazil_agriculture_emission_drivers
-  name: brazil_agriculture_emission_drivers
-  description: brazil_agriculture_emission_drivers
+  name: Intensity indices
+  table: emissions_drivers_copy_test_matallo
+  description: Although the intensity of food production per hectare increased, mechanization did not increase.
   x_axis: date_processed
   series:
-    methane_mmtco2e:
-      name: Methane
-      column: methane_mmtco2e
+    food:
+      name: Food
+      column: food_production_per_hectare
+      units: Index (1980=100)
       class: line
-      y_min: 0
-      y_max: 310
-      strokeColor: 'rgba(238,87,41,1)'
-    nitrous_oxide_mmtco2e:
-      name: Nitrous Oxide
-      column: nitrous_oxide_mmtco2e
+      y_min: 50
+      y_max: 300
+      strokeColor: "#546DBC"
+    livestock:
+      name: Livestock
+      column: livestock_production_per_hectare
+      units: Index (1980=100)      
       class: line
-      y_extent: '[0,310]'
-      strokeColor: 'rgba(79,110,191,1)'
+      y_min: 50
+      y_max: 300
+      strokeColor: "#F0542C"
+    non_food:
+      name: Non-food
+      column: non_food_production_per_hectare
+      units: Index (1980=100)      
+      class: line
+      y_min: 50
+      y_max: 300
+      strokeColor: '#00D9A3'
+    tractor:
+      name: Tractor usage
+      column: tractor_usage_per_hectare
+      units: Index (1980=100)
+      class: line
+      y_min: 50
+      y_max: 300
+      strokeColor: '#FFD24D'
+
+brazil_agriculture_emission_drivers_2:
+  id: brazil_agriculture_emission_drivers_2
+  name: Exports
+  table: brazil_ag_2_exports_copy_test_matallo
+  description: Increasing land use, some of which satisfied export growth, and some of which satisfied population growth (not shown), was a major driver of growing emissions.
+  x_axis: date_processed
+  series:
+    raw_materials:
+      name: Agricultural raw materials
+      column: agricultural_raw_materials
+      units: B USD
+      class: line
+      y_min: -10
+      y_max: 55
+      strokeColor: "#546DBC"
+    food:
+      name: Food
+      column: food
+      units: B USD
+      class: line
+      y_min: -10
+      y_max: 55
+      strokeColor: "#F0542C"
 
 brazil_agriculture_policy:
   id: brazil_agriculture_policy
-  name: brazil_agriculture_policy
-  description: brazil_agriculture_policy
+  name: Credit
+  table: brazil_ag_3_credit_subsidies_copy_test_matallo
+  description: Brazil made increasing the productivity of agricultural land a priority as a means to reduce expansion into new land and deforestation. Subsidies to producers, in part to modernize their operations, steadily increased over time. In the 1990s, credit subsidies were offset by price controls set below market prices; as these price controls rose above market prices, they became additional effective subsidies.
   x_axis: date_processed
   series:
-    methane_mmtco2e:
-      name: Methane
-      column: methane_mmtco2e
+    credit:
+      name: Credit Subsidies
+      column: credit_subsidies
+      units: MM BRL
       class: line
-      y_min: 0
-      y_max: 310
-      strokeColor: 'rgba(238,87,41,1)'
-    nitrous_oxide_mmtco2e:
-      name: Nitrous Oxide
-      column: nitrous_oxide_mmtco2e
+      y_min: -7000
+      y_max: 18000
+      strokeColor: "#546DBC"
+    non_credit:
+      name: Non-Credit Subsidies
+      column: non_credit_producer_subsidies
+      units: MM BRL
       class: line
-      y_min: 0
-      y_max: 310
-      strokeColor: 'rgba(79,110,191,1)'
+      y_min: -7000
+      y_max: 18000
+      strokeColor: "#F0542C"
+    total:
+      name: Total Subsidies to Producers
+      column: total_producer_support
+      units: MM BRL
+      class: line
+      y_min: -7000
+      y_max: 18000
+      strokeColor: "#00D9A3"

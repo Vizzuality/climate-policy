@@ -4,386 +4,336 @@ brazil:
   name: Brazil
   tagline: Protecting forests through policy
   description: In any discussion of Brazilian climate policy, the first topic is deforestation. Brazil has seen marked success in climate-related policies and may be a good model for other emerging economies. Roughly half the slowdown in deforestation in the late-2000s was a result of deliberate government policy, while better land productivity has led to increased agricultural output.
-  graph_config:
-    - brazil_agriculture_policy
-
   sectors:
     forestry:
       name: Forestry
-      tagline: Lorem ipsum
-      description: The Amazon is the world’s largest rainforest, stretching over an area of over five million square kilometers. Most of the forest is contained within Brazil, where the Amazon originally occupied over four million square kilometers of the country’s territory—an area equivalent to almost half of continental Europe. Roughly half the slowdown in deforestation in the late-2000s was a result of deliberate government policy, while better land productivity has led to increased agricultural output. Having greatly reduced large-scale deforestation, Brazil’s challenge now is to address small-scale deforestation, which may require different policy approaches
-      graph_config:
-        - brazil_agriculture_policy
+      description: These graphs show the changes in deforestation, deforestation drivers, and land use policy in Brazil
       subjects:
         emissions:
           name: Emissions
-          description: Lorem ipsum dolor sit amet to be provided
           graph_config:
             - brazil_forestry_emissions
-
+            # - brazil_agriculture_policy            
         emission_drivers:
           name: Emission Drivers
-          description: Lorem ipsum dolor sit amet to be provided
           graph_config:
             - brazil_forestry_emission_drivers
-
+            - brazil_forestry_emission_drivers_2            
+            # - brazil_agriculture_policy            
         policy:
           name: Policy
-          description: Lorem ipsum dolor sit amet to be provided
           graph_config:
             - brazil_forestry_policy
-
+            # - brazil_agriculture_policy            
     agriculture:
       name: Agriculture
-      tagline: Lorem ipsum
-      description: Continual modernization of agricultural practices in India, Europe, and southern Brazil enabled increased productivity without marked increases in cultivated land. In fact, cultivated land area remained flat or decreased in some cases. Greenhouse gas emissions from agricultural land use followed suit. In India, mechanization-focused policies and increased fertilizer intensity contributed to this pattern, whereas Europe moved beyond increased fertilization and instead improved agricultural practices that lowered fertilizer application. On the other hand, for India and Brazil, exports might have driven increased cropland expansion or agricultural intensification, while northern Brazil maintained more traditional agricultural practices, expanding cultivated land area to keep up with demand. Brazilian deforestation rates spiked in the early 2000s along with emissions from Brazilian agriculture; however, aggressive Brazilian policies helped drive down deforestation rates in the late 2000s.
-      graph_config:
-        - brazil_agriculture_policy
+      description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in Brazil
       subjects:
         emissions:
           name: Emissions
-          description: Lorem ipsum dolor sit amet to be provided
           graph_config:
             - brazil_agriculture_emissions
             - brazil_agriculture_emissions_2
-
         emission_drivers:
           name: Emission Drivers
-          description: Lorem ipsum dolor sit amet to be provided
           graph_config:
             - brazil_agriculture_emission_drivers
-
+            - brazil_agriculture_emission_drivers_2
         policy:
           name: Policy
-          description: Lorem ipsum dolor sit amet to be provided
           graph_config:
             - brazil_agriculture_policy
-us:
-  id: us
-  name: United States
-  tagline: Tagline for US
-  description: Description for US
-  sectors:
-    buildings:
-      name: Buildings
-      tagline: Tagline for Buildings
-      description: Description for Buildings
-      graph_config:
-      subjects:
-      subjects:
-        emissions:
-          name: Emissions
-          description: Description for Emissions
-          graph_config:
-            - brazil_forestry_emissions
-        emission_drivers:
-          name: Emission Drivers
-          description: Description for Emission Drivers
-          graph_config:
-            - brazil_forestry_emissions
-        policy:
-          name: Policy
-          description: Description for Policy
-          graph_config:
-            - brazil_forestry_emissions
-    transportation:
-      name: Transportation
-      tagline: Tagline for Transportation
-      description: Desc for transportation
-      graph_config:
-      subjects:
-        emissions:
-          name: Emissions
-          description: Description for Emissions
-          graph_config:
-            - brazil_forestry_emissions
-        emission_drivers:
-          name: Emission Drivers
-          description: Description for Emission Drivers
-          graph_config:
-            - brazil_forestry_emissions
-        policy:
-          name: Policy
-          description: Description for Policy
-          graph_config:
-            - brazil_forestry_emissions
-    power:
-      name: Power
-      tagline: Tagline for power
-      description: Description for power
-      graph_config:
-      subjects:
-        emissions:
-          name: Emissions
-          description: Description for Emissions
-          graph_config:
-            - brazil_forestry_emissions
-        emission_drivers:
-          name: Emission Drivers
-          description: Description for Emission Drivers
-          graph_config:
-            - brazil_forestry_emissions
-        policy:
-          name: Policy
-          description: Description for Policy
-          graph_config:
-            - brazil_forestry_emissions
-india:
-  id: india
-  name: India
-  tagline: Tagline for India
-  description: Description for India
-  sectors:
-    agriculture:
-      name: Agriculture
-      tagline: Tagline for Agriculture
-      description: Description for Agriculture
-      graph_config:
-      subjects:
-      subjects:
-        emissions:
-          name: Emissions
-          description: Description for Emissions
-          graph_config:
-            - brazil_forestry_emissions
-        emission_drivers:
-          name: Emission Drivers
-          description: Description for Emission Drivers
-          graph_config:
-            - brazil_forestry_emissions
-        policy:
-          name: Policy
-          description: Description for Policy
-          graph_config:
-            - brazil_forestry_emissions
-    power:
-      name: Power
-      tagline: Tagline for Power
-      description: Description for Power
-      graph_config:
-      subjects:
-      subjects:
-        emissions:
-          name: Emissions
-          description: Description for Emissions
-          graph_config:
-            - brazil_forestry_emissions
-        emission_drivers:
-          name: Emission Drivers
-          description: Description for Emission Drivers
-          graph_config:
-            - brazil_forestry_emissions
-        policy:
-          name: Policy
-          description: Description for Policy
-          graph_config:
-            - brazil_forestry_emissions
-    industry:
-      name: Industry
-      tagline: Tagline for Industry
-      description: Description for Industry
-      graph_config:
-      subjects:
-      subjects:
-        emissions:
-          name: Emissions
-          description: Description for Emissions
-          graph_config:
-            - brazil_forestry_emissions
-        emission_drivers:
-          name: Emission Drivers
-          description: Description for Emission Drivers
-          graph_config:
-            - brazil_forestry_emissions
-        policy:
-          name: Policy
-          description: Description for Policy
-          graph_config:
-            - brazil_forestry_emissions
-china:
-  id: china
-  name: China
-  tagline: Tagline for China
-  description: Description for China
-  sectors:
-    buildings:
-      name: Buildings
-      tagline: Tagline for Buildings
-      description: Description for Buildings
-      graph_config:
-      subjects:
-      subjects:
-        emissions:
-          name: Emissions
-          description: Description for Emissions
-          graph_config:
-            - brazil_forestry_emissions
-        emission_drivers:
-          name: Emission Drivers
-          description: Description for Emission Drivers
-          graph_config:
-            - brazil_forestry_emissions
-        policy:
-          name: Policy
-          description: Description for Policy
-          graph_config:
-            - brazil_forestry_emissions
-    power:
-      name: Power
-      tagline: Tagline for Power
-      description: Description for Power
-      graph_config:
-      subjects:
-      subjects:
-        emissions:
-          name: Emissions
-          description: Description for Emissions
-          graph_config:
-            - brazil_forestry_emissions
-        emission_drivers:
-          name: Emission Drivers
-          description: Description for Emission Drivers
-          graph_config:
-            - brazil_forestry_emissions
-        policy:
-          name: Policy
-          description: Description for Policy
-          graph_config:
-            - brazil_forestry_emissions
-    industry:
-      name: Industry
-      tagline: Tagline for Industry
-      description: Description for Industry
-      graph_config:
-      subjects:
-      subjects:
-        emissions:
-          name: Emissions
-          description: Description for Emissions
-          graph_config:
-            - brazil_forestry_emissions
-        emission_drivers:
-          name: Emission Drivers
-          description: Description for Emission Drivers
-          graph_config:
-            - brazil_forestry_emissions
-        policy:
-          name: Policy
-          description: Description for Policy
-          graph_config:
-            - brazil_forestry_emissions     
-eu:
-  id: eu
-  name: European Union
-  tagline: Tagline for EU
-  description: Description for EU
-  sectors:
-    buildings:
-      name: Buildings
-      tagline: Tagline for Buildings
-      description: Description for Buildings
-      graph_config:
-      subjects:
-      subjects:
-        emissions:
-          name: Emissions
-          description: Description for Emissions
-          graph_config:
-            - brazil_forestry_emissions
-        emission_drivers:
-          name: Emission Drivers
-          description: Description for Emission Drivers
-          graph_config:
-            - brazil_forestry_emissions
-        policy:
-          name: Policy
-          description: Description for Policy
-          graph_config:
-            - brazil_forestry_emissions
-    power:
-      name: Power
-      tagline: Tagline for Power
-      description: Description for Power
-      graph_config:
-      subjects:
-      subjects:
-        emissions:
-          name: Emissions
-          description: Description for Emissions
-          graph_config:
-            - brazil_forestry_emissions
-        emission_drivers:
-          name: Emission Drivers
-          description: Description for Emission Drivers
-          graph_config:
-            - brazil_forestry_emissions
-        policy:
-          name: Policy
-          description: Description for Policy
-          graph_config:
-            - brazil_forestry_emissions
-    industry:
-      name: Industry
-      tagline: Tagline for Industry
-      description: Description for Industry
-      graph_config:
-      subjects:
-      subjects:
-        emissions:
-          name: Emissions
-          description: Description for Emissions
-          graph_config:
-            - brazil_forestry_emissions
-        emission_drivers:
-          name: Emission Drivers
-          description: Description for Emission Drivers
-          graph_config:
-            - brazil_forestry_emissions
-        policy:
-          name: Policy
-          description: Description for Policy
-          graph_config:
-            - brazil_forestry_emissions       
-    agriculture:
-      name: Agriculture
-      tagline: Tagline for Agriculture
-      description: Description for Agriculture
-      graph_config:
-      subjects:
-      subjects:
-        emissions:
-          name: Emissions
-          description: Description for Emissions
-          graph_config:
-            - brazil_forestry_emissions
-        emission_drivers:
-          name: Emission Drivers
-          description: Description for Emission Drivers
-          graph_config:
-            - brazil_forestry_emissions
-        policy:
-          name: Policy
-          description: Description for Policy
-          graph_config:
-            - brazil_forestry_emissions
-    transportation:
-      name: Transportation
-      tagline: Tagline for Transportation
-      description: Desc for transportation
-      graph_config:
-      subjects:
-        emissions:
-          name: Emissions
-          description: Description for Emissions
-          graph_config:
-            - brazil_forestry_emissions
-        emission_drivers:
-          name: Emission Drivers
-          description: Description for Emission Drivers
-          graph_config:
-            - brazil_forestry_emissions
-        policy:
-          name: Policy
-          description: Description for Policy
-          graph_config:
-            - brazil_forestry_emissions
+  subjects:
+    emissions:
+      description: Description for Brazil Emissions
+    emission_drivers:
+      description:  Description for Brazil Emission Drivers
+    policy:
+      description:  Description for Brazil Policy
+# us:
+#   id: us
+#   name: United States
+#   tagline: Making progress despite policy gridlock
+#   description: The United States has created a “messy but useful” combination of incentives, regulation, persuasion, and innovation at the federal and state level, which has contributed to a recent decline in emissions. Sustaining and escalating this emissions decline while creating more cost-effective policy in the face of tightened government spending is the next challenge.
+#   sectors:
+#     buildings:
+#       name: Buildings
+#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in the US
+#       graph_config:
+#       subjects:
+#         emissions:
+#           name: Emissions
+#           graph_config:
+#             - brazil_forestry_emissions
+#         emission_drivers:
+#           name: Emission Drivers
+#           graph_config:
+#             - brazil_forestry_emissions
+#         policy:
+#           name: Policy
+#           graph_config:
+#             - brazil_forestry_emissions
+#     transportation:
+#       name: Transportation
+#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Transportation sector in the US
+#       subjects:
+#         emissions:
+#           name: Emissions
+#           graph_config:
+#             - brazil_forestry_emissions
+#         emission_drivers:
+#           name: Emission Drivers
+#           graph_config:
+#             - brazil_forestry_emissions
+#         policy:
+#           name: Policy
+#           graph_config:
+#             - brazil_forestry_emissions
+#     power:
+#       name: Power
+#       tagline: Tagline for power
+#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the US
+#       graph_config:
+#       subjects:
+#         emissions:
+#           name: Emissions
+#           graph_config:
+#             - brazil_forestry_emissions
+#         emission_drivers:
+#           name: Emission Drivers
+#           graph_config:
+#             - brazil_forestry_emissions
+#         policy:
+#           name: Policy
+#           graph_config:
+#             - brazil_forestry_emissions
+#   subjects:
+#     emissions:
+#       description: 
+#     emission_drivers:
+#       description: 
+#     policy:
+#       description: 
+# india:
+#   id: india
+#   name: India
+#   tagline: Tagline for India
+#   description: India has aggressive renewable energy targets and industry energy efficiency policies, but faces significant infrastructure challenges, which may derail otherwise good policy. India is growing rapidly and represented 8% of the increase in global energy-related CO2 emissions between 2000 and 2010.
+#   sectors:
+#     agriculture:
+#       name: Agriculture
+#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in India
+#       subjects:
+#         emissions:
+#           name: Emissions
+#           graph_config:
+#             - brazil_forestry_emissions
+#         emission_drivers:
+#           name: Emission Drivers
+#           graph_config:
+#             - brazil_forestry_emissions
+#         policy:
+#           name: Policy
+#           graph_config:
+#             - brazil_forestry_emissions
+#     power:
+#       name: Power
+#       tagline: Tagline for Power
+#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in India
+#       subjects:
+#         emissions:
+#           name: Emissions
+#           graph_config:
+#             - brazil_forestry_emissions
+#         emission_drivers:
+#           name: Emission Drivers
+#           graph_config:
+#             - brazil_forestry_emissions
+#         policy:
+#           name: Policy
+#           graph_config:
+#             - brazil_forestry_emissions
+#     industry:
+#       name: Industry
+#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in India
+#       subjects:
+#         emissions:
+#           name: Emissions
+#           graph_config:
+#             - brazil_forestry_emissions
+#         emission_drivers:
+#           name: Emission Drivers
+#           graph_config:
+#             - brazil_forestry_emissions
+#         policy:
+#           name: Policy
+#           graph_config:
+#             - brazil_forestry_emissions
+#   subjects:
+#     emissions:
+#       description: 
+#     emission_drivers:
+#       description: 
+#     policy:
+#       description:             
+# china:
+#   id: china
+#   name: China
+#   tagline: Pursuing low-carbon growth policy at unprecedented scale
+#   description: China has pursued aggressive climate and energy policies with particular focus on energy efficiency and renewable energy. Closure of inefficient coal-fired power plants saved the equivalent of more than 100 million tonnes of coal, while renewable electricity in China grew 661% between 2000 and 2010. Still, renewable electricity sources in China only produced the equivalent of 0.68% of the electricity from coal sources by the end of 2010. Between 2000 and 2010, China represented 68% of the increase in global energy-related CO2 emissions.
+#   sectors:
+#     buildings:
+#       name: Buildings
+#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in China
+#       subjects:
+#         emissions:
+#           name: Emissions
+#           graph_config:
+#             - brazil_forestry_emissions
+#         emission_drivers:
+#           name: Emission Drivers
+#           graph_config:
+#             - brazil_forestry_emissions
+#         policy:
+#           name: Policy
+#           graph_config:
+#             - brazil_forestry_emissions
+#     power:
+#       name: Power
+#       tagline: Tagline for Power
+#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in China
+#       subjects:
+#         emissions:
+#           name: Emissions
+#           graph_config:
+#             - brazil_forestry_emissions
+#         emission_drivers:
+#           name: Emission Drivers
+#           graph_config:
+#             - brazil_forestry_emissions
+#         policy:
+#           name: Policy
+#           graph_config:
+#             - brazil_forestry_emissions
+#     industry:
+#       name: Industry
+#       tagline: Tagline for Industry
+#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in China 
+#       subjects:
+#         emissions:
+#           name: Emissions
+#           graph_config:
+#             - brazil_forestry_emissions
+#         emission_drivers:
+#           name: Emission Drivers
+#           graph_config:
+#             - brazil_forestry_emissions
+#         policy:
+#           name: Policy
+#           graph_config:
+#             - brazil_forestry_emissions     
+#   subjects:
+#     emissions:
+#       description: 
+#     emission_drivers:
+#       description: 
+#     policy:
+#       description:             
+# eu:
+#   id: eu
+#   name: European Union
+#   tagline: Making policy for climate’s sake
+#   description: Europe is the land where climate policy has been explicit. Seeking to lead the world in terms of climate mitigation policy, it has integrated policy across many, varied states, and its nations have developed and implemented ambitious policies of their own. The challenge in Europe is to continue providing leadership in the face of an economic crisis, while accounting for national differences in outlook and policy.
+#   sectors:
+#     buildings:
+#       name: Buildings
+#       tagline: Tagline for Buildings
+#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in the EU
+#       subjects:
+#         emissions:
+#           name: Emissions
+#           graph_config:
+#             - brazil_forestry_emissions
+#         emission_drivers:
+#           name: Emission Drivers
+#           graph_config:
+#             - brazil_forestry_emissions
+#         policy:
+#           name: Policy
+#           graph_config:
+#             - brazil_forestry_emissions
+#     power:
+#       name: Power
+#       tagline: Tagline for Power
+#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the EU
+#       subjects:
+#         emissions:
+#           name: Emissions
+#           graph_config:
+#             - brazil_forestry_emissions
+#         emission_drivers:
+#           name: Emission Drivers
+#           graph_config:
+#             - brazil_forestry_emissions
+#         policy:
+#           name: Policy
+#           graph_config:
+#             - brazil_forestry_emissions
+#     industry:
+#       name: Industry
+#       tagline: Tagline for Industry
+#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in India
+#       subjects:
+#         emissions:
+#           name: Emissions
+#           graph_config:
+#             - brazil_forestry_emissions
+#         emission_drivers:
+#           name: Emission Drivers
+#           graph_config:
+#             - brazil_forestry_emissions
+#         policy:
+#           name: Policy
+#           graph_config:
+#             - brazil_forestry_emissions       
+#     agriculture:
+#       name: Agriculture
+#       tagline: Tagline for Agriculture
+#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in the EU
+#       subjects:
+#         emissions:
+#           name: Emissions
+#           graph_config:
+#             - brazil_forestry_emissions
+#         emission_drivers:
+#           name: Emission Drivers
+#           graph_config:
+#             - brazil_forestry_emissions
+#         policy:
+#           name: Policy
+#           graph_config:
+#             - brazil_forestry_emissions
+#     transportation:
+#       name: Transportation
+#       tagline: Tagline for Transportation
+#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Transportation sector in the EU
+#       subjects:
+#         emissions:
+#           name: Emissions
+#           graph_config:
+#             - brazil_forestry_emissions
+#         emission_drivers:
+#           name: Emission Drivers
+#           graph_config:
+#             - brazil_forestry_emissions
+#         policy:
+#           name: Policy
+#           graph_config:
+#             - brazil_forestry_emissions
+#   subjects:
+#     emissions:
+#       description: Description for EU emissions
+#     emission_drivers:
+#       description: Description for EU emission drivers
+#     policy:
+#       description: Description for EU policy
