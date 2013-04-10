@@ -60,9 +60,6 @@
     margin: 0 0 30px -5px;
     font: 700 italic 66px/1.1 "open-sans", sans-serif;
     text-transform: uppercase;
-
-    &:before { content: "“";};
-    &:after { content: "„";};
   }
 
   .description {

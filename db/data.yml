@@ -1,4 +1,3 @@
-
 brazil:
   id: brazil
   name: Brazil
@@ -236,17 +235,17 @@ china:
 
     industry:
       name: Industry
-      tagline: Tagline for Industry
       description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in China 
       subjects:
         emissions:
           name: Emissions
           graph_config:
             - china_industry_emissions
+            - china_industry_emissions_2
         emission_drivers:
           name: Emission Drivers
           graph_config:
-            - china_industry_emissions
+            - china_industry_emission_drivers
         policy:
           name: Policy
           graph_config:
@@ -268,7 +267,7 @@ china:
         policy:
           name: Policy
           graph_config:
-            - china_industry_policy # CAMBIAR
+            - china_power_policy
 
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------

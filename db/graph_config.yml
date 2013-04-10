@@ -1408,7 +1408,7 @@ china_buildings_emissions:
       column: residential_emissions
       units: MMTn CO2
       class: area
-      y_min: 0
+      y_min: 150
       y_max: 500
       strokeColor: "rgba(238,87,41,1)"
     commercial_emissions_fixed:
@@ -1416,7 +1416,7 @@ china_buildings_emissions:
       column: commercial_emissions_fixed
       units: MMTn CO2
       class: area
-      y_min: 0
+      y_min: 150
       y_max: 500
       strokeColor: "rgba(79,110,191,1)" 
 
@@ -1556,8 +1556,8 @@ china_industry_emissions:
         column: energy_consumption
         units: MMTn coal equivalent
         class: line
-        y_min: 0
-        y_max: 2000
+        y_min: 300
+        y_max: 2300
         strokeColor: "#546DBC"
 
 china_industry_emissions_2:
@@ -1584,6 +1584,78 @@ china_industry_emissions_2:
         y_max: 2000
         strokeColor:  "rgba(79,110,191,1)"
 
+china_industry_emission_drivers:
+  id: china_industry_emission_drivers
+  name: Sectoral energy intensity
+  table: china_ind_2_sectoral_intensities_copy_diego_fixed_3
+  description: Industrial emissions intensity improved dramatically across all sectors, although from a generally high starting point.
+  x_axis: date_processed
+  series:
+      0:
+        name: Chemical and petrochemical
+        column: chemical
+        units: Million T coal equivalent / Billion yuan
+        class: line
+        y_min: 0
+        y_max: 6
+        strokeColor: "rgba(238,87,41,1)"
+      1:
+        name: Transport equipment
+        column: transport
+        units: Million T coal equivalent / Billion yuan
+        class: line
+        y_min: 0
+        y_max: 6
+        strokeColor: "rgba(238,87,41,1)"
+      2:
+        name: Food and tobacco
+        column: food
+        units: Million T coal equivalent / Billion yuan
+        class: line
+        y_min: 0
+        y_max: 6
+        strokeColor: "rgba(238,87,41,1)"
+      3:
+        name: Paper, pulp & printing
+        column: paper
+        units: Million T coal equivalent / Billion yuan
+        class: line
+        y_min: 0
+        y_max: 6
+        strokeColor: "rgba(238,87,41,1)"
+      4:
+        name: Wood
+        column: wood
+        units: Million T coal equivalent / Billion yuan
+        class: line
+        y_min: 0
+        y_max: 6
+        strokeColor: "rgba(238,87,41,1)"
+      5:
+        name: Textile & leather
+        column: textile
+        units: Million T coal equivalent / Billion yuan
+        class: line
+        y_min: 0
+        y_max: 6
+        strokeColor: "rgba(238,87,41,1)"
+      6:
+        name: Iron & steel
+        column: iron
+        units: Million T coal equivalent / Billion yuan
+        class: line
+        y_min: 0
+        y_max: 6
+        strokeColor: "rgba(238,87,41,1)"
+      7:
+        name: Non-ferrous metals
+        column: non_ferrous
+        units: Million T coal equivalent / Billion yuan
+        class: line
+        y_min: 0
+        y_max: 6
+        strokeColor: "rgba(238,87,41,1)"
+
 china_industry_policy:
   id: china_industry_policy
   name: Phase out targets
@@ -1597,30 +1669,6 @@ china_industry_policy:
     0:
       label: "1980-1990"
       column: tons_of_output
-
-# china_industry_emission_drivers:
-#   id: china_industry_emission_drivers
-#   name:  Sectoral Energy Intensity
-#   table: china_ind_2_value_index_copy_diego
-#   description:
-#   x_axis: date_processed
-#   series:
-#       series_1:
-#         name: 
-#         column: 
-#         units: 
-#         class: line
-#         y_min: 0
-#         y_max: 300
-#         strokeColor: "rgba(238,87,41,1)"
-#       series_2:
-#         name: 
-#         column: 
-#         units: 
-#         class: line
-#         y_min: 0
-#         y_max: 300
-#         strokeColor: "rgba(238,87,41,1)"        
 
 china_power_emissions:
   id: china_power_emissions
@@ -1698,3 +1746,25 @@ china_power_emission_drivers:
       y_max: 5000000
       strokeColor: "rgba(238,87,41,1)"      
       fillColor: "rgba(238,87,41,0.2)"
+
+china_power_policy:
+  id: china_power_policy
+  name: Installed capacity targets
+  table: china_power_3_installed_capacity_targets_copy_diego
+  description: Policy encouraged increased renewable energy deployment through a mix of generation targets.
+  x_axis: date_processed
+  type: BarGraph
+  units: GW
+  name_column: fuel
+  x_groups:
+    0:
+      label: "10th FYP"
+      column: _10th_fyp
+    1:
+      label: "11th FYP"
+      column: _11th_fyp
+    1:
+      label: "12th FYP"
+      column: _12th_fyp
+
+
