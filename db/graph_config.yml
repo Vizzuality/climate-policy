@@ -248,7 +248,8 @@ brazil_agriculture_policy:
       y_max: 18000
       strokeColor: "#00D9A3"
 
-# ---------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 us_buildings_emissions:
   id: us_buildings_emissions
@@ -361,3 +362,116 @@ us_buildings_policy_2:
       y_min: 40
       y_max: 150
       strokeColor: "rgba(79,110,191,1)" 
+
+us_transportation_emissions:
+  id: us_transportation_emissions
+  name: Emissions & transportation activity  
+  description: Both passenger and freight travel increased since 1980, though passenger travel grew more rapidly than freight. Both modes of travel were sensitive to economic conditions, and activity dropped significantly during the recession.
+  table: emissions_and_miles_traveled_copy_test_matallo
+  x_axis: date_processed
+  series:
+    emissions:
+      name: Emissions
+      column: emissions_mmtco2e
+      units: MM T CO<sup>2</sup>
+      class: line
+      y_min: 1000
+      y_max: 3000
+      strokeColor: "rgba(238,87,41,1)"
+    km_traveled:
+      name: Passenger km traveled
+      column: billion_passenger_kilometers_traveled
+      units: B passenger-km
+      class: line
+      y_min: 1000
+      y_max: 15000
+      strokeColor: "rgba(79,110,191,1)"       
+    freight:
+      name: Freight ton-kilometers
+      column: billion_freight_ton_kilometers
+      units: B T-km
+      class: line
+      y_min: 2000
+      y_max: 10000
+      strokeColor: "#00D9A3"      
+
+us_transportation_emissions_drivers:
+  id: us_transportation_emission_drivers
+  name: Emissions intensity
+  description: Large gains in vehicle engine and transmission efficiency did not result in significant fuel efficiency gains, as cars became heavier. Fuller flights, more efficient planes, and improved routing improved aviation efficiency. There was little shifting between transport modes (not shown).
+  table: modal_intensities_copy_test_matallo
+  x_axis: date_processed
+  series:
+    sector_wide:
+      name: Sector wide
+      column: sector_wide
+      units: Index (1980=100)
+      class: line
+      y_min: 40
+      y_max: 150
+      strokeColor: "rgba(238,87,41,1)"
+    passenger_car:
+      name: Passenger car
+      column: passenger_car
+      units: Index (1980=100)
+      class: line
+      y_min: 40
+      y_max: 150
+      strokeColor: "rgba(79,110,191,1)"     
+    domestic_air:
+      name: Domestic air
+      column: domestic_air
+      units: Index (1980=100)      
+      class: line
+      y_min: 40
+      y_max: 150
+      strokeColor: '#00D9A3'
+    trucks:
+      name: Trucks
+      column: trucks
+      units: Index (1980=100)
+      class: line
+      y_min: 40
+      y_max: 150
+      strokeColor: '#FFD24D'
+
+us_transportation_policy:
+  id: us_transportation_policy
+  name: CAFE standards
+  description: Fuel efficiency standards, after tightening rapidly after their inception, remained largely unchanged for over two decades. Starting in 2005, standards for larger passenger vehicles became more demanding. Very recently, standards for smaller passenger cars were revisited.
+  table: cafe_standards_copy_test_matallo
+  x_axis: date_processed
+  series:
+    std_passenger:
+      name: Standards, passenger car
+      column: standards_ac0__passenger_car
+      units:  gal/100 mi
+      class: line
+      y_min: 2
+      y_max: 8
+      strokeColor: "rgba(238,87,41,1)"
+    std_truck:
+      name: Standards, light truck
+      column: standards_ac0__light_truck
+      units: gal/100 mi
+      class: line
+      y_min: 2
+      y_max: 8
+      strokeColor: "rgba(79,110,191,1)"      
+    new_passenger:
+      name: New vehicles, passenger car
+      column: new_vehicles_ac0__passenger_car
+      units: gal/100 mi
+      class: line
+      y_min: 2
+      y_max: 8
+      strokeColor: '#00D9A3'
+    new_trucks:
+      name: New vehicles, light truck
+      column: new_vehicles_ac0__light_truck
+      units: gal/100 mi
+      class: line
+      y_min: 2
+      y_max: 8
+      strokeColor: '#FFD24D'
+
