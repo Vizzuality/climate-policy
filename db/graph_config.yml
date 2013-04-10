@@ -4,7 +4,6 @@ brazil_forestry_emissions:
   description: Deforestation declined rapidly, particularly after major policy changes in 2004 and again in 2008.
   table: deforestation_rate_copy_test_matallo
   x_axis: date_processed
-  type: line
   series:
     deforestation_rate:
       name: Deforestation rate
@@ -21,7 +20,6 @@ brazil_forestry_emission_drivers:
   description: Common drivers of deforestation, such as commodity prices, and land protection appear to have changed deforestation patterns, with large scale deforestation declining much more rapidly than small scale (e.g. tracts of less than 25 hectares).
   table: commodity_prices_copy_test_matallo
   x_axis: date_processed
-  type: line
   series:
     corn:
       name: Corn price
@@ -46,7 +44,6 @@ brazil_forestry_emission_drivers_2:
   description: Common drivers of deforestation, such as commodity prices, and land protection appear to have changed deforestation patterns, with large scale deforestation declining much more rapidly than small scale (e.g. tracts of less than 25 hectares).
   table: deforestation_polygons_ind_copy_test_matallo
   x_axis: date_processed
-  type: line
   series:
     _25_hectares:
       name: < 25 Hectares
@@ -95,7 +92,6 @@ brazil_forestry_policy:
   description: As an example of increased Brazilian policy efforts, Brazil has increased efforts to reduce deforestation, and the amount of land under government protection has increased significantly since 2001.
   table: protected_lands_copy_test_matallo
   x_axis: date_processed
-  type: line
   series:
     methane_mmtco2e:
       name: Integral Protection
@@ -122,7 +118,6 @@ brazil_agriculture_emissions:
   name: Emissions
   description: Both land under cultivation and non-CO2 emissions increased.
   x_axis: date_processed
-  type: line
   series:
     methane_mmtco2e:
       name: Methane
@@ -147,7 +142,6 @@ brazil_agriculture_emissions_2:
   table: land_use_emissions_copy_test_matallo
   description: Both land under cultivation and non-CO2 emissions increased.
   x_axis: date_processed
-  type: line
   series:
     land_use_million_hectares:
       name: Land Use
@@ -164,7 +158,6 @@ brazil_agriculture_emission_drivers:
   table: emissions_drivers_copy_test_matallo
   description: Although the intensity of food production per hectare increased, mechanization did not increase.
   x_axis: date_processed
-  type: line
   series:
     food:
       name: Food
@@ -205,7 +198,6 @@ brazil_agriculture_emission_drivers_2:
   table: brazil_ag_2_exports_copy_test_matallo
   description: Increasing land use, some of which satisfied export growth, and some of which satisfied population growth (not shown), was a major driver of growing emissions.
   x_axis: date_processed
-  type: line
   series:
     raw_materials:
       name: Agricultural raw materials
@@ -231,7 +223,6 @@ brazil_agriculture_policy:
   description: Brazil made increasing the productivity of agricultural land a priority as a means to reduce expansion into new land and deforestation. Subsidies to producers, in part to modernize their operations, steadily increased over time. In the 1990s, credit subsidies were offset by price controls set below market prices; as these price controls rose above market prices, they became additional effective subsidies.
   description_long: long
   x_axis: date_processed
-  type: line
   series:
     credit:
       name: Credit Subsidies
@@ -267,7 +258,6 @@ us_buildings_emissions:
   table: emissions_mmtco2e_copy_test_matallo
   description: Emissions grew slowly, but steadily, until 2005, when emissions peaked and slowly declined.
   x_axis: date_processed
-  type: line
   series:
     commercial:
       name: Commercial
@@ -292,7 +282,6 @@ us_buildings_emissions_2:
   table: buildings_floorspace_billion_square_meters_copy_test_matallo
   description: Total building stock, as reflected by total floor space statistics, grew steadily, while the increase in residential floor space between 1995 and 2005 was particularly noteworthy.
   x_axis: date_processed
-  type: line
   series:
     commercial:
       name: Commercial
@@ -309,7 +298,7 @@ us_buildings_emissions_2:
       class: line
       y_min: 0
       y_max: 25
-      strokeColor: "rgba(79,110,191,1)"
+      strokeColor: "rgba(79,110,191,1)" 
 
 us_buildings_emissions_drivers:
   id: us_buildings_emission_drivers
@@ -317,7 +306,7 @@ us_buildings_emissions_drivers:
   table: changes_in_emissions_drivers_copy_test_matallo
   description: Growth in population and floor space per person were the largest drivers of buildings emissions. In the late 2000’s, energy efficiency gains, particularly in residential heating and cooling caught up with slowing floor space growth.
   description_long: longest
-  type: bars
+  type: BarGraph
   units: "Million T CO²"
   name_column: variable
   x_groups:
@@ -334,7 +323,6 @@ us_buildings_policy:
   table: energy_efficiency_spending_copy_test_matallo
   description: Efficiency spending by federal and local governments increased over the last decade, with a spike due to the 2009 stimulus.
   x_axis: date_processed
-  type: line
   series:
     energy_efficiency_dsm_spending:
       name: Energy Efficiency DSM Spending
@@ -359,7 +347,6 @@ us_buildings_policy_2:
   table: code_building_energy_intensity_index_copy_test_matallo
   description: Building codes tightened steadily - particularly for commercial buildings where the federal government played a larger role.
   x_axis: date_processed
-  type: line
   series:
     commercial:
       name: Commercial
@@ -384,7 +371,6 @@ us_transportation_emissions:
   description: Both passenger and freight travel increased since 1980, though passenger travel grew more rapidly than freight. Both modes of travel were sensitive to economic conditions, and activity dropped significantly during the recession.
   table: emissions_and_miles_traveled_copy_test_matallo
   x_axis: date_processed
-  type: line
   series:
     emissions:
       name: Emissions
@@ -417,7 +403,6 @@ us_transportation_emissions_drivers:
   description: Large gains in vehicle engine and transmission efficiency did not result in significant fuel efficiency gains, as cars became heavier. Fuller flights, more efficient planes, and improved routing improved aviation efficiency. There was little shifting between transport modes (not shown).
   table: modal_intensities_copy_test_matallo
   x_axis: date_processed
-  type: line
   series:
     sector_wide:
       name: Sector wide
@@ -458,7 +443,6 @@ us_transportation_policy:
   description: Fuel efficiency standards, after tightening rapidly after their inception, remained largely unchanged for over two decades. Starting in 2005, standards for larger passenger vehicles became more demanding. Very recently, standards for smaller passenger cars were revisited.
   table: cafe_standards_copy_test_matallo
   x_axis: date_processed
-  type: line
   series:
     std_passenger:
       name: Standards, passenger car
@@ -499,7 +483,6 @@ us_power_emissions:
   description: There was steady emissions and generation growth through the mid-2000s. Until recently, emissions grew in tandem with increasing electricity demand.
   table: emissions_mmtco2e_and_generation_twh_copy_test_matallo
   x_axis: date_processed
-  type: line
   series:
     total_emissions:
       name: Total Emissions
@@ -527,7 +510,7 @@ us_power_emission_drivers:
   x_axis: date_processed
   units: km²
   name_column: variable
-  type: bars
+  type: BarGraph
   x_groups:
     0:
       label: 1980-1990
@@ -545,7 +528,6 @@ us_power_policy:
   description: Both state and federal governments created policies to support renewable energy. The two most prominent of these were federal renewable energy tax incentives, and state level renewable portfolio standards. These policies, and several other factors, are associated with significant increases in U.S. renewable energy capacity.
   table: federal_tax_expenditures_for_renewables_copy_test_matallo
   x_axis: date_processed
-  type: line
   series:      
     tax_expenditures:
       name: Tax expenditures
@@ -562,7 +544,6 @@ us_power_policy_2:
   description: Both state and federal governments created policies to support renewable energy. The two most prominent of these were federal renewable energy tax incentives, and state level renewable portfolio standards. These policies, and several other factors, are associated with significant increases in U.S. renewable energy capacity.
   table: weighted_average_state_portfolio_standards_copy_test_matallo
   x_axis: date_processed
-  type: line
   series:
     weighted_average:
       name: Weighted average state RPSs
@@ -579,7 +560,6 @@ us_industry_emissions:
   description: Industrial emissions declined even before the recession as industrial production rose.
   table: us_industry_1_copy_test_matallo
   x_axis: date_processed
-  type: line
   series:
     emissions:
       name: Emissions
@@ -596,7 +576,6 @@ us_industry_emissions_2:
   description: Industrial emissions declined even before the recession as industrial production rose.
   table: us_industry_1_copy_test_matallo_2
   x_axis: date_processed
-  type: line
   series:
     manufacturing_value_add:
       name: Manufacturing Value Add
@@ -685,7 +664,6 @@ us_industry_policy:
   description: There was little cohesive industrial policy. Participation in the federal industrial assessment program declined, while state level programs grew.
   table: us_industry_3_number_state_incentive_programs_copy_test_matallo
   x_axis: date_processed
-  type: line
   series:
     number_programs:
       name: Number of local incentive programs
@@ -720,13 +698,17 @@ us_industry_policy_2:
       y_max: 1600
       strokeColor: "rgba(79,110,191,1)"
 
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 india_agriculture_emissions:
   id: india_agriculture_emissions
   name: "Lands & emissions"
   description: TBD
   table: land_use_and_emissions_copy_diego
   x_axis: date_processed
-  type: line
   series:
     methane:
       name: Methane
@@ -759,7 +741,6 @@ india_agriculture_emission_drivers:
   description: TBD
   table: ag_exports_million_usd_copy_diego
   x_axis: date_processed
-  type: line
   series:
     agricultural_raw_materials_exports:
       name: Agricultural raw materials
@@ -786,7 +767,6 @@ india_agriculture_emission_drivers_2:
   description: 
   table: india_ag_2_fertilizer_and_livestock_copy_diego
   x_axis: date_processed
-  type: line
   series:
     total_livestock:
       name: Total livestock
@@ -811,7 +791,6 @@ india_agriculture_emission_drivers_3:
   description: 
   table: mechanization_copy_diego
   x_axis: date_processed
-  type: line
   series:
     tractors_sold_1994_100:
       name: Tractors sold
@@ -844,7 +823,6 @@ india_agriculture_policy:
   description: 
   table: 
   x_axis: date_processed
-  type: line
   series:
     series_1:
       name: 
@@ -861,7 +839,6 @@ india_power_emissions:
   description: TBD
   table: emissions_generation_copy_diego
   x_axis: date_processed
-  type: line
   series:
     series_1:
       name: Emissions
@@ -886,7 +863,6 @@ india_power_emission_drivers:
   description: TBD
   table: fuel_sources_copy_diego
   x_axis: date_processed
-  type: line
   series:
     series_1:
       name: 
@@ -969,7 +945,6 @@ india_power_policy:
   description: TBD
   table: ireda_subsidies_copy_diego
   x_axis: date_processed
-  type: line
   series:
     series_1:
       name: IREDA distributions
@@ -986,7 +961,6 @@ india_power_policy_2:
   description: TBD
   table: state_rpos_copy_diego
   x_axis: date_processed
-  type: line
   series:
     series_1:
       name: Weighted average state RPO targets
@@ -1003,7 +977,6 @@ india_industry_emissions:
   description: TBD
   table: india_ind_1_emissions_production_copy_diego
   x_axis: date_processed
-  type: line
   series:
     emissions_index:
       name: Emissions
@@ -1020,7 +993,6 @@ india_industry_emissions_2:
   description: TBD
   table: india_ind_2_value_index_copy_diego
   x_axis: date_processed
-  type: line
   series:
     manufacturing_value_added_index:
       name: Manufacturing value added
@@ -1045,7 +1017,6 @@ india_industry_emission_drivers:
   description: TBD
   table: india_ind_2_sectoral_intensities_copy_diego
   x_axis: date_processed
-  type: line
   series:
     iron_and_steel:
       name:  "Iron & steel"
@@ -1070,7 +1041,6 @@ india_industry_policy:
   description: TBD
   table: ind_ind_3_awards_scheme_copy_diego
   x_axis: date_processed
-  type: line
   series:
     number_of_participating_industrial_units:
       name: Number of units participating
@@ -1079,7 +1049,8 @@ india_industry_policy:
       class: line
       y_min: 0
       y_max: 600
-      strokeColor: "#546DBC"
+      strokeColor: "#546DBC"      
+
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1088,26 +1059,147 @@ india_industry_policy:
 china_buildings_emissions:
   id: china_buildings_emissions
   name: Emissions
-  table: china_bldgs_1_emissions_copy_test_matallo
-  description: Reported buildings-related emissions fell during the 1990s, possibly due to district heating improvements, but more likely due to underreporting of coal use and measurement issues. Since 2002, emissions have been rising steadily due to growing energy use in buildings.
+  table: china_bldgs_1_emissions_copy_diego
+  description:
   x_axis: date_processed
-  type: line
   series:
-    commercial:
-      name: Commercial and public services
-      column: commercial_emissions_fixed
-      units: MM T CO²
-      class: area
-      y_min: 0
-      y_max: 450
-      strokeColor: 'rgba(238,87,41,1)'
-      fillColor: 'rgba(238,87,41,0.2)'
-    residential:
+    residential_emissions:
       name: Residential
       column: residential_emissions
-      units: MM T CO²
+      units: MMTn CO2
       class: area
       y_min: 0
-      y_max: 450
-      strokeColor: 'rgba(79,110,191,1)'
-      fillColor: 'rgba(79,110,191,0.2)'
+      y_max: 500
+      strokeColor: "rgba(238,87,41,1)"
+    commercial_emissions_fixed:
+      name: Commercial and public services
+      column: commercial_emissions_fixed
+      units: MMTn CO2
+      class: area
+      y_min: 0
+      y_max: 500
+      strokeColor: "rgba(79,110,191,1)" 
+
+china_buildings_emission_drivers:
+  id: china_buildings_emission_drivers
+  name: Fuel sources
+  table: buildings_fuel_sources_mtce_copy_diego
+  description:
+  x_axis: date_processed
+  series:
+    total_coal:
+      name: Total coal
+      column: total_coal
+      units: MMTn coal equivalent
+      class: area
+      y_min: 0
+      y_max: 250
+      strokeColor: "rgba(238,87,41,1)"      
+      fillColor: "rgba(238,87,41,0.2)"
+    electricity:
+      name: Electricity
+      column: electricity
+      units: MMTn coal equivalent
+      class: area
+      y_min: 0
+      y_max: 250
+      strokeColor: "rgba(79,110,191,1)"
+      fillColor: "rgba(79,110,191,0.2)"
+    liquid_petroleum_gas:
+      name: Liquid petroleum gas
+      column: liquid_petroleum_gas
+      units: MMTn coal equivalent
+      class: area
+      y_min: 0
+      y_max: 250
+      strokeColor: "rgba(87,216,159,1)"
+      fillColor: "rgba(87,216,159,0.2)"
+    heat:
+      name: Heat
+      column: heat
+      units: MMTn coal equivalent
+      class: area
+      y_min: 0
+      y_max: 250
+      strokeColor: "rgba(246,214,44,1)"
+      fillColor: "rgba(246,214,44,0.2)"
+    natural_gas:
+      name: Natural gas
+      column: natural_gas
+      units: MMTn coal equivalent
+      class: area
+      y_min: 0
+      y_max: 250
+      strokeColor: "rgba(79,110,191,1)"
+      fillColor": "rgba(79,110,191,0.2)"
+    other:
+      name: Other
+      column: other
+      units: MMTn coal equivalent
+      class: area
+      y_min: 0
+      y_max: 250
+      strokeColor: "rgba(238,87,41,1)"
+      fillColor: "rgba(238,87,41,0.2)"
+
+china_buildings_emission_drivers_2:
+  id: china_buildings_emission_drivers_2
+  name: Geography
+  table: china_bldgs_2_geography_copy_diego
+  description:
+  x_axis: date_processed
+  series:
+    urban_residential:
+      name: Urban residential
+      column: urban_residential
+      units: MMTn coal equivalent
+      class: area
+      y_min: 0
+      y_max: 300
+      strokeColor: "rgba(238,87,41,1)"
+      fillColor: "rgba(238,87,41,0.2)"
+    rural_residential:
+      name: Rural residential
+      column: rural_residential
+      units: MMTn coal equivalent
+      class: area
+      y_min: 0
+      y_max: 300
+      strokeColor: "rgba(79,110,191,1)"
+      fillColor: "rgba(79,110,191,0.2)"
+    commercial:
+      name: Commercial
+      column: commercial
+      units: MMTn coal equivalent
+      class: area
+      y_min: 0
+      y_max: 300
+      strokeColor: "rgba(87,216,159,1)"
+      fillColor: "rgba(87,216,159,0.2)"   
+
+china_buildings_policy:
+  id: china_buildings_policy
+  name: Targeted building energy use reduction
+  table: china_bldgs_3_policy_copy_diego
+  description:
+  type: BarGraph
+  units: "km²"
+  name_column: program
+  x_groups:
+    0:
+      label: "1980-1990"
+      column: amount    
+
+china_buildings_policy_2:
+  id: china_buildings_policy_2
+  name: Funding for energy monitoring
+  table: china_bldgs_3_policy_funding_energy_monitoring_copy_diego
+  description:
+  x_axis: date_processed
+  type: BarGraph
+  units: "--"
+  name_column: program
+  x_groups:
+    0:
+      label: "1980-1990"
+      column: amount

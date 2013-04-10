@@ -201,6 +201,7 @@ india:
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
 china:
   id: china
   name: China
@@ -209,61 +210,57 @@ china:
   sectors:
     buildings:
       name: Buildings
-      description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in China
+      description: "These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in China"
       subjects:
         emissions:
           name: Emissions
           graph_config:
-            - china_buildings_emissions
-        # emission_drivers:
-        #   name: Emission Drivers
-        #   graph_config:
-        #     - brazil_forestry_emissions
-        # policy:
-        #   name: Policy
-        #   graph_config:
-        #     - brazil_forestry_emissions
-#     power:
-#       name: Power
-#       tagline: Tagline for Power
-#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in China
-#       subjects:
-#         emissions:
-#           name: Emissions
-#           graph_config:
-#             - brazil_forestry_emissions
-#         emission_drivers:
-#           name: Emission Drivers
-#           graph_config:
-#             - brazil_forestry_emissions
-#         policy:
-#           name: Policy
-#           graph_config:
-#             - brazil_forestry_emissions
-#     industry:
-#       name: Industry
-#       tagline: Tagline for Industry
-#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in China 
-#       subjects:
-#         emissions:
-#           name: Emissions
-#           graph_config:
-#             - brazil_forestry_emissions
-#         emission_drivers:
-#           name: Emission Drivers
-#           graph_config:
-#             - brazil_forestry_emissions
-#         policy:
-#           name: Policy
-#           graph_config:
-#             - brazil_forestry_emissions     
-#   subjects:
-#     emissions:
-#       description: 
-#     emission_drivers:
-#       description: 
-#     policy:
-#       description:             
+            - china_buildings_emissions 
+        emission_drivers:
+          name: Emission Drivers
+          graph_config:
+            - china_buildings_emission_drivers
+            - china_buildings_emission_drivers_2
+        policy:
+          name: Policy
+          graph_config:
+            - china_buildings_policy
+            - china_buildings_policy_2
+
+    # power:
+    #   name: Power
+    #   tagline: Tagline for Power
+    #   description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in China
+    #   subjects:
+    #     emissions:
+    #       name: Emissions
+    #       graph_config:
+    #         - china_power_emissions
+    #     emission_drivers:
+    #       name: Emission Drivers
+    #       graph_config:
+    #         - china_power_emission_drivers
+    #     policy:
+    #       name: Policy
+    #       graph_config:
+    #         - china_power_policy
+    # industry:
+    #   name: Industry
+    #   tagline: Tagline for Industry
+    #   description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in China 
+    #   subjects:
+    #     emissions:
+    #       name: Emissions
+    #       graph_config:
+    #         - china_industry_emissions
+    #     emission_drivers:
+    #       name: Emission Drivers
+    #       graph_config:
+    #         - china_industry_emission_drivers
+    #     policy:
+    #       name: Policy
+    #       graph_config:
+    #         - china_industry_policy     
 # eu:
 #   id: eu
 #   name: European Union

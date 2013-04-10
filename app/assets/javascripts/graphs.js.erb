@@ -96,7 +96,7 @@ $(document).ready(function() {
     });
 
     for (var i = 0; i < _graphs.length; i++) {
-      if(_graphs[i].type == 'bars') {
+      if(_graphs[i].type == 'BarGraph') {
         drawBarGraph(i, std_domain);
       } else {
         drawGraph(i, std_domain);
@@ -328,8 +328,6 @@ $(document).ready(function() {
   function drawGraph(graphNum, domain) {
     d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+_graphs[graphNum].table+"%20order%20by%20"+_graphs[graphNum].x_axis+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
       var _data = data;
-
-      //console.log(subject[index].name);
 
       if(domain === undefined) {
         _data['min_domain'] = d3.min(_data.rows, function(data){return data.date_processed;})
