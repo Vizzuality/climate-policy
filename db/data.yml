@@ -94,24 +94,25 @@ us:
           name: Policy
           graph_config:
             - us_transportation_policy
-#     power:
-#       name: Power
-#       tagline: Tagline for power
-#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the US
-#       graph_config:
-#       subjects:
-#         emissions:
-#           name: Emissions
-#           graph_config:
-#             - brazil_forestry_emissions
-#         emission_drivers:
-#           name: Emission Drivers
-#           graph_config:
-#             - brazil_forestry_emissions
-#         policy:
-#           name: Policy
-#           graph_config:
-#             - brazil_forestry_emissions
+    power:
+      name: Power
+      tagline: Tagline for power
+      description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the US
+      graph_config:
+      subjects:
+        emissions:
+          name: Emissions
+          graph_config:
+            - us_power_emissions
+        emission_drivers:
+          name: Emission Drivers
+          graph_config:
+            - us_power_emission_drivers
+        policy:
+          name: Policy
+          graph_config:
+            - us_power_policy
+            - us_power_policy_2
 #   subjects:
 #     emissions:
 #       description: 

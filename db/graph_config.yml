@@ -475,3 +475,80 @@ us_transportation_policy:
       y_max: 8
       strokeColor: '#FFD24D'
 
+us_power_emissions:
+  id: us_power_emissions
+  name: Emission & generation
+  description: There was steady emissions and generation growth through the mid-2000s. Until recently, emissions grew in tandem with increasing electricity demand.
+  table: emissions_mmtco2e_and_generation_twh_copy_test_matallo
+  x_axis: date_processed
+  series:
+    total_emissions:
+      name: Total Emissions
+      column: total_emissions
+      units:  MM T CO<sup>2</sup>
+      class: line
+      y_min: 700
+      y_max: 4000
+      strokeColor: "rgba(238,87,41,1)"
+    total_net: 
+      name: Total Net Generation
+      column: total_net_generation
+      units:  MM T CO<sup>2</sup>
+      class: line
+      y_min: 700
+      y_max: 4000
+      strokeColor: "rgba(79,110,191,1)"      
+
+us_power_emission_drivers:
+  id: us_power_emission_drivers
+  name: Grid Impact
+  description: The expansion and increased availability of nuclear in the 1980s and 1990s offset growing emissions from coal as both were used to meet increasing demand. In the 2000s, most factors were aligned to improve emissions intensity, including increasing renewable energy output and gas replacing coal.
+  table: grid_impact_1_copy_diego_2
+  x_axis: date_processed
+  units: km²,
+  name_column: variable,
+  x_groups:
+    group_1:
+      label: 1980-1990
+      column: _1980_1990
+    group_2:
+      label: 1990-2000
+      column: _1990_2000
+    group_3:
+      label: 2000-2010
+      column: _2000_2010
+
+us_power_policy:
+  id: us_power_policy
+  name: Tax expenditures
+  description: Both state and federal governments created policies to support renewable energy. The two most prominent of these were federal renewable energy tax incentives, and state level renewable portfolio standards. These policies, and several other factors, are associated with significant increases in U.S. renewable energy capacity.
+  table: federal_tax_expenditures_for_renewables_copy_test_matallo
+  x_axis: date_processed
+  series:      
+    tax_expenditures:
+      name: Tax expenditures
+      column: tax_expenditures
+      units:  MM USD
+      class: line
+      y_min: 0
+      y_max: 14780
+      strokeColor: "rgba(238,87,41,1)"
+
+us_power_policy_2:
+  id: us_power_policy_2
+  name: State renewable portfolio standards
+  description: Both state and federal governments created policies to support renewable energy. The two most prominent of these were federal renewable energy tax incentives, and state level renewable portfolio standards. These policies, and several other factors, are associated with significant increases in U.S. renewable energy capacity.
+  table: weighted_average_state_portfolio_standards_copy_test_matallo
+  x_axis: date_processed
+  series:
+    total_emissions:
+      name: Weighted average state RPSs
+      column: weighted_average_state_rpss
+      units: "%"
+      class: line
+      y_min: -3
+      y_max: 6
+      strokeColor: "rgba(238,87,41,1)"
+
+
+
