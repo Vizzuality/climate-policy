@@ -1,5 +1,5 @@
 <% graph_configs = item.graph_configs(@main.id, @item.id) %>
-<div class="graph graph-<%= type %>">
+<div class="graph graph-<%= graph_configs.first.type %>">
   <div class="graph-selector">
     <h3 class="graph-title">
       <span><%= item.name %></span>
@@ -26,7 +26,7 @@
     <hr class="graph-sep"/>
 
     <% graph_configs.each_with_index do |graph_config, index| %>
-      <p class="graph-description <%= graph_config.id %> <%= 'hidden' if index > 0 %>"><%= graph_config.description %></p>
+      <p class="graph-description <%= graph_config.id %> <%= graph_config.description_long %> <%= 'hidden' if index > 0 %>"><%= graph_config.description %></p>
     <% end %>
   </div>
 
