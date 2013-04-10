@@ -1158,21 +1158,22 @@ india_agriculture_emission_drivers_3:
       y_max: 700
       strokeColor: "#00D9A3"
 
+# CAMBIAR
 india_agriculture_policy:
   id: india_agriculture_policy
-  name: 
-  description: Indian agricultural policy focused on modernization of the agricultural sector through subsidies. Though greenhouse gases were not specifically targeted in this effort, modernization had a modest effect on total emissions.
-  table: 
+  name: Weighted average state RPO targets
+  description: The central government required that each state set renewable purchase obligations that require renewable energy in the mix of electricity generation in each state. The average of these targets reached 5.5% by 2010.
+  table: state_rpos_copy_diego
   x_axis: date_processed
   series:
     series_1:
-      name: 
-      column: 
-      units: 
+      name: Weighted average state RPO targets
+      column: weighted_average_state_rpo_targets
+      units: "%"
       class: line
-      y_min: 
-      y_max: 
-      strokeColor: "rgba(238,87,41,1)"
+      y_min: 0
+      y_max: 6
+      strokeColor: "#546DBC"
 
 india_power_emissions:
   id: india_power_emissions
@@ -1199,86 +1200,84 @@ india_power_emissions:
       strokeColor: "#F0542C"
 
 india_power_emission_drivers:
-  id: india_power_emissions_drivers
+  id: india_power_emission_drivers
   name: Fuel sources
   description: Most new generation came from conventional sources (particularly coal), although the past decade saw exponential growth in renewable energy generation.
   table: fuel_sources_copy_diego
   x_axis: date_processed
   series:
-    series_1:
-      name: 
-      column: 
-      units: 
-      class: 
-      y_min: 
-      y_max: 
-      strokeColor: "#546DBC"
-    series_2:
-      name: 
-      column: 
-      units: 
-      class: 
-      y_min: 
-      y_max: 
-      strokeColor: "#546DBC"
-    series_3:
-      name: 
-      column: 
-      units: 
-      class: 
-      y_min: 
-      y_max: 
-      strokeColor: "#546DBC"
-    series_4:
-      name: 
-      column: 
-      units: 
-      class: 
-      y_min: 
-      y_max: 
-      strokeColor: "#546DBC"
-    series_5:
-      name: 
-      column: 
-      units: 
-      class: 
-      y_min: 
-      y_max: 
-      strokeColor: "#546DBC"
-    series_6:
-      name: 
-      column: 
-      units: 
-      class: 
-      y_min: 
-      y_max: 
-      strokeColor: "#546DBC"
-    series_7:
-      name: 
-      column: 
-      units: 
-      class: 
-      y_min: 
-      y_max: 
-      strokeColor: "#546DBC"
-    series_8:
-      name: 
-      column: 
-      units: 
-      class: 
-      y_min: 
-      y_max: 
-      strokeColor: "#546DBC"
-
-#             { "name": "Biomass and waste", "column": "biomass_and_waste", "units": "TWh", "class": "area", "y_extent": [0,2000], "strokeColor": "rgba(238,87,41,1)", "fillColor": "rgba(238,87,41,0.2)"},
-#             { "name": "Solar and renewables", "column": "solar_and_other_renewables", "units": "TWh", "class": "area", "y_extent": [0,2000], "strokeColor": "rgba(79,110,191,1)", "fillColor": "rgba(79,110,191,0.2)"},
-#             { "name": "Wind", "column": "wind", "units": "TWh", "class": "area", "y_extent": [0,2000], "fillColor": "rgba(87,216,159,0.2)"},
-#             { "name": "Low Carbon", "column": "low_carbon", "units": "TWh", "class": "area", "y_extent": [0,2000], "fillColor": "rgba(87,216,159,0.2)"},
-#             { "name": "Nuclear", "column": "nuclear", "units": "TWh", "class": "area", "y_extent": [0,2000], "strokeColor": "rgba(238,87,41,1)", "fillColor": "rgba(87,216,159,0.2)"},
-#             { "name": "Hydro", "column": "hydro", "units": "TWh", "class": "area", "y_extent": [0,2000], "strokeColor": "rgba(238,87,41,1)", "fillColor": "rgba(246,214,44,0.2)"},
-#             { "name": "Conventional thermal", "column": "conventional_thermal", "units": "TWh", "class": "area", "y_extent": [0,2000],"strokeColor": "rgba(79,110,191,1)", "fillColor": "rgba(79,110,191,0.2)"},
-#             { "name": "Major sources", "column": "major_sources", "units": "TWh", "class": "area", "y_extent": [0,2000], "strokeColor": "rgba(238,87,41,1)", "fillColor": "rgba(238,87,41,0.2)"},
-
+    biomass_and_waste:
+      name: Biomass and waste
+      column: biomass_and_waste
+      units: TWh
+      class: area
+      y_min: 0
+      y_max: 2000
+      strokeColor: 'rgba(238,87,41,1)'
+      fillColor: 'rgba(238,87,41,0.2)'
+    solar_and_other_renewables:
+      name: Solar and renewables
+      column: solar_and_other_renewables
+      units: TWh
+      class: area
+      y_min: 0
+      y_max: 2000
+      strokeColor: 'rgba(79,110,191,1)'
+      fillColor: 'rgba(79,110,191,0.2)'
+    wind:
+      name: Wind
+      column: wind
+      units: TWh
+      class: area
+      y_min: 0
+      y_max: 2000
+      strokeColor: 'rgba(87,216,159,1)'
+      fillColor: 'rgba(87,216,159,0.2)'
+    low_carbon:
+      name: Low Carbon
+      column: low_carbon
+      units: TWh
+      class: area
+      y_min: 0
+      y_max: 2000
+      strokeColor: 'rgba(87,216,159,1)'
+      fillColor: 'rgba(87,216,159,0.2)'
+    nuclear:
+      name: Nuclear
+      column: nuclear
+      units: TWh
+      class: area
+      y_min: 0
+      y_max: 2000
+      strokeColor: 'rgba(87,216,159,1)'
+      fillColor: 'rgba(87,216,159,0.2)'
+    hydro:
+      name: Hydro
+      column: hydro
+      units: TWh
+      class: area
+      y_min: 0
+      y_max: 2000
+      strokeColor: 'rgba(246,214,44,1)'
+      fillColor: 'rgba(246,214,44,0.2)'
+    conventional_thermal:
+      name: Conventional thermal
+      column: conventional_thermal
+      units: TWh
+      class: area
+      y_min: 0
+      y_max: 2000
+      strokeColor: 'rgba(79,110,191,1)'
+      fillColor: 'rgba(79,110,191,0.2)'
+    major_sources:
+      name: Major sources
+      column: major_sources
+      units: TWh
+      class: area
+      y_min: 0
+      y_max: 2000
+      strokeColor: 'rgba(238,87,41,1)'
+      fillColor: 'rgba(238,87,41,0.2)'
 
 india_power_policy:
   id: india_power_policy
