@@ -439,12 +439,153 @@ eu_agriculture_policy:
     1:
       label: 2003
       column: _2003
+
+eu_buildings_emissions:
+  id: eu_buildings_emissions
+  name: Building Emissions
+  table: eu_buildings_1_emissions_copy_test_matallo
+  description: Emissions associated with direct fuel combustion in the buildings sector fell, but were offset by a shift from direct to indirect emissions due to a rise in electricity consumption.
+  x_axis: date_processed
+  series:
+    commercial:
+      name: Residential
+      column: residential
+      units: MM T CO²
+      class: area
+      y_min: 0
+      y_max: 1540
+      strokeColor: "rgba(238,87,41,1)"
+      fillColor: "rgba(238,87,41,0.2)"
+    residential:
+      name: Tertiary
+      column: tertiary
+      units: MM T CO²
+      class: area
+      y_min: 0
+      y_max: 1540
+      strokeColor: "rgba(79,110,191,1)"
+      fillColor: "rgba(79,110,191,0.2)"
+
+eu_buildings_emission_drivers:
+  id: eu_buildings_emission_drivers
+  name: Changes in Building Emissions Drivers
+  table: eu_buildings_2_drivers_copy_test_matallo
+  description: Population increase and smaller households- which led to more buildings and total floorspace —increased residential emissions. However, these factors were more than offset by increases in energy efficiency and renewable energy and a shift to electricity from other fuel sources.
+  description_long: longest
+  type: BarGraph
+  units: "MM T CO² / Year"
+  name_column: variable
+  x_groups:
     0:
-      label: 2006
-      column: _2006
+      label: 1990-2000
+      column: period_1990_2000
     1:
-      label: 2008
-      column: _2008
+      label: 2000-2008
+      column: period_2000_2008
+
+eu_transport_emissions:
+  id: eu_transport_emissions
+  name: Emissions and Activity
+  table: eu_transport_1_emissions_output_copy_test_matallo
+  description: Passenger miles and freight transport rose rapidly before declining as a result of the recession. Emissions grew slowly but steadily until they peaked in the mid-2000s.
+  x_axis: date_processed
+  series:
+    direct_emissions_from_transportation:
+      name: Emissions
+      column: direct_emissions_from_transportation
+      units: MM T CO²
+      class: line
+      y_min: 0
+      y_max: 1305
+      strokeColor: "#546DBC"
+    freight:
+      name: Passenger Activity Value Add
+      column: freight
+      units: Index (1995=100)
+      class: line
+      y_min: 0
+      y_max: 1305
+      strokeColor: "#F0542C"
+    manufacturing_production_index:
+      name: Passenger Activity
+      column: manufacturing_production_index
+      units: Index (1995=100)
+      class: line
+      y_min: 0
+      y_max: 1305
+      strokeColor: "#00D9A3"
+
+eu_transport_emission_drivers:
+  id: eu_transport_emission_drivers
+  name: Emissions Intensity Indices
+  table: eu_transport_2_emissions_intensities
+  description: Emissions intensity declined steadily. Passenger transport efficiency improved more than freight transport efficiency. However, within road transport, freight improved three times as much as passenger travel (18% versus 6%) between 1995 and 2010 (not shown).
+  x_axis: date_processed
+  series:
+    total:
+      name: Passenger
+      column: total
+      units: Index (1995=100)
+      class: line
+      y_min: 0
+      y_max: 1
+      strokeColor: "#546DBC"
+    freight:
+      name: Freight
+      column: freight
+      units: Index (1995=100)
+      class: line
+      y_min: 0
+      y_max: 1
+      strokeColor: "#F0542C"
+    passenger:
+      name: Total
+      column: passenger
+      units: Index (1995=100)
+      class: line
+      y_min: 0
+      y_max: 1
+      strokeColor: "#00D9A3"
+
+eu_transport_policy:
+  id: eu_transport_policy
+  name: Fuel Taxes
+  table: eu_transport_3_fuel_taxes_copy_test_matallo
+  description: Starting from a comparatively high point, real fuel taxes were almost flat since the mid-1990s and steadily declined as a proportion of the final fuel price. Rising oil prices rather than government intervention therefore were the main increase to price signals for more efficient road transport.
+  x_axis: date_processed
+  series:
+    tax_on_diesel:
+      name: Tax on Diesel
+      column: tax_on_diesel
+      units: EUR/Liter
+      class: line
+      y_min: 0
+      y_max: 840
+      strokeColor: "#546DBC"
+    tax_on_petrol:
+      name: Tax on Unleaded Petrol
+      column: tax_on_petrol
+      units: EUR/Liter
+      class: line
+      y_min: 0
+      y_max: 840
+      strokeColor: "#F0542C"
+    percentage_of_final_diesel_price_as_tax_processed:
+      name: Percentage of Final Diesel Price as Tax
+      column: percentage_of_final_diesel_price_as_tax_processed
+      units: Percentage
+      class: line
+      y_min: 0
+      y_max: 100
+      strokeColor: "#546DBC"
+    percentage_of_final_petrol_price_as_tax_processed:
+      name: Percentage of Final Petrol Price as Tax
+      column: percentage_of_final_petrol_price_as_tax_processed
+      units: Percentage
+      class: line
+      y_min: 0
+      y_max: 100
+      strokeColor: "#F0542C"
 
 us_buildings_emissions:
   id: us_buildings_emissions
