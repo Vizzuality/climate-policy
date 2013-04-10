@@ -58,4 +58,332 @@ brazil:
           description: Lorem ipsum dolor sit amet to be provided
           graph_config:
             - brazil_agriculture_policy
-
+us:
+  id: us
+  name: United States
+  tagline: Tagline for US
+  description: Description for US
+  sectors:
+    buildings:
+      name: Buildings
+      tagline: Tagline for Buildings
+      description: Description for Buildings
+      graph_config:
+      subjects:
+      subjects:
+        emissions:
+          name: Emissions
+          description: Description for Emissions
+          graph_config:
+            - brazil_forestry_emissions
+        emission_drivers:
+          name: Emission Drivers
+          description: Description for Emission Drivers
+          graph_config:
+            - brazil_forestry_emissions
+        policy:
+          name: Policy
+          description: Description for Policy
+          graph_config:
+            - brazil_forestry_emissions
+    transportation:
+      name: Transportation
+      tagline: Tagline for Transportation
+      description: Desc for transportation
+      graph_config:
+      subjects:
+        emissions:
+          name: Emissions
+          description: Description for Emissions
+          graph_config:
+            - brazil_forestry_emissions
+        emission_drivers:
+          name: Emission Drivers
+          description: Description for Emission Drivers
+          graph_config:
+            - brazil_forestry_emissions
+        policy:
+          name: Policy
+          description: Description for Policy
+          graph_config:
+            - brazil_forestry_emissions
+    power:
+      name: Power
+      tagline: Tagline for power
+      description: Description for power
+      graph_config:
+      subjects:
+        emissions:
+          name: Emissions
+          description: Description for Emissions
+          graph_config:
+            - brazil_forestry_emissions
+        emission_drivers:
+          name: Emission Drivers
+          description: Description for Emission Drivers
+          graph_config:
+            - brazil_forestry_emissions
+        policy:
+          name: Policy
+          description: Description for Policy
+          graph_config:
+            - brazil_forestry_emissions
+india:
+  id: india
+  name: India
+  tagline: Tagline for India
+  description: Description for India
+  sectors:
+    agriculture:
+      name: Agriculture
+      tagline: Tagline for Agriculture
+      description: Description for Agriculture
+      graph_config:
+      subjects:
+      subjects:
+        emissions:
+          name: Emissions
+          description: Description for Emissions
+          graph_config:
+            - brazil_forestry_emissions
+        emission_drivers:
+          name: Emission Drivers
+          description: Description for Emission Drivers
+          graph_config:
+            - brazil_forestry_emissions
+        policy:
+          name: Policy
+          description: Description for Policy
+          graph_config:
+            - brazil_forestry_emissions
+    power:
+      name: Power
+      tagline: Tagline for Power
+      description: Description for Power
+      graph_config:
+      subjects:
+      subjects:
+        emissions:
+          name: Emissions
+          description: Description for Emissions
+          graph_config:
+            - brazil_forestry_emissions
+        emission_drivers:
+          name: Emission Drivers
+          description: Description for Emission Drivers
+          graph_config:
+            - brazil_forestry_emissions
+        policy:
+          name: Policy
+          description: Description for Policy
+          graph_config:
+            - brazil_forestry_emissions
+    industry:
+      name: Industry
+      tagline: Tagline for Industry
+      description: Description for Industry
+      graph_config:
+      subjects:
+      subjects:
+        emissions:
+          name: Emissions
+          description: Description for Emissions
+          graph_config:
+            - brazil_forestry_emissions
+        emission_drivers:
+          name: Emission Drivers
+          description: Description for Emission Drivers
+          graph_config:
+            - brazil_forestry_emissions
+        policy:
+          name: Policy
+          description: Description for Policy
+          graph_config:
+            - brazil_forestry_emissions
+china:
+  id: china
+  name: China
+  tagline: Tagline for China
+  description: Description for China
+  sectors:
+    buildings:
+      name: Buildings
+      tagline: Tagline for Buildings
+      description: Description for Buildings
+      graph_config:
+      subjects:
+      subjects:
+        emissions:
+          name: Emissions
+          description: Description for Emissions
+          graph_config:
+            - brazil_forestry_emissions
+        emission_drivers:
+          name: Emission Drivers
+          description: Description for Emission Drivers
+          graph_config:
+            - brazil_forestry_emissions
+        policy:
+          name: Policy
+          description: Description for Policy
+          graph_config:
+            - brazil_forestry_emissions
+    power:
+      name: Power
+      tagline: Tagline for Power
+      description: Description for Power
+      graph_config:
+      subjects:
+      subjects:
+        emissions:
+          name: Emissions
+          description: Description for Emissions
+          graph_config:
+            - brazil_forestry_emissions
+        emission_drivers:
+          name: Emission Drivers
+          description: Description for Emission Drivers
+          graph_config:
+            - brazil_forestry_emissions
+        policy:
+          name: Policy
+          description: Description for Policy
+          graph_config:
+            - brazil_forestry_emissions
+    industry:
+      name: Industry
+      tagline: Tagline for Industry
+      description: Description for Industry
+      graph_config:
+      subjects:
+      subjects:
+        emissions:
+          name: Emissions
+          description: Description for Emissions
+          graph_config:
+            - brazil_forestry_emissions
+        emission_drivers:
+          name: Emission Drivers
+          description: Description for Emission Drivers
+          graph_config:
+            - brazil_forestry_emissions
+        policy:
+          name: Policy
+          description: Description for Policy
+          graph_config:
+            - brazil_forestry_emissions     
+eu:
+  id: eu
+  name: European Union
+  tagline: Tagline for EU
+  description: Description for EU
+  sectors:
+    buildings:
+      name: Buildings
+      tagline: Tagline for Buildings
+      description: Description for Buildings
+      graph_config:
+      subjects:
+      subjects:
+        emissions:
+          name: Emissions
+          description: Description for Emissions
+          graph_config:
+            - brazil_forestry_emissions
+        emission_drivers:
+          name: Emission Drivers
+          description: Description for Emission Drivers
+          graph_config:
+            - brazil_forestry_emissions
+        policy:
+          name: Policy
+          description: Description for Policy
+          graph_config:
+            - brazil_forestry_emissions
+    power:
+      name: Power
+      tagline: Tagline for Power
+      description: Description for Power
+      graph_config:
+      subjects:
+      subjects:
+        emissions:
+          name: Emissions
+          description: Description for Emissions
+          graph_config:
+            - brazil_forestry_emissions
+        emission_drivers:
+          name: Emission Drivers
+          description: Description for Emission Drivers
+          graph_config:
+            - brazil_forestry_emissions
+        policy:
+          name: Policy
+          description: Description for Policy
+          graph_config:
+            - brazil_forestry_emissions
+    industry:
+      name: Industry
+      tagline: Tagline for Industry
+      description: Description for Industry
+      graph_config:
+      subjects:
+      subjects:
+        emissions:
+          name: Emissions
+          description: Description for Emissions
+          graph_config:
+            - brazil_forestry_emissions
+        emission_drivers:
+          name: Emission Drivers
+          description: Description for Emission Drivers
+          graph_config:
+            - brazil_forestry_emissions
+        policy:
+          name: Policy
+          description: Description for Policy
+          graph_config:
+            - brazil_forestry_emissions       
+    agriculture:
+      name: Agriculture
+      tagline: Tagline for Agriculture
+      description: Description for Agriculture
+      graph_config:
+      subjects:
+      subjects:
+        emissions:
+          name: Emissions
+          description: Description for Emissions
+          graph_config:
+            - brazil_forestry_emissions
+        emission_drivers:
+          name: Emission Drivers
+          description: Description for Emission Drivers
+          graph_config:
+            - brazil_forestry_emissions
+        policy:
+          name: Policy
+          description: Description for Policy
+          graph_config:
+            - brazil_forestry_emissions
+    transportation:
+      name: Transportation
+      tagline: Tagline for Transportation
+      description: Desc for transportation
+      graph_config:
+      subjects:
+        emissions:
+          name: Emissions
+          description: Description for Emissions
+          graph_config:
+            - brazil_forestry_emissions
+        emission_drivers:
+          name: Emission Drivers
+          description: Description for Emission Drivers
+          graph_config:
+            - brazil_forestry_emissions
+        policy:
+          name: Policy
+          description: Description for Policy
+          graph_config:
+            - brazil_forestry_emissions
