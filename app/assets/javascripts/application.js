@@ -27,10 +27,10 @@ function positionScroll() {
 
 $(document).ready(function() {
   // ajax load
-  // $('.scroll-nav a[data-remote=true]').on('ajax:success', function(e, data){
-  //   window.history.pushState('', '', $(e.target).attr('href'));
-  //   $($(this).data('replace')).html(data);
-  // });
+  $('.scroll-nav a[data-remote=true]').on('ajax:success', function(e, data){
+    window.history.pushState('', '', $(e.target).attr('href'));
+    $($(this).data('replace')).html(data);
+  });
 
   // position scroll link on load
   positionScroll();

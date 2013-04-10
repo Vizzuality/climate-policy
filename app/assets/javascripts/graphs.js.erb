@@ -47,7 +47,6 @@ $(document).ready(function() {
     _graphs[i] = $.grep(graphs, function(e){ return e.id === _canvas[i]})[0];
   }
 
-
   //Creates the query needed for calculating the default domain for the charts
   for (var i = 0; i < _graphs.length; i++) {
     if(i!=0){
