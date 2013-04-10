@@ -694,3 +694,350 @@ us_industry_policy_2:
       y_max: 1600
       strokeColor: "rgba(79,110,191,1)"
 
+india_agriculture_emissions:
+  id: india_agriculture_emissions
+  name: "Lands & emissions"
+  description: TBD
+  table: land_use_and_emissions_copy_diego
+  x_axis: date_processed
+  series:
+    methane:
+      name: Methane
+      column: methane
+      units: million T
+      class: line
+      y_min: 0
+      y_max: 500
+      strokeColor: "#546DBC"
+    nitrous_oxide:
+      name: Nitrous Oxide
+      column: nitrous_oxide
+      units: million T
+      class: line
+      y_min: 0
+      y_max: 500
+      strokeColor: "#F0542C"
+    land_under_cultivation:
+      name: Land Under Cultivation
+      column: land_under_cultivation
+      units: million T
+      class: line
+      y_min: 0
+      y_max: 500
+      strokeColor: "#00D9A3"
+
+india_agriculture_emission_drivers:
+  id: india_agriculture_emission_drivers
+  name: Agricultural exports
+  description: TBD
+  table: ag_exports_million_usd_copy_diego
+  x_axis: date_processed
+  series:
+    agricultural_raw_materials_exports:
+      name: Agricultural raw materials
+      column: agricultural_raw_materials_exports
+      units: million USD
+      class: area
+      y_min: 0
+      y_max: 30000
+      strokeColor: "rgba(238,87,41,1)"
+      fillColor: "rgba(238,87,41,0.2)"
+    food_exports:
+      name: Food exports
+      column: food_exports
+      units: million USD
+      class: area
+      y_min: 0
+      y_max: 30000
+      strokeColor: "rgba(79,110,191,1)"
+      fillColor: "rgba(79,110,191,0.2)"
+
+india_agriculture_emission_drivers_2:
+  id: india_agriculture_emission_drivers_2
+  name: Fertilizer & livestock
+  description: 
+  table: india_ag_2_fertilizer_and_livestock_copy_diego
+  x_axis: date_processed
+  series:
+    total_livestock:
+      name: Total livestock
+      column: total_livestock
+      units: million livestock
+      class: line
+      y_min: 0
+      y_max: 600
+      strokeColor: "#546DBC"        
+    total_fertilizer_use_2:
+      name: Total fertilizer use
+      column: total_fertilizer_use_2
+      units: million T
+      class: line
+      y_min: 0
+      y_max: 600
+      strokeColor: "#F0542C"         
+
+india_agriculture_emission_drivers_3:
+  id: india_agriculture_emission_drivers_3
+  name: Mechanization
+  description: 
+  table: mechanization_copy_diego
+  x_axis: date_processed
+  series:
+    tractors_sold_1994_100:
+      name: Tractors sold
+      column: tractors_sold_1994_100
+      units: index (1994=100)
+      class: line
+      y_min: 0
+      y_max: 700
+      strokeColor: "#546DBC"   
+    power_tillers_1994_100:
+      name: Power tillers sold
+      column: power_tillers_1994_100
+      units: index (1994=100)
+      class: line
+      y_min: 0
+      y_max: 700
+      strokeColor: "#F0542C"
+    pumpsets_connected_to_the_grid_1995_100:
+      name: Pumpsets connected to the grid
+      column: pumpsets_connected_to_the_grid_1995_100
+      units: index (1994=100)
+      class: line
+      y_min: 0
+      y_max: 700
+      strokeColor: "#00D9A3" 
+
+india_agriculture_policy:
+  id: india_agriculture_policy
+  name: 
+  description: 
+  table: 
+  x_axis: date_processed
+  series:
+    series_1:
+      name: 
+      column: 
+      units: 
+      class: line
+      y_min: 
+      y_max: 
+      strokeColor: "rgba(238,87,41,1)"     
+
+india_power_emissions:
+  id: india_power_emissions
+  name: Generation & emissions
+  description: TBD
+  table: emissions_generation_copy_diego
+  x_axis: date_processed
+  series:
+    series_1:
+      name: Emissions
+      column: emissions
+      units: million tons
+      class: line
+      y_min: 0
+      y_max: 800
+      strokeColor: "#546DBC"
+    series_2:
+      name: Generation
+      column: generation
+      units: TWh
+      class: line
+      y_min: 0
+      y_max: 1000
+      strokeColor: "#F0542C"
+
+india_power_emission_drivers:
+  id: india_power_emissions_drivers
+  name: Fuel sources
+  description: TBD
+  table: fuel_sources_copy_diego
+  x_axis: date_processed
+  series:
+    series_1:
+      name: 
+      column: 
+      units: 
+      class: 
+      y_min: 
+      y_max: 
+      strokeColor: "#546DBC"
+    series_2:
+      name: 
+      column: 
+      units: 
+      class: 
+      y_min: 
+      y_max: 
+      strokeColor: "#546DBC"    
+    series_3:
+      name: 
+      column: 
+      units: 
+      class: 
+      y_min: 
+      y_max: 
+      strokeColor: "#546DBC"
+    series_4:
+      name: 
+      column: 
+      units: 
+      class: 
+      y_min: 
+      y_max: 
+      strokeColor: "#546DBC"      
+    series_5:
+      name: 
+      column: 
+      units: 
+      class: 
+      y_min: 
+      y_max: 
+      strokeColor: "#546DBC"
+    series_6:
+      name: 
+      column: 
+      units: 
+      class: 
+      y_min: 
+      y_max: 
+      strokeColor: "#546DBC"  
+    series_7:
+      name: 
+      column: 
+      units: 
+      class: 
+      y_min: 
+      y_max: 
+      strokeColor: "#546DBC"
+    series_8:
+      name: 
+      column: 
+      units: 
+      class: 
+      y_min: 
+      y_max: 
+      strokeColor: "#546DBC"        
+
+#             { "name": "Biomass and waste", "column": "biomass_and_waste", "units": "TWh", "class": "area", "y_extent": [0,2000], "strokeColor": "rgba(238,87,41,1)", "fillColor": "rgba(238,87,41,0.2)"},
+#             { "name": "Solar and renewables", "column": "solar_and_other_renewables", "units": "TWh", "class": "area", "y_extent": [0,2000], "strokeColor": "rgba(79,110,191,1)", "fillColor": "rgba(79,110,191,0.2)"},
+#             { "name": "Wind", "column": "wind", "units": "TWh", "class": "area", "y_extent": [0,2000], "fillColor": "rgba(87,216,159,0.2)"},
+#             { "name": "Low Carbon", "column": "low_carbon", "units": "TWh", "class": "area", "y_extent": [0,2000], "fillColor": "rgba(87,216,159,0.2)"},
+#             { "name": "Nuclear", "column": "nuclear", "units": "TWh", "class": "area", "y_extent": [0,2000], "strokeColor": "rgba(238,87,41,1)", "fillColor": "rgba(87,216,159,0.2)"},
+#             { "name": "Hydro", "column": "hydro", "units": "TWh", "class": "area", "y_extent": [0,2000], "strokeColor": "rgba(238,87,41,1)", "fillColor": "rgba(246,214,44,0.2)"},
+#             { "name": "Conventional thermal", "column": "conventional_thermal", "units": "TWh", "class": "area", "y_extent": [0,2000],"strokeColor": "rgba(79,110,191,1)", "fillColor": "rgba(79,110,191,0.2)"},
+#             { "name": "Major sources", "column": "major_sources", "units": "TWh", "class": "area", "y_extent": [0,2000], "strokeColor": "rgba(238,87,41,1)", "fillColor": "rgba(238,87,41,0.2)"},
+
+
+india_power_policy:
+  id: india_power_policy
+  name: IREDA renewables subsidies
+  description: TBD
+  table: ireda_subsidies_copy_diego
+  x_axis: date_processed
+  series:
+    series_1:
+      name: IREDA distributions
+      column: billion_inr
+      units: billion INR
+      class: line
+      y_min: 0
+      y_max: 15
+      strokeColor: "#546DBC"
+
+india_power_policy_2:
+  id: india_power_policy_2
+  name: Weighted average state RPO targets
+  description: TBD
+  table: state_rpos_copy_diego
+  x_axis: date_processed
+  series:
+    series_1:
+      name: Weighted average state RPO targets
+      column: weighted_average_state_rpo_targets
+      units: "%"
+      class: line
+      y_min: 0
+      y_max: 6
+      strokeColor: "#546DBC"
+
+india_industry_emissions:
+  id: india_industry_emissions
+  name: Emissions
+  description: TBD
+  table: india_ind_1_emissions_production_copy_diego
+  x_axis: date_processed
+  series:
+    emissions_index:
+      name: Emissions
+      column: emissions_index
+      units: index (1993=100)
+      class: line
+      y_min: 0
+      y_max: 200
+      strokeColor: "#546DBC"
+
+india_industry_emissions_2:
+  id: india_industry_emissions_2
+  name: Value index
+  description: TBD
+  table: india_ind_2_value_index_copy_diego
+  x_axis: date_processed
+  series:
+    manufacturing_value_added_index:
+      name: Manufacturing value added
+      column: manufacturing_value_added_index
+      units: index (1995=100)
+      class: line
+      y_min: 0
+      y_max: 300
+      strokeColor: "#546DBC"      
+    manufacturing_production_index:
+      name: Manufacturing production
+      column: manufacturing_production_index
+      units: index (1995=100)
+      class: line
+      y_min: 0
+      y_max: 300
+      strokeColor: "#F0542C"      
+
+india_industry_emission_drivers:
+  id: india_industry_emission_drivers
+  name: Sectoral emissions intensities
+  description: TBD
+  table: india_ind_2_sectoral_intensities_copy_diego
+  x_axis: date_processed
+  series:
+    iron_and_steel:
+      name:  "Iron & steel"
+      column: iron_and_steel
+      units: index (1993=100)
+      class: line
+      y_min: 0
+      y_max: 150
+      strokeColor: "#546DBC"    
+    chemicals:
+      name:  "Chemicals"
+      column: chemicals
+      units: index (1993=100)
+      class: line
+      y_min: 0
+      y_max: 150
+      strokeColor: "#F0542C"    
+
+india_industry_policy:
+  id: india_industry_policy
+  name: Number of units participating
+  description: TBD
+  table: ind_ind_3_awards_scheme_copy_diego
+  x_axis: date_processed
+  series:
+    number_of_participating_industrial_units:
+      name: Number of units participating
+      column: number_of_participating_industrial_units
+      units: units
+      class: line
+      y_min: 0
+      y_max: 600
+      strokeColor: "#546DBC"   
