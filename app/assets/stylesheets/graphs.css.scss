@@ -88,6 +88,7 @@
   background: image-url('graph_back_gradient.png') repeat-x bottom;
 }
 
+
 .graph-description {
   clear: left;
   max-width: 360px;
@@ -135,6 +136,16 @@ svg {
   text-transform: uppercase;
 }
 
+.graph-zero-mark {
+  stroke: rgba(#000, .2);
+  shape-rendering: crispEdges;
+}
+
+.graph-horz-marks {
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+
 .graph-link:after {
   position: relative;
   top: -4px;
@@ -163,7 +174,7 @@ svg {
 
   li {
     display: inline-block;
-    font: 14px "Arial", sans-serif;
+    font: 14px "cronos-pro", sans-serif;
     color: #999;
     margin: 0 0 0 12px;
   }
@@ -269,11 +280,6 @@ svg {
   cursor: pointer;
   stroke-width:2;
   stroke: white;
-}
-
-.zero-mark {
-  stroke: rgba(#000, .1);
-  shape-rendering: crispEdges;
 }
 
 .overlay-line {
