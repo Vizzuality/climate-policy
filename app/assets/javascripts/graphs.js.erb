@@ -662,14 +662,14 @@ $(document).ready(function() {
         .attr("y",0)
         .attr("width",70)
         .attr("height",h)
-        .attr("xlink:href","/img/left_gradient.png");
+        .attr("xlink:href", "<%= asset_path 'left_gradient.png' %>");
 
       svg[graphNum].append("svg:image")
         .attr("x",right_gradient_x)
         .attr("y",0)
         .attr("width",70)
         .attr("height",h)
-        .attr("xlink:href","/img/right_gradient.png");
+        .attr("xlink:href", "<%= asset_path 'right_gradient.png' %>");
 
       // Bringing all circles over lines + areas + overlay lines
       svg[graphNum].selectAll("circle").each(function() {
