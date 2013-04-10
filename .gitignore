@@ -14,7 +14,6 @@
 /log/*.log
 /tmp
 
-Gemfile.lock
 _site/
 .DS_Store
 .ruby-version
