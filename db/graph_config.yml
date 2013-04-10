@@ -1262,7 +1262,7 @@ china_buildings_emissions:
       column: residential_emissions
       units: MMTn CO2
       class: area
-      y_min: 0
+      y_min: 150
       y_max: 500
       strokeColor: "rgba(238,87,41,1)"
     commercial_emissions_fixed:
@@ -1270,7 +1270,7 @@ china_buildings_emissions:
       column: commercial_emissions_fixed
       units: MMTn CO2
       class: area
-      y_min: 0
+      y_min: 150
       y_max: 500
       strokeColor: "rgba(79,110,191,1)" 
 
@@ -1410,8 +1410,8 @@ china_industry_emissions:
         column: energy_consumption
         units: MMTn coal equivalent
         class: line
-        y_min: 0
-        y_max: 2000
+        y_min: 300
+        y_max: 2300
         strokeColor: "#546DBC"
 
 china_industry_emissions_2:
