@@ -25,6 +25,7 @@ brazil:
           graph_config:
             - brazil_forestry_policy
             # - brazil_agriculture_policy            
+
     agriculture:
       name: Agriculture
       description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in Brazil
@@ -43,6 +44,7 @@ brazil:
           name: Policy
           graph_config:
             - brazil_agriculture_policy
+
   subjects:
     emissions:
       description: Description for Brazil Emissions
@@ -51,8 +53,10 @@ brazil:
     policy:
       description:  Description for Brazil Policy
 
+
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 us:
   id: us
@@ -78,6 +82,7 @@ us:
           graph_config:
             - us_buildings_policy
             - us_buildings_policy_2
+
     transportation:
       name: Transportation
       description: These graphs show the changes in emissions, emissions drivers, and policy in the Transportation sector in the US
@@ -94,6 +99,7 @@ us:
           name: Policy
           graph_config:
             - us_transportation_policy
+
     power:
       name: Power
       tagline: Tagline for power
@@ -113,6 +119,7 @@ us:
           graph_config:
             - us_power_policy
             - us_power_policy_2
+
     industry:
       name: Industry
       tagline: Tagline for industry
@@ -133,6 +140,7 @@ us:
           graph_config:
             - us_industry_policy
             - us_industry_policy_2
+
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -162,6 +170,7 @@ india:
         #   name: Policy
         #   graph_config:
         #     - india_agriculture_emissions # CAMBIAR
+
     power:
       name: Power
       description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in India
@@ -198,6 +207,7 @@ india:
           graph_config:
             - india_industry_policy
 
+
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -226,6 +236,7 @@ china:
           graph_config:
             - china_buildings_policy
             - china_buildings_policy_2
+
     industry:
       name: Industry
       tagline: Tagline for Industry
@@ -243,6 +254,7 @@ china:
           name: Policy
           graph_config:
             - china_industry_policy     
+
     power:
       name: Power
       tagline: Tagline for Power
@@ -267,6 +279,23 @@ eu:
   tagline: Making policy for climate’s sake
   description: Europe is the land where climate policy has been explicit. Seeking to lead the world in terms of climate mitigation policy, it has integrated policy across many, varied states, and its nations have developed and implemented ambitious policies of their own. The challenge in Europe is to continue providing leadership in the face of an economic crisis, while accounting for national differences in outlook and policy.
   sectors:
+    transport:
+      name: Transport
+      description: These graphs show the changes in emissions, emissions drivers, and policy in the Transportation sector in the EU
+      subjects:
+        emissions:
+          name: Emissions
+          graph_config:
+            - eu_transport_emissions
+        emission_drivers:
+          name: Emission Drivers
+          graph_config:
+            - eu_transport_emission_drivers
+        policy:
+          name: Policy
+          graph_config:
+            - eu_transport_policy
+
     power:
       name: Power
       description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the EU
@@ -282,7 +311,7 @@ eu:
         # policy:
         #   name: Policy
         #   graph_config:
-        #     - eu_industry_policy
+        #     - eu_power_policy
 
     industry:
       name: Industry
@@ -296,10 +325,10 @@ eu:
           name: Emission Drivers
           graph_config:
             - eu_industry_emission_drivers
-#         policy:
-#           name: Policy
-#           graph_config:
-#             - eu_industry_policy
+        # policy:
+        #   name: Policy
+        #   graph_config:
+        #     - eu_industry_policy
 
     agriculture:
       name: Agriculture
@@ -318,27 +347,19 @@ eu:
           graph_config:
             - eu_agriculture_policy
 
-#     transportation:
-#       name: Transportation
-#       tagline: Tagline for Transportation
-#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Transportation sector in the EU
-#       subjects:
-#         emissions:
-#           name: Emissions
-#           graph_config:
-#             - brazil_forestry_emissions
-#         emission_drivers:
-#           name: Emission Drivers
-#           graph_config:
-#             - brazil_forestry_emissions
-#         policy:
-#           name: Policy
-#           graph_config:
-#             - brazil_forestry_emissions
-#   subjects:
-#     emissions:
-#       description: Description for EU emissions
-#     emission_drivers:
-#       description: Description for EU emission drivers
-#     policy:
-#       description: Description for EU policy
+    buildings:
+      name: Buildings
+      description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in the EU
+      subjects:
+        emissions:
+          name: Emissions
+          graph_config:
+            - eu_buildings_emissions
+        emission_drivers:
+          name: Emission Drivers
+          graph_config:
+            - eu_buildings_emission_drivers
+        # policy:
+        #   name: Policy
+        #   graph_config:
+        #     - eu_buildings_policy
