@@ -158,10 +158,10 @@ india:
             - india_agriculture_emission_drivers
             - india_agriculture_emission_drivers_2
             - india_agriculture_emission_drivers_3
-        policy:
-          name: Policy
-          graph_config:
-            - india_agriculture_emissions
+        # policy:
+        #   name: Policy
+        #   graph_config:
+        #     - india_agriculture_emissions # CAMBIAR
     power:
       name: Power
       description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in India
@@ -226,41 +226,41 @@ china:
           graph_config:
             - china_buildings_policy
             - china_buildings_policy_2
-
-    # power:
-    #   name: Power
-    #   tagline: Tagline for Power
-    #   description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in China
-    #   subjects:
-    #     emissions:
-    #       name: Emissions
-    #       graph_config:
-    #         - china_power_emissions
-    #     emission_drivers:
-    #       name: Emission Drivers
-    #       graph_config:
-    #         - china_power_emission_drivers
-    #     policy:
-    #       name: Policy
-    #       graph_config:
-    #         - china_power_policy
-    # industry:
-    #   name: Industry
-    #   tagline: Tagline for Industry
-    #   description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in China 
-    #   subjects:
-    #     emissions:
-    #       name: Emissions
-    #       graph_config:
-    #         - china_industry_emissions
-    #     emission_drivers:
-    #       name: Emission Drivers
-    #       graph_config:
-    #         - china_industry_emission_drivers
-    #     policy:
-    #       name: Policy
-    #       graph_config:
-    #         - china_industry_policy     
+    industry:
+      name: Industry
+      tagline: Tagline for Industry
+      description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in China 
+      subjects:
+        emissions:
+          name: Emissions
+          graph_config:
+            - china_industry_emissions
+        emission_drivers:
+          name: Emission Drivers
+          graph_config:
+            - china_industry_emissions
+        policy:
+          name: Policy
+          graph_config:
+            - china_industry_policy     
+    power:
+      name: Power
+      tagline: Tagline for Power
+      description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in China
+      subjects:
+        emissions:
+          name: Emissions
+          graph_config:
+            - china_power_emissions
+        emission_drivers:
+          name: Emission Drivers
+          graph_config:
+            - china_power_emission_drivers
+        policy:
+          name: Policy
+          graph_config:
+            - china_industry_policy # CAMBIAR
+            
 # eu:
 #   id: eu
 #   name: European Union

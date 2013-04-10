@@ -1203,3 +1203,158 @@ china_buildings_policy_2:
     0:
       label: "1980-1990"
       column: amount
+
+china_industry_emissions:
+  id: china_industry_emissions
+  name: Energy consumption
+  table: china_ind_1_energy_consumption_copy_diego
+  description:
+  x_axis: date_processed
+  series:
+      series_1:
+        name: Industrial energy consumption
+        column: energy_consumption
+        units: MMTn coal equivalent
+        class: line
+        y_min: 0
+        y_max: 2000
+        strokeColor: "#546DBC"
+
+china_industry_emissions_2:
+  id: china_industry_emissions_2
+  name: Value index
+  table: china_ind_2_value_index_copy_diego
+  description:
+  x_axis: date_processed
+  series:
+      series_1:
+        name: Manufacturing value added
+        column: value_added_index
+        units: index (1993=100)
+        class: line
+        y_min: 0
+        y_max: 2000
+        strokeColor: "rgba(238,87,41,1)"
+      series_2:
+        name: Manufacturing production
+        column: production_index
+        units: index (1993=100)
+        class: line
+        y_min: 0
+        y_max: 2000
+        strokeColor:  "rgba(79,110,191,1)"
+
+china_industry_policy:
+  id: china_industry_policy
+  name: Phase out targets
+  table: china_ind_3_phase_out_targets_copy_diego
+  description:
+  x_axis: date_processed
+  type: BarGraph
+  units: "Tn"
+  name_column: sector
+  x_groups:
+    0:
+      label: "1980-1990"
+      column: tons_of_output
+
+# china_industry_emission_drivers:
+#   id: china_industry_emission_drivers
+#   name:  Sectoral Energy Intensity
+#   table: china_ind_2_value_index_copy_diego
+#   description:
+#   x_axis: date_processed
+#   series:
+#       series_1:
+#         name: 
+#         column: 
+#         units: 
+#         class: line
+#         y_min: 0
+#         y_max: 300
+#         strokeColor: "rgba(238,87,41,1)"
+#       series_2:
+#         name: 
+#         column: 
+#         units: 
+#         class: line
+#         y_min: 0
+#         y_max: 300
+#         strokeColor: "rgba(238,87,41,1)"        
+
+china_power_emissions:
+  id: china_power_emissions
+  name: Power emissions & generation
+  table: china_power_1_emissions_generation_copy_diego
+  description:
+  x_axis: date_processed
+  series:
+      series_1:
+        name: Emissions
+        column: emissions
+        units: MMTn CO2
+        class: line
+        y_min: 0
+        y_max: 5000
+        strokeColor: "rgba(238,87,41,1)"
+      series_2:
+        name: Generation
+        column: generation
+        units: MMTn CO2
+        class: line
+        y_min: 0
+        y_max: 5000
+        strokeColor:  "rgba(79,110,191,1)"
+
+china_power_emission_drivers:
+  id: china_power_emission_drivers
+  name: Fuel sources
+  table: china_power_2_fuel_sources_copy_diego
+  description:
+  x_axis: date_processed
+  series:
+    oil:
+      name: Oil
+      column: oil
+      units: GWh
+      class: area
+      y_min: 0
+      y_max: 5000000
+      strokeColor: "rgba(87,216,159,1)"
+      fillColor: "rgba(87,216,159,0.2)"
+    natural_gas:
+      name: Natural gas
+      column: natural_gas
+      units: GWh
+      class: area
+      y_min: 0
+      y_max: 5000000
+      strokeColor: "rgba(246,214,44,1)"
+      fillColor: "rgba(246,214,44,0.2)"
+    low_carbon:
+      name: Low carbon
+      column: low_carbon
+      units: GWh
+      class: area
+      y_min: 0
+      y_max: 5000000
+      strokeColor: "rgba(79,110,191,1)"
+      fillColor": "rgba(79,110,191,0.2)"
+    hydro:
+      name: Hydro
+      column: hydro
+      units: GWh
+      class: area
+      y_min: 0
+      y_max: 5000000
+      strokeColor: "rgba(79,110,191,1)"
+      fillColor: "rgba(79,110,191,0.2)"
+    coal:
+      name: Coal
+      column: coal
+      units: GWh
+      class: area
+      y_min: 0
+      y_max: 5000000
+      strokeColor: "rgba(238,87,41,1)"      
+      fillColor: "rgba(238,87,41,0.2)"
