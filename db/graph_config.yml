@@ -309,7 +309,7 @@ us_buildings_emissions_2:
       class: line
       y_min: 0
       y_max: 25
-      strokeColor: "rgba(79,110,191,1)" 
+      strokeColor: "rgba(79,110,191,1)"
 
 us_buildings_emissions_drivers:
   id: us_buildings_emission_drivers
@@ -1080,3 +1080,34 @@ india_industry_policy:
       y_min: 0
       y_max: 600
       strokeColor: "#546DBC"
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+china_buildings_emissions:
+  id: china_buildings_emissions
+  name: Emissions
+  table: china_bldgs_1_emissions_copy_test_matallo
+  description: Reported buildings-related emissions fell during the 1990s, possibly due to district heating improvements, but more likely due to underreporting of coal use and measurement issues. Since 2002, emissions have been rising steadily due to growing energy use in buildings.
+  x_axis: date_processed
+  type: line
+  series:
+    commercial:
+      name: Commercial and public services
+      column: commercial_emissions_fixed
+      units: MM T CO²
+      class: area
+      y_min: 0
+      y_max: 450
+      strokeColor: 'rgba(238,87,41,1)'
+      fillColor: 'rgba(238,87,41,0.2)'
+    residential:
+      name: Residential
+      column: residential_emissions
+      units: MM T CO²
+      class: area
+      y_min: 0
+      y_max: 450
+      strokeColor: 'rgba(79,110,191,1)'
+      fillColor: 'rgba(79,110,191,0.2)'
