@@ -248,3 +248,117 @@ brazil_agriculture_policy:
       y_min: -7000
       y_max: 18000
       strokeColor: "#00D9A3"
+
+# ---------------------------------------------------
+
+us_buildings_emissions:
+  id: us_buildings_emissions
+  name: Emissions
+  table: emissions_mmtco2e_copy_test_matallo
+  description: Emissions grew slowly, but steadily, until 2005, when emissions peaked and slowly declined.
+  x_axis: date_processed
+  series:
+    commercial:
+      name: Commercial
+      column: commercial
+      units: MM T CO²
+      class: line
+      y_min: 0
+      y_max: 2000
+      strokeColor: "rgba(238,87,41,1)"
+    residential:
+      name: Residential
+      column: residential
+      units: MM T CO²
+      class: line
+      y_min: 0
+      y_max: 2000
+      strokeColor: "rgba(79,110,191,1)" 
+
+us_buildings_emissions_2:
+  id: us_buildings_emissions_2
+  name: Floorspace
+  table: buildings_floorspace_billion_square_meters_copy_test_matallo
+  description: Total building stock, as reflected by total floor space statistics, grew steadily, while the increase in residential floor space between 1995 and 2005 was particularly noteworthy.
+  x_axis: date_processed
+  series:
+    commercial:
+      name: Commercial
+      column: commercial
+      units: "B m<sup>2</sup>"
+      class: line
+      y_min: 0
+      y_max: 25
+      strokeColor: "rgba(238,87,41,1)"
+    residential:
+      name: Residential
+      column: residential
+      units: "B m<sup>2</sup>"
+      class: line
+      y_min: 0
+      y_max: 25
+      strokeColor: "rgba(79,110,191,1)" 
+
+us_buildings_emissions_drivers:
+  id: us_buildings_emission_drivers
+  name: Building Drivers
+  table: changes_in_emissions_drivers_copy_test_matallo
+  description: Growth in population and floor space per person were the largest drivers of buildings emissions. In the late 2000’s, energy efficiency gains, particularly in residential heating and cooling caught up with slowing floor space growth.
+  type: BarGraph
+  units: "Million T CO²"
+  name_column: variable
+  x_groups:
+    commercial:
+      label: Commercial
+      column: commercial
+    residential:
+      label: Residential
+      column: residential
+
+us_buildings_policy:
+  id: us_buildings_policy
+  name: Energy efficiency spending
+  table: energy_efficiency_spending_copy_test_matallo
+  description: Efficiency spending by federal and local governments increased over the last decade, with a spike due to the 2009 stimulus.
+  x_axis: date_processed
+  series:
+    energy_efficiency_dsm_spending:
+      name: Energy Efficiency DSM Spending
+      column: energy_efficiency_dsm_spending
+      units: MM USD
+      class: line
+      y_min: -5000
+      y_max: 27500
+      strokeColor: "rgba(238,87,41,1)"
+    federal_expenditures:
+      name: Federal expenditures
+      column: federal_expenditures
+      units: MM USD
+      class: line
+      y_min: -5000
+      y_max: 27500
+      strokeColor: "rgba(79,110,191,1)" 
+
+us_buildings_policy_2:
+  id: us_buildings_policy_2
+  name: Building codes
+  table: code_building_energy_intensity_index_copy_test_matallo
+  description: Building codes tightened steadily - particularly for commercial buildings where the federal government played a larger role.
+  x_axis: date_processed
+  series:
+    commercial:
+      name: Commercial
+      column: commercial
+      units: Index (1990=100)
+      class: line
+      y_min: 40
+      y_max: 150
+      strokeColor: "rgba(238,87,41,1)"
+    residential:
+      name: Residential
+      column: residential
+      units: Index (1990=100)
+      class: line
+      y_min: 40
+      y_max: 150
+      strokeColor: "rgba(79,110,191,1)" 
