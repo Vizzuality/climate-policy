@@ -252,6 +252,200 @@ brazil_agriculture_policy:
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+eu_power_emissions:
+  id: eu_power_emissions
+  name: Emissions and Generation
+  table: eu_power_1_emissions_generation_copy_test_matallo
+  description: Emissions intensity fell fast enough that emissions declined overall, even though electricity generation grew.
+  x_axis: date_processed
+  series:
+    emissions:
+      name: Emissions
+      column: emissions
+      units: MM T CO^2
+      class: line
+      y_min: 0
+      y_max: 2530
+      strokeColor: "#546DBC"
+    generation:
+      name: Generation
+      column: generation
+      units: TWh
+      class: line
+      y_min: 0
+      y_max: 2530
+      strokeColor: "#F0542C"
+
+eu_power_emission_drivers:
+  id: eu_power_emission_drivers
+  name: Grid impact
+  table: eu_power_2_grid_drivers_copy_test_matallo
+  description: During the 1990s, increases in coal and natural gas efficiency and growing nuclear output drove down grid emissions intensity. In the 2000s, the fuel mix shifted away from coal and toward other sources, especially renewable energy. The efficiency of coal plants fell in the 2000s, possibly due to increased sulfur and other pollution controls.
+  description_long: longest
+  type: BarGraph
+  units: "M T CO²"
+  name_column: variable
+  x_groups:
+    0:
+      label: 1990-2000
+      column: _1990_2000
+    1:
+      label: 2000-2010
+      column: _2000_2010
+
+eu_industry_emissions:
+  id: eu_industry_emissions
+  name: Emissions and Output
+  table: eu_industry_1_emissions_output_copy_test_matallo
+  description: Despite increasing output in the industrial sector, direct emissions fell, while electricity demand rose as the industrial sector shifted fuel consumption towards a less carbon intensive fuel mix.
+  x_axis: date_processed
+  series:
+    total_emissions:
+      name: Emissions
+      column: total_emissions
+      units: Million Tons CO2e
+      class: line
+      y_min: 0
+      y_max: 2065
+      strokeColor: "#546DBC"
+    manufacturing_value_add_index:
+      name: Manufacturing Value Add
+      column: manufacturing_value_add_index
+      units: Index (1990=100)
+      class: line
+      y_min: 0
+      y_max: 2065
+      strokeColor: "#F0542C"
+    manufacturing_production_index:
+      name: Manufacturing Production
+      column: manufacturing_production_index
+      units: Index (1990=100)
+      class: line
+      y_min: 0
+      y_max: 2065
+      strokeColor: "#00D9A3"
+
+eu_industry_emission_drivers:
+  id: eu_industry_emission_drivers
+  name: Sectoral Energy Efficiency Indices
+  table: eu_ind_2_sectoral_energy_efficiencies_copy_test_matallo
+  description: Industrial energy efficiency improved across the board since 1990. There were no structural changes in industry that affected emissions intensity.
+  x_axis: date_processed
+  series:
+    chemicals:
+      name: Chemicals
+      column: chemicals
+      units: Index (1990=100)
+      class: line
+      y_min: 45
+      y_max: 105
+      strokeColor: "#546DBC"
+    steel:
+      name: Manufacturing Value Add
+      column: steel
+      units: Index (1990=100)
+      class: line
+      y_min: 45
+      y_max: 105
+      strokeColor: "#F0542C"
+    cement:
+      name: Manufacturing Production
+      column: cement
+      units: Index (1990=100)
+      class: line
+      y_min: 45
+      y_max: 105
+      strokeColor: "#00D9A3"
+    paper:
+      name: Paper
+      column: paper
+      units: Index (1990=100)
+      class: line
+      y_min: 45
+      y_max: 105
+      strokeColor: "#546DBC"
+    machinery:
+      name: Machinery
+      column: machinery
+      units: Index (1990=100)
+      class: line
+      y_min: 45
+      y_max: 105
+      strokeColor: "#F0542C"
+    total:
+      name: Total
+      column: total
+      units: Index (1990=100)
+      class: line
+      y_min: 45
+      y_max: 105
+      strokeColor: "#00D9A3"
+
+eu_agriculture_emissions:
+  id: eu_agriculture_emissions
+  name: Emissions and Output
+  table: eu_agriculture_1_emissions_output_copy_test_matallo
+  description: Emissions have declined since 1990, despite a slight increase in agricultural production.
+  x_axis: date_processed
+  series:
+    emissions:
+      name: Emissions
+      column: emissions
+      units: MM T CO²
+      class: line
+      y_min: 0
+      y_max: 600000
+      strokeColor: "rgba(238,87,41,1)"
+    agricultural_production:
+      name: Agricultural Production
+      column: agricultural_production
+      units: MM €
+      class: line
+      y_min: 0
+      y_max: 600000
+      strokeColor: "rgba(79,110,191,1)"
+
+eu_agriculture_emission_drivers:
+  id: eu_agriculture_emission_drivers
+  name: Changes in Agricultural Emissions Drivers
+  table: eu_agriculture_2_emissions_drivers_copy_test_matallo
+  description: Methane emissions from livestock declined as the number of cattle decreased. Nitrous oxide emissions fell, due to decreases in both cropland area and fertilizer intensity.
+  description_long: longest
+  type: BarGraph
+  units: "km²"
+  name_column: driver
+  x_groups:
+    0:
+      label: 1990-2000
+      column: _1990_2000
+    1:
+      label: 2000-2008
+      column: _2000_2008
+
+eu_agriculture_policy:
+  id: eu_agriculture_policy
+  name: Nitrate Vulnerable Zones
+  table: eu_agriculture_3_nvzs_copy_test_matallo
+  description: Most agricultural policy in Europe was developed for reasons beyond climate protection. Nevertheless, these policies had a very real impact on greenhouse gas emissions. For example, the Nitrates Directive encouraged decreasing levels of nitrate fertilizer application, thus reducing NOx emissions.
+  description_long: longest
+  type: BarGraph
+  units: "Thousand km²"
+  name_column: driver
+  x_groups:
+    0:
+      label: 1999
+      column: _1999
+    1:
+      label: 2003
+      column: _2003
+    0:
+      label: 2006
+      column: _2006
+    1:
+      label: 2008
+      column: _2008
+
 us_buildings_emissions:
   id: us_buildings_emissions
   name: Emissions

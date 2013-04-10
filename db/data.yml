@@ -261,80 +261,62 @@ china:
     #       name: Policy
     #       graph_config:
     #         - china_industry_policy     
-# eu:
-#   id: eu
-#   name: European Union
-#   tagline: Making policy for climate’s sake
-#   description: Europe is the land where climate policy has been explicit. Seeking to lead the world in terms of climate mitigation policy, it has integrated policy across many, varied states, and its nations have developed and implemented ambitious policies of their own. The challenge in Europe is to continue providing leadership in the face of an economic crisis, while accounting for national differences in outlook and policy.
-#   sectors:
-#     buildings:
-#       name: Buildings
-#       tagline: Tagline for Buildings
-#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in the EU
-#       subjects:
-#         emissions:
-#           name: Emissions
-#           graph_config:
-#             - brazil_forestry_emissions
-#         emission_drivers:
-#           name: Emission Drivers
-#           graph_config:
-#             - brazil_forestry_emissions
+eu:
+  id: eu
+  name: European Union
+  tagline: Making policy for climate’s sake
+  description: Europe is the land where climate policy has been explicit. Seeking to lead the world in terms of climate mitigation policy, it has integrated policy across many, varied states, and its nations have developed and implemented ambitious policies of their own. The challenge in Europe is to continue providing leadership in the face of an economic crisis, while accounting for national differences in outlook and policy.
+  sectors:
+    power:
+      name: Power
+      description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the EU
+      subjects:
+        emissions:
+          name: Emissions
+          graph_config:
+            - eu_power_emissions
+        emission_drivers:
+          name: Emission Drivers
+          graph_config:
+            - eu_power_emission_drivers
+        # policy:
+        #   name: Policy
+        #   graph_config:
+        #     - eu_industry_policy
+
+    industry:
+      name: Industry
+      description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in the EU
+      subjects:
+        emissions:
+          name: Emissions
+          graph_config:
+            - eu_industry_emissions
+        emission_drivers:
+          name: Emission Drivers
+          graph_config:
+            - eu_industry_emission_drivers
 #         policy:
 #           name: Policy
 #           graph_config:
-#             - brazil_forestry_emissions
-#     power:
-#       name: Power
-#       tagline: Tagline for Power
-#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the EU
-#       subjects:
-#         emissions:
-#           name: Emissions
-#           graph_config:
-#             - brazil_forestry_emissions
-#         emission_drivers:
-#           name: Emission Drivers
-#           graph_config:
-#             - brazil_forestry_emissions
-#         policy:
-#           name: Policy
-#           graph_config:
-#             - brazil_forestry_emissions
-#     industry:
-#       name: Industry
-#       tagline: Tagline for Industry
-#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in India
-#       subjects:
-#         emissions:
-#           name: Emissions
-#           graph_config:
-#             - brazil_forestry_emissions
-#         emission_drivers:
-#           name: Emission Drivers
-#           graph_config:
-#             - brazil_forestry_emissions
-#         policy:
-#           name: Policy
-#           graph_config:
-#             - brazil_forestry_emissions       
-#     agriculture:
-#       name: Agriculture
-#       tagline: Tagline for Agriculture
-#       description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in the EU
-#       subjects:
-#         emissions:
-#           name: Emissions
-#           graph_config:
-#             - brazil_forestry_emissions
-#         emission_drivers:
-#           name: Emission Drivers
-#           graph_config:
-#             - brazil_forestry_emissions
-#         policy:
-#           name: Policy
-#           graph_config:
-#             - brazil_forestry_emissions
+#             - eu_industry_policy
+    agriculture:
+      name: Agriculture
+      description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in the EU
+      subjects:
+        emissions:
+          name: Emissions
+          graph_config:
+            - eu_agriculture_emissions
+        emission_drivers:
+          name: Emission Drivers
+          graph_config:
+            - eu_agriculture_emission_drivers
+        policy:
+          name: Policy
+          graph_config:
+            - eu_agriculture_policy
+
 #     transportation:
 #       name: Transportation
 #       tagline: Tagline for Transportation
