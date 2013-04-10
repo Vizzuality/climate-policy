@@ -431,14 +431,20 @@ eu_agriculture_policy:
   description_long: longest
   type: BarGraph
   units: "Thousand km²"
-  name_column: driver
+  name_column: variable
   x_groups:
     0:
       label: 1999
-      column: _1999
+      column: period_1999
     1:
       label: 2003
-      column: _2003
+      column: period_2003
+    2:
+      label: 2006
+      column: period_2006
+    3:
+      label: 2008
+      column: period_2008
 
 eu_buildings_emissions:
   id: eu_buildings_emissions
@@ -518,7 +524,7 @@ eu_transport_emissions:
 eu_transport_emission_drivers:
   id: eu_transport_emission_drivers
   name: Emissions Intensity Indices
-  table: eu_transport_2_emissions_intensities
+  table: eu_transport_2_emissions_intensities_copy_test_matallo
   description: Emissions intensity declined steadily. Passenger transport efficiency improved more than freight transport efficiency. However, within road transport, freight improved three times as much as passenger travel (18% versus 6%) between 1995 and 2010 (not shown).
   x_axis: date_processed
   series:
