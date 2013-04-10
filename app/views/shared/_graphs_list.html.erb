@@ -5,8 +5,6 @@
 <% @items.each do |item| %>
   <%= render 'shared/graph', :type => 'line', :item => item %>
 
-  <%= render 'shared/years' %>
+  <%= render @items.last == item ? 'shared/years_last' : 'shared/years' %>
 <% end %>
-
-<%= render 'shared/years_last' %>
 

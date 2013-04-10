@@ -9,6 +9,10 @@
 
     <%= stylesheet_link_tag params[:region_id] %>
     <%= javascript_include_tag "application" %>
+    <script type="text/javascript">
+      var graphs = <%= @graph_configs.to_json.html_safe %>;
+    </script>
+    <%= javascript_include_tag "graphs" %>
     <%= csrf_meta_tags %>
 
     <!--[if IE]>
@@ -24,9 +28,6 @@
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
         g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
         s.parentNode.insertBefore(g,s)}(document,'script'));
-    </script>
-    <script type="text/javascript">
-      var graphs = <%= @graph_configs.to_json.html_safe %>;
     </script>
   </head>
   <body>
