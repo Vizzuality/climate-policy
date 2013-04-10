@@ -900,7 +900,7 @@ us_industry_policy_2:
 india_agriculture_emissions:
   id: india_agriculture_emissions
   name: "Lands & emissions"
-  description: TBD
+  description: Land use-related emissions remained relatively flat, as did land under cultivation.
   table: land_use_and_emissions_copy_diego
   x_axis: date_processed
   series:
@@ -910,7 +910,7 @@ india_agriculture_emissions:
       units: million T
       class: line
       y_min: 0
-      y_max: 500
+      y_max: 700
       strokeColor: "#546DBC"
     nitrous_oxide:
       name: Nitrous Oxide
@@ -918,7 +918,7 @@ india_agriculture_emissions:
       units: million T
       class: line
       y_min: 0
-      y_max: 500
+      y_max: 700
       strokeColor: "#F0542C"
     land_under_cultivation:
       name: Land Under Cultivation
@@ -926,13 +926,13 @@ india_agriculture_emissions:
       units: million T
       class: line
       y_min: 0
-      y_max: 500
+      y_max: 700
       strokeColor: "#00D9A3"
 
 india_agriculture_emission_drivers:
   id: india_agriculture_emission_drivers
   name: Agricultural exports
-  description: TBD
+  description: Output grew to meet domestic food demand (not shown) and the export of agricultural raw materials.
   table: ag_exports_million_usd_copy_diego
   x_axis: date_processed
   series:
@@ -942,7 +942,7 @@ india_agriculture_emission_drivers:
       units: million USD
       class: area
       y_min: 0
-      y_max: 30000
+      y_max: 32000
       strokeColor: "rgba(238,87,41,1)"
       fillColor: "rgba(238,87,41,0.2)"
     food_exports:
@@ -951,14 +951,14 @@ india_agriculture_emission_drivers:
       units: million USD
       class: area
       y_min: 0
-      y_max: 30000
+      y_max: 32000
       strokeColor: "rgba(79,110,191,1)"
       fillColor: "rgba(79,110,191,0.2)"
 
 india_agriculture_emission_drivers_2:
   id: india_agriculture_emission_drivers_2
   name: Fertilizer & livestock
-  description: 
+  description: Indian agriculture has modernized, as demonstrated by increasing fertilizer and equipment use. Despite rising fertilizer use, nitrous oxide emissions didn’t rise dramatically. 
   table: india_ag_2_fertilizer_and_livestock_copy_diego
   x_axis: date_processed
   series:
@@ -968,7 +968,7 @@ india_agriculture_emission_drivers_2:
       units: million livestock
       class: line
       y_min: 0
-      y_max: 600
+      y_max: 1200
       strokeColor: "#546DBC"
     total_fertilizer_use_2:
       name: Total fertilizer use
@@ -976,13 +976,13 @@ india_agriculture_emission_drivers_2:
       units: million T
       class: line
       y_min: 0
-      y_max: 600
+      y_max: 300
       strokeColor: "#F0542C"
 
 india_agriculture_emission_drivers_3:
   id: india_agriculture_emission_drivers_3
   name: Mechanization
-  description: 
+  description: Indian agriculture has modernized, as demonstrated by increasing fertilizer and equipment use. 
   table: mechanization_copy_diego
   x_axis: date_processed
   series:
@@ -1014,7 +1014,7 @@ india_agriculture_emission_drivers_3:
 india_agriculture_policy:
   id: india_agriculture_policy
   name: 
-  description: 
+  description: Indian agricultural policy focused on modernization of the agricultural sector through subsidies. Though greenhouse gases were not specifically targeted in this effort, modernization had a modest effect on total emissions.
   table: 
   x_axis: date_processed
   series:
@@ -1030,7 +1030,7 @@ india_agriculture_policy:
 india_power_emissions:
   id: india_power_emissions
   name: Generation & emissions
-  description: TBD
+  description: Emissions largely tracked the growth in electricity generation.
   table: emissions_generation_copy_diego
   x_axis: date_processed
   series:
@@ -1054,7 +1054,7 @@ india_power_emissions:
 india_power_emission_drivers:
   id: india_power_emissions_drivers
   name: Fuel sources
-  description: TBD
+  description: Most new generation came from conventional sources (particularly coal), although the past decade saw exponential growth in renewable energy generation.
   table: fuel_sources_copy_diego
   x_axis: date_processed
   series:
@@ -1136,7 +1136,7 @@ india_power_emission_drivers:
 india_power_policy:
   id: india_power_policy
   name: IREDA renewables subsidies
-  description: TBD
+  description: Renewable energy growth was supported by increased loan distributions by the central government, including the Indian Renewable Energy Development Agency (IREDA). 
   table: ireda_subsidies_copy_diego
   x_axis: date_processed
   series:
@@ -1152,7 +1152,7 @@ india_power_policy:
 india_power_policy_2:
   id: india_power_policy_2
   name: Weighted average state RPO targets
-  description: TBD
+  description: The central government required that each state set renewable purchase obligations that require renewable energy in the mix of electricity generation in each state. The average of these targets reached 5.5% by 2010.
   table: state_rpos_copy_diego
   x_axis: date_processed
   series:
@@ -1168,7 +1168,7 @@ india_power_policy_2:
 india_industry_emissions:
   id: india_industry_emissions
   name: Emissions
-  description: TBD
+  description: Manufacturing output nearly tripled in India since 1995. 
   table: india_ind_1_emissions_production_copy_diego
   x_axis: date_processed
   series:
@@ -1177,14 +1177,14 @@ india_industry_emissions:
       column: emissions_index
       units: index (1993=100)
       class: line
-      y_min: 0
+      y_min: 50
       y_max: 200
       strokeColor: "#546DBC"
 
 india_industry_emissions_2:
   id: india_industry_emissions_2
   name: Value index
-  description: TBD
+  description: Emissions have rtisen, but not as rapidly as production.
   table: india_ind_2_value_index_copy_diego
   x_axis: date_processed
   series:
@@ -1193,22 +1193,22 @@ india_industry_emissions_2:
       column: manufacturing_value_added_index
       units: index (1995=100)
       class: line
-      y_min: 0
-      y_max: 300
+      y_min: 70
+      y_max: 380
       strokeColor: "#546DBC"
     manufacturing_production_index:
       name: Manufacturing production
       column: manufacturing_production_index
       units: index (1995=100)
       class: line
-      y_min: 0
-      y_max: 300
+      y_min: 70
+      y_max: 380
       strokeColor: "#F0542C"
 
 india_industry_emission_drivers:
   id: india_industry_emission_drivers
   name: Sectoral emissions intensities
-  description: TBD
+  description: Indian industry largely improved in efficiency, although performance at a sectoral level was mixed. The steel industry emissions intensity increased due to an increase in primary steel production versus scrap.
   table: india_ind_2_sectoral_intensities_copy_diego
   x_axis: date_processed
   series:
@@ -1217,22 +1217,22 @@ india_industry_emission_drivers:
       column: iron_and_steel
       units: index (1993=100)
       class: line
-      y_min: 0
-      y_max: 150
+      y_min: 10
+      y_max: 220
       strokeColor: "#546DBC"
     chemicals:
       name:  "Chemicals"
       column: chemicals
       units: index (1993=100)
       class: line
-      y_min: 0
-      y_max: 150
+      y_min: 10
+      y_max: 220
       strokeColor: "#F0542C"
 
 india_industry_policy:
   id: india_industry_policy
-  name: Number of units participating
-  description: TBD
+  name: Participation in Award Schemes
+  description: Indian policy towards industrial energy efficiency effectively began in the 2000s, which saw the creation of a number of programs targeting high-visibility energy efficiency programs, the largest of which, the National Conservation Award Scheme, has seen increasing participation over the last decade.
   table: ind_ind_3_awards_scheme_copy_diego
   x_axis: date_processed
   series:
@@ -1254,7 +1254,7 @@ china_buildings_emissions:
   id: china_buildings_emissions
   name: Emissions
   table: china_bldgs_1_emissions_copy_diego
-  description:
+  description: Reported buildings-related emissions fell during the 1990s, possibly due to district heating improvements, but more likely due to underreporting of coal use and measurement issues. Since 2002, emissions have been rising steadily due to growing energy use in buildings.
   x_axis: date_processed
   series:
     residential_emissions:
@@ -1278,7 +1278,7 @@ china_buildings_emission_drivers:
   id: china_buildings_emission_drivers
   name: Fuel sources
   table: buildings_fuel_sources_mtce_copy_diego
-  description:
+  description: Particularly in urban residences, electronics and appliances became a significant end use, more than offsetting efficiency improvements in heating. Appliance use contributed to the increase in share of electricity in energy, as did the shift away from coal use.
   x_axis: date_processed
   series:
     total_coal:
@@ -1340,7 +1340,7 @@ china_buildings_emission_drivers_2:
   id: china_buildings_emission_drivers_2
   name: Geography
   table: china_bldgs_2_geography_copy_diego
-  description:
+  description: Urban residential growth was the primary driver of growth in energy usage, which in turn was the primary cause of increasing emissions, with commercial building energy use contributing a small increase.
   x_axis: date_processed
   series:
     urban_residential:
@@ -1375,7 +1375,7 @@ china_buildings_policy:
   id: china_buildings_policy
   name: Targeted building energy use reduction
   table: china_bldgs_3_policy_copy_diego
-  description:
+  description: Increased enforcement of energy building codes saved an estimated 60 million tonnes of coal equivalent per year, more than all other targeted policies combined. 
   type: BarGraph
   units: "km²"
   name_column: program
@@ -1388,7 +1388,7 @@ china_buildings_policy_2:
   id: china_buildings_policy_2
   name: Funding for energy monitoring
   table: china_bldgs_3_policy_funding_energy_monitoring_copy_diego
-  description:
+  description: Both the provincial and central governments provided substantial funding for energy efficiency monitoring and improvements.
   x_axis: date_processed
   type: BarGraph
   units: "--"
@@ -1402,7 +1402,7 @@ china_industry_emissions:
   id: china_industry_emissions
   name: Energy consumption
   table: china_ind_1_energy_consumption_copy_diego
-  description:
+  description: China did not report greenhouse gas emissions from industry, but they were very closely related to energy consumption, which more than doubled since 2002.
   x_axis: date_processed
   series:
       series_1:
@@ -1418,7 +1418,7 @@ china_industry_emissions_2:
   id: china_industry_emissions_2
   name: Value index
   table: china_ind_2_value_index_copy_diego
-  description:
+  description: By some measures, industrial production output rose almost 20-fold since 1993.
   x_axis: date_processed
   series:
       series_1:
@@ -1442,7 +1442,7 @@ china_industry_policy:
   id: china_industry_policy
   name: Phase out targets
   table: china_ind_3_phase_out_targets_copy_diego
-  description:
+  description: The government set specific targets for many large industries regarding how much capacity was to be phased out or retired.
   x_axis: date_processed
   type: BarGraph
   units: "Tn"
@@ -1480,7 +1480,7 @@ china_power_emissions:
   id: china_power_emissions
   name: Power emissions & generation
   table: china_power_1_emissions_generation_copy_diego
-  description:
+  description: Electricity generation and the associated CO2 emissions increased significantly in the past three decades, with generation growth accelerating significantly in the tenth Five Year Plan (2001-2005). Since 2006, the growth in power demand has slowed slightly with CO2 emissions following suit.
   x_axis: date_processed
   series:
       series_1:
@@ -1504,7 +1504,7 @@ china_power_emission_drivers:
   id: china_power_emission_drivers
   name: Fuel sources
   table: china_power_2_fuel_sources_copy_diego
-  description:
+  description: The vast majority of increased generation came from conventional sources, primarily coal. However, the past decade saw exponential growth in low-carbon fuel sources, such as renewable energy, although this energy represented a very small portion of overall electricity production
   x_axis: date_processed
   series:
     oil:
