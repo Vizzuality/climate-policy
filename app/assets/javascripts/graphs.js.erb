@@ -1,6 +1,6 @@
 var margin = 40;
 var margin_top = 80;
-var h = 348;
+var h = 388;
 var w = 1038;
 var LINE_DOT_R = 4;
 var INTERPOLATE_METHOD = "cardinal";
@@ -47,7 +47,6 @@ $(document).ready(function() {
     _graphs[i] = $.grep(graphs, function(e){ return e.id === _canvas[i]})[0];
   }
 
-
   //Creates the query needed for calculating the default domain for the charts
   for (var i = 0; i < _graphs.length; i++) {
     if(i!=0){
@@ -63,7 +62,7 @@ $(document).ready(function() {
   }
 
   //Creates year marker on every years timeline
-  d3.selectAll(".years").each(function(d){
+  d3.selectAll(".years").each(function(d) {
     year_marker = $(this).append("<div class='year_marker'>1990</div>");
   });
 
@@ -424,7 +423,7 @@ $(document).ready(function() {
 
         svg[graphNum].append("rect")
           .attr("class", "overlay-line")
-          .attr("height", h+margin)
+          .attr("height", h)
           .attr("width", 2)
           .attr("cy", 0);
 
@@ -636,8 +635,8 @@ $(document).ready(function() {
             stacked_area_accumulated[""+date] = parseFloat(accumulated_value) + parseFloat(current_value);
           });
         }
-
-        $("#"+_graphs[graphNum].table).find(".graph-legend").append('<li><div class="legend-item" style="background-color:'+strokeColor_+'"></div><span id='+y_col_+' class="legend-label">'+y_col_name+'</span></li>')
+        console.log(_graphs[graphNum].id);
+        $("#"+_graphs[graphNum].id).find(".graph-legend").append('<li><div class="legend-item" style="background-color:'+strokeColor_+'"></div><span id='+y_col_+' class="legend-label">'+y_col_name+'</span></li>')
           .attr("r", LINE_DOT_R);
       });
 
