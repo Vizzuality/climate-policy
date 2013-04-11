@@ -542,16 +542,16 @@
               .attr("class", group_name+' linedot linedot'+i)
               .attr("style",function(d) {
 
-                // if (d[group_name] > 0) {
-                //   return "stroke: "+positive_color+"; fill: #fff";
-                // } else {
-                //   return "stroke: "+negative_color+"; fill: #fff";
-                // }
-                if ( _graphs[graphNum] != null) {
-                  return "stroke: "+_graphs[graphNum].strokeColor+"; fill: #fff";
+                if (d[group_name] > 0) {
+                  return "stroke: "+positive_color+"; fill: #fff";
                 } else {
-                  return "stroke: rgba(238,87,41,1); fill: #fff";
+                  return "stroke: "+negative_color+"; fill: #fff";
                 }
+                // if ( _graphs[graphNum] != null) {
+                //   return "stroke: "+_graphs[graphNum].strokeColor+"; fill: #fff";
+                // } else {
+                //   return "stroke: rgba(238,87,41,1); fill: #fff";
+                // }
               })
               .attr("cx", function(d){
                 var x = label_w + group_pos_x + zero_x;
