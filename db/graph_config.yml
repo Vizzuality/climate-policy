@@ -1586,7 +1586,7 @@ china_industry_emissions_2:
 
 china_industry_emission_drivers:
   id: china_industry_emission_drivers
-  name: Sector Energy Intensity: Manufacturing, Metals & Minerals, Chemical
+  name: "Sector Energy Intensity: Manufacturing, Metals & Minerals, Chemical"
   table: china_ind_2_sectoral_intensities_copy_diego_fixed_3
   description: Industrial emissions intensity improved dramatically across all sectors, although from a generally high starting point.
   x_axis: date_processed
