@@ -18,7 +18,7 @@ forestry:
 agriculture:
   id: agriculture
   name: Agriculture
-  description: Continual modernization of agricultural practices in India, Europe, and southern Brazil enabled increased productivity without marked increases in cultivated land. In fact, cultivated land area remained flat or decreased in some cases. Greenhouse gas emissions from agricultural land use followed suit. In India, mechanization-focused policies and increased fertilizer intensity contributed to this pattern, whereas Europe moved beyond increased fertilization and instead improved agricultural practices that lowered fertilizer application. On the other hand, for India and Brazil, exports might have driven increased cropland expansion or agricultural intensification, while northern Brazil maintained more traditional agricultural practices, expanding cultivated land area to keep up with demand. Brazilian deforestation rates spiked in the early 2000s along with emissions from Brazilian agriculture; however, aggressive Brazilian policies helped drive down deforestation rates in the late 2000s.
+  description: "Continual modernization of agricultural practices in India, Europe, and southern Brazil enabled increased productivity without marked increases in cultivated land. In fact, cultivated land area remained flat or decreased in some cases."
   tagline: POLICY DROVE MODERN AGRICULTURAL PRACTICES AND EMISSIONS DECLINES
   decades_analysis:
   subjects:
@@ -39,8 +39,8 @@ agriculture:
 buildings:
   id: buildings
   name: Buildings
-  description: Energy efficiency in buildings has been the target of policy since at least the 1970s. Common policy tools include building codes and appliance standards, utility-based energy efficiency programs, incentives, and information campaigns. Policy activity accelerated in the 1990s in Europe and after 2000 in the U.S. It became a target more recently for Chinese policy makers. Unfortunately, despite substantial efficiency improvements in heating, cooling, and lighting, growth in building floor space and the increasing range, penetration, and use of appliances and electronics have more than offset efficiency gains in China and have just about balanced efficiency gains in Europe. In the U.S., efficiency gains have only recently caught up with slowing floor space growth.
-  tagline: A LONG HISTORY OF POLICY INTERVENTION YIELDED ENERGY EFFICIENCY GAINS, BUT FACED OFFSETTING FACTORS 
+  description: "Energy efficiency in buildings has been the target of policy since at least the 1970s. Common policy tools include building codes and appliance standards, utility-based energy efficiency programs, incentives, and information campaigns."
+  tagline: A LONG HISTORY OF POLICY INTERVENTION YIELDED ENERGY EFFICIENCY GAINS.
   decades_analysis:
   subjects:
     - emissions:
@@ -60,7 +60,7 @@ buildings:
 transport:
   id: transport
   name: Transport
-  description: Transport offers large immediate and long-term opportunities to reduce greenhouse gas emissions in Europe and the U.S. The pattern for transport-related growth in greenhouse gas emissions in the two regions was remarkably similar—a sustained rise with increasing passenger and freight traffic and strong growth in air travel only partially offset by gradual efficiency improvements. Emissions peaked in 2007 in both economies before high fuel prices and then recession curbed and reversed emissions growth. This general pattern overshadowed the European automobile fleet’s more fuel efficient starting point, thanks in part to significantly higher fuel taxes in Europe than in the U.S.
+  description: Transport offers large immediate and long-term opportunities to reduce greenhouse gas emissions in Europe and the U.S. The pattern for transport-related growth in greenhouse gas emissions in the two regions was remarkably similar—a sustained rise with increasing passenger and freight traffic and strong growth in air travel only partially offset by gradual efficiency improvements. Emissions peaked in 2007 in both economies before high fuel prices and then recession curbed and reversed.
   tagline: THE ECONOMY HID UNDERLYING POLICY DIFFERENCES
   decades_analysis:
   subjects:
@@ -73,11 +73,13 @@ transport:
   regions:
     - eu:
         description: These graphs show the changes in emissions, emissions drivers, and policy in the Transportation sector in the EU
+    - us:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Transportation sector in the US
 
 power:
   id: power
   name: Power
-  description: Rapid growth in electricity demand mirrored rapid economic growth in China and India. In both countries, the most readily available source of indigenous fuel was coal. China was been better at exploiting its coal resources, while India had to rely on imports. Slower demand growth and a gradual move away from coal to nuclear, gas, and renewable sources kept EU and U.S. emissions from growing and led to recent declines. In all four countries, despite the strong growth in renewable energy, the impact on carbon intensity was only beginning to be felt.
+  description: Rapid growth in electricity demand mirrored rapid economic growth in China and India. In both countries, the most readily available source of indigenous fuel was coal. China was been better at exploiting its coal resources, while India had to rely on imports. Slower demand growth and a gradual move away from coal to nuclear, gas
   tagline: FAST GROWTH IN POWER DEMAND AND THE USE OF INDIGENOUS COAL SUPPLIES DROVE EMISSIONS GROWTH
   decades_analysis:
   subjects:
@@ -100,7 +102,7 @@ power:
 industry:
   id: industry
   name: Industry
-  description: "Industrial sector greenhouse gas policy is difficult to generalize about because the carbon efficiency opportunities vary so much between different sectors like steel, manufacturing, or food processing. Only three carbon saving technologies cut across most industrial sectors: combined heat and power, high efficiency motors, and to a lesser extent efficient lighting. Economic forces play a stronger role in industry than in buildings. Many policies, such as the EU Emisions Trading Scheme, sought to provide incentives to improve efficiency by changing the economics. The scale and concentration of energy savings opportunities in fewer, larger consumers enabled more targeted policies, such as those employed in China that included energy audits, mandated equipment closure and upgrade, and finance. Emissions fell in the more developed countries, as policies, rising energy prices, and pressure to maintain economic competitiveness combined with the gradual decline and movement offshore of more carbon intensive industries. In the developing world, meanwhile, rapid growth and industrialization overwhelmed the significant improvement in energy efficiency that was possible due to the lower starting efficiency of industries there."
+  description: "Industrial sector greenhouse gas policy is difficult to generalize about because the carbon efficiency opportunities vary so much between different sectors like steel, manufacturing, or food processing. Only three carbon saving technologies cut across most industrial sectors: combined heat and power, high efficiency"
   tagline: GROWTH AND DIFFERENCES BETWEEN INDUSTRIES CREATED A VARYING LANDSCAPE
   decades_analysis:
   subjects:
