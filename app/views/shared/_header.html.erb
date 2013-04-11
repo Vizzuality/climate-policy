@@ -5,7 +5,7 @@
 
       <ul>
         <li class="nav-item">
-          <a href="#" class="regions dropdown_link selected">Regions</a>
+          <a href="#" class="regions dropdown_link <%= "selected" if @sector.nil? %>">Regions</a>
           <ul class="navbar_dropdown">
             <% @regions.each do |region| %>
               <li>
@@ -15,7 +15,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a href="#" class="dropdown_link last">Sectors</a>
+          <a href="#" class="dropdown_link <%= "selected" unless @sector.nil? %> last">Sectors</a>
           <ul class="navbar_dropdown">
             <% Sector.all.each do |sector| %>
               <li>
@@ -44,7 +44,7 @@
       <ul>
         <% @main.subjects.each do |subject| %>
           <li class="menu-item">
-            <%= link_to subject.name, send("#{@main.type}_subject_path".to_sym, :"#{main_type}_id" => @main.id, id: subject.id), class: params[:id] == subject.id ? 'selected' : nil %>
+            <%= link_to subject.name, send("#{@main.type}_subject_path".to_sym, :"#{main_type}_id" => @main.id, id: subject.id), class: params[:id] == subject.id ? 'selected' : nil, id: "#{subject.id}_tab" %>
           </li>
         <% end %>
       </ul>
@@ -52,7 +52,7 @@
       <ul class="last">
         <% @sectors_or_regions.each do |sector_or_region| %>
           <li class="menu-item">
-            <%= link_to sector_or_region.name, send("#{@main.type}_#{sector_or_region.type}_path".to_sym, :"#{@main.type}_id" => @main.id, id: sector_or_region.id), class: params[:id] == sector_or_region.id ? 'selected' : nil %>
+            <%= link_to sector_or_region.name, send("#{@main.type}_#{sector_or_region.type}_path".to_sym, :"#{@main.type}_id" => @main.id, id: sector_or_region.id), class: params[:id] == sector_or_region.id ? 'selected' : nil, id: "#{sector_or_region.id}_tab" %>
           </li>
         <% end %>
       </ul>
