@@ -1163,19 +1163,27 @@ india_agriculture_emission_drivers_3:
 # CAMBIAR
 india_agriculture_policy:
   id: india_agriculture_policy
-  name: Weighted average state RPO targets
-  description: The central government required that each state set renewable purchase obligations that require renewable energy in the mix of electricity generation in each state. The average of these targets reached 5.5% by 2010.
-  table: state_rpos_copy_diego
+  name: Governments subsidies
+  description: Indian agricultural policy focused on modernization of the agricultural sector through subsidies. Though greenhouse gases were not specifically targeted in this effort, modernization had a modest effect on total emissions.
+  table: government_subsidies_copy_diego
   x_axis: date_processed
   series:
     series_1:
-      name: Weighted average state RPO targets
-      column: weighted_average_state_rpo_targets
+      name: Agricultural spend as a % of total outlay
+      column: agricultural_spend_as_a_of_total_outlay
       units: "%"
       class: line
       y_min: 0
-      y_max: 6
+      y_max: 20
       strokeColor: "#546DBC"
+    series_2:
+      name: Outlay on agriculture and irrigation (Billion INR)
+      column: outlay_on_agriculture_and_irrigation_billion_inr
+      units: Billion INR
+      class: line
+      y_min: 0
+      y_max: 5000
+      strokeColor: "#F0542C"
 
 india_power_emissions:
   id: india_power_emissions
@@ -1311,7 +1319,7 @@ india_power_policy_2:
       class: line
       y_min: 0
       y_max: 6
-      strokeColor: "#546DBC"
+      strokeColor: "#546DBC"      
 
 india_industry_emissions:
   id: india_industry_emissions
@@ -1765,6 +1773,6 @@ china_power_policy:
     1:
       label: "11th FYP"
       column: _11th_fyp
-    1:
+    2:
       label: "12th FYP"
       column: _12th_fyp

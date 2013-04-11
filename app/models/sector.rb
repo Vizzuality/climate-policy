@@ -2,7 +2,7 @@ class Sector < ActiveYaml::Base
   set_root_path "db"
   set_filename "data"
 
-  fields :id, :name, :tagline, :description, :subjects, :region_id, :graph_config
+  fields :id, :name, :tagline, :description, :subjects, :region_id, :graph_config, :decades_analysis
 
   def self.find_by_id(sector_id)
     Region.all.first.sectors.select{|s| s.id == sector_id}.first
