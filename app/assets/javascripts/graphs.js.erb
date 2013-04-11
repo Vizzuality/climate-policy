@@ -14,7 +14,7 @@ var x_scale;
 var circle_locked = false;
 
 function updateOverlayLine(time) {
-  var x = x_scale(time);
+  var x = Math.round(parseFloat(x_scale(time)))-1;
   d3.selectAll(".year_marker")
     .text((time.getMonth()+1)+"/"+time.getFullYear())
   $(".year_marker").css('left',x-35);
@@ -438,6 +438,8 @@ $(document).ready(function() {
       var marks_added = false;
       var g2 = svg[graphNum].append("svg:g").attr("id", "graph_marks");
 
+      var overlay_num = 0;
+
       _.each(_graphs[graphNum].series, function(serie) {
         // append one group per series
         var g = svg[graphNum].append("svg:g");
@@ -512,11 +514,15 @@ $(document).ready(function() {
         //   .attr("cy", function(d){return y_scale(d[y_col])})
         //   .attr("r", LINE_DOT_R)
 
-        svg[graphNum].append("rect")
-          .attr("class", "overlay-line")
-          .attr("height", h)
-          .attr("width", 2)
-          .attr("cy", 0);
+        if (overlay_num === 0) {
+          svg[graphNum].append("rect")
+            .attr("class", "overlay-line")
+            .attr("height", h)
+            .attr("width", 2)
+            .attr("cy", 0);
+        }
+
+        overlay_num++;
 
         var extended_data_col = new Array();
         extended_data_col = jQuery.extend(true,[],data_col);
