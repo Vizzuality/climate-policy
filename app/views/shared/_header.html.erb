@@ -9,7 +9,7 @@
           <ul class="navbar_dropdown">
             <% @regions.each do |region| %>
               <li>
-                <%= link_to region.name, region_subject_path(region_id: region.id, id: region.first_subject), class: region.id == 'eu' ? 'tall' : '' %>
+                <%= link_to region.name, region_subject_path(region_id: region.id, id: region.subjects.first.id), class: region.id == 'eu' ? 'tall' : '' %>
               </li>
             <% end %>
           </ul>
@@ -19,7 +19,7 @@
           <ul class="navbar_dropdown">
             <% @region.sectors.each do |sector| %>
               <li>
-                <%= link_to sector.name, sector_subject_path(sector_id: sector.id, id: sector.subjects.first.first) %>
+                <%= link_to sector.name, sector_subject_path(sector_id: sector.id, id: sector.subjects.first.id) %>
               </li>
             <% end %>
           </ul>
@@ -42,9 +42,9 @@
   <div class="navbar clearfix">
     <nav class="inner">
       <ul>
-        <% @main.subjects.each do |subject_id, subject| %>
+        <% @main.subjects.each do |subject| %>
           <li class="menu-item">
-            <%= link_to subject.symbolize_keys[:name], send("#{@main.type}_subject_path".to_sym, :"#{main_type}_id" => @main.id, id: subject_id), class: params[:id] == subject_id ? 'selected' : nil %>
+            <%= link_to subject.name, send("#{@main.type}_subject_path".to_sym, :"#{main_type}_id" => @main.id, id: subject.id), class: params[:id] == subject.id ? 'selected' : nil %>
           </li>
         <% end %>
       </ul>

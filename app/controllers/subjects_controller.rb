@@ -4,11 +4,12 @@ class SubjectsController < ApplicationController
   private
 
   def get_item
-    @item = @main.find_subject_by_id(params[:id])
-    @items = if @main.type == 'region'
-               @main.sectors
-             else
-               Region.all
-             end
+    @item          = @main.find_subject_by_id(params[:id])
+    @related_items = @main.subjects
+    @subitems      = if @main.type == 'region'
+                       @item.sectors
+                     else
+                       @item.regions
+                     end
   end
 end

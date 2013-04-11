@@ -10,6 +10,9 @@ class ApplicationController < ActionController::Base
   helper_method :main_type
   helper_method :main_is_region?
   helper_method :main_is_sector?
+  helper_method :item_is_region?
+  helper_method :item_is_sector?
+  helper_method :item_is_subject?
 
   protected
 
@@ -27,15 +30,14 @@ class ApplicationController < ActionController::Base
 
   def get_sectors_data
     if params[:sector_id]
-      @sector  = Sector.find_by_id(params[:sector_id])
-      @region  = Region.first
+      @sector  = Sector.find(params[:sector_id])
+      @region  = @sector.regions.first
       @main    = @sector
       @regions = Region.all
     end
   end
 
   def get_item_data
-    @graph_configs      = GraphConfig.all.as_json.map{|gp| gp['attributes']}
     @sectors_or_regions = if main_is_region?
                             @region.sectors
                           else
@@ -44,11 +46,7 @@ class ApplicationController < ActionController::Base
   end
 
   def main_type
-    if params[:region_id]
-      'region'
-    else
-      'sector'
-    end
+    @main.type
   end
 
   def main_is_region?
@@ -57,6 +55,18 @@ class ApplicationController < ActionController::Base
 
   def main_is_sector?
     main_type == 'sector'
+  end
+
+  def item_is_region?
+    @item.type == 'region'
+  end
+
+  def item_is_sector?
+    @item.type == 'sector'
+  end
+
+  def item_is_subject?
+    @item.type == 'subject'
   end
 
 end

@@ -4,7 +4,9 @@ class SectorsController < ApplicationController
   private
 
   def get_item
-    @item = @main.find_sector_by_id(params[:id])
-    @items = @main.subjects.map{|id, subject_attributes| Subject.new({id: id}.merge(subject_attributes))}
+    @item          = @main.find_sector_by_id(params[:id])
+    @related_items = @main.sectors
+    @subitems      = @item.subjects
   end
 end
+

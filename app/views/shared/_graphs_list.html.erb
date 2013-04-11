@@ -3,14 +3,14 @@
 
   <%= render 'shared/years_first' %>
 
-  <% @items.each do |item| %>
-    <%= render 'shared/graph', :item => item %>
+  <% @subitems.each do |subitem| %>
+    <%= render 'shared/graph', :subitem => subitem %>
 
-    <%= render @items.last == item ? 'shared/years_last' : 'shared/years' %>
+    <%= render @subitems.last == subitem ? 'shared/years_last' : 'shared/years' %>
   <% end %>
 </div>
 
-<% if @main.type == 'region' && @item.type == 'sector' %>
+<% if @main.type == 'region' && @subitem.type == 'sector' %>
 
 <%= render 'shared/decades_analysis' %>
 
