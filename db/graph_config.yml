@@ -419,7 +419,7 @@ eu_industry_policy:
       name: ETS - Cap Phases 1 & 2
       column: eu_ets_cap___phases_1_2
       units: Million Tons CO2e
-      class: line
+      class: bars
       y_min: 1300
       y_max: 2500
       strokeColor: "rgba(238,87,41,1)"
