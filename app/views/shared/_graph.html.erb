@@ -1,8 +1,9 @@
-<% graph_configs = item.graph_configs(@main.id, @item.id) %>
+<% graph_configs = graphs_for_subitem(subitem) %>
+
 <div class="graph graph-<%= graph_configs.first.type == 'BarGraph' ? 'bars' : 'line' %>">
   <div class="graph-selector graph-selector-<%= graph_configs.first.type == 'BarGraph' ? 'bars' : 'line' %>">
     <h3 class="graph-title">
-      <span class="type"><%= item.name %></span>
+      <span class="type"><%= subitem.name %></span>
 
       <% if graph_configs.size == 1 %>
         <%= graph_configs.first.name.capitalize %>

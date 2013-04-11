@@ -680,7 +680,9 @@ $(document).ready(function() {
                 return getAccumulatedValue(d);
               })
               .attr("r", LINE_DOT_R)
-              .attr("name", function(d){return d[y_col]+ "" + units}) //Uses this for tooltip
+              .attr("name", function(d){
+                return (Math.floor(d[y_col] * 100) / 100).toFixed(3)+ "" + units;
+              }) //Uses this for tooltip
               .on("mouseover", function(d) {
                 circle_locked = true;
                 updateOverlayLine(new Date(d[x_col]));

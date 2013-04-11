@@ -2,7 +2,7 @@ brazil:
   id: brazil
   name: Brazil
   tagline: Protecting forests through policy
-  description: In any discussion of Brazilian climate policy, the first topic is deforestation. Brazil has seen marked success in climate-related policies and may be a good model for other emerging economies. Roughly half the slowdown in deforestation in the late-2000s was a result of deliberate government policy, while better land productivity has led to increased agricultural output.  
+  description: In any discussion of Brazilian climate policy, the first topic is deforestation. Brazil has seen marked success in climate-related policies and may be a good model for other emerging economies. Roughly half the slowdown in deforestation in the late-2000s was a result of deliberate government policy, while better land productivity has led to increased agricultural output.
   sectors:
     forestry:
       name: Forestry
@@ -10,12 +10,12 @@ brazil:
       decades_analysis:
         _1980:
           description: Brazil was embroiled in a long economic crisis throughout the 1980s and ended military dictatorship in 1985. Forestry and environmental policy began to receive very limited attention at the end of the decade.
-          policy_barriers: 
+          policy_barriers:
             - <dl><dt>Forest Code of 1965 continued, requiring that a proportion of rural land remain forested</dt></dl>
             - <dl><dt>New 1988 Constitution increased decentralized environmental policy</dt></dl>
             - <dl><dt>National Policy of the Environment created key execution instruments, 1981</dt><dd>National Environmental System</dd><dd>National Environmental Council</dd></dl>
             - <dl><dt>Brazilian Environment and Renewable Natural Resources Institute (Ibama) established, 1989</dt></dl>
-          underlying_changes: 
+          underlying_changes:
             - <dl><dt>Democratization</dt></dl>
             - <dl><dt>Hyperinflation</dt></dl>
             - <dl><dt>Failed economic reforms</dt></dl>
@@ -60,12 +60,12 @@ brazil:
       decades_analysis:
         _1980:
           description: The 1980s saw a major economic crisis, political disruptions, then political stabilization.
-          policy_barriers: 
+          policy_barriers:
             - <dl><dt>Embrapa continues research efforts (initiated in 1970s) to advance technological development for agriculture.</dt></dl>
-          underlying_changes: 
+          underlying_changes:
             - <dl><dt>Democratization</dt></dl>
             - <dl><dt>Persistence (since 1970s) of oil shocks consequences, prompting development of biofuels</dt></dl>
-            - <dl><dt>Hyperinflation</dt></dl>                
+            - <dl><dt>Hyperinflation</dt></dl>
             - <dl><dt>Failed economic reforms</dt></dl>
         _1990:
           description: In the 1990s, the economy stabilized and Brazil liberalized trade. The agricultural sector made advances in professional, technological, and operational modernization.
@@ -76,7 +76,7 @@ brazil:
           underlying_changes:
             - <dl><dt>Savings freeze in 1991 leading to major recession</dt></dl>
             - <dl><dt>Restructuring of economy</dt><dd>Broad trade liberalization reforms, hyperinflation ended in mid-1990s, significant increase in Brazilian tax burden.</dd></dl>
-            - <dl><dt>Mexican, Asian, and Russian financial crises led to Brazilian financial crisis in late 1990s</dt></dl>                
+            - <dl><dt>Mexican, Asian, and Russian financial crises led to Brazilian financial crisis in late 1990s</dt></dl>
             - <dl><dt>Professionalization, mechanization, and decreasing labor-intensity of agriculture</dt></dl>
         _2000:
           description: Rising prices and yields in the 2000s accompanied increasing rural credit.
@@ -87,10 +87,10 @@ brazil:
           underlying_changes:
             - <dl><dt>Early 2000s surge in exports due to growth in China and significant appreciation of Real</dt></dl>
             - <dl><dt>2007-2008 global food price crisis</dt></dl>
-            - <dl><dt>Expansion of agricultural frontier</dt></dl>                
+            - <dl><dt>Expansion of agricultural frontier</dt></dl>
             - <dl><dt>Middle-class significantly expanded</dt></dl>
             - <dl><dt>Increase in tax burden until 2003</dt></dl>
-            - <dl><dt>Global recession 2008-2009</dt></dl>      
+            - <dl><dt>Global recession 2008-2009</dt></dl>
       subjects:
         emissions:
           name: Emissions
@@ -122,27 +122,27 @@ us:
       description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in the US
       decades_analysis:
         _1980:
-          description: 
-          policy_barriers: 
-            - 
-            - 
-          underlying_changes: 
-            - 
-            -           
+          description:
+          policy_barriers:
+            -
+            -
+          underlying_changes:
+            -
+            -
         _1990:
           description:
           policy_barriers:
-            - 
-            -           
+            -
+            -
           underlying_changes:
-            - 
-            -           
+            -
+            -
         _2000:
           description:
           policy_barriers:
             -
             -
-          underlying_changes:      
+          underlying_changes:
             -
             -
       subjects:
@@ -165,27 +165,27 @@ us:
       description: These graphs show the changes in emissions, emissions drivers, and policy in the Transportation sector in the US
       decades_analysis:
         _1980:
-          description: 
-          policy_barriers: 
-            - 
-            - 
-          underlying_changes: 
-            - 
-            -           
+          description:
+          policy_barriers:
+            -
+            -
+          underlying_changes:
+            -
+            -
         _1990:
           description:
           policy_barriers:
-            - 
-            -           
+            -
+            -
           underlying_changes:
-            - 
-            -           
+            -
+            -
         _2000:
           description:
           policy_barriers:
             -
             -
-          underlying_changes:      
+          underlying_changes:
             -
             -
       subjects:
@@ -208,27 +208,27 @@ us:
       description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the US
       decades_analysis:
         _1980:
-          description: 
-          policy_barriers: 
-            - 
-            - 
-          underlying_changes: 
-            - 
-            -           
+          description:
+          policy_barriers:
+            -
+            -
+          underlying_changes:
+            -
+            -
         _1990:
           description:
           policy_barriers:
-            - 
-            -           
+            -
+            -
           underlying_changes:
-            - 
-            -           
+            -
+            -
         _2000:
           description:
           policy_barriers:
             -
             -
-          underlying_changes:      
+          underlying_changes:
             -
             -
       subjects:
@@ -252,27 +252,27 @@ us:
       description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the US
       decades_analysis:
         _1980:
-          description: 
-          policy_barriers: 
-            - 
-            - 
-          underlying_changes: 
-            - 
-            -           
+          description:
+          policy_barriers:
+            -
+            -
+          underlying_changes:
+            -
+            -
         _1990:
           description:
           policy_barriers:
-            - 
-            -           
+            -
+            -
           underlying_changes:
-            - 
-            -           
+            -
+            -
         _2000:
           description:
           policy_barriers:
             -
             -
-          underlying_changes:      
+          underlying_changes:
             -
             -
       subjects:
@@ -307,27 +307,27 @@ india:
       description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in India
       decades_analysis:
         _1980:
-          description: 
-          policy_barriers: 
-            - 
-            - 
-          underlying_changes: 
-            - 
-            -           
+          description:
+          policy_barriers:
+            -
+            -
+          underlying_changes:
+            -
+            -
         _1990:
           description:
           policy_barriers:
-            - 
-            -           
+            -
+            -
           underlying_changes:
-            - 
-            -           
+            -
+            -
         _2000:
           description:
           policy_barriers:
             -
             -
-          underlying_changes:      
+          underlying_changes:
             -
             -
       subjects:
@@ -351,27 +351,27 @@ india:
       description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in India
       decades_analysis:
         _1980:
-          description: 
-          policy_barriers: 
-            - 
-            - 
-          underlying_changes: 
-            - 
-            -           
+          description:
+          policy_barriers:
+            -
+            -
+          underlying_changes:
+            -
+            -
         _1990:
           description:
           policy_barriers:
-            - 
-            -           
+            -
+            -
           underlying_changes:
-            - 
-            -           
+            -
+            -
         _2000:
           description:
           policy_barriers:
             -
             -
-          underlying_changes:      
+          underlying_changes:
             -
             -
       subjects:
@@ -394,27 +394,27 @@ india:
       description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in India
       decades_analysis:
         _1980:
-          description: 
-          policy_barriers: 
-            - 
-            - 
-          underlying_changes: 
-            - 
-            -           
+          description:
+          policy_barriers:
+            -
+            -
+          underlying_changes:
+            -
+            -
         _1990:
           description:
           policy_barriers:
-            - 
-            -           
+            -
+            -
           underlying_changes:
-            - 
-            -           
+            -
+            -
         _2000:
           description:
           policy_barriers:
             -
             -
-          underlying_changes:      
+          underlying_changes:
             -
             -
       subjects:
@@ -448,27 +448,27 @@ china:
       description: "These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in China"
       decades_analysis:
         _1980:
-          description: 
-          policy_barriers: 
-            - 
-            - 
-          underlying_changes: 
-            - 
-            -           
+          description:
+          policy_barriers:
+            -
+            -
+          underlying_changes:
+            -
+            -
         _1990:
           description:
           policy_barriers:
-            - 
-            -           
+            -
+            -
           underlying_changes:
-            - 
-            -           
+            -
+            -
         _2000:
           description:
           policy_barriers:
             -
             -
-          underlying_changes:      
+          underlying_changes:
             -
             -
       subjects:
@@ -489,30 +489,30 @@ china:
 
     industry:
       name: Industry
-      description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in China 
+      description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in China
       decades_analysis:
         _1980:
-          description: 
-          policy_barriers: 
-            - 
-            - 
-          underlying_changes: 
-            - 
-            -           
+          description:
+          policy_barriers:
+            -
+            -
+          underlying_changes:
+            -
+            -
         _1990:
           description:
           policy_barriers:
-            - 
-            -           
+            -
+            -
           underlying_changes:
-            - 
-            -           
+            -
+            -
         _2000:
           description:
           policy_barriers:
             -
             -
-          underlying_changes:      
+          underlying_changes:
             -
             -
       subjects:
@@ -538,27 +538,27 @@ china:
       description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in China
       decades_analysis:
         _1980:
-          description: 
-          policy_barriers: 
-            - 
-            - 
-          underlying_changes: 
-            - 
-            -           
+          description:
+          policy_barriers:
+            -
+            -
+          underlying_changes:
+            -
+            -
         _1990:
           description:
           policy_barriers:
-            - 
-            -           
+            -
+            -
           underlying_changes:
-            - 
-            -           
+            -
+            -
         _2000:
           description:
           policy_barriers:
             -
             -
-          underlying_changes:      
+          underlying_changes:
             -
             -
       subjects:
@@ -592,27 +592,27 @@ eu:
       description: These graphs show the changes in emissions, emissions drivers, and policy in the Transportation sector in the EU
       decades_analysis:
         _1980:
-          description: 
-          policy_barriers: 
-            - 
-            - 
-          underlying_changes: 
-            - 
-            -           
+          description:
+          policy_barriers:
+            -
+            -
+          underlying_changes:
+            -
+            -
         _1990:
           description:
           policy_barriers:
-            - 
-            -           
+            -
+            -
           underlying_changes:
-            - 
-            -           
+            -
+            -
         _2000:
           description:
           policy_barriers:
             -
             -
-          underlying_changes:      
+          underlying_changes:
             -
             -
       subjects:
@@ -634,27 +634,27 @@ eu:
       description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the EU
       decades_analysis:
         _1980:
-          description: 
-          policy_barriers: 
-            - 
-            - 
-          underlying_changes: 
-            - 
-            -           
+          description:
+          policy_barriers:
+            -
+            -
+          underlying_changes:
+            -
+            -
         _1990:
           description:
           policy_barriers:
-            - 
-            -           
+            -
+            -
           underlying_changes:
-            - 
-            -           
+            -
+            -
         _2000:
           description:
           policy_barriers:
             -
             -
-          underlying_changes:      
+          underlying_changes:
             -
             -
       subjects:
@@ -676,27 +676,27 @@ eu:
       description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in the EU
       decades_analysis:
         _1980:
-          description: 
-          policy_barriers: 
-            - 
-            - 
-          underlying_changes: 
-            - 
-            -           
+          description:
+          policy_barriers:
+            -
+            -
+          underlying_changes:
+            -
+            -
         _1990:
           description:
           policy_barriers:
-            - 
-            -           
+            -
+            -
           underlying_changes:
-            - 
-            -           
+            -
+            -
         _2000:
           description:
           policy_barriers:
             -
             -
-          underlying_changes:      
+          underlying_changes:
             -
             -
       subjects:
@@ -718,27 +718,27 @@ eu:
       description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in the EU
       decades_analysis:
         _1980:
-          description: 
-          policy_barriers: 
-            - 
-            - 
-          underlying_changes: 
-            - 
-            -           
+          description:
+          policy_barriers:
+            -
+            -
+          underlying_changes:
+            -
+            -
         _1990:
           description:
           policy_barriers:
-            - 
-            -           
+            -
+            -
           underlying_changes:
-            - 
-            -           
+            -
+            -
         _2000:
           description:
           policy_barriers:
             -
             -
-          underlying_changes:      
+          underlying_changes:
             -
             -
       subjects:
@@ -760,27 +760,27 @@ eu:
       description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in the EU
       decades_analysis:
         _1980:
-          description: 
-          policy_barriers: 
-            - 
-            - 
-          underlying_changes: 
-            - 
-            -           
+          description:
+          policy_barriers:
+            -
+            -
+          underlying_changes:
+            -
+            -
         _1990:
           description:
           policy_barriers:
-            - 
-            -           
+            -
+            -
           underlying_changes:
-            - 
-            -           
+            -
+            -
         _2000:
           description:
           policy_barriers:
             -
             -
-          underlying_changes:      
+          underlying_changes:
             -
             -
       subjects:

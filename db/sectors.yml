@@ -1,0 +1,122 @@
+forestry:
+  id: forestry
+  name: Forestry
+  description: These graphs show the changes in deforestation, deforestation drivers, and land use policy in Brazil
+  tagline: Tagline for Forestry
+  decades_analysis:
+  subjects:
+    - emissions:
+        description: Emissions description for Forestry
+    - emission_drivers:
+        description: Emission drivers description for Forestry
+    - policy:
+        description: Policy description for Forestry
+  regions:
+    - brazil:
+        description: Brazil description for Forestry
+
+agriculture:
+  id: agriculture
+  name: Agriculture
+  description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in the world.
+  tagline: Tagline for Forestry
+  decades_analysis:
+  subjects:
+    - emissions:
+        description: Emissions description for Agriculture
+    - emission_drivers:
+        description: Emission drivers description for Agriculture
+    - policy:
+        description: Policy description for Agriculture
+  regions:
+    - brazil:
+        description: Brazil description for Agriculture
+    - eu:
+        description: EU description for Agriculture
+    - india:
+        description: India description for Agriculture
+
+buildings:
+  id: buildings
+  name: Buildings
+  description: Buildings description for United States
+  tagline: Buildings tagline for United States
+  decades_analysis:
+  subjects:
+    - emissions:
+        description: Emissions description for Buildings
+    - emission_drivers:
+        description: Emission drivers description for Buildings
+    - policy:
+        description: Policy description for Buildings
+  regions:
+    - us:
+        description: US description for buildings
+    - eu:
+        description: EU description for buildings
+    - china:
+        description: China description for buildings
+
+transport:
+  id: transport
+  name: Transport
+  description: Transportation description for United States
+  tagline: Transportation tagline for United States
+  decades_analysis:
+  subjects:
+    - emissions:
+        description: Emissions description for Transportation
+    - emission_drivers:
+        description: Emission drivers description for Transportation
+    - policy:
+        description: Policy description for Transportation
+  regions:
+    - eu:
+        description: EU description for transportation
+
+power:
+  id: power
+  name: Power
+  description: Power description for United States
+  tagline: Power tagline for United States
+  decades_analysis:
+  subjects:
+    - emissions:
+        description: Emissions description for power
+    - emission_drivers:
+        description: Emission drivers description for power
+    - policy:
+        description: Policy description for power
+  regions:
+    - us:
+        description: US description for power
+    - eu:
+        description: EU description for power
+    - china:
+        description: China description for power
+    - india:
+        description: India description for power
+
+industry:
+  id: industry
+  name: Industry
+  description: Industry description for United States
+  tagline: Industry tagline for United States
+  decades_analysis:
+  subjects:
+    - emissions:
+        description: Emissions description for Industry
+    - emission_drivers:
+        description: Emission drivers description for Industry
+    - policy:
+        description: Policy description for Industry
+  regions:
+    - us:
+        description: US description for power
+    - eu:
+        description: EU description for power
+    - china:
+        description: China description for power
+    - india:
+        description: India description for power
+

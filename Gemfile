@@ -15,6 +15,7 @@ gem 'jquery-rails', '~> 2.2.1'
 gem 'underscore-rails'
 
 group :development do
+  gem 'foreman', '~> 0.62.0'
   gem 'better_errors', '~> 0.8.0'
   gem 'binding_of_caller', '~> 0.7.1'
   gem 'meta_request', '~> 0.2.3'
