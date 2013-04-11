@@ -25,8 +25,7 @@ class Subject < ActiveYaml::Base
   def sectors
     self[:sectors].map do |s|
       sector = Sector.find(s.keys.first)
-      sector.description = s.values.first['description']
-      sector.tagline = s.values.first['tagline']
+      sector.custom_description = s.values.first['description']
       sector.decades_analysis = s.values.first['decades_analysis']
       sector
     end

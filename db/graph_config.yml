@@ -464,7 +464,7 @@ eu_industry_policy:
       name: ETS - Cap Phases 1 & 2
       column: eu_ets_cap___phases_1_2
       units: Million Tons CO2e
-      class: line
+      class: bars
       y_min: 1300
       y_max: 2500
       strokeColor: "rgba(238,87,41,1)"
@@ -1383,22 +1383,22 @@ india_agriculture_policy:
   table: government_subsidies_copy_diego
   x_axis: date_processed
   series:
+    series_2:
+      name: Outlay on agriculture and irrigation (Billion INR)
+      column: outlay_on_agriculture_and_irrigation_billion_inr
+      units: Billion INR
+      class: bars
+      y_min: 0
+      y_max: 4000
+      strokeColor: "#F0542C"  
     series_1:
       name: Agricultural spend as a % of total outlay
       column: agricultural_spend_as_a_of_total_outlay
       units: "%"
       class: line
       y_min: 0
-      y_max: 20
+      y_max: 35
       strokeColor: "#546DBC"
-    series_2:
-      name: Outlay on agriculture and irrigation (Billion INR)
-      column: outlay_on_agriculture_and_irrigation_billion_inr
-      units: Billion INR
-      class: line
-      y_min: 0
-      y_max: 5000
-      strokeColor: "#F0542C"
 
 india_power_emissions:
   id: india_power_emissions
