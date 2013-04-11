@@ -31,6 +31,10 @@ agriculture:
   regions:
     - brazil:
         description: Brazil description for Agriculture
+    - eu:
+        description: EU description for Agriculture
+    - india:
+        description: India description for Agriculture
 
 buildings:
   id: buildings
@@ -48,10 +52,14 @@ buildings:
   regions:
     - us:
         description: US description for buildings
+    - eu:
+        description: EU description for buildings
+    - china:
+        description: China description for buildings
 
-transportation:
-  id: transportation
-  name: Transportation
+transport:
+  id: transport
+  name: Transport
   description: Transportation description for United States
   tagline: Transportation tagline for United States
   decades_analysis:
@@ -63,8 +71,8 @@ transportation:
     - policy:
         description: Policy description for Transportation
   regions:
-    - us:
-        description: US description for transportation
+    - eu:
+        description: EU description for transportation
 
 power:
   id: power
@@ -82,6 +90,12 @@ power:
   regions:
     - us:
         description: US description for power
+    - eu:
+        description: EU description for power
+    - china:
+        description: China description for power
+    - india:
+        description: India description for power
 
 industry:
   id: industry
@@ -98,4 +112,11 @@ industry:
         description: Policy description for Industry
   regions:
     - us:
-        description: US description for industry
+        description: US description for power
+    - eu:
+        description: EU description for power
+    - china:
+        description: China description for power
+    - india:
+        description: India description for power
+

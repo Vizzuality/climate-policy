@@ -2,6 +2,14 @@ class Region < ActiveYaml::Base
   set_root_path "db"
   set_filename "regions"
 
+  fields :id,
+         :name,
+         :tagline,
+         :description,
+         :custom_description,
+         :sectors,
+         :subjects
+
   def type
     self.class.name.downcase
   end

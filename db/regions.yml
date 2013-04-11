@@ -82,14 +82,114 @@ us:
   description: The United States has created a “messy but useful” combination of incentives, regulation, persuasion, and innovation at the federal and state level, which has contributed to a recent decline in emissions. Sustaining and escalating this emissions decline while creating more cost-effective policy in the face of tightened government spending is the next challenge.
   sectors:
     - buildings:
-        description: Buildings description for United States
-    - transportation:
-        description: Transportation description for United States
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in the US
+        decades_analysis:
+          _1980:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _1990:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _2000:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+    - transport:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Transportation sector in the US
+        decades_analysis:
+          _1980:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _1990:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _2000:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
     - power:
-        description: Power description for United States
-    - industry:
-        description: Industry description for United States
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the US
+        decades_analysis:
+          _1980:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _1990:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _2000:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
 
+    - industry:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the US
+        decades_analysis:
+          _1980:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _1990:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _2000:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
   subjects:
     - emissions:
         description: Emissions description for United States.
@@ -97,4 +197,358 @@ us:
         description: Emission drivers description for United States.
     - policy:
         description: Policy description for United States.
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+india:
+  id: india
+  name: India
+  tagline: Balancing climate policy and development
+  description: India has aggressive renewable energy targets and industry energy efficiency policies, but faces significant infrastructure challenges, which may derail otherwise good policy. India is growing rapidly and represented 8% of the increase in global energy-related CO2 emissions between 2000 and 2010.
+  sectors:
+    - agriculture:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in India
+        decades_analysis:
+          _1980:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _1990:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _2000:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+    - power:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in India
+        decades_analysis:
+          _1980:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _1990:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _2000:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+    - industry:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in India
+        decades_analysis:
+          _1980:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _1990:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _2000:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+  subjects:
+    - emissions:
+        description: Emissions description for United States.
+    - emission_drivers:
+        description: Emission drivers description for United States.
+    - policy:
+        description: Policy description for United States.
+
+
+
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+china:
+  id: china
+  name: China
+  tagline: Pursuing low-carbon growth policy at unprecedented scale
+  description: China has pursued aggressive climate and energy policies with particular focus on energy efficiency and renewable energy. Closure of inefficient coal-fired power plants saved the equivalent of more than 100 million tonnes of coal, while renewable electricity in China grew 661% between 2000 and 2010. Still, renewable electricity sources in China only produced the equivalent of 0.68% of the electricity from coal sources by the end of 2010. Between 2000 and 2010, China represented 68% of the increase in global energy-related CO2 emissions.
+  sectors:
+    - buildings:
+        description: "These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in China"
+        decades_analysis:
+          _1980:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _1990:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _2000:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+    - industry:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in China
+        decades_analysis:
+          _1980:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _1990:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _2000:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+    - power:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in China
+        decades_analysis:
+          _1980:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _1990:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _2000:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+  subjects:
+    - emissions:
+        description: Emissions description for Brazil.
+    - emission_drivers:
+        description: Emission drivers description for Brazil.
+    - policy:
+        description: Policy description for Brazil.
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+eu:
+  id: eu
+  name: European Union
+  tagline: Making policy for climate’s sake
+  description: Europe is the land where climate policy has been explicit. Seeking to lead the world in terms of climate mitigation policy, it has integrated policy across many, varied states, and its nations have developed and implemented ambitious policies of their own. The challenge in Europe is to continue providing leadership in the face of an economic crisis, while accounting for national differences in outlook and policy.
+  sectors:
+    - transport:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Transportation sector in the EU
+        decades_analysis:
+          _1980:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _1990:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _2000:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+    - power:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the EU
+        decades_analysis:
+          _1980:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _1990:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _2000:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+    - industry:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in the EU
+        decades_analysis:
+          _1980:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _1990:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _2000:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+    - agriculture:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in the EU
+        decades_analysis:
+          _1980:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _1990:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _2000:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+    - buildings:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in the EU
+        decades_analysis:
+          _1980:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _1990:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _2000:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+  subjects:
+    - emissions:
+        description: Emissions description for Brazil.
+    - emission_drivers:
+        description: Emission drivers description for Brazil.
+    - policy:
+        description: Policy description for Brazil.
 

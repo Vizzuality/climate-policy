@@ -7,11 +7,25 @@ emissions:
         description: Forestry description for emissions.
     - agriculture:
         description: Agriculture description for emissions.
+    - power:
+        description: Power description for emissions.
+    - industry:
+        description: Industry description for emissions.
+    - buildings:
+        description: Buildings description for emissions.
+    - transport:
+        description: Transport description for emissions.
   regions:
     - brazil:
         description: Brazil description for emissions.
     - us:
         description: United States description for emissions.
+    - eu:
+        description: European Union description for emissions.
+    - india:
+        description: India description for emissions.
+    - china:
+        description: China description for emissions.
 
 emission_drivers:
   id: emission_drivers
@@ -22,11 +36,25 @@ emission_drivers:
         description: Forestry description for emission drivers.
     - agriculture:
         description: Agriculture description for emission drivers.
+    - power:
+        description: Power description for emission drivers.
+    - industry:
+        description: Industry description for emission drivers.
+    - buildings:
+        description: Buildings description for emission drivers.
+    - transport:
+        description: Transport description for emission drivers.
   regions:
     - brazil:
         description: Brazil description for emission drivers.
     - us:
         description: United States description for emission drivers.
+    - eu:
+        description: European Union description for emission drivers.
+    - india:
+        description: India description for emission drivers.
+    - china:
+        description: China description for emission drivers.
 
 policy:
   id: policy
@@ -37,8 +65,22 @@ policy:
         description: Forestry description for policy.
     - agriculture:
         description: Agriculture description for policy.
+    - power:
+        description: Power description for policy.
+    - industry:
+        description: Industry description for policy.
+    - buildings:
+        description: Buildings description for policy.
+    - transport:
+        description: Transport description for policy.
   regions:
     - brazil:
         description: Brazil description for policy.
     - us:
         description: United States description for policy.
+    - eu:
+        description: European Union description for policy.
+    - india:
+        description: India description for policy.
+    - china:
+        description: China description for policy.

@@ -26,7 +26,7 @@ class Sector < ActiveYaml::Base
   def regions
     self[:regions].map do |r|
       region = Region.find(r.keys.first)
-      region.description = r.values.first['description']
+      region.custom_description = r.values.first['description']
       region
     end
   end
