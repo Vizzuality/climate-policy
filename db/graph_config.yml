@@ -509,9 +509,28 @@ eu_agriculture_emission_drivers:
   region_id: eu
   sector_id: agriculture
   subject_id: emission_drivers
-  name: Contribution of Agricultural Emissions Drivers to Changes in Agricultural Greenhouse Gas Emissions in EU27
-  table: eu_agriculture_2_emissions_drivers_copy_test_matallo
+  name: Contribution of Agricultural Emissions Drivers to Changes in Agricultural Greenhouse Gas Emissions in EU27 (Methane)
+  table: eu_agriculture_2_emissions_drivers_copy_test_matallo_methane
   description: Methane emissions from livestock declined as the number of cattle decreased. Nitrous oxide emissions fell, due to decreases in both cropland area and fertilizer intensity.
+  type: BarGraph
+  units: "km²"
+  name_column: driver
+  x_groups:
+    0:
+      label: 1990-2000
+      column: _1990_2000
+    1:
+      label: 2000-2008
+      column: _2000_2008
+
+eu_agriculture_emission_drivers_2:
+  id: eu_agriculture_emission_drivers_2
+  region_id: eu
+  sector_id: agriculture
+  subject_id: emission_drivers
+  name: Contribution of Agricultural Emissions Drivers to Changes in Agricultural Greenhouse Gas Emissions in EU27 (Nitrous oxide)
+  table: eu_agriculture_2_emissions_drivers_copy_test_matallo_nitrous_ox
+  description: Nitrous oxide emissions from livestock declined as the number of cattle decreased. Nitrous oxide emissions fell, due to decreases in both cropland area and fertilizer intensity.
   type: BarGraph
   units: "km²"
   name_column: driver
