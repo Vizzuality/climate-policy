@@ -208,37 +208,49 @@ $(document).ready(function() {
         });
       });
 
+      var positive_color = "#546DBC";
+      var negative_color = "#F0542C";      
+
+      var margin_x = 40;
+      var label_w = 363;
+      var available_w = 600;
+      var group_w = available_w/_.size(_graphs[graphNum].x_groups);
+
+      var margin_y = 40;
+      var available_h = 280-margin_y;
+      var row_h = d3.min([available_h/data.rows.length,25]);
+      var actual_h = row_h*data.rows.length;
+
+      var bar_height = 2
+      var labels_start_y = margin_y+available_h/2-actual_h/2;
+
       var max_negat  = d3.max(negat),
         max_posit = d3.max(posit),
         max = d3.max([max_negat, max_posit]);
-      var total_graph_area_width = 650;
-      var total_series_height = 200;
-      var group_width = total_graph_area_width/_.size(_graphs[graphNum].x_groups);
-      var bar_height = 2
-      var max_bar = 0;
 
+      var max_bar = 0;      
       if (max_negat != null) {
-        max_bar = group_width*parseFloat(max)/parseFloat(parseFloat(max_negat) + parseFloat(max_posit));
+        max_bar = group_w*parseFloat(max)/parseFloat(parseFloat(max_negat) + parseFloat(max_posit));
       } else{
-        max_bar = group_width;
-      }      
-
-      var series_step = total_series_height/data.rows.length;
-      var series_label_left_margin = 40;
-      var series_label_top_margin = 70;
-      var series_label_width = 363;
-      var positive_color = "#546DBC";
-      var negative_color = "#F0542C";
+        max_bar = group_w;
+      }              
 
       var bar_width_scale = d3.scale.linear()
         .domain([0,max])
         .range([0, max_bar]);
 
-      var zero_pos = 0;
+      var zero_x = 0;
 
       if (max_negat != null) {
-        zero_pos = bar_width_scale(max_negat); // Zero position for each group equals the bar of the mazimum negative number
+        zero_x = bar_width_scale(max_negat); // Zero position for each group equals the bar of the mazimum negative number
       }
+
+      // var traza = svg[graphNum].append("svg:circle")
+      //   .attr("cx", margin_x)
+      //   .attr("cy", labels_start_y)
+      //   .attr("r", 10)
+      //   .style("stroke", "#000")
+      //   .style("fill", "#000");
 
       // Series labels
       svg[graphNum].selectAll("text.graph-series-label")
@@ -253,47 +265,49 @@ $(document).ready(function() {
           return d[_graphs[graphNum].name_column];
         })
         .attr("x", function(d,i) {
-          return series_label_left_margin;
+          console.log("1", this.getComputedTextLength());
+          return margin_x;
         })
-        .attr("y", function(d,i) {
-          return series_label_top_margin + (i * series_step);
+        .attr("y", function(d,i) {          
+          return labels_start_y+(i * row_h);
         });
 
-        var group_label_ = [];
+      var group_label_ = [];
 
-        for (var j = 0; j < _.size(_graphs[graphNum].x_groups); j++) {
-          group_label_[j] = [];
-          group_label_[j]["column"] = _graphs[graphNum].x_groups[j]['column'],
-          group_label_[j]["label"] = _graphs[graphNum].x_groups[j]['label']
-        }
+      for (var j = 0; j < _.size(_graphs[graphNum].x_groups); j++) {
+        group_label_[j] = [];
+        group_label_[j]["column"] = _graphs[graphNum].x_groups[j]['column'],
+        group_label_[j]["label"] = _graphs[graphNum].x_groups[j]['label']
+      }
 
-        // Drawing group-x labels if there are more than one
-        if (_.size(_graphs[graphNum].x_groups) > 1) {
-          svg[graphNum].selectAll("text.graph-groups-label")
-            .data(group_label_)
-            .enter()
-            .append("text")
-            .attr("class","graph-groups-label")
-            .text(function(d){
-              return d['label'];
-            })
-            .attr("x", function(d,i) {
-              return series_label_width + group_width*i + zero_pos - 40;
-            })
-            .attr("y", function(d,i) {
-              return 30;
-            });
-        }
+      // Drawing group-x labels if there are more than one
+      if (_.size(_graphs[graphNum].x_groups) > 1) {
+        svg[graphNum].selectAll("text.graph-groups-label")
+          .data(group_label_)
+          .enter()
+          .append("text")
+          .attr("class","graph-groups-label")
+          .text(function(d){
+            return d['label'];
+          })
+          .attr("x", function(d,i) {
+            console.log("2",this.getComputedTextLength());
+            return label_w + group_w*i + zero_x - this.getComputedTextLength()/2;
+          })
+          .attr("y", function(d,i) {
+            return labels_start_y-30;
+          });
+      }
 
       // Drawing each x-group
       for (var j = 0; j < _.size(_graphs[graphNum].x_groups); j++) {
 
         // Drawing an axis for each group_x
         var lineGraph = svg[graphNum].append("svg:line")
-          .attr("x1", series_label_width+group_width*j+zero_pos)
-          .attr("y1", 50)
-          .attr("x2", series_label_width+group_width*j+zero_pos)
-          .attr("y2", h-130)
+          .attr("x1", label_w+group_w*j+zero_x)
+          .attr("y1", labels_start_y-20)
+          .attr("x2", label_w+group_w*j+zero_x)
+          .attr("y2", labels_start_y+actual_h-20)
           .style("stroke", "#ddd")
           .style("shape-rendering", "crispEdges");
 
@@ -310,13 +324,13 @@ $(document).ready(function() {
             .attr("class",group_name)
             .attr("x", function(d,i) {
               if (d[group_name] > 0) {
-                return series_label_width + group_width*j + zero_pos;
+                return label_w + group_w*j + zero_x;
               } else {
-                return series_label_width + group_width*j + zero_pos - bar_width_scale(Math.abs(d[group_name]));
+                return label_w + group_w*j + zero_x - bar_width_scale(Math.abs(d[group_name]));
               }
             })
             .attr("y", function(d,i) {
-              return series_label_top_margin + (i * series_step) - bar_height/2 - 7;
+              return labels_start_y + (i * row_h) - bar_height/2 - 7;
             })
             .attr("width", function(d,i) {
               var bar_width = bar_width_scale(Math.abs(d[group_name]));
@@ -350,7 +364,7 @@ $(document).ready(function() {
               }
             })
             .attr("cx", function(d){
-              var x = series_label_width + group_width*j + zero_pos;
+              var x = label_w + group_w*j + zero_x;
               if (d[group_name] > 0) {
                 x += bar_width_scale(Math.abs(d[group_name]));
               } else {
@@ -359,10 +373,10 @@ $(document).ready(function() {
               return x;
             })
             .attr("cy", function(d,i){
-              return series_label_top_margin + (i * series_step) - bar_height/2 - 6}
+              return labels_start_y + (i * row_h) - bar_height/2 - 6}
             )
             .attr("r", LINE_DOT_R)
-            .attr("name", function(d){return (Math.round(d[group_name]*1000)/1000) + "" + units}) //Uses this for tooltip
+            .attr("name", function(d){return (Math.round(d[group_name]*1000)/1000) + " " + units}) //Uses this for tooltip
             .on("mouseover", function(d) {
               var tooltipClassname = "";
               var x_tooltip = 0;
@@ -389,7 +403,7 @@ $(document).ready(function() {
               svg[graphNum].selectAll("#series_label_"+d.cartodb_id)
                 .transition()
                 .duration(200)
-                .style("fill","#111");
+                .style("fill","#111")
             })
             .on("mousemove", moveOverlayLine)
             .on("mouseout", function(d){
@@ -409,7 +423,7 @@ $(document).ready(function() {
               svg[graphNum].selectAll("#series_label_"+d.cartodb_id)
                 .transition()
                 .duration(200)
-                .style("fill","#aaa");
+                .style("fill","#666");
             });
         })(group_name_, units_);
       }
@@ -570,7 +584,7 @@ $(document).ready(function() {
             .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
             .attr("cy", function(d){return y_scale(d[y_col])})
             .attr("r", LINE_DOT_R)
-            .attr("name", function(d){return (Math.round(d[y_col]*1000)/1000)+ "" + units}) //Uses this for tooltip
+            .attr("name", function(d){return (Math.round(d[y_col]*1000)/1000)+ " "  + units}) //Uses this for tooltip
             .on("mouseover", function(d) {
               circle_locked = true;
               updateOverlayLine(new Date(d[x_col]));
@@ -681,7 +695,7 @@ $(document).ready(function() {
               })
               .attr("r", LINE_DOT_R)
               .attr("name", function(d){
-                return (Math.floor(d[y_col] * 100) / 100).toFixed(3)+ "" + units;
+                return (Math.floor(d[y_col] * 100) / 100).toFixed(3)+ " " + units;
               }) //Uses this for tooltip
               .on("mouseover", function(d) {
                 circle_locked = true;
@@ -819,7 +833,7 @@ $(document).ready(function() {
 
         } else if (serie.class == "bars") {
 
-          var bar_width = 15;
+          var bar_width = 4;
 
           g.selectAll("rect.bars")
               .data(data_col)
@@ -830,33 +844,50 @@ $(document).ready(function() {
               .attr("class", 'bars linedot linedot'+i)
               .attr("style",'fill:'+strokeColor_)
               .attr("x", function(d){
-                console.log(x_scale(new Date(d[x_col])) - bar_width/2);
-                return x_scale(new Date(d[x_col])) - bar_width/2;
+                return x_scale(new Date(d[x_col]))-2;
               })
               .attr("y", function(d){
-                return h - y_scale(d[y_col_]);
-              })
-              .attr("width", bar_width)
-              .attr("height", function(d) {
                 return y_scale(d[y_col_]);
               })
-              .attr("name", function(d){return d[y_col_]+" "+serie.units})
+              .attr("width", bar_width)
+              .attr("height", function(d) {                
+                return h - y_scale(d[y_col_]);
+              })
+              .attr("name", function(d){return d[y_col_]+" "+serie.units});
+
+          (function(strokeColor, units, y_col){  // We need a reference to strokeColor in runtime, for hover
+            g.selectAll("circle")
+              .data(data_col)
+              .enter()
+              .append("circle")
+              .attr("class", 'linedot linedot'+i)
+              .attr("style",function(d){ var _fill = (new Date(d.date_processed).getMonth() + 1 == 1) ? 'fill:#fff; stroke:'+strokeColor : 'display: none'; return _fill;})
+              .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
+              .attr("cy", function(d){
+                return y_scale(d[y_col_]);
+              })
+              .attr("r", LINE_DOT_R)
+              .attr("name", function(d){return d[y_col]+" "+serie.units}) //Uses this for tooltip
               .on("mouseover", function(d) {
                 circle_locked = true;
                 updateOverlayLine(new Date(d[x_col]));
+
                 d3.selectAll(".overlay-line").style("visibility", "visible");
-                d3.selectAll(".year_marker").style("visibility", "visible");      
-
-                d3.select(this).attr("style","fill: fff; stroke: "+strokeColor_);
-
+                d3.selectAll(".year_marker").style("visibility", "visible");
+                
                 tooltip.html($(this).attr('name'))
                   .style("visibility", "visible")
-                  .style("top", ($(this).offset().top-40)+"px")
-                  .style("left", $(this).offset().left-$(".generic_tooltip").width()/2+"px")
-                  .attr("class","tooltip generic_tooltip tooltip-bottom");
+                  .style("top", $(this).offset().top+30+"px")
+                  .style("left", $(this).offset().left-$(".generic_tooltip").width()/2-2+"px")
+                  .attr("class","tooltip generic_tooltip tooltip-top");
+
+                d3.select(this).attr("style","fill: #fff; stroke: #000;")
+                  .transition()
+                  .duration(100)
+                  .attr("r",LINE_DOT_R+1);
 
                 // Highlighting the legend
-                d3.selectAll("#"+y_col_)
+                d3.selectAll("#"+y_col)
                   .transition()
                   .duration(200)
                   .style("color","#111");
@@ -864,15 +895,25 @@ $(document).ready(function() {
               .on("mousemove", moveOverlayLine)
               .on("mouseout", function(){
                 circle_locked = false;
+
                 d3.selectAll(".overlay-line").style("visibility", "hidden");
                 d3.selectAll(".year_marker").style("visibility", "hidden");
+
                 tooltip.style("visibility", "hidden");
-                d3.select(this).attr("style","fill: "+strokeColor_+"; stroke: #fff;")                
-                d3.selectAll("#"+y_col_)
+
+                d3.select(this).attr("style","fill: #fff; stroke: "+strokeColor)
+                  .transition()
+                  .duration(100)
+                  .attr("r",LINE_DOT_R);
+
+                // Highlighting the legend
+                d3.selectAll("#"+y_col)
                   .transition()
                   .duration(200)
                   .style("color","#aaa");
               });
+          })(strokeColor_, units_, y_col_);            
+
         }
 
         $("#"+_graphs[graphNum].id).find(".graph-legend").append('<li><div class="legend-item" style="background-color:'+strokeColor_+'"></div><span id='+y_col_+' class="legend-label">'+y_col_name+'</span></li>')
@@ -913,9 +954,9 @@ $(document).ready(function() {
       svg[graphNum].selectAll("circle").each(function() {
         svg[graphNum].node().appendChild(this);
       });
-      svg[graphNum].selectAll("rect.bars").each(function() {
-        svg[graphNum].node().appendChild(this);
-      });
+      // svg[graphNum].selectAll("rect.bars").each(function() {
+      //   svg[graphNum].node().appendChild(this);
+      // });
 
     });
   }
