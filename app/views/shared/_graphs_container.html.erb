@@ -50,12 +50,20 @@
       $(window).scrollTo('570px', 500, {axis:'y'});
     });
 
-    $('.nav-link').on("click", function() {
+    $('.scroll-nav .scroll-controls').on("click", function() {
+      var tab = "#"+$(this).attr('data-rel');
+      console.log(!$(tab).hasClass('selected'));
+
+      if(!$(tab).hasClass('selected')) {
+        $(".menu-item a").removeClass('selected')
+        $(tab).addClass('selected')
+      }
+
       $(window).scrollTo('570px', 500, {axis:'y'});
     });
 
-    $('.scroll-top').on("click", function() {
-      $(window).scrollTo('0px', 500, {axis:'y'});
+    $('.scroll-top, .nav-link').on("click", function() {
+      $(window).scrollTo('570px', 500, {axis:'y'});
     });
 
     //Creates generic tooltip
