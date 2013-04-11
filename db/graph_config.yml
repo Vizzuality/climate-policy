@@ -1,6 +1,6 @@
 brazil_forestry_emissions:
   id: brazil_forestry_emissions
-  name: Deforestation rate
+  name: Annual Area Deforested in Amazon Region in Brazil
   description: Deforestation declined rapidly, particularly after major policy changes in 2004 and again in 2008.
   table: deforestation_rate_copy_test_matallo
   x_axis: date_processed
@@ -266,7 +266,7 @@ eu_power_emissions:
       units: MM T CO^2
       class: line
       y_min: 0
-      y_max: 2530
+      y_max: 2600
       strokeColor: "#546DBC"
     generation:
       name: Generation
@@ -274,7 +274,7 @@ eu_power_emissions:
       units: TWh
       class: line
       y_min: 0
-      y_max: 2530
+      y_max: 3800
       strokeColor: "#F0542C"
 
 eu_power_emission_drivers:
@@ -299,6 +299,7 @@ eu_industry_emissions:
   name: Emissions and Output
   table: eu_industry_1_emissions_output_copy_test_matallo
   description: Despite increasing output in the industrial sector, direct emissions fell, while electricity demand rose as the industrial sector shifted fuel consumption towards a less carbon intensive fuel mix.
+  description_long: long
   x_axis: date_processed
   series:
     total_emissions:
@@ -307,7 +308,7 @@ eu_industry_emissions:
       units: Million Tons CO2e
       class: line
       y_min: 0
-      y_max: 2065
+      y_max: 3400
       strokeColor: "#546DBC"
     manufacturing_value_add_index:
       name: Manufacturing Value Add
@@ -315,7 +316,7 @@ eu_industry_emissions:
       units: Index (1990=100)
       class: line
       y_min: 0
-      y_max: 2065
+      y_max: 240
       strokeColor: "#F0542C"
     manufacturing_production_index:
       name: Manufacturing Production
@@ -323,7 +324,7 @@ eu_industry_emissions:
       units: Index (1990=100)
       class: line
       y_min: 0
-      y_max: 2065
+      y_max: 240
       strokeColor: "#00D9A3"
 
 eu_industry_emission_drivers:
@@ -395,7 +396,7 @@ eu_agriculture_emissions:
       units: MM T CO²
       class: line
       y_min: 0
-      y_max: 600000
+      y_max: 1000
       strokeColor: "rgba(238,87,41,1)"
     agricultural_production:
       name: Agricultural Production
@@ -403,7 +404,7 @@ eu_agriculture_emissions:
       units: MM €
       class: line
       y_min: 0
-      y_max: 600000
+      y_max: 800000
       strokeColor: "rgba(79,110,191,1)"
 
 eu_agriculture_emission_drivers:
@@ -411,7 +412,6 @@ eu_agriculture_emission_drivers:
   name: Changes in Agricultural Emissions Drivers
   table: eu_agriculture_2_emissions_drivers_copy_test_matallo
   description: Methane emissions from livestock declined as the number of cattle decreased. Nitrous oxide emissions fell, due to decreases in both cropland area and fertilizer intensity.
-  description_long: longest
   type: BarGraph
   units: "km²"
   name_column: driver
@@ -459,7 +459,7 @@ eu_buildings_emissions:
       units: MM T CO²
       class: area
       y_min: 0
-      y_max: 1540
+      y_max: 2500
       strokeColor: "rgba(238,87,41,1)"
       fillColor: "rgba(238,87,41,0.2)"
     residential:
@@ -468,7 +468,7 @@ eu_buildings_emissions:
       units: MM T CO²
       class: area
       y_min: 0
-      y_max: 1540
+      y_max: 2500
       strokeColor: "rgba(79,110,191,1)"
       fillColor: "rgba(79,110,191,0.2)"
 
@@ -494,6 +494,7 @@ eu_transport_emissions:
   name: Emissions and Activity
   table: eu_transport_1_emissions_output_copy_test_matallo
   description: Passenger miles and freight transport rose rapidly before declining as a result of the recession. Emissions grew slowly but steadily until they peaked in the mid-2000s.
+  description_long: long
   x_axis: date_processed
   series:
     direct_emissions_from_transportation:
@@ -502,23 +503,23 @@ eu_transport_emissions:
       units: MM T CO²
       class: line
       y_min: 0
-      y_max: 1305
+      y_max: 1600
       strokeColor: "#546DBC"
     freight:
-      name: Passenger Activity Value Add
+      name: Freight Activity
       column: freight
       units: Index (1995=100)
       class: line
-      y_min: 0
-      y_max: 1305
+      y_min: 100
+      y_max: 150
       strokeColor: "#F0542C"
-    manufacturing_production_index:
+    passenger:
       name: Passenger Activity
-      column: manufacturing_production_index
+      column: passenger
       units: Index (1995=100)
       class: line
-      y_min: 0
-      y_max: 1305
+      y_min: 100
+      y_max: 150
       strokeColor: "#00D9A3"
 
 eu_transport_emission_drivers:
@@ -533,24 +534,24 @@ eu_transport_emission_drivers:
       column: total
       units: Index (1995=100)
       class: line
-      y_min: 0
-      y_max: 1
+      y_min: 0.7
+      y_max: 1.4
       strokeColor: "#546DBC"
     freight:
       name: Freight
       column: freight
       units: Index (1995=100)
       class: line
-      y_min: 0
-      y_max: 1
+      y_min: 0.7
+      y_max: 1.4
       strokeColor: "#F0542C"
     passenger:
       name: Total
       column: passenger
       units: Index (1995=100)
       class: line
-      y_min: 0
-      y_max: 1
+      y_min: 0.7
+      y_max: 1.4
       strokeColor: "#00D9A3"
 
 eu_transport_policy:
@@ -558,6 +559,7 @@ eu_transport_policy:
   name: Fuel Taxes
   table: eu_transport_3_fuel_taxes_copy_test_matallo
   description: Starting from a comparatively high point, real fuel taxes were almost flat since the mid-1990s and steadily declined as a proportion of the final fuel price. Rising oil prices rather than government intervention therefore were the main increase to price signals for more efficient road transport.
+  description_long: long
   x_axis: date_processed
   series:
     tax_on_diesel:
@@ -566,7 +568,7 @@ eu_transport_policy:
       units: EUR/Liter
       class: line
       y_min: 0
-      y_max: 840
+      y_max: 1600
       strokeColor: "#546DBC"
     tax_on_petrol:
       name: Tax on Unleaded Petrol
@@ -574,22 +576,22 @@ eu_transport_policy:
       units: EUR/Liter
       class: line
       y_min: 0
-      y_max: 840
+      y_max: 1600
       strokeColor: "#F0542C"
     percentage_of_final_diesel_price_as_tax_processed:
       name: Percentage of Final Diesel Price as Tax
       column: percentage_of_final_diesel_price_as_tax_processed
-      units: Percentage
+      units: "%"
       class: line
-      y_min: 0
+      y_min: 40
       y_max: 100
       strokeColor: "#546DBC"
     percentage_of_final_petrol_price_as_tax_processed:
       name: Percentage of Final Petrol Price as Tax
       column: percentage_of_final_petrol_price_as_tax_processed
-      units: Percentage
+      units: "%"
       class: line
-      y_min: 0
+      y_min: 40
       y_max: 100
       strokeColor: "#F0542C"
 
