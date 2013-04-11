@@ -294,6 +294,30 @@ eu_power_emission_drivers:
       label: 2000-2010
       column: _2000_2010
 
+eu_power_policy:
+  id: eu_power_policy
+  name: Renewables Targets
+  table: eu_power_3_targets_copy_test_matallo
+  description: The EU set, and narrowly missed, ambitious renewable energy targets for 2010 for the EU15. For 2020, the EU has set an even more ambitious renewable energy target for the expanded EU27 of 20% of total energy consumption, which translates to 34% of electricity generation from renewable sources.
+  x_axis: date_processed
+  series:
+    actual:
+      name: Actual
+      column: actual
+      units: "%"
+      class: line
+      y_min: 0
+      y_max: 40
+      strokeColor: "#546DBC"
+    target:
+      name: Target
+      column: target
+      units: "%"
+      class: line
+      y_min: 0
+      y_max: 40
+      strokeColor: "#F0542C"
+
 eu_industry_emissions:
   id: eu_industry_emissions
   name: Industrial Emissions And Production in the EU27
@@ -307,7 +331,7 @@ eu_industry_emissions:
       column: total_emissions
       units: Million Tons CO2e
       class: line
-      y_min: 0
+      y_min: 1000
       y_max: 3400
       strokeColor: "#546DBC"
     manufacturing_value_add_index:
@@ -315,7 +339,7 @@ eu_industry_emissions:
       column: manufacturing_value_add_index
       units: Index (1990=100)
       class: line
-      y_min: 0
+      y_min: 70
       y_max: 240
       strokeColor: "#F0542C"
     manufacturing_production_index:
@@ -323,7 +347,7 @@ eu_industry_emissions:
       column: manufacturing_production_index
       units: Index (1990=100)
       class: line
-      y_min: 0
+      y_min: 70
       y_max: 240
       strokeColor: "#00D9A3"
 
@@ -382,6 +406,30 @@ eu_industry_emission_drivers:
       y_min: 20
       y_max: 160
       strokeColor: "#00D9A3"
+
+eu_industry_policy:
+  id: eu_industry_policy
+  name: Emissions Targets
+  table: eu_industry_3_eu_ets_copy_diego_copy_cropped
+  description: The EU ETS is the world’s first significant carbon market, and has been operating since 2005. Roughly 45% of the EU’s emissions—including industrial sectors—are covered by the market. In addition, the EU has targeted specific technologies through voluntary agreements and minimum energy performance standards (not shown).
+  x_axis: date_processed
+  series:
+    emissions:
+      name: ETS - Cap Phases 1 & 2
+      column: eu_ets_cap___phases_1_2
+      units: Million Tons CO2e
+      class: line
+      y_min: 1300
+      y_max: 2500
+      strokeColor: "rgba(238,87,41,1)"
+    agricultural_production:
+      name: ETS - Cap Phases 3+ (Projection)
+      column: eu_ets_phase_3_cap_projection
+      units: Million Tons CO2e
+      class: line
+      y_min: 1300
+      y_max: 2500
+      strokeColor: "rgba(79,110,191,1)"
 
 eu_agriculture_emissions:
   id: eu_agriculture_emissions
@@ -488,6 +536,34 @@ eu_buildings_emission_drivers:
     1:
       label: 2000-2008
       column: period_2000_2008
+
+eu_buildings_policy:
+  id: eu_buildings_policy
+  name: EU Policy Towards Referigerating Appliances
+  table: eu_buildings_3_labeling_copy_diego
+  description: The increasing strictness of labeling standards for refrigerators, introduced in 1995 and updated regularly, demonstrated how EU efficiency standards ratcheted up over the last several years. The efficiency of the worst permissible label now exceeds the top category from 1995.
+  x_axis: date_processed
+  series:
+    best_label:
+      name: Range for best label
+      column: best_label___low_end
+      column_top: best_label___high_end
+      units: Energy efficiency index
+      class: range
+      y_min: 0
+      y_max: 200
+      strokeColor: "rgba(238,87,41,1)"
+      fillColor: "rgba(238,87,41,0.2)"
+    worst_label:
+      name: Range for worst label
+      column: worst_label_low_end
+      column_top: worst_label_high_end
+      units: Energy efficiency index
+      class: range
+      y_min: 0
+      y_max: 200
+      strokeColor: "rgba(79,110,191,1)"
+      fillColor: "rgba(79,110,191,0.2)"
 
 eu_transport_emissions:
   id: eu_transport_emissions
