@@ -1,15 +1,15 @@
 <div class="subject">
   <div class="scroll-nav">
-    <% if previous_item = @item.previous %>
+    <% if previous_item = previous_item(@item) %>
       <%= link_to raw("<i><span>←</span></i>"), send("#{@main.type}_#{previous_item.type}_path".to_sym, :"#{@main.type}_id" => @main.id, id: previous_item.id), class: 'scroll-controls scroll-prev', remote: true, :"data-replace" => '#content' %>
     <% end %>
 
-    <% if next_item = @item.next %>
+    <% if next_item = next_item(@item) %>
       <%= link_to raw("<i><span>→</span></i>"), send("#{@main.type}_#{next_item.type}_path".to_sym, :"#{@main.type}_id" => @main.id, id: next_item.id), class: 'scroll-controls scroll-next', remote: true, :"data-replace" => '#content' %>
     <% end %>
   </div>
 
   <h1 class="title"><sup><%= @item.type %></sup><%= @item.name %></h1>
 
-  <p class="description"><%= @item.description %></p>
+  <p class="description"><%= description_for(@item) %></p>
 </div>

@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
-    <%= stylesheet_link_tag params[:region_id] %>
+    <%= stylesheet_link_tag 'brazil' %>
     <%= javascript_include_tag "application" %>
     <script type="text/javascript">
       var graphs = <%= @graph_configs.to_json.html_safe %>;
@@ -34,13 +34,7 @@
     <div class="wrapper">
       <%= render 'shared/header' %>
 
-      <div class="content">
-        <%= render 'shared/graphs_list' %>
-
-        <div class="content-footer">
-          <a href="javascript:void(0)" class="scroll-controls scroll-top"><i><span>↑</span></i></a>
-        </div>
-      </div>
+      <%= yield %>
 
       <%= render 'shared/footer' %>
     </div>
