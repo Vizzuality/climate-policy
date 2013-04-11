@@ -221,7 +221,7 @@ china:
         emissions:
           name: Emissions
           graph_config:
-            - china_buildings_emissions 
+            - china_buildings_emissions
         emission_drivers:
           name: Emission Drivers
           graph_config:
@@ -249,7 +249,7 @@ china:
         policy:
           name: Policy
           graph_config:
-            - china_industry_policy     
+            - china_industry_policy
 
     power:
       name: Power
