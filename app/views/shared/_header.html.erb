@@ -5,7 +5,7 @@
 
       <ul>
         <li class="nav-item">
-          <a href="#" class="regions dropdown_link selected">Regions</a>
+          <a href="#" class="regions dropdown_link <%= "selected" if @sector.nil? %>">Regions</a>
           <ul class="navbar_dropdown">
             <% @regions.each do |region| %>
               <li>
@@ -15,7 +15,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a href="#" class="dropdown_link last">Sectors</a>
+          <a href="#" class="dropdown_link <%= "selected" unless @sector.nil? %> last">Sectors</a>
           <ul class="navbar_dropdown">
             <% Sector.all.each do |sector| %>
               <li>
