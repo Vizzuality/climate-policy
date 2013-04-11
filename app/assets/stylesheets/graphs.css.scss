@@ -109,10 +109,10 @@ svg {
 }
 
 .graph-title {
-  font: 27px/1.1 "open-sans", sans-serif;
+  font: 22px/1.1 "open-sans", sans-serif;
   color: #666;
 
-  span {
+  .type {
     display: block;
     font: bold 17px "open-sans", sans-serif;
     text-transform: uppercase;
