@@ -1,12 +1,14 @@
-<%= render 'shared/description' %>
+<div class="content-inner">
+  <%= render 'shared/description' %>
 
-<%= render 'shared/years_first' %>
+  <%= render 'shared/years_first' %>
 
-<% @items.each do |item| %>
-  <%= render 'shared/graph', :item => item %>
+  <% @items.each do |item| %>
+    <%= render 'shared/graph', :item => item %>
 
-  <%= render @items.last == item ? 'shared/years_last' : 'shared/years' %>
-<% end %>
+    <%= render @items.last == item ? 'shared/years_last' : 'shared/years' %>
+  <% end %>
+</div>
 
 <% if @main.type == 'region' && @item.type == 'sector' %>
 

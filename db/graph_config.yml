@@ -339,48 +339,48 @@ eu_industry_emission_drivers:
       column: chemicals
       units: Index (1990=100)
       class: line
-      y_min: 45
-      y_max: 105
+      y_min: 20
+      y_max: 160
       strokeColor: "#546DBC"
     steel:
       name: Manufacturing Value Add
       column: steel
       units: Index (1990=100)
       class: line
-      y_min: 45
-      y_max: 105
+      y_min: 20
+      y_max: 160
       strokeColor: "#F0542C"
     cement:
       name: Manufacturing Production
       column: cement
       units: Index (1990=100)
       class: line
-      y_min: 45
-      y_max: 105
+      y_min: 20
+      y_max: 160
       strokeColor: "#00D9A3"
     paper:
       name: Paper
       column: paper
       units: Index (1990=100)
       class: line
-      y_min: 45
-      y_max: 105
+      y_min: 20
+      y_max: 160
       strokeColor: "#546DBC"
     machinery:
       name: Machinery
       column: machinery
       units: Index (1990=100)
       class: line
-      y_min: 45
-      y_max: 105
+      y_min: 20
+      y_max: 160
       strokeColor: "#F0542C"
     total:
       name: Total
       column: total
       units: Index (1990=100)
       class: line
-      y_min: 45
-      y_max: 105
+      y_min: 20
+      y_max: 160
       strokeColor: "#00D9A3"
 
 eu_agriculture_emissions:
