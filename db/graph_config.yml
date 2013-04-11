@@ -1,6 +1,6 @@
 brazil_forestry_emissions:
   id: brazil_forestry_emissions
-  name: Deforestation rate
+  name: Annual Area Deforested in Amazon Region in Brazil
   description: Deforestation declined rapidly, particularly after major policy changes in 2004 and again in 2008.
   table: deforestation_rate_copy_test_matallo
   x_axis: date_processed
@@ -266,7 +266,7 @@ eu_power_emissions:
       units: MM T CO^2
       class: line
       y_min: 0
-      y_max: 2530
+      y_max: 2600
       strokeColor: "#546DBC"
     generation:
       name: Generation
@@ -274,7 +274,7 @@ eu_power_emissions:
       units: TWh
       class: line
       y_min: 0
-      y_max: 2530
+      y_max: 3800
       strokeColor: "#F0542C"
 
 eu_power_emission_drivers:
@@ -299,6 +299,7 @@ eu_industry_emissions:
   name: Emissions and Output
   table: eu_industry_1_emissions_output_copy_test_matallo
   description: Despite increasing output in the industrial sector, direct emissions fell, while electricity demand rose as the industrial sector shifted fuel consumption towards a less carbon intensive fuel mix.
+  description_long: long
   x_axis: date_processed
   series:
     total_emissions:
@@ -307,7 +308,7 @@ eu_industry_emissions:
       units: Million Tons CO2e
       class: line
       y_min: 0
-      y_max: 2065
+      y_max: 3400
       strokeColor: "#546DBC"
     manufacturing_value_add_index:
       name: Manufacturing Value Add
@@ -315,7 +316,7 @@ eu_industry_emissions:
       units: Index (1990=100)
       class: line
       y_min: 0
-      y_max: 2065
+      y_max: 240
       strokeColor: "#F0542C"
     manufacturing_production_index:
       name: Manufacturing Production
@@ -323,7 +324,7 @@ eu_industry_emissions:
       units: Index (1990=100)
       class: line
       y_min: 0
-      y_max: 2065
+      y_max: 240
       strokeColor: "#00D9A3"
 
 eu_industry_emission_drivers:
@@ -395,7 +396,7 @@ eu_agriculture_emissions:
       units: MM T CO²
       class: line
       y_min: 0
-      y_max: 600000
+      y_max: 1000
       strokeColor: "rgba(238,87,41,1)"
     agricultural_production:
       name: Agricultural Production
@@ -403,7 +404,7 @@ eu_agriculture_emissions:
       units: MM €
       class: line
       y_min: 0
-      y_max: 600000
+      y_max: 800000
       strokeColor: "rgba(79,110,191,1)"
 
 eu_agriculture_emission_drivers:
@@ -411,7 +412,6 @@ eu_agriculture_emission_drivers:
   name: Changes in Agricultural Emissions Drivers
   table: eu_agriculture_2_emissions_drivers_copy_test_matallo
   description: Methane emissions from livestock declined as the number of cattle decreased. Nitrous oxide emissions fell, due to decreases in both cropland area and fertilizer intensity.
-  description_long: longest
   type: BarGraph
   units: "km²"
   name_column: driver
@@ -459,7 +459,7 @@ eu_buildings_emissions:
       units: MM T CO²
       class: area
       y_min: 0
-      y_max: 1540
+      y_max: 2500
       strokeColor: "rgba(238,87,41,1)"
       fillColor: "rgba(238,87,41,0.2)"
     residential:
@@ -468,7 +468,7 @@ eu_buildings_emissions:
       units: MM T CO²
       class: area
       y_min: 0
-      y_max: 1540
+      y_max: 2500
       strokeColor: "rgba(79,110,191,1)"
       fillColor: "rgba(79,110,191,0.2)"
 
@@ -494,6 +494,7 @@ eu_transport_emissions:
   name: Emissions and Activity
   table: eu_transport_1_emissions_output_copy_test_matallo
   description: Passenger miles and freight transport rose rapidly before declining as a result of the recession. Emissions grew slowly but steadily until they peaked in the mid-2000s.
+  description_long: long
   x_axis: date_processed
   series:
     direct_emissions_from_transportation:
@@ -502,23 +503,23 @@ eu_transport_emissions:
       units: MM T CO²
       class: line
       y_min: 0
-      y_max: 1305
+      y_max: 1600
       strokeColor: "#546DBC"
     freight:
-      name: Passenger Activity Value Add
+      name: Freight Activity
       column: freight
       units: Index (1995=100)
       class: line
-      y_min: 0
-      y_max: 1305
+      y_min: 100
+      y_max: 150
       strokeColor: "#F0542C"
-    manufacturing_production_index:
+    passenger:
       name: Passenger Activity
-      column: manufacturing_production_index
+      column: passenger
       units: Index (1995=100)
       class: line
-      y_min: 0
-      y_max: 1305
+      y_min: 100
+      y_max: 150
       strokeColor: "#00D9A3"
 
 eu_transport_emission_drivers:
@@ -533,24 +534,24 @@ eu_transport_emission_drivers:
       column: total
       units: Index (1995=100)
       class: line
-      y_min: 0
-      y_max: 1
+      y_min: 0.7
+      y_max: 1.4
       strokeColor: "#546DBC"
     freight:
       name: Freight
       column: freight
       units: Index (1995=100)
       class: line
-      y_min: 0
-      y_max: 1
+      y_min: 0.7
+      y_max: 1.4
       strokeColor: "#F0542C"
     passenger:
       name: Total
       column: passenger
       units: Index (1995=100)
       class: line
-      y_min: 0
-      y_max: 1
+      y_min: 0.7
+      y_max: 1.4
       strokeColor: "#00D9A3"
 
 eu_transport_policy:
@@ -558,6 +559,7 @@ eu_transport_policy:
   name: Fuel Taxes
   table: eu_transport_3_fuel_taxes_copy_test_matallo
   description: Starting from a comparatively high point, real fuel taxes were almost flat since the mid-1990s and steadily declined as a proportion of the final fuel price. Rising oil prices rather than government intervention therefore were the main increase to price signals for more efficient road transport.
+  description_long: long
   x_axis: date_processed
   series:
     tax_on_diesel:
@@ -566,7 +568,7 @@ eu_transport_policy:
       units: EUR/Liter
       class: line
       y_min: 0
-      y_max: 840
+      y_max: 1600
       strokeColor: "#546DBC"
     tax_on_petrol:
       name: Tax on Unleaded Petrol
@@ -574,30 +576,30 @@ eu_transport_policy:
       units: EUR/Liter
       class: line
       y_min: 0
-      y_max: 840
+      y_max: 1600
       strokeColor: "#F0542C"
     percentage_of_final_diesel_price_as_tax_processed:
       name: Percentage of Final Diesel Price as Tax
       column: percentage_of_final_diesel_price_as_tax_processed
-      units: Percentage
+      units: "%"
       class: line
-      y_min: 0
+      y_min: 40
       y_max: 100
       strokeColor: "#546DBC"
     percentage_of_final_petrol_price_as_tax_processed:
       name: Percentage of Final Petrol Price as Tax
       column: percentage_of_final_petrol_price_as_tax_processed
-      units: Percentage
+      units: "%"
       class: line
-      y_min: 0
+      y_min: 40
       y_max: 100
       strokeColor: "#F0542C"
 
 us_buildings_emissions:
   id: us_buildings_emissions
-  name: Emissions
+  name: Building Sector Emissions
   table: emissions_mmtco2e_copy_test_matallo
-  description: Emissions grew slowly, but steadily, until 2005, when emissions peaked and slowly declined.
+  description: Total building stock, as reflected by total floor space statistics, grew steadily, while the increase in residential floor space between 1995 and 2005 was particularly noteworthy.
   x_axis: date_processed
   series:
     commercial:
@@ -619,9 +621,9 @@ us_buildings_emissions:
 
 us_buildings_emissions_2:
   id: us_buildings_emissions_2
-  name: Floorspace
+  name: Total Residential and Commercial Floorspace
   table: buildings_floorspace_billion_square_meters_copy_test_matallo
-  description: Total building stock, as reflected by total floor space statistics, grew steadily, while the increase in residential floor space between 1995 and 2005 was particularly noteworthy.
+  description: Emissions grew slowly, but steadily, until 2005, when emissions peaked and slowly declined.
   x_axis: date_processed
   series:
     commercial:
@@ -643,9 +645,9 @@ us_buildings_emissions_2:
 
 us_buildings_emissions_drivers:
   id: us_buildings_emission_drivers
-  name: Building Drivers
+  name: Contribution of Key Drivers to Increase Or Decrease of Annual Buildings Emissions
   table: changes_in_emissions_drivers_copy_test_matallo
-  description: Growth in population and floor space per person were the largest drivers of buildings emissions. In the late 2000’s, energy efficiency gains, particularly in residential heating and cooling caught up with slowing floor space growth.
+  description: "Growth in population and floor space per person were the largest drivers of buildings emissions. In the late 2000's, energy efficiency gains caught up with slowing floor space growth."
   description_long: longest
   type: BarGraph
   units: "Million T CO²"
@@ -660,7 +662,7 @@ us_buildings_emissions_drivers:
 
 us_buildings_policy:
   id: us_buildings_policy
-  name: Energy efficiency spending
+  name: Building Energy Efficiency Spending by Government
   table: energy_efficiency_spending_copy_test_matallo
   description: Efficiency spending by federal and local governments increased over the last decade, with a spike due to the 2009 stimulus.
   x_axis: date_processed
@@ -684,9 +686,9 @@ us_buildings_policy:
 
 us_buildings_policy_2:
   id: us_buildings_policy_2
-  name: Building codes
+  name: Building Code Index
   table: code_building_energy_intensity_index_copy_test_matallo
-  description: Building codes tightened steadily - particularly for commercial buildings where the federal government played a larger role.
+  description: Building codes tightened steadily — particularly for commercial buildings where the federal government played a larger role.
   x_axis: date_processed
   series:
     commercial:
@@ -708,8 +710,8 @@ us_buildings_policy_2:
 
 us_transportation_emissions:
   id: us_transportation_emissions
-  name: Emissions & transportation activity 
-  description: Both passenger and freight travel increased since 1980, though passenger travel grew more rapidly than freight. Both modes of travel were sensitive to economic conditions, and activity dropped significantly during the recession.
+  name: Emissions and Transport Activity
+  description: Both passenger and freight travel increased significantly since 1980. Passenger travel dropped significantly during the recession.
   table: emissions_and_miles_traveled_copy_test_matallo
   x_axis: date_processed
   series:
@@ -740,8 +742,8 @@ us_transportation_emissions:
 
 us_transportation_emissions_drivers:
   id: us_transportation_emission_drivers
-  name: Emissions intensity
-  description: Large gains in vehicle engine and transmission efficiency did not result in significant fuel efficiency gains, as cars became heavier. Fuller flights, more efficient planes, and improved routing improved aviation efficiency. There was little shifting between transport modes (not shown).
+  name: Emissions Intensity
+  description: Large gains in vehicle engine and transmission efficiency did not result in significant fuel efficiency gains, as cars became heavier. There was little shifting between transport modes (not shown).
   table: modal_intensities_copy_test_matallo
   x_axis: date_processed
   series:
@@ -780,8 +782,8 @@ us_transportation_emissions_drivers:
 
 us_transportation_policy:
   id: us_transportation_policy
-  name: CAFE standards
-  description: Fuel efficiency standards, after tightening rapidly after their inception, remained largely unchanged for over two decades. Starting in 2005, standards for larger passenger vehicles became more demanding. Very recently, standards for smaller passenger cars were revisited.
+  name: Corporate Average Fuel Economy Standards
+  description: Fuel efficiency standards remained largely unchanged for over two decades.  Only recently have standards for passenger vehicles been revisited.
   table: cafe_standards_copy_test_matallo
   x_axis: date_processed
   series:
@@ -820,7 +822,7 @@ us_transportation_policy:
 
 us_power_emissions:
   id: us_power_emissions
-  name: Emission & generation
+  name: Emissions and Generation
   description: There was steady emissions and generation growth through the mid-2000s. Until recently, emissions grew in tandem with increasing electricity demand.
   table: emissions_mmtco2e_and_generation_twh_copy_test_matallo
   x_axis: date_processed
@@ -844,8 +846,8 @@ us_power_emissions:
 
 us_power_emission_drivers:
   id: us_power_emission_drivers
-  name: Grid Impact
-  description: The expansion and increased availability of nuclear in the 1980s and 1990s offset growing emissions from coal as both were used to meet increasing demand. In the 2000s, most factors were aligned to improve emissions intensity, including increasing renewable energy output and gas replacing coal.
+  name: Power Sector Variables and Impact on Average Emissions Factor
+  description: The expansion and increased availability of nuclear in the 1980s and 1990s offset growing emissions from coal. In the 2000s, most factors were aligned to improve emissions intensity, including increasing renewables output and gas replacing coal.
   description_long: longest
   table: grid_impact_1_copy_diego_2
   x_axis: date_processed
@@ -865,8 +867,8 @@ us_power_emission_drivers:
 
 us_power_policy:
   id: us_power_policy
-  name: Tax expenditures
-  description: Both state and federal governments created policies to support renewable energy. The two most prominent of these were federal renewable energy tax incentives, and state level renewable portfolio standards. These policies, and several other factors, are associated with significant increases in U.S. renewable energy capacity.
+  name: Federal Renewable Energy Incentives
+  description: Both state and federal governments created policies to support renewable energy. The two most prominent of these were federal renewable energy tax incentives and state level renewable portfolio standards.
   table: federal_tax_expenditures_for_renewables_copy_test_matallo
   x_axis: date_processed
   series:      
@@ -881,7 +883,7 @@ us_power_policy:
 
 us_power_policy_2:
   id: us_power_policy_2
-  name: State renewable portfolio standards
+  name: State Level Renewable Energy Portfolio Standards (2000-2010)
   description: Both state and federal governments created policies to support renewable energy. The two most prominent of these were federal renewable energy tax incentives, and state level renewable portfolio standards. These policies, and several other factors, are associated with significant increases in U.S. renewable energy capacity.
   table: weighted_average_state_portfolio_standards_copy_test_matallo
   x_axis: date_processed
@@ -897,7 +899,7 @@ us_power_policy_2:
 
 us_industry_emissions:
   id: us_industry_emissions
-  name: Emissions
+  name: Industry Emissions
   description: Industrial emissions declined even before the recession as industrial production rose.
   table: us_industry_1_copy_test_matallo
   x_axis: date_processed
@@ -913,7 +915,7 @@ us_industry_emissions:
 
 us_industry_emissions_2:
   id: us_industry_emissions_2
-  name: Output
+  name: Industrial Output
   description: Industrial emissions declined even before the recession as industrial production rose.
   table: us_industry_1_copy_test_matallo_2
   x_axis: date_processed
@@ -937,7 +939,7 @@ us_industry_emissions_2:
 
 us_industry_emission_drivers:
   id: us_industry_emission_drivers
-  name: Sectoral Intensities
+  name: Energy Intensity by Sector
   description: As manufacturing grew, industrial sectors generally improved their energy intensity, but in some cases performance declined. Structural changes to U.S. industry led to lower emissions intensity.
   table: us_industry_2_sectoral_intensities_copy_test_matallo
   x_axis: date_processed
@@ -1001,7 +1003,7 @@ us_industry_emission_drivers:
 
 us_industry_policy:
   id: us_industry_policy
-  name: Incentive Programs
+  name: Number of State Incentive Programs for Industrial Technology Improvement
   description: There was little cohesive industrial policy. Participation in the federal industrial assessment program declined, while state level programs grew.
   table: us_industry_3_number_state_incentive_programs_copy_test_matallo
   x_axis: date_processed
@@ -1017,7 +1019,7 @@ us_industry_policy:
 
 us_industry_policy_2:
   id: us_industry_policy_2
-  name: Audit Programs
+  name: Federal Industrial Audits
   description: There was little cohesive industrial policy. Participation in the federal industrial assessment program declined, while state level programs grew.
   table: us_industry_3_industrial_assessment_center_copy_test_matallo
   x_axis: date_processed
@@ -1158,8 +1160,10 @@ india_agriculture_emission_drivers_3:
       y_max: 700
       strokeColor: "#00D9A3"
 
+# CAMBIAR
 india_agriculture_policy:
   id: india_agriculture_policy
+<<<<<<< HEAD
   name: Governments subsidies
   description: Indian agricultural policy focused on modernization of the agricultural sector through subsidies. Though greenhouse gases were not specifically targeted in this effort, modernization had a modest effect on total emissions.
   table: government_subsidies_copy_diego
@@ -1181,6 +1185,21 @@ india_agriculture_policy:
       y_min: 0
       y_max: 5000
       strokeColor: "#F0542C"
+=======
+  name: Weighted average state RPO targets
+  description: The central government required that each state set renewable purchase obligations that require renewable energy in the mix of electricity generation in each state. The average of these targets reached 5.5% by 2010.
+  table: state_rpos_copy_diego
+  x_axis: date_processed
+  series:
+    series_1:
+      name: Weighted average state RPO targets
+      column: weighted_average_state_rpo_targets
+      units: "%"
+      class: line
+      y_min: 0
+      y_max: 6
+      strokeColor: "#546DBC"
+>>>>>>> 3de694aa80472ce05439db910137eaaa7f99612c
 
 india_power_emissions:
   id: india_power_emissions
@@ -1207,86 +1226,84 @@ india_power_emissions:
       strokeColor: "#F0542C"
 
 india_power_emission_drivers:
-  id: india_power_emissions_drivers
+  id: india_power_emission_drivers
   name: Fuel sources
   description: Most new generation came from conventional sources (particularly coal), although the past decade saw exponential growth in renewable energy generation.
   table: fuel_sources_copy_diego
   x_axis: date_processed
   series:
-    series_1:
-      name: 
-      column: 
-      units: 
-      class: 
-      y_min: 
-      y_max: 
-      strokeColor: "#546DBC"
-    series_2:
-      name: 
-      column: 
-      units: 
-      class: 
-      y_min: 
-      y_max: 
-      strokeColor: "#546DBC"
-    series_3:
-      name: 
-      column: 
-      units: 
-      class: 
-      y_min: 
-      y_max: 
-      strokeColor: "#546DBC"
-    series_4:
-      name: 
-      column: 
-      units: 
-      class: 
-      y_min: 
-      y_max: 
-      strokeColor: "#546DBC"
-    series_5:
-      name: 
-      column: 
-      units: 
-      class: 
-      y_min: 
-      y_max: 
-      strokeColor: "#546DBC"
-    series_6:
-      name: 
-      column: 
-      units: 
-      class: 
-      y_min: 
-      y_max: 
-      strokeColor: "#546DBC"
-    series_7:
-      name: 
-      column: 
-      units: 
-      class: 
-      y_min: 
-      y_max: 
-      strokeColor: "#546DBC"
-    series_8:
-      name: 
-      column: 
-      units: 
-      class: 
-      y_min: 
-      y_max: 
-      strokeColor: "#546DBC"
-
-#             { "name": "Biomass and waste", "column": "biomass_and_waste", "units": "TWh", "class": "area", "y_extent": [0,2000], "strokeColor": "rgba(238,87,41,1)", "fillColor": "rgba(238,87,41,0.2)"},
-#             { "name": "Solar and renewables", "column": "solar_and_other_renewables", "units": "TWh", "class": "area", "y_extent": [0,2000], "strokeColor": "rgba(79,110,191,1)", "fillColor": "rgba(79,110,191,0.2)"},
-#             { "name": "Wind", "column": "wind", "units": "TWh", "class": "area", "y_extent": [0,2000], "fillColor": "rgba(87,216,159,0.2)"},
-#             { "name": "Low Carbon", "column": "low_carbon", "units": "TWh", "class": "area", "y_extent": [0,2000], "fillColor": "rgba(87,216,159,0.2)"},
-#             { "name": "Nuclear", "column": "nuclear", "units": "TWh", "class": "area", "y_extent": [0,2000], "strokeColor": "rgba(238,87,41,1)", "fillColor": "rgba(87,216,159,0.2)"},
-#             { "name": "Hydro", "column": "hydro", "units": "TWh", "class": "area", "y_extent": [0,2000], "strokeColor": "rgba(238,87,41,1)", "fillColor": "rgba(246,214,44,0.2)"},
-#             { "name": "Conventional thermal", "column": "conventional_thermal", "units": "TWh", "class": "area", "y_extent": [0,2000],"strokeColor": "rgba(79,110,191,1)", "fillColor": "rgba(79,110,191,0.2)"},
-#             { "name": "Major sources", "column": "major_sources", "units": "TWh", "class": "area", "y_extent": [0,2000], "strokeColor": "rgba(238,87,41,1)", "fillColor": "rgba(238,87,41,0.2)"},
-
+    biomass_and_waste:
+      name: Biomass and waste
+      column: biomass_and_waste
+      units: TWh
+      class: area
+      y_min: 0
+      y_max: 2000
+      strokeColor: 'rgba(238,87,41,1)'
+      fillColor: 'rgba(238,87,41,0.2)'
+    solar_and_other_renewables:
+      name: Solar and renewables
+      column: solar_and_other_renewables
+      units: TWh
+      class: area
+      y_min: 0
+      y_max: 2000
+      strokeColor: 'rgba(79,110,191,1)'
+      fillColor: 'rgba(79,110,191,0.2)'
+    wind:
+      name: Wind
+      column: wind
+      units: TWh
+      class: area
+      y_min: 0
+      y_max: 2000
+      strokeColor: 'rgba(87,216,159,1)'
+      fillColor: 'rgba(87,216,159,0.2)'
+    low_carbon:
+      name: Low Carbon
+      column: low_carbon
+      units: TWh
+      class: area
+      y_min: 0
+      y_max: 2000
+      strokeColor: 'rgba(87,216,159,1)'
+      fillColor: 'rgba(87,216,159,0.2)'
+    nuclear:
+      name: Nuclear
+      column: nuclear
+      units: TWh
+      class: area
+      y_min: 0
+      y_max: 2000
+      strokeColor: 'rgba(87,216,159,1)'
+      fillColor: 'rgba(87,216,159,0.2)'
+    hydro:
+      name: Hydro
+      column: hydro
+      units: TWh
+      class: area
+      y_min: 0
+      y_max: 2000
+      strokeColor: 'rgba(246,214,44,1)'
+      fillColor: 'rgba(246,214,44,0.2)'
+    conventional_thermal:
+      name: Conventional thermal
+      column: conventional_thermal
+      units: TWh
+      class: area
+      y_min: 0
+      y_max: 2000
+      strokeColor: 'rgba(79,110,191,1)'
+      fillColor: 'rgba(79,110,191,0.2)'
+    major_sources:
+      name: Major sources
+      column: major_sources
+      units: TWh
+      class: area
+      y_min: 0
+      y_max: 2000
+      strokeColor: 'rgba(238,87,41,1)'
+      fillColor: 'rgba(238,87,41,0.2)'
 
 india_power_policy:
   id: india_power_policy
@@ -1407,7 +1424,7 @@ india_industry_policy:
 
 china_buildings_emissions:
   id: china_buildings_emissions
-  name: Emissions
+  name: Building Sector Emissions
   table: china_bldgs_1_emissions_copy_diego
   description: Reported buildings-related emissions fell during the 1990s, possibly due to district heating improvements, but more likely due to underreporting of coal use and measurement issues. Since 2002, emissions have been rising steadily due to growing energy use in buildings.
   x_axis: date_processed
@@ -1427,11 +1444,11 @@ china_buildings_emissions:
       class: area
       y_min: 150
       y_max: 500
-      strokeColor: "rgba(79,110,191,1)" 
+      strokeColor: "rgba(79,110,191,1)"
 
 china_buildings_emission_drivers:
   id: china_buildings_emission_drivers
-  name: Fuel sources
+  name: Energy Consumption by Fuel Source
   table: buildings_fuel_sources_mtce_copy_diego
   description: Particularly in urban residences, electronics and appliances became a significant end use, more than offsetting efficiency improvements in heating. Appliance use contributed to the increase in share of electricity in energy, as did the shift away from coal use.
   x_axis: date_processed
@@ -1443,7 +1460,7 @@ china_buildings_emission_drivers:
       class: area
       y_min: 0
       y_max: 250
-      strokeColor: "rgba(238,87,41,1)"      
+      strokeColor: "rgba(238,87,41,1)"
       fillColor: "rgba(238,87,41,0.2)"
     electricity:
       name: Electricity
@@ -1480,7 +1497,7 @@ china_buildings_emission_drivers:
       y_min: 0
       y_max: 250
       strokeColor: "rgba(79,110,191,1)"
-      fillColor": "rgba(79,110,191,0.2)"
+      fillColor: "rgba(79,110,191,0.2)"
     other:
       name: Other
       column: other
@@ -1493,7 +1510,7 @@ china_buildings_emission_drivers:
 
 china_buildings_emission_drivers_2:
   id: china_buildings_emission_drivers_2
-  name: Geography
+  name: Energy Consumption by Sector and Geography
   table: china_bldgs_2_geography_copy_diego
   description: Urban residential growth was the primary driver of growth in energy usage, which in turn was the primary cause of increasing emissions, with commercial building energy use contributing a small increase.
   x_axis: date_processed
@@ -1524,29 +1541,29 @@ china_buildings_emission_drivers_2:
       y_min: 0
       y_max: 300
       strokeColor: "rgba(87,216,159,1)"
-      fillColor: "rgba(87,216,159,0.2)"   
+      fillColor: "rgba(87,216,159,0.2)"
 
 china_buildings_policy:
   id: china_buildings_policy
-  name: Targeted building energy use reduction
+  name: Estimated Impact of Policies Targeting Energy Use Reduction
   table: china_bldgs_3_policy_copy_diego
-  description: Increased enforcement of energy building codes saved an estimated 60 million tonnes of coal equivalent per year, more than all other targeted policies combined. 
+  description: Increased enforcement of energy building codes saved an estimated 60 million tonnes of coal equivalent per year, more than all other targeted policies combined.
   type: BarGraph
   units: "km²"
   name_column: program
   x_groups:
     0:
       label: "1980-1990"
-      column: amount    
+      column: amount
 
 china_buildings_policy_2:
   id: china_buildings_policy_2
-  name: Funding for energy monitoring
+  name: Funding for Energy Monitoring, Capacity Building, and Equipment Replacement
   table: china_bldgs_3_policy_funding_energy_monitoring_copy_diego
   description: Both the provincial and central governments provided substantial funding for energy efficiency monitoring and improvements.
   x_axis: date_processed
   type: BarGraph
-  units: "--"
+  units: "Billion Yuan"
   name_column: program
   x_groups:
     0:
@@ -1555,7 +1572,7 @@ china_buildings_policy_2:
 
 china_industry_emissions:
   id: china_industry_emissions
-  name: Energy consumption
+  name: Energy Consumption by Industry and Industrial Output
   table: china_ind_1_energy_consumption_copy_diego
   description: China did not report greenhouse gas emissions from industry, but they were very closely related to energy consumption, which more than doubled since 2002.
   x_axis: date_processed
@@ -1571,7 +1588,7 @@ china_industry_emissions:
 
 china_industry_emissions_2:
   id: china_industry_emissions_2
-  name: Value index
+  name: Energy Consumption by Industry and Industrial Output
   table: china_ind_2_value_index_copy_diego
   description: By some measures, industrial production output rose almost 20-fold since 1993.
   x_axis: date_processed
@@ -1595,7 +1612,7 @@ china_industry_emissions_2:
 
 china_industry_emission_drivers:
   id: china_industry_emission_drivers
-  name: Sectoral energy intensity
+  name: "Sector Energy Intensity: Manufacturing, Metals & Minerals, Chemical"
   table: china_ind_2_sectoral_intensities_copy_diego_fixed_3
   description: Industrial emissions intensity improved dramatically across all sectors, although from a generally high starting point.
   x_axis: date_processed
@@ -1667,7 +1684,7 @@ china_industry_emission_drivers:
 
 china_industry_policy:
   id: china_industry_policy
-  name: Phase out targets
+  name: Phase Out Targets — Standard Scale
   table: china_ind_3_phase_out_targets_copy_diego
   description: The government set specific targets for many large industries regarding how much capacity was to be phased out or retired.
   x_axis: date_processed
@@ -1681,7 +1698,7 @@ china_industry_policy:
 
 china_power_emissions:
   id: china_power_emissions
-  name: Power emissions & generation
+  name: Greenhouse Gas Emissions and Generation
   table: china_power_1_emissions_generation_copy_diego
   description: Electricity generation and the associated CO2 emissions increased significantly in the past three decades, with generation growth accelerating significantly in the tenth Five Year Plan (2001-2005). Since 2006, the growth in power demand has slowed slightly with CO2 emissions following suit.
   x_axis: date_processed
@@ -1705,9 +1722,9 @@ china_power_emissions:
 
 china_power_emission_drivers:
   id: china_power_emission_drivers
-  name: Fuel sources
+  name: Fuel Sources for Power Generation
   table: china_power_2_fuel_sources_copy_diego
-  description: The vast majority of increased generation came from conventional sources, primarily coal. However, the past decade saw exponential growth in low-carbon fuel sources, such as renewable energy, although this energy represented a very small portion of overall electricity production
+  description: The vast majority of increased generation came from conventional sources, primarily coal. However, the past decade saw exponential growth in low-carbon fuel sources, such as renewable energy, although this energy represented a very small portion of overall electricity production.
   x_axis: date_processed
   series:
     oil:
@@ -1736,7 +1753,7 @@ china_power_emission_drivers:
       y_min: 0
       y_max: 5000000
       strokeColor: "rgba(79,110,191,1)"
-      fillColor": "rgba(79,110,191,0.2)"
+      fillColor: "rgba(79,110,191,0.2)"
     hydro:
       name: Hydro
       column: hydro
@@ -1753,12 +1770,12 @@ china_power_emission_drivers:
       class: area
       y_min: 0
       y_max: 5000000
-      strokeColor: "rgba(238,87,41,1)"      
+      strokeColor: "rgba(238,87,41,1)"
       fillColor: "rgba(238,87,41,0.2)"
 
 china_power_policy:
   id: china_power_policy
-  name: Installed capacity targets
+  name: Total Installed Capacity Targets
   table: china_power_3_installed_capacity_targets_copy_diego
   description: Policy encouraged increased renewable energy deployment through a mix of generation targets.
   x_axis: date_processed
@@ -1775,5 +1792,3 @@ china_power_policy:
     2:
       label: "12th FYP"
       column: _12th_fyp
-
-

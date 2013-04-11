@@ -9,7 +9,7 @@
           <ul class="navbar_dropdown">
             <% @regions.each do |region| %>
               <li>
-                <%= link_to region.name, region_subject_path(region_id: region.id, id: region.first_subject) %>
+                <%= link_to region.name, region_subject_path(region_id: region.id, id: region.first_subject), class: region.id == 'eu' ? 'tall' : '' %>
               </li>
             <% end %>
           </ul>

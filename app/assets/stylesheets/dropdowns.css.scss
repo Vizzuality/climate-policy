@@ -12,6 +12,11 @@
     font: 300 18px/2.4 "open-sans", sans-serif;
     text-decoration: none;
     color: #fff;
+
+    &.tall {
+      line-height: 1.2;
+      padding: 12px 0;
+    }
   }
 
   li + li a { border-top: 1px solid rgba(#fff, .25); }
