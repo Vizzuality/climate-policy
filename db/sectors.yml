@@ -6,14 +6,14 @@ forestry:
   decades_analysis:
   subjects:
     - emissions:
-        description: Emissions description for Forestry
+        description: These graphs show the changes in deforestation in Brazil
     - emission_drivers:
-        description: Emission drivers description for Forestry
+        description: These graphs show the changes in deforestation drivers in Brazil
     - policy:
-        description: Policy description for Forestry
+        description: These graphs show the changes in land use policy in Brazil
   regions:
     - brazil:
-        description: Brazil description for Forestry
+        description: These graphs show the changes in deforestation, deforestation drivers, and land use policy in Brazil
 
 agriculture:
   id: agriculture
@@ -23,18 +23,18 @@ agriculture:
   decades_analysis:
   subjects:
     - emissions:
-        description: Emissions description for Agriculture
+        description: These graphs show the changes in Agriculture emissions and growth in Brazil, the EU, and India
     - emission_drivers:
-        description: Emission drivers description for Agriculture
+        description: These graphs show the changes in Agriculture emissions drivers in Brazil, the EU, and India
     - policy:
-        description: Policy description for Agriculture
+        description: These graphs show the changes in Agriculture policy in Brazil, the EU, and India
   regions:
     - brazil:
-        description: Brazil description for Agriculture
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in Brazil
     - eu:
-        description: EU description for Agriculture
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in the EU
     - india:
-        description: India description for Agriculture
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in India
 
 buildings:
   id: buildings
@@ -44,18 +44,18 @@ buildings:
   decades_analysis:
   subjects:
     - emissions:
-        description: Emissions description for Buildings
+        description: These graphs show the changes in Buildings emissions and growth in China, the EU, and the US
     - emission_drivers:
-        description: Emission drivers description for Buildings
+        description: These graphs show the changes in Buildings emissions drivers in China, the EU, and the US
     - policy:
-        description: Policy description for Buildings
+        description: These graphs show the changes in Buildings policy in China, the EU, and the US
   regions:
     - us:
-        description: US description for buildings
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in the US
     - eu:
-        description: EU description for buildings
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in the EU
     - china:
-        description: China description for buildings
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in China
 
 transport:
   id: transport
@@ -65,14 +65,14 @@ transport:
   decades_analysis:
   subjects:
     - emissions:
-        description: Emissions description for Transportation
+        description: These graphs show the changes in Transportation emissions and growth in the EU and the US
     - emission_drivers:
-        description: Emission drivers description for Transportation
+        description: These graphs show the changes in deforestation drivers in Brazil
     - policy:
-        description: Policy description for Transportation
+        description: These graphs show the changes in land use policy in Brazil
   regions:
     - eu:
-        description: EU description for transportation
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Transportation sector in the EU
 
 power:
   id: power
@@ -82,20 +82,20 @@ power:
   decades_analysis:
   subjects:
     - emissions:
-        description: Emissions description for power
+        description: These graphs show the changes in Power emissions and growth in China, the EU, India, and the US
     - emission_drivers:
-        description: Emission drivers description for power
+        description: These graphs show the changes in Power emissions drivers in China, the EU, India, and the US
     - policy:
-        description: Policy description for power
+        description: These graphs show the changes in Power policy in China, the EU, India, and the US
   regions:
     - us:
-        description: US description for power
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the US
     - eu:
-        description: EU description for power
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the EU
     - china:
-        description: China description for power
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in China
     - india:
-        description: India description for power
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in India
 
 industry:
   id: industry
@@ -105,18 +105,18 @@ industry:
   decades_analysis:
   subjects:
     - emissions:
-        description: Emissions description for Industry
+        description: These graphs show the changes in Industry emissions and growth in China, the EU, India, and the US
     - emission_drivers:
-        description: Emission drivers description for Industry
+        description: These graphs show the changes in Industry emissions drivers in China, the EU, India, and the US
     - policy:
-        description: Policy description for Industry
+        description: These graphs show the changes in Industry policy in China, the EU, India, and the US
   regions:
     - us:
-        description: US description for power
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in the US
     - eu:
-        description: EU description for power
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in the EU
     - china:
-        description: China description for power
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in China 
     - india:
-        description: India description for power
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in India
 
