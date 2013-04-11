@@ -19,7 +19,7 @@ agriculture:
   id: agriculture
   name: Agriculture
   description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in the world.
-  tagline: Tagline for Forestry
+  tagline: Tagline for agriculture
   decades_analysis:
   subjects:
     - emissions:
@@ -39,8 +39,8 @@ agriculture:
 buildings:
   id: buildings
   name: Buildings
-  description: Buildings description for United States
-  tagline: Buildings tagline for United States
+  description: Buildings description
+  tagline: Buildings tagline
   decades_analysis:
   subjects:
     - emissions:
@@ -60,8 +60,8 @@ buildings:
 transport:
   id: transport
   name: Transport
-  description: Transportation description for United States
-  tagline: Transportation tagline for United States
+  description: Transportation description
+  tagline: Transportation tagline
   decades_analysis:
   subjects:
     - emissions:
@@ -77,8 +77,8 @@ transport:
 power:
   id: power
   name: Power
-  description: Power description for United States
-  tagline: Power tagline for United States
+  description: Power description
+  tagline: Power tagline
   decades_analysis:
   subjects:
     - emissions:
@@ -100,8 +100,8 @@ power:
 industry:
   id: industry
   name: Industry
-  description: Industry description for United States
-  tagline: Industry tagline for United States
+  description: Industry description
+  tagline: Industry tagline
   decades_analysis:
   subjects:
     - emissions:

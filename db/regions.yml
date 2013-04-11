@@ -291,11 +291,11 @@ india:
               -
   subjects:
     - emissions:
-        description: Emissions description for United States.
+        description: Emissions description for India.
     - emission_drivers:
-        description: Emission drivers description for United States.
+        description: Emission drivers description for India.
     - policy:
-        description: Policy description for United States.
+        description: Policy description for India.
 
 
 
@@ -393,11 +393,11 @@ china:
               -
   subjects:
     - emissions:
-        description: Emissions description for Brazil.
+        description: Emissions description for China.
     - emission_drivers:
-        description: Emission drivers description for Brazil.
+        description: Emission drivers description for China.
     - policy:
-        description: Policy description for Brazil.
+        description: Policy description for China.
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -546,9 +546,9 @@ eu:
               -
   subjects:
     - emissions:
-        description: Emissions description for Brazil.
+        description: Emissions description for European Union.
     - emission_drivers:
-        description: Emission drivers description for Brazil.
+        description: Emission drivers description for European Union.
     - policy:
-        description: Policy description for Brazil.
+        description: Policy description for European Union.
 
