@@ -2018,6 +2018,7 @@ china_industry_policy_3:
   type: BarGraph
   units: Yuan / kWh
   name_column: application
+  # grouping: y_axis
   x_groups:
     0:
       label: "2007"
