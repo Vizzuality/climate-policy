@@ -544,6 +544,7 @@ eu_buildings_policy:
   table: eu_buildings_3_labeling_copy_diego
   description: The increasing strictness of labeling standards for refrigerators, introduced in 1995 and updated regularly, demonstrated how EU efficiency standards ratcheted up over the last several years. The efficiency of the worst permissible label now exceeds the top category from 1995.
   x_axis: date_processed
+  description_long: long
   series:
     best_label:
       name: Range for best label
@@ -552,7 +553,7 @@ eu_buildings_policy:
       units: Energy efficiency index
       class: range
       y_min: 0
-      y_max: 200
+      y_max: 300
       strokeColor: "rgba(238,87,41,1)"
       fillColor: "rgba(238,87,41,0.2)"
     worst_label:
@@ -562,7 +563,7 @@ eu_buildings_policy:
       units: Energy efficiency index
       class: range
       y_min: 0
-      y_max: 200
+      y_max: 300
       strokeColor: "rgba(79,110,191,1)"
       fillColor: "rgba(79,110,191,0.2)"
 
