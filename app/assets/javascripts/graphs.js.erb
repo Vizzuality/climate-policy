@@ -813,71 +813,64 @@ $(document).ready(function() {
                   .style("color","#aaa");
               });
           })(strokeColor_, units_, y_col_);            
-      
-          // g.selectAll("rect.ranges")
-          //   .data(data_col)
-          //   .enter()
-          //   .append("rect")
-          //   .attr("class", 'ranges'+i)
-          //   .attr("style",'fill:'+strokeColor_)
-          //   .attr("x", function(d){
-          //     return x_scale(new Date(d[x_col]))
-          //   })
-          //   .attr("y", function(d){
-          //     return y_scale(d[serie.column_top]);
-          //   })
-          //   .attr("width", 8)
-          //   .attr("height", function(d) {
-          //     return y_scale(d[y_col_]) - y_scale(d[serie.column_top]);              
-          //   })
-          //   .attr("name", function(d){return d[y_col_]+ " - " + d[serie.column_top]+" "+serie.units})
-          //   .on("mouseover", function(d) {
 
-          //     circle_locked = true;
 
-          //     updateOverlayLine(new Date(d[x_col]));
+        } else if (serie.class == "bars") {
 
-          //     d3.selectAll(".overlay-line").style("visibility", "visible");
-          //     d3.selectAll(".year_marker").style("visibility", "visible");
-              
-          //     tooltip.html($(this).attr('name'))
-          //       .style("visibility", "visible")
-          //       .style("top", $(this).offset().top+30+"px")
-          //       .style("left", $(this).offset().left-$(".generic_tooltip").width()/2-2+"px")
-          //       .attr("class","tooltip generic_tooltip tooltip-top");
+          var bar_width = 15;
 
-          //     // d3.select(this).attr("style","fill: #fff; stroke: #000;")
-          //     //   .transition()
-          //     //   .duration(100)
-          //     //   .attr("r",LINE_DOT_R+1);
+          g.selectAll("rect.bars")
+              .data(data_col)
+              .enter()
+              .append("rect")
+              .attr("rx", 2)
+              .attr("ry", 2)
+              .attr("class", 'bars linedot linedot'+i)
+              .attr("style",'fill:'+strokeColor_)
+              .attr("x", function(d){
+                console.log(x_scale(new Date(d[x_col])) - bar_width/2);
+                return x_scale(new Date(d[x_col])) - bar_width/2;
+              })
+              .attr("y", function(d){
+                return h - y_scale(d[y_col_]);
+              })
+              .attr("width", bar_width)
+              .attr("height", function(d) {
+                return y_scale(d[y_col_]);
+              })
+              .attr("name", function(d){return d[y_col_]+" "+serie.units})
+              .on("mouseover", function(d) {
+                circle_locked = true;
+                updateOverlayLine(new Date(d[x_col]));
+                d3.selectAll(".overlay-line").style("visibility", "visible");
+                d3.selectAll(".year_marker").style("visibility", "visible");      
 
-          //     // Highlighting the legend
-          //     d3.selectAll("#"+y_col_)
-          //       .transition()
-          //       .duration(200)
-          //       .style("color","#111");
-          //   })
-          //   .on("mousemove", moveOverlayLine)
-          //   .on("mouseout", function(){
-          //     circle_locked = false;
+                d3.select(this).attr("style","fill: #fff; stroke: #000;");
 
-          //     d3.selectAll(".overlay-line").style("visibility", "hidden");
-          //     d3.selectAll(".year_marker").style("visibility", "hidden");
+                tooltip.html($(this).attr('name'))
+                  .style("visibility", "visible")
+                  .style("top", $(this).offset().top+30+"px")
+                  .style("left", $(this).offset().left-$(".generic_tooltip").width()/2-2+"px")
+                  .attr("class","tooltip generic_tooltip tooltip-top");
 
-          //     tooltip.style("visibility", "hidden");
-
-          //     // d3.select(this).attr("style","fill: "+strokeColor+"; stroke: #fff;")
-          //     //   .transition()
-          //     //   .duration(100)
-          //     //   .attr("r",LINE_DOT_R);
-
-          //     d3.selectAll("#"+y_col)
-          //       .transition()
-          //       .duration(200)
-          //       .style("color","#aaa");
-          //   });
-
-        } else if (serie.class == "vert_bars") {
+                // Highlighting the legend
+                d3.selectAll("#"+y_col_)
+                  .transition()
+                  .duration(200)
+                  .style("color","#111");
+              })
+              .on("mousemove", moveOverlayLine)
+              .on("mouseout", function(){
+                circle_locked = false;
+                d3.selectAll(".overlay-line").style("visibility", "hidden");
+                d3.selectAll(".year_marker").style("visibility", "hidden");
+                tooltip.style("visibility", "hidden");
+                d3.select(this).attr("style","fill: "+strokeColor_+"; stroke: #fff;")                
+                d3.selectAll("#"+y_col_)
+                  .transition()
+                  .duration(200)
+                  .style("color","#aaa");
+              });          
 
         }
 
