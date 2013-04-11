@@ -188,7 +188,6 @@ $(document).ready(function() {
           .style("shape-rendering", "crispEdges");
 
         var group_label_ = _graphs[graphNum].x_groups[j].label;
-        console.log(group_label_);
         var group_name_ = _graphs[graphNum].x_groups[j].column;
         var units_ = _graphs[graphNum].units;
 
@@ -441,6 +440,7 @@ $(document).ready(function() {
         }
 
         if (serie.class == "line") {
+
           // Preparing things for the side gradients
           // Insert a value before and after the time range, for the sides gradient
 
@@ -450,20 +450,29 @@ $(document).ready(function() {
             .interpolate(INTERPOLATE_METHOD);
 
           var units_ = serie.units;
+          var simplify_ = serie.simplify;
 
           g.append("svg:path")
             .attr("d", line(extended_data_col))
             .attr("class", 'lineStyle')
             .attr("style",'stroke:'+strokeColor_);
 
-          (function(strokeColor, units, y_col){  // We need a reference to strokeColor in runtime, for hover
+          (function(strokeColor, units, y_col, simplify){  // We need a reference to strokeColor in runtime, for hover
           g.selectAll(".linedot")
             .data(data_col)
             .enter()
             .append("circle")
             .attr("class", 'linedot linedot'+i)
             //This shows only the first point during each year
-            .attr("style",function(d){ var _fill = (new Date(d.date_processed).getMonth() + 1 == 1) ? 'fill:'+strokeColor : 'display: none'; return _fill;})
+            .attr("style",function(d){
+              var _fill;
+              if ((simplify == null)||(simplify)) {
+                _fill = (new Date(d.date_processed).getMonth() + 1 == 1) ? 'fill:'+strokeColor : 'display: none';
+              } else {
+                _fill = 'fill:'+strokeColor;
+              }
+              return _fill;
+              })
             .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
             .attr("cy", function(d){return y_scale(d[y_col])})
             .attr("r", LINE_DOT_R)
@@ -506,7 +515,7 @@ $(document).ready(function() {
                 .duration(200)
                 .style("color","#aaa");
             });
-          })(strokeColor_, units_, y_col_);
+          })(strokeColor_, units_, y_col_, simplify_);
         } else if (serie.class == "area") {
           var units_ = serie.units;
 

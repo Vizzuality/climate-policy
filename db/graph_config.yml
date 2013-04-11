@@ -1776,3 +1776,20 @@ china_power_policy:
     2:
       label: "12th FYP"
       column: _12th_fyp
+
+china_power_policy_2:
+  id: china_power_policy_2
+  name: Transmission incentives
+  table: china_power_3_transmission_incentives_copy_diego
+  description: Total incentives to transmission operators to connectand carry renewable electricity increased more than 25-fold between 2007 and 2010. China maintained reasonably high, but slowly declining, feed-in tariffs for wind and solar (not shown).
+  x_axis: date_processed
+  series:
+    incentive_delivered:
+      name: Incentive delivered
+      column: incentive_delivered_during_period_million_yuan
+      units: Yuan / kWh
+      class: line
+      y_min: 0
+      y_max: 50
+      strokeColor: "rgba(87,216,159,1)"
+      simplify: false
