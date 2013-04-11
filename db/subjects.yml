@@ -5,10 +5,8 @@ emissions:
   sectors:
     - forestry:
         description: Forestry description for emissions.
-        tagline: Forestry tagline for emissions.
     - agriculture:
         description: Agriculture description for emissions.
-        tagline: Agriculture tagline for emissions.
   regions:
     - brazil:
         description: Brazil description for emissions.
@@ -22,10 +20,8 @@ emission_drivers:
   sectors:
     - forestry:
         description: Forestry description for emission drivers.
-        tagline: Forestry tagline for emission drivers.
     - agriculture:
         description: Agriculture description for emission drivers.
-        tagline: Agriculture tagline for emission drivers.
   regions:
     - brazil:
         description: Brazil description for emission drivers.
@@ -39,10 +35,8 @@ policy:
   sectors:
     - forestry:
         description: Forestry description for policy.
-        tagline: Forestry tagline for policy.
     - agriculture:
         description: Agriculture description for policy.
-        tagline: Agriculture tagline for policy.
   regions:
     - brazil:
         description: Brazil description for policy.

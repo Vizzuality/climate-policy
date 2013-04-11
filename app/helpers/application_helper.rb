@@ -41,5 +41,12 @@ module ApplicationHelper
 
     GraphConfig.for(region_id, sector_id, subject_id)
   end
+
+  def description_for(item)
+    if item.respond_to?(:custom_description)
+      return item.custom_description
+    end
+    item.description
+  end
 end
 

@@ -49,7 +49,7 @@ brazil_forestry_emission_drivers_2:
   id: brazil_forestry_emission_drivers_2
   region_id: brazil
   sector_id: forestry
-  subject_id: emission_drivers
+  subject_id: emission_drivers_2
   name: Index of Change in Deforestation Activity by Size of Deforested Tracts
   description: Drivers such as commodity prices appear to have changed deforestation patterns, with large scale deforestation declining much more rapidly than small scale (e.g. tracts of less than 25 hectares).
   table: deforestation_polygons_ind_copy_test_matallo
@@ -156,7 +156,7 @@ brazil_agriculture_emissions_2:
   id: brazil_agriculture_emissions_2
   region_id: brazil
   sector_id: agriculture
-  subject_id: emissions
+  subject_id: emissions_2
   name: Land Use
   table: land_use_emissions_copy_test_matallo
   description: Both land under cultivation and non-CO2 emissions increased.
@@ -218,7 +218,7 @@ brazil_agriculture_emission_drivers_2:
   id: brazil_agriculture_emission_drivers_2
   region_id: brazil
   sector_id: agriculture
-  subject_id: emission_drivers
+  subject_id: emission_drivers_2
   name: Agricultural Net Exports
   table: brazil_ag_2_exports_copy_test_matallo
   description: Increasing land use, some of which satisfied export growth, and some of which satisfied population growth (not shown), was a major driver of growing emissions.
@@ -767,7 +767,7 @@ us_buildings_emissions_2:
   id: us_buildings_emissions_2
   region_id: us
   sector_id: buildings
-  subject_id: emissions
+  subject_id: emissions_2
   name: Total Residential and Commercial Floorspace
   table: buildings_floorspace_billion_square_meters_copy_test_matallo
   description: Emissions grew slowly, but steadily, until 2005, when emissions peaked and slowly declined.
@@ -794,7 +794,7 @@ us_buildings_emissions_drivers:
   id: us_buildings_emission_drivers
   region_id: us
   sector_id: buildings
-  subject_id: emissions_drivers
+  subject_id: emission_drivers
   name: Contribution of Key Drivers to Increase Or Decrease of Annual Buildings Emissions
   table: changes_in_emissions_drivers_copy_test_matallo
   description: "Growth in population and floor space per person were the largest drivers of buildings emissions. In the late 2000's, energy efficiency gains caught up with slowing floor space growth."
@@ -841,7 +841,7 @@ us_buildings_policy_2:
   id: us_buildings_policy_2
   region_id: us
   sector_id: buildings
-  subject_id: policy
+  subject_id: policy_2
   name: Building Code Index
   table: code_building_energy_intensity_index_copy_test_matallo
   description: Building codes tightened steadily — particularly for commercial buildings where the federal government played a larger role.
@@ -903,7 +903,7 @@ us_transportation_emissions_drivers:
   id: us_transportation_emission_drivers
   region_id: us
   sector_id: transportation
-  subject_id: emissions_drivers
+  subject_id: emission_drivers
   name: Emissions Intensity
   description: Large gains in vehicle engine and transmission efficiency did not result in significant fuel efficiency gains, as cars became heavier. There was little shifting between transport modes (not shown).
   table: modal_intensities_copy_test_matallo
@@ -1097,7 +1097,7 @@ us_industry_emissions_2:
   id: us_industry_emissions_2
   region_id: us
   sector_id: industry
-  subject_id: emissions
+  subject_id: emissions_2
   name: Industrial Output
   description: Industrial emissions declined even before the recession as industrial production rose.
   table: us_industry_1_copy_test_matallo_2
@@ -1210,7 +1210,7 @@ us_industry_policy_2:
   id: us_industry_policy_2
   region_id: us
   sector_id: industry
-  subject_id: policy
+  subject_id: policy_2
   name: Federal Industrial Audits
   description: There was little cohesive industrial policy. Participation in the federal industrial assessment program declined, while state level programs grew.
   table: us_industry_3_industrial_assessment_center_copy_test_matallo
@@ -1304,10 +1304,11 @@ india_agriculture_emission_drivers:
 
 india_agriculture_emission_drivers_2:
   id: india_agriculture_emission_drivers_2
-  description: Indian agriculture has modernized, as demonstrated by increasing fertilizer and equipment use. Despite rising fertilizer use, nitrous oxide emissions didn’t rise dramatically.
   region_id: india
-  subject_id: emission_drivers
+  sector_id: agriculture
+  subject_id: emission_drivers_2
   name: Mechanization Indices
+  description: Indian agriculture has modernized, as demonstrated by increasing fertilizer and equipment use. Despite rising fertilizer use, nitrous oxide emissions didn’t rise dramatically.
   table: india_ag_2_fertilizer_and_livestock_copy_diego
   x_axis: date_processed
   series:
@@ -1331,7 +1332,8 @@ india_agriculture_emission_drivers_2:
 india_agriculture_emission_drivers_3:
   id: india_agriculture_emission_drivers_3
   region_id: india
-  subject_id: emission_drivers
+  sector_id: agriculture
+  subject_id: emission_drivers_3
   name: Mechanization Indices
   description: Indian agriculture has modernized, as demonstrated by increasing fertilizer and equipment use.
   table: mechanization_copy_diego
@@ -1502,6 +1504,7 @@ india_power_emission_drivers:
 india_power_policy:
   id: india_power_policy
   region_id: india
+  sector_id: power
   subject_id: policy
   name: Ireda Loan Distributions
   description: Renewable energy growth was supported by increased loan distributions by the central government, including the Indian Renewable Energy Development Agency (IREDA).
@@ -1521,7 +1524,7 @@ india_power_policy_2:
   id: india_power_policy_2
   region_id: india
   sector_id: power
-  subject_id: policy
+  subject_id: policy_2
   name: Weighted Average of State Renewable Targets
   description: The central government required that each state set renewable purchase obligations that require renewable energy in the mix of electricity generation in each state. The average of these targets reached 5.5% by 2010.
   table: state_rpos_copy_diego
@@ -1539,6 +1542,7 @@ india_power_policy_2:
 india_industry_emissions:
   id: india_industry_emissions
   region_id: india
+  sector_id: industry
   subject_id: emissions
   name: Greenhouse Gas Emissions
   description: Manufacturing output nearly tripled in India since 1995.
@@ -1558,7 +1562,7 @@ india_industry_emissions_2:
   id: india_industry_emissions_2
   region_id: india
   sector_id: industry
-  subject_id: emissions
+  subject_id: emissions_2
   name: Industrial Production
   description: Emissions have rtisen, but not as rapidly as production.
   table: india_ind_2_value_index_copy_diego
@@ -1728,7 +1732,7 @@ china_buildings_emission_drivers_2:
   id: china_buildings_emission_drivers_2
   region_id: china
   sector_id: buildings
-  subject_id: emission_drivers
+  subject_id: emission_drivers_2
   name: Energy Consumption by Sector and Geography
   table: china_bldgs_2_geography_copy_diego
   description: Urban residential growth was the primary driver of growth in energy usage, which in turn was the primary cause of increasing emissions, with commercial building energy use contributing a small increase.
@@ -1782,7 +1786,7 @@ china_buildings_policy_2:
   id: china_buildings_policy_2
   region_id: china
   sector_id: buildings
-  subject_id: policy
+  subject_id: policy_2
   name: Funding for Energy Monitoring, Capacity Building, and Equipment Replacement
   table: china_bldgs_3_policy_funding_energy_monitoring_copy_diego
   description: Both the provincial and central governments provided substantial funding for energy efficiency monitoring and improvements.
@@ -1818,7 +1822,7 @@ china_industry_emissions_2:
   id: china_industry_emissions_2
   region_id: china
   sector_id: industry
-  subject_id: emissions
+  subject_id: emissions_2
   name: Energy Consumption by Industry and Industrial Output
   table: china_ind_2_value_index_copy_diego
   description: By some measures, industrial production output rose almost 20-fold since 1993.
@@ -1937,7 +1941,7 @@ china_industry_policy_2:
   id: china_industry_policy_2
   region_id: china
   sector_id: industry
-  subject_id: policy
+  subject_id: policy_2
   name: Energy Efficiency Incentives
   table: china_industry_energy_efficiency_incentives_copy_diego
   description: Industries were given incentives to reduce energy consumption that varied depending on the region.
@@ -1957,7 +1961,7 @@ china_industry_policy_3:
   id: china_industry_policy_3
   region_id: china
   sector_id: industry
-  subject_id: policy
+  subject_id: policy_3
   name: Punitive Pricing
   table: china_industry_punitive_pricing_copy_diego
   description: Industrial plant designated for phase out - or restricted production - paid higher prices for electricity, as penalties were added onto the price for electricity.
@@ -2083,7 +2087,7 @@ china_power_policy_2:
   id: china_power_policy_2
   region_id: china
   sector_id: power
-  subject_id: policy
+  subject_id: policy_2
   name: Transmission incentives
   table: china_power_3_transmission_incentives_copy_diego
   description: Total incentives to transmission operators to connectand carry renewable electricity increased more than 25-fold between 2007 and 2010. China maintained reasonably high, but slowly declining, feed-in tariffs for wind and solar (not shown).

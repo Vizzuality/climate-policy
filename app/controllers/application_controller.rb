@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  layout :layout_for_region_or_sector
-
   before_filter :get_regions_data, only: :show
   before_filter :get_sectors_data, only: :show
   before_filter :get_item_data, only: :show
@@ -17,7 +15,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def layout_for_region_or_sector
-    main_type.pluralize
+    main_type.pluralize unless request.xhr?
   end
 
   def get_regions_data
@@ -30,14 +28,15 @@ class ApplicationController < ActionController::Base
 
   def get_sectors_data
     if params[:sector_id]
-      @sector  = Sector.find(params[:sector_id])
+      @sector  = Sector.find(params[:sector_id]).freeze
       @region  = @sector.regions.first
-      @main    = @sector
+      @main    = @sector.freeze
       @regions = Region.all
     end
   end
 
   def get_item_data
+    @graph_configs      = GraphConfig.all.as_json.map{|gp| gp['attributes']}
     @sectors_or_regions = if main_is_region?
                             @region.sectors
                           else

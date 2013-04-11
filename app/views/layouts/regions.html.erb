@@ -34,13 +34,7 @@
     <div class="wrapper">
       <%= render 'shared/header' %>
 
-      <div id="content" class="content">
-        <%= render 'shared/graphs_list' %>
-
-        <div class="content-footer">
-          <a href="javascript:void(0)" class="scroll-controls scroll-top"><i><span>↑</span></i></a>
-        </div>
-      </div>
+      <%= yield %>
 
       <%= render 'shared/footer' %>
     </div>

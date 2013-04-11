@@ -2,6 +2,15 @@ class Sector < ActiveYaml::Base
   set_root_path "db"
   set_filename "sectors"
 
+  fields :id,
+         :name,
+         :description,
+         :custom_description,
+         :tagline,
+         :decades_analysis,
+         :subjects,
+         :regions
+
   def type
     self.class.name.downcase
   end
@@ -23,7 +32,7 @@ class Sector < ActiveYaml::Base
   end
 
   def subjects
-    self[:subjects].map do |s|
+    (self[:subjects] || []).map do |s|
       subject = Subject.find(s.keys.first)
       subject.description = s.values.first['description']
       subject

@@ -6,10 +6,67 @@ brazil:
   sectors:
     - forestry:
         description: Forestry description for Brazil
-        tagline: Forestry tagline for Brazil
+        decades_analysis:
+          _1980:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _1990:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
+          _2000:
+            description:
+            policy_barriers:
+              -
+              -
+            underlying_changes:
+              -
+              -
     - agriculture:
         description: Agriculture description for Brazil
-        tagline: Agriculture tagline for Brazil
+        decades_analysis:
+          _1980:
+            description: The 1980s saw a major economic crisis, political disruptions, then political stabilization.
+            policy_barriers:
+              - <dl><dt>Embrapa continues research efforts (initiated in 1970s) to advance technological development for agriculture.</dt></dl>
+            underlying_changes:
+              - <dl><dt>Democratization</dt></dl>
+              - <dl><dt>Persistence (since 1970s) of oil shocks consequences, prompting development of biofuels</dt></dl>
+              - <dl><dt>Hyperinflation</dt></dl>
+              - <dl><dt>Failed economic reforms</dt></dl>
+          _1990:
+            description: In the 1990s, the economy stabilized and Brazil liberalized trade. The agricultural sector made advances in professional, technological, and operational modernization.
+            policy_barriers:
+              - <dl><dt>Mercosur common trade policy established, 1991.</dt></dl>
+              - <dl><dt>Development of family production programs in mid-1990s.</dt><dd>National Program for Strengthening Family Farming (PRONAF)</dd></dl>
+              - <dl><dt>The Land Reform political attention implementation waned due to increased mechanization in agriculture.</dt></dl>
+            underlying_changes:
+              - <dl><dt>Savings freeze in 1991 leading to major recession</dt></dl>
+              - <dl><dt>Restructuring of economy</dt><dd>Broad trade liberalization reforms, hyperinflation ended in mid-1990s, significant increase in Brazilian tax burden.</dd></dl>
+              - <dl><dt>Mexican, Asian, and Russian financial crises led to Brazilian financial crisis in late 1990s</dt></dl>
+              - <dl><dt>Professionalization, mechanization, and decreasing labor-intensity of agriculture</dt></dl>
+          _2000:
+            description: Rising prices and yields in the 2000s accompanied increasing rural credit.
+            policy_barriers:
+              - <dt>Significant increase in planned rural credit under subsidized rates</dt></dl>
+              - <dl><dt>Conditional rural credit policies (National Monetary Council Resolution 3,545), 2008</dt><dd>Credit contingent on compliance with environmental</dd></dl>
+              - <dl><dt>Requirements and legitimacy of land claims</dt></dl>
+            underlying_changes:
+              - <dl><dt>Early 2000s surge in exports due to growth in China and significant appreciation of Real</dt></dl>
+              - <dl><dt>2007-2008 global food price crisis</dt></dl>
+              - <dl><dt>Expansion of agricultural frontier</dt></dl>
+              - <dl><dt>Middle-class significantly expanded</dt></dl>
+              - <dl><dt>Increase in tax burden until 2003</dt></dl>
+              - <dl><dt>Global recession 2008-2009</dt></dl>
   subjects:
     - emissions:
         description: Emissions description for Brazil.
@@ -24,12 +81,15 @@ us:
   tagline: Making progress despite policy gridlock
   description: The United States has created a “messy but useful” combination of incentives, regulation, persuasion, and innovation at the federal and state level, which has contributed to a recent decline in emissions. Sustaining and escalating this emissions decline while creating more cost-effective policy in the face of tightened government spending is the next challenge.
   sectors:
-    - forestry:
-        description: Forestry description for United States
-        tagline: Forestry tagline for United States
-    - agriculture:
-        description: Agriculture description for United States
-        tagline: Agriculture tagline for United States
+    - buildings:
+        description: Buildings description for United States
+    - transportation:
+        description: Transportation description for United States
+    - power:
+        description: Power description for United States
+    - industry:
+        description: Industry description for United States
+
   subjects:
     - emissions:
         description: Emissions description for United States.
