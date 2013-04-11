@@ -845,13 +845,13 @@ $(document).ready(function() {
                 d3.selectAll(".overlay-line").style("visibility", "visible");
                 d3.selectAll(".year_marker").style("visibility", "visible");      
 
-                d3.select(this).attr("style","fill: #fff; stroke: #000;");
+                d3.select(this).attr("style","fill: fff; stroke: "+strokeColor_);
 
                 tooltip.html($(this).attr('name'))
                   .style("visibility", "visible")
-                  .style("top", $(this).offset().top+30+"px")
-                  .style("left", $(this).offset().left-$(".generic_tooltip").width()/2-2+"px")
-                  .attr("class","tooltip generic_tooltip tooltip-top");
+                  .style("top", ($(this).offset().top-40)+"px")
+                  .style("left", $(this).offset().left-$(".generic_tooltip").width()/2+"px")
+                  .attr("class","tooltip generic_tooltip tooltip-bottom");
 
                 // Highlighting the legend
                 d3.selectAll("#"+y_col_)
@@ -870,8 +870,7 @@ $(document).ready(function() {
                   .transition()
                   .duration(200)
                   .style("color","#aaa");
-              });          
-
+              });
         }
 
         $("#"+_graphs[graphNum].id).find(".graph-legend").append('<li><div class="legend-item" style="background-color:'+strokeColor_+'"></div><span id='+y_col_+' class="legend-label">'+y_col_name+'</span></li>')
@@ -912,6 +911,10 @@ $(document).ready(function() {
       svg[graphNum].selectAll("circle").each(function() {
         svg[graphNum].node().appendChild(this);
       });
+      svg[graphNum].selectAll("rect.bars").each(function() {
+        svg[graphNum].node().appendChild(this);
+      });
+
     });
   }
 
