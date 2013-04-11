@@ -40,8 +40,8 @@ brazil_forestry_emission_drivers:
 
 brazil_forestry_emission_drivers_2:
   id: brazil_forestry_emission_drivers_2
-  name: Deforestation polygons indicator
-  description: Common drivers of deforestation, such as commodity prices, and land protection appear to have changed deforestation patterns, with large scale deforestation declining much more rapidly than small scale (e.g. tracts of less than 25 hectares).
+  name: Index of Change in Deforestation Activity by Size of Deforested Tracts
+  description: Drivers such as commodity prices appear to have changed deforestation patterns, with large scale deforestation declining much more rapidly than small scale (e.g. tracts of less than 25 hectares).
   table: deforestation_polygons_ind_copy_test_matallo
   x_axis: date_processed
   series:
@@ -88,7 +88,7 @@ brazil_forestry_emission_drivers_2:
 
 brazil_forestry_policy:
   id: brazil_forestry_policy
-  name: Protected Lands
+  name: Area of Land Under Government Protection
   description: As an example of increased Brazilian policy efforts, Brazil has increased efforts to reduce deforestation, and the amount of land under government protection has increased significantly since 2001.
   table: protected_lands_copy_test_matallo
   x_axis: date_processed
@@ -115,7 +115,7 @@ brazil_forestry_policy:
 brazil_agriculture_emissions:
   id: brazil_agriculture_emissions
   table: land_use_emissions_copy_test_matallo
-  name: Emissions
+  name: Non-CO2 Greenhouse Gas Emissions
   description: Both land under cultivation and non-CO2 emissions increased.
   x_axis: date_processed
   series:
@@ -154,7 +154,7 @@ brazil_agriculture_emissions_2:
 
 brazil_agriculture_emission_drivers:
   id: brazil_agriculture_emission_drivers
-  name: Intensity indices
+  name: Agricultural Production Intensity
   table: emissions_drivers_copy_test_matallo
   description: Although the intensity of food production per hectare increased, mechanization did not increase.
   x_axis: date_processed
@@ -194,7 +194,7 @@ brazil_agriculture_emission_drivers:
 
 brazil_agriculture_emission_drivers_2:
   id: brazil_agriculture_emission_drivers_2
-  name: Exports
+  name: Agricultural Net Exports
   table: brazil_ag_2_exports_copy_test_matallo
   description: Increasing land use, some of which satisfied export growth, and some of which satisfied population growth (not shown), was a major driver of growing emissions.
   x_axis: date_processed
@@ -218,9 +218,9 @@ brazil_agriculture_emission_drivers_2:
 
 brazil_agriculture_policy:
   id: brazil_agriculture_policy
-  name: Credit
+  name: Subsidies to Agricultural Producers (1995-2010)
   table: brazil_ag_3_credit_subsidies_copy_test_matallo
-  description: Brazil made increasing the productivity of agricultural land a priority as a means to reduce expansion into new land and deforestation. Subsidies to producers, in part to modernize their operations, steadily increased over time. In the 1990s, credit subsidies were offset by price controls set below market prices; as these price controls rose above market prices, they became additional effective subsidies.
+  description: Brazil made increasing the productivity of agricultural land a priority to reduce expansion into new land and deforestation. Subsidies to producers, in part to modernize their operations, steadily increased over time.
   description_long: long
   x_axis: date_processed
   series:
@@ -255,7 +255,7 @@ brazil_agriculture_policy:
 
 eu_power_emissions:
   id: eu_power_emissions
-  name: Emissions and Generation
+  name: Emissions And Generation in the EU27
   table: eu_power_1_emissions_generation_copy_test_matallo
   description: Emissions intensity fell fast enough that emissions declined overall, even though electricity generation grew.
   x_axis: date_processed
@@ -279,7 +279,7 @@ eu_power_emissions:
 
 eu_power_emission_drivers:
   id: eu_power_emission_drivers
-  name: Grid impact
+  name: Power Sector Variables And Impact on Average Emissions Factor in the EU27
   table: eu_power_2_grid_drivers_copy_test_matallo
   description: During the 1990s, increases in coal and natural gas efficiency and growing nuclear output drove down grid emissions intensity. In the 2000s, the fuel mix shifted away from coal and toward other sources, especially renewable energy. The efficiency of coal plants fell in the 2000s, possibly due to increased sulfur and other pollution controls.
   description_long: longest
@@ -296,7 +296,7 @@ eu_power_emission_drivers:
 
 eu_industry_emissions:
   id: eu_industry_emissions
-  name: Emissions and Output
+  name: Industrial Emissions And Production in the EU27
   table: eu_industry_1_emissions_output_copy_test_matallo
   description: Despite increasing output in the industrial sector, direct emissions fell, while electricity demand rose as the industrial sector shifted fuel consumption towards a less carbon intensive fuel mix.
   description_long: long
@@ -329,7 +329,7 @@ eu_industry_emissions:
 
 eu_industry_emission_drivers:
   id: eu_industry_emission_drivers
-  name: Sectoral Energy Efficiency Indices
+  name: Energy Efficiency Index (Odex) in Industry in the Eu27
   table: eu_ind_2_sectoral_energy_efficiencies_copy_test_matallo
   description: Industrial energy efficiency improved across the board since 1990. There were no structural changes in industry that affected emissions intensity.
   x_axis: date_processed
@@ -385,7 +385,7 @@ eu_industry_emission_drivers:
 
 eu_agriculture_emissions:
   id: eu_agriculture_emissions
-  name: Emissions and Output
+  name: Agricultural Emissions in the EU27
   table: eu_agriculture_1_emissions_output_copy_test_matallo
   description: Emissions have declined since 1990, despite a slight increase in agricultural production.
   x_axis: date_processed
@@ -409,7 +409,7 @@ eu_agriculture_emissions:
 
 eu_agriculture_emission_drivers:
   id: eu_agriculture_emission_drivers
-  name: Changes in Agricultural Emissions Drivers
+  name: Contribution of Agricultural Emissions Drivers to Changes in Agricultural Greenhouse Gas Emissions in EU27
   table: eu_agriculture_2_emissions_drivers_copy_test_matallo
   description: Methane emissions from livestock declined as the number of cattle decreased. Nitrous oxide emissions fell, due to decreases in both cropland area and fertilizer intensity.
   type: BarGraph
@@ -448,7 +448,7 @@ eu_agriculture_policy:
 
 eu_buildings_emissions:
   id: eu_buildings_emissions
-  name: Building Emissions
+  name: Building Emissions in the EU27
   table: eu_buildings_1_emissions_copy_test_matallo
   description: Emissions associated with direct fuel combustion in the buildings sector fell, but were offset by a shift from direct to indirect emissions due to a rise in electricity consumption.
   x_axis: date_processed
@@ -474,7 +474,7 @@ eu_buildings_emissions:
 
 eu_buildings_emission_drivers:
   id: eu_buildings_emission_drivers
-  name: Changes in Building Emissions Drivers
+  name: Impacts of Drivers on Residential Emissions
   table: eu_buildings_2_drivers_copy_test_matallo
   description: Population increase and smaller households- which led to more buildings and total floorspace —increased residential emissions. However, these factors were more than offset by increases in energy efficiency and renewable energy and a shift to electricity from other fuel sources.
   description_long: longest
@@ -491,7 +491,7 @@ eu_buildings_emission_drivers:
 
 eu_transport_emissions:
   id: eu_transport_emissions
-  name: Emissions and Activity
+  name: Transportation Emissions and Passenger Miles and Freight Transport Index
   table: eu_transport_1_emissions_output_copy_test_matallo
   description: Passenger miles and freight transport rose rapidly before declining as a result of the recession. Emissions grew slowly but steadily until they peaked in the mid-2000s.
   description_long: long
@@ -524,7 +524,7 @@ eu_transport_emissions:
 
 eu_transport_emission_drivers:
   id: eu_transport_emission_drivers
-  name: Emissions Intensity Indices
+  name: "Emissions Intensity Indices—EU27 + Norway, Switzerland, and Turkey"
   table: eu_transport_2_emissions_intensities_copy_test_matallo
   description: Emissions intensity declined steadily. Passenger transport efficiency improved more than freight transport efficiency. However, within road transport, freight improved three times as much as passenger travel (18% versus 6%) between 1995 and 2010 (not shown).
   x_axis: date_processed
@@ -556,7 +556,7 @@ eu_transport_emission_drivers:
 
 eu_transport_policy:
   id: eu_transport_policy
-  name: Fuel Taxes
+  name: "Emissions Intensity Indices—EU27 + Norway, Switzerland, and Turkey"
   table: eu_transport_3_fuel_taxes_copy_test_matallo
   description: Starting from a comparatively high point, real fuel taxes were almost flat since the mid-1990s and steadily declined as a proportion of the final fuel price. Rising oil prices rather than government intervention therefore were the main increase to price signals for more efficient road transport.
   description_long: long
@@ -1048,7 +1048,7 @@ us_industry_policy_2:
 
 india_agriculture_emissions:
   id: india_agriculture_emissions
-  name: "Lands & emissions"
+  name: Emissions and Land Use
   description: Land use-related emissions remained relatively flat, as did land under cultivation.
   table: land_use_and_emissions_copy_diego
   x_axis: date_processed
@@ -1080,7 +1080,7 @@ india_agriculture_emissions:
 
 india_agriculture_emission_drivers:
   id: india_agriculture_emission_drivers
-  name: Agricultural exports
+  name: Agricultural Net Exports
   description: Output grew to meet domestic food demand (not shown) and the export of agricultural raw materials.
   table: ag_exports_million_usd_copy_diego
   x_axis: date_processed
@@ -1106,7 +1106,7 @@ india_agriculture_emission_drivers:
 
 india_agriculture_emission_drivers_2:
   id: india_agriculture_emission_drivers_2
-  name: Fertilizer & livestock
+  name: Mechanization Indices
   description: Indian agriculture has modernized, as demonstrated by increasing fertilizer and equipment use. Despite rising fertilizer use, nitrous oxide emissions didn’t rise dramatically. 
   table: india_ag_2_fertilizer_and_livestock_copy_diego
   x_axis: date_processed
@@ -1130,7 +1130,7 @@ india_agriculture_emission_drivers_2:
 
 india_agriculture_emission_drivers_3:
   id: india_agriculture_emission_drivers_3
-  name: Mechanization
+  name: Mechanization Indices
   description: Indian agriculture has modernized, as demonstrated by increasing fertilizer and equipment use. 
   table: mechanization_copy_diego
   x_axis: date_processed
@@ -1160,10 +1160,9 @@ india_agriculture_emission_drivers_3:
       y_max: 700
       strokeColor: "#00D9A3"
 
-# CAMBIAR
 india_agriculture_policy:
   id: india_agriculture_policy
-  name: Governments subsidies
+  name: Central Government Subsidies to Agriculture
   description: Indian agricultural policy focused on modernization of the agricultural sector through subsidies. Though greenhouse gases were not specifically targeted in this effort, modernization had a modest effect on total emissions.
   table: government_subsidies_copy_diego
   x_axis: date_processed
@@ -1187,7 +1186,7 @@ india_agriculture_policy:
 
 india_power_emissions:
   id: india_power_emissions
-  name: Generation & emissions
+  name: Greenhouse Gas Emissions and Generation
   description: Emissions largely tracked the growth in electricity generation.
   table: emissions_generation_copy_diego
   x_axis: date_processed
@@ -1211,7 +1210,7 @@ india_power_emissions:
 
 india_power_emission_drivers:
   id: india_power_emission_drivers
-  name: Fuel sources
+  name: Power Sector Variables and Impact on Average Emissions Factor in The Eu27
   description: Most new generation came from conventional sources (particularly coal), although the past decade saw exponential growth in renewable energy generation.
   table: fuel_sources_copy_diego
   x_axis: date_processed
@@ -1291,7 +1290,7 @@ india_power_emission_drivers:
 
 india_power_policy:
   id: india_power_policy
-  name: IREDA renewables subsidies
+  name: Ireda Loan Distributions
   description: Renewable energy growth was supported by increased loan distributions by the central government, including the Indian Renewable Energy Development Agency (IREDA). 
   table: ireda_subsidies_copy_diego
   x_axis: date_processed
@@ -1307,7 +1306,7 @@ india_power_policy:
 
 india_power_policy_2:
   id: india_power_policy_2
-  name: Weighted average state RPO targets
+  name: Weighted Average of State Renewable Targets
   description: The central government required that each state set renewable purchase obligations that require renewable energy in the mix of electricity generation in each state. The average of these targets reached 5.5% by 2010.
   table: state_rpos_copy_diego
   x_axis: date_processed
@@ -1319,11 +1318,11 @@ india_power_policy_2:
       class: line
       y_min: 0
       y_max: 6
-      strokeColor: "#546DBC"      
+      strokeColor: "#546DBC"
 
 india_industry_emissions:
   id: india_industry_emissions
-  name: Emissions
+  name: Greenhouse Gas Emissions
   description: Manufacturing output nearly tripled in India since 1995. 
   table: india_ind_1_emissions_production_copy_diego
   x_axis: date_processed
@@ -1339,7 +1338,7 @@ india_industry_emissions:
 
 india_industry_emissions_2:
   id: india_industry_emissions_2
-  name: Value index
+  name: Industrial Production
   description: Emissions have rtisen, but not as rapidly as production.
   table: india_ind_2_value_index_copy_diego
   x_axis: date_processed
@@ -1363,7 +1362,7 @@ india_industry_emissions_2:
 
 india_industry_emission_drivers:
   id: india_industry_emission_drivers
-  name: Sectoral emissions intensities
+  name: Sectoral Intensity Changes
   description: Indian industry largely improved in efficiency, although performance at a sectoral level was mixed. The steel industry emissions intensity increased due to an increase in primary steel production versus scrap.
   table: india_ind_2_sectoral_intensities_copy_diego
   x_axis: date_processed
@@ -1387,7 +1386,7 @@ india_industry_emission_drivers:
 
 india_industry_policy:
   id: india_industry_policy
-  name: Participation in Award Schemes
+  name: National Energy Conservation Award Scheme
   description: Indian policy towards industrial energy efficiency effectively began in the 2000s, which saw the creation of a number of programs targeting high-visibility energy efficiency programs, the largest of which, the National Conservation Award Scheme, has seen increasing participation over the last decade.
   table: ind_ind_3_awards_scheme_copy_diego
   x_axis: date_processed
