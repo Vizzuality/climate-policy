@@ -175,6 +175,32 @@ $(document).ready(function() {
           return series_label_top_margin + (i * series_step);
         });
 
+        var group_label_ = [];
+
+        for (var j = 0; j < _.size(_graphs[graphNum].x_groups); j++) {
+          group_label_[j] = [];
+          group_label_[j]["column"] = _graphs[graphNum].x_groups[j]['column'],
+          group_label_[j]["label"] = _graphs[graphNum].x_groups[j]['label']
+        }
+
+        // Drawing group-x labels if there are more than one
+        if (_.size(_graphs[graphNum].x_groups) > 1) {
+          svg[graphNum].selectAll("text.graph-groups-label")
+            .data(group_label_)
+            .enter()
+            .append("text")
+            .attr("class","graph-groups-label")
+            .text(function(d){
+              return d['label'];
+            })
+            .attr("x", function(d,i) {
+              return series_label_width + group_width*i + zero_pos - 40;
+            })
+            .attr("y", function(d,i) {
+              return 30;
+            });
+        }
+
       // Drawing each x-group
       for (var j = 0; j < _.size(_graphs[graphNum].x_groups); j++) {
 
@@ -187,28 +213,10 @@ $(document).ready(function() {
           .style("stroke", "#ddd")
           .style("shape-rendering", "crispEdges");
 
-        var group_label_ = _graphs[graphNum].x_groups[j].label;
-        console.log(group_label_);
         var group_name_ = _graphs[graphNum].x_groups[j].column;
         var units_ = _graphs[graphNum].units;
 
         (function(group_name, units) { // We need a reference to group_name & units in runtime, for tooltips
-
-          // Drawing group-x labels if there are more than one
-          if (_.size(_graphs[graphNum].x_groups) > 1) {
-            svg[graphNum].selectAll("text.graph-groups-label")
-              .data(data.rows)
-              .enter()
-              .append("text")
-              .attr("class","graph-groups-label")
-              .text(group_label_)
-              .attr("x", function(d,i) {
-                return series_label_width + group_width*i + zero_pos - 40;
-              })
-              .attr("y", function(d,i) {
-                return 30;
-              });
-          }
 
           svg[graphNum].selectAll("rect."+group_name)
             .data(data.rows)
