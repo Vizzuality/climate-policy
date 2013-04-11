@@ -11,13 +11,14 @@ brazil_forestry_emissions:
       units: km^2/year
       class: line
       y_min: 3000
-      y_max: 30000
+      y_max: 40000
       strokeColor: 'rgba(238,87,41,1)'
 
 brazil_forestry_emission_drivers:
   id: brazil_forestry_emission_drivers
   name: Commodity Prices
   description: Common drivers of deforestation, such as commodity prices, and land protection appear to have changed deforestation patterns, with large scale deforestation declining much more rapidly than small scale (e.g. tracts of less than 25 hectares).
+  description_long: long
   table: commodity_prices_copy_test_matallo
   x_axis: date_processed
   series:
@@ -914,7 +915,7 @@ us_power_emissions:
     total_net: 
       name: Total Net Generation
       column: total_net_generation
-      units:  MM T CO<sup>2</sup>
+      units: TWh
       class: line
       y_min: 700
       y_max: 4000
@@ -959,7 +960,7 @@ us_power_policy:
 
 us_power_policy_2:
   id: us_power_policy_2
-  name: State Level Renewable Energy Portfolio Standards (2000-2010)
+  name: State Level Renewable Energy Portfolio Standards
   description: Both state and federal governments created policies to support renewable energy. The two most prominent of these were federal renewable energy tax incentives, and state level renewable portfolio standards. These policies, and several other factors, are associated with significant increases in U.S. renewable energy capacity.
   table: weighted_average_state_portfolio_standards_copy_test_matallo
   x_axis: date_processed

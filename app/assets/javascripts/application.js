@@ -68,7 +68,7 @@ $(document).ready(function() {
         event: event.type,
         ready: true,
         effect: function() {
-          $(this).show().css('opacity', '0').animate({ opacity: 1, "top": "-=10px" }, { duration: 100 });
+          $(this).show().css('opacity', '0').animate({ opacity: 1 }, { duration: 100 });
         }
       },
       hide: {
@@ -132,6 +132,61 @@ $(document).ready(function() {
       graph.siblings('.graph-canvas').hide();
       graph.fadeIn();
 
+      if(graph.not('.graph-canvas-bars')) {
+        graph.closest('.graph').addClass('graph-line');
+        graph.closest('.graph').removeClass('graph-bars');
+        graph.siblings('.graph-selector').addClass('graph-selector-line');
+        graph.siblings('.graph-selector').removeClass('graph-selector-bars');
+      } else {
+        graph.closest('.graph').removeClass('graph-line');
+        graph.closest('.graph').addClass('graph-bars');
+        graph.siblings('.graph-selector').removeClass('graph-selector-line');
+        graph.siblings('.graph-selector').addClass('graph-selector-bars');
+      }
+
+      //Overlay
+      d3.selectAll(".graph-selector-line")
+        .on("mouseover", function() {
+          d3.selectAll(".overlay-line").style("visibility", "visible");
+          d3.selectAll(".year_marker").style("visibility", "visible");
+        })
+        .on("mousemove", moveOverlayLine)
+        .on("mouseout", function() {
+          d3.selectAll(".overlay-line").style("visibility", "hidden");
+          d3.selectAll(".year_marker").style("visibility", "hidden");
+        })
+
+      d3.selectAll(".graph-line")
+        .on("mouseover", function() {
+          d3.selectAll(".overlay-line").style("visibility", "visible");
+          d3.selectAll(".year_marker").style("visibility", "visible");
+        })
+        .on("mousemove", moveOverlayLine)
+        .on("mouseout", function() {
+          d3.selectAll(".overlay-line").style("visibility", "hidden");
+          d3.selectAll(".year_marker").style("visibility", "hidden");
+        })
+
+      d3.selectAll(".graph-selector-bars")
+        .on("mouseover", function() {
+          d3.selectAll(".overlay-line").style("visibility", "hidden");
+          d3.selectAll(".year_marker").style("visibility", "hidden");
+        })
+        .on("mousemove", function() {
+          d3.selectAll(".overlay-line").style("visibility", "hidden");
+          d3.selectAll(".year_marker").style("visibility", "hidden");
+        })
+
+      d3.selectAll(".graph-bars")
+        .on("mouseover", function() {
+          d3.selectAll(".overlay-line").style("visibility", "hidden");
+          d3.selectAll(".year_marker").style("visibility", "hidden");
+        })
+        .on("mousemove", function() {
+          d3.selectAll(".overlay-line").style("visibility", "hidden");
+          d3.selectAll(".year_marker").style("visibility", "hidden");
+        })
+
       if(desc.text() != desc.siblings('.graph-description:visible').text()) {
         desc.siblings('.graph-description').hide();
         desc.fadeIn();
@@ -161,6 +216,4 @@ $(document).ready(function() {
   $('.slides').animate({
     height: $("#slide1").height()+80,
   });
-
-
 });

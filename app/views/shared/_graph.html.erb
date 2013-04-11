@@ -1,13 +1,13 @@
 <% graph_configs = item.graph_configs(@main.id, @item.id) %>
 <div class="graph graph-<%= graph_configs.first.type == 'BarGraph' ? 'bars' : 'line' %>">
-  <div class="graph-selector">
+  <div class="graph-selector graph-selector-<%= graph_configs.first.type == 'BarGraph' ? 'bars' : 'line' %>">
     <h3 class="graph-title">
-      <span><%= item.name %></span>
+      <span class="type"><%= item.name %></span>
 
       <% if graph_configs.size == 1 %>
-        <%= graph_configs.first.name %>
+        <%= graph_configs.first.name.capitalize %>
       <% else %>
-        <%= link_to graph_configs.first.name, '#', class: 'graph-link' %>
+        <%= link_to graph_configs.first.name.capitalize, '#', class: 'graph-link' %>
       <% end %>
     </h3>
 
@@ -16,7 +16,7 @@
         <% graph_configs.each do |graph_config| %>
           <li>
             <h3 class="graph-title">
-              <%= link_to graph_config.name, '#', :'data-rel' => graph_config.id %>
+              <%= link_to graph_config.name.capitalize, '#', :'data-rel' => graph_config.id %>
             </h3>
           </li>
         <% end %>
@@ -31,7 +31,7 @@
   </div>
 
   <% graph_configs.each_with_index do |graph_config, index| %>
-    <div class="graph-canvas <%= 'hidden' if index > 0 %>" id="<%= graph_config.id %>">
+    <div class="graph-canvas graph-<%= graph_config.type == 'BarGraph' ? 'bars' : 'line' %> <%= 'hidden' if index > 0 %>" id="<%= graph_config.id %>">
       <ul class="graph-legend"></ul>
     </div>
   <% end %>

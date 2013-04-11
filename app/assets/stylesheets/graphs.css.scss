@@ -54,18 +54,16 @@
 .graph {
   position: relative;
   border-top: 1px solid #ddd;
-
-  &.graph-bars {
-    .graph-canvas {
-      padding-top: 180px;
-      height: 308px;
-    }
-  }
 }
 
 .graph-canvas {
   height: 388px;
   width: 1038px;
+
+  &.graph-bars {
+    padding-top: 180px;
+    height: 308px;
+  }
 
   &.hidden { display: none; }
 }
@@ -75,7 +73,6 @@
   z-index: 200;
   margin: 30px;
   padding: 10px;
-
 }
 
 .graph-gradient {
@@ -109,10 +106,10 @@ svg {
 }
 
 .graph-title {
-  font: 27px/1.1 "open-sans", sans-serif;
+  font: 24px/1.1 "open-sans", sans-serif;
   color: #666;
 
-  span {
+  .type {
     display: block;
     font: bold 17px "open-sans", sans-serif;
     text-transform: uppercase;
