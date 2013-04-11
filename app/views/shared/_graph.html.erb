@@ -31,7 +31,7 @@
   </div>
 
   <% graph_configs.each_with_index do |graph_config, index| %>
-    <div class="graph-canvas graph-<%= graph_config.type == 'BarGraph' ? 'bars' : 'line' %> <%= 'hidden' if index > 0 %>" id="<%= graph_config.id %>">
+    <div class="graph-canvas graph-canvas-<%= graph_config.type == 'BarGraph' ? 'bars' : 'line' %> <%= 'hidden' if index > 0 %>" id="<%= graph_config.id %>">
       <ul class="graph-legend"></ul>
     </div>
   <% end %>

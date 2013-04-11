@@ -9,30 +9,38 @@ brazil:
       description: These graphs show the changes in deforestation, deforestation drivers, and land use policy in Brazil
       decades_analysis:
         _1980:
-          description: 
+          description: Brazil was embroiled in a long economic crisis throughout the 1980s and ended military dictatorship in 1985. Forestry and environmental policy began to receive very limited attention at the end of the decade.
           policy_barriers: 
-            - 
-            - 
+            - <dl><dt>Forest Code of 1965 continued, requiring that a proportion of rural land remain forested</dt></dl>
+            - <dl><dt>New 1988 Constitution increased decentralized environmental policy</dt></dl>
+            - <dl><dt>National Policy of the Environment created key execution instruments, 1981</dt><dd>National Environmental System</dd><dd>National Environmental Council</dd></dl>
+            - <dl><dt>Brazilian Environment and Renewable Natural Resources Institute (Ibama) established, 1989</dt></dl>
           underlying_changes: 
-            - 
-            -           
+            - <dl><dt>Democratization</dt></dl>
+            - <dl><dt>Hyperinflation</dt></dl>
+            - <dl><dt>Failed economic reforms</dt></dl>
         _1990:
-          description:
+          description: "As the economy moved towards stabilization, Brazil established key institutions to execute environmental policy and made environmental infractions penal. The start of the decade saw lower deforestation rates than the late 1980s, but rates had risen again by the end of the decade. (INPE 2012)"
           policy_barriers:
-            - 
-            -           
+            - <dl><dt>Ministry of the Environment established, 1992</dt></dl>
+            - <dl><dt>Law of Environmental Crimes made environmental infractions penal rather than civil, 1998</dt></dl>
+            - <dl><dt>The Land Reform political attention implementation waned due to increased mechanization in agriculture.</dt></dl>
           underlying_changes:
-            - 
-            -           
+            - <dl><dt>Restructuring of economy</dt><dd>Broad trade liberalization reforms</dd><dd>Hyperinflation ended in mid-1990s</dd></dl>
+            - <dl><dt>Mexican, Asian, and Russian financial crises led to Brazilian financial crisis in late 1990s.</dt></dl>
+            - <dl><dt>Rio Summit 1992</dt></dl>
+            - <dl><dt>1997 Kyoto Protocol included seeds of UN-REDD</dt></dl>
         _2000:
-          description:
+          description: Environmental awareness, and conservation policy and enforcement, increased across the decade. Deforestation rates dropped significantly in the second half of the 2000s.
           policy_barriers:
-            -
-            -
-          underlying_changes:      
-            -
-            -
-      subjects:      
+            - <dl><dt>National System of Nature’s Conservation Units established, 2000</dt></dl>
+            - <dl><dt>Action Plan for Prevention and Control of Deforestation in the Amazon (PPCDAm) launched, 2004</dt><dd>Coordinated effiorts among federal, state, and municipal governments, and civil organizations</dd><dd>Territorial and land use management</dd><dd>Real Time Deforestation Detection System (DETER) remote sensing system used to implement and enforce command and control policies</dd><dd>Improved qualification of Brazilian Environment Institute (Ibama) personnel</dd><dd>Prioritized municipalities with high deforestation rates for differentiated action (Presidential Decree 6.321, 2008)</dd><dd>National Monetary Council Resolution 3.545, 2008</dd><dd>Introduced conditional rural credit policies</dd><dd>Credit contingent on compliance with environmental requirements and legitimacy of land claims</dd><dd>Strengthened legal support for environmental  infractions and sanctions (Presidential Decree 6.514, 2008)</dd></dl>
+          underlying_changes:
+            - <dl><dt>Early 2000s surge in exports due to growth in China and significant appreciation of Real</dt></dl>
+            - <dl><dt>Increasing pressure for expansion of agricultural frontier</dt></dl>
+            - <dl><dt>Global recession 2008-2009</dt></dl>
+            - <dl><dt>REDD under active discussion in the UNFCCC negotiations</dt></dl>
+      subjects:
         emissions:
           name: Emissions
           graph_config:

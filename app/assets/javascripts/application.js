@@ -132,16 +132,16 @@ $(document).ready(function() {
       graph.siblings('.graph-canvas').hide();
       graph.fadeIn();
 
-      if(graph.not('.graph-canvas-bars')) {
-        graph.closest('.graph').addClass('graph-line');
-        graph.closest('.graph').removeClass('graph-bars');
-        graph.siblings('.graph-selector').addClass('graph-selector-line');
-        graph.siblings('.graph-selector').removeClass('graph-selector-bars');
-      } else {
+      if(graph.is('.graph-canvas-bars')) {
         graph.closest('.graph').removeClass('graph-line');
         graph.closest('.graph').addClass('graph-bars');
         graph.siblings('.graph-selector').removeClass('graph-selector-line');
         graph.siblings('.graph-selector').addClass('graph-selector-bars');
+      } else {
+        graph.closest('.graph').addClass('graph-line');
+        graph.closest('.graph').removeClass('graph-bars');
+        graph.siblings('.graph-selector').addClass('graph-selector-line');
+        graph.siblings('.graph-selector').removeClass('graph-selector-bars');
       }
 
       //Overlay
