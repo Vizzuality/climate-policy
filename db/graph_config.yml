@@ -839,7 +839,7 @@ us_power_emissions:
     total_net: 
       name: Total Net Generation
       column: total_net_generation
-      units:  MM T CO<sup>2</sup>
+      units: TWh
       class: line
       y_min: 700
       y_max: 4000
