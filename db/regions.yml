@@ -573,6 +573,7 @@ eu:
              - <dl><dt>High tax premiums on fuel across EU Member States</dt><dd>Fuel taxes remained flat after the mid-1990s</dd><dd>Diesel taxes were lower than petrol taxes</dd></dl>
 
             underlying_changes:
+              -
           _2000:
             description: Transport demand and vehicle efficiency continued to grow across the decade; including a significant shift to diesel in passenger cars. In the late 2000s, all forms of transport, and particularly air travel, fell with the high oil prices and the economic crisis of the late 2000s. The EU mandated increasing biofuel use for transport.
             policy_barriers:           
@@ -591,6 +592,7 @@ eu:
              - <dl><dt>Continued increase in private vehicle ownership (EEA 2011)</dt></dl>
              - <dl><dt>Infrastructure investment dominated by road transport while investment share in rail, maritime, and inland waterway infrastructure fell from 2000-2006 (Eurostat 2009)</dt></dl>
              - <dl><dt>Increased fuel efficiency across passenger (6%) and freight ground (12%) transport (EEA 2011)</dt></dl>
+          
     - power:
         description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the EU
         decades_analysis:
@@ -627,14 +629,13 @@ eu:
              - <dl><dt>Gas given more attention as potential key role in energy future in Member States due to cheaper fuel and more accessible technologies—e.g., </dt></dl>
              - <dl><dt>Liquefied Natural Gas (LNG) in late 2000s and a possible shale gas revolution in next decade</dt></dl>
              - <dl><dt>Europe a leader in renewable energy development and deployment</dt><dd>Wind deployment far exceeded deployment of other technologies due to existing expertise, technology maturity and resource availability</dd><dd>Rapid price reductions in wind and solar systems</dd></dl>
-          
     - industry:
         description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in the EU
         decades_analysis:
           _1980:
             description: ""
             policy_barriers:
-              -
+              - 
             underlying_changes:
               -
           _1990:
@@ -662,15 +663,15 @@ eu:
           _1980:
             description: ""
             policy_barriers:
-              -
+              - 
             underlying_changes:
               -
           _1990:
-            description: Major agricultural policy reforms cut commodity price supports and required agricultural land set-asides in the 1990s. Agricultural output suffered in Eastern Europe as the region transitioned to the EU. Cropland area and cattle numbers declined steadily over the decade while fertilizer rates dropped and then increased again.
+            description: "Major agricultural policy reforms cut commodity price supports and required agricultural land set-asides in the 1990s. Agricultural output suffered in Eastern Europe as the region transitioned to the EU. Cropland area and cattle numbers declined steadily over the decade while fertilizer rates dropped and then increased again."
             policy_barriers:
-              - <dl><dt>1992 Common Agricultural Policy reforms to reduce commodity prices (EEC 1992)</dt><dd>Shifted emphasis from commodity price support (cut support for cereal by 35% and beef by 15%) to direct support to farmers based on farm production (EC 2012)</dd><dd>Targeted production capacity reduction</dd><dd>Compulsory but compensated set-aside of 15% arable land</dd><dd>Environmental and affiorestation measures</dd></dl>
-              - <dl><dt>Designated Nitrate Vulnerable Zones</dt><dd>Required compulsory programs to limit fertilizer application in Nitrate Vulnerable Zones and establish voluntary good farming practices</dd><dd>Comprehensive implementation by some Member States</dd></dl>
-              - <dl><dt>Milk Quota extended through 1990s: a levy was due on excess dairy produce</dt></dl>
+             - <dl><dt>1992 Common Agricultural Policy reforms to reduce commodity prices (EEC 1992)</dt><dd>Shifted emphasis from commodity price support (cut support for cereal by 35% and beef by 15%) to direct support to farmers based on farm production (EC 2012)</dd><dd>Targeted production capacity reduction</dd><dd>Compulsory but compensated set-aside of 15% arable land</dd><dd>Environmental and affiorestation measures</dd></dl>
+             - <dl><dt>Designated Nitrate Vulnerable Zones</dt><dd>Required compulsory programs to limit fertilizer application in Nitrate Vulnerable Zones and establish voluntary good farming practices</dd><dd>Comprehensive implementation by some Member States</dd></dl>
+             - "<dl><dt>Milk Quota extended through 1990s: a levy was due on excess dairy produce</dt></dl>"
             underlying_changes:
              - <dl><dt>Total EU cropland slightly decreased, number of farms decreased, and average farm size increased (EEA 2011, EEC 2011)</dt></dl>
              - <dl><dt>Synthetic fertilizer application rate decreased in early 1990s followed by an increase in the late 1990s (EEA 2011)</dt></dl>
@@ -701,7 +702,7 @@ eu:
           _1990:
             description: Energy policies emphasized building sector energy efficiency in the 1990s. Europe also harmonized energy efficiency labeling for appliances. Building sector efficiency steadily improved, leading to modest declines in direct greenhouse gas emissions from the sector. However, growing electricity consumption in the sector, partially driven by increasing appliance use, more than offset declining emissions, particularly in commercial buildings.
             policy_barriers: 
-             - <dl><dt>Shift in EU-wide policy targeting buildings in 1990s</dt><dd>EU-wide climate and energy strategies were introduced, but had limited reach as compared to national policies</dd><dd>End-use issues became an integral part of energy policies: buildings sector recognized for significant potential for energy effciency improvement</dd></dl>
+             - "<dl><dt>Shift in EU-wide policy targeting buildings in 1990s</dt><dd>EU-wide climate and energy strategies were introduced, but had limited reach as compared to national policies</dd><dd>End-use issues became an integral part of energy policies: buildings sector recognized for significant potential for energy effciency improvement</dd></dl>"
              - <dl><dt>THERMIE Programme (1989) to support energy innovation</dt><dd>Supported demonstration projects across EU, including energy effciency technologies for building sector</dd></dl>
              - <dl><dt>SAVE Directive (93/76/EEC)</dt><dd>Required Member States to introduce a range of policies to encourage energy effciency in buildings</dd></dl>
              - <dl><dt>Boiler Efficiency Directive (92/42/EEC)</dt><dd>Established minimum efficiency requirements with rated output for water boilers fired by liquid or gaseous fuels</dd></dl>
