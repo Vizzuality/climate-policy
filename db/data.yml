@@ -521,6 +521,8 @@ china:
           name: Policy
           graph_config:
             - china_industry_policy
+            - china_industry_policy_2
+            - china_industry_policy_3
 
     power:
       name: Power
