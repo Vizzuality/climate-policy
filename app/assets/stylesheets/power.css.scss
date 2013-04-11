@@ -1,0 +1,10 @@
+//= require application
+
+@import 'compass/css3';
+
+.header {
+  background-image:
+    image-url('pattern.png'),
+    image-url('power-bg.png');
+  @include background-size(50px, cover);
+}
