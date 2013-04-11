@@ -214,6 +214,9 @@ $(document).ready(function() {
         });
       });
 
+      var grouping = (_.size(_graphs[graphNum].x_groups) > 1);
+      var grouping_y = (_graphs[graphNum].grouping == 'y_axis');      
+
       var positive_color = "#546DBC";
       var negative_color = "#F0542C";      
 
@@ -225,6 +228,13 @@ $(document).ready(function() {
       var margin_y = 40;
       var available_h = 280-margin_y;
       var row_h = d3.min([available_h/data.rows.length,25]);
+
+      var grouping_y_separation = 15;
+
+      if (grouping_y) {
+        row_h = 2*row_h;
+      }
+
       var actual_h = row_h*data.rows.length;
 
       var bar_height = 2
@@ -258,6 +268,7 @@ $(document).ready(function() {
       //   .style("stroke", "#000")
       //   .style("fill", "#000");
 
+
       // Series labels
       svg[graphNum].selectAll("text.graph-series-label")
         .data(data.rows)
@@ -287,7 +298,7 @@ $(document).ready(function() {
       }
 
       // Drawing group-x labels if there are more than one
-      if (_.size(_graphs[graphNum].x_groups) > 1) {
+      if (grouping && !grouping_y) {
         svg[graphNum].selectAll("text.graph-groups-label")
           .data(group_label_)
           .enter()
@@ -309,6 +320,7 @@ $(document).ready(function() {
       for (var j = 0; j < _.size(_graphs[graphNum].x_groups); j++) {
 
         // Drawing an axis for each group_x
+        if ((!grouping_y)||(j == 0)) {
         var lineGraph = svg[graphNum].append("svg:line")
           .attr("x1", label_w+group_w*j+zero_x)
           .attr("y1", labels_start_y-20)
@@ -316,12 +328,18 @@ $(document).ready(function() {
           .attr("y2", labels_start_y+actual_h-20)
           .style("stroke", "#ddd")
           .style("shape-rendering", "crispEdges");
+        }
 
         var group_label_ = _graphs[graphNum].x_groups[j].label;
         var group_name_ = _graphs[graphNum].x_groups[j].column;
         var units_ = _graphs[graphNum].units;
 
         (function(group_name, units) { // We need a reference to group_name & units in runtime, for tooltips
+
+          var group_pos_x = group_w*j;
+          if (grouping_y) {
+            group_pos_x = 0;
+          }
 
           svg[graphNum].selectAll("rect."+group_name)
             .data(data.rows)
@@ -330,13 +348,17 @@ $(document).ready(function() {
             .attr("class",group_name)
             .attr("x", function(d,i) {
               if (d[group_name] > 0) {
-                return label_w + group_w*j + zero_x;
+                return label_w + group_pos_x + zero_x;
               } else {
-                return label_w + group_w*j + zero_x - bar_width_scale(Math.abs(d[group_name]));
+                return label_w + group_pos_x + zero_x - bar_width_scale(Math.abs(d[group_name]));
               }
             })
             .attr("y", function(d,i) {
-              return labels_start_y + (i * row_h) - bar_height/2 - 7;
+              var offset_y = i*row_h;
+              if (grouping_y) {
+                offset_y += j*grouping_y_separation-10;
+              }
+              return labels_start_y + offset_y - bar_height/2 - 7;
             })
             .attr("width", function(d,i) {
               var bar_width = bar_width_scale(Math.abs(d[group_name]));
@@ -370,7 +392,7 @@ $(document).ready(function() {
               }
             })
             .attr("cx", function(d){
-              var x = label_w + group_w*j + zero_x;
+              var x = label_w + group_pos_x + zero_x;
               if (d[group_name] > 0) {
                 x += bar_width_scale(Math.abs(d[group_name]));
               } else {
@@ -379,7 +401,11 @@ $(document).ready(function() {
               return x;
             })
             .attr("cy", function(d,i){
-              return labels_start_y + (i * row_h) - bar_height/2 - 6}
+              var offset_y = i*row_h;
+              if (grouping_y) {
+                offset_y += j*grouping_y_separation-10;
+              }              
+              return labels_start_y + offset_y - bar_height/2 - 6}
             )
             .attr("r", LINE_DOT_R)
             .attr("name", function(d){return (Math.round(d[group_name]*1000)/1000) + " " + units}) //Uses this for tooltip
@@ -523,16 +549,6 @@ $(document).ready(function() {
           }
           return (d[y_col_] != null) && (d[y_col_] != 0)
         });
-
-        // //Creates focus + multiple tooltips per serie
-        // g.append("div")
-        //   .attr("class", "tooltip tooltip-top multiple_tooltip multiple_tooltip_"+graphNum+"_"+i);
-        // g.append("circle")
-        //   .attr("class", 'focus focus_'+graphNum+"_"+i)
-        //   .data(data_col)
-        //   .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
-        //   .attr("cy", function(d){return y_scale(d[y_col])})
-        //   .attr("r", LINE_DOT_R)
 
         if (overlay_num === 0) {
           svg[graphNum].append("rect")
@@ -889,9 +905,9 @@ $(document).ready(function() {
                 
                 tooltip.html($(this).attr('name'))
                   .style("visibility", "visible")
-                  .style("top", $(this).offset().top+30+"px")
-                  .style("left", $(this).offset().left-$(".generic_tooltip").width()/2-2+"px")
-                  .attr("class","tooltip generic_tooltip tooltip-top");
+                  .style("top", $(this).offset().top-40+"px")
+                  .style("left", $(this).offset().left-$(".generic_tooltip").width()/2-4+"px")
+                  .attr("class","tooltip generic_tooltip tooltip-bottom");
 
                 d3.select(this).attr("style","fill: #fff; stroke: #000;")
                   .transition()
