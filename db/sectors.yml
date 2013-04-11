@@ -1,61 +1,61 @@
 forestry:
   id: forestry
   name: Forestry
-  description: These graphs show the changes in deforestation, deforestation drivers, and land use policy in Brazil
-  tagline: Tagline for Forestry
+  description: The Amazon is the world’s largest rainforest, stretching over an area of over five million square kilometers. Most of the forest is contained within Brazil, where the Amazon originally occupied over four million square kilometers of the country’s territory—an area equivalent to almost half of continental Europe. Roughly half the slowdown in deforestation in the late-2000s was a result of deliberate government policy, while better land productivity has led to increased agricultural output. Having greatly reduced large-scale deforestation, Brazil’s challenge now is to address small-scale deforestation, which may require different policy approaches.
+  tagline: Forests protected through policy
   decades_analysis:
   subjects:
     - emissions:
-        description: Emissions description for Forestry
+        description: These graphs show the changes in deforestation in Brazil
     - emission_drivers:
-        description: Emission drivers description for Forestry
+        description: These graphs show the changes in deforestation drivers in Brazil
     - policy:
-        description: Policy description for Forestry
+        description: These graphs show the changes in land use policy in Brazil
   regions:
     - brazil:
-        description: Brazil description for Forestry
+        description: These graphs show the changes in deforestation, deforestation drivers, and land use policy in Brazil
 
 agriculture:
   id: agriculture
   name: Agriculture
-  description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in the world.
-  tagline: Tagline for agriculture
+  description: Continual modernization of agricultural practices in India, Europe, and southern Brazil enabled increased productivity without marked increases in cultivated land. In fact, cultivated land area remained flat or decreased in some cases. Greenhouse gas emissions from agricultural land use followed suit. In India, mechanization-focused policies and increased fertilizer intensity contributed to this pattern, whereas Europe moved beyond increased fertilization and instead improved agricultural practices that lowered fertilizer application. On the other hand, for India and Brazil, exports might have driven increased cropland expansion or agricultural intensification, while northern Brazil maintained more traditional agricultural practices, expanding cultivated land area to keep up with demand. Brazilian deforestation rates spiked in the early 2000s along with emissions from Brazilian agriculture; however, aggressive Brazilian policies helped drive down deforestation rates in the late 2000s.
+  tagline: Policy drove modern agricultural practices and emissions declines
   decades_analysis:
   subjects:
     - emissions:
-        description: Emissions description for Agriculture
+        description: These graphs show the changes in Agriculture emissions and growth in Brazil, the EU, and India
     - emission_drivers:
-        description: Emission drivers description for Agriculture
+        description: These graphs show the changes in Agriculture emissions drivers in Brazil, the EU, and India
     - policy:
-        description: Policy description for Agriculture
+        description: These graphs show the changes in Agriculture policy in Brazil, the EU, and India
   regions:
     - brazil:
-        description: Brazil description for Agriculture
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in Brazil
     - eu:
-        description: EU description for Agriculture
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in the EU
     - india:
-        description: India description for Agriculture
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in India
 
 buildings:
   id: buildings
   name: Buildings
   description: Buildings description
-  tagline: Buildings tagline
+  tagline: A long history of policy intervention yielded energy efficiency gains, but faced offsetting factors
   decades_analysis:
   subjects:
     - emissions:
-        description: Emissions description for Buildings
+        description: These graphs show the changes in Buildings emissions and growth in China, the EU, and the US
     - emission_drivers:
-        description: Emission drivers description for Buildings
+        description: These graphs show the changes in Buildings emissions drivers in China, the EU, and the US
     - policy:
-        description: Policy description for Buildings
+        description: These graphs show the changes in Buildings policy in China, the EU, and the US
   regions:
     - us:
-        description: US description for buildings
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in the US
     - eu:
-        description: EU description for buildings
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in the EU
     - china:
-        description: China description for buildings
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in China
 
 transport:
   id: transport
@@ -65,58 +65,58 @@ transport:
   decades_analysis:
   subjects:
     - emissions:
-        description: Emissions description for Transportation
+        description: These graphs show the changes in Transportation emissions and growth in the EU and the US
     - emission_drivers:
-        description: Emission drivers description for Transportation
+        description: These graphs show the changes in deforestation drivers in Brazil
     - policy:
-        description: Policy description for Transportation
+        description: These graphs show the changes in land use policy in Brazil
   regions:
     - eu:
-        description: EU description for transportation
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Transportation sector in the EU
 
 power:
   id: power
   name: Power
-  description: Power description
-  tagline: Power tagline
+  description: Rapid growth in electricity demand mirrored rapid economic growth in China and India. In both countries, the most readily available source of indigenous fuel was coal. China was been better at exploiting its coal resources, while India had to rely on imports. Slower demand growth and a gradual move away from coal to nuclear, gas, and renewable sources kept EU and U.S. emissions from growing and led to recent declines. In all four countries, despite the strong growth in renewable energy, the impact on carbon intensity was only beginning to be felt.
+  tagline: Fast growth in power demand and the use of indigenous coal supplies drove emissions growth
   decades_analysis:
   subjects:
     - emissions:
-        description: Emissions description for power
+        description: These graphs show the changes in Power emissions and growth in China, the EU, India, and the US
     - emission_drivers:
-        description: Emission drivers description for power
+        description: These graphs show the changes in Power emissions drivers in China, the EU, India, and the US
     - policy:
-        description: Policy description for power
+        description: These graphs show the changes in Power policy in China, the EU, India, and the US
   regions:
     - us:
-        description: US description for power
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the US
     - eu:
-        description: EU description for power
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the EU
     - china:
-        description: China description for power
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in China
     - india:
-        description: India description for power
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in India
 
 industry:
   id: industry
   name: Industry
-  description: Industry description
-  tagline: Industry tagline
+  description: Industrial sector greenhouse gas policy is difficult to generalize about because the carbon efficiency opportunities vary so much between different sectors like steel, manufacturing, or food processing. Only three carbon saving technologies cut across most industrial sectors: combined heat and power, high efficiency motors, and to a lesser extent efficient lighting. Economic forces play a stronger role in industry than in buildings. Many policies, such as the EU Emisions Trading Scheme, sought to provide incentives to improve efficiency by changing the economics. The scale and concentration of energy savings opportunities in fewer, larger consumers enabled more targeted policies, such as those employed in China that included energy audits, mandated equipment closure and upgrade, and finance. Emissions fell in the more developed countries, as policies, rising energy prices, and pressure to maintain economic competitiveness combined with the gradual decline and movement offshore of more carbon intensive industries. In the developing world, meanwhile, rapid growth and industrialization overwhelmed the significant improvement in energy efficiency that was possible due to the lower starting efficiency of industries there.
+  tagline: Growth and differences between industries created a varying landscape
   decades_analysis:
   subjects:
     - emissions:
-        description: Emissions description for Industry
+        description: These graphs show the changes in Industry emissions and growth in China, the EU, India, and the US
     - emission_drivers:
-        description: Emission drivers description for Industry
+        description: These graphs show the changes in Industry emissions drivers in China, the EU, India, and the US
     - policy:
-        description: Policy description for Industry
+        description: These graphs show the changes in Industry policy in China, the EU, India, and the US
   regions:
     - us:
-        description: US description for power
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in the US
     - eu:
-        description: EU description for power
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in the EU
     - china:
-        description: China description for power
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in China 
     - india:
-        description: India description for power
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in India
 
