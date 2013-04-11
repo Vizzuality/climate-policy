@@ -3,17 +3,52 @@ brazil:
   id: brazil
   name: Brazil
   tagline: Protecting forests through policy
-  description: In any discussion of Brazilian climate policy, the first topic is deforestation. Brazil has seen marked success in climate-related policies and may be a good model for other emerging economies. Roughly half the slowdown in deforestation in the late-2000s was a result of deliberate government policy, while better land productivity has led to increased agricultural output.
+  description: In any discussion of Brazilian climate policy, the first topic is deforestation. Brazil has seen marked success in climate-related policies and may be a good model for other emerging economies. Roughly half the slowdown in deforestation in the late-2000s was a result of deliberate government policy, while better land productivity has led to increased agricultural output.  
   sectors:
     forestry:
       name: Forestry
       description: These graphs show the changes in deforestation, deforestation drivers, and land use policy in Brazil
-      subjects:
+      decades_analysis:
+        _1980:
+          description: The 1980s saw a major economic crisis, political disruptions, then political stabilization.
+          policy_barriers: 
+            - <dl><dt>Embrapa continues research efforts (initiated in 1970s) to advance technological development for agriculture.</dt></dl>
+          underlying_changes: 
+            - <dl><dt>Democratization</dt></dl>
+            - <dl><dt>Persistence (since 1970s) of oil shocks consequences, prompting development of biofuels</dt></dl>
+            - <dl><dt>Hyperinflation</dt></dl>                
+            - <dl><dt>Failed economic reforms</dt></dl>
+        _1990:
+          description: In the 1990s, the economy stabilized and Brazil liberalized trade. The agricultural sector made advances in professional, technological, and operational modernization.
+          policy_barriers:
+            - <dl><dt>Mercosur common trade policy established, 1991.</dt></dl>
+            - <dl><dt>Development of family production programs in mid-1990s.</dt><dd>National Program for Strengthening Family Farming (PRONAF)</dd></dl>
+            - <dl><dt>The Land Reform political attention implementation waned due to increased mechanization in agriculture.</dt></dl>
+          underlying_changes:
+            - <dl><dt>Savings freeze in 1991 leading to major recession</dt></dl>
+            - <dl><dt>Restructuring of economy</dt><dd>Broad trade liberalization reforms, hyperinflation ended in mid-1990s, significant increase in Brazilian tax burden.</dd></dl>
+            - <dl><dt>Mexican, Asian, and Russian financial crises led to Brazilian financial crisis in late 1990s</dt></dl>                
+            - <dl><dt>Professionalization, mechanization, and decreasing labor-intensity of agriculture</dt></dl>
+        _2000:
+          description: Rising prices and yields in the 2000s accompanied increasing rural credit.
+          policy_barriers:
+            - <dt>Significant increase in planned rural credit under subsidized rates</dt></dl>
+            - <dl><dt>Conditional rural credit policies (National Monetary Council Resolution 3,545), 2008</dt><dd>Credit contingent on compliance with environmental</dd></dl>
+            - <dl><dt>Requirements and legitimacy of land claims</dt></dl>
+          underlying_changes:
+            - <dl><dt>Early 2000s surge in exports due to growth in China and significant appreciation of Real</dt></dl>
+            - <dl><dt>2007-2008 global food price crisis</dt></dl>
+            - <dl><dt>Expansion of agricultural frontier</dt></dl>                
+            - <dl><dt>Middle-class significantly expanded</dt></dl>
+            - <dl><dt>Increase in tax burden until 2003</dt></dl>
+            - <dl><dt>Global recession 2008-2009</dt></dl>
+      subjects:      
         emissions:
           name: Emissions
           graph_config:
             - brazil_forestry_emissions
-            # - brazil_agriculture_policy            
+            # - brazil_agriculture_policy   
+          description: blabla
         emission_drivers:
           name: Emission Drivers
           graph_config:
@@ -24,7 +59,7 @@ brazil:
           name: Policy
           graph_config:
             - brazil_forestry_policy
-            # - brazil_agriculture_policy            
+            # - brazil_agriculture_policy       
 
     agriculture:
       name: Agriculture
@@ -166,10 +201,10 @@ india:
             - india_agriculture_emission_drivers
             - india_agriculture_emission_drivers_2
             - india_agriculture_emission_drivers_3
-        # policy:
-        #   name: Policy
-        #   graph_config:
-        #     - india_agriculture_emissions # CAMBIAR
+        policy:
+          name: Policy
+          graph_config:
+            - india_agriculture_policy
 
     power:
       name: Power

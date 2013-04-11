@@ -8,3 +8,8 @@
   <%= render @items.last == item ? 'shared/years_last' : 'shared/years' %>
 <% end %>
 
+<% if @main.type == 'region' && @item.type == 'sector' %>
+
+<%= render 'shared/decades_analysis' %>
+
+<% end %>
