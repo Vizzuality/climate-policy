@@ -2002,9 +2002,11 @@ china_industry_policy_2:
     0:
       label: "11th fifth year plan"
       column: eleven
+      strokeColor: "rgba(238,87,41,1)"
     1:
       label: "12th fifth year plan"
       column: twelve
+      strokeColor: "rgba(79,110,191,1)"
 
 china_industry_policy_3:
   id: china_industry_policy_3

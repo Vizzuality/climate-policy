@@ -34,6 +34,7 @@ function moveOverlayLine() {
 }
 
 $(document).ready(function() {
+
   // nav links
   $('.scroll-nav a[data-remote=true]').on('ajax:success', function(e, data){
     window.history.pushState('', '', $(e.target).attr('href'));
@@ -282,7 +283,6 @@ $(document).ready(function() {
           return d[_graphs[graphNum].name_column];
         })
         .attr("x", function(d,i) {
-          console.log("1", this.getComputedTextLength());
           return margin_x;
         })
         .attr("y", function(d,i) {          
@@ -308,7 +308,6 @@ $(document).ready(function() {
             return d['label'];
           })
           .attr("x", function(d,i) {
-            console.log("2",this.getComputedTextLength());
             return label_w + group_w*i + zero_x - this.getComputedTextLength()/2;
           })
           .attr("y", function(d,i) {
@@ -385,10 +384,16 @@ $(document).ready(function() {
             .append("circle")
             .attr("class", group_name+' linedot linedot'+i)
             .attr("style",function(d) {
-              if (d[group_name] > 0) {
-                return "stroke: "+positive_color+"; fill: #fff";
+
+              // if (d[group_name] > 0) {
+              //   return "stroke: "+positive_color+"; fill: #fff";
+              // } else {
+              //   return "stroke: "+negative_color+"; fill: #fff";
+              // }
+              if ( _graphs[graphNum] != null) {
+                return "stroke: "+_graphs[graphNum].strokeColor+"; fill: #fff";
               } else {
-                return "stroke: "+negative_color+"; fill: #fff";
+                return "stroke: rgba(238,87,41,1); fill: #fff";
               }
             })
             .attr("cx", function(d){
