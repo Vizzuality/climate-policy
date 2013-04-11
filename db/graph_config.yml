@@ -342,7 +342,7 @@ eu_power_policy:
       name: Actual
       column: actual
       units: "%"
-      class: line
+      class: bars
       y_min: 0
       y_max: 40
       strokeColor: "#546DBC"
@@ -548,25 +548,46 @@ eu_agriculture_policy:
   sector_id: agriculture
   subject_id: policy
   name: Nitrate Vulnerable Zones
-  table: eu_agriculture_3_nvzs_copy_test_matallo
+  table: eu_agriculture_3_nvzs_copy_test_matallo_fixed
   description: Most agricultural policy in Europe was developed for reasons beyond climate protection. Nevertheless, these policies had a very real impact on greenhouse gas emissions. For example, the Nitrates Directive encouraged decreasing levels of nitrate fertilizer application, thus reducing NOx emissions.
-  description_long: longest
-  type: BarGraph
-  units: "Thousand km²"
-  name_column: variable
-  x_groups:
-    0:
-      label: 1999
-      column: period_1999
-    1:
-      label: 2003
-      column: period_2003
-    2:
-      label: 2006
-      column: period_2006
-    3:
-      label: 2008
-      column: period_2008
+  x_axis: date_processed
+  series:
+    eu15:
+      name: EU15
+      column: eu15
+      units: "Thousand km²"
+      class: area
+      y_min: 0
+      y_max: 3000
+      strokeColor: "rgba(79,110,191,1)"
+      fillColor: "rgba(79,110,191,0.2)"  
+    eu10:
+      name: EU10+2
+      column: eu10_2
+      units: "Thousand km²"
+      class: area
+      y_min: 0
+      y_max: 3000
+      strokeColor: "rgba(238,87,41,1)"
+      fillColor: "rgba(238,87,41,0.2)"
+
+  # description_long: longest
+  # type: BarGraph
+  # units: "Thousand km²"
+  # name_column: variable
+  # x_groups:
+  #   0:
+  #     label: 1999
+  #     column: period_1999
+  #   1:
+  #     label: 2003
+  #     column: period_2003
+  #   2:
+  #     label: 2006
+  #     column: period_2006
+  #   3:
+  #     label: 2008
+  #     column: period_2008
 
 eu_buildings_emissions:
   id: eu_buildings_emissions

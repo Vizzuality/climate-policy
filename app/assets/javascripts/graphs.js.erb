@@ -877,9 +877,9 @@ $(document).ready(function() {
                 
                 tooltip.html($(this).attr('name'))
                   .style("visibility", "visible")
-                  .style("top", $(this).offset().top+30+"px")
-                  .style("left", $(this).offset().left-$(".generic_tooltip").width()/2-2+"px")
-                  .attr("class","tooltip generic_tooltip tooltip-top");
+                  .style("top", $(this).offset().top-40+"px")
+                  .style("left", $(this).offset().left-$(".generic_tooltip").width()/2-4+"px")
+                  .attr("class","tooltip generic_tooltip tooltip-bottom");
 
                 d3.select(this).attr("style","fill: #fff; stroke: #000;")
                   .transition()
