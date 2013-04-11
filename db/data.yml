@@ -666,10 +666,10 @@ eu:
           name: Emission Drivers
           graph_config:
             - eu_power_emission_drivers
-        # policy:
-        #   name: Policy
-        #   graph_config:
-        #     - eu_power_policy
+        policy:
+          name: Policy
+          graph_config:
+            - eu_power_policy
 
     industry:
       name: Industry
@@ -708,10 +708,10 @@ eu:
           name: Emission Drivers
           graph_config:
             - eu_industry_emission_drivers
-        # policy:
-        #   name: Policy
-        #   graph_config:
-        #     - eu_industry_policy
+        policy:
+          name: Policy
+          graph_config:
+            - eu_industry_policy
 
     agriculture:
       name: Agriculture
@@ -792,7 +792,7 @@ eu:
           name: Emission Drivers
           graph_config:
             - eu_buildings_emission_drivers
-        # policy:
-        #   name: Policy
-        #   graph_config:
-        #     - eu_buildings_policy
+        policy:
+          name: Policy
+          graph_config:
+            - eu_buildings_policy

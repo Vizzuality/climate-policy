@@ -98,11 +98,95 @@ $(document).ready(function() {
     for (var i = 0; i < _graphs.length; i++) {
       if(_graphs[i].type == 'BarGraph') {
         drawBarGraph(i, std_domain);
+      } else if(_graphs[i].type == 'RangeGraph') {
+        drawRangeGraph(i, std_domain);        
       } else {
         drawGraph(i, std_domain);
       }
     }
   })
+
+  function drawRangeGraph(graphNum, domain) {
+    console.log("Range graph");
+    d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+_graphs[graphNum].table+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
+      var _data = data;
+
+      if(domain === undefined) {
+        _data['min_domain'] = d3.min(_data.rows, function(data){return data.date_processed;})
+        _data['max_domain'] = d3.max(_data.rows, function(data){return data.date_processed;})
+        _domain = [new Date(_data.min_domain),new Date(_data.max_domain)];
+      } else {
+        _domain = domain;
+      }
+
+      var x_col = _graphs[graphNum].x_axis;
+      var stacked_area_accumulated = new Array();
+      var min_val = 0;
+
+      var marks_added = false;
+      var g2 = svg[graphNum].append("svg:g").attr("id", "graph_marks");
+
+      _.each(_graphs[graphNum].series, function(serie) {
+        // append one group per series
+        var g = svg[graphNum].append("svg:g");
+        var strokeColor_ = serie.strokeColor;
+        var fillColor = serie.fillColor;
+        var y_col_ = serie.column;
+        var y_col_name = serie.name;
+
+        var y_scale = d3.scale.linear()
+          .range([h, margin_top])
+          .domain([serie.y_min,serie.y_max]);
+
+        // Add background marks (just once). It uses the first series, as it guess all series have the same zero
+        if (!marks_added) {
+
+          //Add zero-line
+          if (y_scale(0) < h) {
+            g2.append("svg:line")
+              .attr("class", "graph-zero-mark")
+              .attr("x1", 0)
+              .attr("x2", w)
+              .attr("y1", y_scale(0))
+              .attr("y2", y_scale(0));
+          }
+
+          // Marks over 0
+          var mark_opacity = 0.1;
+          for (var j = (y_scale(0) -30); j > 0; j -= 30) {
+            if (j < 300) {
+              mark_opacity -= 0.02;
+            }
+            if (j < h) {
+              g2.append("svg:line")
+                .attr("class", "graph-horz-marks")
+                .attr("x1", 0)
+                .attr("x2", w)
+                .attr("y1", j)
+                .attr("y2", j)
+                .attr("style","stroke: rgba(0,0,0, "+mark_opacity+")");
+            }
+          }
+
+          // Marks under 0
+          for (var j = (y_scale(0) +30); j < h; j += 30) {
+            g2.append("svg:line")
+              .attr("class", "graph-horz-marks")
+              .attr("x1", 0)
+              .attr("x2", w)
+              .attr("y1", j)
+              .attr("y2", j)
+              .attr("style","stroke: rgba(0,0,0, 0.1)");
+          }
+          marks_added = true;
+        }
+
+
+
+      });
+
+    });
+  }
 
   function drawBarGraph(graphNum, domain) {
     d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+_graphs[graphNum].table+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
@@ -434,8 +518,11 @@ $(document).ready(function() {
           .attr("width", 2)
           .attr("cy", 0);
 
+        console.log("data_col",data_col);
+
         var extended_data_col = new Array();
         extended_data_col = jQuery.extend(true,[],data_col);
+
 
         if (new Date(extended_data_col[0]['date_processed']).getFullYear() < (domain[0].getFullYear() +2)) {
           var fake_left = jQuery.extend(true,{},extended_data_col[0]);
@@ -651,6 +738,99 @@ $(document).ready(function() {
             var current_value = d[y_col_];
             stacked_area_accumulated[""+date] = parseFloat(accumulated_value) + parseFloat(current_value);
           });
+        } else if (serie.class == "range") {
+
+          console.log("range");
+          var area = d3.svg.area()
+            .x(function(d) {return x_scale(new Date(d[x_col]))})
+            .y0(function(d) {
+              return y_scale(d[y_col_]);
+            })
+            .y1(function(d) {
+              return y_scale(d[serie.column_top]);
+            })
+            .interpolate(INTERPOLATE_METHOD);
+
+          g.append("svg:path")
+            .attr("d", area(extended_data_col))
+            .attr("style",'stroke:'+strokeColor_)
+            .attr("style",'fill:'+fillColor);
+          
+          g.selectAll("rect.ranges")
+            .data(data_col)
+            .enter()
+            .append("rect")
+            .attr("class", 'ranges'+i)
+            .attr("style",'fill:'+strokeColor_)
+            .attr("x", function(d){
+              return x_scale(new Date(d[x_col]))
+            })
+            .attr("y", function(d){
+              return y_scale(d[y_col_]);
+            })
+            .attr("width", 3)
+            .attr("height", function(d) {
+              return (y_scale(d[serie.column_top]) - y_scale(d[y_col_]));
+            })
+            .attr("name", function(d){return d[y_col_]+ "" + units_}) //Uses this for tooltip
+
+
+
+          // g.selectAll("circle.top_circles")
+          //   .data(data_col)
+          //   .enter()
+          //   .append("circle")
+          //   .attr("class", 'top_circles linedot linedot'+i)
+          //   .attr("style",function(d){ var _fill = (new Date(d.date_processed).getMonth() + 1 == 1) ? 'fill:'+strokeColor_ : 'display: none'; return _fill;})
+          //   .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
+          //   .attr("cy", function(d){
+          //     return y_scale(d[serie.column_top]);
+          //   })
+          //   .attr("r", LINE_DOT_R)
+          //   .attr("name", function(d){return d[y_col_]+ "" + units_}) //Uses this for tooltip
+
+          // g.selectAll("circle.bottom_circles")
+          //   .data(data_col)
+          //   .enter()
+          //   .append("circle")
+          //   .attr("class", 'bottom_circles linedot linedot'+i)
+          //   .attr("style",function(d){ var _fill = (new Date(d.date_processed).getMonth() + 1 == 1) ? 'fill:'+strokeColor_ : 'display: none'; return _fill;})
+          //   .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
+          //   .attr("cy", function(d){
+          //     return y_scale(d[y_col_]);
+          //   })
+          //   .attr("r", LINE_DOT_R)
+          //   .attr("name", function(d){return d[y_col_]+ "" + units_}) //Uses this for tooltip
+
+
+
+          // var bottom_line = d3.svg.line()
+          //   .x(function(d){return x_scale(new Date(d[x_col]))})
+          //   .y(function(d){
+          //     return y_scale(d[y_col_]);
+          //   })
+          //   .interpolate(INTERPOLATE_METHOD);
+
+          // var top_line = d3.svg.line()
+          //   .x(function(d){return x_scale(new Date(d[x_col]))})
+          //   .y(function(d){
+          //     return y_scale(d[serie.column_top]);
+          //   })
+          //   .interpolate(INTERPOLATE_METHOD);
+
+          // g.append("svg:path")
+          //   .attr("d", top_line(extended_data_col))
+          //   .attr("class", 'lineStyle')
+          //   .attr("style",'stroke:'+strokeColor_);
+
+          // g.append("svg:path")
+          //   .attr("d", bottom_line(extended_data_col))
+          //   .attr("class", 'lineStyle')
+          //   .attr("style",'stroke:'+strokeColor_);
+
+
+        } else if (serie.class == "vert_bars") {
+          console.log("bars");
         }
 
         $("#"+_graphs[graphNum].id).find(".graph-legend").append('<li><div class="legend-item" style="background-color:'+strokeColor_+'"></div><span id='+y_col_+' class="legend-label">'+y_col_name+'</span></li>')
