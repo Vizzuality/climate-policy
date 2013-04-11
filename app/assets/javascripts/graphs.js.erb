@@ -107,7 +107,7 @@ $(document).ready(function() {
   })
 
   function drawRangeGraph(graphNum, domain) {
-    console.log("Range graph");
+
     d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+_graphs[graphNum].table+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
       var _data = data;
 
@@ -518,11 +518,8 @@ $(document).ready(function() {
           .attr("width", 2)
           .attr("cy", 0);
 
-        console.log("data_col",data_col);
-
         var extended_data_col = new Array();
         extended_data_col = jQuery.extend(true,[],data_col);
-
 
         if (new Date(extended_data_col[0]['date_processed']).getFullYear() < (domain[0].getFullYear() +2)) {
           var fake_left = jQuery.extend(true,{},extended_data_col[0]);
@@ -740,7 +737,6 @@ $(document).ready(function() {
           });
         } else if (serie.class == "range") {
 
-          console.log("range");
           var area = d3.svg.area()
             .x(function(d) {return x_scale(new Date(d[x_col]))})
             .y0(function(d) {
@@ -755,82 +751,134 @@ $(document).ready(function() {
             .attr("d", area(extended_data_col))
             .attr("style",'stroke:'+strokeColor_)
             .attr("style",'fill:'+fillColor);
-          
-          g.selectAll("rect.ranges")
-            .data(data_col)
-            .enter()
-            .append("rect")
-            .attr("class", 'ranges'+i)
-            .attr("style",'fill:'+strokeColor_)
-            .attr("x", function(d){
-              return x_scale(new Date(d[x_col]))
-            })
-            .attr("y", function(d){
-              return y_scale(d[y_col_]);
-            })
-            .attr("width", 3)
-            .attr("height", function(d) {
-              return (y_scale(d[serie.column_top]) - y_scale(d[y_col_]));
-            })
-            .attr("name", function(d){return d[y_col_]+ "" + units_}) //Uses this for tooltip
 
+          var g_circles = svg[graphNum].append("svg:g");
+          g_circles.attr("class","dataCircles");
 
+          (function(strokeColor, units, y_col){  // We need a reference to strokeColor in runtime, for hover
+            g_circles.selectAll("circle")
+              .data(data_col)
+              .enter()
+              .append("circle")
+              .attr("class", 'linedot linedot'+i)
+              .attr("style",function(d){ var _fill = (new Date(d.date_processed).getMonth() + 1 == 1) ? 'fill:'+strokeColor : 'display: none'; return _fill;})
+              .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
+              .attr("cy", function(d){
+                return y_scale(d[y_col_]) - ((y_scale(d[y_col_]) - y_scale(d[serie.column_top]))/2);
+              })
+              .attr("r", LINE_DOT_R)
+              .attr("name", function(d){return d[y_col]+ "-" + d[serie.column_top]+" "+serie.units}) //Uses this for tooltip
+              .on("mouseover", function(d) {
+                circle_locked = true;
+                updateOverlayLine(new Date(d[x_col]));
 
-          // g.selectAll("circle.top_circles")
+                d3.selectAll(".overlay-line").style("visibility", "visible");
+                d3.selectAll(".year_marker").style("visibility", "visible");
+                
+                tooltip.html($(this).attr('name'))
+                  .style("visibility", "visible")
+                  .style("top", $(this).offset().top+30+"px")
+                  .style("left", $(this).offset().left-$(".generic_tooltip").width()/2-2+"px")
+                  .attr("class","tooltip generic_tooltip tooltip-top");
+
+                d3.select(this).attr("style","fill: #fff; stroke: #000;")
+                  .transition()
+                  .duration(100)
+                  .attr("r",LINE_DOT_R+1);
+
+                // Highlighting the legend
+                d3.selectAll("#"+y_col)
+                  .transition()
+                  .duration(200)
+                  .style("color","#111");
+              })
+              .on("mousemove", moveOverlayLine)
+              .on("mouseout", function(){
+                circle_locked = false;
+
+                d3.selectAll(".overlay-line").style("visibility", "hidden");
+                d3.selectAll(".year_marker").style("visibility", "hidden");
+
+                tooltip.style("visibility", "hidden");
+
+                d3.select(this).attr("style","fill: "+strokeColor+"; stroke: #fff;")
+                  .transition()
+                  .duration(100)
+                  .attr("r",LINE_DOT_R);
+
+                // Highlighting the legend
+                d3.selectAll("#"+y_col)
+                  .transition()
+                  .duration(200)
+                  .style("color","#aaa");
+              });
+          })(strokeColor_, units_, y_col_);            
+      
+          // g.selectAll("rect.ranges")
           //   .data(data_col)
           //   .enter()
-          //   .append("circle")
-          //   .attr("class", 'top_circles linedot linedot'+i)
-          //   .attr("style",function(d){ var _fill = (new Date(d.date_processed).getMonth() + 1 == 1) ? 'fill:'+strokeColor_ : 'display: none'; return _fill;})
-          //   .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
-          //   .attr("cy", function(d){
+          //   .append("rect")
+          //   .attr("class", 'ranges'+i)
+          //   .attr("style",'fill:'+strokeColor_)
+          //   .attr("x", function(d){
+          //     return x_scale(new Date(d[x_col]))
+          //   })
+          //   .attr("y", function(d){
           //     return y_scale(d[serie.column_top]);
           //   })
-          //   .attr("r", LINE_DOT_R)
-          //   .attr("name", function(d){return d[y_col_]+ "" + units_}) //Uses this for tooltip
-
-          // g.selectAll("circle.bottom_circles")
-          //   .data(data_col)
-          //   .enter()
-          //   .append("circle")
-          //   .attr("class", 'bottom_circles linedot linedot'+i)
-          //   .attr("style",function(d){ var _fill = (new Date(d.date_processed).getMonth() + 1 == 1) ? 'fill:'+strokeColor_ : 'display: none'; return _fill;})
-          //   .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
-          //   .attr("cy", function(d){
-          //     return y_scale(d[y_col_]);
+          //   .attr("width", 8)
+          //   .attr("height", function(d) {
+          //     return y_scale(d[y_col_]) - y_scale(d[serie.column_top]);              
           //   })
-          //   .attr("r", LINE_DOT_R)
-          //   .attr("name", function(d){return d[y_col_]+ "" + units_}) //Uses this for tooltip
+          //   .attr("name", function(d){return d[y_col_]+ " - " + d[serie.column_top]+" "+serie.units})
+          //   .on("mouseover", function(d) {
 
+          //     circle_locked = true;
 
+          //     updateOverlayLine(new Date(d[x_col]));
 
-          // var bottom_line = d3.svg.line()
-          //   .x(function(d){return x_scale(new Date(d[x_col]))})
-          //   .y(function(d){
-          //     return y_scale(d[y_col_]);
+          //     d3.selectAll(".overlay-line").style("visibility", "visible");
+          //     d3.selectAll(".year_marker").style("visibility", "visible");
+              
+          //     tooltip.html($(this).attr('name'))
+          //       .style("visibility", "visible")
+          //       .style("top", $(this).offset().top+30+"px")
+          //       .style("left", $(this).offset().left-$(".generic_tooltip").width()/2-2+"px")
+          //       .attr("class","tooltip generic_tooltip tooltip-top");
+
+          //     // d3.select(this).attr("style","fill: #fff; stroke: #000;")
+          //     //   .transition()
+          //     //   .duration(100)
+          //     //   .attr("r",LINE_DOT_R+1);
+
+          //     // Highlighting the legend
+          //     d3.selectAll("#"+y_col_)
+          //       .transition()
+          //       .duration(200)
+          //       .style("color","#111");
           //   })
-          //   .interpolate(INTERPOLATE_METHOD);
+          //   .on("mousemove", moveOverlayLine)
+          //   .on("mouseout", function(){
+          //     circle_locked = false;
 
-          // var top_line = d3.svg.line()
-          //   .x(function(d){return x_scale(new Date(d[x_col]))})
-          //   .y(function(d){
-          //     return y_scale(d[serie.column_top]);
-          //   })
-          //   .interpolate(INTERPOLATE_METHOD);
+          //     d3.selectAll(".overlay-line").style("visibility", "hidden");
+          //     d3.selectAll(".year_marker").style("visibility", "hidden");
 
-          // g.append("svg:path")
-          //   .attr("d", top_line(extended_data_col))
-          //   .attr("class", 'lineStyle')
-          //   .attr("style",'stroke:'+strokeColor_);
+          //     tooltip.style("visibility", "hidden");
 
-          // g.append("svg:path")
-          //   .attr("d", bottom_line(extended_data_col))
-          //   .attr("class", 'lineStyle')
-          //   .attr("style",'stroke:'+strokeColor_);
+          //     // d3.select(this).attr("style","fill: "+strokeColor+"; stroke: #fff;")
+          //     //   .transition()
+          //     //   .duration(100)
+          //     //   .attr("r",LINE_DOT_R);
 
+          //     d3.selectAll("#"+y_col)
+          //       .transition()
+          //       .duration(200)
+          //       .style("color","#aaa");
+          //   });
 
         } else if (serie.class == "vert_bars") {
-          console.log("bars");
+
         }
 
         $("#"+_graphs[graphNum].id).find(".graph-legend").append('<li><div class="legend-item" style="background-color:'+strokeColor_+'"></div><span id='+y_col_+' class="legend-label">'+y_col_name+'</span></li>')
