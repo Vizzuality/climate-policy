@@ -334,26 +334,41 @@ eu_power_policy:
   sector_id: power
   subject_id: policy
   name: Renewables Targets
-  table: eu_power_3_targets_copy_test_matallo
+  table: eu_power_3_targets_copy_test_matallo_copy_2
   description: The EU set, and narrowly missed, ambitious renewable energy targets for 2010 for the EU15. For 2020, the EU has set an even more ambitious renewable energy target for the expanded EU27 of 20% of total energy consumption, which translates to 34% of electricity generation from renewable sources.
-  x_axis: date_processed
-  series:
-    actual:
-      name: Actual
-      column: actual
-      units: "%"
-      class: bars
-      y_min: 0
-      y_max: 40
-      strokeColor: "#546DBC"
-    target:
-      name: Target
+  description_long: longest
+  type: BarGraph
+  units: "%"
+  name_column: situation_year
+  grouping: y_axis
+  x_groups:
+    0:
+      label: Target
       column: target
-      units: "%"
-      class: line
-      y_min: 0
-      y_max: 40
-      strokeColor: "#F0542C"
+      strokeColor: '#00D9A3'
+    1:
+      label: Actual
+      column: actual
+      strokeColor: '#FFD24D'
+
+
+  # series:
+  #   actual:
+  #     name: Actual
+  #     column: actual
+  #     units: "%"
+  #     class: bars
+  #     y_min: 0
+  #     y_max: 40
+  #     strokeColor: "#546DBC"
+  #   target:
+  #     name: Target
+  #     column: target
+  #     units: "%"
+  #     class: line
+  #     y_min: 0
+  #     y_max: 40
+  #     strokeColor: "#F0542C"
 
 eu_industry_emissions:
   id: eu_industry_emissions
@@ -2000,15 +2015,16 @@ china_industry_policy_2:
   type: BarGraph
   units: Yuan / TCE
   name_column: application
+  grouping: y_axis
   x_groups:
     0:
-      label: "11th fifth year plan"
+      label: 11th fifth year plan
       column: eleven
-      strokeColor: "rgba(238,87,41,1)"
+      strokeColor: '#00D9A3'
     1:
-      label: "12th fifth year plan"
+      label: 12th fifth year plan
       column: twelve
-      strokeColor: "rgba(79,110,191,1)"
+      strokeColor: '#FFD24D'
 
 china_industry_policy_3:
   id: china_industry_policy_3
@@ -2022,14 +2038,16 @@ china_industry_policy_3:
   type: BarGraph
   units: Yuan / kWh
   name_column: application
-  # grouping: y_axis
+  grouping: y_axis
   x_groups:
     0:
       label: "2007"
       column: year2007
+      strokeColor: '#00D9A3'
     1:
       label: "2008"
       column: year2008
+      strokeColor: '#FFD24D'
 
 china_power_emissions:
   id: china_power_emissions
@@ -2126,16 +2144,20 @@ china_power_policy:
   type: BarGraph
   units: GW
   name_column: fuel
+  grouping: y_axis
   x_groups:
     0:
       label: "10th FYP"
       column: _10th_fyp
+      strokeColor: "rgba(87,216,159,1)"
     1:
       label: "11th FYP"
       column: _11th_fyp
+      strokeColor: "rgba(246,214,44,1)"
     2:
       label: "12th FYP"
       column: _12th_fyp
+      strokeColor: "rgba(238,87,41,1)"
 
 china_power_policy_2:
   id: china_power_policy_2

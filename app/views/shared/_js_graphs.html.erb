@@ -7,9 +7,6 @@
   var w = 1038;
   var LINE_DOT_R = 4;
   var INTERPOLATE_METHOD = "cardinal";
-  //var IN_DURATION = 200;
-
-  //
 
   //svg for every graph
   var svg = [];
@@ -19,6 +16,10 @@
 
   var circle_locked = false;
 
+  function addLegendElement(container_id, color, element_id, text) {
+    $("#"+container_id).find(".graph-legend").prepend('<li><div class="legend-item" style="background-color:'+color+'"></div><span id='+element_id+' class="legend-label">'+text+'</span></li>');
+      // .attr("r", LINE_DOT_R);      
+  }
 
   function updateOverlayLine(time) {
     var x = Math.round(parseFloat(x_scale(time)))-1;
@@ -200,13 +201,14 @@
 
         // Graph settings, domain & ranges calculation, scales, etc.
         var negat = [], posit = [];
+        var grouping = (_.size(_graphs[graphNum].x_groups) > 1);
+        var grouping_y = (_graphs[graphNum].grouping == 'y_axis');      
 
         data.rows.forEach(function(d){
           var values = [];
 
           _.each(_graphs[graphNum].x_groups, function(serie) {
             var value = d[serie.column];
-
             if (value > 0) {
               posit.push(parseFloat(value));
             } else {
@@ -215,31 +217,63 @@
           });
         });
 
-        var grouping = (_.size(_graphs[graphNum].x_groups) > 1);
-        var grouping_y = (_graphs[graphNum].grouping == 'y_axis');      
+        var margin_x = 40;
+        var margin_y = 40;
+        var available_h = 280-margin_y;        
+        var row_h = 0;
+        if (grouping_y) {
+          row_h = d3.min([available_h/data.rows.length,50]);
+        } else {
+          row_h = d3.min([available_h/data.rows.length,25]);
+        }
+        var actual_h = row_h*data.rows.length;        
+        var labels_start_y = margin_y+available_h/2-actual_h/2;
+        var grouping_y_separation = 10;
+
+        var max_label_width = 0;
+
+        // Series labels
+        svg[graphNum].selectAll("text.graph-series-label")
+          .data(data.rows)
+          .enter()
+          .append("text")
+          .attr("class","graph-series-label")
+          .attr("id",function(d) {
+            return "series_label_"+d.cartodb_id;
+          })
+          .text(function(d) {
+            return d[_graphs[graphNum].name_column];
+          })
+          .attr("x", function(d,i) {
+            return margin_x;
+          })
+          .attr("y", function(d,i) {     
+            var y = labels_start_y+(i * row_h)+row_h/2;
+            return y;
+          })
+          // .each(function (d) {
+          //   var label_width = d3.select(this)[0][0].getComputedTextLength();
+          //   if (label_width > max_label_width) {
+          //     max_label_width = label_width;
+          //   }
+          // });
+
+        // console.log(max_label_width);
 
         var positive_color = "#546DBC";
         var negative_color = "#F0542C";      
 
-        var margin_x = 40;
+        // var label_w = max_label_width + 100;
         var label_w = 363;
         var available_w = 600;
-        var group_w = available_w/_.size(_graphs[graphNum].x_groups);
-
-        var margin_y = 40;
-        var available_h = 280-margin_y;
-        var row_h = d3.min([available_h/data.rows.length,25]);
-
-        var grouping_y_separation = 15;
-
+        var group_w = 0;
         if (grouping_y) {
-          row_h = 2*row_h;
+          group_w = available_w;
+        } else {
+          group_w = available_w/_.size(_graphs[graphNum].x_groups);
         }
 
-        var actual_h = row_h*data.rows.length;
-
         var bar_height = 2
-        var labels_start_y = margin_y+available_h/2-actual_h/2;
 
         var max_negat  = d3.max(negat),
           max_posit = d3.max(posit),
@@ -268,26 +302,6 @@
         //   .attr("r", 10)
         //   .style("stroke", "#000")
         //   .style("fill", "#000");
-
-
-        // Series labels
-        svg[graphNum].selectAll("text.graph-series-label")
-          .data(data.rows)
-          .enter()
-          .append("text")
-          .attr("class","graph-series-label")
-          .attr("id",function(d) {
-            return "series_label_"+d.cartodb_id;
-          })
-          .text(function(d) {
-            return d[_graphs[graphNum].name_column];
-          })
-          .attr("x", function(d,i) {
-            return margin_x;
-          })
-          .attr("y", function(d,i) {          
-            return labels_start_y+(i * row_h);
-          });
 
         var group_label_ = [];
 
@@ -320,20 +334,25 @@
 
           // Drawing an axis for each group_x
           if ((!grouping_y)||(j == 0)) {
-          var lineGraph = svg[graphNum].append("svg:line")
-            .attr("x1", label_w+group_w*j+zero_x)
-            .attr("y1", labels_start_y-20)
-            .attr("x2", label_w+group_w*j+zero_x)
-            .attr("y2", labels_start_y+actual_h-20)
-            .style("stroke", "#ddd")
-            .style("shape-rendering", "crispEdges");
+            var lineGraph = svg[graphNum].append("svg:line")
+              .attr("x1", label_w+group_w*j+zero_x)
+              .attr("y1", labels_start_y)
+              .attr("x2", label_w+group_w*j+zero_x)
+              .attr("y2", labels_start_y+actual_h-13)
+              .style("stroke", "#ddd")
+              .style("shape-rendering", "crispEdges");
           }
 
           var group_label_ = _graphs[graphNum].x_groups[j].label;
           var group_name_ = _graphs[graphNum].x_groups[j].column;
+          var group_strokeColor_ = _graphs[graphNum].x_groups[j].strokeColor;
           var units_ = _graphs[graphNum].units;
 
-          (function(group_name, units) { // We need a reference to group_name & units in runtime, for tooltips
+          if (grouping && grouping_y) {
+            addLegendElement(_graphs[graphNum].id, group_strokeColor_, group_name_, group_label_);
+          }
+
+          (function(group_name, units, group_strokeColor) { // We need a reference to group_name & units in runtime, for tooltips
 
             var group_pos_x = group_w*j;
             if (grouping_y) {
@@ -353,21 +372,26 @@
                 }
               })
               .attr("y", function(d,i) {
-                var offset_y = i*row_h;
+                var offset_y = i*row_h+grouping_y_separation/2;
                 if (grouping_y) {
                   offset_y += j*grouping_y_separation-10;
                 }
-                return labels_start_y + offset_y - bar_height/2 - 7;
+                return labels_start_y + offset_y +row_h/2 - bar_height/2 - 7;
               })
               .attr("height", function(d,i) {
                 return bar_height;
               })
               .attr("style",function (d) {
-                if (d[group_name] > 0) {
-                  return "fill: "+positive_color;
+                if (grouping_y) {
+                  return "fill: "+group_strokeColor;
                 } else {
-                  return "fill: "+negative_color;
+                  if (d[group_name] > 0) {
+                    return "fill: "+positive_color;
+                  } else {
+                    return "fill: "+negative_color;
+                  }                  
                 }
+
               })
               .attr("name", function(d){
                 return Math.round(d[group_name]*1000)/1000;
@@ -393,18 +417,22 @@
               .append("circle")
               .attr("class", group_name+' linedot linedot'+i)
               .attr("style",function(d) {
-                if (d[group_name] > 0) {
-                  return "stroke: "+positive_color+"; fill: #fff";
+                if (grouping_y) {
+                  return "stroke: "+group_strokeColor+"; fill: #fff";
                 } else {
-                  return "stroke: "+negative_color+"; fill: #fff";
+                  if (d[group_name] > 0) {
+                    return "stroke: "+positive_color+"; fill: #fff";
+                  } else {
+                    return "stroke: "+negative_color+"; fill: #fff";
+                  }
                 }
               })
               .attr("cy", function(d,i){
-                var offset_y = i*row_h;
+                var offset_y = i*row_h+grouping_y_separation/2;
                 if (grouping_y) {
                   offset_y += j*grouping_y_separation-10;
                 }              
-                return labels_start_y + offset_y - bar_height/2 - 6}
+                return labels_start_y + offset_y +row_h/2 - bar_height/2 - 6}
               )
               .attr("r", LINE_DOT_R)
               .attr("name", function(d){return (Math.round(d[group_name]*1000)/1000) + " " + units}) //Uses this for tooltip
@@ -441,13 +469,6 @@
                 tooltip.style("visibility", "hidden");
 
                 d3.select(this)
-                  .attr("style",function(d) {
-                    if (d[group_name] > 0) {
-                      return "stroke: "+positive_color+"; fill: #fff";
-                    } else {
-                      return "stroke: "+negative_color+"; fill: #fff";
-                    }
-                  })
                   .transition()
                   .duration(100)
                   .attr("r",LINE_DOT_R);
@@ -474,7 +495,10 @@
                 }
                 return x;
               });
-          })(group_name_, units_);
+          })(group_name_, units_, group_strokeColor_);
+
+
+
         }
       });
     }
@@ -984,8 +1008,10 @@
 
           }
 
-          $("#"+_graphs[graphNum].id).find(".graph-legend").prepend('<li><div class="legend-item" style="background-color:'+strokeColor_+'"></div><span id='+y_col_+' class="legend-label">'+y_col_name+'</span></li>')
-            .attr("r", LINE_DOT_R);
+          addLegendElement(_graphs[graphNum].id, strokeColor_,y_col_,y_col_name);
+
+          // $("#"+_graphs[graphNum].id).find(".graph-legend").prepend('<li><div class="legend-item" style="background-color:'+strokeColor_+'"></div><span id='+y_col_+' class="legend-label">'+y_col_name+'</span></li>')
+          //   .attr("r", LINE_DOT_R);
         });
 
         //Overlay
@@ -1022,9 +1048,6 @@
         svg[graphNum].selectAll("circle").each(function() {
           svg[graphNum].node().appendChild(this);
         });
-        // svg[graphNum].selectAll("rect.bars").each(function() {
-        //   svg[graphNum].node().appendChild(this);
-        // });
 
       });
     }
