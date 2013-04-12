@@ -83,315 +83,6 @@ brazil:
     - policy:
         description: These graphs show the changes in policy in the Land Use sectors in Brazil.
 
-us:
-  id: us
-  name: United States
-  tagline: Making progress despite policy gridlock
-  description: The United States has created a “messy but useful” combination of incentives, regulation, persuasion, and innovation at the federal and state level, which has contributed to a recent decline in emissions. Sustaining and escalating this emissions decline while creating more cost-effective policy in the face of tightened government spending is the next challenge.
-  sectors:
-    - buildings:
-        description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in the US
-        decades_analysis:
-          _1980:
-            description: The first building and appliance standards appeared before the decade began; heterogeneous state standards led to federal appliance standards. Utilities began energy efficiency programs.
-            policy_barriers:            
-             - <dl><dt>Emergence of building codes</dt><dd>First ASHRAE standard, 1975</dd><dd>Scattered code adoption by states</dd></dl>
-             - <dl><dt>Demand-side management emerged</dt></dl>
-             - <dl><dt>First appliance labeling and standards</dt><dd>National Energy Conservation and Policy Act of 1978 authorized Department of Energy to set energy efficiency standards for 13 appliances</dd><dd>Appliance Labeling Rule of 1980 mandated “EnergyGuide” labeling of appliances</dd><dd>National Appliance Energy Conservation Act adopted uniform minimum efficiency standards for many household appliances, 1987</dd><dd>Industry-driven in face of variety of state standards (Geller 2006, EERE 2012)</dd></dl>
-             - <dl><dt>Tax Reform Act of 1986 increased deduction for mortgage interest payments</dt></dl>
-            underlying_changes:
-             - <dl><dt>Suburbanization trend that began mid-century continued</dt></dl>
-
-          _1990:
-            description: The 1990s saw wider and more stringent building code adoption due to federal requirements and assistance. Federal appliance standards and voluntary programs increased in scope. A residential construction boom began in the latter half of the decade.
-            policy_barriers:           
-             - <dl><dt>Montreal Protocol to phase out halocarbons entered into force in 1989</dt></dl>
-             - <dl><dt>First close federal involvement in state code creation with assistance in creating ASHRAE 1989 (PNNL 1994)</dt></dl>
-             - <dl><dt>Energy Policy Act, 1992</dt><dd>Required states to adopt commercial building codes</dd><dd>Required the Department of Energy to offer states technical and financial assistance in code creation and adoption</dd><dd>Expanded Department of Energy’s authority over labeling and energy effciency standards in appliances</dd></dl>
-             - <dl><dt>Energy Star voluntary energy effciency labeling program initiated, 1992</dt></dl>
-             - <dl><dt>Power sector restructuring led to demand-side management cutbacks (ACEEE 2006) (RFF 2004)</dt></dl>
-             - <dl><dt>Market transformation programs initiated (RFF 2004)</dt></dl>
-
-            underlying_changes:
-             - <dl><dt>Residential construction boom commenced in mid-1990s</dt></dl>
-             - <dl><dt>Suburbanization continued and home size increased</dt></dl>
-             - <dl><dt>IT build-out and increased use of electronics and appliances across commercial and residential buildings (EERE 2008)</dt></dl>
-             - <dl><dt>Increased appliance “plug load” (DOE 2011)</dt><dd>Rise in residential air conditioning continued (68% - 77% of all households) (DOE 2011)</dd><dd>Space heating shares between gas and electric constant</dd></dl>
-
-          _2000:
-            description: The federal government increased spending on building energy efficiency. A “green premium” was associated with energy-efficient commercial building construction and retrofits.
-            policy_barriers:           
-             - <dl><dt>Energy Star program expanded to cover wider range of appliances</dt></dl>
-             - <dl><dt>Financial incentives</dt><dd>Tax incentives for domestic and commercial building energy effciency (Energy Policy Act 2005)</dd><dd>State Energy efficient Appliance Rebate Program</dd><dd>American Recovery and Reinvestment Act, 2009</dd><dd>Energy Effciency and Conservation Block Grants</dd><dd>Funds for states to decouple utility rates and to improve building codes</dd></dl>
-             - <dl><dt>Energy Effciency Resource Standards (EERS)</dt><dd>First was Texas in 1999</dd><dd>By 2011, 24 states (including California, Texas, and New York) have EERSs (ACEEE 2011)</dd></dl>
-            underlying_changes:
-             - <dl><dt>“Green Premium” in energy efficient office space drove “green” commercial occupancy and leasing rates above average commercial rates (Miller 2008)</dt></dl>
-             - <dl><dt>Residential construction boom until 2007 housing bubble collapse</dt></dl>
-             - <dl><dt>Crime fell in urban areas, associated with accelerating residential construction in urban areas (EPA 2009)</dt></dl>
-             - <dl><dt>Fuel shifted in space heating (DOE 2011b)</dt><dd>Residential buildings shifted increasingly to electric space heating (from approximately 29% to 35% of households)</dd><dd>Decline in natural gas for residential space heating (from approximately 55% to 50% of households)</dd></dl>
-             - <dl><dt>Continued IT build-out and household appliance growth across commercial and residential buildings (EERE 2008)</dt></dl>
-    - transport:
-        description: These graphs show the changes in emissions, emissions drivers, and policy in the Transportation sector in the US
-        decades_analysis:
-          _1980:
-            description: Deregulation and energy efficiency were the major policy themes for the 1980s as the air and rail industries underwent significant overhauls and passenger vehicle fleet efficiency standards increased significantly in the first half of the decade.
-            policy_barriers:            
-             - <dl><dt>Corporate Average Fuel Economy Standards (CAFE) improved automobile efficiency</dt><dd>Energy Policy and Conservation Act of 1975 required 27.5 mpg by 1985</dd><dd>EPA began labeling fuel efficiency</dd></dl>
-             - <dl><dt>Surface Transport Assistance Act, 1982 goal to complete Interstate Highway System by 1991</dt></dl>
-             - <dl><dt>Raised federal gas tax from 4 to 9 cents per gallon—first increase since 1959—to fund completion of Interstate Highway System by 1991 (CRS 2006)</dt></dl>
-             - <dl><dt>Surface Transport and Uniform Relocation Assistance Act, 1987</dt><dd>Allowed states to raise speed limits to 65 on rural interstate highways</dd></dl>
-             - <dl><dt>Railroad and Airline deregulation</dt><dd>Railroad Deregulation and Regulatory Reform Act, 1976</dd><dd>Staggers Act, 1980</dd><dd>Airline Deregulation Act, 1978</dd></dl>
-            underlying_changes:
-             - <dl><dt>Oil shocks</dt></dl>
-             - <dl><dt>Increasing fuel economy (approximately 20%) across ground transport</dt><dd>Efficiency gains limited to first half of the decade (Joskow 2001)</dd></dl>
-             - <dl><dt>Rapid changes to light duty fleet mix</dt><dd>Light truck share increased from 16% to 30%</dd><dd>Car share decreased from 83% to 70% (ORNL 2012)</dd></dl>
-
-          _1990:
-            description: The 1990s saw stable energy prices and an associated drop in attention towards increasing overall energy efficiency. Consumption behavior shifted towards larger, amenity-rich vehicles.
-            policy_barriers:            
-             - <dl><dt>No change to CAFE standards</dt></dl>
-             - <dl><dt>Gas taxes raised from 9 to 18 cents from 1990 to 1993, the last time federal gas taxes increased significantly</dt></dl>
-             - <dl><dt>Energy Policy Act, 1992</dt><dd>Federal fleet purchasing required to build alternative-fuel vehicle fleet</dd></dl>
-             - <dl><dt>Clean Air Act Amendments, 1990</dt><dd>Increased stringency of heavy and light duty pollution standards</dd></dl>
-             - <dl><dt>Communications, Navigation, and Surveillance / Air Traffic Management (CNS/ATM), 1997, aimed to reduce airplane idling and travel time</dt></dl>
-
-            underlying_changes:
-            - <dl><dt>Deteriorating fuel economy in passenger vehicles (EIA 2005)</dt><dd>Engine and transmission efficiency gains were offset by horsepower, size, and weight increases</dd><dd>Continued changes to light duty fleet mix</dd><dd>Light truck share rose to 40%</dd><dd>Car share decreased to 60% (ORNL 2012)</dd></dl>
-          _2000:
-            description: Both the automobile market and policymakers shifted focus towards lighter, more efficient vehicles and alternative fuels. The financial crisis and automobile industry bailout late in the decade reshaped the policy landscape in favor of more stringent regulation.
-            policy_barriers: 
-             - <dl><dt>Continued tightening pollution standard for heavy and light duty vehicles</dt></dl>
-             - <dl><dt>High Occupancy Vehicle lane exemptions for lowemissions or hybrid vehicles, 2005</dt></dl>
-             - <dl><dt>Energy Policy Act, 2005</dt><dd>Tax incentives created for alternative fuel and advance technology vehicles</dd><dd>Renewable Fuel Standard (RFS) established to mandate biofuel volumes in national fuel supply</dd></dl>
-             - <dl><dt>Energy Independence and Security Act, 2007</dt><dd>Advanced Technology Vehicles Manufacturing Loan Program</dd><dd>Increased RFS volumes and set greenhouse gas requirements for qualifying fuels</dd></dl>
-             - <dl><dt>SmartWay voluntary program established to facilitate fuel efficiency and reduced costs for freight, 2004</dt></dl>
-            underlying_changes:
-             - <dl><dt>Fleet mix changes slowed (ORNL 2012)</dt></dl>
-             - <dl><dt>Increased use of hybrid and other alternative-fuel vehicles</dt></dl>
-             - <dl><dt>Return to high oil prices</dt></dl>
-             - <dl><dt>2008-2009 recession reduced travel and freight movement (ORNL 2012, FHA 2012)</dt></dl>
-             - <dl><dt>Domestic commercial aircraft improved in operational efficiency and fuel efficiency; passenger demand grew (CRS 2010)</dt></dl>
-    - power:
-        description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the US
-        decades_analysis:
-          _1980:
-            description: Power industry deregulation led to independent power producers and the beginning of natural gas generation. The nuclear buildout of prior decades ended, but nuclear generation increased significantly due to increased availability.
-            policy_barriers: 
-             - <dl><dt>Natural Gas Policy Act (1978)</dt><dd>Deregulation of natural gas supplies</dd><dd>Continued deregulation of oil and natural gas throughout the decade</dd></dl>
-             - <dl><dt>PURPA (1978)</dt><dd>Creation of independent power producers</dd><dd>Ability to sell at avoided cost for qualifying facilities</dd></dl>
-             - <dl><dt>Modified Accelerated Cost Recovery System (MACRS) adopted under Tax Reform Act, 1986</dt></dl>
-             - <dl><dt>Clean Air Act Amendments of 1977 established New Source Review (NSR) preconstruction permitting program</dt></dl>
-             - <dl><dt>Natural Gas Policy Act (1978)</dt><dd>Deregulation of natural gas supplies</dd><dd>Continued deregulation of oil and natural gas throughout the decade</dd></dl>
-             - <dl><dt>PURPA (1978)</dt><dd>Creation of independent power producers</dd><dd>Ability to sell at avoided cost for qualifying facilities</dd></dl>
-             - <dl><dt>Modified Accelerated Cost Recovery System (MACRS) adopted under Tax Reform Act, 1986</dt></dl>
-             - <dl><dt>Clean Air Act Amendments of 1977 established New Source Review (NSR) preconstruction permitting program</dt></dl>
-            underlying_changes:
-             - <dl><dt>Restrictions on gas for power generation changed</dt></dl>
-             - <dl><dt>End of nuclear build out, but increased nuclear utilization</dt></dl>
-             - <dl><dt>High oil prices, and the beginning of the phase out of oil-fired generation</dt></dl>
-
-          _1990:
-            description: The government implemented federal tax incentives for renewable energy. The fuel mix composition changed with increasing nuclear availability and improvements in natural gas generation.
-            policy_barriers: 
-             - <dl><dt>Power sector deregulation throughout decade</dt></dl>
-             - <dl><dt>Clean Air Act Amendments, 1990</dt><dd>Acid Rain Program</dd><dd>Established cap and trade system to limit SOx emissions from coal-fired EGUs.</dd><dd>Limited NOx emissions from EGUs</dd></dl>
-             - <dl><dt>Energy Policy Act 1992</dt><dd>Wholesale transmission access guidelines</dd><dd>Production tax credit for renewable energy</dd></dl>
-
-            underlying_changes:
-             - <dl><dt>Increased nuclear availability</dt></dl>
-             - <dl><dt>Emergence of Combined Cycle Gas Turbine  CCGT) plants</dt></dl>
-             - <dl><dt>Coal-powered plants greater than 40 years old proved still competitive (Joskow 2001)</dt></dl>
-             - <dl><dt>Stable energy prices</dt></dl>
-          _2000:
-            description: The 2000s marked the beginning of state involvement in renewable energy policy with renewable portfolio standards and a rise in federal tax expenditures towards renewable energy. The global market for renewable energy components led to cost reductions, while new technology and higher gas prices unlocked new natural gas reserves.
-            policy_barriers:            
-             - <dl><dt>State renewable portfolio standards implemented, increasing goals over decade</dt></dl>
-             - <dl><dt>Federal tax expenditures grew throughout decade</dt><dd>Residential Renewable Energy Tax Credit, 2005</dd><dd>Investment Tax Credit, 2005</dd><dd>MACRS + 50% Bonus Depreciation, 2008</dd></dl>
-             - <dl><dt>Energy Independence and Security Act, 2007</dt><dd>Required states to consider integrated resource planning and rate modifications to promote energy effciency</dd></dl>
-             - <dl><dt>Failure to identify long-term nuclear storage site</dt></dl>
-
-            underlying_changes:
-             - <dl><dt>Reduction in levelized costs of renewables (particularly wind and solar)</dt></dl>
-             - <dl><dt>Unconventional gas emerged and very cheap natural gas</dt></dl>
-             - <dl><dt>High oil prices</dt></dl>
-    - industry:
-        description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the US
-        decades_analysis:
-          _1980:
-            description: Utilities began exploring integrated resource planning in a time of high energy prices and fixed retail prices. The 1980s also marked the beginning of federal involvement in knowledge-transfer to industry.
-            policy_barriers: 
-             - <dl><dt>Industrial Assessment Centers (IAC) Program, 1976</dt><dd>Environmental, energy, and productivity audits of facilities by trained engineers</dd></dl>
-             - <dl><dt>Integrated Resource Planning (IRP) by public utilities responding to high energy prices and fixed retail prices</dt></dl>
-             - <dl><dt>Demand-side management (DSM) programs began</dt><dd>Explored by utilities in response to high energy prices and stranded nuclear costs</dd></dl>
-            underlying_changes:
-             - <dl><dt>Rising imports of finished goods (FRBNY 1991)</dt></dl>
-             - <dl><dt>Falling relative share of manufacturing (Sachs et al. 1994)</dt></dl>
-             - <dl><dt>Rise in manufacturing productivity</dt></dl>
-             - <dl><dt>Shift from integrated mills to minimills in steel sector</dt></dl>
-
-          _1990:
-            description: The continued deregulation of the power sector spurred a reduction in funding towards demand-side management programs. There was increased attention on appliance standards with the Energy Policy Act.
-            policy_barriers: 
-             - <dl><dt>Policy shifted to partnership programs between EPA, DOE, and industry</dt><dd>Energy Star voluntary energy efficiency labeling program began, 1992</dd><dd>Increased use of IAC audits</dd></dl>
-             - <dl><dt>Deregulation of utilities after 1994 led to a decrease in demand-side management spending (RFF 2004), (ACEEE 2006)</dt></dl>
-             - <dl><dt>Utility market transformation programs initiated in mid-1990s (RFF 2004), (ACEEE 2006)</dt></dl>
-             - <dl><dt>Energy Policy Act of 1992 required states to consider DSM programs</dt></dl>
-            underlying_changes:
-             - <dl><dt>Industrial sectors declined in GDP contribution, but increased gross value-add</dt></dl>
-             - <dl><dt>1995-2000 saw increases in durable-goods manufacturing, driven in part by IT equipment (BEA 2004)</dt></dl>
-             - <dl><dt>Elimination of trade restrictions</dt><dd>End of trade restrictions protecting U.S. steel industry in 1992 (CRS 2003)</dd></dl>
-             - <dl><dt>Declining use of basic oxygen furnaces (BOF); increasing use of electric arc furnaces (EAF) (CRS 2003)</dt></dl>
-          _2000:
-            description: States began implementing energy efficiency resource standards and utilizing public benefit charges to fund energy efficiency programs, which saw a funding resurgence throughout the decade.
-            policy_barriers: 
-             - <dl><dt>States began enacting Energy Efficiency Resource Standards (EERS)</dt><dd>First is Texas in 1999</dd><dd>By 2011, 24 states (including California, Texas, and New York) had EERSs (ACEEE 2011)</dd></dl>
-             - <dl><dt>Energy Policy Act, 2005</dt><dd>Provided loan guarantees for new energy efficient technologies</dd></dl>
-             - <dl><dt>Use of Public Benefit Funds for energy efficiency, renewable energy, and research and development increased (RFF 2004)</dt><dd>Rise in demand-side management spending in 2000s</dd></dl>
-            underlying_changes:
-             - <dl><dt>Rise in steel industry bankruptcies due to rising energy prices, financial crises, and legacy costs (RFF 2004)</dt></dl>
-             - <dl><dt>Return to high energy prices</dt></dl>
-             - <dl><dt>Unconventional gas emerged and domestic exploration rose</dt></dl>
-             - <dl><dt>Recession 2008-2009</dt></dl>
-  subjects:
-    - emissions:
-        description: Emissions description for United States.
-    - emission_drivers:
-        description: Emission drivers description for United States.
-    - policy:
-        description: Policy description for United States.
-
-# ---------------------------------------------------------------------------------------------------------------------------------------------------------
-# ---------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-india:
-  id: india
-  name: India
-  tagline: Balancing climate policy and development
-  description: India has aggressive renewable energy targets and industry energy efficiency policies, but faces significant infrastructure challenges, which may derail otherwise good policy. India is growing rapidly and represented 8% of the increase in global energy-related CO2 emissions between 2000 and 2010.
-  sectors:
-    - agriculture:
-        description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in India
-        decades_analysis:
-          _1980:
-            description: The Government of India’s agricultural policy between independence (1947) and 1990 was largely focused on improving the domestic production of food grains by expanding irrigation and extending incentives such as input and output price regulations.
-            policy_barriers:            
-             - <dl><dt>Minimum Support Price for wheat introduced in 1966-67</dt><dd>Protected farmers from commodity price fluctuations</dd></dl>
-             - <dl><dt>Quantitative restrictions on import of agricultural commodities, specifically on pulses and edible oils, were removed during the 1980s</dt></dl>
-            underlying_changes:
-             - <dl><dt>Population increased by almost 25% by the end of decade (IMF 2011)</dt></dl>
-             - <dl><dt>Marked agricultural growth largely due to adoption of high-yield seeds and fertilizers throughout the 1980s (Singh 2010)</dt></dl>
-             - <dl><dt>Substantial growth and investment in rural infrastructure (Singh 2010)</dt></dl>
-          _1990:
-            description: After 1990, the focus of government policy moved toward increasing the efficiency of the agricultural sector by improving the supply chain infrastructure.
-            policy_barriers:           
-             - <dl><dt>Uruguay Round Agreement on Agriculture entered into force in 1995</dt><dd>Quantitative import restrictions lifted in accelerated fashion for most agricultural commodities (1997-2001)</dd><dd>Removed most quantitative controls on agricultural exports during the late 1990s</dd><dd>Export ban remained available for essential commodities as needed to stabilize domestic market</dd></dl>
-            underlying_changes:
-             - <dl><dt>Increasing population</dt></dl>
-             - <dl><dt>Growth agricultural output fell from 4.8% in early 1990s to 2.5% in mid-1990s (Ministry of Agriculture 2012)</dt></dl>
-             - <dl><dt>Mechanization of agriculture increased over decade (Ministry of Agriculture 2013)</dt></dl>
-
-          _2000:
-            description: Policy shifted toward sustainable development of agriculture by attracting private investment due to rising subsidy expenditure.
-            policy_barriers: 
-             - <dl><dt>The National Policy on Agriculture of 2000</dt><dd>Aimed at agricultural sector annual growth rate of over 4%</dd><dd>Emphasized technologically, environmentally, and economically sustainable growth</dd><dd>Targeted efficient resource use and conservation of soil, water, and bio-diversity</dd></dl>
-             - <dl><dt>Policy incentives to improve sector (USDA/ERS 2012)</dt><dd>Restrictions on private movement and storage of farm commodities relaxed over decade</dd><dd>Taxes on processing of agricultural products reduced and simplified</dd></dl>
-             - <dl><dt>Policy incentives to promote exports (USDA/ERS 2012)</dt><dd>Restrictions on processing firms largely removed</dd><dd>Import duty reductions on imported inputs to products for export</dd><dd>Government support for domestic marketing and transport extended</dd><dd>State marketing laws relaxed to increase private participation</dd></dl>
-             - <dl><dt>By 2008, import tariffs reduced for many major commodities to decrease inflationary pressure on domestic market</dt></dl>
-             - <dl><dt>Export ban on non-basmati rice in 2008 in response to global rice price 27 commodities covered under the Minimum Support Price program as of 2012</dt></dl>
-            underlying_changes:
-             - <dl><dt>2007-2008 global food price crisis</dt></dl>
-             - <dl><dt>Growth agricultural output fell to 2.45% by early</dt></dl>
-             - <dl><dt>2000s and started to recover after 2005 (Ministry of Agriculture 2012)</dt></dl>
-             - <dl><dt>Increased mechanization of agriculture (Ministry of Agriculture 2013)</dt></dl>
-             - <dl><dt>Population increased from 1,024.25 million in 2000 to 1,190.52 million by 2010 (IMF 2011)</dt></dl>
-                  
-    - power:
-        description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in India
-        decades_analysis:
-          _1980:
-            description: Prior to 1990, fundamental level policies aimed to improve the functioning of the electricity sector. However, high state control continued.
-            policy_barriers: 
-             - <dl><dt>Indian Electricity Act, 1910</dt><dd>Established rules on supply and use of electricity</dd><dd>Established rights and obligations of licensees</dd></dl>
-             - <dl><dt>Electricity Supply Act, 1948</dt><dd>Uniform national power policy for rationalization of production and supply of electricity</dd><dd>National grid infrastructure envisioned</dd><dd>Established State Electricity Boards</dd></dl>
-            underlying_changes:
-             - <dl><dt>Government of India established PowerGrid Corporation in 1989 to build a national power grid (based on recommendations from Rajadhyaksha Committee report on power sector reforms)</dt></dl>
-             - <dl><dt>Population increased by almost 25% by end of decade (IMF 2011)</dt></dl>
-             - <dl><dt>GDP grew nearly 94% (from USD 150.86 billion in 1980 to USD 292.92 billion in 1990) (World Bank 2012)</dt></dl>
-
-          _1990:
-            description: Government policy focused on improvement in governance and regulation of the electricity sector. Policies also aimed to increase captive power generation.
-            policy_barriers:           
-             - <dl><dt>The Electricity Regulatory Commissions Act established Central Electricity Regulatory Commission and State</dt></dl>
-             - <dl><dt>Electricity Commissions, 1998</dt><dd>Commissions determined tariffis for generation and transmission</dd><dd>Aimed to improve State Electricity Board health</dd><dd>Central Electricity Regulatory Commission was responsible for regulation of inter-state sale of power</dd></dl>
-             - <dl><dt>Accelerated depreciation benefits for renewable energy and for energy efficiency was introduced</dt></dl>
-            underlying_changes:
-             - <dl><dt>By the 1990s, the majority of states had State Electricity</dt></dl>
-             - <dl><dt>Regulatory Commissions to oversee tariff revisions</dt></dl>
-             - <dl><dt>Wind energy took off, attracting substantial equity investments</dt></dl>
-             - <dl><dt>Population grew from 843.25 million in 1990 to 1,024.25 million by 2000—approximately 20% increase (IMF2011)</dt></dl>
-             - <dl><dt>Primary energy consumption increased by 64% over the decade (BP 2012)</dt></dl>
-
-          _2000:
-            description: The 2000s marked the beginning of major reforms in the electricity sector due to inefficiencies in existing systems and rising demand.
-            policy_barriers:           
-             - <dl><dt>Energy Conservation Act of 2001 mandated a number of energy effciency provisions for certain energy-intensive industries (including the power industry)</dt></dl>
-             - <dl><dt>The Electricity Act of 2003 transformed the electricity sector</dt><dd>Increased private sector participation in generation by allowing independent power producers and captive generation</dd><dd>Promoted competition among generating companies by allowing open access in transmission</dd><dd>Reduced transmission and distribution losses</dd><dd>Yearly revision of end-user tariffis linked to power purchase prices and inflation indices</dd></dl>
-             - <dl><dt>Feed-in tariffs and premiums for renewable energy introduced, 2000</dt></dl>
-             - <dl><dt>Various tax incentives for power sector projects introduced (Government Notification No. 21/2002)</dt></dl>
-             - <dl><dt>Generation Based Incentive (GBI), 2008-2009</dt></dl>
-             - <dl><dt>Gujarat solar power policy, 2009</dt><dd>Only state solar power policy with fixed feed-in tariffs</dd><dd>Did not use reverse bidding process for tariffs determination</dd></dl>
-             - <dl><dt>Clean Development Mechanism project approvals in India commenced in 2005</dt></dl>
-             - <dl><dt>Jawaharlal Nehru National Solar Mission (JNNSM) policy framework introduced in 2010 to achieve 20GW solar power installed capacity by 2022</dt></dl>
-            underlying_changes:
-              - <dl><dt>Private sector participation in power generation projects increased</dt></dl>
-              - <dl><dt>Solar power industry started witnessing growth at end of decade</dt></dl>
-              - <dl><dt>Primary energy consumption increased by 76% over the decade (BP 2012)</dt></dl>
-    - industry:
-        description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in India
-        decades_analysis:
-          _1980:
-            description: Policies prior to 1990 focused on improving the functioning of public sector undertakings and (in general) aimed to improve technology and productivity.
-            policy_barriers: 
-             - <dl><dt>Policy prior to 1980 aimed to facilitate establishment of basic industries and building core infrastructure</dt></dl>
-             - <dl><dt>Industrial Policy of 1980 aimed to promote domestic competition, technological advancement, and modernization of industries </dt><dd>Measures also taken to improve efficiency of public sector undertakings</dd></dl>
-             - <dl><dt>The Seventh Plan (1985-1990) focused on technical and talent improvement measures to improve productivity, quality, and reduce cost of production </dt><dd>Public sector was freed from a number of regulatory constraints and was given greater autonomy</dd></dl>
-             - <dl><dt>Air Act of 1981 established Central and State Pollution Control Boards for data collection and enforcement (Greenstone 2011)</dt></dl>
-             - <dl><dt>Environment Protection Act, 1986</dt><dd>Centralized environmental control</dd><dd>Gave Ministry of Environment and Forests power to close firms violating pollution regulations (Reich 1992)</dd></dl>
-            underlying_changes:
-             - <dl><dt>Industries advanced technologically and increased scale of operations (e.g., automotive, cement, cotton spinning, food processing, and yarn industries)</dt></dl>
-             - <dl><dt>Development of lesser developed areas commenced under Growth Centre Scheme (1988), driving building of critical infrastructure</dt></dl>
-             - <dl><dt>Bhopal Disaster of 1984 prompted new attention to environmental protection (Greenstone 2011)</dt></dl>
-             - <dl><dt>GDP grew nearly 94% (from USD 150.86 billion in 1980 to USD 292.92 billion in 1990) (World Bank 2012)</dt></dl>
-
-          _1990:
-            description: India took on major industrial reforms in 1991 as the country faced an unprecedented balance of payments crisis.
-            policy_barriers: 
-             - <dl><dt>New Industrial Policy, 1991</dt><dd>Removed licensing requirements for the majority of industries, with only 15 industries requiring compulsory licensing post-April 1993</dd><dd>Foreign investment permitted up to 51% in high priority sectors (e.g., software, electrical equipment, hotel and tourism)</dd><dd>Reduced number of industries exclusively reserved for public sector from 17 to 8 sectors</dd></dl>
-            underlying_changes:
-             - <dl><dt>Foreign Direct Investment (FDI) increased from INR 10.9 billion in 1992 to INR 107.3 billion by 2000 (Ministry of Commerce & Industry 2013)</dt></dl>
-             - <dl><dt>GDP increased by 54% from USD 292.92 billion in 1990 to 450.48 billion in 2000 (World Bank 2012)</dt></dl>
-             - <dl><dt>Consumption of finished steel increased from 14.84 million tonnes in 1991-92 to 27.65 million tonnes by 2000-01 (Ministry of Steel 2012)</dt></dl>
-
-          _2000:
-            description: The Indian economy continued to liberalize as benefits of the 1991 reforms started accruing.
-            policy_barriers:           
-             - <dl><dt>Continued economic liberalization</dt><dd>By start of next decade, only six industries required licensing</dd><dd>Only three industries reserved for the state sector as of 2012</dd><dd>Various policy measures increased private participation in key infrastructure sectors (e.g., telecommunication, roads, ports) (Jadhav 2005)</dd><dd>100% foreign equity participation permitted in construction and maintenance of roads and bridges</dd><dd>FDI limits raised to 74% for private banking and 100% for oil exploration, petroleum product marketing, petroleum product pipelines, natural gas and LNG pipelines, and periodic publications in 2004</dd></dl>
-
-            underlying_changes:
-             - <dl><dt>GDP increased by over 200% over the decade from USD 450.48 billion in 2000 to 1,380.64 billion in 2010 (World Bank 2012)</dt></dl>
-             - <dl><dt>Consumption of finished steel increased from 27.65 million tonnes in 2000-01 to 66.42 million tonnes by 2010-11 (Ministry of Steel 2012)</dt></dl>
-          
-  subjects:
-    - emissions:
-        description: These graphs show the changes in emissions and growth in the Power, Industry, and Agriculture sectors in India
-    - emission_drivers:
-        description: These graphs show the changes in emissions drivers in the Power, Industry, and Agriculture sectors in India
-    - policy:
-        description: These graphs show the changes in policy in the Power, Industry, and Agriculture sectors in India
-
-
-
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -549,7 +240,6 @@ china:
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
-
 
 eu:
   id: eu
@@ -731,4 +421,319 @@ eu:
         description: These graphs show the changes in emissions drivers in the Power, Industry, and Buildings sectors in EU
     - policy:
         description: These graphs show the changes in policy in the Power, Industry, and Buildings sectors in EU
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+india:
+  id: india
+  name: India
+  tagline: Balancing climate policy and development
+  description: India has aggressive renewable energy targets and industry energy efficiency policies, but faces significant infrastructure challenges, which may derail otherwise good policy. India is growing rapidly and represented 8% of the increase in global energy-related CO2 emissions between 2000 and 2010.
+  sectors:
+    - agriculture:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in India
+        decades_analysis:
+          _1980:
+            description: The Government of India’s agricultural policy between independence (1947) and 1990 was largely focused on improving the domestic production of food grains by expanding irrigation and extending incentives such as input and output price regulations.
+            policy_barriers:            
+             - <dl><dt>Minimum Support Price for wheat introduced in 1966-67</dt><dd>Protected farmers from commodity price fluctuations</dd></dl>
+             - <dl><dt>Quantitative restrictions on import of agricultural commodities, specifically on pulses and edible oils, were removed during the 1980s</dt></dl>
+            underlying_changes:
+             - <dl><dt>Population increased by almost 25% by the end of decade (IMF 2011)</dt></dl>
+             - <dl><dt>Marked agricultural growth largely due to adoption of high-yield seeds and fertilizers throughout the 1980s (Singh 2010)</dt></dl>
+             - <dl><dt>Substantial growth and investment in rural infrastructure (Singh 2010)</dt></dl>
+          _1990:
+            description: After 1990, the focus of government policy moved toward increasing the efficiency of the agricultural sector by improving the supply chain infrastructure.
+            policy_barriers:           
+             - <dl><dt>Uruguay Round Agreement on Agriculture entered into force in 1995</dt><dd>Quantitative import restrictions lifted in accelerated fashion for most agricultural commodities (1997-2001)</dd><dd>Removed most quantitative controls on agricultural exports during the late 1990s</dd><dd>Export ban remained available for essential commodities as needed to stabilize domestic market</dd></dl>
+            underlying_changes:
+             - <dl><dt>Increasing population</dt></dl>
+             - <dl><dt>Growth agricultural output fell from 4.8% in early 1990s to 2.5% in mid-1990s (Ministry of Agriculture 2012)</dt></dl>
+             - <dl><dt>Mechanization of agriculture increased over decade (Ministry of Agriculture 2013)</dt></dl>
+
+          _2000:
+            description: Policy shifted toward sustainable development of agriculture by attracting private investment due to rising subsidy expenditure.
+            policy_barriers: 
+             - <dl><dt>The National Policy on Agriculture of 2000</dt><dd>Aimed at agricultural sector annual growth rate of over 4%</dd><dd>Emphasized technologically, environmentally, and economically sustainable growth</dd><dd>Targeted efficient resource use and conservation of soil, water, and bio-diversity</dd></dl>
+             - <dl><dt>Policy incentives to improve sector (USDA/ERS 2012)</dt><dd>Restrictions on private movement and storage of farm commodities relaxed over decade</dd><dd>Taxes on processing of agricultural products reduced and simplified</dd></dl>
+             - <dl><dt>Policy incentives to promote exports (USDA/ERS 2012)</dt><dd>Restrictions on processing firms largely removed</dd><dd>Import duty reductions on imported inputs to products for export</dd><dd>Government support for domestic marketing and transport extended</dd><dd>State marketing laws relaxed to increase private participation</dd></dl>
+             - <dl><dt>By 2008, import tariffs reduced for many major commodities to decrease inflationary pressure on domestic market</dt></dl>
+             - <dl><dt>Export ban on non-basmati rice in 2008 in response to global rice price 27 commodities covered under the Minimum Support Price program as of 2012</dt></dl>
+            underlying_changes:
+             - <dl><dt>2007-2008 global food price crisis</dt></dl>
+             - <dl><dt>Growth agricultural output fell to 2.45% by early</dt></dl>
+             - <dl><dt>2000s and started to recover after 2005 (Ministry of Agriculture 2012)</dt></dl>
+             - <dl><dt>Increased mechanization of agriculture (Ministry of Agriculture 2013)</dt></dl>
+             - <dl><dt>Population increased from 1,024.25 million in 2000 to 1,190.52 million by 2010 (IMF 2011)</dt></dl>
+                  
+    - power:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in India
+        decades_analysis:
+          _1980:
+            description: Prior to 1990, fundamental level policies aimed to improve the functioning of the electricity sector. However, high state control continued.
+            policy_barriers: 
+             - <dl><dt>Indian Electricity Act, 1910</dt><dd>Established rules on supply and use of electricity</dd><dd>Established rights and obligations of licensees</dd></dl>
+             - <dl><dt>Electricity Supply Act, 1948</dt><dd>Uniform national power policy for rationalization of production and supply of electricity</dd><dd>National grid infrastructure envisioned</dd><dd>Established State Electricity Boards</dd></dl>
+            underlying_changes:
+             - <dl><dt>Government of India established PowerGrid Corporation in 1989 to build a national power grid (based on recommendations from Rajadhyaksha Committee report on power sector reforms)</dt></dl>
+             - <dl><dt>Population increased by almost 25% by end of decade (IMF 2011)</dt></dl>
+             - <dl><dt>GDP grew nearly 94% (from USD 150.86 billion in 1980 to USD 292.92 billion in 1990) (World Bank 2012)</dt></dl>
+
+          _1990:
+            description: Government policy focused on improvement in governance and regulation of the electricity sector. Policies also aimed to increase captive power generation.
+            policy_barriers:           
+             - <dl><dt>The Electricity Regulatory Commissions Act established Central Electricity Regulatory Commission and State</dt></dl>
+             - <dl><dt>Electricity Commissions, 1998</dt><dd>Commissions determined tariffis for generation and transmission</dd><dd>Aimed to improve State Electricity Board health</dd><dd>Central Electricity Regulatory Commission was responsible for regulation of inter-state sale of power</dd></dl>
+             - <dl><dt>Accelerated depreciation benefits for renewable energy and for energy efficiency was introduced</dt></dl>
+            underlying_changes:
+             - <dl><dt>By the 1990s, the majority of states had State Electricity</dt></dl>
+             - <dl><dt>Regulatory Commissions to oversee tariff revisions</dt></dl>
+             - <dl><dt>Wind energy took off, attracting substantial equity investments</dt></dl>
+             - <dl><dt>Population grew from 843.25 million in 1990 to 1,024.25 million by 2000—approximately 20% increase (IMF2011)</dt></dl>
+             - <dl><dt>Primary energy consumption increased by 64% over the decade (BP 2012)</dt></dl>
+
+          _2000:
+            description: The 2000s marked the beginning of major reforms in the electricity sector due to inefficiencies in existing systems and rising demand.
+            policy_barriers:           
+             - <dl><dt>Energy Conservation Act of 2001 mandated a number of energy effciency provisions for certain energy-intensive industries (including the power industry)</dt></dl>
+             - <dl><dt>The Electricity Act of 2003 transformed the electricity sector</dt><dd>Increased private sector participation in generation by allowing independent power producers and captive generation</dd><dd>Promoted competition among generating companies by allowing open access in transmission</dd><dd>Reduced transmission and distribution losses</dd><dd>Yearly revision of end-user tariffis linked to power purchase prices and inflation indices</dd></dl>
+             - <dl><dt>Feed-in tariffs and premiums for renewable energy introduced, 2000</dt></dl>
+             - <dl><dt>Various tax incentives for power sector projects introduced (Government Notification No. 21/2002)</dt></dl>
+             - <dl><dt>Generation Based Incentive (GBI), 2008-2009</dt></dl>
+             - <dl><dt>Gujarat solar power policy, 2009</dt><dd>Only state solar power policy with fixed feed-in tariffs</dd><dd>Did not use reverse bidding process for tariffs determination</dd></dl>
+             - <dl><dt>Clean Development Mechanism project approvals in India commenced in 2005</dt></dl>
+             - <dl><dt>Jawaharlal Nehru National Solar Mission (JNNSM) policy framework introduced in 2010 to achieve 20GW solar power installed capacity by 2022</dt></dl>
+            underlying_changes:
+              - <dl><dt>Private sector participation in power generation projects increased</dt></dl>
+              - <dl><dt>Solar power industry started witnessing growth at end of decade</dt></dl>
+              - <dl><dt>Primary energy consumption increased by 76% over the decade (BP 2012)</dt></dl>
+    - industry:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in India
+        decades_analysis:
+          _1980:
+            description: Policies prior to 1990 focused on improving the functioning of public sector undertakings and (in general) aimed to improve technology and productivity.
+            policy_barriers: 
+             - <dl><dt>Policy prior to 1980 aimed to facilitate establishment of basic industries and building core infrastructure</dt></dl>
+             - <dl><dt>Industrial Policy of 1980 aimed to promote domestic competition, technological advancement, and modernization of industries </dt><dd>Measures also taken to improve efficiency of public sector undertakings</dd></dl>
+             - <dl><dt>The Seventh Plan (1985-1990) focused on technical and talent improvement measures to improve productivity, quality, and reduce cost of production </dt><dd>Public sector was freed from a number of regulatory constraints and was given greater autonomy</dd></dl>
+             - <dl><dt>Air Act of 1981 established Central and State Pollution Control Boards for data collection and enforcement (Greenstone 2011)</dt></dl>
+             - <dl><dt>Environment Protection Act, 1986</dt><dd>Centralized environmental control</dd><dd>Gave Ministry of Environment and Forests power to close firms violating pollution regulations (Reich 1992)</dd></dl>
+            underlying_changes:
+             - <dl><dt>Industries advanced technologically and increased scale of operations (e.g., automotive, cement, cotton spinning, food processing, and yarn industries)</dt></dl>
+             - <dl><dt>Development of lesser developed areas commenced under Growth Centre Scheme (1988), driving building of critical infrastructure</dt></dl>
+             - <dl><dt>Bhopal Disaster of 1984 prompted new attention to environmental protection (Greenstone 2011)</dt></dl>
+             - <dl><dt>GDP grew nearly 94% (from USD 150.86 billion in 1980 to USD 292.92 billion in 1990) (World Bank 2012)</dt></dl>
+
+          _1990:
+            description: India took on major industrial reforms in 1991 as the country faced an unprecedented balance of payments crisis.
+            policy_barriers: 
+             - <dl><dt>New Industrial Policy, 1991</dt><dd>Removed licensing requirements for the majority of industries, with only 15 industries requiring compulsory licensing post-April 1993</dd><dd>Foreign investment permitted up to 51% in high priority sectors (e.g., software, electrical equipment, hotel and tourism)</dd><dd>Reduced number of industries exclusively reserved for public sector from 17 to 8 sectors</dd></dl>
+            underlying_changes:
+             - <dl><dt>Foreign Direct Investment (FDI) increased from INR 10.9 billion in 1992 to INR 107.3 billion by 2000 (Ministry of Commerce & Industry 2013)</dt></dl>
+             - <dl><dt>GDP increased by 54% from USD 292.92 billion in 1990 to 450.48 billion in 2000 (World Bank 2012)</dt></dl>
+             - <dl><dt>Consumption of finished steel increased from 14.84 million tonnes in 1991-92 to 27.65 million tonnes by 2000-01 (Ministry of Steel 2012)</dt></dl>
+
+          _2000:
+            description: The Indian economy continued to liberalize as benefits of the 1991 reforms started accruing.
+            policy_barriers:           
+             - <dl><dt>Continued economic liberalization</dt><dd>By start of next decade, only six industries required licensing</dd><dd>Only three industries reserved for the state sector as of 2012</dd><dd>Various policy measures increased private participation in key infrastructure sectors (e.g., telecommunication, roads, ports) (Jadhav 2005)</dd><dd>100% foreign equity participation permitted in construction and maintenance of roads and bridges</dd><dd>FDI limits raised to 74% for private banking and 100% for oil exploration, petroleum product marketing, petroleum product pipelines, natural gas and LNG pipelines, and periodic publications in 2004</dd></dl>
+
+            underlying_changes:
+             - <dl><dt>GDP increased by over 200% over the decade from USD 450.48 billion in 2000 to 1,380.64 billion in 2010 (World Bank 2012)</dt></dl>
+             - <dl><dt>Consumption of finished steel increased from 27.65 million tonnes in 2000-01 to 66.42 million tonnes by 2010-11 (Ministry of Steel 2012)</dt></dl>
+          
+  subjects:
+    - emissions:
+        description: These graphs show the changes in emissions and growth in the Power, Industry, and Agriculture sectors in India
+    - emission_drivers:
+        description: These graphs show the changes in emissions drivers in the Power, Industry, and Agriculture sectors in India
+    - policy:
+        description: These graphs show the changes in policy in the Power, Industry, and Agriculture sectors in India
+
+
+
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+us:
+  id: us
+  name: United States
+  tagline: Making progress despite policy gridlock
+  description: The United States has created a “messy but useful” combination of incentives, regulation, persuasion, and innovation at the federal and state level, which has contributed to a recent decline in emissions. Sustaining and escalating this emissions decline while creating more cost-effective policy in the face of tightened government spending is the next challenge.
+  sectors:
+    - buildings:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in the US
+        decades_analysis:
+          _1980:
+            description: The first building and appliance standards appeared before the decade began; heterogeneous state standards led to federal appliance standards. Utilities began energy efficiency programs.
+            policy_barriers:            
+             - <dl><dt>Emergence of building codes</dt><dd>First ASHRAE standard, 1975</dd><dd>Scattered code adoption by states</dd></dl>
+             - <dl><dt>Demand-side management emerged</dt></dl>
+             - <dl><dt>First appliance labeling and standards</dt><dd>National Energy Conservation and Policy Act of 1978 authorized Department of Energy to set energy efficiency standards for 13 appliances</dd><dd>Appliance Labeling Rule of 1980 mandated “EnergyGuide” labeling of appliances</dd><dd>National Appliance Energy Conservation Act adopted uniform minimum efficiency standards for many household appliances, 1987</dd><dd>Industry-driven in face of variety of state standards (Geller 2006, EERE 2012)</dd></dl>
+             - <dl><dt>Tax Reform Act of 1986 increased deduction for mortgage interest payments</dt></dl>
+            underlying_changes:
+             - <dl><dt>Suburbanization trend that began mid-century continued</dt></dl>
+
+          _1990:
+            description: The 1990s saw wider and more stringent building code adoption due to federal requirements and assistance. Federal appliance standards and voluntary programs increased in scope. A residential construction boom began in the latter half of the decade.
+            policy_barriers:           
+             - <dl><dt>Montreal Protocol to phase out halocarbons entered into force in 1989</dt></dl>
+             - <dl><dt>First close federal involvement in state code creation with assistance in creating ASHRAE 1989 (PNNL 1994)</dt></dl>
+             - <dl><dt>Energy Policy Act, 1992</dt><dd>Required states to adopt commercial building codes</dd><dd>Required the Department of Energy to offer states technical and financial assistance in code creation and adoption</dd><dd>Expanded Department of Energy’s authority over labeling and energy effciency standards in appliances</dd></dl>
+             - <dl><dt>Energy Star voluntary energy effciency labeling program initiated, 1992</dt></dl>
+             - <dl><dt>Power sector restructuring led to demand-side management cutbacks (ACEEE 2006) (RFF 2004)</dt></dl>
+             - <dl><dt>Market transformation programs initiated (RFF 2004)</dt></dl>
+
+            underlying_changes:
+             - <dl><dt>Residential construction boom commenced in mid-1990s</dt></dl>
+             - <dl><dt>Suburbanization continued and home size increased</dt></dl>
+             - <dl><dt>IT build-out and increased use of electronics and appliances across commercial and residential buildings (EERE 2008)</dt></dl>
+             - <dl><dt>Increased appliance “plug load” (DOE 2011)</dt><dd>Rise in residential air conditioning continued (68% - 77% of all households) (DOE 2011)</dd><dd>Space heating shares between gas and electric constant</dd></dl>
+
+          _2000:
+            description: The federal government increased spending on building energy efficiency. A “green premium” was associated with energy-efficient commercial building construction and retrofits.
+            policy_barriers:           
+             - <dl><dt>Energy Star program expanded to cover wider range of appliances</dt></dl>
+             - <dl><dt>Financial incentives</dt><dd>Tax incentives for domestic and commercial building energy effciency (Energy Policy Act 2005)</dd><dd>State Energy efficient Appliance Rebate Program</dd><dd>American Recovery and Reinvestment Act, 2009</dd><dd>Energy Effciency and Conservation Block Grants</dd><dd>Funds for states to decouple utility rates and to improve building codes</dd></dl>
+             - <dl><dt>Energy Effciency Resource Standards (EERS)</dt><dd>First was Texas in 1999</dd><dd>By 2011, 24 states (including California, Texas, and New York) have EERSs (ACEEE 2011)</dd></dl>
+            underlying_changes:
+             - <dl><dt>“Green Premium” in energy efficient office space drove “green” commercial occupancy and leasing rates above average commercial rates (Miller 2008)</dt></dl>
+             - <dl><dt>Residential construction boom until 2007 housing bubble collapse</dt></dl>
+             - <dl><dt>Crime fell in urban areas, associated with accelerating residential construction in urban areas (EPA 2009)</dt></dl>
+             - <dl><dt>Fuel shifted in space heating (DOE 2011b)</dt><dd>Residential buildings shifted increasingly to electric space heating (from approximately 29% to 35% of households)</dd><dd>Decline in natural gas for residential space heating (from approximately 55% to 50% of households)</dd></dl>
+             - <dl><dt>Continued IT build-out and household appliance growth across commercial and residential buildings (EERE 2008)</dt></dl>
+    - transport:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Transportation sector in the US
+        decades_analysis:
+          _1980:
+            description: Deregulation and energy efficiency were the major policy themes for the 1980s as the air and rail industries underwent significant overhauls and passenger vehicle fleet efficiency standards increased significantly in the first half of the decade.
+            policy_barriers:            
+             - <dl><dt>Corporate Average Fuel Economy Standards (CAFE) improved automobile efficiency</dt><dd>Energy Policy and Conservation Act of 1975 required 27.5 mpg by 1985</dd><dd>EPA began labeling fuel efficiency</dd></dl>
+             - <dl><dt>Surface Transport Assistance Act, 1982 goal to complete Interstate Highway System by 1991</dt></dl>
+             - <dl><dt>Raised federal gas tax from 4 to 9 cents per gallon—first increase since 1959—to fund completion of Interstate Highway System by 1991 (CRS 2006)</dt></dl>
+             - <dl><dt>Surface Transport and Uniform Relocation Assistance Act, 1987</dt><dd>Allowed states to raise speed limits to 65 on rural interstate highways</dd></dl>
+             - <dl><dt>Railroad and Airline deregulation</dt><dd>Railroad Deregulation and Regulatory Reform Act, 1976</dd><dd>Staggers Act, 1980</dd><dd>Airline Deregulation Act, 1978</dd></dl>
+            underlying_changes:
+             - <dl><dt>Oil shocks</dt></dl>
+             - <dl><dt>Increasing fuel economy (approximately 20%) across ground transport</dt><dd>Efficiency gains limited to first half of the decade (Joskow 2001)</dd></dl>
+             - <dl><dt>Rapid changes to light duty fleet mix</dt><dd>Light truck share increased from 16% to 30%</dd><dd>Car share decreased from 83% to 70% (ORNL 2012)</dd></dl>
+
+          _1990:
+            description: The 1990s saw stable energy prices and an associated drop in attention towards increasing overall energy efficiency. Consumption behavior shifted towards larger, amenity-rich vehicles.
+            policy_barriers:            
+             - <dl><dt>No change to CAFE standards</dt></dl>
+             - <dl><dt>Gas taxes raised from 9 to 18 cents from 1990 to 1993, the last time federal gas taxes increased significantly</dt></dl>
+             - <dl><dt>Energy Policy Act, 1992</dt><dd>Federal fleet purchasing required to build alternative-fuel vehicle fleet</dd></dl>
+             - <dl><dt>Clean Air Act Amendments, 1990</dt><dd>Increased stringency of heavy and light duty pollution standards</dd></dl>
+             - <dl><dt>Communications, Navigation, and Surveillance / Air Traffic Management (CNS/ATM), 1997, aimed to reduce airplane idling and travel time</dt></dl>
+
+            underlying_changes:
+            - <dl><dt>Deteriorating fuel economy in passenger vehicles (EIA 2005)</dt><dd>Engine and transmission efficiency gains were offset by horsepower, size, and weight increases</dd><dd>Continued changes to light duty fleet mix</dd><dd>Light truck share rose to 40%</dd><dd>Car share decreased to 60% (ORNL 2012)</dd></dl>
+          _2000:
+            description: Both the automobile market and policymakers shifted focus towards lighter, more efficient vehicles and alternative fuels. The financial crisis and automobile industry bailout late in the decade reshaped the policy landscape in favor of more stringent regulation.
+            policy_barriers: 
+             - <dl><dt>Continued tightening pollution standard for heavy and light duty vehicles</dt></dl>
+             - <dl><dt>High Occupancy Vehicle lane exemptions for lowemissions or hybrid vehicles, 2005</dt></dl>
+             - <dl><dt>Energy Policy Act, 2005</dt><dd>Tax incentives created for alternative fuel and advance technology vehicles</dd><dd>Renewable Fuel Standard (RFS) established to mandate biofuel volumes in national fuel supply</dd></dl>
+             - <dl><dt>Energy Independence and Security Act, 2007</dt><dd>Advanced Technology Vehicles Manufacturing Loan Program</dd><dd>Increased RFS volumes and set greenhouse gas requirements for qualifying fuels</dd></dl>
+             - <dl><dt>SmartWay voluntary program established to facilitate fuel efficiency and reduced costs for freight, 2004</dt></dl>
+            underlying_changes:
+             - <dl><dt>Fleet mix changes slowed (ORNL 2012)</dt></dl>
+             - <dl><dt>Increased use of hybrid and other alternative-fuel vehicles</dt></dl>
+             - <dl><dt>Return to high oil prices</dt></dl>
+             - <dl><dt>2008-2009 recession reduced travel and freight movement (ORNL 2012, FHA 2012)</dt></dl>
+             - <dl><dt>Domestic commercial aircraft improved in operational efficiency and fuel efficiency; passenger demand grew (CRS 2010)</dt></dl>
+    - power:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the US
+        decades_analysis:
+          _1980:
+            description: Power industry deregulation led to independent power producers and the beginning of natural gas generation. The nuclear buildout of prior decades ended, but nuclear generation increased significantly due to increased availability.
+            policy_barriers: 
+             - <dl><dt>Natural Gas Policy Act (1978)</dt><dd>Deregulation of natural gas supplies</dd><dd>Continued deregulation of oil and natural gas throughout the decade</dd></dl>
+             - <dl><dt>PURPA (1978)</dt><dd>Creation of independent power producers</dd><dd>Ability to sell at avoided cost for qualifying facilities</dd></dl>
+             - <dl><dt>Modified Accelerated Cost Recovery System (MACRS) adopted under Tax Reform Act, 1986</dt></dl>
+             - <dl><dt>Clean Air Act Amendments of 1977 established New Source Review (NSR) preconstruction permitting program</dt></dl>
+             - <dl><dt>Natural Gas Policy Act (1978)</dt><dd>Deregulation of natural gas supplies</dd><dd>Continued deregulation of oil and natural gas throughout the decade</dd></dl>
+             - <dl><dt>PURPA (1978)</dt><dd>Creation of independent power producers</dd><dd>Ability to sell at avoided cost for qualifying facilities</dd></dl>
+             - <dl><dt>Modified Accelerated Cost Recovery System (MACRS) adopted under Tax Reform Act, 1986</dt></dl>
+             - <dl><dt>Clean Air Act Amendments of 1977 established New Source Review (NSR) preconstruction permitting program</dt></dl>
+            underlying_changes:
+             - <dl><dt>Restrictions on gas for power generation changed</dt></dl>
+             - <dl><dt>End of nuclear build out, but increased nuclear utilization</dt></dl>
+             - <dl><dt>High oil prices, and the beginning of the phase out of oil-fired generation</dt></dl>
+
+          _1990:
+            description: The government implemented federal tax incentives for renewable energy. The fuel mix composition changed with increasing nuclear availability and improvements in natural gas generation.
+            policy_barriers: 
+             - <dl><dt>Power sector deregulation throughout decade</dt></dl>
+             - <dl><dt>Clean Air Act Amendments, 1990</dt><dd>Acid Rain Program</dd><dd>Established cap and trade system to limit SOx emissions from coal-fired EGUs.</dd><dd>Limited NOx emissions from EGUs</dd></dl>
+             - <dl><dt>Energy Policy Act 1992</dt><dd>Wholesale transmission access guidelines</dd><dd>Production tax credit for renewable energy</dd></dl>
+
+            underlying_changes:
+             - <dl><dt>Increased nuclear availability</dt></dl>
+             - <dl><dt>Emergence of Combined Cycle Gas Turbine  CCGT) plants</dt></dl>
+             - <dl><dt>Coal-powered plants greater than 40 years old proved still competitive (Joskow 2001)</dt></dl>
+             - <dl><dt>Stable energy prices</dt></dl>
+          _2000:
+            description: The 2000s marked the beginning of state involvement in renewable energy policy with renewable portfolio standards and a rise in federal tax expenditures towards renewable energy. The global market for renewable energy components led to cost reductions, while new technology and higher gas prices unlocked new natural gas reserves.
+            policy_barriers:            
+             - <dl><dt>State renewable portfolio standards implemented, increasing goals over decade</dt></dl>
+             - <dl><dt>Federal tax expenditures grew throughout decade</dt><dd>Residential Renewable Energy Tax Credit, 2005</dd><dd>Investment Tax Credit, 2005</dd><dd>MACRS + 50% Bonus Depreciation, 2008</dd></dl>
+             - <dl><dt>Energy Independence and Security Act, 2007</dt><dd>Required states to consider integrated resource planning and rate modifications to promote energy effciency</dd></dl>
+             - <dl><dt>Failure to identify long-term nuclear storage site</dt></dl>
+
+            underlying_changes:
+             - <dl><dt>Reduction in levelized costs of renewables (particularly wind and solar)</dt></dl>
+             - <dl><dt>Unconventional gas emerged and very cheap natural gas</dt></dl>
+             - <dl><dt>High oil prices</dt></dl>
+    - industry:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the US
+        decades_analysis:
+          _1980:
+            description: Utilities began exploring integrated resource planning in a time of high energy prices and fixed retail prices. The 1980s also marked the beginning of federal involvement in knowledge-transfer to industry.
+            policy_barriers: 
+             - <dl><dt>Industrial Assessment Centers (IAC) Program, 1976</dt><dd>Environmental, energy, and productivity audits of facilities by trained engineers</dd></dl>
+             - <dl><dt>Integrated Resource Planning (IRP) by public utilities responding to high energy prices and fixed retail prices</dt></dl>
+             - <dl><dt>Demand-side management (DSM) programs began</dt><dd>Explored by utilities in response to high energy prices and stranded nuclear costs</dd></dl>
+            underlying_changes:
+             - <dl><dt>Rising imports of finished goods (FRBNY 1991)</dt></dl>
+             - <dl><dt>Falling relative share of manufacturing (Sachs et al. 1994)</dt></dl>
+             - <dl><dt>Rise in manufacturing productivity</dt></dl>
+             - <dl><dt>Shift from integrated mills to minimills in steel sector</dt></dl>
+
+          _1990:
+            description: The continued deregulation of the power sector spurred a reduction in funding towards demand-side management programs. There was increased attention on appliance standards with the Energy Policy Act.
+            policy_barriers: 
+             - <dl><dt>Policy shifted to partnership programs between EPA, DOE, and industry</dt><dd>Energy Star voluntary energy efficiency labeling program began, 1992</dd><dd>Increased use of IAC audits</dd></dl>
+             - <dl><dt>Deregulation of utilities after 1994 led to a decrease in demand-side management spending (RFF 2004), (ACEEE 2006)</dt></dl>
+             - <dl><dt>Utility market transformation programs initiated in mid-1990s (RFF 2004), (ACEEE 2006)</dt></dl>
+             - <dl><dt>Energy Policy Act of 1992 required states to consider DSM programs</dt></dl>
+            underlying_changes:
+             - <dl><dt>Industrial sectors declined in GDP contribution, but increased gross value-add</dt></dl>
+             - <dl><dt>1995-2000 saw increases in durable-goods manufacturing, driven in part by IT equipment (BEA 2004)</dt></dl>
+             - <dl><dt>Elimination of trade restrictions</dt><dd>End of trade restrictions protecting U.S. steel industry in 1992 (CRS 2003)</dd></dl>
+             - <dl><dt>Declining use of basic oxygen furnaces (BOF); increasing use of electric arc furnaces (EAF) (CRS 2003)</dt></dl>
+          _2000:
+            description: States began implementing energy efficiency resource standards and utilizing public benefit charges to fund energy efficiency programs, which saw a funding resurgence throughout the decade.
+            policy_barriers: 
+             - <dl><dt>States began enacting Energy Efficiency Resource Standards (EERS)</dt><dd>First is Texas in 1999</dd><dd>By 2011, 24 states (including California, Texas, and New York) had EERSs (ACEEE 2011)</dd></dl>
+             - <dl><dt>Energy Policy Act, 2005</dt><dd>Provided loan guarantees for new energy efficient technologies</dd></dl>
+             - <dl><dt>Use of Public Benefit Funds for energy efficiency, renewable energy, and research and development increased (RFF 2004)</dt><dd>Rise in demand-side management spending in 2000s</dd></dl>
+            underlying_changes:
+             - <dl><dt>Rise in steel industry bankruptcies due to rising energy prices, financial crises, and legacy costs (RFF 2004)</dt></dl>
+             - <dl><dt>Return to high energy prices</dt></dl>
+             - <dl><dt>Unconventional gas emerged and domestic exploration rose</dt></dl>
+             - <dl><dt>Recession 2008-2009</dt></dl>
+  subjects:
+    - emissions:
+        description: Emissions description for United States.
+    - emission_drivers:
+        description: Emission drivers description for United States.
+    - policy:
+        description: Policy description for United States.
 
