@@ -39,6 +39,8 @@
 
   $(document).ready(function() {
     //Creates generic tooltip
+    $(".generic_tooltip").remove();
+
     var tooltip = d3.select("body")
       .append("div")
       .attr("class", "tooltip generic_tooltip tooltip-top");

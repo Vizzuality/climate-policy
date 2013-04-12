@@ -32,6 +32,7 @@ function positionScroll() {
   }
 }
 
+
 $(document).ready(function() {
   // animate sliders
   animateSliders();
