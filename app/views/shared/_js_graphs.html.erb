@@ -7,6 +7,9 @@
   var w = 1038;
   var LINE_DOT_R = 4;
   var INTERPOLATE_METHOD = "cardinal";
+  //var IN_DURATION = 200;
+
+  //
 
   //svg for every graph
   var svg = [];
@@ -187,8 +190,6 @@
             marks_added = true;
           }
 
-
-
         });
 
       });
@@ -358,11 +359,6 @@
                 }
                 return labels_start_y + offset_y - bar_height/2 - 7;
               })
-              .attr("width", function(d,i) {
-                var bar_width = bar_width_scale(Math.abs(d[group_name]));
-                if (bar_width <= 2) bar_width = 2;
-                return bar_width;
-              })
               .attr("height", function(d,i) {
                 return bar_height;
               })
@@ -376,6 +372,20 @@
               .attr("name", function(d){
                 return Math.round(d[group_name]*1000)/1000;
               })
+              // .attr("width", 0)
+              // .transition()
+              // .delay(function(d,i) {
+              //   return i*100;
+              // })
+              // .duration(function(d,i) {
+              //   return 1000;
+              // })
+              // .ease("linear")
+              .attr("width", function(d,i) {
+                var bar_width = bar_width_scale(Math.abs(d[group_name]));
+                if (bar_width <= 2) bar_width = 2;
+                return bar_width;
+              });
 
             svg[graphNum].selectAll("circle."+group_name)
               .data(data.rows)
@@ -383,26 +393,11 @@
               .append("circle")
               .attr("class", group_name+' linedot linedot'+i)
               .attr("style",function(d) {
-
                 if (d[group_name] > 0) {
                   return "stroke: "+positive_color+"; fill: #fff";
                 } else {
                   return "stroke: "+negative_color+"; fill: #fff";
                 }
-                // if ( _graphs[graphNum] != null) {
-                //   return "stroke: "+_graphs[graphNum].strokeColor+"; fill: #fff";
-                // } else {
-                //   return "stroke: rgba(238,87,41,1); fill: #fff";
-                // }
-              })
-              .attr("cx", function(d){
-                var x = label_w + group_pos_x + zero_x;
-                if (d[group_name] > 0) {
-                  x += bar_width_scale(Math.abs(d[group_name]));
-                } else {
-                  x -= bar_width_scale(Math.abs(d[group_name]))
-                }
-                return x;
               })
               .attr("cy", function(d,i){
                 var offset_y = i*row_h;
@@ -460,6 +455,24 @@
                   .transition()
                   .duration(200)
                   .style("fill","#666");
+              })
+              // .attr("cx",function(d) {
+              //   return label_w + group_pos_x + zero_x;
+              // })
+              // .transition()
+              // .delay(function(d,i){
+              //   return i*100;
+              // })
+              // .duration(1000)
+              // .ease("elastic", 10, 0.3)              
+              .attr("cx", function(d){
+                var x = label_w + group_pos_x + zero_x;
+                if (d[group_name] > 0) {
+                  x += bar_width_scale(Math.abs(d[group_name]));
+                } else {
+                  x -= bar_width_scale(Math.abs(d[group_name]))
+                }
+                return x;
               });
           })(group_name_, units_);
         }
@@ -581,21 +594,33 @@
 
           if (serie.class == "line") {
 
-            // Preparing things for the side gradients
-            // Insert a value before and after the time range, for the sides gradient
+            var baseline = d3.svg.line()
+              .x(function(d){return x_scale(new Date(d[x_col]))})
+              .y(h)
+              .interpolate(INTERPOLATE_METHOD);
 
             var line = d3.svg.line()
               .x(function(d){return x_scale(new Date(d[x_col]))})
               .y(function(d){return y_scale(d[y_col_])})
               .interpolate(INTERPOLATE_METHOD);
 
+            g.append("svg:path")
+              .attr("class", 'lineStyle')
+              .attr("id", 'line'+i)
+              .attr("style",'stroke:'+strokeColor_)
+              // .attr("d", baseline(extended_data_col))
+              // .transition()
+              // .delay(function(d,i) {
+              //   return i*1000;
+              // })
+              // .duration(function(d,i) {
+              //   return 1000;
+              // })
+              // .ease("elastic", 1.1,0.3)
+              .attr("d", line(extended_data_col));              
+
             var units_ = serie.units;
             var simplify_ = serie.simplify;
-
-            g.append("svg:path")
-              .attr("d", line(extended_data_col))
-              .attr("class", 'lineStyle')
-              .attr("style",'stroke:'+strokeColor_);
 
             (function(strokeColor, units, y_col, simplify){  // We need a reference to strokeColor in runtime, for hover
             g.selectAll(".linedot")
@@ -613,8 +638,6 @@
                 }
                 return _fill;
                 })
-              .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
-              .attr("cy", function(d){return y_scale(d[y_col])})
               .attr("r", LINE_DOT_R)
               .attr("name", function(d){return (Math.round(d[y_col]*1000)/1000)+ " "  + units}) //Uses this for tooltip
               .on("mouseover", function(d) {
@@ -654,7 +677,20 @@
                   .transition()
                   .duration(200)
                   .style("color","#aaa");
-              });
+              })
+              .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
+              // .attr("cy", h)              
+              // .transition()
+              // .delay(function(d,i){
+              //   return i*10;
+              // })
+              // .duration(function(d,i) {
+              //   return 1000;
+              // })
+              // //.ease("elastic", function(d,i) {return 1}, 0.5)
+              // .ease("elastic", 1.1, 0.5)
+              .attr("cy", function(d){return y_scale(d[y_col])})              
+              ;
             })(strokeColor_, units_, y_col_, simplify_);
           } else if (serie.class == "area") {
             var units_ = serie.units;
