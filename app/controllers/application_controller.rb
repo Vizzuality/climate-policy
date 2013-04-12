@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  http_basic_authenticate_with :name => "climate", :password => "77ndPKiyJ"
   protect_from_forgery
 
   before_filter :get_regions_data, only: :show
