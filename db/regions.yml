@@ -251,19 +251,12 @@ eu:
         description: These graphs show the changes in emissions, emissions drivers, and policy in the Transportation sector in the EU
         decades_analysis:
           _1980:
-            description: ""
-            policy_barriers:
-              - 
-            underlying_changes:
-              -
           _1990:
             description: High fuel taxes, particularly on petrol, maintained pressure to improve fuel efficiency throughout the 1990s, and began a trend towards increasing the use of diesel in passenger cars. Overall transport demand grew and greenhouse gas emissions from the sector increased over the 1990s. The 1990s laid policy groundwork for lowering vehicle greenhouse gas emissions rates in the next decade.
             policy_barriers: 
-             - <dl><dt>1995 EU strategy to reduce passenger vehicle CO2 emissions established 3-pillared approach: voluntary commitments, improved consumer information, and fiscal measures (EC 2007)</dt><dd>EC signed commitments in 1995 with major automobile manufacturer associations to target 140 gCO2 per km for new vehicle fleets by 2009 (ICCT 2013)</dd></dl>
-             - <dl><dt>High tax premiums on fuel across EU Member States</dt><dd>Fuel taxes remained flat after the mid-1990s</dd><dd>Diesel taxes were lower than petrol taxes</dd></dl>
-
+              - <dl><dt>1995 EU strategy to reduce passenger vehicle CO2 emissions established 3-pillared approach: voluntary commitments, improved consumer information, and fiscal measures (EC 2007)</dt><dd>EC signed commitments in 1995 with major automobile manufacturer associations to target 140 gCO2 per km for new vehicle fleets by 2009 (ICCT 2013)</dd></dl>
+              - <dl><dt>High tax premiums on fuel across EU Member States</dt><dd>Fuel taxes remained flat after the mid-1990s</dd><dd>Diesel taxes were lower than petrol taxes</dd></dl>
             underlying_changes:
-              -
           _2000:
             description: Transport demand and vehicle efficiency continued to grow across the decade; including a significant shift to diesel in passenger cars. In the late 2000s, all forms of transport, and particularly air travel, fell with the high oil prices and the economic crisis of the late 2000s. The EU mandated increasing biofuel use for transport.
             policy_barriers:           
@@ -287,11 +280,6 @@ eu:
         description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the EU
         decades_analysis:
           _1980:
-            description: ""
-            policy_barriers:
-              - 
-            underlying_changes:
-              -
           _1990:
             description: As EU began to liberalize and integrate its energy market, low gas prices drove switching from coal generation to gas generation. EU emissions limits were established for industry and energy facilities. EU renewable energy leadership grew while nuclear power and hydro generation increased across the decade.
             policy_barriers: 
@@ -303,7 +291,6 @@ eu:
              - <dl><dt>Effciency increased across all types of fossil fuel generation (EEA 2011)</dt></dl>
              - <dl><dt>Increase in generation from nuclear and hydro generation despite rapid slow-down in capacity deployment (Eurostat)</dt></dl>
              - <dl><dt>Europe became a significant source of early (non-hydro) renewable energy development</dt></dl>
-
           _2000:
             description: Continued energy market liberalization coupled neighboring energy markets and unbundled the power sector as EU aimed for a Single Market by 2014. The EU took global leadership in policy to reduce greenhouse gas emissions, establishing an Emissions Trading System, setting renewable energy targets, and taking a market lead in renewable energy sources. At same time, several Member States faced difficulties setting renewable support levels.
             policy_barriers: 
@@ -323,11 +310,6 @@ eu:
         description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in the EU
         decades_analysis:
           _1980:
-            description: ""
-            policy_barriers:
-              - 
-            underlying_changes:
-              -
           _1990:
             description: Climate change took a prominent place on the EU political agenda in the 1990s. EU industry saw improved energy efficiency as energy intensive plants in Eastern Europe closed and the EU passed regulation to limit CO2 and other pollutants from industrial facilities.
             policy_barriers: 
@@ -335,7 +317,6 @@ eu:
             underlying_changes:
              - <dl><dt>Change in the make-up of European industry in early 1990s:</dt><dd>Industry saw energy efficiency improvements and a shift to less energy-intensive activities</dd><dd>Closure of energy-intensive industries in Eastern Europe (EEA 2011)</dd><dd>Significant growth in gross value added (GVA) of services and products</dd></dl>
              - <dl><dt>Low gas prices drove fuel switch from coal to gas in the industry sector (EEA 2011)</dt></dl>
-
           _2000:
             description: Regulatory action on CO2 and other pollutants from the 1990s was in full swing and further refined while Europe’s evolving Emissions Trading System (ETS) commenced mid-decade. Both contended with the economic downturn later in the decade.
             policy_barriers: 
@@ -351,11 +332,6 @@ eu:
         description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in the EU
         decades_analysis:
           _1980:
-            description: ""
-            policy_barriers:
-              - 
-            underlying_changes:
-              -
           _1990:
             description: "Major agricultural policy reforms cut commodity price supports and required agricultural land set-asides in the 1990s. Agricultural output suffered in Eastern Europe as the region transitioned to the EU. Cropland area and cattle numbers declined steadily over the decade while fertilizer rates dropped and then increased again."
             policy_barriers:
@@ -367,7 +343,6 @@ eu:
              - <dl><dt>Synthetic fertilizer application rate decreased in early 1990s followed by an increase in the late 1990s (EEA 2011)</dt></dl>
              - <dl><dt>Significant fall in Eastern European agricultural output (IAMO 2007)</dt></dl>
              - <dl><dt>Steady decline in number of cattle (particularly dairy) as dairy productivity showed sustained strong increases</dt></dl>
-
           _2000:
             description: Europe continued agricultural reforms throughout the decade, further cutting price supports, fully decoupling farm support from production, and making support contingent on compliance with environmental requirements. Biofuels were required to be incorporated into the fuel supply. Cropland, cattle numbers, and fertilizer rates all decreased.
             policy_barriers: 
@@ -384,11 +359,6 @@ eu:
         description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in the EU
         decades_analysis:
           _1980:
-            description: ""
-            policy_barriers:
-              -
-            underlying_changes:
-              -
           _1990:
             description: Energy policies emphasized building sector energy efficiency in the 1990s. Europe also harmonized energy efficiency labeling for appliances. Building sector efficiency steadily improved, leading to modest declines in direct greenhouse gas emissions from the sector. However, growing electricity consumption in the sector, partially driven by increasing appliance use, more than offset declining emissions, particularly in commercial buildings.
             policy_barriers: 
@@ -403,7 +373,6 @@ eu:
              - <dl><dt>Heating fuels shifted from coal and oil toward lower carbon gas and biomass (EEA 2011)</dt></dl>
              - <dl><dt>Improved efficiency of building shells, space heating units, and appliances</dt></dl>
              - <dl><dt>IT build-out and increased use of electronics and appliances across commercial and residential buildings</dt></dl>
-
           _2000:
             description: Energy performance standards in building codes and for products and appliances grew in importance in EU policy over the decade. Direct emissions continued to decline, partly offset by climbing electricity demand from appliances and electronics use. Electricity emissions offset direct emissions by the end of the decade, but overall emissions began to decline.
             policy_barriers: 
