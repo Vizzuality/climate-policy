@@ -17,6 +17,21 @@ class ApplicationController < ActionController::Base
     cdb_api_key = 'eca1902cb724e40fdb20fd628b47489b15134d79'
     cdb_url = 'http://cpi.cartodb.com/api/v2/sql'
 
+    sql_regex = [
+      /^SELECT \* FROM [a-zA-Z0-9-_]+ order by [a-zA-Z0-9-_]+\s?$/,
+      /^SELECT (min|max)\((min|max)\) as (min|max), (min|max)\((min|max)\) as (min|max) FROM \((SELECT (min|max)\([a-zA-Z0-9-_]+\) as (min|max), (min|max)\([a-zA-Z0-9-_]+\) as (min|max) FROM [a-zA-Z0-9-_]+( UNION )?)+\) as aux\s?$/
+    ]
+
+    regex_ok = false
+    sql_regex.each do |reg|
+      regex_ok = true if reg.match params[:q]
+    end
+
+    if not regex_ok
+      render :status => 404, :text => 'Query not allowed'
+      return
+    end
+
     uri = URI(cdb_url)
     cdb_params = Hash.new
     cdb_params[:q] = params[:q] if not params[:q].blank?
