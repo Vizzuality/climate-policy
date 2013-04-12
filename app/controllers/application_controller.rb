@@ -12,6 +12,20 @@ class ApplicationController < ActionController::Base
   helper_method :item_is_sector?
   helper_method :item_is_subject?
 
+  def data
+    require 'net/http'
+    cdb_api_key = 'eca1902cb724e40fdb20fd628b47489b15134d79'
+    cdb_url = 'http://cpi.cartodb.com/api/v2/sql'
+
+    uri = URI(cdb_url)
+    cdb_params = Hash.new
+    cdb_params[:q] = params[:q] if not params[:q].blank?
+    cdb_params[:api_key] = cdb_api_key if not cdb_api_key.blank?
+    uri.query = URI.encode_www_form(cdb_params)
+    res = Net::HTTP.get_response(uri)
+    render :text => res.body
+  end
+
   protected
 
   def layout_for_region_or_sector
