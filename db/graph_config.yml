@@ -411,7 +411,7 @@ eu_industry_emission_drivers:
   region_id: eu
   sector_id: industry
   subject_id: emission_drivers
-  name: Energy Efficiency Index (Odex) in Industry in the Eu27
+  name: Energy Efficiency Index (Odex) in Industry in the EU27
   table: eu_ind_2_sectoral_energy_efficiencies_copy_test_matallo
   description: Industrial energy efficiency improved across the board since 1990. There were no structural changes in industry that affected emissions intensity.
   x_axis: date_processed
@@ -528,7 +528,7 @@ eu_agriculture_emission_drivers:
   table: eu_agriculture_2_emissions_drivers_copy_test_matallo_methane
   description: Methane emissions from livestock declined as the number of cattle decreased.
   type: BarGraph
-  units: km²
+  units: million metric tonnes CO²e per year
   name_column: driver
   x_groups:
     0:
