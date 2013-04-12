@@ -1,8 +1,8 @@
 power:
   id: power
   name: Power
-  description: Rapid growth in electricity demand mirrored rapid economic growth in China and India. In both countries, the most readily available source of indigenous fuel was coal. China was been better at exploiting its coal resources, while India had to rely on imports. Slower demand growth and a gradual move away from coal to nuclear, gas
-  tagline: FAST GROWTH IN POWER DEMAND AND THE USE OF INDIGENOUS COAL SUPPLIES DROVE EMISSIONS GROWTH
+  description: In China and India rapid growth in electricity demand mirrored rapid economic growth, while the most readily available source of indigenous fuel was coal. In the EU and U.S., slower demand growth and a gradual move away from coal to nuclear, gas, and renewable sources kept emissions from growing and led to recent declines. In all four countries, despite strong growth in renewable energy, its impact on carbon intensity was only beginning to be felt.
+  tagline: POWER DEMAND AND COAL DROVE EMISSIONS GROWTH
   decades_analysis:
   subjects:
     - emissions:
@@ -24,8 +24,8 @@ power:
 industry:
   id: industry
   name: Industry
-  description: "Industrial sector greenhouse gas policy is difficult to generalize about because the carbon efficiency opportunities vary so much between different sectors like steel, manufacturing, or food processing. Only three carbon saving technologies cut across most industrial sectors: combined heat and power, high efficiency"
-  tagline: GROWTH AND DIFFERENCES BETWEEN INDUSTRIES CREATED A VARYING LANDSCAPE
+  description: "Emissions fell in the more developed countries, as policies, rising energy prices, and pressure to maintain economic competitiveness combined with the gradual decline and movement offshore of more carbon intensive industries. In the developing world, meanwhile, rapid growth and industrialization overwhelmed the significant improvement in energy efficiency that was possible due to the lower starting efficiency of industries there."
+  tagline: ECONOMIC FORCES CREATE A VARIED LANDSCAPE
   decades_analysis:
   subjects:
     - emissions:
@@ -47,8 +47,8 @@ industry:
 forestry:
   id: forestry
   name: Forestry
-  description: The Amazon is the world’s largest rainforest, stretching over an area of over five million square kilometers. Most of the forest is contained within Brazil, where the Amazon originally occupied over four million square kilometers of the country’s territory—an area equivalent to almost half of continental Europe. Roughly half the slowdown in deforestation in the late-2000s was a result of deliberate government policy, while better land productivity has led to increased agricultural output. Having greatly reduced large-scale deforestation, Brazil’s challenge now is to address small-scale deforestation, which may require different policy approaches.
-  tagline: FORESTS PROTECTED THROUGH POLICY
+  description: The Amazon is the world’s largest rainforest and mostly contained within Brazil, making Brazilian forestry policy one of the most important climate-related policies in the world. Roughly half the slowdown in deforestation in the late-2000s was a result of deliberate government policy. Having greatly reduced large-scale deforestation, Brazil’s challenge now is to address small-scale deforestation, which may require different policy approaches.
+  tagline: THE AMAZON PROTECTED THROUGH POLICY
   decades_analysis:
   subjects:
     - emissions:
@@ -64,8 +64,8 @@ forestry:
 buildings:
   id: buildings
   name: Buildings
-  description: "Energy efficiency in buildings has been the target of policy since at least the 1970s. Common policy tools include building codes and appliance standards, utility-based energy efficiency programs, incentives, and information campaigns."
-  tagline: A LONG HISTORY OF POLICY INTERVENTION YIELDED ENERGY EFFICIENCY GAINS.
+  description: "Policy activity in the buildings sector accelerated in the 1990s in Europe, after 2000 in the U.S., and more recently in China. Despite efficiency improvements in heating, cooling, and lighting, growth in building floor space and increasing appliance and electronics use have mostly offset efficiency gains."
+  tagline: POLICY GAINS OFFSET BY OTHER FACTORS.
   decades_analysis:
   subjects:
     - emissions:
@@ -85,7 +85,7 @@ buildings:
 transport:
   id: transport
   name: Transport
-  description: Transport offers large immediate and long-term opportunities to reduce greenhouse gas emissions in Europe and the U.S. The pattern for transport-related growth in greenhouse gas emissions in the two regions was remarkably similar—a sustained rise with increasing passenger and freight traffic and strong growth in air travel only partially offset by gradual efficiency improvements. Emissions peaked in 2007 in both economies before high fuel prices and then recession curbed and reversed.
+  description: Transport offers immediate and long-term opportunities to reduce emissions in Europe and the U.S. Emissions peaked in 2007 in both economies before high fuel prices and then recession curbed and reversed emissions growth. This general pattern overshadowed the European automobile fleet’s more fuel efficient starting point, thanks in part to significantly higher fuel taxes in Europe than in the U.S.
   tagline: THE ECONOMY HID UNDERLYING POLICY DIFFERENCES
   decades_analysis:
   subjects:
@@ -104,7 +104,7 @@ transport:
 agriculture:
   id: agriculture
   name: Agriculture
-  description: "Continual modernization of agricultural practices in India, Europe, and southern Brazil enabled increased productivity without marked increases in cultivated land. In fact, cultivated land area remained flat or decreased in some cases."
+  description: "Continual modernization of agricultural practices in India, Europe, and southern Brazil enabled increased productivity without marked increases in cultivated land."
   tagline: POLICY DROVE MODERN AGRICULTURAL PRACTICES AND EMISSIONS DECLINES
   decades_analysis:
   subjects:
