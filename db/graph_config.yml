@@ -408,7 +408,7 @@ eu_industry_emission_drivers:
       class: line
       y_min: 20
       y_max: 160
-      strokeColor: "#546DBC"
+      strokeColor: "rgba(102,102,102,1)"
     steel:
       name: Manufacturing Value Add
       column: steel
@@ -416,7 +416,7 @@ eu_industry_emission_drivers:
       class: line
       y_min: 20
       y_max: 160
-      strokeColor: "#F0542C"
+      strokeColor: "rgba(79,110,191,1)"
     cement:
       name: Manufacturing Production
       column: cement
@@ -424,7 +424,7 @@ eu_industry_emission_drivers:
       class: line
       y_min: 20
       y_max: 160
-      strokeColor: "#00D9A3"
+      strokeColor: "rgba(87,216,159,1)"
     paper:
       name: Paper
       column: paper
@@ -432,7 +432,7 @@ eu_industry_emission_drivers:
       class: line
       y_min: 20
       y_max: 160
-      strokeColor: "#546DBC"
+      strokeColor: "rgba(246,214,44,1)"
     machinery:
       name: Machinery
       column: machinery
@@ -440,7 +440,7 @@ eu_industry_emission_drivers:
       class: line
       y_min: 20
       y_max: 160
-      strokeColor: "#F0542C"
+      strokeColor: "rgba(220,115,255,1)"
     total:
       name: Total
       column: total
@@ -448,7 +448,7 @@ eu_industry_emission_drivers:
       class: line
       y_min: 20
       y_max: 160
-      strokeColor: "#00D9A3"
+      strokeColor: "rgba(238,87,41,1)"
 
 eu_industry_policy:
   id: eu_industry_policy
@@ -511,7 +511,7 @@ eu_agriculture_emission_drivers:
   subject_id: emission_drivers
   name: Contribution of Agricultural Emissions Drivers to Changes in Agricultural Greenhouse Gas Emissions in EU27 (Methane)
   table: eu_agriculture_2_emissions_drivers_copy_test_matallo_methane
-  description: Methane emissions from livestock declined as the number of cattle decreased. Nitrous oxide emissions fell, due to decreases in both cropland area and fertilizer intensity.
+  description: Methane emissions from livestock declined as the number of cattle decreased.
   type: BarGraph
   units: "km²"
   name_column: driver
@@ -650,20 +650,20 @@ eu_buildings_policy:
   description_long: long
   series:
     best_label:
-      name: Range for best label
+      name: Energy efficiency index range for best label
       column: best_label___low_end
       column_top: best_label___high_end
-      units: Energy efficiency index
+      units: ""
       class: range
       y_min: 0
       y_max: 300
       strokeColor: "rgba(238,87,41,1)"
       fillColor: "rgba(238,87,41,0.2)"
     worst_label:
-      name: Range for worst label
+      name: Energy efficiency index range for worst label
       column: worst_label_low_end
       column_top: worst_label_high_end
-      units: Energy efficiency index
+      units: ""
       class: range
       y_min: 0
       y_max: 300
@@ -746,9 +746,9 @@ eu_transport_policy:
   region_id: eu
   sector_id: transport
   subject_id: policy
-  name: "Emissions Intensity Indices—EU27 + Norway, Switzerland, and Turkey"
+  name: "Emissions Intensity Indices"
   table: eu_transport_3_fuel_taxes_copy_test_matallo
-  description: Starting from a comparatively high point, real fuel taxes were almost flat since the mid-1990s and steadily declined as a proportion of the final fuel price. Rising oil prices rather than government intervention therefore were the main increase to price signals for more efficient road transport.
+  description: Starting from a comparatively high point, real fuel taxes were almost flat since the mid-1990s and steadily declined as a proportion of the final fuel price. Rising oil prices rather than government intervention therefore were the main increase to price signals for more efficient road transport. Shown for EU27, Norway, Switzerland, and Turkey.
   description_long: long
   x_axis: date_processed
   series:
@@ -757,15 +757,15 @@ eu_transport_policy:
       column: tax_on_diesel
       units: EUR/Liter
       class: line
-      y_min: 0
-      y_max: 1600
+      y_min: 300
+      y_max: 1800
       strokeColor: "#546DBC"
     tax_on_petrol:
       name: Tax on Unleaded Petrol
       column: tax_on_petrol
       units: EUR/Liter
       class: line
-      y_min: 0
+      y_min: 300
       y_max: 1600
       strokeColor: "#F0542C"
     percentage_of_final_diesel_price_as_tax_processed:
@@ -774,16 +774,16 @@ eu_transport_policy:
       units: "%"
       class: line
       y_min: 40
-      y_max: 100
-      strokeColor: "#546DBC"
+      y_max: 120
+      strokeColor: '#00D9A3'
     percentage_of_final_petrol_price_as_tax_processed:
       name: Percentage of Final Petrol Price as Tax
       column: percentage_of_final_petrol_price_as_tax_processed
       units: "%"
       class: line
       y_min: 40
-      y_max: 100
-      strokeColor: "#F0542C"
+      y_max: 120
+      strokeColor: '#FFD24D'
 
 us_buildings_emissions:
   id: us_buildings_emissions
@@ -792,7 +792,7 @@ us_buildings_emissions:
   subject_id: emissions
   name: Building Sector Emissions
   table: emissions_mmtco2e_copy_test_matallo
-  description: Total building stock, as reflected by total floor space statistics, grew steadily, while the increase in residential floor space between 1995 and 2005 was particularly noteworthy.
+  description: Emissions grew slowly, but steadily, until 2005, when emissions peaked and slowly declined.
   x_axis: date_processed
   series:
     commercial:
@@ -819,7 +819,7 @@ us_buildings_emissions_2:
   subject_id: emissions
   name: Total Residential and Commercial Floorspace
   table: buildings_floorspace_billion_square_meters_copy_test_matallo
-  description: Emissions grew slowly, but steadily, until 2005, when emissions peaked and slowly declined.
+  description: Total building stock, as reflected by total floor space statistics, grew steadily, while the increase in residential floor space between 1995 and 2005 was particularly noteworthy.
   x_axis: date_processed
   series:
     commercial:
@@ -1129,7 +1129,7 @@ us_industry_emissions:
   sector_id: industry
   subject_id: emissions
   name: Industry Emissions
-  description: Industrial emissions declined even before the recession as industrial production rose.
+  description: Industrial emissions declined before the recession even as industrial production rose 
   table: us_industry_1_copy_test_matallo
   x_axis: date_processed
   series:
@@ -1356,8 +1356,8 @@ india_agriculture_emission_drivers_2:
   region_id: india
   sector_id: agriculture
   subject_id: emission_drivers
-  name: Mechanization Indices
-  description: Indian agriculture has modernized, as demonstrated by increasing fertilizer and equipment use. Despite rising fertilizer use, nitrous oxide emissions didn’t rise dramatically.
+  name: Fertilizer use
+  description: Indian agriculture has modernized, as demonstrated by increasing fertilizer use. Despite rising fertilizer use, nitrous oxide emissions didn’t rise dramatically.
   table: india_ag_2_fertilizer_and_livestock_copy_diego
   x_axis: date_processed
   series:
@@ -1384,7 +1384,7 @@ india_agriculture_emission_drivers_3:
   sector_id: agriculture
   subject_id: emission_drivers
   name: Mechanization Indices
-  description: Indian agriculture has modernized, as demonstrated by increasing fertilizer and equipment use.
+  description: Indian agriculture has modernized, as demonstrated by increasing equipment use.
   table: mechanization_copy_diego
   x_axis: date_processed
   series:
@@ -1472,8 +1472,8 @@ india_power_emission_drivers:
   region_id: india
   sector_id: power
   subject_id: emission_drivers
-  name: Power Sector Variables and Impact on Average Emissions Factor in The Eu27
-  description: Most new generation came from conventional sources (particularly coal), although the past decade saw exponential growth in renewable energy generation.
+  name: Power Sector Variables and Impact on Average Emissions Factor
+  description: Most new generation came from conventional sources (particularly coal), although the past decade saw exponential growth in renewable energy generation. Shown for the EU27.
   table: fuel_sources_copy_diego
   x_axis: date_processed
   series:
@@ -1594,7 +1594,7 @@ india_industry_emissions:
   sector_id: industry
   subject_id: emissions
   name: Greenhouse Gas Emissions
-  description: Manufacturing output nearly tripled in India since 1995.
+  description: Emissions have risen, but not as rapidly as production.
   table: india_ind_1_emissions_production_copy_diego
   x_axis: date_processed
   series:
@@ -1613,7 +1613,7 @@ india_industry_emissions_2:
   sector_id: industry
   subject_id: emissions
   name: Industrial Production
-  description: Emissions have rtisen, but not as rapidly as production.
+  description: Manufacturing output nearly tripled in India since 1995.
   table: india_ind_2_value_index_copy_diego
   x_axis: date_processed
   series:
@@ -1782,7 +1782,7 @@ china_buildings_emission_drivers_2:
   region_id: china
   sector_id: buildings
   subject_id: emission_drivers
-  name: Energy Consumption by Sector and Geography
+  name: Energy Consumption by Sector
   table: china_bldgs_2_geography_copy_diego
   description: Urban residential growth was the primary driver of growth in energy usage, which in turn was the primary cause of increasing emissions, with commercial building energy use contributing a small increase.
   x_axis: date_processed
@@ -1853,7 +1853,7 @@ china_industry_emissions:
   region_id: china
   sector_id: industry
   subject_id: emissions
-  name: Energy Consumption by Industry and Industrial Output
+  name: Energy Consumption by Industry
   table: china_ind_1_energy_consumption_copy_diego
   description: China did not report greenhouse gas emissions from industry, but they were very closely related to energy consumption, which more than doubled since 2002.
   x_axis: date_processed
@@ -1872,7 +1872,7 @@ china_industry_emissions_2:
   region_id: china
   sector_id: industry
   subject_id: emissions
-  name: Energy Consumption by Industry and Industrial Output
+  name: Industrial Output
   table: china_ind_2_value_index_copy_diego
   description: By some measures, industrial production output rose almost 20-fold since 1993.
   x_axis: date_processed
@@ -1899,7 +1899,7 @@ china_industry_emission_drivers:
   region_id: china
   sector_id: industry
   subject_id: emission_drivers
-  name: "Sector Energy Intensity: Manufacturing, Metals & Minerals, Chemical"
+  name: "Sector Energy Intensity"
   table: china_ind_2_sectoral_intensities_copy_diego_fixed_3
   description: Industrial emissions intensity improved dramatically across all sectors, although from a generally high starting point.
   x_axis: date_processed
@@ -1974,7 +1974,7 @@ china_industry_policy:
   region_id: china
   sector_id: industry
   subject_id: policy
-  name: Phase Out Targets — Standard Scale
+  name: Phase Out Targets
   table: china_ind_3_phase_out_targets_copy_diego
   description: The government set specific targets for many large industries regarding how much capacity was to be phased out or retired.
   x_axis: date_processed

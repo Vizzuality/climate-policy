@@ -1,81 +1,3 @@
-forestry:
-  id: forestry
-  name: Forestry
-  description: The Amazon is the world’s largest rainforest, stretching over an area of over five million square kilometers. Most of the forest is contained within Brazil, where the Amazon originally occupied over four million square kilometers of the country’s territory—an area equivalent to almost half of continental Europe. Roughly half the slowdown in deforestation in the late-2000s was a result of deliberate government policy, while better land productivity has led to increased agricultural output. Having greatly reduced large-scale deforestation, Brazil’s challenge now is to address small-scale deforestation, which may require different policy approaches.
-  tagline: FORESTS PROTECTED THROUGH POLICY
-  decades_analysis:
-  subjects:
-    - emissions:
-        description: These graphs show the changes in deforestation in Brazil
-    - emission_drivers:
-        description: These graphs show the changes in deforestation drivers in Brazil
-    - policy:
-        description: These graphs show the changes in land use policy in Brazil
-  regions:
-    - brazil:
-        description: These graphs show the changes in deforestation, deforestation drivers, and land use policy in Brazil
-
-agriculture:
-  id: agriculture
-  name: Agriculture
-  description: "Continual modernization of agricultural practices in India, Europe, and southern Brazil enabled increased productivity without marked increases in cultivated land. In fact, cultivated land area remained flat or decreased in some cases."
-  tagline: POLICY DROVE MODERN AGRICULTURAL PRACTICES AND EMISSIONS DECLINES
-  decades_analysis:
-  subjects:
-    - emissions:
-        description: These graphs show the changes in Agriculture emissions and growth in Brazil, the EU, and India
-    - emission_drivers:
-        description: These graphs show the changes in Agriculture emissions drivers in Brazil, the EU, and India
-    - policy:
-        description: These graphs show the changes in Agriculture policy in Brazil, the EU, and India
-  regions:
-    - brazil:
-        description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in Brazil
-    - eu:
-        description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in the EU
-    - india:
-        description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in India
-
-buildings:
-  id: buildings
-  name: Buildings
-  description: "Energy efficiency in buildings has been the target of policy since at least the 1970s. Common policy tools include building codes and appliance standards, utility-based energy efficiency programs, incentives, and information campaigns."
-  tagline: A LONG HISTORY OF POLICY INTERVENTION YIELDED ENERGY EFFICIENCY GAINS.
-  decades_analysis:
-  subjects:
-    - emissions:
-        description: These graphs show the changes in Buildings emissions and growth in China, the EU, and the US
-    - emission_drivers:
-        description: These graphs show the changes in Buildings emissions drivers in China, the EU, and the US
-    - policy:
-        description: These graphs show the changes in Buildings policy in China, the EU, and the US
-  regions:
-    - us:
-        description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in the US
-    - eu:
-        description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in the EU
-    - china:
-        description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in China
-
-transport:
-  id: transport
-  name: Transport
-  description: Transport offers large immediate and long-term opportunities to reduce greenhouse gas emissions in Europe and the U.S. The pattern for transport-related growth in greenhouse gas emissions in the two regions was remarkably similar—a sustained rise with increasing passenger and freight traffic and strong growth in air travel only partially offset by gradual efficiency improvements. Emissions peaked in 2007 in both economies before high fuel prices and then recession curbed and reversed.
-  tagline: THE ECONOMY HID UNDERLYING POLICY DIFFERENCES
-  decades_analysis:
-  subjects:
-    - emissions:
-        description: These graphs show the changes in Transportation emissions and growth in the EU and the US
-    - emission_drivers:
-        description: These graphs show the changes in deforestation drivers in Brazil
-    - policy:
-        description: These graphs show the changes in land use policy in Brazil
-  regions:
-    - eu:
-        description: These graphs show the changes in emissions, emissions drivers, and policy in the Transportation sector in the EU
-    - us:
-        description: These graphs show the changes in emissions, emissions drivers, and policy in the Transportation sector in the US
-
 power:
   id: power
   name: Power
@@ -121,4 +43,82 @@ industry:
         description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in China 
     - india:
         description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in India
+
+forestry:
+  id: forestry
+  name: Forestry
+  description: The Amazon is the world’s largest rainforest, stretching over an area of over five million square kilometers. Most of the forest is contained within Brazil, where the Amazon originally occupied over four million square kilometers of the country’s territory—an area equivalent to almost half of continental Europe. Roughly half the slowdown in deforestation in the late-2000s was a result of deliberate government policy, while better land productivity has led to increased agricultural output. Having greatly reduced large-scale deforestation, Brazil’s challenge now is to address small-scale deforestation, which may require different policy approaches.
+  tagline: FORESTS PROTECTED THROUGH POLICY
+  decades_analysis:
+  subjects:
+    - emissions:
+        description: These graphs show the changes in deforestation in Brazil
+    - emission_drivers:
+        description: These graphs show the changes in deforestation drivers in Brazil
+    - policy:
+        description: These graphs show the changes in land use policy in Brazil
+  regions:
+    - brazil:
+        description: These graphs show the changes in deforestation, deforestation drivers, and land use policy in Brazil
+
+buildings:
+  id: buildings
+  name: Buildings
+  description: "Energy efficiency in buildings has been the target of policy since at least the 1970s. Common policy tools include building codes and appliance standards, utility-based energy efficiency programs, incentives, and information campaigns."
+  tagline: A LONG HISTORY OF POLICY INTERVENTION YIELDED ENERGY EFFICIENCY GAINS.
+  decades_analysis:
+  subjects:
+    - emissions:
+        description: These graphs show the changes in Buildings emissions and growth in China, the EU, and the US
+    - emission_drivers:
+        description: These graphs show the changes in Buildings emissions drivers in China, the EU, and the US
+    - policy:
+        description: These graphs show the changes in Buildings policy in China, the EU, and the US
+  regions:
+    - us:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in the US
+    - eu:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in the EU
+    - china:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in China
+
+transport:
+  id: transport
+  name: Transport
+  description: Transport offers large immediate and long-term opportunities to reduce greenhouse gas emissions in Europe and the U.S. The pattern for transport-related growth in greenhouse gas emissions in the two regions was remarkably similar—a sustained rise with increasing passenger and freight traffic and strong growth in air travel only partially offset by gradual efficiency improvements. Emissions peaked in 2007 in both economies before high fuel prices and then recession curbed and reversed.
+  tagline: THE ECONOMY HID UNDERLYING POLICY DIFFERENCES
+  decades_analysis:
+  subjects:
+    - emissions:
+        description: These graphs show the changes in Transportation emissions and growth in the EU and the US
+    - emission_drivers:
+        description: These graphs show the changes in deforestation drivers in Brazil
+    - policy:
+        description: These graphs show the changes in land use policy in Brazil
+  regions:
+    - eu:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Transportation sector in the EU
+    - us:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Transportation sector in the US
+
+agriculture:
+  id: agriculture
+  name: Agriculture
+  description: "Continual modernization of agricultural practices in India, Europe, and southern Brazil enabled increased productivity without marked increases in cultivated land. In fact, cultivated land area remained flat or decreased in some cases."
+  tagline: POLICY DROVE MODERN AGRICULTURAL PRACTICES AND EMISSIONS DECLINES
+  decades_analysis:
+  subjects:
+    - emissions:
+        description: These graphs show the changes in Agriculture emissions and growth in Brazil, the EU, and India
+    - emission_drivers:
+        description: These graphs show the changes in Agriculture emissions drivers in Brazil, the EU, and India
+    - policy:
+        description: These graphs show the changes in Agriculture policy in Brazil, the EU, and India
+  regions:
+    - brazil:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in Brazil
+    - eu:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in the EU
+    - india:
+        description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in India
 
