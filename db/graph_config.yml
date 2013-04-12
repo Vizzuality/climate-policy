@@ -31,7 +31,7 @@ brazil_forestry_emission_drivers:
     corn:
       name: Corn price
       column: corn
-      units: BRL/Ton
+      units: BRL/tonne
       class: line
       y_min: 0
       y_max: 1500
@@ -39,7 +39,7 @@ brazil_forestry_emission_drivers:
     soybean:
       name: Soybean price
       column: soybeans
-      units: BRL/Ton
+      units: BRL/tonne
       class: line
       y_min: 0
       y_max: 1500
@@ -109,7 +109,7 @@ brazil_forestry_policy:
     methane_mmtco2e:
       name: Integral Protection
       column: integral_protection
-      units: K km<sup>2</sup>
+      units: thousand km<sup>2</sup>
       class: area
       y_min: 0
       y_max: 1200
@@ -118,7 +118,7 @@ brazil_forestry_policy:
     nitrous_oxide_mmtco2e:
       name: Sustainable Use
       column: sustainable_use
-      units: K km<sup>2</sup>
+      units: thousand km<sup>2</sup>
       class: area
       y_min: 0
       y_max: 1200
@@ -138,7 +138,7 @@ brazil_agriculture_emissions:
     methane_mmtco2e:
       name: Methane
       column: methane_mmtco2e
-      units: MTn CO2e
+      units: million tonnes CO<sup>2</sup>e
       class: line
       y_min: 70
       y_max: 350
@@ -146,7 +146,7 @@ brazil_agriculture_emissions:
     nitrous_oxide_mmtco2e:
       name: Nitrous Oxide
       column: nitrous_oxide_mmtco2e
-      units: MTn CO2e
+      units: million tonnes CO<sup>2</sup>e
       class: line
       y_min: 70
       y_max: 350
@@ -184,7 +184,7 @@ brazil_agriculture_emission_drivers:
     food:
       name: Food
       column: food_production_per_hectare
-      units: Index (1980=100)
+      units: index (1980=100)
       class: line
       y_min: 50
       y_max: 300
@@ -192,7 +192,7 @@ brazil_agriculture_emission_drivers:
     livestock:
       name: Livestock
       column: livestock_production_per_hectare
-      units: Index (1980=100)
+      units: index (1980=100)
       class: line
       y_min: 50
       y_max: 300
@@ -200,7 +200,7 @@ brazil_agriculture_emission_drivers:
     non_food:
       name: Non-food
       column: non_food_production_per_hectare
-      units: Index (1980=100)
+      units: index (1980=100)
       class: line
       y_min: 50
       y_max: 300
@@ -208,7 +208,7 @@ brazil_agriculture_emission_drivers:
     tractor:
       name: Tractor usage
       column: tractor_usage_per_hectare
-      units: Index (1980=100)
+      units: index (1980=100)
       class: line
       y_min: 50
       y_max: 300
@@ -227,7 +227,7 @@ brazil_agriculture_emission_drivers_2:
     raw_materials:
       name: Agricultural raw materials
       column: agricultural_raw_materials
-      units: B USD
+      units: billion USD
       class: line
       y_min: -10
       y_max: 55
@@ -235,7 +235,7 @@ brazil_agriculture_emission_drivers_2:
     food:
       name: Food
       column: food
-      units: B USD
+      units: billion USD
       class: line
       y_min: -10
       y_max: 55
@@ -255,7 +255,7 @@ brazil_agriculture_policy:
     credit:
       name: Credit Subsidies
       column: credit_subsidies
-      units: MM BRL
+      units: million BRL
       class: line
       y_min: -7000
       y_max: 18000
@@ -263,7 +263,7 @@ brazil_agriculture_policy:
     non_credit:
       name: Non-Credit Subsidies
       column: non_credit_producer_subsidies
-      units: MM BRL
+      units: million BRL
       class: line
       y_min: -7000
       y_max: 18000
@@ -271,7 +271,7 @@ brazil_agriculture_policy:
     total:
       name: Total Subsidies to Producers
       column: total_producer_support
-      units: MM BRL
+      units: million BRL
       class: line
       y_min: -7000
       y_max: 18000
@@ -294,7 +294,7 @@ eu_power_emissions:
     emissions:
       name: Emissions
       column: emissions
-      units: MM T CO^2
+      units: million tones CO<sup>2</sup>
       class: line
       y_min: 0
       y_max: 2600
@@ -318,7 +318,7 @@ eu_power_emission_drivers:
   description: During the 1990s, increases in coal and natural gas efficiency and growing nuclear output drove down grid emissions intensity. In the 2000s, the fuel mix shifted away from coal and toward other sources, especially renewable energy. The efficiency of coal plants fell in the 2000s, possibly due to increased sulfur and other pollution controls.
   description_long: longest
   type: BarGraph
-  units: "M T CO²"
+  units: million tones CO<sup>2</sup>
   name_column: variable
   x_groups:
     0:
@@ -384,7 +384,7 @@ eu_industry_emissions:
     total_emissions:
       name: Emissions
       column: total_emissions
-      units: Million Tons CO2e
+      units: million tones CO<sup>2</sup>e
       class: line
       y_min: 1000
       y_max: 3400
@@ -392,7 +392,7 @@ eu_industry_emissions:
     manufacturing_value_add_index:
       name: Manufacturing Value Add
       column: manufacturing_value_add_index
-      units: Index (1990=100)
+      units: index (1990=100)
       class: line
       y_min: 70
       y_max: 240
@@ -400,7 +400,7 @@ eu_industry_emissions:
     manufacturing_production_index:
       name: Manufacturing Production
       column: manufacturing_production_index
-      units: Index (1990=100)
+      units: index (1990=100)
       class: line
       y_min: 70
       y_max: 240
@@ -419,7 +419,7 @@ eu_industry_emission_drivers:
     chemicals:
       name: Chemicals
       column: chemicals
-      units: Index (1990=100)
+      units: index (1990=100)
       class: line
       y_min: 20
       y_max: 160
@@ -427,7 +427,7 @@ eu_industry_emission_drivers:
     steel:
       name: Manufacturing Value Add
       column: steel
-      units: Index (1990=100)
+      units: index (1990=100)
       class: line
       y_min: 20
       y_max: 160
@@ -435,7 +435,7 @@ eu_industry_emission_drivers:
     cement:
       name: Manufacturing Production
       column: cement
-      units: Index (1990=100)
+      units: index (1990=100)
       class: line
       y_min: 20
       y_max: 160
@@ -443,7 +443,7 @@ eu_industry_emission_drivers:
     paper:
       name: Paper
       column: paper
-      units: Index (1990=100)
+      units: index (1990=100)
       class: line
       y_min: 20
       y_max: 160
@@ -451,7 +451,7 @@ eu_industry_emission_drivers:
     machinery:
       name: Machinery
       column: machinery
-      units: Index (1990=100)
+      units: index (1990=100)
       class: line
       y_min: 20
       y_max: 160
@@ -459,7 +459,7 @@ eu_industry_emission_drivers:
     total:
       name: Total
       column: total
-      units: Index (1990=100)
+      units: index (1990=100)
       class: line
       y_min: 20
       y_max: 160
@@ -478,7 +478,7 @@ eu_industry_policy:
     emissions:
       name: ETS - Cap Phases 1 & 2
       column: eu_ets_cap___phases_1_2
-      units: Million Tons CO2e
+      units: million tones CO<sup>2</sup>e
       class: bars
       y_min: 1300
       y_max: 2500
@@ -486,7 +486,7 @@ eu_industry_policy:
     agricultural_production:
       name: ETS - Cap Phases 3+ (Projection)
       column: eu_ets_phase_3_cap_projection
-      units: Million Tons CO2e
+      units: million tones CO<sup>2</sup>e
       class: line
       y_min: 1300
       y_max: 2500
@@ -505,7 +505,7 @@ eu_agriculture_emissions:
     emissions:
       name: Emissions
       column: emissions
-      units: MM T CO²
+      units: million tones CO<sup>2</sup>
       class: line
       y_min: 0
       y_max: 1000
@@ -513,7 +513,7 @@ eu_agriculture_emissions:
     agricultural_production:
       name: Agricultural Production
       column: agricultural_production
-      units: MM €
+      units: million €
       class: line
       y_min: 0
       y_max: 800000
@@ -528,7 +528,7 @@ eu_agriculture_emission_drivers:
   table: eu_agriculture_2_emissions_drivers_copy_test_matallo_methane
   description: Methane emissions from livestock declined as the number of cattle decreased.
   type: BarGraph
-  units: "km²"
+  units: km<sup>2</sup>
   name_column: driver
   x_groups:
     0:
@@ -570,7 +570,7 @@ eu_agriculture_policy:
     eu15:
       name: EU15
       column: eu15
-      units: "Thousand km²"
+      units: thousand km<sup>2</sup>
       class: area
       y_min: 0
       y_max: 3000
@@ -579,7 +579,7 @@ eu_agriculture_policy:
     eu10:
       name: EU10+2
       column: eu10_2
-      units: "Thousand km²"
+      units: thousand km<sup>2</sup>
       class: area
       y_min: 0
       y_max: 3000
@@ -617,7 +617,7 @@ eu_buildings_emissions:
     commercial:
       name: Residential
       column: residential
-      units: MM T CO²
+      units: million tonnes CO<sup>2</sup>
       class: area
       y_min: 0
       y_max: 2500
@@ -626,7 +626,7 @@ eu_buildings_emissions:
     residential:
       name: Tertiary
       column: tertiary
-      units: MM T CO²
+      units: million tonnes CO<sup>2</sup>
       class: area
       y_min: 0
       y_max: 2500
@@ -643,7 +643,7 @@ eu_buildings_emission_drivers:
   description: Population increase and smaller households- which led to more buildings and total floorspace —increased residential emissions. However, these factors were more than offset by increases in energy efficiency and renewable energy and a shift to electricity from other fuel sources.
   description_long: longest
   type: BarGraph
-  units: "MM T CO² / Year"
+  units:million tonnes CO<sup>2</sup> / year
   name_column: variable
   x_groups:
     0:
@@ -699,7 +699,7 @@ eu_transport_emissions:
     direct_emissions_from_transportation:
       name: Emissions
       column: direct_emissions_from_transportation
-      units: MM T CO²
+      units: million tonnes CO<sup>2</sup>
       class: line
       y_min: 0
       y_max: 1600
@@ -707,7 +707,7 @@ eu_transport_emissions:
     freight:
       name: Freight Activity
       column: freight
-      units: Index (1995=100)
+      units: index (1995=100)
       class: line
       y_min: 100
       y_max: 150
@@ -715,7 +715,7 @@ eu_transport_emissions:
     passenger:
       name: Passenger Activity
       column: passenger
-      units: Index (1995=100)
+      units: index (1995=100)
       class: line
       y_min: 100
       y_max: 150
@@ -734,7 +734,7 @@ eu_transport_emission_drivers:
     total:
       name: Passenger
       column: total
-      units: Index (1995=100)
+      units: index (1995=100)
       class: line
       y_min: 0.7
       y_max: 1.4
@@ -742,7 +742,7 @@ eu_transport_emission_drivers:
     freight:
       name: Freight
       column: freight
-      units: Index (1995=100)
+      units: index (1995=100)
       class: line
       y_min: 0.7
       y_max: 1.4
@@ -750,7 +750,7 @@ eu_transport_emission_drivers:
     passenger:
       name: Total
       column: passenger
-      units: Index (1995=100)
+      units: index (1995=100)
       class: line
       y_min: 0.7
       y_max: 1.4
@@ -770,7 +770,7 @@ eu_transport_policy:
     tax_on_diesel:
       name: Tax on Diesel
       column: tax_on_diesel
-      units: EUR/Liter
+      units: EUR / liter
       class: line
       y_min: 300
       y_max: 1800
@@ -778,7 +778,7 @@ eu_transport_policy:
     tax_on_petrol:
       name: Tax on Unleaded Petrol
       column: tax_on_petrol
-      units: EUR/Liter
+      units: EUR / liter
       class: line
       y_min: 300
       y_max: 1600
@@ -813,7 +813,7 @@ us_buildings_emissions:
     commercial:
       name: Commercial
       column: commercial
-      units: MM T CO²
+      units: million tonnes CO<sup>2</sup>
       class: line
       y_min: 0
       y_max: 2000
@@ -821,7 +821,7 @@ us_buildings_emissions:
     residential:
       name: Residential
       column: residential
-      units: MM T CO²
+      units: million tonnes CO<sup>2</sup>
       class: line
       y_min: 0
       y_max: 2000
@@ -840,7 +840,7 @@ us_buildings_emissions_2:
     commercial:
       name: Commercial
       column: commercial
-      units: "B m<sup>2</sup>"
+      units: billion m<sup>2</sup>
       class: line
       y_min: 0
       y_max: 25
@@ -848,7 +848,7 @@ us_buildings_emissions_2:
     residential:
       name: Residential
       column: residential
-      units: "B m<sup>2</sup>"
+      units: billion m<sup>2</sup>
       class: line
       y_min: 0
       y_max: 25
@@ -864,7 +864,7 @@ us_buildings_emissions_drivers:
   description: "Growth in population and floor space per person were the largest drivers of buildings emissions. In the late 2000's, energy efficiency gains caught up with slowing floor space growth."
   description_long: longest
   type: BarGraph
-  units: "Million T CO²"
+  units: million tonnes CO<sup>2</sup>
   name_column: variable
   x_groups:
     0:
@@ -887,7 +887,7 @@ us_buildings_policy:
     energy_efficiency_dsm_spending:
       name: Energy Efficiency DSM Spending
       column: energy_efficiency_dsm_spending
-      units: MM USD
+      units: million USD
       class: line
       y_min: -5000
       y_max: 27500
@@ -895,7 +895,7 @@ us_buildings_policy:
     federal_expenditures:
       name: Federal expenditures
       column: federal_expenditures
-      units: MM USD
+      units: million USD
       class: line
       y_min: -5000
       y_max: 27500
@@ -914,7 +914,7 @@ us_buildings_policy_2:
     commercial:
       name: Commercial
       column: commercial
-      units: Index (1990=100)
+      units: index (1990=100)
       class: line
       y_min: 40
       y_max: 150
@@ -922,7 +922,7 @@ us_buildings_policy_2:
     residential:
       name: Residential
       column: residential
-      units: Index (1990=100)
+      units: index (1990=100)
       class: line
       y_min: 40
       y_max: 150
@@ -941,7 +941,7 @@ us_transportation_emissions:
     emissions:
       name: Emissions
       column: emissions_mmtco2e
-      units: MM T CO<sup>2</sup>
+      units: million tonnes CO<sup>2</sup>
       class: line
       y_min: 1000
       y_max: 3000
@@ -949,7 +949,7 @@ us_transportation_emissions:
     km_traveled:
       name: Passenger km traveled
       column: billion_passenger_kilometers_traveled
-      units: B passenger-km
+      units: billion passenger-km
       class: line
       y_min: 1000
       y_max: 15000
@@ -957,7 +957,7 @@ us_transportation_emissions:
     freight:
       name: Freight ton-kilometers
       column: billion_freight_ton_kilometers
-      units: B T-km
+      units: billion tonnes-km
       class: line
       y_min: 2000
       y_max: 10000
@@ -976,7 +976,7 @@ us_transportation_emissions_drivers:
     sector_wide:
       name: Sector wide
       column: sector_wide
-      units: Index (1980=100)
+      units: index (1980=100)
       class: line
       y_min: 40
       y_max: 150
@@ -984,7 +984,7 @@ us_transportation_emissions_drivers:
     passenger_car:
       name: Passenger car
       column: passenger_car
-      units: Index (1980=100)
+      units: index (1980=100)
       class: line
       y_min: 40
       y_max: 150
@@ -992,7 +992,7 @@ us_transportation_emissions_drivers:
     domestic_air:
       name: Domestic air
       column: domestic_air
-      units: Index (1980=100)
+      units: index (1980=100)
       class: line
       y_min: 40
       y_max: 150
@@ -1000,7 +1000,7 @@ us_transportation_emissions_drivers:
     trucks:
       name: Trucks
       column: trucks
-      units: Index (1980=100)
+      units: index (1980=100)
       class: line
       y_min: 40
       y_max: 150
@@ -1062,7 +1062,7 @@ us_power_emissions:
     total_emissions:
       name: Total Emissions
       column: total_emissions
-      units:  MM T CO<sup>2</sup>
+      units: million tonnes CO<sup>2</sup>
       class: line
       y_min: 700
       y_max: 4000
@@ -1113,7 +1113,7 @@ us_power_policy:
     tax_expenditures:
       name: Tax expenditures
       column: tax_expenditures
-      units:  MM USD
+      units:  million USD
       class: line
       y_min: 0
       y_max: 14780
@@ -1151,7 +1151,7 @@ us_industry_emissions:
     emissions:
       name: Emissions
       column: emissions
-      units: MM T CO<sup>2</sup>
+      units: million tonnes CO<sup>2</sup>
       class: line
       y_min: 1300
       y_max: 2050
@@ -1283,7 +1283,7 @@ us_industry_policy_2:
     audits:
       name: Number of audits
       column: number_of_assessments
-      units: Audits
+      units: audits
       class: line
       y_min: -50
       y_max: 1600
@@ -1291,7 +1291,7 @@ us_industry_policy_2:
     plant_area:
       name: Average plant area of audited facilities
       column: average_plant_area_of_facilities_audited
-      units: K ft<sup>2</sup>
+      units: thousand ft<sup>2</sup>
       class: line
       y_min: -50
       y_max: 1600
@@ -1315,7 +1315,7 @@ india_agriculture_emissions:
     methane:
       name: Methane
       column: methane
-      units: million T
+      units: million tonnes CO<sup>2</sup>e
       class: line
       y_min: 0
       y_max: 700
@@ -1323,7 +1323,7 @@ india_agriculture_emissions:
     nitrous_oxide:
       name: Nitrous Oxide
       column: nitrous_oxide
-      units: million T
+      units: million tonnes CO<sup>2</sup>e
       class: line
       y_min: 0
       y_max: 700
@@ -1331,7 +1331,7 @@ india_agriculture_emissions:
     land_under_cultivation:
       name: Land Under Cultivation
       column: land_under_cultivation
-      units: million T
+      units: million hectares
       class: line
       y_min: 0
       y_max: 700
@@ -1387,7 +1387,7 @@ india_agriculture_emission_drivers_2:
     total_fertilizer_use_2:
       name: Total fertilizer use
       column: total_fertilizer_use_2
-      units: million T
+      units: million tonnes
       class: line
       y_min: 0
       y_max: 300
@@ -1441,7 +1441,7 @@ india_agriculture_policy:
     series_2:
       name: Outlay on agriculture and irrigation (Billion INR)
       column: outlay_on_agriculture_and_irrigation_billion_inr
-      units: Billion INR
+      units: billion INR
       class: bars
       y_min: 0
       y_max: 4000
@@ -1468,7 +1468,7 @@ india_power_emissions:
     series_1:
       name: Emissions
       column: emissions
-      units: million tons
+      units: million tonnes
       class: line
       y_min: 0
       y_max: 800
@@ -1713,7 +1713,7 @@ china_buildings_emissions:
     residential_emissions:
       name: Residential
       column: residential_emissions
-      units: MMTn CO2
+      units: million tonnes CO<sup>2</sup>
       class: area
       y_min: 0
       y_max: 500
@@ -1722,7 +1722,7 @@ china_buildings_emissions:
     commercial_emissions_fixed:
       name: Commercial and public services
       column: commercial_emissions_fixed
-      units: MMTn CO2
+      units: million tonnes CO<sup>2</sup>
       class: area
       y_min: 0
       y_max: 500
@@ -1742,7 +1742,7 @@ china_buildings_emission_drivers:
     total_coal:
       name: Total coal
       column: total_coal
-      units: MMTn coal equivalent
+      units: million tonnes coal equivalent
       class: area
       y_min: 0
       y_max: 250
@@ -1751,7 +1751,7 @@ china_buildings_emission_drivers:
     electricity:
       name: Electricity
       column: electricity
-      units: MMTn coal equivalent
+      units: million tonnes coal equivalent
       class: area
       y_min: 0
       y_max: 250
@@ -1760,7 +1760,7 @@ china_buildings_emission_drivers:
     liquid_petroleum_gas:
       name: Liquid petroleum gas
       column: liquid_petroleum_gas
-      units: MMTn coal equivalent
+      units: million tonnes coal equivalent
       class: area
       y_min: 0
       y_max: 250
@@ -1769,7 +1769,7 @@ china_buildings_emission_drivers:
     heat:
       name: Heat
       column: heat
-      units: MMTn coal equivalent
+      units: million tonnes coal equivalent
       class: area
       y_min: 0
       y_max: 250
@@ -1778,7 +1778,7 @@ china_buildings_emission_drivers:
     natural_gas:
       name: Natural gas
       column: natural_gas
-      units: MMTn coal equivalent
+      units: million tonnes coal equivalent
       class: area
       y_min: 0
       y_max: 250
@@ -1787,7 +1787,7 @@ china_buildings_emission_drivers:
     other:
       name: Other
       column: other
-      units: MMTn coal equivalent
+      units: million tonnes coal equivalent
       class: area
       y_min: 0
       y_max: 250
@@ -1807,7 +1807,7 @@ china_buildings_emission_drivers_2:
     urban_residential:
       name: Urban residential
       column: urban_residential
-      units: MMTn coal equivalent
+      units: million tonnes coal equivalent
       class: area
       y_min: 0
       y_max: 300
@@ -1816,7 +1816,7 @@ china_buildings_emission_drivers_2:
     rural_residential:
       name: Rural residential
       column: rural_residential
-      units: MMTn coal equivalent
+      units: million tonnes coal equivalent
       class: area
       y_min: 0
       y_max: 300
@@ -1825,7 +1825,7 @@ china_buildings_emission_drivers_2:
     commercial:
       name: Commercial
       column: commercial
-      units: MMTn coal equivalent
+      units: million tonnes coal equivalent
       class: area
       y_min: 0
       y_max: 300
@@ -1858,7 +1858,7 @@ china_buildings_policy_2:
   description: Both the provincial and central governments provided substantial funding for energy efficiency monitoring and improvements.
   x_axis: date_processed
   type: BarGraph
-  units: "Billion Yuan"
+  units: "billion yuan"
   name_column: program
   x_groups:
     0:
@@ -1878,7 +1878,7 @@ china_industry_emissions:
       series_1:
         name: Industrial energy consumption
         column: energy_consumption
-        units: MMTn coal equivalent
+        units: million tonnes coal equivalent
         class: line
         y_min: 300
         y_max: 2300
@@ -1924,7 +1924,7 @@ china_industry_emission_drivers:
       0:
         name: Chemical and petrochemical
         column: chemical
-        units: Million T coal equivalent / Billion yuan
+        units: million tonnes coal equivalent / billion yuan
         class: line
         y_min: 0
         y_max: 6
@@ -1932,7 +1932,7 @@ china_industry_emission_drivers:
       1:
         name: Transport equipment
         column: transport
-        units: Million T coal equivalent / Billion yuan
+        units: million tonnes coal equivalent / billion yuan
         class: line
         y_min: 0
         y_max: 6
@@ -1940,7 +1940,7 @@ china_industry_emission_drivers:
       2:
         name: Food and tobacco
         column: food
-        units: Million T coal equivalent / Billion yuan
+        units: million tonnes coal equivalent / billion yuan
         class: line
         y_min: 0
         y_max: 6
@@ -1948,7 +1948,7 @@ china_industry_emission_drivers:
       3:
         name: Paper, pulp & printing
         column: paper
-        units: Million T coal equivalent / Billion yuan
+        units: million tonnes coal equivalent / billion yuan
         class: line
         y_min: 0
         y_max: 6
@@ -1956,7 +1956,7 @@ china_industry_emission_drivers:
       4:
         name: Wood
         column: wood
-        units: Million T coal equivalent / Billion yuan
+        units: million tonnes coal equivalent / billion yuan
         class: line
         y_min: 0
         y_max: 6
@@ -1964,7 +1964,7 @@ china_industry_emission_drivers:
       5:
         name: Textile & leather
         column: textile
-        units: Million T coal equivalent / Billion yuan
+        units: million tonnes coal equivalent / billion yuan
         class: line
         y_min: 0
         y_max: 6
@@ -1972,7 +1972,7 @@ china_industry_emission_drivers:
       6:
         name: Iron & steel
         column: iron
-        units: Million T coal equivalent / Billion yuan
+        units: million tonnes coal equivalent / billion yuan
         class: line
         y_min: 0
         y_max: 6
@@ -1980,7 +1980,7 @@ china_industry_emission_drivers:
       7:
         name: Non-ferrous metals
         column: non_ferrous
-        units: Million T coal equivalent / Billion yuan
+        units: million tonnes coal equivalent / billion yuan
         class: line
         y_min: 0
         y_max: 6
@@ -1996,7 +1996,7 @@ china_industry_policy:
   description: The government set specific targets for many large industries regarding how much capacity was to be phased out or retired.
   x_axis: date_processed
   type: BarGraph
-  units: "Tn"
+  units: tonnes
   name_column: sector
   x_groups:
     0:
@@ -2013,7 +2013,7 @@ china_industry_policy_2:
   description: Industries were given incentives to reduce energy consumption that varied depending on the region.
   x_axis: date_processed
   type: BarGraph
-  units: Yuan / TCE
+  units: yuan / TCE
   name_column: application
   grouping: y_axis
   x_groups:
@@ -2036,7 +2036,7 @@ china_industry_policy_3:
   description: Industrial plant designated for phase out - or restricted production - paid higher prices for electricity, as penalties were added onto the price for electricity.
   x_axis: date_processed
   type: BarGraph
-  units: Yuan / kWh
+  units: yuan / kWh
   name_column: application
   grouping: y_axis
   x_groups:
@@ -2062,7 +2062,7 @@ china_power_emissions:
       series_1:
         name: Emissions
         column: emissions
-        units: MMTn CO2
+        units: million tonnes CO<sup>2</sup>
         class: line
         y_min: 0
         y_max: 5000
@@ -2070,7 +2070,7 @@ china_power_emissions:
       series_2:
         name: Generation
         column: generation
-        units: MMTn CO2
+        units: million tonnes CO<sup>2</sup>
         class: line
         y_min: 0
         y_max: 5000
