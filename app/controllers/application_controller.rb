@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
 
     sql_regex = [
       /^SELECT \* FROM [a-zA-Z0-9-_]+ order by [a-zA-Z0-9-_]+\s?$/,
+      /^SELECT \* FROM [a-zA-Z0-9-_]+\s?$/,
       /^SELECT (min|max)\((min|max)\) as (min|max), (min|max)\((min|max)\) as (min|max) FROM \((SELECT (min|max)\([a-zA-Z0-9-_]+\) as (min|max), (min|max)\([a-zA-Z0-9-_]+\) as (min|max) FROM [a-zA-Z0-9-_]+( UNION )?)+\) as aux\s?$/
     ]
 
