@@ -1700,7 +1700,7 @@ china_buildings_emissions:
       column: residential_emissions
       units: MMTn CO2
       class: area
-      y_min: 150
+      y_min: 0
       y_max: 500
       strokeColor: "rgba(238,87,41,1)"
       fillColor: "rgba(238,87,41,0.2)"
@@ -1709,7 +1709,7 @@ china_buildings_emissions:
       column: commercial_emissions_fixed
       units: MMTn CO2
       class: area
-      y_min: 150
+      y_min: 0
       y_max: 500
       strokeColor: "rgba(79,110,191,1)"
       fillColor: "rgba(79,110,191,0.2)"
