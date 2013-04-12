@@ -45,7 +45,7 @@
 
     var _canvas = $(".graph-canvas").map(function() { return this.id; });
     var _graphs = [];
-    var _domainq = 'http://cpi.cartodb.com/api/v2/sql?q=SELECT%20min(min)%20as%20min,%20max(max)%20as%20max%20FROM%20(';
+    var _domainq = '/data?q=SELECT%20min(min)%20as%20min,%20max(max)%20as%20max%20FROM%20(';
 
     for (var i = 0; i < _canvas.length; i++) {
       _graphs[i] = $.grep(graphs, function(e){ return e.id === _canvas[i]})[0];
@@ -70,7 +70,7 @@
       year_marker = $(this).append("<div class='year_marker'>1990</div>");
     });
 
-    d3.json(_domainq+')%20as%20aux%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79', function(data) {
+    d3.json(_domainq+')%20as%20aux%20', function(data) {
       var _data = [];
 
       _(data).each(function(elem, key){
@@ -112,7 +112,7 @@
 
     function drawRangeGraph(graphNum, domain) {
 
-      d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+_graphs[graphNum].table+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
+      d3.json('/data?q=SELECT%20*%20FROM%20'+_graphs[graphNum].table+"%20", function(data) {
         var _data = data;
 
         if(domain === undefined) {
@@ -193,7 +193,7 @@
     }
 
     function drawBarGraph(graphNum, domain) {
-      d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+_graphs[graphNum].table+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
+      d3.json('/data?q=SELECT%20*%20FROM%20'+_graphs[graphNum].table+"%20", function(data) {
 
         // Graph settings, domain & ranges calculation, scales, etc.
         var negat = [], posit = [];
@@ -468,7 +468,7 @@
     //graphNum:graphNum of the table on the json,
     //std_domain: specific domain - keep undefined for showing the chart's own domain
     function drawGraph(graphNum, domain) {
-      d3.json('http://cpi.cartodb.com/api/v2/sql?q=SELECT%20*%20FROM%20'+_graphs[graphNum].table+"%20order%20by%20"+_graphs[graphNum].x_axis+"%20&api_key=eca1902cb724e40fdb20fd628b47489b15134d79", function(data) {
+      d3.json('/data?q=SELECT%20*%20FROM%20'+_graphs[graphNum].table+"%20order%20by%20"+_graphs[graphNum].x_axis+"%20", function(data) {
         var _data = data;
 
         if(domain === undefined) {

@@ -13,4 +13,5 @@ ClimatePolicy::Application.routes.draw do
   end
 
   root :to => redirect('/regions/brazil/subjects/emissions')
+  match '/data', :to => 'application#data', as: :data
 end
