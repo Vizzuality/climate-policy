@@ -643,7 +643,7 @@ eu_buildings_emission_drivers:
   description: Population increase and smaller households- which led to more buildings and total floorspace —increased residential emissions. However, these factors were more than offset by increases in energy efficiency and renewable energy and a shift to electricity from other fuel sources.
   description_long: longest
   type: BarGraph
-  units:million tonnes CO<sup>2</sup> / year
+  units: million tonnes CO<sup>2</sup> / year
   name_column: variable
   x_groups:
     0:
@@ -1086,7 +1086,7 @@ us_power_emission_drivers:
   description_long: longest
   table: grid_impact_1_copy_diego_2
   x_axis: date_processed
-  units: km²
+  units: tonnes CO<sup>2</sup>/MWh
   name_column: variable
   type: BarGraph
   x_groups:
