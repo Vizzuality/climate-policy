@@ -29,32 +29,32 @@ emissions:
 
 emission_drivers:
   id: emission_drivers
-  name: Emission Drivers
+  name: Emissions Drivers
   description: Emissions description
   sectors:
     - forestry:
-        description: Forestry description for emission drivers.
+        description: Forestry description for emissions drivers.
     - agriculture:
-        description: Agriculture description for emission drivers.
+        description: Agriculture description for emissions drivers.
     - power:
-        description: Power description for emission drivers.
+        description: Power description for emissions drivers.
     - industry:
-        description: Industry description for emission drivers.
+        description: Industry description for emissions drivers.
     - buildings:
-        description: Buildings description for emission drivers.
+        description: Buildings description for emissions drivers.
     - transport:
-        description: Transport description for emission drivers.
+        description: Transport description for emissions drivers.
   regions:
     - brazil:
-        description: Brazil description for emission drivers.
+        description: Brazil description for emissions drivers.
     - us:
-        description: United States description for emission drivers.
+        description: United States description for emissions drivers.
     - eu:
-        description: European Union description for emission drivers.
+        description: European Union description for emissions drivers.
     - india:
-        description: India description for emission drivers.
+        description: India description for emissions drivers.
     - china:
-        description: China description for emission drivers.
+        description: China description for emissions drivers.
 
 policy:
   id: policy

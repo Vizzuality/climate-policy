@@ -733,7 +733,7 @@ us:
     - emissions:
         description: Emissions description for United States.
     - emission_drivers:
-        description: Emission drivers description for United States.
+        description: emissions drivers description for United States.
     - policy:
         description: Policy description for United States.
 
