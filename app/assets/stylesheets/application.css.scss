@@ -44,7 +44,6 @@
 .header {
   width: 100%;
   min-width: 1040px;
-  height: 730px;
   color: #fff;
 
   .title {
@@ -157,13 +156,14 @@
 }
 
 .content-inner { 
-  border-bottom: 1px solid #ddd; 
+  border-bottom: 1px solid #ddd;
 
   &.static {
 
     h1 {
       font: 40px/1.1 "chaparral-pro", serif;
-      margin: 40px;
+      text-align: left;
+      margin-left: 40px;
     }
 
     h2 {
