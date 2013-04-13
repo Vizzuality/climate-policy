@@ -1487,8 +1487,8 @@ india_power_emission_drivers:
   region_id: india
   sector_id: power
   subject_id: emission_drivers
-  name: Power sector variables and impact on average emissions factor
-  description: Most new generation came from conventional sources (particularly coal), although the past decade saw exponential growth in renewable energy generation. Shown for the EU27.
+  name: Impact on average emissions factor
+  description: Most new generation came from conventional sources (particularly coal), although the past decade saw exponential growth in renewable energy generation.
   table: fuel_sources_copy_diego
   x_axis: date_processed
   series:
