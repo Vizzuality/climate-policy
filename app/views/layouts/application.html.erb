@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
-    <%= stylesheet_link_tag params[:region_id] %>
+    <%= stylesheet_link_tag "home" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
 
@@ -31,15 +31,9 @@
   </head>
   <body>
     <div class="wrapper">
-      <%= render 'shared/header' %>
-
-      <div class="content" id="content">
-        <%= yield %>
-      </div>
+      <%= yield %>
 
       <%= render 'shared/footer' %>
     </div>
-
-    <div class="generic-tooltip"></div>
   </body>
 </html>

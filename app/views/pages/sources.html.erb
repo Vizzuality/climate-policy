@@ -1,0 +1,80 @@
+<header class="header">
+  <nav class="header-nav">
+    <div class="inner">
+      <p class="logo"><a href="/"><%= image_tag 'policy-climate-interactive-logo.png', alt: 'The Policy Climate Interactive', class: 'logo' %></a></p>
+
+      <ul>
+        <li class="nav-item">
+          <a href="#" class="regions dropdown_link">Regions</a>
+          <ul class="navbar_dropdown">
+              <li>
+                <a href="/regions/brazil/subjects/emissions" class="">Brazil</a>
+              </li>
+              <li>
+                <a href="/regions/china/subjects/emissions" class="">China</a>
+              </li>
+              <li>
+                <a href="/regions/eu/subjects/emissions" class="tall">European Union</a>
+              </li>
+              <li>
+                <a href="/regions/india/subjects/emissions" class="">India</a>
+              </li>
+              <li>
+                <a href="/regions/us/subjects/emissions" class="">United States</a>
+              </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="dropdown_link last">Sectors</a>
+          <ul class="navbar_dropdown">
+              <li>
+                <a href="/sectors/power/subjects/emissions">Power</a>
+              </li>
+              <li>
+                <a href="/sectors/industry/subjects/emissions">Industry</a>
+              </li>
+              <li>
+                <a href="/sectors/forestry/subjects/emissions">Forestry</a>
+              </li>
+              <li>
+                <a href="/sectors/buildings/subjects/emissions">Buildings</a>
+              </li>
+              <li>
+                <a href="/sectors/transport/subjects/emissions">Transport</a>
+              </li>
+              <li>
+                <a href="/sectors/agriculture/subjects/emissions">Agriculture</a>
+              </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="inner">
+    <p class="title">The Policy Climate</p>
+    <p class="description">Learn more about The Policy Climate Interactive.</p>
+  </div>
+
+  <div class="navbar clearfix">
+    <nav class="inner">
+      <ul>
+        <li class="menu-item">
+          <%= link_to "The Climate Policy Guide", '/about' %>
+        </li>
+
+        <li class="menu-item">
+          <%= link_to "Data sources", '/sources', class: 'selected' %>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="scroll-shadow"></div>
+  </div>
+</header>
+
+<div class="content" id="content">
+  <div class="content-inner">
+    sources
+  </div>
+</div>
