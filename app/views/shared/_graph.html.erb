@@ -6,9 +6,9 @@
       <span class="type"><%= subitem.name %></span>
 
       <% if graph_configs.size == 1 %>
-        <%= graph_configs.first.name.capitalize %>
+        <%= graph_configs.first.name %>
       <% else %>
-        <%= link_to graph_configs.first.name.capitalize, '#', class: 'graph-link' %>
+        <%= link_to graph_configs.first.name, '#', class: 'graph-link' %>
       <% end %>
     </h3>
 
@@ -17,7 +17,7 @@
         <% graph_configs.each do |graph_config| %>
           <li>
             <h3 class="graph-title">
-              <%= link_to graph_config.name.capitalize, '#', :'data-rel' => graph_config.id %>
+              <%= link_to graph_config.name, '#', :'data-rel' => graph_config.id %>
             </h3>
           </li>
         <% end %>

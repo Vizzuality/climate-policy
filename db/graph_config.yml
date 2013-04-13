@@ -3,7 +3,7 @@ brazil_forestry_emissions:
   region_id: brazil
   sector_id: forestry
   subject_id: emissions
-  name: Annual Area Deforested in Amazon Region in Brazil
+  name: Annual area deforested in Amazon region in Brazil
   description: Deforestation declined rapidly, particularly after major policy changes in 2004 and again in 2008.
   table: deforestation_rate_copy_test_matallo
   x_axis: date_processed
@@ -22,7 +22,7 @@ brazil_forestry_emission_drivers:
   region_id: brazil
   sector_id: forestry
   subject_id: emission_drivers
-  name: Commodity Prices
+  name: Commodity prices
   description: Common drivers of deforestation, such as commodity prices, and land protection appear to have changed deforestation patterns, with large scale deforestation declining much more rapidly than small scale (e.g. tracts of less than 25 hectares).
   description_long: long
   table: commodity_prices_copy_test_matallo
@@ -50,7 +50,7 @@ brazil_forestry_emission_drivers_2:
   region_id: brazil
   sector_id: forestry
   subject_id: emission_drivers
-  name: Index of Change in Deforestation Activity by Size of Deforested Tracts
+  name: Index of change in deforestation activity by size of deforested tracts
   description: Drivers such as commodity prices appear to have changed deforestation patterns, with large scale deforestation declining much more rapidly than small scale (e.g. tracts of less than 25 hectares).
   table: deforestation_polygons_ind_copy_test_matallo
   x_axis: date_processed
@@ -101,13 +101,13 @@ brazil_forestry_policy:
   region_id: brazil
   sector_id: forestry
   subject_id: policy
-  name: Area of Land Under Government Protection
+  name: Area of land under government protection
   description: As an example of increased Brazilian policy efforts, Brazil has increased efforts to reduce deforestation, and the amount of land under government protection has increased significantly since 2001.
   table: protected_lands_copy_test_matallo
   x_axis: date_processed
   series:
     methane_mmtco2e:
-      name: Integral Protection
+      name: Integral protection
       column: integral_protection
       units: thousand km²
       class: area
@@ -116,7 +116,7 @@ brazil_forestry_policy:
       strokeColor: 'rgba(238,87,41,1)'
       fillColor: 'rgba(238,87,41,0.2)'
     nitrous_oxide_mmtco2e:
-      name: Sustainable Use
+      name: Sustainable use
       column: sustainable_use
       units: thousand km²
       class: area
@@ -131,7 +131,7 @@ brazil_agriculture_emissions:
   sector_id: agriculture
   subject_id: emissions
   table: land_use_emissions_copy_test_matallo
-  name: Non-CO2 Greenhouse Gas Emissions
+  name: Non-CO² greenhouse gas emissions
   description: Both land under cultivation and non-CO2 emissions increased.
   x_axis: date_processed
   series:
@@ -144,7 +144,7 @@ brazil_agriculture_emissions:
       y_max: 350
       strokeColor: 'rgba(238,87,41,1)'
     nitrous_oxide_mmtco2e:
-      name: Nitrous Oxide
+      name: Nitrous oxide
       column: nitrous_oxide_mmtco2e
       units: million tonnes CO²e
       class: line
@@ -157,13 +157,13 @@ brazil_agriculture_emissions_2:
   region_id: brazil
   sector_id: agriculture
   subject_id: emissions
-  name: Land Use
+  name: Land use
   table: land_use_emissions_copy_test_matallo
-  description: Both land under cultivation and non-CO2 emissions increased.
+  description: Both land under cultivation and non-CO² emissions increased.
   x_axis: date_processed
   series:
     land_use_million_hectares:
-      name: Land Use
+      name: Land use
       column: land_use_million_hectares
       units: million hectares
       class: line
@@ -176,7 +176,7 @@ brazil_agriculture_emission_drivers:
   region_id: brazil
   sector_id: agriculture
   subject_id: emission_drivers
-  name: Agricultural Production Intensity
+  name: Agricultural production intensity
   table: emissions_drivers_copy_test_matallo
   description: Although the intensity of food production per hectare increased, mechanization did not increase.
   x_axis: date_processed
@@ -219,7 +219,7 @@ brazil_agriculture_emission_drivers_2:
   region_id: brazil
   sector_id: agriculture
   subject_id: emission_drivers
-  name: Agricultural Net Exports
+  name: Agricultural net exports
   table: brazil_ag_2_exports_copy_test_matallo
   description: Increasing land use, some of which satisfied export growth, and some of which satisfied population growth (not shown), was a major driver of growing emissions.
   x_axis: date_processed
@@ -246,14 +246,14 @@ brazil_agriculture_policy:
   region_id: brazil
   sector_id: agriculture
   subject_id: policy
-  name: Subsidies to Agricultural Producers (1995-2010)
+  name: Subsidies to agricultural producers (1995-2010)
   table: brazil_ag_3_credit_subsidies_copy_test_matallo
   description: Brazil made increasing the productivity of agricultural land a priority to reduce expansion into new land and deforestation. Subsidies to producers, in part to modernize their operations, steadily increased over time.
   description_long: long
   x_axis: date_processed
   series:
     credit:
-      name: Credit Subsidies
+      name: Credit subsidies
       column: credit_subsidies
       units: million BRL
       class: line
@@ -261,7 +261,7 @@ brazil_agriculture_policy:
       y_max: 18000
       strokeColor: "#546DBC"
     non_credit:
-      name: Non-Credit Subsidies
+      name: Non-Credit subsidies
       column: non_credit_producer_subsidies
       units: million BRL
       class: line
@@ -269,7 +269,7 @@ brazil_agriculture_policy:
       y_max: 18000
       strokeColor: "#F0542C"
     total:
-      name: Total Subsidies to Producers
+      name: Total subsidies to producers
       column: total_producer_support
       units: million BRL
       class: line
@@ -286,7 +286,7 @@ eu_power_emissions:
   region_id: eu
   sector_id: power
   subject_id: emissions
-  name: Emissions And Generation in the EU27
+  name: Emissions and generation in the EU27
   table: eu_power_1_emissions_generation_copy_test_matallo
   description: Emissions intensity fell fast enough that emissions declined overall, even though electricity generation grew.
   x_axis: date_processed
@@ -313,7 +313,7 @@ eu_power_emission_drivers:
   region_id: eu
   sector_id: power
   subject_id: emission_drivers
-  name: Power Sector Variables And Impact on Average Emissions Factor in the EU27
+  name: Power sector variables and impact on average emissions factor in the EU27
   table: eu_power_2_grid_drivers_copy_test_matallo
   description: During the 1990s, increases in coal and natural gas efficiency and growing nuclear output drove down grid emissions intensity. In the 2000s, the fuel mix shifted away from coal and toward other sources, especially renewable energy. The efficiency of coal plants fell in the 2000s, possibly due to increased sulfur and other pollution controls.
   description_long: longest
@@ -333,7 +333,7 @@ eu_power_policy:
   region_id: eu
   sector_id: power
   subject_id: policy
-  name: Renewables Targets
+  name: Renewables targets
   table: eu_power_3_targets_copy_test_matallo_copy_2
   description: The EU set, and narrowly missed, ambitious renewable energy targets for 2010 for the EU15. For 2020, the EU has set an even more ambitious renewable energy target for the expanded EU27 of 20% of total energy consumption, which translates to 34% of electricity generation from renewable sources.
   description_long: longest
@@ -375,7 +375,7 @@ eu_industry_emissions:
   region_id: eu
   sector_id: industry
   subject_id: emissions
-  name: Industrial Emissions And Production in the EU27
+  name: Industrial emissions and production in the EU27
   table: eu_industry_1_emissions_output_copy_test_matallo
   description: Despite increasing output in the industrial sector, direct emissions fell, while electricity demand rose as the industrial sector shifted fuel consumption towards a less carbon intensive fuel mix.
   description_long: long
@@ -390,7 +390,7 @@ eu_industry_emissions:
       y_max: 3400
       strokeColor: "#546DBC"
     manufacturing_value_add_index:
-      name: Manufacturing Value Add
+      name: Manufacturing value add
       column: manufacturing_value_add_index
       units: index (1990=100)
       class: line
@@ -398,7 +398,7 @@ eu_industry_emissions:
       y_max: 240
       strokeColor: "#F0542C"
     manufacturing_production_index:
-      name: Manufacturing Production
+      name: Manufacturing production
       column: manufacturing_production_index
       units: index (1990=100)
       class: line
@@ -411,7 +411,7 @@ eu_industry_emission_drivers:
   region_id: eu
   sector_id: industry
   subject_id: emission_drivers
-  name: Energy Efficiency Index (Odex) in Industry in the EU27
+  name: Energy efficiency index (Odex) in industry in the EU27
   table: eu_ind_2_sectoral_energy_efficiencies_copy_test_matallo
   description: Industrial energy efficiency improved across the board since 1990. There were no structural changes in industry that affected emissions intensity.
   x_axis: date_processed
@@ -425,7 +425,7 @@ eu_industry_emission_drivers:
       y_max: 160
       strokeColor: "rgba(102,102,102,1)"
     steel:
-      name: Manufacturing Value Add
+      name: Manufacturing value add
       column: steel
       units: index (1990=100)
       class: line
@@ -433,7 +433,7 @@ eu_industry_emission_drivers:
       y_max: 160
       strokeColor: "rgba(79,110,191,1)"
     cement:
-      name: Manufacturing Production
+      name: Manufacturing production
       column: cement
       units: index (1990=100)
       class: line
@@ -470,13 +470,13 @@ eu_industry_policy:
   region_id: eu
   sector_id: industry
   subject_id: policy
-  name: Emissions Targets
+  name: Emissions targets
   table: eu_industry_3_eu_ets_copy_diego_copy_cropped
   description: The EU ETS is the world’s first significant carbon market, and has been operating since 2005. Roughly 45% of the EU’s emissions—including industrial sectors—are covered by the market. In addition, the EU has targeted specific technologies through voluntary agreements and minimum energy performance standards (not shown).
   x_axis: date_processed
   series:
     emissions:
-      name: ETS - Cap Phases 1 & 2
+      name: ETS - Cap phases 1 & 2
       column: eu_ets_cap___phases_1_2
       units: million tones CO²e
       class: bars
@@ -484,7 +484,7 @@ eu_industry_policy:
       y_max: 2500
       strokeColor: "rgba(238,87,41,1)"
     agricultural_production:
-      name: ETS - Cap Phases 3+ (Projection)
+      name: ETS - Cap phases 3+ (projection)
       column: eu_ets_phase_3_cap_projection
       units: million tones CO²e
       class: line
@@ -497,7 +497,7 @@ eu_agriculture_emissions:
   region_id: eu
   sector_id: agriculture
   subject_id: emissions
-  name: Agricultural Emissions in the EU27
+  name: Agricultural emissions in the EU27
   table: eu_agriculture_1_emissions_output_copy_test_matallo
   description: Emissions have declined since 1990, despite a slight increase in agricultural production.
   x_axis: date_processed
@@ -511,7 +511,7 @@ eu_agriculture_emissions:
       y_max: 1000
       strokeColor: "rgba(238,87,41,1)"
     agricultural_production:
-      name: Agricultural Production
+      name: Agricultural production
       column: agricultural_production
       units: million €
       class: line
@@ -524,7 +524,7 @@ eu_agriculture_emission_drivers:
   region_id: eu
   sector_id: agriculture
   subject_id: emission_drivers
-  name: Contribution of Agricultural Emissions Drivers to Changes in Agricultural Greenhouse Gas Emissions in EU27 (Methane)
+  name: Contribution of agricultural emissions drivers to changes in agricultural greenhouse gas emissions in EU27 (Methane)
   table: eu_agriculture_2_emissions_drivers_copy_test_matallo_methane
   description: Methane emissions from livestock declined as the number of cattle decreased.
   type: BarGraph
@@ -543,7 +543,7 @@ eu_agriculture_emission_drivers_2:
   region_id: eu
   sector_id: agriculture
   subject_id: emission_drivers
-  name: Contribution of Agricultural Emissions Drivers to Changes in Agricultural Greenhouse Gas Emissions in EU27 (Nitrous oxide)
+  name: Contribution of agricultural emissions drivers to changes in agricultural greenhouse gas emissions in EU27 (Nitrous oxide)
   table: eu_agriculture_2_emissions_drivers_copy_test_matallo_nitrous_ox
   description: Nitrous oxide emissions from livestock declined as the number of cattle decreased. Nitrous oxide emissions fell, due to decreases in both cropland area and fertilizer intensity.
   type: BarGraph
@@ -562,7 +562,7 @@ eu_agriculture_policy:
   region_id: eu
   sector_id: agriculture
   subject_id: policy
-  name: Nitrate Vulnerable Zones
+  name: Nitrate vulnerable zones
   table: eu_agriculture_3_nvzs_copy_test_matallo_fixed
   description: Most agricultural policy in Europe was developed for reasons beyond climate protection. Nevertheless, these policies had a very real impact on greenhouse gas emissions. For example, the Nitrates Directive encouraged decreasing levels of nitrate fertilizer application, thus reducing NOx emissions.
   x_axis: date_processed
@@ -609,7 +609,7 @@ eu_buildings_emissions:
   region_id: eu
   sector_id: buildings
   subject_id: emissions
-  name: Building Emissions in the EU27
+  name: Building emissions in the EU27
   table: eu_buildings_1_emissions_copy_test_matallo
   description: Emissions associated with direct fuel combustion in the buildings sector fell, but were offset by a shift from direct to indirect emissions due to a rise in electricity consumption.
   x_axis: date_processed
@@ -638,7 +638,7 @@ eu_buildings_emission_drivers:
   region_id: eu
   sector_id: buildings
   subject_id: emission_drivers
-  name: Impacts of Drivers on Residential Emissions
+  name: Impacts of drivers on residential emissions
   table: eu_buildings_2_drivers_copy_test_matallo
   description: Population increase and smaller households- which led to more buildings and total floorspace —increased residential emissions. However, these factors were more than offset by increases in energy efficiency and renewable energy and a shift to electricity from other fuel sources.
   description_long: longest
@@ -658,7 +658,7 @@ eu_buildings_policy:
   region_id: eu
   sector_id: buildings
   subject_id: policy
-  name: EU Policy Towards Referigerating Appliances
+  name: EU policy towards referigerating appliances
   table: eu_buildings_3_labeling_copy_diego
   description: The increasing strictness of labeling standards for refrigerators, introduced in 1995 and updated regularly, demonstrated how EU efficiency standards ratcheted up over the last several years. The efficiency of the worst permissible label now exceeds the top category from 1995.
   x_axis: date_processed
@@ -690,7 +690,7 @@ eu_transport_emissions:
   region_id: eu
   sector_id: transport
   subject_id: emissions
-  name: Transportation Emissions and Passenger Miles and Freight Transport Index
+  name: Transportation emissions and passenger miles and freight transport index
   table: eu_transport_1_emissions_output_copy_test_matallo
   description: Passenger miles and freight transport rose rapidly before declining as a result of the recession. Emissions grew slowly but steadily until they peaked in the mid-2000s.
   description_long: long
@@ -705,7 +705,7 @@ eu_transport_emissions:
       y_max: 1600
       strokeColor: "#546DBC"
     freight:
-      name: Freight Activity
+      name: Freight activity
       column: freight
       units: index (1995=100)
       class: line
@@ -713,7 +713,7 @@ eu_transport_emissions:
       y_max: 150
       strokeColor: "#F0542C"
     passenger:
-      name: Passenger Activity
+      name: Passenger activity
       column: passenger
       units: index (1995=100)
       class: line
@@ -726,7 +726,7 @@ eu_transport_emission_drivers:
   region_id: eu
   sector_id: transport
   subject_id: emission_drivers
-  name: "Emissions Intensity Indices—EU27 + Norway, Switzerland, and Turkey"
+  name: "Emissions intensity indices—EU27 + Norway, Switzerland, and Turkey"
   table: eu_transport_2_emissions_intensities_copy_test_matallo
   description: Emissions intensity declined steadily. Passenger transport efficiency improved more than freight transport efficiency. However, within road transport, freight improved three times as much as passenger travel (18% versus 6%) between 1995 and 2010 (not shown).
   x_axis: date_processed
@@ -761,14 +761,14 @@ eu_transport_policy:
   region_id: eu
   sector_id: transport
   subject_id: policy
-  name: "Emissions Intensity Indices"
+  name: "Emissions intensity indices"
   table: eu_transport_3_fuel_taxes_copy_test_matallo
   description: Starting from a comparatively high point, real fuel taxes were almost flat since the mid-1990s and steadily declined as a proportion of the final fuel price. Rising oil prices rather than government intervention therefore were the main increase to price signals for more efficient road transport. Shown for EU27, Norway, Switzerland, and Turkey.
   description_long: long
   x_axis: date_processed
   series:
     tax_on_diesel:
-      name: Tax on Diesel
+      name: Tax on diesel
       column: tax_on_diesel
       units: EUR / liter
       class: line
@@ -776,7 +776,7 @@ eu_transport_policy:
       y_max: 1800
       strokeColor: "#546DBC"
     tax_on_petrol:
-      name: Tax on Unleaded Petrol
+      name: Tax on unleaded petrol
       column: tax_on_petrol
       units: EUR / liter
       class: line
@@ -784,7 +784,7 @@ eu_transport_policy:
       y_max: 1600
       strokeColor: "#F0542C"
     percentage_of_final_diesel_price_as_tax_processed:
-      name: Percentage of Final Diesel Price as Tax
+      name: Percentage of final diesel price as tax
       column: percentage_of_final_diesel_price_as_tax_processed
       units: "%"
       class: line
@@ -792,7 +792,7 @@ eu_transport_policy:
       y_max: 120
       strokeColor: '#00D9A3'
     percentage_of_final_petrol_price_as_tax_processed:
-      name: Percentage of Final Petrol Price as Tax
+      name: Percentage of final petrol price as tax
       column: percentage_of_final_petrol_price_as_tax_processed
       units: "%"
       class: line
@@ -805,7 +805,7 @@ us_buildings_emissions:
   region_id: us
   sector_id: buildings
   subject_id: emissions
-  name: Building Sector Emissions
+  name: Building sector emissions
   table: emissions_mmtco2e_copy_test_matallo
   description: Emissions grew slowly, but steadily, until 2005, when emissions peaked and slowly declined.
   x_axis: date_processed
@@ -832,7 +832,7 @@ us_buildings_emissions_2:
   region_id: us
   sector_id: buildings
   subject_id: emissions
-  name: Total Residential and Commercial Floorspace
+  name: Total residential and commercial floorspace
   table: buildings_floorspace_billion_square_meters_copy_test_matallo
   description: Total building stock, as reflected by total floor space statistics, grew steadily, while the increase in residential floor space between 1995 and 2005 was particularly noteworthy.
   x_axis: date_processed
@@ -859,7 +859,7 @@ us_buildings_emissions_drivers:
   region_id: us
   sector_id: buildings
   subject_id: emission_drivers
-  name: Contribution of Key Drivers to Increase Or Decrease of Annual Buildings Emissions
+  name: Contribution of key drivers to increase or decrease of annual buildings emissions
   table: changes_in_emissions_drivers_copy_test_matallo
   description: "Growth in population and floor space per person were the largest drivers of buildings emissions. In the late 2000's, energy efficiency gains caught up with slowing floor space growth."
   description_long: longest
@@ -879,13 +879,13 @@ us_buildings_policy:
   region_id: us
   sector_id: buildings
   subject_id: policy
-  name: Building Energy Efficiency Spending by Government
+  name: Building energy efficiency spending by government
   table: energy_efficiency_spending_copy_test_matallo
   description: Efficiency spending by federal and local governments increased over the last decade, with a spike due to the 2009 stimulus.
   x_axis: date_processed
   series:
     energy_efficiency_dsm_spending:
-      name: Energy Efficiency DSM Spending
+      name: Energy efficiency dsm spending
       column: energy_efficiency_dsm_spending
       units: million USD
       class: line
@@ -906,7 +906,7 @@ us_buildings_policy_2:
   region_id: us
   sector_id: buildings
   subject_id: policy
-  name: Building Code Index
+  name: Building code index
   table: code_building_energy_intensity_index_copy_test_matallo
   description: Building codes tightened steadily — particularly for commercial buildings where the federal government played a larger role.
   x_axis: date_processed
@@ -933,7 +933,7 @@ us_transportation_emissions:
   region_id: us
   sector_id: transport
   subject_id: emissions
-  name: Emissions and Transport Activity
+  name: Emissions and transport activity
   description: Both passenger and freight travel increased significantly since 1980. Passenger travel dropped significantly during the recession.
   table: emissions_and_miles_traveled_copy_test_matallo
   x_axis: date_processed
@@ -968,7 +968,7 @@ us_transportation_emissions_drivers:
   region_id: us
   sector_id: transport
   subject_id: emission_drivers
-  name: Emissions Intensity
+  name: Emissions intensity
   description: Large gains in vehicle engine and transmission efficiency did not result in significant fuel efficiency gains, as cars became heavier. There was little shifting between transport modes (not shown).
   table: modal_intensities_copy_test_matallo
   x_axis: date_processed
@@ -1011,7 +1011,7 @@ us_transportation_policy:
   region_id: us
   sector_id: transport
   subject_id: policy
-  name: Corporate Average Fuel Economy Standards
+  name: Corporate average fuel economy standards
   description: Fuel efficiency standards remained largely unchanged for over two decades.  Only recently have standards for passenger vehicles been revisited.
   table: cafe_standards_copy_test_matallo
   x_axis: date_processed
@@ -1054,13 +1054,13 @@ us_power_emissions:
   region_id: us
   sector_id: power
   subject_id: emissions
-  name: Emissions and Generation
+  name: Emissions and generation
   description: There was steady emissions and generation growth through the mid-2000s. Until recently, emissions grew in tandem with increasing electricity demand.
   table: emissions_mmtco2e_and_generation_twh_copy_test_matallo
   x_axis: date_processed
   series:
     total_emissions:
-      name: Total Emissions
+      name: Total emissions
       column: total_emissions
       units: million tonnes CO²
       class: line
@@ -1068,7 +1068,7 @@ us_power_emissions:
       y_max: 4000
       strokeColor: "rgba(238,87,41,1)"
     total_net:
-      name: Total Net Generation
+      name: Total net generation
       column: total_net_generation
       units: TWh
       class: line
@@ -1081,7 +1081,7 @@ us_power_emission_drivers:
   region_id: us
   sector_id: power
   subject_id: emission_drivers
-  name: Power Sector Variables and Impact on Average Emissions Factor
+  name: Power sector variables and impact on average emissions factor
   description: The expansion and increased availability of nuclear in the 1980s and 1990s offset growing emissions from coal. In the 2000s, most factors were aligned to improve emissions intensity, including increasing renewables output and gas replacing coal.
   description_long: longest
   table: grid_impact_1_copy_diego_2
@@ -1105,7 +1105,7 @@ us_power_policy:
   region_id: us
   sector_id: power
   subject_id: policy
-  name: Federal Renewable Energy Incentives
+  name: Federal renewable energy incentives
   description: Both state and federal governments created policies to support renewable energy. The two most prominent of these were federal renewable energy tax incentives and state level renewable portfolio standards.
   table: federal_tax_expenditures_for_renewables_copy_test_matallo
   x_axis: date_processed
@@ -1124,7 +1124,7 @@ us_power_policy_2:
   region_id: us
   sector_id: power
   subject_id: policy
-  name: State Level Renewable Energy Portfolio Standards
+  name: State level renewable energy portfolio standards
   description: Both state and federal governments created policies to support renewable energy. The two most prominent of these were federal renewable energy tax incentives, and state level renewable portfolio standards. These policies, and several other factors, are associated with significant increases in U.S. renewable energy capacity.
   table: weighted_average_state_portfolio_standards_copy_test_matallo
   x_axis: date_processed
@@ -1143,7 +1143,7 @@ us_industry_emissions:
   region_id: us
   sector_id: industry
   subject_id: emissions
-  name: Industry Emissions
+  name: Industry emissions
   description: Industrial emissions declined before the recession even as industrial production rose 
   table: us_industry_1_copy_test_matallo
   x_axis: date_processed
@@ -1162,13 +1162,13 @@ us_industry_emissions_2:
   region_id: us
   sector_id: industry
   subject_id: emissions
-  name: Industrial Output
+  name: Industrial output
   description: Industrial emissions declined even before the recession as industrial production rose.
   table: us_industry_1_copy_test_matallo_2
   x_axis: date_processed
   series:
     manufacturing_value_add:
-      name: Manufacturing Value Add
+      name: Manufacturing value add
       column: manufacturing_value_add
       units: Index (1998=100)
       class: line
@@ -1176,7 +1176,7 @@ us_industry_emissions_2:
       y_max: 160
       strokeColor: "rgba(238,87,41,1)"
     manufacturing_production:
-      name: Manufacturing Production
+      name: Manufacturing production
       column: manufacturing_production
       units: Index (1998=100)
       class: line
@@ -1189,7 +1189,7 @@ us_industry_emission_drivers:
   region_id: us
   sector_id: industry
   subject_id: emission_drivers
-  name: Energy Intensity by Sector
+  name: Energy intensity by sector
   description: As manufacturing grew, industrial sectors generally improved their energy intensity, but in some cases performance declined. Structural changes to U.S. industry led to lower emissions intensity.
   table: us_industry_2_sectoral_intensities_copy_test_matallo
   x_axis: date_processed
@@ -1256,7 +1256,7 @@ us_industry_policy:
   region_id: us
   sector_id: industry
   subject_id: policy
-  name: Number of State Incentive Programs for Industrial Technology Improvement
+  name: Number of state incentive programs for industrial technology improvement
   description: There was little cohesive industrial policy. Participation in the federal industrial assessment program declined, while state level programs grew.
   table: us_industry_3_number_state_incentive_programs_copy_test_matallo
   x_axis: date_processed
@@ -1275,7 +1275,7 @@ us_industry_policy_2:
   region_id: us
   sector_id: industry
   subject_id: policy
-  name: Federal Industrial Audits
+  name: Federal industrial audits
   description: There was little cohesive industrial policy. Participation in the federal industrial assessment program declined, while state level programs grew.
   table: us_industry_3_industrial_assessment_center_copy_test_matallo
   x_axis: date_processed
@@ -1307,7 +1307,7 @@ india_agriculture_emissions:
   region_id: india
   sector_id: agriculture
   subject_id: emissions
-  name: Emissions and Land Use
+  name: Emissions and land use
   description: Land use-related emissions remained relatively flat, as did land under cultivation.
   table: land_use_and_emissions_copy_diego
   x_axis: date_processed
@@ -1321,7 +1321,7 @@ india_agriculture_emissions:
       y_max: 700
       strokeColor: "#546DBC"
     nitrous_oxide:
-      name: Nitrous Oxide
+      name: Nitrous oxide
       column: nitrous_oxide
       units: million tonnes CO²e
       class: line
@@ -1329,7 +1329,7 @@ india_agriculture_emissions:
       y_max: 700
       strokeColor: "#F0542C"
     land_under_cultivation:
-      name: Land Under Cultivation
+      name: Land under cultivation
       column: land_under_cultivation
       units: million hectares
       class: line
@@ -1342,7 +1342,7 @@ india_agriculture_emission_drivers:
   region_id: india
   sector_id: agriculture
   subject_id: emission_drivers
-  name: Agricultural Net Exports
+  name: Agricultural net exports
   description: Output grew to meet domestic food demand (not shown) and the export of agricultural raw materials.
   table: ag_exports_million_usd_copy_diego
   x_axis: date_processed
@@ -1398,7 +1398,7 @@ india_agriculture_emission_drivers_3:
   region_id: india
   sector_id: agriculture
   subject_id: emission_drivers
-  name: Mechanization Indices
+  name: Mechanization indices
   description: Indian agriculture has modernized, as demonstrated by increasing equipment use.
   table: mechanization_copy_diego
   x_axis: date_processed
@@ -1433,7 +1433,7 @@ india_agriculture_policy:
   region_id: india
   sector_id: agriculture
   subject_id: policy
-  name: Central Government Subsidies to Agriculture
+  name: Central government subsidies to agriculture
   description: Indian agricultural policy focused on modernization of the agricultural sector through subsidies. Though greenhouse gases were not specifically targeted in this effort, modernization had a modest effect on total emissions.
   table: government_subsidies_copy_diego
   x_axis: date_processed
@@ -1460,7 +1460,7 @@ india_power_emissions:
   region_id: india
   sector_id: power
   subject_id: emissions
-  name: Greenhouse Gas Emissions and Generation
+  name: Greenhouse gas emissions and generation
   description: Emissions largely tracked the growth in electricity generation.
   table: emissions_generation_copy_diego
   x_axis: date_processed
@@ -1487,8 +1487,8 @@ india_power_emission_drivers:
   region_id: india
   sector_id: power
   subject_id: emission_drivers
-  name: Power Sector Variables and Impact on Average Emissions Factor
-  description: Most new generation came from conventional sources (particularly coal), although the past decade saw exponential growth in renewable energy generation. Shown for the EU27.
+  name: Impact on average emissions factor
+  description: Most new generation came from conventional sources (particularly coal), although the past decade saw exponential growth in renewable energy generation.
   table: fuel_sources_copy_diego
   x_axis: date_processed
   series:
@@ -1570,7 +1570,7 @@ india_power_policy:
   region_id: india
   sector_id: power
   subject_id: policy
-  name: Ireda Loan Distributions
+  name: Ireda loan distributions
   description: Renewable energy growth was supported by increased loan distributions by the central government, including the Indian Renewable Energy Development Agency (IREDA).
   table: ireda_subsidies_copy_diego
   x_axis: date_processed
@@ -1589,7 +1589,7 @@ india_power_policy_2:
   region_id: india
   sector_id: power
   subject_id: policy
-  name: Weighted Average of State Renewable Targets
+  name: Weighted average of state renewable targets
   description: The central government required that each state set renewable purchase obligations that require renewable energy in the mix of electricity generation in each state. The average of these targets reached 5.5% by 2010.
   table: state_rpos_copy_diego
   x_axis: date_processed
@@ -1608,7 +1608,7 @@ india_industry_emissions:
   region_id: india
   sector_id: industry
   subject_id: emissions
-  name: Greenhouse Gas Emissions
+  name: Greenhouse gas emissions
   description: Emissions have risen, but not as rapidly as production.
   table: india_ind_1_emissions_production_copy_diego
   x_axis: date_processed
@@ -1627,7 +1627,7 @@ india_industry_emissions_2:
   region_id: india
   sector_id: industry
   subject_id: emissions
-  name: Industrial Production
+  name: Industrial production
   description: Manufacturing output nearly tripled in India since 1995.
   table: india_ind_2_value_index_copy_diego
   x_axis: date_processed
@@ -1654,7 +1654,7 @@ india_industry_emission_drivers:
   region_id: india
   sector_id: industry
   subject_id: emission_drivers
-  name: Sectoral Intensity Changes
+  name: Sectoral intensity changes
   description: Indian industry largely improved in efficiency, although performance at a sectoral level was mixed. The steel industry emissions intensity increased due to an increase in primary steel production versus scrap.
   table: india_ind_2_sectoral_intensities_copy_diego
   x_axis: date_processed
@@ -1681,7 +1681,7 @@ india_industry_policy:
   region_id: india
   sector_id: industry
   subject_id: policy
-  name: National Energy Conservation Award Scheme
+  name: National energy conservation award scheme
   description: Indian policy towards industrial energy efficiency effectively began in the 2000s, which saw the creation of a number of programs targeting high-visibility energy efficiency programs, the largest of which, the National Conservation Award Scheme, has seen increasing participation over the last decade.
   table: ind_ind_3_awards_scheme_copy_diego
   x_axis: date_processed
@@ -1705,7 +1705,7 @@ china_buildings_emissions:
   region_id: china
   sector_id: buildings
   subject_id: emissions
-  name: Building Sector Emissions
+  name: Building sector emissions
   table: china_bldgs_1_emissions_copy_diego
   description: Reported buildings-related emissions fell during the 1990s, possibly due to district heating improvements, but more likely due to underreporting of coal use and measurement issues. Since 2002, emissions have been rising steadily due to growing energy use in buildings.
   x_axis: date_processed
@@ -1734,7 +1734,7 @@ china_buildings_emission_drivers:
   region_id: china
   sector_id: buildings
   subject_id: emission_drivers
-  name: Energy Consumption by Fuel Source
+  name: Energy consumption by fuel source
   table: buildings_fuel_sources_mtce_copy_diego
   description: Particularly in urban residences, electronics and appliances became a significant end use, more than offsetting efficiency improvements in heating. Appliance use contributed to the increase in share of electricity in energy, as did the shift away from coal use.
   x_axis: date_processed
@@ -1799,7 +1799,7 @@ china_buildings_emission_drivers_2:
   region_id: china
   sector_id: buildings
   subject_id: emission_drivers
-  name: Energy Consumption by Sector
+  name: Energy consumption by sector
   table: china_bldgs_2_geography_copy_diego
   description: Urban residential growth was the primary driver of growth in energy usage, which in turn was the primary cause of increasing emissions, with commercial building energy use contributing a small increase.
   x_axis: date_processed
@@ -1837,7 +1837,7 @@ china_buildings_policy:
   region_id: china
   sector_id: buildings
   subject_id: policy
-  name: Estimated Impact of Policies Targeting Energy Use Reduction
+  name: Estimated impact of policies targeting energy use reduction
   table: china_bldgs_3_policy_copy_diego
   description: Increased enforcement of energy building codes saved an estimated 60 million tonnes of coal equivalent per year, more than all other targeted policies combined.
   type: BarGraph
@@ -1853,7 +1853,7 @@ china_buildings_policy_2:
   region_id: china
   sector_id: buildings
   subject_id: policy
-  name: Funding for Energy Monitoring, Capacity Building, and Equipment Replacement
+  name: Funding for energy monitoring, capacity building, and equipment replacement
   table: china_bldgs_3_policy_funding_energy_monitoring_copy_diego
   description: Both the provincial and central governments provided substantial funding for energy efficiency monitoring and improvements.
   x_axis: date_processed
@@ -1870,7 +1870,7 @@ china_industry_emissions:
   region_id: china
   sector_id: industry
   subject_id: emissions
-  name: Energy Consumption by Industry
+  name: Energy consumption by industry
   table: china_ind_1_energy_consumption_copy_diego
   description: China did not report greenhouse gas emissions from industry, but they were very closely related to energy consumption, which more than doubled since 2002.
   x_axis: date_processed
@@ -1889,7 +1889,7 @@ china_industry_emissions_2:
   region_id: china
   sector_id: industry
   subject_id: emissions
-  name: Industrial Output
+  name: Industrial output
   table: china_ind_2_value_index_copy_diego
   description: By some measures, industrial production output rose almost 20-fold since 1993.
   x_axis: date_processed
@@ -1916,7 +1916,7 @@ china_industry_emission_drivers:
   region_id: china
   sector_id: industry
   subject_id: emission_drivers
-  name: "Sector Energy Intensity"
+  name: "Sector energy intensity"
   table: china_ind_2_sectoral_intensities_copy_diego_fixed_3
   description: Industrial emissions intensity improved dramatically across all sectors, although from a generally high starting point.
   x_axis: date_processed
@@ -1991,7 +1991,7 @@ china_industry_policy:
   region_id: china
   sector_id: industry
   subject_id: policy
-  name: Phase Out Targets
+  name: Phase out targets
   table: china_ind_3_phase_out_targets_copy_diego
   description: The government set specific targets for many large industries regarding how much capacity was to be phased out or retired.
   x_axis: date_processed
@@ -2008,7 +2008,7 @@ china_industry_policy_2:
   region_id: china
   sector_id: industry
   subject_id: policy
-  name: Energy Efficiency Incentives
+  name: Energy efficiency incentives
   table: china_industry_energy_efficiency_incentives_copy_diego
   description: Industries were given incentives to reduce energy consumption that varied depending on the region.
   x_axis: date_processed
@@ -2031,7 +2031,7 @@ china_industry_policy_3:
   region_id: china
   sector_id: industry
   subject_id: policy
-  name: Punitive Pricing
+  name: Punitive pricing
   table: china_industry_punitive_pricing_copy_diego
   description: Industrial plant designated for phase out - or restricted production - paid higher prices for electricity, as penalties were added onto the price for electricity.
   x_axis: date_processed
@@ -2054,7 +2054,7 @@ china_power_emissions:
   region_id: china
   sector_id: power
   subject_id: emissions
-  name: Greenhouse Gas Emissions and Generation
+  name: Greenhouse gas emissions and generation
   table: china_power_1_emissions_generation_copy_diego
   description: Electricity generation and the associated CO2 emissions increased significantly in the past three decades, with generation growth accelerating significantly in the tenth Five Year Plan (2001-2005). Since 2006, the growth in power demand has slowed slightly with CO2 emissions following suit.
   x_axis: date_processed
@@ -2081,7 +2081,7 @@ china_power_emission_drivers:
   region_id: china
   sector_id: power
   subject_id: emission_drivers
-  name: Fuel Sources for Power Generation
+  name: Fuel sources for power generation
   table: china_power_2_fuel_sources_copy_diego
   description: The vast majority of increased generation came from conventional sources, primarily coal. However, the past decade saw exponential growth in low-carbon fuel sources, such as renewable energy, although this energy represented a very small portion of overall electricity production.
   x_axis: date_processed
@@ -2137,7 +2137,7 @@ china_power_policy:
   region_id: china
   sector_id: power
   subject_id: policy
-  name: Total Installed Capacity Targets
+  name: Total installed capacity targets
   table: china_power_3_installed_capacity_targets_copy_diego
   description: Policy encouraged increased renewable energy deployment through a mix of generation targets.
   x_axis: date_processed

@@ -156,7 +156,134 @@
   }
 }
 
-.content-inner { border-bottom: 1px solid #ddd; }
+.content-inner { 
+  border-bottom: 1px solid #ddd; 
+
+  &.static {
+
+    h1 {
+      font: 40px/1.1 "chaparral-pro", serif;
+      margin: 40px;
+    }
+
+    h2 {
+      font: 35px/1.1 "chaparral-pro", serif;
+      color: #333;        
+    }
+
+    h3 {
+      font: 24px/1.1 "open-sans", sans-serif;
+      color: #666;
+      padding: 35px 0 0 0;
+    }
+
+    h4 {
+      margin: 20px 0 5px;
+      font: bold 13px/1.1 "open-sans", sans-serif;
+      color: #333;
+    }
+
+    p {
+      font: 16px "open-sans" sand-serif;
+      color: #666;
+      width: 693px;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+
+    a {
+      text-decoration: none;
+      color: #F0522C;
+      &:hover {
+        text-decoration: underline;
+      };
+    }
+
+    .margin30 {
+      padding: 30px 0 0 0;
+    }
+
+    .module {
+      border-top: 1px solid #CCC;
+      padding: 40px;
+
+      h2 {
+        margin-bottom: 15px;
+      }
+
+      ul {
+        width: 693px;
+
+        li {
+          margin: 0 0 15px 0;
+          padding-left: 20px;
+          background: image-url("bullet.png") no-repeat 0px 4px;          
+          font: 16px "open-sans" sans-serif;
+          color: #666;        
+        }
+      }
+
+    }
+
+    table {
+
+      margin: 30px 0 30px 0;
+      width: 693px;
+      font: 13px "open-sans" sans-serif;
+      font-weight: bold;
+      color: #666;
+
+      tr {
+
+        th {
+          text-align: center;
+          height: 50px;
+          vertical-align: middle;
+        }
+        td {
+          width: 100px;
+          border: 1px solid #ccc;
+          height: 70px;
+
+          &.first {
+            border: none;
+          }
+
+          &.tick {
+            background: image-url('tick.png') no-repeat 48px 30px;
+          }
+
+        }
+      }
+    }
+
+    .region_sources {
+
+      border-top: 1px solid #CCC;
+      padding: 40px;
+
+      p {
+        font: 15px/1.2 "open-sans", sans-serif;
+        color: #666;
+        width: 693px;
+      }
+
+      ul li {
+        width: 693px;
+        font: 15px/1.2 "open-sans", sans-serif;
+        color: #666;
+        margin: 10px 0 0 0;
+      }
+
+
+    }
+
+
+
+  }
+}
 
 .content-footer { text-align: center; }
 
@@ -222,3 +349,7 @@
 
 .navbar_dropdown,
 .graph_dropdown { display: none; }
+
+.static_content {
+  padding: 40px;  
+}
