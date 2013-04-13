@@ -7,8 +7,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
-    <%= stylesheet_link_tag params[:sector_id] %>
-    <%= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag "regions" %>
+    <%= javascript_include_tag "regions" %>
     <%= csrf_meta_tags %>
 
     <!--[if IE]>
@@ -30,7 +30,7 @@
     </script>
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper <%= params[:sector_id] %>">
       <%= render 'shared/header' %>
 
       <div class="content" id="content">

@@ -12,6 +12,7 @@ group :assets do
 end
 
 gem 'jquery-rails', '~> 2.2.1'
+gem 'jquery-migrate-rails'
 gem 'underscore-rails'
 
 group :development do

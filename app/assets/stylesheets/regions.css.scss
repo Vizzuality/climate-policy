@@ -1,0 +1,182 @@
+//= require application
+
+@import 'compass/css3';
+
+
+.header {
+  position: absolute;
+  z-index: 500; /* for dropdowns */
+  height: 660px;
+
+  .description { padding-bottom: 50px; }
+}
+
+.navbar {
+  position: absolute;
+  top: 660px;
+}
+
+.content {
+  padding-top: 720px;
+  border-top: 0;
+}
+
+.content-footer {
+  margin: 0 auto;
+  width: 200px;
+}
+
+.brazil .header {
+  background-image:
+    image-url('pattern.png'),
+    image-url('brazil-bg.png');
+  @include background-size(50px, cover);
+}
+
+.china .header {
+  background-image:
+    image-url('pattern.png'),
+    image-url('china-bg.png');
+  @include background-size(50px, cover);
+}
+
+.eu .header {
+  background-image:
+    image-url('pattern.png'),
+    image-url('eu-bg.png');
+  @include background-size(50px, cover);
+}
+
+.india .header {
+  background-image:
+    image-url('pattern.png'),
+    image-url('india-bg.png');
+  @include background-size(50px, cover);
+}
+
+.us .header {
+  background-image:
+    image-url('pattern.png'),
+    image-url('us-bg.png');
+  @include background-size(50px, cover);
+}
+
+.power .header {
+  background-image:
+    image-url('pattern.png'),
+    image-url('power-bg.png');
+  @include background-size(50px, cover);
+}
+
+.industry .header {
+  background-image:
+    image-url('pattern.png'),
+    image-url('industry-bg.png');
+  @include background-size(50px, cover);
+}
+
+.forestry .header {
+  background-image:
+    image-url('pattern.png'),
+    image-url('forestry-bg.png');
+  @include background-size(50px, cover);
+}
+
+.buildings .header {
+  background-image:
+    image-url('pattern.png'),
+    image-url('buildings-bg.png');
+  @include background-size(50px, cover);
+}
+
+.transport .header {
+  background-image:
+    image-url('pattern.png'),
+    image-url('transport-bg.png');
+  @include background-size(50px, cover);
+}
+
+.header {
+  background-image:
+    image-url('pattern.png'),
+    image-url('agriculture-bg.png');
+  @include background-size(50px, cover);
+}
+
+.subject,
+.slide { padding: 40px; }
+
+.subject {
+  .title {
+    font: 55px/1.1 "chaparral-pro", serif;
+
+    sup {
+      display: block;
+      font: 600 12px "open-sans", sans-serif;
+      text-transform: uppercase;
+      color: #BABABA;
+    }
+  }
+}
+
+.nav-link { @include opacity(.5); }
+
+.scroll {
+  position: absolute;
+  bottom: 0;
+  width: 960px;
+
+  &:hover .nav-link { @include opacity(1); }
+
+  em {
+    position: relative;
+    top: 5px;
+    display: inline-block;
+    width: 18px;
+    height: 20px;
+    padding-right: 10px;
+    vertical-align: 1;
+    background: image-url('scroll-icon.png') no-repeat;
+  }
+}
+
+.scroll-shadow {
+  position: relative;
+  display: none;
+  bottom: -60px;
+  margin: 0 auto;
+  width: 1038px;
+  height: 10px;
+  background: image-url('scroll-shadow.png') repeat-x;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+.scroll-nav {
+  width: 960px;
+
+  .scroll-controls { padding: 0 20px; }
+}
+
+.scroll-prev {
+  float: left;
+  margin-left: -150px;
+
+  i { background-position: 0 -71px; }
+}
+
+.scroll-next {
+  float: right;
+  margin-right: -150px;
+
+  i { background-position: 0 -142px; }
+}

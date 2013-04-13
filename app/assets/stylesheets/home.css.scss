@@ -2,9 +2,115 @@
 
 @import 'compass/css3';
 
+
 .header {
   background-image:
     image-url('pattern.png'),
     image-url('home-bg.png');
   @include background-size(50px, cover);
+}
+
+.tagline { margin-top: 75px; }
+
+.content { margin-top: -52px; }
+
+.content-header {
+  padding: 37px 0 28px;
+  font: 35px "chaparral-pro", serif;
+  text-align: center;
+  color: #333;
+}
+
+.view {
+  float: left;
+  width: 346px;
+  font: 15px/1.4 "open-sans", sans-serif;
+  font-size: 15px;
+
+  &:hover {
+    position: relative;
+    z-index: 200;
+
+    &:first-child {
+      a { margin-left: -11px; }
+      .thumbnail { width: 367px; }
+    }
+
+    a { margin: -10px -10px -11px; }
+
+    .view-inner {
+      padding: 30px 40px 40px;
+      border: 1px solid rgba(#000, .2);
+      border-top: 0;
+    }
+
+    .thumbnail {
+      height: 247px;
+      width: 366px;
+      background-position: center top;
+    }
+  }
+
+  a {
+    display: block;
+    min-height: 605px;
+    text-decoration: none;
+    color: #666;
+    background: #fff;
+  }
+
+  + .view .view-inner{ border-left: 1px solid rgba(#000, .2); }
+}
+
+.view-inner {
+  padding: 30px;
+
+  p {
+    clear: left;
+    display: block;
+    padding-top: 20px;
+    height: 180px;
+  }
+}
+
+.thumbnail {
+  height: 237px;
+  width: 346px;
+}
+
+.thumbnail { background: image-url('us_climate_policy.png') no-repeat center -10px; }
+.thumbnail_2 { background-image: image-url('emission_drivers_power.png'); }
+.thumbnail_3 { background-image: image-url('forest_brazil.png'); }
+
+.view-title {
+  width: 80%;
+  margin: -3px 0 20px;
+  height: 60px;
+  font-size: 24px;
+  line-height: 1.1;
+  color: #F0522C;
+}
+
+.button {
+  padding: 8px;
+  text-transform: uppercase;
+  @include border-radius(3px);
+  font-size: 13px;
+  font-weight: bold;
+  background: #222;
+  color: #fff;
+}
+
+.content-footer {
+  border: 1px solid #ddd;
+  border-top: 0;
+  padding: 40px;
+  font: 21px "open-sans", sans-serif;
+  background: rgba(#000, .07);
+  color: #666;
+
+  a {
+    text-decoration: none;
+    color: #F0522C;
+  }
 }

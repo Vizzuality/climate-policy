@@ -8,53 +8,52 @@
   var LINE_DOT_R = 4;
   var INTERPOLATE_METHOD = "cardinal";
 
-  //svg for every graph
+  //graphs svg
   var svg = [];
-
-  var LINE_DOT_R = 4;
   var x_scale;
-
   var circle_locked = false;
 
   function addLegendElement(container_id, color, element_id, text) {
-    $("#"+container_id).find(".graph-legend").prepend('<li><div class="legend-item" style="background-color:'+color+'"></div><span id='+element_id+' class="legend-label">'+text+'</span></li>');
-      // .attr("r", LINE_DOT_R);      
+    $('#'+container_id).find('.graph-legend').prepend('<li><div class="legend-item" style="background-color:'+color+'"></div><span id='+element_id+' class="legend-label">'+text+'</span></li>');
   }
 
   function updateOverlayLine(time) {
     var x = Math.round(parseFloat(x_scale(time)))-1;
-    d3.selectAll(".year_marker")
-      .text((time.getMonth()+1)+"/"+time.getFullYear())
-    $(".year_marker").css('left',x-35);
-    $(".overlay-line")
-      .attr("transform", "translate(" + x + ",0)")
-      .attr("css", "visibility: visible;");
+    d3.selectAll('.year_marker')
+      .text((time.getMonth()+1)+'/'+time.getFullYear());
+    $('.year_marker').css('left',x-35);
+    $('.overlay-line')
+      .attr('transform', 'translate('+x+',0)')
+      .attr('css', 'visibility: visible;');
   }
 
   function moveOverlayLine() {
-    if (circle_locked) return;
     var mouse_x = d3.mouse(this)[0];
     var time = new Date(x_scale.invert(mouse_x));
+
+    if (circle_locked) return;
+
     updateOverlayLine(time);
+
     if(mouse_x < -2 || mouse_x > 1038) {
-      d3.selectAll(".year_marker").style("visibility", "hidden");
+      d3.selectAll('.year_marker').style('visibility', 'hidden');
     };
   }
 
   $(document).ready(function() {
     //Creates generic tooltip
-    $(".generic_tooltip").remove();
+    $('.generic_tooltip').remove();
 
-    var tooltip = d3.select("body")
-      .append("div")
-      .attr("class", "tooltip generic_tooltip tooltip-top");
+    var tooltip = d3.select('body')
+      .append('div')
+      .attr('class', 'tooltip generic_tooltip tooltip-top');
 
-    var _canvas = $(".graph-canvas").map(function() { return this.id; });
+    var _total_graphs = $('.graph-canvas').map(function() { return this.id; });
     var _graphs = [];
     var _domainq = '/data?q=SELECT%20min(min)%20as%20min,%20max(max)%20as%20max%20FROM%20(';
 
-    for (var i = 0; i < _canvas.length; i++) {
-      _graphs[i] = $.grep(graphs, function(e){ return e.id === _canvas[i]})[0];
+    for (var i = 0; i < _total_graphs.length; i++) {
+      _graphs[i] = $.grep(graphs, function(e){ return e.id === _total_graphs[i]})[0];
     }
 
     //Creates the query needed for calculating the default domain for the charts
