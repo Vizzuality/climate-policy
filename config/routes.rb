@@ -12,7 +12,7 @@ ClimatePolicy::Application.routes.draw do
     end
   end
 
-  root :to => redirect('/home')
+  match '/', :to => 'pages#home', as: :home
   match '/data', :to => 'application#data', as: :data
 
   {get: [:home, :about, :sources]}.each do |method, actions|
