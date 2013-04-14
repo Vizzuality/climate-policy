@@ -702,7 +702,7 @@ eu_transport_emissions:
       units: million tonnes CO₂
       class: line
       y_min: 0
-      y_max: 1600
+      y_max: 2000
       strokeColor: "#546DBC"
     freight:
       name: Freight activity
