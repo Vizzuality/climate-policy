@@ -334,6 +334,12 @@ eu:
             underlying_changes:
              - <dl><dt>Change in the make-up of European industry in early 1990s:</dt><dd>Industry saw energy efficiency improvements and a shift to less energy-intensive activities</dd><dd>Closure of energy-intensive industries in Eastern Europe (EEA 2011)</dd><dd>Significant growth in gross value added (GVA) of services and products</dd></dl>
              - <dl><dt>Low gas prices drove fuel switch from coal to gas in the industry sector (EEA 2011)</dt></dl>
+          _1990:
+            description: ""
+            policy_barriers: 
+             - 
+            underlying_changes:
+             -
           _2000:
             description: Regulatory action on CO₂ and other pollutants from the 1990s was in full swing and further refined while Europe’s evolving Emissions Trading System (ETS) commenced mid-decade. Both contended with the economic downturn later in the decade.
             policy_barriers: 
