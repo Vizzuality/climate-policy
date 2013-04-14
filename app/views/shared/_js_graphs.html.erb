@@ -614,9 +614,9 @@
             extended_data_col.unshift(fake_left);
           }
 
-          if (new Date(extended_data_col[extended_data_col.length -1]['date_processed']).getFullYear() > (domain[1].getFullYear() -2)) {
+          if (new Date(extended_data_col[extended_data_col.length -1]['date_processed']).getFullYear() > (domain[1].getFullYear() - 1)) {
             var fake_right = jQuery.extend(true,{},extended_data_col[extended_data_col.length - 1]);
-            fake_right[x_col] = (parseInt(fake_right[x_col])+2)+"";
+            fake_right[x_col] = (parseInt(fake_right[x_col])+4)+"";
             extended_data_col.push(fake_right);
           }
 
