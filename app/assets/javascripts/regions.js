@@ -57,16 +57,16 @@ $(document).ready(function() {
   // position scroll link on scroll and resize
   $(window)
     .scroll(positionScroll)
-    .resize(positionScroll)
+    .resize(positionScroll);
 
   // nav links
-  $(document).ajaxStart(function(){
+  $(document).ajaxStart(function() {
     var target = document.getElementById('content');
     var spinner = new Spinner(spinnerOpts).spin(target);
 
     $('.content-inner').css('opacity', '.2');
     $('.content-footer').css('opacity', '.2');
-  }).ajaxStop(function(){
+  }).ajaxStop(function() {
     $('.content-inner').css('opacity', '1');
     $('.content-footer').css('opacity', '1');
 
@@ -126,7 +126,7 @@ $(document).ready(function() {
         adjust: { y: -16, x: -20 }
       },
       show: {
-        event: event.type,
+        event: e.type,
         ready: true,
         effect: function() {
           $(this).show().css('opacity', '0').animate({ opacity: 1 }, { duration: 100 });

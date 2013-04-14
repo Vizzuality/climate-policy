@@ -23,7 +23,7 @@ $(document).ready(function() {
         adjust: { y: -20 }
       },
       show: {
-        event: event.type,
+        event: e.type,
         ready: true,
         effect: function() {
           $(this).show().css('opacity', '0').animate({ opacity: 1 }, { duration: 100 });
