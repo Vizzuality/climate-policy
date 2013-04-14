@@ -17,8 +17,16 @@ var spinnerOpts = {
 
 function animateSliders() {
   // Adjusting decades description height on load
+  var slideH = "";
+
+  if($("#slide1").is(':visible')) {
+    slideH = $("#slide1").height()+80
+  } else {
+    slideH = $("#slide2").height()+80
+  }
+
   $('.slides').animate({
-    height: $("#slide1").height()+80,
+    height: slideH
   });
 }
 
