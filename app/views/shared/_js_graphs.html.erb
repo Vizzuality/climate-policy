@@ -111,13 +111,13 @@
         if(_graphs[i].type == 'BarGraph') {
           drawBarGraph(i, std_domain);
         } else if(_graphs[i].type == 'RangeGraph') {
-          drawRangeGraph(i, std_domain);        
+          drawRangeGraph(i, std_domain);      
         } else {
           drawGraph(i, std_domain);
         }
-
-        console.log(_graphs[i]);
+        console.log("Graph "+i+"drawn!", _graphs[i]);
       }
+
     })
 
     function drawRangeGraph(graphNum, domain) {
@@ -342,7 +342,7 @@
               .attr("x1", label_w+group_w*j+zero_x)
               .attr("y1", labels_start_y)
               .attr("x2", label_w+group_w*j+zero_x)
-              .attr("y2", labels_start_y+actual_h-13)
+              .attr("y2", labels_start_y+actual_h-4)
               .style("stroke", "#ddd")
               .style("shape-rendering", "crispEdges");
           }

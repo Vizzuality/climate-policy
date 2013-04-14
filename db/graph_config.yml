@@ -1256,7 +1256,7 @@ us_industry_policy:
   region_id: us
   sector_id: industry
   subject_id: policy
-  name: Number of state incentive programs for industrial technology improvement
+  name: State incentive programs for industrial technology improvement
   description: There was little cohesive industrial policy. Participation in the federal industrial assessment program declined, while state level programs grew.
   table: us_industry_3_number_state_incentive_programs_copy_test_matallo
   x_axis: date_processed

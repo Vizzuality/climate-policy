@@ -140,7 +140,8 @@ china:
           _1980:
             description: Starting from a very high energy intensity level, China initiated two decades of energy efficiency investment and improvement. GDP grew faster than energy demand. China also began some market reforms and took first steps towards building an  initial institutional framework for environmental protection.
             policy_barriers: 
-             - <dl><dt>Energy Efficiency Target: quadruple GDP and only double energy consumption 1980-2000 (Levin 2009)</dt><dd>Energy effciency investment 12% of total energy investment in first years</dd><dd>Energy effciency improvement via low-hanging fruit fixes and practices</dd><dd>Established new institutions:</dd><dd>China Energy Conservation Investment Corporation, 1988</dd><dd>Bureau of Energy-Saving and Comprehensive Energy Utilization under State Planning Commission Market price reform, 1988</dd><dd>Dual pricing system (state-owned enterprises permitted to sell commodities at market prices outside planned quota)</dd></dl>
+             - <dl><dt>Energy Efficiency Target:</dt><dd>Quadruple GDP and only double energy consumption 1980-2000 (Levin 2009)</dt><dd>Energy effciency investment 12% of total energy investment in first years</dd><dd>Energy effciency improvement via low-hanging fruit fixes and practices</dd></dl>
+             - <dl><dt>Established new institutions:</dt><dd>China Energy Conservation Investment Corporation, 1988</dd><dd>Bureau of Energy-Saving and Comprehensive Energy Utilization under State Planning Commission Market price reform, 1988</dd><dd>Dual pricing system (state-owned enterprises permitted to sell commodities at market prices outside planned quota)</dd></dl>
              - <dl><dt>Institutional structure for environmental protection grew (Qui 2009)</dt><dd>Environmental Protection Commission established under State Council, 1984</dd><dd>National Environmental Protection Agency established, 1984</dd></dl>
             underlying_changes:
              - <dl><dt>Reform and Opening Up Policy of 1978 introduced economic incentives and some competition</dt></dl>
@@ -165,7 +166,7 @@ china:
              - <dl><dt>Return to energy conservation, 2005</dt><dd>2005 target to reduce energy intensity by 20% by 2010 (Zhou 2010)</dd><dd>NDRC focus on effciency revived (Zhou 2010)</dd><dd>11th FYP EE Programs targeted major efficiency opportunities</dd><dd>Top 1,000 Industrial Enterprises energy saving targets</dd><dd>Phasing-Out of Outdated Capacity Project</dd><dd>Ten Key Energy-Saving Technology Improvement Projects Energy Conservation Law amended 2007</dd><dd>Mainstreamed Energy Conservation as a fundamental national strategy</dd><dd>Announced Target Responsibility System and evaluation measures</dd></dl>
              - <dl><dt>Differential electricity pricing, late 2000s</dt></dl>
              - <dl><dt>NDRC set energy policy and prices, but energy management still spread across agencies</dt></dl>
-             - <dl><dt>Rhetoric changed: Chinese Communist Party 17th Congress raised “ecological civilization” for first time</dt></dl>
+             - <dl><dt>Rhetoric changed:</dt><dd>Chinese Communist Party 17th Congress raised “ecological civilization” for first time</dd></dl>
              - <dl><dt>11th FYP set first air quality targets </dt></dl>
              - <dl><dt>SEPA elevated to Ministry of Environmental Protection, 2008</dt></dl>
             underlying_changes:
@@ -209,7 +210,7 @@ china:
              - <dl><dt>Nuclear power generation began</dt></dl>
              - <dl><dt>Three Gorges Dam hydroelectric project (22GW) began construction, 1992</dt></dl>
              - <dl><dt>Became net importer of oil, 1993</dt></dl>
-             - <dl><dt>Energy shortage early 1990s: small self-use industrial power generators boomed </dt></dl>
+             - <dl><dt>Energy shortage early 1990s:</dt><dd>Small self-use industrial power generators boomed.</dd></dl>
              - <dl><dt>1997 Asian financial crisis contributed to small coal-fired plant closures in late 1990s</dt></dl>
           _2000:
             description: China continued its corporatization of state assets. Balancing demand and supply became a key challenge as economic growth continually outpaced expectations. After marked increases in carbon intensity in the early 2000s, the late 2000s brought new emphasis on renewable energy and re-emphasis on energy conservation, along with a rapid improvement in the average efficiency of coal fired power plants.
@@ -259,10 +260,16 @@ eu:
           _1990:
             description: High fuel taxes, particularly on petrol, maintained pressure to improve fuel efficiency throughout the 1990s, and began a trend towards increasing the use of diesel in passenger cars. Overall transport demand grew and greenhouse gas emissions from the sector increased over the 1990s. The 1990s laid policy groundwork for lowering vehicle greenhouse gas emissions rates in the next decade.
             policy_barriers: 
-              - <dl><dt>1995 EU strategy to reduce passenger vehicle CO₂ emissions established 3-pillared approach: voluntary commitments, improved consumer information, and fiscal measures (EC 2007)</dt><dd>EC signed commitments in 1995 with major automobile manufacturer associations to target 140 gCO₂ per km for new vehicle fleets by 2009 (ICCT 2013)</dd></dl>
+              - <dl><dt>1995 EU strategy to reduce passenger vehicle CO₂ emissions established 3-pillared approach:</dt><dd>Voluntary commitments</dd><dd>Improved consumer information</dd><dd>Fiscal measures (EC 2007)</dd></dl>
+              - <dl><dt>EC signed commitments in 1995 with major automobile manufacturer associations to target 140 gCO₂ per km for new vehicle fleets by 2009 (ICCT 2013)</dt></dl>
               - <dl><dt>High tax premiums on fuel across EU Member States</dt><dd>Fuel taxes remained flat after the mid-1990s</dd><dd>Diesel taxes were lower than petrol taxes</dd></dl>
             underlying_changes:
-              -
+              - <dl><dt>High fuel prices</dt></dl>
+              - <dl><dt>Shift towards diesel passenger vehicles from petrol vehicles</dt></dl>
+              - <dl><dt>Increase in demand across all modes of freight and passenger transport from 1995 onward (EEA 2013a, 2013b)</dt><dd>Passenger air transport demand rose by 46%</dd><dd>High-speed rail passenger kilometers traveled steadily grew across decade (EC 2010)</dd><dd>Freight road, rail, and maritime transport all rose by over 10%</dd></dl>
+              - <dl><dt>Modal share of freight and passenger transport</dt><dd>Shares of freight transport modes remained stable</dd><dd>4% modal shift from passenger road to passenger air transport</dd></dl>
+              - <dl><dt>Increased fuel e!ciency across passenger (1%) and freight ground (6%) transport (EEA 2011)</dt></dl>
+              - <dl><dt>Increased private vehicle ownership (EEA 2011)</dt></dl>
           _2000:
             description: Transport demand and vehicle efficiency continued to grow across the decade; including a significant shift to diesel in passenger cars. In the late 2000s, all forms of transport, and particularly air travel, fell with the high oil prices and the economic crisis of the late 2000s. The EU mandated increasing biofuel use for transport.
             policy_barriers:           
@@ -405,11 +412,11 @@ eu:
              - <dl><dt>Growing IT-build out and household electronics and appliance uptake</dt></dl>
   subjects:
     - emissions:
-        description: These graphs show the changes in emissions and growth in the Power, Industry, and Buildings sectors in EU
+        description: These graphs show the changes in emissions and growth in the Power, Industry, and Buildings sectors in the EU
     - emission_drivers:
-        description: These graphs show the changes in emissions drivers in the Power, Industry, and Buildings sectors in EU
+        description: These graphs show the changes in emissions drivers in the Power, Industry, and Buildings sectors in the EU
     - policy:
-        description: These graphs show the changes in policy in the Power, Industry, and Buildings sectors in EU
+        description: These graphs show the changes in policy in the Power, Industry, and Buildings sectors in the EU
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -720,9 +727,9 @@ us:
              - <dl><dt>Recession 2008-2009</dt></dl>
   subjects:
     - emissions:
-        description: Emissions description for United States.
+        description: These graphs show the changes in emissions and growth in the Power, Buildings, Industry, Transportation, and Agriculture sectors in US
     - emission_drivers:
-        description: emissions drivers description for United States.
+        description: These graphs show the changes in emissions drivers in the Power, Buildings, Industry, Transportation, and Agriculture sectors in US
     - policy:
-        description: Policy description for United States.
+        description: These graphs show the changes in policy in the Power, Buildings, Industry, Transportation, and Agriculture sectors in US
 
