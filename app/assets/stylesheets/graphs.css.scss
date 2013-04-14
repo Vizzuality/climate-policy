@@ -1,6 +1,8 @@
 @import "compass/css3";
 
 
+.graph { position: relative; }
+
 .years {
   position: relative;
   border: 1px solid rgba(#000, .1);
@@ -56,8 +58,6 @@
 }
 
 .graph-line {
-  position: relative;
-
   &.first {
     .years.years-first { display: block; }
     .years-middle,
@@ -116,6 +116,8 @@
 
 
 .graph-canvas {
+  position: relative;
+  z-index: 300;
   height: 388px;
   width: 1038px;
   overflow: hidden;
@@ -367,8 +369,3 @@ svg {
   visibility: hidden;
   fill: #000;
 }
-
-image,
-.graph-gradient,
-.overlay-line
-.scroll-shadow { pointer-events: none; } /* remove events for overlay */

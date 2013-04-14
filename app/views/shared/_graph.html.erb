@@ -35,13 +35,13 @@
     <% end %>
   </div>
 
+  <div class="graph-gradient"></div>
+
   <% graph_configs.each_with_index do |graph_config, index| %>
     <div class="clearfix graph-canvas graph-canvas-<%= graph_config.type == 'BarGraph' ? 'bars' : 'line' %> <%= 'hidden' if index > 0 %>" id="<%= graph_config.id %>">
       <ul class="graph-legend"></ul>
     </div>
   <% end %>
-
-  <div class="graph-gradient"></div>
 
   <%= render 'shared/years_last' %>
 </div>
