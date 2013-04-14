@@ -708,9 +708,9 @@ us:
              - <dl><dt>Recession 2008-2009</dt></dl>
   subjects:
     - emissions:
-        description: Emissions description for United States.
+        description: These graphs show the changes in emissions and growth in the Power, Buildings, Industry, Transportation, and Agriculture sectors in US
     - emission_drivers:
-        description: emissions drivers description for United States.
+        description: These graphs show the changes in emissions drivers in the Power, Buildings, Industry, Transportation, and Agriculture sectors in US
     - policy:
-        description: Policy description for United States.
+        description: These graphs show the changes in policy in the Power, Buildings, Industry, Transportation, and Agriculture sectors in US
 
