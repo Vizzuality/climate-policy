@@ -117,7 +117,6 @@
         } else {
           drawGraph(i, std_domain);
         }
-        console.log("Graph "+i+"drawn!", _graphs[i]);
       }
 
     })
@@ -328,7 +327,9 @@
               return d['label'];
             })
             .attr("x", function(d,i) {
-              return label_w + group_w*i + zero_x - this.getComputedTextLength()/2;
+              var labelWidth = this.getComputedTextLength();
+              if (labelWidth ==0) labelWidth = 70;
+              return label_w + group_w*i + zero_x - labelWidth/2;
             })
             .attr("y", function(d,i) {
               return labels_start_y-30;
@@ -1055,7 +1056,6 @@
           svg[graphNum].node().appendChild(this);
         });
 
-        console.log($(".svg"+graphNum).closest('.graph').fadeIn());
       });
     }
 
