@@ -65,7 +65,7 @@ buildings:
   id: buildings
   name: Buildings
   description: "Policy activity in the buildings sector accelerated in the 1990s in Europe, after 2000 in the U.S., and more recently in China. Despite efficiency improvements in heating, cooling, and lighting, growth in building floor space and increasing appliance and electronics use have mostly offset efficiency gains."
-  tagline: POLICY GAINS OFFSET BY OTHER FACTORS.
+  tagline: POLICY GAINS OFFSET BY OTHER FACTORS
   decades_analysis:
   subjects:
     - emissions:
