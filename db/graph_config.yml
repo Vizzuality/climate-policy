@@ -1267,7 +1267,7 @@ us_industry_policy:
       units: programs
       class: line
       y_min: 0
-      y_max: 3530
+      y_max: 5000
       strokeColor: "rgba(238,87,41,1)"
 
 us_industry_policy_2:
