@@ -14,7 +14,7 @@ ClimatePolicy::Application.routes.draw do
 
   match '/data', :to => 'application#data', as: :data
 
-  {get: [:about, :sources]}.each do |method, actions|
+  {get: [:guide, :about, :sources]}.each do |method, actions|
     actions.each do |action|
       match action, controller: 'pages', via: method
     end
