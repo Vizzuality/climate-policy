@@ -78,6 +78,8 @@ GEM
       railties
     mime-types (1.22)
     multi_json (1.7.2)
+    pjax_rails (0.3.4)
+      jquery-rails
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -144,6 +146,7 @@ DEPENDENCIES
   jquery-migrate-rails
   jquery-rails (~> 2.2.1)
   meta_request (~> 0.2.3)
+  pjax_rails
   rails (~> 3.2.13)
   sass-rails (~> 3.2.3)
   thin (~> 1.5.1)

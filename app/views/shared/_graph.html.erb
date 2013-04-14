@@ -1,6 +1,10 @@
 <% graph_configs = graphs_for_subitem(subitem) %>
 
-<div class="graph graph-<%= graph_configs.first.type == 'BarGraph' ? 'bars' : 'line' %>">
+<div class="clearfix graph graph-<%= "#{graph_configs.first.type == 'BarGraph' ? 'bars' : 'line'} #{'first' if @subitems.first == subitem} #{'last' if @subitems.last == subitem} #{'middle' if (@subitems.last != subitem && @subitems.first != subitem)}" %>">
+  <%= render 'shared/years_last_prev' %>
+  <%= render 'shared/years_first' %>
+  <%= render 'shared/years' %>
+
   <div class="graph-selector graph-selector-<%= graph_configs.first.type == 'BarGraph' ? 'bars' : 'line' %>">
     <h3 class="graph-title">
       <span class="type"><%= subitem.name %></span>
@@ -32,10 +36,12 @@
   </div>
 
   <% graph_configs.each_with_index do |graph_config, index| %>
-    <div class="graph-canvas graph-canvas-<%= graph_config.type == 'BarGraph' ? 'bars' : 'line' %> <%= 'hidden' if index > 0 %>" id="<%= graph_config.id %>">
+    <div class="clearfix graph-canvas graph-canvas-<%= graph_config.type == 'BarGraph' ? 'bars' : 'line' %> <%= 'hidden' if index > 0 %>" id="<%= graph_config.id %>">
       <ul class="graph-legend"></ul>
     </div>
   <% end %>
 
   <div class="graph-gradient"></div>
+
+  <%= render 'shared/years_last' %>
 </div>

@@ -1,9 +1,9 @@
 @import "compass/css3";
 
+
 .years {
   position: relative;
   border: 1px solid rgba(#000, .1);
-  border-bottom: 0;
   padding: 0 40px;
   background: rgba(#F0532C, .15);
   font: bold 13px/50px "open-sans", sans-serif;
@@ -11,9 +11,13 @@
   letter-spacing: 1px;
   color: rgba(#000, .3);
 
-  &.first .year_marker:before,
-  &.last .year_marker:after { display: none; }
+  &.years-first .year_marker:before,
+  &.years-last .year_marker:after { display: none; }
+
+  &.last { border-bottom: 0; }
 }
+
+.years-prev { display: none; }
 
 .year_label { position: absolute; }  
 
@@ -51,16 +55,72 @@
   }
 }
 
-.graph {
+.graph-line {
   position: relative;
-  border-top: 1px solid #ddd;
+
+  &.first {
+    .years-middle,
+    .years-last { display: none; }
+
+    &.last .years-last { display: none; }
+  }
+
+  &.middle {
+    .years-first,
+    .years-last { display: none; }
+    .years-middle { display: block; }
+  }
+
+  &.last {
+    .years-first { display: none; }
+    .years-last {
+      border-bottom: 0;
+      display: block;
+    }
+  }
+
+  + .graph-bars .years-prev {
+    display: block;
+  }
+
+  + .graph-line .years-prev {
+    display: none;
+  }
 }
+
+.graph-bars {
+  border-top: 1px solid #ddd;
+
+  .years {
+    border-top: 0;
+    display: none;
+  }
+
+  + .graph-line {
+    &.middle {
+      .years-middle { display: none; }
+      .years-first { display: block; }
+    }
+
+    &.last {
+      .years-middle { display: none; }
+      .years-first { display: block; }
+      .years-prev { display: none; }
+    }
+  }
+
+  .graph-legend { top: 0; }
+}
+
+
 
 .graph-canvas {
   height: 388px;
   width: 1038px;
+  overflow: hidden;
 
   &.graph-canvas-bars {
+    position: relative;
     padding-top: 180px;
     height: 308px;
   }
