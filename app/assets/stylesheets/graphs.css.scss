@@ -59,10 +59,11 @@
   position: relative;
 
   &.first {
+    .years.years-first { display: block; }
     .years-middle,
     .years-last { display: none; }
 
-    &.last .years-last { display: none; }
+    &.last .years-prev { display: none; }
   }
 
   &.middle {
