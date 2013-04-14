@@ -547,7 +547,7 @@ eu_agriculture_emission_drivers_2:
   table: eu_agriculture_2_emissions_drivers_copy_test_matallo_nitrous_ox
   description: Nitrous oxide emissions from livestock declined as the number of cattle decreased. Nitrous oxide emissions fell, due to decreases in both cropland area and fertilizer intensity.
   type: BarGraph
-  units: "km²"
+  units: million metric tonnes CO₂e per year
   name_column: driver
   x_groups:
     0:
@@ -1841,7 +1841,7 @@ china_buildings_policy:
   table: china_bldgs_3_policy_copy_diego
   description: Increased enforcement of energy building codes saved an estimated 60 million tonnes of coal equivalent per year, more than all other targeted policies combined.
   type: BarGraph
-  units: "km²"
+  units: Million tons coal equivalent
   name_column: program
   x_groups:
     0:
@@ -2056,7 +2056,7 @@ china_power_emissions:
   subject_id: emissions
   name: Greenhouse gas emissions and generation
   table: china_power_1_emissions_generation_copy_diego
-  description: Electricity generation and the associated CO2 emissions increased significantly in the past three decades, with generation growth accelerating significantly in the tenth Five Year Plan (2001-2005). Since 2006, the growth in power demand has slowed slightly with CO2 emissions following suit.
+  description: Electricity generation and the associated CO₂ emissions increased significantly in the past three decades, with generation growth accelerating significantly in the tenth Five Year Plan (2001-2005). Since 2006, the growth in power demand has slowed slightly with CO₂ emissions following suit.
   x_axis: date_processed
   series:
       series_1:
