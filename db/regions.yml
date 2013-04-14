@@ -393,11 +393,11 @@ eu:
              - <dl><dt>Growing IT-build out and household electronics and appliance uptake</dt></dl>
   subjects:
     - emissions:
-        description: These graphs show the changes in emissions and growth in the Power, Industry, and Buildings sectors in EU
+        description: These graphs show the changes in emissions and growth in the Power, Industry, and Buildings sectors in the EU
     - emission_drivers:
-        description: These graphs show the changes in emissions drivers in the Power, Industry, and Buildings sectors in EU
+        description: These graphs show the changes in emissions drivers in the Power, Industry, and Buildings sectors in the EU
     - policy:
-        description: These graphs show the changes in policy in the Power, Industry, and Buildings sectors in EU
+        description: These graphs show the changes in policy in the Power, Industry, and Buildings sectors in the EU
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
