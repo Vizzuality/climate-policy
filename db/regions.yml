@@ -259,6 +259,12 @@ eu:
               - <dl><dt>EC signed commitments in 1995 with major automobile manufacturer associations to target 140 gCO₂ per km for new vehicle fleets by 2009 (ICCT 2013)</dt></dl>
               - <dl><dt>High tax premiums on fuel across EU Member States</dt><dd>Fuel taxes remained flat after the mid-1990s</dd><dd>Diesel taxes were lower than petrol taxes</dd></dl>
             underlying_changes:
+              - <dl><dt>High fuel prices</dt></dl>
+              - <dl><dt>Shift towards diesel passenger vehicles from petrol vehicles</dt></dl>
+              - <dl><dt>Increase in demand across all modes of freight and passenger transport from 1995 onward (EEA 2013a, 2013b)</dt><dd>Passenger air transport demand rose by 46%</dd><dd>High-speed rail passenger kilometers traveled steadily grew across decade (EC 2010)</dd><dd>Freight road, rail, and maritime transport all rose by over 10%</dd></dl>
+              - <dl><dt>Modal share of freight and passenger transport</dt><dd>Shares of freight transport modes remained stable</dd><dd>4% modal shift from passenger road to passenger air transport</dd></dl>
+              - <dl><dt>Increased fuel e!ciency across passenger (1%) and freight ground (6%) transport (EEA 2011)</dt></dl>
+              - <dl><dt>Increased private vehicle ownership (EEA 2011)</dt></dl>
           _2000:
             description: Transport demand and vehicle efficiency continued to grow across the decade; including a significant shift to diesel in passenger cars. In the late 2000s, all forms of transport, and particularly air travel, fell with the high oil prices and the economic crisis of the late 2000s. The EU mandated increasing biofuel use for transport.
             policy_barriers:           
