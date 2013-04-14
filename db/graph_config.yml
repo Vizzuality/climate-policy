@@ -11,7 +11,7 @@ brazil_forestry_emissions:
     deforestation_rate:
       name: Deforestation rate
       column: units_km2_year
-      units: km^2/year
+      units: km²/year
       class: line
       y_min: 3000
       y_max: 40000
@@ -131,14 +131,14 @@ brazil_agriculture_emissions:
   sector_id: agriculture
   subject_id: emissions
   table: land_use_emissions_copy_test_matallo
-  name: Non-CO² greenhouse gas emissions
-  description: Both land under cultivation and non-CO2 emissions increased.
+  name: Non-CO₂ greenhouse gas emissions
+  description: Both land under cultivation and non-CO₂ emissions increased.
   x_axis: date_processed
   series:
     methane_mmtco2e:
       name: Methane
       column: methane_mmtco2e
-      units: million tonnes CO²e
+      units: million tonnes CO₂e
       class: line
       y_min: 70
       y_max: 350
@@ -146,7 +146,7 @@ brazil_agriculture_emissions:
     nitrous_oxide_mmtco2e:
       name: Nitrous oxide
       column: nitrous_oxide_mmtco2e
-      units: million tonnes CO²e
+      units: million tonnes CO₂e
       class: line
       y_min: 70
       y_max: 350
@@ -159,7 +159,7 @@ brazil_agriculture_emissions_2:
   subject_id: emissions
   name: Land use
   table: land_use_emissions_copy_test_matallo
-  description: Both land under cultivation and non-CO² emissions increased.
+  description: Both land under cultivation and non-CO₂ emissions increased.
   x_axis: date_processed
   series:
     land_use_million_hectares:
@@ -294,7 +294,7 @@ eu_power_emissions:
     emissions:
       name: Emissions
       column: emissions
-      units: million tones CO²
+      units: million tones CO₂
       class: line
       y_min: 0
       y_max: 2600
@@ -318,7 +318,7 @@ eu_power_emission_drivers:
   description: During the 1990s, increases in coal and natural gas efficiency and growing nuclear output drove down grid emissions intensity. In the 2000s, the fuel mix shifted away from coal and toward other sources, especially renewable energy. The efficiency of coal plants fell in the 2000s, possibly due to increased sulfur and other pollution controls.
   description_long: longest
   type: BarGraph
-  units: million tones CO²
+  units: million tones CO₂
   name_column: variable
   x_groups:
     0:
@@ -384,7 +384,7 @@ eu_industry_emissions:
     total_emissions:
       name: Emissions
       column: total_emissions
-      units: million tones CO²e
+      units: million tones CO₂e
       class: line
       y_min: 1000
       y_max: 3400
@@ -478,7 +478,7 @@ eu_industry_policy:
     emissions:
       name: ETS - Cap phases 1 & 2
       column: eu_ets_cap___phases_1_2
-      units: million tones CO²e
+      units: million tones CO₂e
       class: bars
       y_min: 1300
       y_max: 2500
@@ -486,7 +486,7 @@ eu_industry_policy:
     agricultural_production:
       name: ETS - Cap phases 3+ (projection)
       column: eu_ets_phase_3_cap_projection
-      units: million tones CO²e
+      units: million tones CO₂e
       class: line
       y_min: 1300
       y_max: 2500
@@ -505,7 +505,7 @@ eu_agriculture_emissions:
     emissions:
       name: Emissions
       column: emissions
-      units: million tones CO²
+      units: million tones CO₂
       class: line
       y_min: 0
       y_max: 1000
@@ -528,7 +528,7 @@ eu_agriculture_emission_drivers:
   table: eu_agriculture_2_emissions_drivers_copy_test_matallo_methane
   description: Methane emissions from livestock declined as the number of cattle decreased.
   type: BarGraph
-  units: million metric tonnes CO²e per year
+  units: million metric tonnes CO₂e per year
   name_column: driver
   x_groups:
     0:
@@ -547,7 +547,7 @@ eu_agriculture_emission_drivers_2:
   table: eu_agriculture_2_emissions_drivers_copy_test_matallo_nitrous_ox
   description: Nitrous oxide emissions from livestock declined as the number of cattle decreased. Nitrous oxide emissions fell, due to decreases in both cropland area and fertilizer intensity.
   type: BarGraph
-  units: "km²"
+  units: million metric tonnes CO₂e per year
   name_column: driver
   x_groups:
     0:
@@ -617,7 +617,7 @@ eu_buildings_emissions:
     commercial:
       name: Residential
       column: residential
-      units: million tonnes CO²
+      units: million tonnes CO₂
       class: area
       y_min: 0
       y_max: 2500
@@ -626,7 +626,7 @@ eu_buildings_emissions:
     residential:
       name: Tertiary
       column: tertiary
-      units: million tonnes CO²
+      units: million tonnes CO₂
       class: area
       y_min: 0
       y_max: 2500
@@ -643,7 +643,7 @@ eu_buildings_emission_drivers:
   description: Population increase and smaller households- which led to more buildings and total floorspace —increased residential emissions. However, these factors were more than offset by increases in energy efficiency and renewable energy and a shift to electricity from other fuel sources.
   description_long: longest
   type: BarGraph
-  units: million tonnes CO² / year
+  units: million tonnes CO₂ / year
   name_column: variable
   x_groups:
     0:
@@ -699,7 +699,7 @@ eu_transport_emissions:
     direct_emissions_from_transportation:
       name: Emissions
       column: direct_emissions_from_transportation
-      units: million tonnes CO²
+      units: million tonnes CO₂
       class: line
       y_min: 0
       y_max: 1600
@@ -813,7 +813,7 @@ us_buildings_emissions:
     commercial:
       name: Commercial
       column: commercial
-      units: million tonnes CO²
+      units: million tonnes CO₂
       class: line
       y_min: 0
       y_max: 2000
@@ -821,7 +821,7 @@ us_buildings_emissions:
     residential:
       name: Residential
       column: residential
-      units: million tonnes CO²
+      units: million tonnes CO₂
       class: line
       y_min: 0
       y_max: 2000
@@ -864,7 +864,7 @@ us_buildings_emissions_drivers:
   description: "Growth in population and floor space per person were the largest drivers of buildings emissions. In the late 2000's, energy efficiency gains caught up with slowing floor space growth."
   description_long: longest
   type: BarGraph
-  units: million tonnes CO²
+  units: million tonnes CO₂
   name_column: variable
   x_groups:
     0:
@@ -941,7 +941,7 @@ us_transportation_emissions:
     emissions:
       name: Emissions
       column: emissions_mmtco2e
-      units: million tonnes CO²
+      units: million tonnes CO₂
       class: line
       y_min: 1000
       y_max: 3000
@@ -1062,7 +1062,7 @@ us_power_emissions:
     total_emissions:
       name: Total emissions
       column: total_emissions
-      units: million tonnes CO²
+      units: million tonnes CO₂
       class: line
       y_min: 700
       y_max: 4000
@@ -1086,7 +1086,7 @@ us_power_emission_drivers:
   description_long: longest
   table: grid_impact_1_copy_diego_2
   x_axis: date_processed
-  units: tonnes CO²/MWh
+  units: tonnes CO₂/MWh
   name_column: variable
   type: BarGraph
   x_groups:
@@ -1151,7 +1151,7 @@ us_industry_emissions:
     emissions:
       name: Emissions
       column: emissions
-      units: million tonnes CO²
+      units: million tonnes CO₂
       class: line
       y_min: 1300
       y_max: 2050
@@ -1315,7 +1315,7 @@ india_agriculture_emissions:
     methane:
       name: Methane
       column: methane
-      units: million tonnes CO²e
+      units: million tonnes CO₂e
       class: line
       y_min: 0
       y_max: 700
@@ -1323,7 +1323,7 @@ india_agriculture_emissions:
     nitrous_oxide:
       name: Nitrous oxide
       column: nitrous_oxide
-      units: million tonnes CO²e
+      units: million tonnes CO₂e
       class: line
       y_min: 0
       y_max: 700
@@ -1713,7 +1713,7 @@ china_buildings_emissions:
     residential_emissions:
       name: Residential
       column: residential_emissions
-      units: million tonnes CO²
+      units: million tonnes CO₂
       class: area
       y_min: 0
       y_max: 500
@@ -1722,7 +1722,7 @@ china_buildings_emissions:
     commercial_emissions_fixed:
       name: Commercial and public services
       column: commercial_emissions_fixed
-      units: million tonnes CO²
+      units: million tonnes CO₂
       class: area
       y_min: 0
       y_max: 500
@@ -1841,7 +1841,7 @@ china_buildings_policy:
   table: china_bldgs_3_policy_copy_diego
   description: Increased enforcement of energy building codes saved an estimated 60 million tonnes of coal equivalent per year, more than all other targeted policies combined.
   type: BarGraph
-  units: "km²"
+  units: Million tons coal equivalent
   name_column: program
   x_groups:
     0:
@@ -2056,13 +2056,13 @@ china_power_emissions:
   subject_id: emissions
   name: Greenhouse gas emissions and generation
   table: china_power_1_emissions_generation_copy_diego
-  description: Electricity generation and the associated CO2 emissions increased significantly in the past three decades, with generation growth accelerating significantly in the tenth Five Year Plan (2001-2005). Since 2006, the growth in power demand has slowed slightly with CO2 emissions following suit.
+  description: Electricity generation and the associated CO₂ emissions increased significantly in the past three decades, with generation growth accelerating significantly in the tenth Five Year Plan (2001-2005). Since 2006, the growth in power demand has slowed slightly with CO₂ emissions following suit.
   x_axis: date_processed
   series:
       series_1:
         name: Emissions
         column: emissions
-        units: million tonnes CO²
+        units: million tonnes CO₂
         class: line
         y_min: 0
         y_max: 5000
@@ -2070,7 +2070,7 @@ china_power_emissions:
       series_2:
         name: Generation
         column: generation
-        units: million tonnes CO²
+        units: million tonnes CO₂
         class: line
         y_min: 0
         y_max: 5000

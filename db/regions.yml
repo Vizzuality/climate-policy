@@ -92,7 +92,7 @@ china:
   id: china
   name: China
   tagline: Pursuing low-carbon growth policy at unprecedented scale
-  description: China has pursued aggressive climate and energy policies with particular focus on energy efficiency and renewable energy. Still, between 2000 and 2010, China represented 68% of the increase in global energy-related CO2 emissions.
+  description: China has pursued aggressive climate and energy policies with particular focus on energy efficiency and renewable energy. Still, between 2000 and 2010, China represented 68% of the increase in global energy-related CO₂ emissions.
   sectors:
     - buildings:
         description: "These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in China"
@@ -254,13 +254,13 @@ eu:
           _1990:
             description: High fuel taxes, particularly on petrol, maintained pressure to improve fuel efficiency throughout the 1990s, and began a trend towards increasing the use of diesel in passenger cars. Overall transport demand grew and greenhouse gas emissions from the sector increased over the 1990s. The 1990s laid policy groundwork for lowering vehicle greenhouse gas emissions rates in the next decade.
             policy_barriers: 
-              - <dl><dt>1995 EU strategy to reduce passenger vehicle CO2 emissions established 3-pillared approach: voluntary commitments, improved consumer information, and fiscal measures (EC 2007)</dt><dd>EC signed commitments in 1995 with major automobile manufacturer associations to target 140 gCO2 per km for new vehicle fleets by 2009 (ICCT 2013)</dd></dl>
+              - <dl><dt>1995 EU strategy to reduce passenger vehicle CO₂ emissions established 3-pillared approach: voluntary commitments, improved consumer information, and fiscal measures (EC 2007)</dt><dd>EC signed commitments in 1995 with major automobile manufacturer associations to target 140 gCO₂ per km for new vehicle fleets by 2009 (ICCT 2013)</dd></dl>
               - <dl><dt>High tax premiums on fuel across EU Member States</dt><dd>Fuel taxes remained flat after the mid-1990s</dd><dd>Diesel taxes were lower than petrol taxes</dd></dl>
             underlying_changes:
           _2000:
             description: Transport demand and vehicle efficiency continued to grow across the decade; including a significant shift to diesel in passenger cars. In the late 2000s, all forms of transport, and particularly air travel, fell with the high oil prices and the economic crisis of the late 2000s. The EU mandated increasing biofuel use for transport.
             policy_barriers:           
-             - <dl><dt>Notable increase in mandatory measures to reduce on-road emissions</dt><dd>States commenced labeling fuel efficiency and CO2 emissions on new passenger vehicles (1999/94/EC)</dd></dl>
+             - <dl><dt>Notable increase in mandatory measures to reduce on-road emissions</dt><dd>States commenced labeling fuel efficiency and CO₂ emissions on new passenger vehicles (1999/94/EC)</dd></dl>
              - <dl><dt>Mandated that biofuels make up 2.5% and 5.75% of transport fuel use by 2005 and 2010, respectively (2003/30/EC)</dt></dl>
              - <dl><dt>Minimum taxation levels of energy products and electricity in EU (2003/96/EC)</dt></dl>
              - <dl><dt>Railway reform (2001/14/EC, 2004/49/EC and amendments) to improve infrastructure efficiency, but measures were not fully implemented by States</dt></dl>
@@ -284,7 +284,7 @@ eu:
             description: As EU began to liberalize and integrate its energy market, low gas prices drove switching from coal generation to gas generation. EU emissions limits were established for industry and energy facilities. EU renewable energy leadership grew while nuclear power and hydro generation increased across the decade.
             policy_barriers: 
              - <dl><dt>Liberalization and integration of EU’s internal energy market commenced in second half of decade with First Energy Package (96/92/EC—electricity; 98/30/EC—gas) </dt></dl>
-             - <dl><dt>Regulation of pollution from power plants increased</dt><dd>Large Combustion Plant Directive (88/609/EEC) limits on CO2, NOx, and SOx</dd><dd>1996 Integrated Pollution Prevention and Control (IPPC) Directive (96/61/EC) instituted a comprehensive permitting regime for power plants to cover all types of pollution</dd></dl>
+             - <dl><dt>Regulation of pollution from power plants increased</dt><dd>Large Combustion Plant Directive (88/609/EEC) limits on CO₂, NOx, and SOx</dd><dd>1996 Integrated Pollution Prevention and Control (IPPC) Directive (96/61/EC) instituted a comprehensive permitting regime for power plants to cover all types of pollution</dd></dl>
             underlying_changes:
              - <dl><dt>Restructuring of eastern European economies closed inefficient coal fired power plants in the early 1990s (EEA 2011)</dt></dl>
              - <dl><dt>Low gas prices drove switch from coal- and oil-generation to gas generation (EEA 2011)</dt></dl>
@@ -311,14 +311,14 @@ eu:
         decades_analysis:
           _1980:
           _1990:
-            description: Climate change took a prominent place on the EU political agenda in the 1990s. EU industry saw improved energy efficiency as energy intensive plants in Eastern Europe closed and the EU passed regulation to limit CO2 and other pollutants from industrial facilities.
+            description: Climate change took a prominent place on the EU political agenda in the 1990s. EU industry saw improved energy efficiency as energy intensive plants in Eastern Europe closed and the EU passed regulation to limit CO₂ and other pollutants from industrial facilities.
             policy_barriers: 
-             - <dl><dt>Regulation of pollution from industrial facilities increased and instituted</dt><dd>Large Combustion Plant Directive (88/609/EEC) limits on CO2, NOx, and SOx from large combustion plants</dd><dd>1996 Integrated Pollution Prevention and Control (IPPC) Directive (96/61/EC) instituted a comprehensive permitting regime for industrial facilities to cover all types of pollution</dd></dl>
+             - <dl><dt>Regulation of pollution from industrial facilities increased and instituted</dt><dd>Large Combustion Plant Directive (88/609/EEC) limits on CO₂, NOx, and SOx from large combustion plants</dd><dd>1996 Integrated Pollution Prevention and Control (IPPC) Directive (96/61/EC) instituted a comprehensive permitting regime for industrial facilities to cover all types of pollution</dd></dl>
             underlying_changes:
              - <dl><dt>Change in the make-up of European industry in early 1990s:</dt><dd>Industry saw energy efficiency improvements and a shift to less energy-intensive activities</dd><dd>Closure of energy-intensive industries in Eastern Europe (EEA 2011)</dd><dd>Significant growth in gross value added (GVA) of services and products</dd></dl>
              - <dl><dt>Low gas prices drove fuel switch from coal to gas in the industry sector (EEA 2011)</dt></dl>
           _2000:
-            description: Regulatory action on CO2 and other pollutants from the 1990s was in full swing and further refined while Europe’s evolving Emissions Trading System (ETS) commenced mid-decade. Both contended with the economic downturn later in the decade.
+            description: Regulatory action on CO₂ and other pollutants from the 1990s was in full swing and further refined while Europe’s evolving Emissions Trading System (ETS) commenced mid-decade. Both contended with the economic downturn later in the decade.
             policy_barriers: 
              - <dl><dt>Energy Taxation Directive (2003/96/EC) set minimum tax rates for energy products to incentivize energy efficiency</dt><dd>Member States varied in energy tax rate levels implemented under Directive</dd></dl>
              - <dl><dt>Emissions Trading System (ETS) commenced in 2005 (2003/87/EC, amended 2009/29/EC), covering a wide-range of industrial sectors</dt><dd>First Phase (2005-2007)</dd><dd>Allowance prices crashed in 2006 due to oversupply as allowances were non-transferable to Second Phase</dd><dd>Second Phase (2008-2012)</dd><dd>Allowance prices fell and remained low as a response to economic recession driven fall in emissions</dd><dd>Norway, Iceland, and Liechtenstein joined the ETS</dd></dl>
@@ -399,7 +399,7 @@ india:
   id: india
   name: India
   tagline: Balancing climate policy and development
-  description: India has aggressive renewable energy targets and industry energy efficiency policies, but faces significant infrastructure challenges, which may derail otherwise good policy. India is growing rapidly and represented 8% of the increase in global energy-related CO2 emissions between 2000 and 2010.
+  description: India has aggressive renewable energy targets and industry energy efficiency policies, but faces significant infrastructure challenges, which may derail otherwise good policy. India is growing rapidly and represented 8% of the increase in global energy-related CO₂ emissions between 2000 and 2010.
   sectors:
     - agriculture:
         description: These graphs show the changes in emissions, emissions drivers, and policy in the Agriculture sector in India

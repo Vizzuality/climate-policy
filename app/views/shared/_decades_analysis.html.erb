@@ -1,7 +1,7 @@
 <div class="slider">
   <ul class="tabs clearfix">
     <% if @item.decades_analysis['_1980'].present? %>
-      <li class="first selected"><a href="javascript:void(0)" data-rel="slide1">1980-199000</a></li>
+      <li class="first selected"><a href="javascript:void(0)" data-rel="slide1">1980-1990</a></li>
     <% end %>
     <% if @item.decades_analysis['_1990'].present? %>
       <li class="short <% if !@item.decades_analysis['_1980'].present? %> selected <% end %>"><a href="javascript:void(0)" data-rel="slide2">1990-2000</a></li>
