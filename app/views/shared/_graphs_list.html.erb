@@ -1,12 +1,8 @@
 <div class="content-inner">
   <%= render 'shared/description' %>
 
-  <%= render 'shared/years_first' %>
-
   <% @subitems.each do |subitem| %>
     <%= render 'shared/graph', :subitem => subitem %>
-
-    <%= render @subitems.last == subitem ? 'shared/years_last' : 'shared/years' %>
   <% end %>
 </div>
 

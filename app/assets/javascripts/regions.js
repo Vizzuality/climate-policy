@@ -1,9 +1,19 @@
 //= require application
-//= require jquery.pjax
 //= require underscore
+//= require jquery.pjax
 //= require jquery.scrollTo
+//= require spin
 //= require d3.v3
 
+
+var spinnerOpts = {
+  lines: 11,
+  length: 14,
+  width: 5,
+  radius: 14,
+  color: '#666',
+  top: '40px'
+};
 
 function animateSliders() {
   // Adjusting decades description height on load
@@ -43,6 +53,9 @@ $(document).ready(function() {
 
   // nav links
   $(document).ajaxStart(function(){
+    var target = document.getElementById('content');
+    var spinner = new Spinner(spinnerOpts).spin(target);
+
     $('.content-inner').css('opacity', '.2');
     $('.content-footer').css('opacity', '.2');
   }).ajaxStop(function(){

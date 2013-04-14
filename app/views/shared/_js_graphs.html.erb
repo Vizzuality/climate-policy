@@ -64,6 +64,7 @@
 
       svg[i] = d3.select("#"+_graphs[i].id)
         .append("svg")
+        .attr("class", "svg"+i)
         .attr("width", w)
         .attr("height", h+margin_top);
 
@@ -114,6 +115,8 @@
         } else {
           drawGraph(i, std_domain);
         }
+
+        console.log(_graphs[i]);
       }
     })
 
@@ -1050,6 +1053,7 @@
           svg[graphNum].node().appendChild(this);
         });
 
+        console.log($(".svg"+graphNum).closest('.graph').fadeIn());
       });
     }
 
