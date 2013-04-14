@@ -14,6 +14,7 @@ end
 gem 'jquery-rails', '~> 2.2.1'
 gem 'jquery-migrate-rails'
 gem 'underscore-rails'
+gem 'pjax_rails'
 
 group :development do
   gem 'foreman', '~> 0.62.0'

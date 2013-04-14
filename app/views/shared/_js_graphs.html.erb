@@ -88,7 +88,7 @@
 
       // Calculates the global x_scale
       x_scale = d3.scale.linear()
-        .range([margin,w-margin_top])
+        .range([margin,w-margin])
         .domain(std_domain);
 
       // Calculates the years for the time axis
@@ -102,7 +102,7 @@
           newYear.setMonth(0);
           newYear.setFullYear(y);
 
-          var year_x_position = Math.round(x_scale(newYear));
+          var year_x_position = Math.round(x_scale(newYear))-15;
           $(this).append("<span class='year_label' style='left:"+year_x_position+"px'>"+y+"</span>");
         }
       });

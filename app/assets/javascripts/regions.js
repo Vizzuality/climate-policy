@@ -71,8 +71,13 @@ $(document).ready(function() {
   });
 
   $.pjax.defaults = {
+    timeout: 5000,
+    push: true,
+    replace: false,
+    type: 'GET',
+    dataType: 'html',
     scrollTo: false,
-    timeout: 5000
+    maxCacheLength: 20
   }
 
   $(document).pjax('a[data-pjax]', '#content')
