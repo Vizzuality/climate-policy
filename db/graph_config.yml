@@ -246,7 +246,7 @@ brazil_agriculture_policy:
   region_id: brazil
   sector_id: agriculture
   subject_id: policy
-  name: Subsidies to agricultural producers (1995-2010)
+  name: Subsidies to agricultural producers
   table: brazil_ag_3_credit_subsidies_copy_test_matallo
   description: Brazil made increasing the productivity of agricultural land a priority to reduce expansion into new land and deforestation. Subsidies to producers, in part to modernize their operations, steadily increased over time.
   description_long: long
