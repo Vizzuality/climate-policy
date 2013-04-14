@@ -117,7 +117,7 @@
 
 .graph-canvas {
   position: relative;
-  z-index: 300;
+  z-index: 250;
   height: 388px;
   width: 1038px;
   overflow: hidden;
@@ -133,7 +133,7 @@
 
 .graph-selector {
   position: absolute;
-  z-index: 200;
+  z-index: 300;
   margin: 30px;
   padding: 10px;
   max-width: 958px;

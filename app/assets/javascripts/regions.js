@@ -123,13 +123,13 @@ $(document).ready(function() {
       position: {
         my: 'top left',
         at: 'top left',
-        adjust: { y: -6, x: -20 }
+        adjust: { y: -16, x: -20 }
       },
       show: {
         event: event.type,
         ready: true,
         effect: function() {
-          $(this).show().css('opacity', '0').animate({ opacity: 1, "top": "-=10px" }, { duration: 100 });
+          $(this).show().css('opacity', '0').animate({ opacity: 1 }, { duration: 100 });
         }
       },
       hide: {
