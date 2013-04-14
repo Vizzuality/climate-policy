@@ -62,7 +62,7 @@ brazil_forestry_emission_drivers_2:
       class: line
       y_min: -20
       y_max: 180
-      strokeColor: 'rgba(238,87,41,1)'
+      strokeColor: "rgba(102,102,102,1)"
     _25_100_hectares:
       name: 25-100 Hectares
       column: _25_100_hectares
@@ -70,7 +70,7 @@ brazil_forestry_emission_drivers_2:
       class: line
       y_min: -20
       y_max: 180
-      strokeColor: "#F0542C"
+      strokeColor: "rgba(79,110,191,1)"
     _100_500_hectares:
       name: 100-500 Hectares
       column: _100_500_hectares
@@ -78,7 +78,7 @@ brazil_forestry_emission_drivers_2:
       class: line
       y_min: -20
       y_max: 180
-      strokeColor: "#00D9A3"
+      strokeColor: "rgba(87,216,159,1)"
     _500_1000_hectares:
       name: 500-1000 Hectares
       column: _500_1000_hectares
@@ -86,7 +86,7 @@ brazil_forestry_emission_drivers_2:
       class: line
       y_min: -20
       y_max: 180
-      strokeColor: "#FFD24D"
+      strokeColor: "rgba(246,214,44,1)"
     _1000_hectares:
       name: '> 1000 Hectares'
       column: _1000_hectares
@@ -94,7 +94,7 @@ brazil_forestry_emission_drivers_2:
       class: line
       y_min: -20
       y_max: 180
-      strokeColor: "#E599FF"
+      strokeColor: "rgba(220,115,255,1)"
 
 brazil_forestry_policy:
   id: brazil_forestry_policy
