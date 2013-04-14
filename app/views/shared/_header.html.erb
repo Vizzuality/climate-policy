@@ -35,7 +35,7 @@
 
     <div class="nav-item scroll">
       <a href="javascript:void(0)" class="nav-link"><em></em>Scroll to explore</a>
-      <h2 class="nav-title"||><%= link_to @main.name, root_path %></a></h2>
+      <h2 class="nav-title"><%= link_to @main.name, root_path %></a></h2>
     </div>
   </div>
 
@@ -44,7 +44,7 @@
       <ul>
         <% @main.subjects.each do |subject| %>
           <li class="menu-item">
-            <%= link_to subject.name, send("#{@main.type}_subject_path".to_sym, :"#{main_type}_id" => @main.id, id: subject.id), class: params[:id] == subject.id ? 'selected' : nil, id: "#{subject.id}_tab", remote: true, :"data-replace" => '#content', :"data-rel" => subject.id+"_tab" %>
+            <%= link_to subject.name, send("#{@main.type}_subject_path".to_sym, :"#{main_type}_id" => @main.id, id: subject.id), class: params[:id] == subject.id ? 'selected' : nil, id: "#{subject.id}_tab", :"data-pjax" => true, :"data-rel" => subject.id+"_tab" %>
           </li>
         <% end %>
       </ul>
@@ -52,7 +52,7 @@
       <ul class="last">
         <% @sectors_or_regions.each do |sector_or_region| %>
           <li class="menu-item">
-            <%= link_to sector_or_region.name, send("#{@main.type}_#{sector_or_region.type}_path".to_sym, :"#{@main.type}_id" => @main.id, id: sector_or_region.id), class: params[:id] == sector_or_region.id ? 'selected' : nil, id: "#{sector_or_region.id}_tab", remote: true, :"data-replace" => '#content', :"data-rel" => sector_or_region.id+"_tab" %>
+            <%= link_to sector_or_region.name, send("#{@main.type}_#{sector_or_region.type}_path".to_sym, :"#{@main.type}_id" => @main.id, id: sector_or_region.id), class: params[:id] == sector_or_region.id ? 'selected' : nil, id: "#{sector_or_region.id}_tab", :"data-pjax" => true, :"data-rel" => sector_or_region.id+"_tab" %>
           </li>
         <% end %>
       </ul>

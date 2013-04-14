@@ -46,7 +46,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def layout_for_region_or_sector
-    main_type.pluralize unless request.xhr?
+    main_type.pluralize unless request.headers['X-PJAX']
   end
 
   def get_regions_data

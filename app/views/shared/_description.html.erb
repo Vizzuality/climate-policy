@@ -1,11 +1,11 @@
 <div class="subject">
   <div class="scroll-nav">
     <% if previous_item = previous_item(@item) %>
-      <%= link_to raw("<i><span>←</span></i>"), send("#{@main.type}_#{previous_item.type}_path".to_sym, :"#{@main.type}_id" => @main.id, id: previous_item.id), class: 'scroll-controls scroll-prev', remote: true, :"data-replace" => '#content', :"data-rel" => previous_item.id+"_tab" %>
+      <%= link_to raw("<i><span>←</span></i>"), send("#{@main.type}_#{previous_item.type}_path".to_sym, :"#{@main.type}_id" => @main.id, id: previous_item.id), class: 'scroll-controls scroll-prev', :"data-pjax" => true, :"data-rel" => previous_item.id+"_tab" %>
     <% end %>
 
     <% if next_item = next_item(@item) %>
-      <%= link_to raw("<i><span>→</span></i>"), send("#{@main.type}_#{next_item.type}_path".to_sym, :"#{@main.type}_id" => @main.id, id: next_item.id), class: 'scroll-controls scroll-next', remote: true, :"data-replace" => '#content', :"data-rel" => next_item.id+"_tab" %>
+      <%= link_to raw("<i><span>→</span></i>"), send("#{@main.type}_#{next_item.type}_path".to_sym, :"#{@main.type}_id" => @main.id, id: next_item.id), class: 'scroll-controls scroll-next', :"data-pjax" => true, :"data-rel" => next_item.id+"_tab" %>
     <% end %>
   </div>
 

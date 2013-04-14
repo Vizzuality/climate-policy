@@ -100,9 +100,8 @@
           newYear.setDate(1);
           newYear.setMonth(0);
           newYear.setFullYear(y);
+
           var year_x_position = Math.round(x_scale(newYear));
-          console.log(Math.round(x_scale(newYear)));
-          console.log(x_scale(newYear));
           $(this).append("<span class='year_label' style='left:"+year_x_position+"px'>"+y+"</span>");
         }
       });

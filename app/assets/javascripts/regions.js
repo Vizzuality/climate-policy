@@ -1,4 +1,5 @@
 //= require application
+//= require jquery.pjax
 //= require underscore
 //= require jquery.scrollTo
 //= require d3.v3
@@ -41,11 +42,10 @@ $(document).ready(function() {
     .resize(positionScroll)
 
   // nav links
-  $('body').ajaxStart(function(){
+  $(document).ajaxStart(function(){
     $('.content-inner').css('opacity', '.2');
     $('.content-footer').css('opacity', '.2');
   }).ajaxStop(function(){
-    $('a[data-remote=true]').removeClass("disabled");
     $('.content-inner').css('opacity', '1');
     $('.content-footer').css('opacity', '1');
 
@@ -57,12 +57,14 @@ $(document).ready(function() {
     }
   });
 
-  $('body').on('ajax:success', 'a[data-remote=true]', function(e, data){
-    window.history.pushState('', '', $(e.target).attr('href'));
-    $($(this).data('replace')).html(data);
-  });
+  $.pjax.defaults = {
+    scrollTo: false,
+    timeout: 5000
+  }
 
-  $('body').on('click', '.scroll-nav .scroll-controls, .menu-item a', function(){
+  $(document).pjax('a[data-pjax]', '#content')
+
+  $('body').on('click', 'a[data-pjax]', function(){
     var tab = "#"+$(this).attr('data-rel');
 
     if(!$(tab).hasClass('selected')) {
