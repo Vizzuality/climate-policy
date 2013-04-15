@@ -10,8 +10,10 @@
   @include background-size(50px, cover);
 }
 
-.title,
+.title_old,
 .description_old { display: none; }
+
+.title { margin-bottom: 10px; }
 
 .tagline { margin-top: 75px; }
 
