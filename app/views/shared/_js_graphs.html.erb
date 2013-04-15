@@ -104,7 +104,7 @@
 
       for (var i = 0; i < _graphs.length; i++) {
         if(_graphs[i].type == 'BarGraph') {
-          graphSpinner[i] = new Spinner(spinnerBarGraphOpts).spin(document.getElementById(_graphs[i].id));
+          graphSpinner[i] = new Spinner(spinnerOpts).spin(document.getElementById(_graphs[i].id));
           drawBarGraph(i, std_domain);
         } else if(_graphs[i].type == 'RangeGraph') {
           graphSpinner[i] = new Spinner(spinnerGraphOpts).spin(document.getElementById(_graphs[i].id));

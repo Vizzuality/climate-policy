@@ -1,5 +1,4 @@
 //= require application
-//= require underscore
 //= require jquery.pjax
 //= require jquery.scrollTo
 //= require spin
@@ -11,10 +10,10 @@ var margin_top = 80;
 var h = 388;
 var w = 1038;
 var LINE_DOT_R = 4;
-var INTERPOLATE_METHOD = "cardinal";
-var cartodb_url = "http://cpi.cartodb.com/api/v2/sql";
+var INTERPOLATE_METHOD = 'cardinal';
+var cartodb_url = 'http://cpi.cartodb.com/api/v2/sql';
 
-var spinnerContentOpts = {
+var spinnerOpts = {
   lines: 11,
   length: 0,
   width: 7,
@@ -32,16 +31,6 @@ var spinnerGraphOpts = {
   color: '#666',
   zIndex: 400,
   top: '170px'
-};
-
-var spinnerBarGraphOpts = {
-  lines: 11,
-  length: 0,
-  width: 7,
-  radius: 22,
-  color: '#666',
-  zIndex: 400,
-  top: '50px'
 };
 
 
@@ -97,7 +86,7 @@ $(document).ready(function() {
 
   // nav links
   $(document).ajaxStart(function() {
-    var contentSpinner = new Spinner(spinnerContentOpts).spin(document.getElementById('content'));
+    var contentSpinner = new Spinner(spinnerOpts).spin(document.getElementById('content'));
 
     $('.content-inner').css('opacity', '.2');
     $('.content-footer').css('opacity', '.2');
