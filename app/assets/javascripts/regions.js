@@ -2,6 +2,7 @@
 //= require jquery.pjax
 //= require jquery.scrollTo
 //= require spin
+//= require underscore
 //= require d3.v3
 
 
@@ -35,15 +36,13 @@ var spinnerGraphOpts = {
 
 
 function animateSliders() {
-  "use strict";
-
   // Adjusting decades description height on load
-  var slideH = "";
+  var slideH = '';
 
-  if($("#slide1").is(':visible')) {
-    slideH = $("#slide1").height()+80
+  if($('#slide1').is(':visible')) {
+    slideH = $('#slide1').height()+80
   } else {
-    slideH = $("#slide2").height()+80
+    slideH = $('#slide2').height()+80
   }
 
   $('.slides').animate({
@@ -52,8 +51,6 @@ function animateSliders() {
 }
 
 function positionScroll() {
-  "use strict";
-
   // stuck scroll link to bottom of viewport or header
   if($(window).scrollTop() + $(window).height() > $(".header").height()) {
     $(".scroll").css("position", "absolute");
@@ -69,10 +66,32 @@ function positionScroll() {
   }
 }
 
+function overlaySelectorOn(selector) {
+  d3.selectAll(selector)
+    .on('mouseover', function() {
+      d3.selectAll('.overlay-line').style('visibility', 'visible');
+      d3.selectAll('.year_marker').style('visibility', 'visible');
+    })
+    .on('mousemove', moveOverlayLine)
+    .on('mouseout', function() {
+      d3.selectAll('.overlay-line').style('visibility', 'hidden');
+      d3.selectAll('.year_marker').style('visibility', 'hidden');
+    });
+}
+
+function overlaySelectorOff(selector) {
+  d3.selectAll('.graph-selector-bars')
+    .on('mouseover', function() {
+      d3.selectAll('.overlay-line').style('visibility', 'hidden');
+      d3.selectAll('.year_marker').style('visibility', 'hidden');
+    })
+    .on('mousemove', function() {
+      d3.selectAll('.overlay-line').style('visibility', 'hidden');
+      d3.selectAll('.year_marker').style('visibility', 'hidden');
+    })
+}
 
 $(document).ready(function() {
-  "use strict";
-
   // animate sliders
   animateSliders();
 
@@ -98,7 +117,7 @@ $(document).ready(function() {
     animateSliders();
 
     if($(window).scrollTop() != '590') {
-      $(window).scrollTo('590px', 500, {axis:'y'}); 
+      $(window).scrollTo('590px', 500, {axis:'y'});
     }
   });
 
@@ -112,22 +131,22 @@ $(document).ready(function() {
     maxCacheLength: 20
   }
 
-  $(document).pjax('a[data-pjax]', '#content')
+  $(document).pjax('a[data-pjax]', '#content');
 
-  $('body').on('click', 'a[data-pjax]', function(){
-    var tab = "#"+$(this).attr('data-rel');
+  $('body').on('click', 'a[data-pjax]', function() {
+    var tab = '#'+$(this).attr('data-rel');
 
     if(!$(tab).hasClass('selected')) {
-      $(".menu-item a").removeClass('selected')
+      $('.menu-item a').removeClass('selected')
       $(tab).addClass('selected')
     }
   });
 
-  $('body').on('click', '.scroll-top, .nav-link', function(){
+  $('body').on('click', '.scroll-top, .nav-link', function() {
     $(window).scrollTo('590px', 500, {axis:'y'});
   });
 
-  $('body').on('click', '.nav-title a', function(e){
+  $('body').on('click', '.nav-title a', function(e) {
     e.preventDefault();
 
     $(window).scrollTo('0px', 500, {axis:'y'});
@@ -159,7 +178,7 @@ $(document).ready(function() {
       hide: {
         event: 'unfocus click',
         effect: function() {
-          $(this).animate({ opacity: 0, "top": "+=10px" }, { duration: 100 });
+          $(this).animate({ 'opacity': 0, 'top': '+=10px' }, { duration: 100 });
         }
       },
       style: {
@@ -178,8 +197,8 @@ $(document).ready(function() {
     $('.graph_tooltip_dropdown').hide();
 
     if(graph.not(':visible')) {
-      $(".graph_dropdown_link").removeClass("selected");
-      $(this).addClass("selected");
+      $('.graph_dropdown_link').removeClass('selected');
+      $(this).addClass('selected');
 
       graph.siblings('.graph-selector').find('.graph-link').text(this.text);
       graph.siblings('.graph-canvas').hide();
@@ -198,47 +217,10 @@ $(document).ready(function() {
       }
 
       //Overlay
-      d3.selectAll(".graph-selector-line")
-        .on("mouseover", function() {
-          d3.selectAll(".overlay-line").style("visibility", "visible");
-          d3.selectAll(".year_marker").style("visibility", "visible");
-        })
-        .on("mousemove", moveOverlayLine)
-        .on("mouseout", function() {
-          d3.selectAll(".overlay-line").style("visibility", "hidden");
-          d3.selectAll(".year_marker").style("visibility", "hidden");
-        })
-
-      d3.selectAll(".graph-line")
-        .on("mouseover", function() {
-          d3.selectAll(".overlay-line").style("visibility", "visible");
-          d3.selectAll(".year_marker").style("visibility", "visible");
-        })
-        .on("mousemove", moveOverlayLine)
-        .on("mouseout", function() {
-          d3.selectAll(".overlay-line").style("visibility", "hidden");
-          d3.selectAll(".year_marker").style("visibility", "hidden");
-        })
-
-      d3.selectAll(".graph-selector-bars")
-        .on("mouseover", function() {
-          d3.selectAll(".overlay-line").style("visibility", "hidden");
-          d3.selectAll(".year_marker").style("visibility", "hidden");
-        })
-        .on("mousemove", function() {
-          d3.selectAll(".overlay-line").style("visibility", "hidden");
-          d3.selectAll(".year_marker").style("visibility", "hidden");
-        })
-
-      d3.selectAll(".graph-bars")
-        .on("mouseover", function() {
-          d3.selectAll(".overlay-line").style("visibility", "hidden");
-          d3.selectAll(".year_marker").style("visibility", "hidden");
-        })
-        .on("mousemove", function() {
-          d3.selectAll(".overlay-line").style("visibility", "hidden");
-          d3.selectAll(".year_marker").style("visibility", "hidden");
-        })
+      overlaySelectorOn('.graph-selector-line');
+      overlaySelectorOn('.graph-line');
+      overlaySelectorOff('.graph-selector-bars');
+      overlaySelectorOff('.graph-bars');
 
       if(desc.text() != desc.siblings('.graph-description:visible').text()) {
         desc.siblings('.graph-description').hide();
@@ -250,6 +232,7 @@ $(document).ready(function() {
   // decades description slider
   $('body').on('click', '.tabs a', function(e) {
     var slide = "#"+$(this).attr('data-rel');
+
     e.preventDefault();
 
     if(!$(this).hasClass('selected')) {
