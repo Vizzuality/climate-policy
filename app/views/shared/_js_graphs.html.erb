@@ -1,4 +1,5 @@
 <script type="text/javascript">
+  var graphSpinner = [];
   var graphs = <%= @graph_configs.to_json.html_safe %>;
 
   var margin = 40;
@@ -122,7 +123,6 @@
     })
 
     function drawRangeGraph(graphNum, domain) {
-
       d3.json('/data?q=SELECT%20*%20FROM%20'+_graphs[graphNum].table+"%20", function(data) {
         var _data = data;
 
@@ -514,6 +514,8 @@
     //graphNum:graphNum of the table on the json,
     //std_domain: specific domain - keep undefined for showing the chart's own domain
     function drawGraph(graphNum, domain) {
+      graphSpinner[graphNum] = new Spinner(spinnerGraphOpts).spin(document.getElementById(_graphs[graphNum].id));
+
       d3.json('/data?q=SELECT%20*%20FROM%20'+_graphs[graphNum].table+"%20order%20by%20"+_graphs[graphNum].x_axis+"%20", function(data) {
         var _data = data;
 
@@ -1016,9 +1018,7 @@
           }
 
           addLegendElement(_graphs[graphNum].id, strokeColor_,y_col_,y_col_name);
-
-          // $("#"+_graphs[graphNum].id).find(".graph-legend").prepend('<li><div class="legend-item" style="background-color:'+strokeColor_+'"></div><span id='+y_col_+' class="legend-label">'+y_col_name+'</span></li>')
-          //   .attr("r", LINE_DOT_R);
+          graphSpinner[graphNum].stop();
         });
 
         //Overlay
