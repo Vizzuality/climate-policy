@@ -1,16 +1,8 @@
 <script type="text/javascript">
-  var graphSpinner = [];
   var graphs = <%= @graph_configs.to_json.html_safe %>;
 
-  var margin = 40;
-  var margin_top = 80;
-  var h = 388;
-  var w = 1038;
-  var LINE_DOT_R = 4;
-  var INTERPOLATE_METHOD = "cardinal";
-
-  //graphs svg
   var svg = [];
+  var graphSpinner = [];
   var x_scale;
   var circle_locked = false;
 
@@ -53,7 +45,7 @@
 
     var _total_graphs = $('.graph-canvas').map(function() { return this.id; });
     var _graphs = [];
-    var _domainq = '/data?q=SELECT%20min(min)%20as%20min,%20max(max)%20as%20max%20FROM%20(';
+    var _domainq = cartodb_url +'?q=SELECT%20min(min)%20as%20min,%20max(max)%20as%20max%20FROM%20(';
 
     for (var i = 0; i < _total_graphs.length; i++) {
       _graphs[i] = $.grep(graphs, function(e){ return e.id === _total_graphs[i]})[0];
@@ -258,31 +250,22 @@
             var y = labels_start_y+(i * row_h)+row_h/2;
             return y;
           })
-          // .each(function (d) {
-          //   var label_width = d3.select(this)[0][0].getComputedTextLength();
-          //   if (label_width > max_label_width) {
-          //     max_label_width = label_width;
-          //   }
-          // });
-
-        // console.log(max_label_width);
 
         var positive_color = "#546DBC";
-        var negative_color = "#F0542C";      
-
-        // var label_w = max_label_width + 100;
+        var negative_color = "#F0542C";
         var label_w = 363;
         var available_w = 600;
         var group_w = 0;
+
         if (grouping_y) {
           group_w = available_w;
         } else {
           group_w = available_w/_.size(_graphs[graphNum].x_groups);
         }
 
-        var bar_height = 2
+        var bar_height = 2;
 
-        var max_negat  = d3.max(negat),
+        var max_negat = d3.max(negat),
           max_posit = d3.max(posit),
           max = d3.max([max_negat, max_posit]);
 
@@ -302,13 +285,6 @@
         if (max_negat != null) {
           zero_x = bar_width_scale(max_negat); // Zero position for each group equals the bar of the mazimum negative number
         }
-
-        // var traza = svg[graphNum].append("svg:circle")
-        //   .attr("cx", margin_x)
-        //   .attr("cy", labels_start_y)
-        //   .attr("r", 10)
-        //   .style("stroke", "#000")
-        //   .style("fill", "#000");
 
         var group_label_ = [];
 
@@ -362,7 +338,6 @@
           }
 
           (function(group_name, units, group_strokeColor) { // We need a reference to group_name & units in runtime, for tooltips
-
             var group_pos_x = group_w*j;
             if (grouping_y) {
               group_pos_x = 0;
@@ -405,15 +380,6 @@
               .attr("name", function(d){
                 return Math.round(d[group_name]*1000)/1000;
               })
-              // .attr("width", 0)
-              // .transition()
-              // .delay(function(d,i) {
-              //   return i*100;
-              // })
-              // .duration(function(d,i) {
-              //   return 1000;
-              // })
-              // .ease("linear")
               .attr("width", function(d,i) {
                 var bar_width = bar_width_scale(Math.abs(d[group_name]));
                 if (bar_width <= 2) bar_width = 2;
@@ -486,15 +452,6 @@
                   .duration(200)
                   .style("fill","#666");
               })
-              // .attr("cx",function(d) {
-              //   return label_w + group_pos_x + zero_x;
-              // })
-              // .transition()
-              // .delay(function(d,i){
-              //   return i*100;
-              // })
-              // .duration(1000)
-              // .ease("elastic", 10, 0.3)              
               .attr("cx", function(d){
                 var x = label_w + group_pos_x + zero_x;
                 if (d[group_name] > 0) {
@@ -640,16 +597,7 @@
               .attr("class", 'lineStyle')
               .attr("id", 'line'+i)
               .attr("style",'stroke:'+strokeColor_)
-              // .attr("d", baseline(extended_data_col))
-              // .transition()
-              // .delay(function(d,i) {
-              //   return i*1000;
-              // })
-              // .duration(function(d,i) {
-              //   return 1000;
-              // })
-              // .ease("elastic", 1.1,0.3)
-              .attr("d", line(extended_data_col));              
+              .attr("d", line(extended_data_col));
 
             var units_ = serie.units;
             var simplify_ = serie.simplify;
@@ -711,18 +659,7 @@
                   .style("color","#aaa");
               })
               .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
-              // .attr("cy", h)              
-              // .transition()
-              // .delay(function(d,i){
-              //   return i*10;
-              // })
-              // .duration(function(d,i) {
-              //   return 1000;
-              // })
-              // //.ease("elastic", function(d,i) {return 1}, 0.5)
-              // .ease("elastic", 1.1, 0.5)
-              .attr("cy", function(d){return y_scale(d[y_col])})              
-              ;
+              .attr("cy", function(d){return y_scale(d[y_col])});
             })(strokeColor_, units_, y_col_, simplify_);
           } else if (serie.class == "area") {
             var units_ = serie.units;
@@ -780,6 +717,7 @@
               .attr("style",'stroke:'+strokeColor_);
 
             var g_circles = svg[graphNum].append("svg:g");
+
             g_circles.attr("class","dataCircles");
 
             (function(strokeColor, units, y_col){  // We need a reference to strokeColor in runtime, for hover
@@ -1054,7 +992,6 @@
         svg[graphNum].selectAll("circle").each(function() {
           svg[graphNum].node().appendChild(this);
         });
-
       });
     }
 

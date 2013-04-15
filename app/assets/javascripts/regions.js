@@ -6,6 +6,14 @@
 //= require d3.v3
 
 
+var margin = 40;
+var margin_top = 80;
+var h = 388;
+var w = 1038;
+var LINE_DOT_R = 4;
+var INTERPOLATE_METHOD = "cardinal";
+var cartodb_url = "http://cpi.cartodb.com/api/v2/sql";
+
 var spinnerContentOpts = {
   lines: 11,
   length: 0,

@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def data
     require 'net/http'
-    cdb_api_key = 'eca1902cb724e40fdb20fd628b47489b15134d79'
+    cdb_api_key = ''
     cdb_url = 'http://cpi.cartodb.com/api/v2/sql'
 
     sql_regex = [
