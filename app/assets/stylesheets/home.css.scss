@@ -6,7 +6,7 @@
 .header {
   background-image:
     image-url('pattern.png'),
-    image-url('home-bg.png');
+    image-url('home-bg.jpg');
   @include background-size(50px, cover);
 }
 
@@ -85,9 +85,9 @@
   width: 346px;
 }
 
-.thumbnail { background: image-url('us_climate_policy.png') no-repeat center -10px; }
-.thumbnail_2 { background-image: image-url('emission_drivers_power.png'); }
-.thumbnail_3 { background-image: image-url('forest_brazil.png'); }
+.thumbnail { background: image-url('us_climate_policy.jpg') no-repeat center -10px; }
+.thumbnail_2 { background-image: image-url('emission_drivers_power.jpg'); }
+.thumbnail_3 { background-image: image-url('forest_brazil.jpg'); }
 
 .view-title {
   width: 80%;
