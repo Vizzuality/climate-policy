@@ -1,0 +1,22 @@
+.header-nav ul,
+.tagline,
+.content,
+.navbar,
+.footer > .inner {
+  display: none;
+}
+
+.title {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.header {
+  .description { display: none; }
+
+  .description_old {
+    display: block;
+  }
+
+  ul { margin: 20px; }
+}

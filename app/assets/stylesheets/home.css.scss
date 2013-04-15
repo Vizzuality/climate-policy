@@ -10,6 +10,9 @@
   @include background-size(50px, cover);
 }
 
+.title,
+.description_old { display: none; }
+
 .tagline { margin-top: 75px; }
 
 .content-home { margin-top: -80px; }

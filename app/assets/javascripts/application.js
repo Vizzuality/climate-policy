@@ -6,6 +6,8 @@
 
 
 $(document).ready(function() {
+  "use strict";
+
   // dropdowns
   $('.dropdown_link').on('click', function(e) {
     e.preventDefault();

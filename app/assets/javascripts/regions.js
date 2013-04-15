@@ -46,6 +46,8 @@ var spinnerBarGraphOpts = {
 
 
 function animateSliders() {
+  "use strict";
+
   // Adjusting decades description height on load
   var slideH = "";
 
@@ -61,6 +63,8 @@ function animateSliders() {
 }
 
 function positionScroll() {
+  "use strict";
+
   // stuck scroll link to bottom of viewport or header
   if($(window).scrollTop() + $(window).height() > $(".header").height()) {
     $(".scroll").css("position", "absolute");
@@ -78,6 +82,8 @@ function positionScroll() {
 
 
 $(document).ready(function() {
+  "use strict";
+
   // animate sliders
   animateSliders();
 
