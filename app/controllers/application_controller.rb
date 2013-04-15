@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   #http_basic_authenticate_with :name => "climate", :password => "77ndPKiyJ"
   protect_from_forgery
 
+  before_filter :browser_is_not_old?
   before_filter :get_regions_data, only: :show
   before_filter :get_sectors_data, only: :show
   before_filter :get_item_data, only: :show
@@ -99,4 +100,13 @@ class ApplicationController < ActionController::Base
     @item.type == 'subject'
   end
 
+  def browser_is_not_old?
+    user_agent = request.env['HTTP_USER_AGENT'].try(:downcase)
+
+    return true if user_agent.nil?
+
+    if request.user_agent.match(/msie [0-8]\./i)
+      render :file => "#{Rails.root}/public/oldbrowser.html", :layout => false
+    end
+  end
 end
