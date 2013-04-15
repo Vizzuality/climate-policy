@@ -85,7 +85,7 @@ buildings:
 transport:
   id: transport
   name: Transport
-  description: Transport offers immediate and long-term opportunities to reduce emissions in Europe and the U.S. Emissions peaked in 2007 in both economies before high fuel prices and then recession curbed and reversed emissions growth. This general pattern overshadowed the European automobile fleet’s more fuel efficient starting point, thanks in part to significantly higher fuel taxes in Europe than in the U.S.
+  description: Emissions peaked in 2007 in both the U.S. and Europe before high fuel prices and then recession curbed and reversed emissions growth. This general pattern overshadowed the European automobile fleet’s more fuel efficient starting point, thanks in part to significantly higher fuel taxes in Europe than in the U.S.
   tagline: THE ECONOMY HID UNDERLYING POLICY DIFFERENCES
   decades_analysis:
   subjects:
