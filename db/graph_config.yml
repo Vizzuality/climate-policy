@@ -1570,7 +1570,7 @@ india_power_policy:
   region_id: india
   sector_id: power
   subject_id: policy
-  name: Ireda loan distributions
+  name: IREDA loan distributions
   description: Renewable energy growth was supported by increased loan distributions by the central government, including the Indian Renewable Energy Development Agency (IREDA).
   table: ireda_subsidies_copy_diego
   x_axis: date_processed
