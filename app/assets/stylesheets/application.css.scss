@@ -16,23 +16,6 @@
   overflow: hidden;
   min-width: 1040px;
   background: #F4F4F4;
-
-  &.stuck {
-    .header,
-    .scroll-nav {
-      position: fixed;
-      margin-top: -570px;
-    }
-
-    .scroll {
-      bottom: 0;
-
-      .nav-link { display: none; }
-      .nav-title { display: block; }
-    }
-
-    .scroll-shadow { display: block; }
-  }
 }
 
 .inner {
@@ -77,6 +60,8 @@
 
   .logo { float: left; }
 
+  .nav-item { line-height: 90px; }
+
   ul {
     float: right;
 
@@ -96,13 +81,13 @@
 
 .nav-item {
   @extend .item;
-  font: 600 12px/90px "open-sans", sans-serif;
+  font: 600 12px/70px "open-sans", sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
 
   .nav-title {
     display: none;
-    font-size: 30px;
+    font-size: 24px;
   }
 
   a {

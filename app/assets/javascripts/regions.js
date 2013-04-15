@@ -61,7 +61,7 @@ function positionScroll() {
   }
 
   // if scrolledup remove stuck header before
-  if($(window).scrollTop() >= 570){
+  if($(window).scrollTop() >= 590){
     $(".wrapper").addClass("stuck");
   } else {
     $(".wrapper").removeClass("stuck");
@@ -94,8 +94,8 @@ $(document).ready(function() {
     // animate sliders
     animateSliders();
 
-    if($(window).scrollTop() != '570') {
-      $(window).scrollTo('570px', 500, {axis:'y'}); 
+    if($(window).scrollTop() != '590') {
+      $(window).scrollTo('590px', 500, {axis:'y'}); 
     }
   });
 
@@ -121,7 +121,7 @@ $(document).ready(function() {
   });
 
   $('body').on('click', '.scroll-top, .nav-link', function(){
-    $(window).scrollTo('570px', 500, {axis:'y'});
+    $(window).scrollTo('590px', 500, {axis:'y'});
   });
 
   $('body').on('click', '.nav-title a', function(e){

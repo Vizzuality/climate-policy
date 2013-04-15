@@ -3,6 +3,23 @@
 @import 'compass/css3';
 
 
+.stuck {
+  .header,
+  .scroll-nav {
+    position: fixed;
+    margin-top: -590px;
+  }
+
+  .scroll {
+    bottom: 0;
+
+    .nav-link { display: none; }
+    .nav-title { display: block; }
+  }
+
+  .scroll-shadow { display: block; }
+}
+
 .header {
   position: absolute;
   z-index: 500; /* for dropdowns */
@@ -13,7 +30,7 @@
 
 .navbar {
   position: absolute;
-  top: 670px;
+  top: 660px;
 }
 
 .content {
@@ -96,8 +113,7 @@
   @include background-size(50px, cover);
 }
 
-.header {
-  height: 670px;
+.agriculture .header {
   background-image:
     image-url('pattern.png'),
     image-url('agriculture-bg.png');
