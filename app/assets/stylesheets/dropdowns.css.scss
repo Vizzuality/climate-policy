@@ -32,5 +32,12 @@
 
   li + li { margin-top: 10px; }
 
-  a { display: block; }
+  a {
+    display: block;
+
+    &.selected {
+      cursor: default;
+      color: #666;
+    }
+  }
 }

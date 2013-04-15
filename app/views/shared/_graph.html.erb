@@ -18,10 +18,10 @@
 
     <% if graph_configs.size > 1 %>
       <ul class="graph_dropdown">
-        <% graph_configs.each do |graph_config| %>
+        <% graph_configs.each_with_index do |graph_config, index| %>
           <li>
             <h3 class="graph-title">
-              <%= link_to graph_config.name, '#', :'data-rel' => graph_config.id %>
+              <%= link_to graph_config.name, '#', :'data-rel' => graph_config.id, class: "graph_dropdown_link #{"selected" if index == 0}" %>
             </h3>
           </li>
         <% end %>

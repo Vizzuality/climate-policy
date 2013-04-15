@@ -176,12 +176,16 @@ $(document).ready(function() {
 
   $('body').on('click', '.graph_dropdown a', function(e) {
     var graph = $('#'+$(this).attr('data-rel'));
+    var link = $('.'+$(this).attr('data-rel')+'_link');
     var desc = $('.'+$(this).attr('data-rel'));
 
     e.preventDefault();
     $('.graph_tooltip_dropdown').hide();
 
     if(graph.not(':visible')) {
+      $(".graph_dropdown_link").removeClass("selected");
+      $(this).addClass("selected");
+
       graph.siblings('.graph-selector').find('.graph-link').text(this.text);
       graph.siblings('.graph-canvas').hide();
       graph.fadeIn();
