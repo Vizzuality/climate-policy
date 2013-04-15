@@ -123,6 +123,8 @@
     })
 
     function drawRangeGraph(graphNum, domain) {
+      graphSpinner[graphNum] = new Spinner(spinnerGraphOpts).spin(document.getElementById(_graphs[graphNum].id));
+
       d3.json('/data?q=SELECT%20*%20FROM%20'+_graphs[graphNum].table+"%20", function(data) {
         var _data = data;
 
@@ -195,15 +197,16 @@
             }
             marks_added = true;
           }
-
         });
 
+        graphSpinner[graphNum].stop();
       });
     }
 
     function drawBarGraph(graphNum, domain) {
-      d3.json('/data?q=SELECT%20*%20FROM%20'+_graphs[graphNum].table+"%20", function(data) {
+      graphSpinner[graphNum] = new Spinner(spinnerBarGraphOpts).spin(document.getElementById(_graphs[graphNum].id));
 
+      d3.json('/data?q=SELECT%20*%20FROM%20'+_graphs[graphNum].table+"%20", function(data) {
         // Graph settings, domain & ranges calculation, scales, etc.
         var negat = [], posit = [];
         var grouping = (_.size(_graphs[graphNum].x_groups) > 1);
@@ -503,10 +506,9 @@
                 return x;
               });
           })(group_name_, units_, group_strokeColor_);
-
-
-
         }
+
+        graphSpinner[graphNum].stop();
       });
     }
 
@@ -1013,11 +1015,11 @@
                     .duration(200)
                     .style("color","#aaa");
                 });
-            })(strokeColor_, units_, y_col_);            
-
+            })(strokeColor_, units_, y_col_);
           }
 
           addLegendElement(_graphs[graphNum].id, strokeColor_,y_col_,y_col_name);
+
           graphSpinner[graphNum].stop();
         });
 

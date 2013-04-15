@@ -26,6 +26,16 @@ var spinnerGraphOpts = {
   top: '220px'
 };
 
+var spinnerBarGraphOpts = {
+  lines: 11,
+  length: 14,
+  width: 5,
+  radius: 14,
+  color: '#666',
+  zIndex: 400,
+  top: '140px'
+};
+
 
 function animateSliders() {
   // Adjusting decades description height on load
