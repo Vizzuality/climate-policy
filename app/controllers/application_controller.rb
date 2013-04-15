@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  http_basic_authenticate_with :name => "climate", :password => "77ndPKiyJ"
+  #http_basic_authenticate_with :name => "climate", :password => "77ndPKiyJ"
   protect_from_forgery
 
   before_filter :get_regions_data, only: :show
@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def data
     require 'net/http'
-    cdb_api_key = ''
+    cdb_api_key = 'eca1902cb724e40fdb20fd628b47489b15134d79'
     cdb_url = 'http://cpi.cartodb.com/api/v2/sql'
 
     sql_regex = [
@@ -46,7 +46,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def layout_for_region_or_sector
-    main_type.pluralize unless request.headers['X-PJAX']
+    main_type.pluralize unless request.xhr?
   end
 
   def get_regions_data
