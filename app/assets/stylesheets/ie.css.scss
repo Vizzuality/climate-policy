@@ -12,6 +12,8 @@
 }
 
 .header {
+  background: image-url('header_old.png');
+
   .description { display: none; }
 
   .description_old {
@@ -19,4 +21,9 @@
   }
 
   ul { margin: 20px; }
+}
+
+.header-nav {
+  background: image-url('header_nav_old.png');
+  border-bottom: 1px solid #DF947E;
 }
