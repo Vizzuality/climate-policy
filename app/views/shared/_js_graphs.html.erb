@@ -112,10 +112,13 @@
 
       for (var i = 0; i < _graphs.length; i++) {
         if(_graphs[i].type == 'BarGraph') {
+          graphSpinner[i] = new Spinner(spinnerBarGraphOpts).spin(document.getElementById(_graphs[i].id));
           drawBarGraph(i, std_domain);
         } else if(_graphs[i].type == 'RangeGraph') {
+          graphSpinner[i] = new Spinner(spinnerGraphOpts).spin(document.getElementById(_graphs[i].id));
           drawRangeGraph(i, std_domain);      
         } else {
+          graphSpinner[i] = new Spinner(spinnerGraphOpts).spin(document.getElementById(_graphs[i].id));
           drawGraph(i, std_domain);
         }
       }
@@ -123,8 +126,6 @@
     })
 
     function drawRangeGraph(graphNum, domain) {
-      graphSpinner[graphNum] = new Spinner(spinnerGraphOpts).spin(document.getElementById(_graphs[graphNum].id));
-
       d3.json('/data?q=SELECT%20*%20FROM%20'+_graphs[graphNum].table+"%20", function(data) {
         var _data = data;
 
@@ -204,8 +205,6 @@
     }
 
     function drawBarGraph(graphNum, domain) {
-      graphSpinner[graphNum] = new Spinner(spinnerBarGraphOpts).spin(document.getElementById(_graphs[graphNum].id));
-
       d3.json('/data?q=SELECT%20*%20FROM%20'+_graphs[graphNum].table+"%20", function(data) {
         // Graph settings, domain & ranges calculation, scales, etc.
         var negat = [], posit = [];
@@ -516,8 +515,6 @@
     //graphNum:graphNum of the table on the json,
     //std_domain: specific domain - keep undefined for showing the chart's own domain
     function drawGraph(graphNum, domain) {
-      graphSpinner[graphNum] = new Spinner(spinnerGraphOpts).spin(document.getElementById(_graphs[graphNum].id));
-
       d3.json('/data?q=SELECT%20*%20FROM%20'+_graphs[graphNum].table+"%20order%20by%20"+_graphs[graphNum].x_axis+"%20", function(data) {
         var _data = data;
 

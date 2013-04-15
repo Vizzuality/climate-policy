@@ -8,32 +8,32 @@
 
 var spinnerContentOpts = {
   lines: 11,
-  length: 14,
-  width: 5,
-  radius: 14,
+  length: 0,
+  width: 7,
+  radius: 22,
   color: '#666',
   zIndex: 400,
-  top: '40px'
+  top: '50px'
 };
 
 var spinnerGraphOpts = {
   lines: 11,
-  length: 14,
-  width: 5,
-  radius: 14,
+  length: 0,
+  width: 7,
+  radius: 22,
   color: '#666',
   zIndex: 400,
-  top: '220px'
+  top: '170px'
 };
 
 var spinnerBarGraphOpts = {
   lines: 11,
-  length: 14,
-  width: 5,
-  radius: 14,
+  length: 0,
+  width: 7,
+  radius: 22,
   color: '#666',
   zIndex: 400,
-  top: '140px'
+  top: '50px'
 };
 
 
