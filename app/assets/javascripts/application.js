@@ -6,6 +6,8 @@
 
 
 $(document).ready(function() {
+  "use strict";
+
   // dropdowns
   $('.dropdown_link').on('click', function(e) {
     e.preventDefault();
@@ -26,13 +28,13 @@ $(document).ready(function() {
         event: e.type,
         ready: true,
         effect: function() {
-          $(this).show().css('opacity', '0').animate({ 'opacity': 1 }, { duration: 100 });
+          $(this).show().css('opacity', '0').animate({ opacity: 1 }, { duration: 100 });
         }
       },
       hide: {
         event: 'unfocus click',
         effect: function() {
-          $(this).animate({ 'opacity': 0, 'top': '+=10px' }, { duration: 100 });
+          $(this).animate({ opacity: 0, "top": "+=10px" }, { duration: 100 });
         }
       },
       style: {
