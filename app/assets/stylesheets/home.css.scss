@@ -116,5 +116,7 @@
   a {
     text-decoration: none;
     color: #F0522C;
+
+    &:hover { text-decoration: underline; }
   }
 }
