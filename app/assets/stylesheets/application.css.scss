@@ -341,6 +341,12 @@
 .navbar_dropdown,
 .graph_dropdown { display: none; }
 
-.static_content {
-  padding: 40px;  
+.static_content { padding: 40px; }
+
+.graph-sep {
+  float: left;
+  border: 0;
+  height: 1px;
+  width: 160px;
+  background: rgba(#000, .1);
 }

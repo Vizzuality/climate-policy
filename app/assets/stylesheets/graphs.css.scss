@@ -30,14 +30,14 @@
   visibility: hidden;
   width: 70px;
   height: 23px;
-  background: #000;
+  background: #222;
   top: 14px;
   color: #fff;
   line-height: 23px;
   @include border-radius(3px);
 
   &:before {
-    border-left: 2px solid #000;
+    border-left: 2px solid #222;
     content: " ";
     height: 15px;
     display: block;
@@ -47,7 +47,7 @@
   }
 
   &:after {
-    border-left: 2px solid #000;
+    border-left: 2px solid #222;
     content: " ";
     height: 15px;
     display: block;
@@ -215,14 +215,6 @@ svg {
   font-size: 9px;
 }
 
-.graph-sep {
-  float: left;
-  border: 0;
-  height: 1px;
-  width: 160px;
-  background: rgba(#000, .1);
-}
-
 .graph-legend {
   position: absolute;
   z-index: 300;
@@ -367,5 +359,5 @@ svg {
 
 .overlay-line {
   visibility: hidden;
-  fill: #000;
+  fill: #222;
 }
