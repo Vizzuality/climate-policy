@@ -505,7 +505,11 @@
             .domain([serie.y_min,serie.y_max]);
 
           // Add background marks (just once). It uses the first series, as it guess all series have the same zero
-          if (!marks_added) {
+          var axis = serie.axis;
+
+          if (axis != null) {
+
+            var num_lines = 10;
 
             //Add zero-line
             if (y_scale(0) < h) {
@@ -517,25 +521,47 @@
                 .attr("y2", y_scale(0));
             }
 
-            // Marks over 0
-            var mark_opacity = 0.1;
-            for (var j = (y_scale(0) -30); j > 0; j -= 30) {
-              if (j < 300) {
-                mark_opacity -= 0.02;
+            // Draws y-axis labels, if configured for this series
+            var axis_container = d3.select("div#"+_graphs[graphNum].id+"_"+axis+"_axis");
+            axis_container
+              .append("span")
+              .attr("class","units_axis_label")
+              .text(serie.units);
+
+            var mark_opacity = 0.15;
+            var marker_step = Math.abs(serie.y_max - serie.y_min) / num_lines;
+            var tick_value = serie.y_min;
+
+            for (var j = 0; j < num_lines; j ++ ) {
+
+              tick_value += marker_step;
+              var y_pos = y_scale(tick_value);
+
+              if (y_pos > 0) {
+                mark_opacity -= 0.025;
+                if (mark_opacity < 0) mark_opacity = 0;
               }
-              if (j < h) {
+
+              if (y_pos < h) {
                 g2.append("svg:line")
                   .attr("class", "graph-horz-marks")
                   .attr("x1", 0)
                   .attr("x2", w)
-                  .attr("y1", j)
-                  .attr("y2", j)
+                  .attr("y1", y_pos)
+                  .attr("y2", y_pos)
                   .attr("style","stroke: rgba(0,0,0, "+mark_opacity+")");
+
+                axis_container
+                  .append("span")
+                  .attr("class","y_axis_label")
+                  .attr("style","top:"+(Math.round(y_pos)-10)+"px; color: rgba(0,0,0, "+mark_opacity*3+")")
+                  .text(Math.floor(tick_value));
+
               }
             }
 
             // Marks under 0
-            for (var j = (y_scale(0) +30); j < h; j += 30) {
+            for (var j = (y_scale(0) + marker_step); j < h; j += marker_step) {
               g2.append("svg:line")
                 .attr("class", "graph-horz-marks")
                 .attr("x1", 0)

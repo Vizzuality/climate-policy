@@ -207,6 +207,43 @@ svg {
   shape-rendering: crispEdges;
 }
 
+.graph-axis-container {
+  position: absolute;
+  width: 100px;
+  height: 387px;
+  top: 52px;
+  text-align: right;
+
+  &.left {
+    left: -110px;
+    text-align: right;    
+  }
+
+  &.right {
+    right: -110px;
+    text-align: left;    
+  }
+
+  .units_axis_label {    
+    position: absolute;
+    top: 120px;
+    left: 0;
+    width: 100px;
+    font: 300 16px "cronos-pro";
+    color: #999999;
+  }
+
+  .y_axis_label {
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    left: 0;
+    font: 13px bold "open-sans", sans-serif;
+    color: #D0D0D0;
+  }
+
+}
+
 .graph-link:after {
   position: relative;
   top: -4px;

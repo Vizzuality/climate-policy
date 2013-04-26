@@ -15,6 +15,7 @@ brazil_forestry_emissions:
       class: line
       y_min: 3000
       y_max: 40000
+      axis: left
       strokeColor: 'rgba(238,87,41,1)'
 
 brazil_forestry_emission_drivers:
@@ -35,6 +36,7 @@ brazil_forestry_emission_drivers:
       class: line
       y_min: 0
       y_max: 1500
+      axis: left
       strokeColor: 'rgba(238,87,41,1)'
     soybean:
       name: Soybean price
@@ -43,6 +45,7 @@ brazil_forestry_emission_drivers:
       class: line
       y_min: 0
       y_max: 1500
+      axis: right
       strokeColor: 'rgba(79,110,191,1)'
 
 brazil_forestry_emission_drivers_2:
