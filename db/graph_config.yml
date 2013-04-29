@@ -15,7 +15,6 @@ brazil_forestry_emissions:
       class: line
       y_min: 3000
       y_max: 43000
-      y_step: 5000
       axis: left
       strokeColor: 'rgba(238,87,41,1)'
 
@@ -37,7 +36,6 @@ brazil_forestry_emission_drivers:
       class: line
       y_min: 0
       y_max: 1500
-      y_step: 200
       axis: left
       strokeColor: 'rgba(238,87,41,1)'
     soybean:
@@ -66,7 +64,6 @@ brazil_forestry_emission_drivers_2:
       class: line
       y_min: -20
       y_max: 180
-      y_step: 25
       axis: left
       strokeColor: "rgba(102,102,102,1)"
     _25_100_hectares:
@@ -316,6 +313,7 @@ eu_power_emissions:
       class: line
       y_min: 0
       y_max: 2600
+      axis: left      
       strokeColor: "#546DBC"
     generation:
       name: Generation
@@ -324,6 +322,7 @@ eu_power_emissions:
       class: line
       y_min: 0
       y_max: 3800
+      axis: right      
       strokeColor: "#F0542C"
 
 eu_power_emission_drivers:
@@ -387,6 +386,7 @@ eu_industry_emissions:
       class: line
       y_min: 1000
       y_max: 3400
+      axis: left      
       strokeColor: "#546DBC"
     manufacturing_value_add_index:
       name: Manufacturing value add
@@ -395,6 +395,7 @@ eu_industry_emissions:
       class: line
       y_min: 70
       y_max: 240
+      axis: right      
       strokeColor: "#F0542C"
     manufacturing_production_index:
       name: Manufacturing production
@@ -422,6 +423,7 @@ eu_industry_emission_drivers:
       class: line
       y_min: 20
       y_max: 160
+      axis: left      
       strokeColor: "rgba(102,102,102,1)"
     steel:
       name: Manufacturing value add
@@ -481,6 +483,7 @@ eu_industry_policy:
       class: bars
       y_min: 1300
       y_max: 2500
+      axis: left      
       strokeColor: "rgba(238,87,41,1)"
     agricultural_production:
       name: ETS - Cap phases 3+ (projection)
@@ -508,6 +511,7 @@ eu_agriculture_emissions:
       class: line
       y_min: 0
       y_max: 1000
+      axis: left      
       strokeColor: "rgba(238,87,41,1)"
     agricultural_production:
       name: Agricultural production
@@ -516,6 +520,7 @@ eu_agriculture_emissions:
       class: line
       y_min: 0
       y_max: 800000
+      axis: right      
       strokeColor: "rgba(79,110,191,1)"
 
 eu_agriculture_emission_drivers:
@@ -573,6 +578,7 @@ eu_agriculture_policy:
       class: area
       y_min: 0
       y_max: 3000
+      axis: left      
       strokeColor: "rgba(79,110,191,1)"
       fillColor: "rgba(79,110,191,0.2)"  
     eu10:
@@ -602,6 +608,7 @@ eu_buildings_emissions:
       class: area
       y_min: 0
       y_max: 2500
+      axis: left      
       strokeColor: "rgba(238,87,41,1)"
       fillColor: "rgba(238,87,41,0.2)"
     residential:
@@ -684,6 +691,7 @@ eu_transport_emissions:
       class: line
       y_min: 0
       y_max: 2000
+      axis: left      
       strokeColor: "#546DBC"
     freight:
       name: Freight activity
@@ -692,6 +700,7 @@ eu_transport_emissions:
       class: line
       y_min: 100
       y_max: 150
+      axis: right      
       strokeColor: "#F0542C"
     passenger:
       name: Passenger activity
@@ -719,6 +728,7 @@ eu_transport_emission_drivers:
       class: line
       y_min: 0.7
       y_max: 1.4
+      axis: left      
       strokeColor: "#546DBC"
     freight:
       name: Freight
@@ -755,6 +765,7 @@ eu_transport_policy:
       class: line
       y_min: 300
       y_max: 1800
+      axis: left      
       strokeColor: "#546DBC"
     tax_on_petrol:
       name: Tax on unleaded petrol
@@ -798,6 +809,7 @@ us_buildings_emissions:
       class: line
       y_min: 0
       y_max: 2000
+      axis: left      
       strokeColor: "rgba(238,87,41,1)"
     residential:
       name: Residential
@@ -825,6 +837,7 @@ us_buildings_emissions_2:
       class: line
       y_min: 0
       y_max: 25
+      axis: left      
       strokeColor: "rgba(238,87,41,1)"
     residential:
       name: Residential
@@ -872,6 +885,7 @@ us_buildings_policy:
       class: line
       y_min: -5000
       y_max: 27500
+      axis: left      
       strokeColor: "rgba(238,87,41,1)"
     federal_expenditures:
       name: Federal expenditures
@@ -899,6 +913,7 @@ us_buildings_policy_2:
       class: line
       y_min: 40
       y_max: 150
+      axis: left      
       strokeColor: "rgba(238,87,41,1)"
     residential:
       name: Residential
@@ -926,6 +941,7 @@ us_transportation_emissions:
       class: line
       y_min: 1000
       y_max: 3000
+      axis: left      
       strokeColor: "rgba(238,87,41,1)"
     km_traveled:
       name: Passenger km traveled
@@ -934,6 +950,7 @@ us_transportation_emissions:
       class: line
       y_min: 1000
       y_max: 15000
+      axis: right      
       strokeColor: "rgba(79,110,191,1)"
     freight:
       name: Freight ton-kilometers
@@ -961,6 +978,7 @@ us_transportation_emission_drivers:
       class: line
       y_min: 40
       y_max: 150
+      axis: left      
       strokeColor: "rgba(238,87,41,1)"
     passenger_car:
       name: Passenger car
@@ -1004,6 +1022,7 @@ us_transportation_policy:
       class: line
       y_min: 2
       y_max: 8
+      axis: left
       strokeColor: "rgba(238,87,41,1)"
     std_truck:
       name: Standards, light truck
@@ -1047,6 +1066,7 @@ us_power_emissions:
       class: line
       y_min: 700
       y_max: 4000
+      axis: left
       strokeColor: "rgba(238,87,41,1)"
     total_net:
       name: Total net generation
@@ -1055,6 +1075,7 @@ us_power_emissions:
       class: line
       y_min: 700
       y_max: 4000
+      axis: right
       strokeColor: "rgba(79,110,191,1)"
 
 us_power_emission_drivers:
@@ -1098,6 +1119,7 @@ us_power_policy:
       class: line
       y_min: 0
       y_max: 14780
+      axis: left
       strokeColor: "rgba(238,87,41,1)"
 
 us_power_policy_2:
@@ -1115,8 +1137,9 @@ us_power_policy_2:
       column: weighted_average_state_rpss
       units: "%"
       class: line
-      y_min: -3
+      y_min: -4
       y_max: 6
+      axis: left
       strokeColor: "rgba(238,87,41,1)"
 
 us_industry_emissions:
@@ -1134,8 +1157,9 @@ us_industry_emissions:
       column: emissions
       units: million tonnes CO₂
       class: line
-      y_min: 1300
-      y_max: 2050
+      y_min: 1000
+      y_max: 2000
+      axis: left
       strokeColor: "rgba(238,87,41,1)"
 
 us_industry_emissions_2:
@@ -1154,7 +1178,8 @@ us_industry_emissions_2:
       units: Index (1998=100)
       class: line
       y_min: 80
-      y_max: 160
+      y_max: 180
+      axis: left
       strokeColor: "rgba(238,87,41,1)"
     manufacturing_production:
       name: Manufacturing production
@@ -1162,7 +1187,7 @@ us_industry_emissions_2:
       units: Index (1998=100)
       class: line
       y_min: 80
-      y_max: 160
+      y_max: 180
       strokeColor: "rgba(79,110,191,1)"
 
 us_industry_emission_drivers:
@@ -1182,6 +1207,7 @@ us_industry_emission_drivers:
       class: line
       y_min: 0.5
       y_max: 1.3
+      axis: left
       strokeColor: "rgba(238,87,41,1)"
     food_manufacturing:
       name: Food manufacturing
@@ -1206,6 +1232,7 @@ us_industry_emission_drivers:
       class: line
       y_min: 0.5
       y_max: 1.3
+      axis: left
       strokeColor: "#546DBC"
     paper_manufacturing:
       name: Paper
@@ -1249,6 +1276,7 @@ us_industry_policy:
       class: line
       y_min: 0
       y_max: 5000
+      axis: left
       strokeColor: "rgba(238,87,41,1)"
 
 us_industry_policy_2:
@@ -1268,6 +1296,7 @@ us_industry_policy_2:
       class: line
       y_min: -50
       y_max: 1600
+      axis: left
       strokeColor: "rgba(238,87,41,1)"
     plant_area:
       name: Average plant area of audited facilities
@@ -1276,6 +1305,7 @@ us_industry_policy_2:
       class: line
       y_min: -50
       y_max: 1600
+      axis: right
       strokeColor: "rgba(79,110,191,1)"
 
 
@@ -1299,7 +1329,8 @@ india_agriculture_emissions:
       units: million tonnes CO₂e
       class: line
       y_min: 0
-      y_max: 700
+      y_max: 500
+      axis: left
       strokeColor: "#546DBC"
     nitrous_oxide:
       name: Nitrous oxide
@@ -1307,7 +1338,7 @@ india_agriculture_emissions:
       units: million tonnes CO₂e
       class: line
       y_min: 0
-      y_max: 700
+      y_max: 500
       strokeColor: "#F0542C"
     land_under_cultivation:
       name: Land under cultivation
@@ -1315,7 +1346,8 @@ india_agriculture_emissions:
       units: million hectares
       class: line
       y_min: 0
-      y_max: 700
+      y_max: 500
+      axis: right
       strokeColor: "#00D9A3"
 
 india_agriculture_emission_drivers:
@@ -1335,6 +1367,7 @@ india_agriculture_emission_drivers:
       class: area
       y_min: 0
       y_max: 32000
+      axis: left
       strokeColor: "rgba(238,87,41,1)"
       fillColor: "rgba(238,87,41,0.2)"
     food_exports:
@@ -1364,6 +1397,7 @@ india_agriculture_emission_drivers_2:
       class: line
       y_min: 0
       y_max: 1200
+      axis: left
       strokeColor: "#546DBC"
     total_fertilizer_use_2:
       name: Total fertilizer use
@@ -1372,6 +1406,7 @@ india_agriculture_emission_drivers_2:
       class: line
       y_min: 0
       y_max: 300
+      axis: right
       strokeColor: "#F0542C"
 
 india_agriculture_emission_drivers_3:
@@ -1390,7 +1425,8 @@ india_agriculture_emission_drivers_3:
       units: index (1994=100)
       class: line
       y_min: 0
-      y_max: 700
+      y_max: 800
+      axis: left
       strokeColor: "#546DBC"
     power_tillers_1994_100:
       name: Power tillers sold
@@ -1398,7 +1434,7 @@ india_agriculture_emission_drivers_3:
       units: index (1994=100)
       class: line
       y_min: 0
-      y_max: 700
+      y_max: 800
       strokeColor: "#F0542C"
     pumpsets_connected_to_the_grid_1995_100:
       name: Pumpsets connected to the grid
@@ -1406,7 +1442,7 @@ india_agriculture_emission_drivers_3:
       units: index (1994=100)
       class: line
       y_min: 0
-      y_max: 700
+      y_max: 800
       strokeColor: "#00D9A3"
 
 india_agriculture_policy:
@@ -1425,7 +1461,8 @@ india_agriculture_policy:
       units: billion INR
       class: bars
       y_min: 0
-      y_max: 4000
+      y_max: 5000
+      axis: left
       strokeColor: "#F0542C"  
     series_1:
       name: Agricultural spend as a % of total outlay
@@ -1433,7 +1470,8 @@ india_agriculture_policy:
       units: "%"
       class: line
       y_min: 0
-      y_max: 35
+      y_max: 50
+      axis: right
       strokeColor: "#546DBC"
 
 india_power_emissions:
@@ -1453,6 +1491,7 @@ india_power_emissions:
       class: line
       y_min: 0
       y_max: 800
+      axis: left
       strokeColor: "#546DBC"
     series_2:
       name: Generation
@@ -1461,6 +1500,7 @@ india_power_emissions:
       class: line
       y_min: 0
       y_max: 1000
+      axis: right
       strokeColor: "#F0542C"
 
 india_power_emission_drivers:
@@ -1480,6 +1520,7 @@ india_power_emission_drivers:
       class: area
       y_min: 0
       y_max: 2000
+      axis: left
       strokeColor: 'rgba(238,87,41,1)'
       fillColor: 'rgba(238,87,41,0.2)'
     solar_and_other_renewables:
@@ -1563,6 +1604,7 @@ india_power_policy:
       class: line
       y_min: 0
       y_max: 15
+      axis: left
       strokeColor: "#546DBC"
 
 india_power_policy_2:
@@ -1582,6 +1624,7 @@ india_power_policy_2:
       class: line
       y_min: 0
       y_max: 6
+      axis: left
       strokeColor: "#546DBC"
 
 india_industry_emissions:
@@ -1601,6 +1644,7 @@ india_industry_emissions:
       class: line
       y_min: 50
       y_max: 200
+      axis: left
       strokeColor: "#546DBC"
 
 india_industry_emissions_2:
@@ -1620,6 +1664,7 @@ india_industry_emissions_2:
       class: line
       y_min: 70
       y_max: 380
+      axis: left
       strokeColor: "#546DBC"
     manufacturing_production_index:
       name: Manufacturing production
@@ -1647,6 +1692,7 @@ india_industry_emission_drivers:
       class: line
       y_min: 10
       y_max: 220
+      axis: left
       strokeColor: "#546DBC"
     chemicals:
       name:  "Chemicals"
@@ -1674,6 +1720,7 @@ india_industry_policy:
       class: line
       y_min: 0
       y_max: 600
+      axis: left
       strokeColor: "#546DBC"
 
 
@@ -1698,6 +1745,7 @@ china_buildings_emissions:
       class: area
       y_min: 0
       y_max: 500
+      axis: left
       strokeColor: "rgba(238,87,41,1)"
       fillColor: "rgba(238,87,41,0.2)"
     commercial_emissions_fixed:
@@ -1727,6 +1775,7 @@ china_buildings_emission_drivers:
       class: area
       y_min: 0
       y_max: 250
+      axis: left
       strokeColor: "rgba(102,102,102,1)"
       fillColor: "rgba(102,102,102,0.2)"
     electricity:
@@ -1791,7 +1840,8 @@ china_buildings_emission_drivers_2:
       units: million tonnes coal equivalent
       class: area
       y_min: 0
-      y_max: 300
+      y_max: 500
+      axis: left
       strokeColor: "rgba(238,87,41,1)"
       fillColor: "rgba(238,87,41,0.2)"
     rural_residential:
@@ -1800,7 +1850,7 @@ china_buildings_emission_drivers_2:
       units: million tonnes coal equivalent
       class: area
       y_min: 0
-      y_max: 300
+      y_max: 500
       strokeColor: "rgba(79,110,191,1)"
       fillColor: "rgba(79,110,191,0.2)"
     commercial:
@@ -1809,7 +1859,7 @@ china_buildings_emission_drivers_2:
       units: million tonnes coal equivalent
       class: area
       y_min: 0
-      y_max: 300
+      y_max: 500
       strokeColor: "rgba(87,216,159,1)"
       fillColor: "rgba(87,216,159,0.2)"
 
@@ -1863,6 +1913,7 @@ china_industry_emissions:
         class: line
         y_min: 300
         y_max: 2300
+        axis: left
         strokeColor: "#546DBC"
 
 china_industry_emissions_2:
@@ -1882,6 +1933,7 @@ china_industry_emissions_2:
         class: line
         y_min: 0
         y_max: 2000
+        axis: left
         strokeColor: "rgba(238,87,41,1)"
       series_2:
         name: Manufacturing production
@@ -1890,6 +1942,7 @@ china_industry_emissions_2:
         class: line
         y_min: 0
         y_max: 2000
+        axis: left
         strokeColor:  "rgba(79,110,191,1)"
 
 china_industry_emission_drivers:
@@ -1909,6 +1962,7 @@ china_industry_emission_drivers:
         class: line
         y_min: 0
         y_max: 6
+        axis: left
         strokeColor: "rgba(255,115,115,1)"
       1:
         name: Transport equipment
@@ -2047,6 +2101,7 @@ china_power_emissions:
         class: line
         y_min: 0
         y_max: 5000
+        axis: left
         strokeColor: "rgba(238,87,41,1)"
       series_2:
         name: Generation
@@ -2055,6 +2110,7 @@ china_power_emissions:
         class: line
         y_min: 0
         y_max: 5000
+        axis: left
         strokeColor:  "rgba(79,110,191,1)"
 
 china_power_emission_drivers:
@@ -2074,6 +2130,7 @@ china_power_emission_drivers:
       class: area
       y_min: 0
       y_max: 5000000
+      axis: left
       strokeColor: "rgba(87,216,159,1)"
       fillColor: "rgba(87,216,159,0.2)"
     natural_gas:
@@ -2157,5 +2214,6 @@ china_power_policy_2:
       class: line
       y_min: 0
       y_max: 50
+      axis: left
       strokeColor: "rgba(87,216,159,1)"
       simplify: false

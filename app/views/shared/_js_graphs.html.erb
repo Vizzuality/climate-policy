@@ -39,7 +39,17 @@
         .text(serie.units);
 
       var line_opacity = 0.20;
-      var value_step = serie.y_step;
+
+      // Calculating line step
+      var value_range = serie.y_max - serie.y_min;
+      var value_step = 0;
+      if (value_range >= 10) {
+        value_step = (Math.floor(value_range / 10));
+        value_step = Math.round(value_step / Math.pow(10,(value_step+"").length -1))*Math.pow(10,(value_step+"").length -1);
+      } else {
+        value_step = Math.round((value_range / 10)*100)/100;
+        value_step = Math.round(value_step*Math.pow(10,(value_step+"").length - 3))/Math.pow(10,(value_step+"").length - 3);
+      }
 
       var opacity_scale = d3.scale.linear()
         .range([0,0.1])
@@ -74,7 +84,13 @@
             .append("span")
             .attr("class","y_axis_label")
             .attr("style","top:"+(Math.round(y_pos)-10)+"px; color: rgba(0,0,0, "+Math.round(line_opacity*2*100)/100+")")
-            .text(Math.floor(line_value));
+            .text(function() {
+              if (line_value >= 1) {
+                return Math.floor(line_value);
+              } else {
+                return Math.round(line_value*100)/100;
+              }
+            });
         }
       }
 
