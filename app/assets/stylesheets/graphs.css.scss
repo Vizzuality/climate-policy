@@ -211,6 +211,7 @@ svg {
   position: absolute;
   width: 100px;
   height: 387px;
+  z-index: 99;
   top: 52px;
   text-align: right;
 
@@ -223,6 +224,8 @@ svg {
     right: -110px;
     text-align: left;    
   }
+
+  &.hidden { display: none; }
 
   .units_axis_label {    
     position: absolute;

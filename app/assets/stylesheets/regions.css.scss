@@ -182,6 +182,7 @@ sub { bottom: -0.25em; }
 
 .scroll-nav {
   width: 960px;
+  z-index: 250;
 
   .scroll-controls { padding: 0 20px; }
 }

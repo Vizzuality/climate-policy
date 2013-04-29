@@ -14,7 +14,8 @@ brazil_forestry_emissions:
       units: km²/year
       class: line
       y_min: 3000
-      y_max: 40000
+      y_max: 43000
+      y_step: 5000
       axis: left
       strokeColor: 'rgba(238,87,41,1)'
 
@@ -36,6 +37,7 @@ brazil_forestry_emission_drivers:
       class: line
       y_min: 0
       y_max: 1500
+      y_step: 200
       axis: left
       strokeColor: 'rgba(238,87,41,1)'
     soybean:
@@ -45,7 +47,6 @@ brazil_forestry_emission_drivers:
       class: line
       y_min: 0
       y_max: 1500
-      axis: right
       strokeColor: 'rgba(79,110,191,1)'
 
 brazil_forestry_emission_drivers_2:
@@ -65,6 +66,8 @@ brazil_forestry_emission_drivers_2:
       class: line
       y_min: -20
       y_max: 180
+      y_step: 25
+      axis: left
       strokeColor: "rgba(102,102,102,1)"
     _25_100_hectares:
       name: 25-100 Hectares
@@ -116,6 +119,8 @@ brazil_forestry_policy:
       class: area
       y_min: 0
       y_max: 1200
+      y_step: 200
+      axis: left      
       strokeColor: 'rgba(238,87,41,1)'
       fillColor: 'rgba(238,87,41,0.2)'
     nitrous_oxide_mmtco2e:
@@ -143,16 +148,18 @@ brazil_agriculture_emissions:
       column: methane_mmtco2e
       units: million tonnes CO₂e
       class: line
-      y_min: 70
-      y_max: 350
+      y_min: 0
+      y_max: 500
+      y_step: 50
+      axis: left      
       strokeColor: 'rgba(238,87,41,1)'
     nitrous_oxide_mmtco2e:
       name: Nitrous oxide
       column: nitrous_oxide_mmtco2e
       units: million tonnes CO₂e
       class: line
-      y_min: 70
-      y_max: 350
+      y_min: 0
+      y_max: 500
       strokeColor: 'rgba(79,110,191,1)'
 
 brazil_agriculture_emissions_2:
@@ -170,8 +177,10 @@ brazil_agriculture_emissions_2:
       column: land_use_million_hectares
       units: million hectares
       class: line
-      y_min: 35
+      y_min: 40
       y_max: 70
+      y_step: 5
+      axis: left      
       strokeColor: 'rgba(238,87,41,1)'
 
 brazil_agriculture_emission_drivers:
@@ -191,6 +200,8 @@ brazil_agriculture_emission_drivers:
       class: line
       y_min: 50
       y_max: 300
+      y_step: 25
+      axis: left      
       strokeColor: "#546DBC"
     livestock:
       name: Livestock
@@ -234,6 +245,8 @@ brazil_agriculture_emission_drivers_2:
       class: line
       y_min: -10
       y_max: 55
+      y_step: 10
+      axis: left      
       strokeColor: "#546DBC"
     food:
       name: Food
@@ -262,6 +275,8 @@ brazil_agriculture_policy:
       class: line
       y_min: -7000
       y_max: 18000
+      y_step: 2500
+      axis: left      
       strokeColor: "#546DBC"
     non_credit:
       name: Non-Credit subsidies

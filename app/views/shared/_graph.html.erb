@@ -42,8 +42,8 @@
       <ul class="graph-legend"></ul>
     </div>
 
-    <div class="graph-axis-container left" id="<%= graph_config.id %>_left_axis"></div>
-    <div class="graph-axis-container right" id="<%= graph_config.id %>_right_axis"></div>    
+    <div class="graph-axis-container left <%= 'hidden' if index > 0 %>" id="<%= graph_config.id %>_left_axis"></div>
+    <div class="graph-axis-container right <%= 'hidden' if index > 0 %>" id="<%= graph_config.id %>_right_axis"></div>    
   <% end %>
 
   <%= render 'shared/years_last' %>

@@ -208,6 +208,13 @@ $(document).ready(function() {
         graph.siblings('.graph-selector').removeClass('graph-selector-bars');
       }
 
+      // Hide all axis in this module
+      graph.siblings('.graph-axis-container').hide();
+
+      // Show selected axis
+      $('#'+graph[0].id+"_left_axis").fadeIn();
+      $('#'+graph[0].id+"_right_axis").fadeIn();
+
       //Overlay
       d3.selectAll(".graph-selector-line")
         .on("mouseover", function() {

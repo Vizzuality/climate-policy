@@ -283,6 +283,7 @@
   padding: 40px 20px;
   height: 71px;
   @include opacity(.2);
+  z-index: 250;
 
   &:hover { @include opacity(.4); }
   &:active { @include opacity(.8); }
