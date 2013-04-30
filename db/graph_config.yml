@@ -656,7 +656,7 @@ eu_buildings_policy:
       name: Energy efficiency index range for best label
       column: best_label___low_end
       column_top: best_label___high_end
-      units: ""
+      units: "Index"
       class: range
       y_min: 0
       y_max: 300
@@ -667,7 +667,7 @@ eu_buildings_policy:
       name: Energy efficiency index range for worst label
       column: worst_label_low_end
       column_top: worst_label_high_end
-      units: ""
+      units: "Index"
       class: range
       y_min: 0
       y_max: 300
