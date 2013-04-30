@@ -117,20 +117,6 @@
             .text(Math.floor(line_value));
         }
       }
-
-      // Adding negative lines
-
-
-      // Marks under 0
-      // for (var j = (y_scale(0) + mark_step); j < h; j += mark_step) {
-      //   g2.append("svg:line")
-      //     .attr("class", "graph-horz-marks")
-      //     .attr("x1", 0)
-      //     .attr("x2", w)
-      //     .attr("y1", j)
-      //     .attr("y2", j)
-      //     .attr("style","stroke: rgba(0,0,0, 0.1)");
-      // }
     }
   }
 
@@ -234,9 +220,6 @@
         if(_graphs[i].type == 'BarGraph') {
           graphSpinner[i] = new Spinner(spinnerBarGraphOpts).spin(document.getElementById(_graphs[i].id));
           drawBarGraph(i, std_domain);
-        } else if(_graphs[i].type == 'RangeGraph') {
-          graphSpinner[i] = new Spinner(spinnerGraphOpts).spin(document.getElementById(_graphs[i].id));
-          drawRangeGraph(i, std_domain);      
         } else {
           graphSpinner[i] = new Spinner(spinnerGraphOpts).spin(document.getElementById(_graphs[i].id));
           drawGraph(i, std_domain);
@@ -244,85 +227,6 @@
       }
 
     })
-
-    function drawRangeGraph(graphNum, domain) {
-      d3.json('/data?q=SELECT%20*%20FROM%20'+_graphs[graphNum].table+"%20", function(data) {
-        var _data = data;
-
-        if(domain === undefined) {
-          _data['min_domain'] = d3.min(_data.rows, function(data){return data.date_processed;})
-          _data['max_domain'] = d3.max(_data.rows, function(data){return data.date_processed;})
-          _domain = [new Date(_data.min_domain),new Date(_data.max_domain)];
-        } else {
-          _domain = domain;
-        }
-
-        var x_col = _graphs[graphNum].x_axis;
-        var stacked_area_accumulated = new Array();
-        var min_val = 0;
-
-        var marks_added = false;
-        var g2 = svg[graphNum].append("svg:g").attr("id", "graph_marks");
-
-        _.each(_graphs[graphNum].series, function(serie) {
-          // append one group per series
-          var g = svg[graphNum].append("svg:g");
-          var strokeColor_ = serie.strokeColor;
-          var fillColor = serie.fillColor;
-          var y_col_ = serie.column;
-          var y_col_name = serie.name;
-
-          var y_scale = d3.scale.linear()
-            .range([h, margin_top])
-            .domain([serie.y_min,serie.y_max]);
-
-          // Add background marks (just once). It uses the first series, as it guess all series have the same zero
-          if (!marks_added) {
-
-            //Add zero-line
-            if (y_scale(0) < h) {
-              g2.append("svg:line")
-                .attr("class", "graph-zero-mark")
-                .attr("x1", 0)
-                .attr("x2", w)
-                .attr("y1", y_scale(0))
-                .attr("y2", y_scale(0));
-            }
-
-            // Marks over 0
-            var mark_opacity = 0.1;
-            for (var j = (y_scale(0) -30); j > 0; j -= 30) {
-              if (j < 300) {
-                mark_opacity -= 0.02;
-              }
-              if (j < h) {
-                g2.append("svg:line")
-                  .attr("class", "graph-horz-marks")
-                  .attr("x1", 0)
-                  .attr("x2", w)
-                  .attr("y1", j)
-                  .attr("y2", j)
-                  .attr("style","stroke: rgba(0,0,0, "+mark_opacity+")");
-              }
-            }
-
-            // Marks under 0
-            for (var j = (y_scale(0) +30); j < h; j += 30) {
-              g2.append("svg:line")
-                .attr("class", "graph-horz-marks")
-                .attr("x1", 0)
-                .attr("x2", w)
-                .attr("y1", j)
-                .attr("y2", j)
-                .attr("style","stroke: rgba(0,0,0, 0.1)");
-            }
-            marks_added = true;
-          }
-        });
-
-        graphSpinner[graphNum].stop();
-      });
-    }
 
     function drawBarGraph(graphNum, domain) {
       d3.json('/data?q=SELECT%20*%20FROM%20'+_graphs[graphNum].table+"%20", function(data) {
@@ -411,7 +315,7 @@
         var zero_x = 0;
 
         if (max_negat != null) {
-          zero_x = bar_width_scale(max_negat); // Zero position for each group equals the bar of the mazimum negative number
+          zero_x = bar_width_scale(max_negat); // Zero position for each group equals the bar of the maximum negative number
         }
 
         var group_label_ = [];
@@ -509,6 +413,9 @@
                 return Math.round(d[group_name]*1000)/1000;
               })
               .attr("width", function(d,i) {
+                if (d[group_name] === null) {
+                  return 0; 
+                }
                 var bar_width = bar_width_scale(Math.abs(d[group_name]));
                 if (bar_width <= 2) bar_width = 2;
                 return bar_width;
@@ -537,7 +444,14 @@
                 }              
                 return labels_start_y + offset_y +row_h/2 - bar_height/2 - 6}
               )
-              .attr("r", LINE_DOT_R)
+              .attr("r", function(d) {
+                if (d[group_name] != null) {
+                  return LINE_DOT_R; 
+                }
+                else {
+                  return 0;
+                }
+              })
               .attr("name", function(d){return (Math.round(d[group_name]*1000)/1000) + " " + units}) //Uses this for tooltip
               .on("mouseover", function(d) {
                 var tooltipClassname = "";
@@ -620,13 +534,6 @@
         var marks_added = false;
         var g2 = svg[graphNum].append("svg:g").attr("id", "graph_marks");                
 
-        // if (graphNum == 0) {
-          // d3.select("div#"+_graphs[graphNum].id+"_left_axis")
-          //   .attr("style", "display: block");
-          // d3.select("div#"+_graphs[graphNum].id+"_right_axis")
-          //   .attr("style", "display: block");            
-        // }
-
         _.each(_graphs[graphNum].series, function(serie) {
 
           // append one group per series
@@ -639,6 +546,8 @@
           var y_scale = d3.scale.linear()
             .range([h, margin_top])
             .domain([serie.y_min,serie.y_max]);
+
+
 
           addLines(serie, y_scale, g2, marks_added, _graphs, graphNum);
           marks_added = true;
@@ -885,6 +794,7 @@
               var current_value = d[y_col_];
               stacked_area_accumulated[""+date] = parseFloat(accumulated_value) + parseFloat(current_value);
             });
+
           } else if (serie.class == "range") {
 
             var area = d3.svg.area()

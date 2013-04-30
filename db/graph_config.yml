@@ -426,7 +426,7 @@ eu_industry_emission_drivers:
       axis: left      
       strokeColor: "rgba(102,102,102,1)"
     steel:
-      name: Manufacturing value add
+      name: Steel
       column: steel
       units: index (1990=100)
       class: line
@@ -434,7 +434,7 @@ eu_industry_emission_drivers:
       y_max: 160
       strokeColor: "rgba(79,110,191,1)"
     cement:
-      name: Manufacturing production
+      name: Cement
       column: cement
       units: index (1990=100)
       class: line
@@ -660,6 +660,7 @@ eu_buildings_policy:
       class: range
       y_min: 0
       y_max: 300
+      axis: left
       strokeColor: "rgba(238,87,41,1)"
       fillColor: "rgba(238,87,41,0.2)"
     worst_label:
@@ -780,16 +781,17 @@ eu_transport_policy:
       column: percentage_of_final_diesel_price_as_tax_processed
       units: "%"
       class: line
-      y_min: 40
-      y_max: 120
+      y_min: 30
+      y_max: 180
+      axis: right
       strokeColor: '#00D9A3'
     percentage_of_final_petrol_price_as_tax_processed:
       name: Percentage of final petrol price as tax
       column: percentage_of_final_petrol_price_as_tax_processed
       units: "%"
       class: line
-      y_min: 40
-      y_max: 120
+      y_min: 30
+      y_max: 180
       strokeColor: '#FFD24D'
 
 us_buildings_emissions:
@@ -948,7 +950,7 @@ us_transportation_emissions:
       column: billion_passenger_kilometers_traveled
       units: billion passenger-km
       class: line
-      y_min: 1000
+      y_min: 2000
       y_max: 15000
       axis: right      
       strokeColor: "rgba(79,110,191,1)"
@@ -958,7 +960,7 @@ us_transportation_emissions:
       units: billion tonnes-km
       class: line
       y_min: 2000
-      y_max: 10000
+      y_max: 15000
       strokeColor: "#00D9A3"
 
 us_transportation_emission_drivers:
@@ -1083,7 +1085,7 @@ us_power_emission_drivers:
   region_id: us
   sector_id: power
   subject_id: emission_drivers
-  name: Power sector variables and impact on average emissions factor
+  name: Power sector variables and impact on average emissions factor (Production)
   description: The expansion and increased availability of nuclear in the 1980s and 1990s offset growing emissions from coal. In the 2000s, most factors were aligned to improve emissions intensity, including increasing renewables output and gas replacing coal.
   description_long: longest
   table: us_power_emission_drivers
@@ -1101,6 +1103,49 @@ us_power_emission_drivers:
     2:
       label: 2000-2010
       column: _2000_2010
+
+us_power_emission_drivers_2:
+  id: us_power_emission_drivers_2
+  region_id: us
+  sector_id: power
+  subject_id: emission_drivers
+  name: Power sector variables and impact on average emissions factor (Efficiency)
+  description: The expansion and increased availability of nuclear in the 1980s and 1990s offset growing emissions from coal. In the 2000s, most factors were aligned to improve emissions intensity, including increasing renewables output and gas replacing coal.
+  description_long: longest
+  table: us_power_emission_drivers_2
+  x_axis: date_processed
+  units: tonnes CO₂/MWh
+  name_column: variable
+  type: BarGraph
+  x_groups:
+    0:
+      label: 1980-1990
+      column: _1980_1990
+    1:
+      label: 1990-2000
+      column: _1990_2000
+    2:
+      label: 2000-2010
+      column: _2000_2010
+
+us_power_emission_drivers_3:
+  id: us_power_emission_drivers_3
+  region_id: us
+  sector_id: power
+  subject_id: emission_drivers
+  name: Power sector variables and impact on average emissions factor (Transmission)
+  description: The expansion and increased availability of nuclear in the 1980s and 1990s offset growing emissions from coal. In the 2000s, most factors were aligned to improve emissions intensity, including increasing renewables output and gas replacing coal.
+  description_long: longest
+  table: us_power_emission_drivers_3
+  x_axis: date_processed
+  units: tonnes CO₂/MWh
+  name_column: variable
+  type: BarGraph
+  x_groups:
+    0:
+      label: value
+      column: value
+
 
 us_power_policy:
   id: us_power_policy
@@ -1364,7 +1409,7 @@ india_agriculture_emission_drivers:
       name: Agricultural raw materials
       column: agricultural_raw_materials_exports
       units: million USD
-      class: area
+      class: line
       y_min: 0
       y_max: 32000
       axis: left
@@ -1374,7 +1419,7 @@ india_agriculture_emission_drivers:
       name: Food exports
       column: food_exports
       units: million USD
-      class: area
+      class: line
       y_min: 0
       y_max: 32000
       strokeColor: "rgba(79,110,191,1)"
@@ -1577,15 +1622,6 @@ india_power_emission_drivers:
       y_max: 2000
       strokeColor: 'rgba(79,110,191,1)'
       fillColor: 'rgba(79,110,191,0.2)'
-    major_sources:
-      name: Major sources
-      column: major_sources
-      units: TWh
-      class: area
-      y_min: 0
-      y_max: 2000
-      strokeColor: 'rgba(238,87,41,1)'
-      fillColor: 'rgba(238,87,41,0.2)'
 
 india_power_policy:
   id: india_power_policy
@@ -2106,11 +2142,11 @@ china_power_emissions:
       series_2:
         name: Generation
         column: generation
-        units: million tonnes CO₂
+        units: TWh
         class: line
         y_min: 0
         y_max: 5000
-        axis: left
+        axis: right
         strokeColor:  "rgba(79,110,191,1)"
 
 china_power_emission_drivers:
@@ -2210,7 +2246,7 @@ china_power_policy_2:
     incentive_delivered:
       name: Incentive delivered
       column: incentive_delivered_during_period_million_yuan
-      units: Yuan / kWh
+      units: billion yuan
       class: line
       y_min: 0
       y_max: 50
