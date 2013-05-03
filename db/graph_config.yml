@@ -354,7 +354,7 @@ eu_power_emission_drivers:
     2:
       label: Transmission
       strokeColor: "rgba(79,110,191,1)"
-      
+
 
 eu_power_policy:
   id: eu_power_policy
@@ -1096,7 +1096,7 @@ us_power_emission_drivers:
   region_id: us
   sector_id: power
   subject_id: emission_drivers
-  name: Power sector variables and impact on average emissions factor (Production)
+  name: Power sector variables and impact on average emissions factor
   description: The expansion and increased availability of nuclear in the 1980s and 1990s offset growing emissions from coal. In the 2000s, most factors were aligned to improve emissions intensity, including increasing renewables output and gas replacing coal.
   description_long: longest
   table: us_power_emission_drivers
