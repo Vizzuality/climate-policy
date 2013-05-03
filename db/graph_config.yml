@@ -1248,7 +1248,7 @@ us_industry_emission_drivers:
     chemical:
       name: Chemical
       column: chemical_manufacturing
-      units: Index (1998=100)
+      units: Index (1998=1)
       class: line
       y_min: 0.5
       y_max: 1.3
@@ -1257,7 +1257,7 @@ us_industry_emission_drivers:
     food_manufacturing:
       name: Food manufacturing
       column: food_manufacturing
-      units: Index (1998=100)
+      units: Index (1998=1)
       class: line
       y_min: 0.5
       y_max: 1.3
@@ -1265,7 +1265,7 @@ us_industry_emission_drivers:
     iron_and_steel:
       name: Iron and steel
       column: iron_and_steel
-      units: Index (1998=100)
+      units: Index (1998=1)
       class: line
       y_min: 0.5
       y_max: 1.3
@@ -1273,7 +1273,7 @@ us_industry_emission_drivers:
     nonmetallic_mineral_product_manufacturing:
       name: Non-metallic mineral
       column: nonmetallic_mineral_product_manufacturing
-      units: Index (1998=100)
+      units: Index (1998=1)
       class: line
       y_min: 0.5
       y_max: 1.3
@@ -1282,7 +1282,7 @@ us_industry_emission_drivers:
     paper_manufacturing:
       name: Paper
       column: paper_manufacturing
-      units: Index (1998=100)
+      units: Index (1998=1)
       class: line
       y_min: 0.5
       y_max: 1.3
@@ -1290,7 +1290,7 @@ us_industry_emission_drivers:
     petroleum_and_coal_products_manufacturing:
       name: Petroleum and coal
       column: petroleum_and_coal_products_manufacturing
-      units: Index (1998=100)
+      units: Index (1998=1)
       class: line
       y_min: 0.5
       y_max: 1.3
@@ -1298,7 +1298,7 @@ us_industry_emission_drivers:
     primary_metal_manufacturing:
       name: Primary metal
       column: primary_metal_manufacturing
-      units: Index (1998=100)
+      units: Index (1998=1)
       class: line
       y_min: 0.5
       y_max: 1.3
@@ -1553,7 +1553,7 @@ india_power_emission_drivers:
   region_id: india
   sector_id: power
   subject_id: emission_drivers
-  name: Impact on average emissions factor
+  name: Fuel sources for power generation
   description: Most new generation came from conventional sources (particularly coal), although the past decade saw exponential growth in renewable energy generation.
   table: india_power_emission_drivers
   x_axis: date_processed
@@ -1575,8 +1575,8 @@ india_power_emission_drivers:
       class: area
       y_min: 0
       y_max: 2000
-      strokeColor: 'rgba(79,110,191,1)'
-      fillColor: 'rgba(79,110,191,0.2)'
+      strokeColor: "rgba(102,102,102,1)"
+      fillColor: 'rgba(102,102,102,0.2)'
     wind:
       name: Wind
       column: wind
@@ -1593,8 +1593,8 @@ india_power_emission_drivers:
       class: area
       y_min: 0
       y_max: 2000
-      strokeColor: 'rgba(87,216,159,1)'
-      fillColor: 'rgba(87,216,159,0.2)'
+      strokeColor: "rgba(220,115,255,1)"
+      fillColor: "rgba(220,115,255,0.2)"
     nuclear:
       name: Nuclear
       column: nuclear
@@ -1602,8 +1602,8 @@ india_power_emission_drivers:
       class: area
       y_min: 0
       y_max: 2000
-      strokeColor: 'rgba(87,216,159,1)'
-      fillColor: 'rgba(87,216,159,0.2)'
+      strokeColor: "rgba(187,187,187,1)"
+      fillColor: "rgba(187,187,187,0.2)"
     hydro:
       name: Hydro
       column: hydro
@@ -1622,7 +1622,6 @@ india_power_emission_drivers:
       y_max: 2000
       strokeColor: 'rgba(79,110,191,1)'
       fillColor: 'rgba(79,110,191,0.2)'
-
 india_power_policy:
   id: india_power_policy
   region_id: india
