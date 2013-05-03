@@ -237,7 +237,6 @@
 
         data.rows.forEach(function(d){
           var values = [];
-
           _.each(_graphs[graphNum].x_groups, function(serie) {
             var value = d[serie.column];
             if (value > 0) {
@@ -288,6 +287,14 @@
         var label_w = 363;
         var available_w = 600;
         var group_w = 0;
+
+        // Drawing legend for Y color grouping
+        var y_color_groups = _graphs[graphNum].y_color_groups;
+        if (y_color_groups) {
+          for (var i = 0; i < _.size(y_color_groups); i++) {
+            addLegendElement(_graphs[graphNum].id, y_color_groups[i].strokeColor, '', y_color_groups[i].label);
+          }
+        }
 
         if (grouping_y) {
           group_w = available_w;
@@ -400,6 +407,8 @@
               .attr("style",function (d) {
                 if (grouping_y) {
                   return "fill: "+group_strokeColor;
+                } else if (_graphs[graphNum].y_color_groups) {
+                  return "fill: "+_graphs[graphNum].y_color_groups[d["y_color_group"]].strokeColor;                  
                 } else {
                   if (d[group_name] > 0) {
                     return "fill: "+positive_color;
@@ -429,6 +438,8 @@
               .attr("style",function(d) {
                 if (grouping_y) {
                   return "stroke: "+group_strokeColor+"; fill: #fff";
+                } else if (_graphs[graphNum].y_color_groups) {
+                  return "stroke: "+_graphs[graphNum].y_color_groups[d["y_color_group"]].strokeColor+"; fill: #fff";
                 } else {
                   if (d[group_name] > 0) {
                     return "stroke: "+positive_color+"; fill: #fff";

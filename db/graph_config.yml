@@ -344,6 +344,17 @@ eu_power_emission_drivers:
     1:
       label: 2000-2010
       column: _2000_2010
+  y_color_groups:
+    0:
+      label: Efficiency
+      strokeColor: '#00D9A3'
+    1:
+      label: Generation
+      strokeColor: '#FFD24D'
+    2:
+      label: Transmission
+      strokeColor: "rgba(79,110,191,1)"
+      
 
 eu_power_policy:
   id: eu_power_policy
@@ -1103,49 +1114,16 @@ us_power_emission_drivers:
     2:
       label: 2000-2010
       column: _2000_2010
-
-us_power_emission_drivers_2:
-  id: us_power_emission_drivers_2
-  region_id: us
-  sector_id: power
-  subject_id: emission_drivers
-  name: Power sector variables and impact on average emissions factor (Efficiency)
-  description: The expansion and increased availability of nuclear in the 1980s and 1990s offset growing emissions from coal. In the 2000s, most factors were aligned to improve emissions intensity, including increasing renewables output and gas replacing coal.
-  description_long: longest
-  table: us_power_emission_drivers_2
-  x_axis: date_processed
-  units: tonnes CO₂/MWh
-  name_column: variable
-  type: BarGraph
-  x_groups:
+  y_color_groups:
     0:
-      label: 1980-1990
-      column: _1980_1990
+      label: Efficiency
+      strokeColor: '#00D9A3'
     1:
-      label: 1990-2000
-      column: _1990_2000
+      label: Generation
+      strokeColor: '#FFD24D'
     2:
-      label: 2000-2010
-      column: _2000_2010
-
-us_power_emission_drivers_3:
-  id: us_power_emission_drivers_3
-  region_id: us
-  sector_id: power
-  subject_id: emission_drivers
-  name: Power sector variables and impact on average emissions factor (Transmission)
-  description: The expansion and increased availability of nuclear in the 1980s and 1990s offset growing emissions from coal. In the 2000s, most factors were aligned to improve emissions intensity, including increasing renewables output and gas replacing coal.
-  description_long: longest
-  table: us_power_emission_drivers_3
-  x_axis: date_processed
-  units: tonnes CO₂/MWh
-  name_column: variable
-  type: BarGraph
-  x_groups:
-    0:
-      label: value
-      column: value
-
+      label: Transmission
+      strokeColor: "rgba(79,110,191,1)"
 
 us_power_policy:
   id: us_power_policy
