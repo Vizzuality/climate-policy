@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 3.2.13'
+gem 'rails', '3.2.13'
 gem 'thin', '~> 1.5.1'
-gem 'active_hash', '~> 0.9.13'
+gem 'active_hash', '0.9.13'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -11,7 +11,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 2.2.1'
 gem 'jquery-migrate-rails'
 gem 'underscore-rails'
 gem 'pjax_rails'
