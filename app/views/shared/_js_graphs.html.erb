@@ -386,12 +386,11 @@
             if (grouping_y) {
               group_pos_x = 0;
             }
-
-            svg[graphNum].selectAll("rect."+group_name)
+            svg[graphNum].selectAll("rect.group"+group_name)
               .data(data.rows)
               .enter()
               .append("rect")
-              .attr("class",group_name)
+              .attr("class","group"+group_name)
               .attr("x", function(d,i) {
                 if (d[group_name] > 0) {
                   return label_w + group_pos_x + zero_x;
@@ -435,11 +434,11 @@
                 return bar_width;
               });
 
-            svg[graphNum].selectAll("circle."+group_name)
+            svg[graphNum].selectAll("circle.group"+group_name)
               .data(data.rows)
               .enter()
               .append("circle")
-              .attr("class", group_name+' linedot linedot'+i)
+              .attr("class", "group"+group_name+' linedot linedot'+i)
               .attr("style",function(d) {
                 if (grouping_y) {
                   return "stroke: "+group_strokeColor+"; fill: #fff";
