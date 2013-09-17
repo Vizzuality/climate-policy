@@ -192,8 +192,13 @@
         _data[key] = _(elem).values();
       });
 
-      var min_date = new Date(_data.rows[0].min);
-      var std_domain = [new Date(min_date.setDate( min_date.getDate() + 1 )),new Date(_data.rows[0].max)];
+      var datestr_min = _data.rows[0].min.split(/[-T.]/);
+      var safdat_min = new Date( datestr_min.slice(0,3).join('/')+' '+datestr_min[3] );
+
+      var datestr_max = _data.rows[0].max.split(/[-T.]/);
+      var safdat_max = new Date( datestr_max.slice(0,3).join('/')+' '+datestr_max[3] );
+
+      var std_domain = [new Date(safdat_min.setDate( safdat_min.getDate() + 1 )),safdat_max];
 
       // Calculates the global x_scale
       x_scale = d3.scale.linear()
@@ -584,27 +589,43 @@
           var extended_data_col = new Array();
           extended_data_col = jQuery.extend(true,[],data_col);
 
-          if (new Date(extended_data_col[0]['date_processed']).getFullYear() < (domain[0].getFullYear() +2)) {
+          var datestr = extended_data_col[0]['date_processed'].split(/[-T.]/);
+          var safdat = new Date( datestr.slice(0,3).join('/')+' '+datestr[3] );
+
+          if (new Date(safdat).getFullYear() < (domain[0].getFullYear() +2)) {
             var fake_left = jQuery.extend(true,{},extended_data_col[0]);
-            fake_left[x_col] = (parseInt(fake_left[x_col])-2)+"";
+            fake_left[x_col] = (parseInt(fake_left[x_col])-2)+"-01-02T00:00:00+0100";
             extended_data_col.unshift(fake_left);
           }
 
-          if (new Date(extended_data_col[extended_data_col.length -1]['date_processed']).getFullYear() > (domain[1].getFullYear() - 1)) {
+          var datestr_right = extended_data_col[extended_data_col.length -1]['date_processed'].split(/[-T.]/);
+          var safdat_right = new Date( datestr_right.slice(0,3).join('/')+' '+datestr_right[3] );
+
+          if (new Date(safdat_right).getFullYear() > (domain[1].getFullYear() - 1)) {
             var fake_right = jQuery.extend(true,{},extended_data_col[extended_data_col.length - 1]);
-            fake_right[x_col] = (parseInt(fake_right[x_col])+4)+"";
+            fake_right[x_col] = (parseInt(fake_right[x_col])+4)+"-01-02T00:00:00+0100";
             extended_data_col.push(fake_right);
           }
 
           if (serie.class == "line") {
 
             var baseline = d3.svg.line()
-              .x(function(d){return x_scale(new Date(d[x_col]))})
+              .x(function(d){
+                var datestr = d[x_col].split(/[-T.]/);
+                var safdat = new Date( datestr.slice(0,3).join('/')+' '+datestr[3] );
+
+                return x_scale(safdat);
+              })
               .y(h)
               .interpolate(INTERPOLATE_METHOD);
 
             var line = d3.svg.line()
-              .x(function(d){return x_scale(new Date(d[x_col]))})
+              .x(function(d){
+                var datestr = d[x_col].split(/[-T.]/);
+                var safdat = new Date( datestr.slice(0,3).join('/')+' '+datestr[3] );
+
+                return x_scale(safdat);
+              })
               .y(function(d){return y_scale(d[y_col_])})
               .interpolate(INTERPOLATE_METHOD);
 
@@ -625,9 +646,12 @@
               .attr("class", 'linedot linedot'+i)
               //This shows only the first point during each year
               .attr("style",function(d){
+                var datestr = d.date_processed.split(/[-T.]/);
+                var safdat = new Date( datestr.slice(0,3).join('/')+' '+datestr[3] );
+
                 var _fill;
                 if ((simplify == null)||(simplify)) {
-                  _fill = (new Date(d.date_processed).getMonth() + 1 == 1) ? 'fill:'+strokeColor : 'display: none';
+                  _fill = (safdat.getMonth() + 1 == 1) ? 'fill:'+strokeColor : 'display: none';
                 } else {
                   _fill = 'fill:'+strokeColor;
                 }
@@ -637,7 +661,9 @@
               .attr("name", function(d){return (Math.round(d[y_col]*1000)/1000)+ " "  + units}) //Uses this for tooltip
               .on("mouseover", function(d) {
                 circle_locked = true;
-                updateOverlayLine(new Date(d[x_col]));
+                var datestr = d[x_col].split(/[-T.]/);
+                var safdat = new Date( datestr.slice(0,3).join('/')+' '+datestr[3] );
+                updateOverlayLine(safdat);
                 d3.selectAll(".overlay-line").style("visibility", "visible");
                 d3.selectAll(".year_marker").style("visibility", "visible");
 
@@ -673,7 +699,12 @@
                   .duration(200)
                   .style("color","#aaa");
               })
-              .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
+              .attr("cx", function(d){
+                var datestr = d[x_col].split(/[-T.]/);
+                var safdat = new Date( datestr.slice(0,3).join('/')+' '+datestr[3] );
+
+                return x_scale(safdat);
+              })
               .attr("cy", function(d){return y_scale(d[y_col])});
             })(strokeColor_, units_, y_col_, simplify_);
 
@@ -685,7 +716,8 @@
               .domain([serie.y_min,serie.y_max]);
 
             function getAccumulatedValue(d) {
-              var date = (new Date(d[x_col])).getFullYear();
+              var datestr = d[x_col].split(/[-T.]/);
+              var date = (new Date( datestr.slice(0,3).join('/')+' '+datestr[3] )).getFullYear();
               var accumulated_value = stacked_area_accumulated[date];
               if (accumulated_value == null) accumulated_value = 0;
               var current_value = d[y_col_];
@@ -693,9 +725,15 @@
             }
 
             var area = d3.svg.area()
-              .x(function(d) {return x_scale(new Date(d[x_col]))})
+              .x(function(d) {
+                var datestr = d.date_processed.split(/[-T.]/);
+                var safdat = new Date( datestr.slice(0,3).join('/')+' '+datestr[3] );
+
+                return x_scale(safdat)
+              })
               .y0(function(d) {
-                var date = new Date(d[x_col]);
+                var datestr = d[x_col].split(/[-T.]/);
+                var date = new Date( datestr.slice(0,3).join('/')+' '+datestr[3] );
                 var yearStr = date.getFullYear();
                 var accumulated_value = stacked_area_accumulated[yearStr];
                 if (accumulated_value == null) accumulated_value = 0;
@@ -721,7 +759,12 @@
               });
 
             var line = d3.svg.line()
-              .x(function(d){return x_scale(new Date(d[x_col]))})
+              .x(function(d){
+                var datestr = d[x_col].split(/[-T.]/);
+                var safdat = new Date( datestr.slice(0,3).join('/')+' '+datestr[3] );
+
+                return x_scale(safdat);
+              })
               .y(function(d){
                 return getAccumulatedValue(d);
               })
@@ -742,8 +785,17 @@
                 .enter()
                 .append("circle")
                 .attr("class", 'linedot linedot'+i)
-                .attr("style",function(d){ var _fill = (new Date(d.date_processed).getMonth() + 1 == 1) ? 'fill:'+strokeColor : 'display: none'; return _fill;})
-                .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
+                .attr("style",function(d){
+                  var datestr = d.date_processed.split(/[-T.]/);
+                  var safdat = new Date( datestr.slice(0,3).join('/')+' '+datestr[3] );
+
+                  var _fill = (safdat.getMonth() + 1 == 1) ? 'fill:'+strokeColor : 'display: none'; return _fill;})
+                .attr("cx", function(d) {
+                  var datestr = d[x_col].split(/[-T.]/);
+                  var safdat = new Date( datestr.slice(0,3).join('/')+' '+datestr[3] );
+
+                  return x_scale(safdat);
+                })
                 .attr("cy", function(d){
                   return getAccumulatedValue(d);
                 })
@@ -753,7 +805,9 @@
                 }) //Uses this for tooltip
                 .on("mouseover", function(d) {
                   circle_locked = true;
-                  updateOverlayLine(new Date(d[x_col]));
+                  var datestr = d[x_col].split(/[-T.]/);
+                  var safdat = new Date( datestr.slice(0,3).join('/')+' '+datestr[3] );
+                  updateOverlayLine(safdat);
 
                   d3.selectAll(".overlay-line").style("visibility", "visible");
                   d3.selectAll(".year_marker").style("visibility", "visible");
@@ -799,7 +853,8 @@
 
             // Accumulating this series' values for next stacked areas
             extended_data_col.forEach(function (d) {
-              var date = (new Date(d[x_col])).getFullYear();
+              var datestr = d[x_col].split(/[-T.]/);
+              var date = (new Date( datestr.slice(0,3).join('/')+' '+datestr[3] )).getFullYear();
               var accumulated_value = stacked_area_accumulated[date];
               if (accumulated_value == null) accumulated_value = 0;
               var current_value = d[y_col_];
@@ -832,8 +887,17 @@
                 .enter()
                 .append("circle")
                 .attr("class", 'linedot linedot'+i)
-                .attr("style",function(d){ var _fill = (new Date(d.date_processed).getMonth() + 1 == 1) ? 'fill:'+strokeColor : 'display: none'; return _fill;})
-                .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
+                .attr("style",function(d){
+                  var datestr = d.date_processed.split(/[-T.]/);
+                  var safdat = new Date( datestr.slice(0,3).join('/')+' '+datestr[3] );
+
+                  var _fill = (safdat.getMonth() + 1 == 1) ? 'fill:'+strokeColor : 'display: none'; return _fill;})
+                .attr("cx", function(d){
+                  var datestr = d[x_col].split(/[-T.]/);
+                  var safdat = new Date( datestr.slice(0,3).join('/')+' '+datestr[3] );
+
+                  return x_scale(safdat);
+                })
                 .attr("cy", function(d){
                   return y_scale(d[y_col_]) - ((y_scale(d[y_col_]) - y_scale(d[serie.column_top]))/2);
                 })
@@ -916,8 +980,17 @@
                 .enter()
                 .append("circle")
                 .attr("class", 'linedot linedot'+i)
-                .attr("style",function(d){ var _fill = (new Date(d.date_processed).getMonth() + 1 == 1) ? 'fill:#fff; stroke:'+strokeColor : 'display: none'; return _fill;})
-                .attr("cx", function(d){return x_scale(new Date(d[x_col]))})
+                .attr("style",function(d){
+                  var datestr = d.date_processed.split(/[-T.]/);
+                  var safdat = new Date( datestr.slice(0,3).join('/')+' '+datestr[3] );
+
+                  var _fill = (safdat.getMonth() + 1 == 1) ? 'fill:#fff; stroke:'+strokeColor : 'display: none'; return _fill;})
+                .attr("cx", function(d){
+                  var datestr = d[x_col].split(/[-T.]/);
+                  var safdat = new Date( datestr.slice(0,3).join('/')+' '+datestr[3] );
+
+                  return x_scale(safdat);
+                })
                 .attr("cy", function(d){
                   return y_scale(d[y_col_]);
                 })
