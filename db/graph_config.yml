@@ -340,10 +340,10 @@ eu_power_emission_drivers:
   x_groups:
     0:
       label: 1990-2000
-      column: _1990_2000
+      column: '_1990_2000'
     1:
       label: 2000-2010
-      column: _2000_2010
+      column: '_2000_2010'
   y_color_groups:
     0:
       label: Efficiency
@@ -548,10 +548,10 @@ eu_agriculture_emission_drivers:
   x_groups:
     0:
       label: 1990-2000
-      column: _1990_2000
+      column: '_1990_2000'
     1:
       label: 2000-2008
-      column: _2000_2008
+      column: '_2000_2008'
 
 eu_agriculture_emission_drivers_2:
   id: eu_agriculture_emission_drivers_2
@@ -567,10 +567,10 @@ eu_agriculture_emission_drivers_2:
   x_groups:
     0:
       label: 1990-2000
-      column: _1990_2000
+      column: '_1990_2000'
     1:
       label: 2000-2008
-      column: _2000_2008
+      column: '_2000_2008'
 
 eu_agriculture_policy:
   id: eu_agriculture_policy
@@ -1107,13 +1107,13 @@ us_power_emission_drivers:
   x_groups:
     0:
       label: 1980-1990
-      column: _1980_1990
+      column: '_1980_1990'
     1:
       label: 1990-2000
-      column: _1990_2000
+      column: '_1990_2000'
     2:
       label: 2000-2010
-      column: _2000_2010
+      column: '_2000_2010'
   y_color_groups:
     0:
       label: Efficiency
