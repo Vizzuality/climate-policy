@@ -52,7 +52,7 @@ brazil:
               - <dl><dt>Hyperinflation</dt></dl>
               - <dl><dt>Failed economic reforms</dt></dl>
           _1990:
-            description: In the 1990s, the economy stabilized and Brazil liberalized trade. The agricultural sector made advances in professional, technological, and operational modernization.
+            description: "In the 1990s, the economy stabilized and Brazil liberalized trade. The agricultural sector made advances in professional, technological, and operational modernization."
             policy_barriers:
               - <dl><dt>Mercosur common trade policy established, 1991.</dt></dl>
               - <dl><dt>Development of family production programs in mid-1990s.</dt><dd>National Program for Strengthening Family Farming (PRONAF)</dd></dl>
@@ -108,7 +108,7 @@ china:
              - <dl><dt>Urbanization led to new building construction</dt></dl>
              - <dl><dt>Rapid increase in total building area</dt></dl>
           _1990:
-            description: China moved into its pattern of build and rebuild, demolishing older buildings but building new buildings at a faster pace. In concert, China focused on new building energy efficiency standards and continued heating policies.
+            description: "China moved into its pattern of build and rebuild, demolishing older buildings but building new buildings at a faster pace. In concert, China focused on new building energy efficiency standards and continued heating policies."
             policy_barriers:           
              - <dl><dt>Urban District Heating Industrial Policy Measures of 1992 stated district heating as important target for pollution reduction and energy conservation</dt></dl>
              - <dl><dt>9th Five-Year Plan, 1996-2000</dt><dd>30% effciency improvement targets for new residential buildings with moving baseline year</dd><dd>Phased-in 50% and additional 30% effciency improvement targets for new commercial buildings</dd><dd>Guidelines for building retrofits</dd><dd>Heat metering pilots</dd></dl>
@@ -148,7 +148,7 @@ china:
              - <dl><dt>Domestic market began to open to global competition and imported technologies (Rosen 2007)</dt></dl>
 
           _1990:
-            description: GDP continued to rise faster than energy demand with energy efficiency still improving at a notable pace. Institutional infrastructure and funding for energy conservation was weakening by the end of the decade.
+            description: "GDP continued to rise faster than energy demand with energy efficiency still improving at a notable pace. Institutional infrastructure and funding for energy conservation was weakening by the end of the decade."
             policy_barriers:
              - <dl><dt>Energy efficiency action continued over the decade; however, funding and institutional infrastructure weakened by end of the 1990s (Levine 2009, Price 2001)</dt><dd>Ministry of Energy created in 1988 but abolished in 1993</dd><dd>Industrial ministries demoted to bureaus in 1998 resulting in weakened state control over enterprises (Price 2001)</dd></dl>
              - <dl><dt>State Council stipulated closures of small facilities in 15 high polluting industries, (e.g. small coal mines, paper), 1996</dt></dl>
@@ -197,7 +197,7 @@ china:
              - <dl><dt>Increased railway construction between western coal production provinces and coastal areas</dt></dl>
 
           _1990:
-            description: As China’s power supply grew and diversified, the government began programs to close small coal-fired power plants, but coal continued to dominate the energy supply. The corporatization of state power-related assets began.
+            description: "As China’s power supply grew and diversified, the government began programs to close small coal-fired power plants, but coal continued to dominate the energy supply. The corporatization of state power-related assets began."
             policy_barriers:            
              - <dl><dt>Government-set coal price transitioned to government guidance on coal price, 1993</dt></dl>
              - <dl><dt>National Electric Power Law of 1995 reiterated encouragement for private and foreign investment in the power sector</dt></dl>
@@ -282,12 +282,12 @@ eu:
              - <dl><dt>Continued increase in private vehicle ownership (EEA 2011)</dt></dl>
              - <dl><dt>Infrastructure investment dominated by road transport while investment share in rail, maritime, and inland waterway infrastructure fell from 2000-2006 (Eurostat 2009)</dt></dl>
              - <dl><dt>Increased fuel efficiency across passenger (6%) and freight ground (12%) transport (EEA 2011)</dt></dl>
-          
+
     - power:
         description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in the EU
         decades_analysis:
           _1990:
-            description: As EU began to liberalize and integrate its energy market, low gas prices drove switching from coal generation to gas generation. EU emissions limits were established for industry and energy facilities. EU renewable energy leadership grew while nuclear power and hydro generation increased across the decade.
+            description: "As EU began to liberalize and integrate its energy market, low gas prices drove switching from coal generation to gas generation. EU emissions limits were established for industry and energy facilities. EU renewable energy leadership grew while nuclear power and hydro generation increased across the decade."
             policy_barriers: 
              - <dl><dt>Liberalization and integration of EU’s internal energy market commenced in second half of decade with First Energy Package (96/92/EC—electricity; 98/30/EC—gas) </dt></dl>
              - <dl><dt>Regulation of pollution from power plants increased</dt><dd>Large Combustion Plant Directive (88/609/EEC) limits on CO₂, NOx, and SOx</dd><dd>1996 Integrated Pollution Prevention and Control (IPPC) Directive (96/61/EC) instituted a comprehensive permitting regime for power plants to cover all types of pollution</dd></dl>
@@ -316,7 +316,7 @@ eu:
         description: These graphs show the changes in emissions, emissions drivers, and policy in the Industry sector in the EU
         decades_analysis:
           _1990:
-            description: Climate change took a prominent place on the EU political agenda in the 1990s. EU industry saw improved energy efficiency as energy intensive plants in Eastern Europe closed and the EU passed regulation to limit CO₂ and other pollutants from industrial facilities.
+            description: "Climate change took a prominent place on the EU political agenda in the 1990s. EU industry saw improved energy efficiency as energy intensive plants in Eastern Europe closed and the EU passed regulation to limit CO₂ and other pollutants from industrial facilities."
             policy_barriers: 
              - <dl><dt>Regulation of pollution from industrial facilities increased and instituted</dt><dd>Large Combustion Plant Directive (88/609/EEC) limits on CO₂, NOx, and SOx from large combustion plants</dd><dd>1996 Integrated Pollution Prevention and Control (IPPC) Directive (96/61/EC) instituted a comprehensive permitting regime for industrial facilities to cover all types of pollution</dd></dl>
             underlying_changes:
@@ -363,7 +363,7 @@ eu:
         description: These graphs show the changes in emissions, emissions drivers, and policy in the Buildings sector in the EU
         decades_analysis:
           _1990:
-            description: Energy policies emphasized building sector energy efficiency in the 1990s. Europe also harmonized energy efficiency labeling for appliances. Building sector efficiency steadily improved, leading to modest declines in direct greenhouse gas emissions from the sector. However, growing electricity consumption in the sector, partially driven by increasing appliance use, more than offset declining emissions, particularly in commercial buildings.
+            description: "Energy policies emphasized building sector energy efficiency in the 1990s. Europe also harmonized energy efficiency labeling for appliances. Building sector efficiency steadily improved, leading to modest declines in direct greenhouse gas emissions from the sector. However, growing electricity consumption in the sector, partially driven by increasing appliance use, more than offset declining emissions, particularly in commercial buildings."
             policy_barriers: 
              - "<dl><dt>Shift in EU-wide policy targeting buildings in 1990s</dt><dd>EU-wide climate and energy strategies were introduced, but had limited reach as compared to national policies</dd><dd>End-use issues became an integral part of energy policies: buildings sector recognized for significant potential for energy effciency improvement</dd></dl>"
              - <dl><dt>THERMIE Programme (1989) to support energy innovation</dt><dd>Supported demonstration projects across EU, including energy effciency technologies for building sector</dd></dl>
@@ -417,7 +417,7 @@ india:
              - <dl><dt>Marked agricultural growth largely due to adoption of high-yield seeds and fertilizers throughout the 1980s (Singh 2010)</dt></dl>
              - <dl><dt>Substantial growth and investment in rural infrastructure (Singh 2010)</dt></dl>
           _1990:
-            description: After 1990, the focus of government policy moved toward increasing the efficiency of the agricultural sector by improving the supply chain infrastructure.
+            description: "After 1990, the focus of government policy moved toward increasing the efficiency of the agricultural sector by improving the supply chain infrastructure."
             policy_barriers:           
              - <dl><dt>Uruguay Round Agreement on Agriculture entered into force in 1995</dt><dd>Quantitative import restrictions lifted in accelerated fashion for most agricultural commodities (1997-2001)</dd><dd>Removed most quantitative controls on agricultural exports during the late 1990s</dd><dd>Export ban remained available for essential commodities as needed to stabilize domestic market</dd></dl>
             underlying_changes:
@@ -439,7 +439,7 @@ india:
              - <dl><dt>2000s and started to recover after 2005 (Ministry of Agriculture 2012)</dt></dl>
              - <dl><dt>Increased mechanization of agriculture (Ministry of Agriculture 2013)</dt></dl>
              - <dl><dt>Population increased from 1,024.25 million in 2000 to 1,190.52 million by 2010 (IMF 2011)</dt></dl>
-                  
+
     - power:
         description: These graphs show the changes in emissions, emissions drivers, and policy in the Power sector in India
         decades_analysis:
@@ -454,7 +454,7 @@ india:
              - <dl><dt>GDP grew nearly 94% (from USD 150.86 billion in 1980 to USD 292.92 billion in 1990) (World Bank 2012)</dt></dl>
 
           _1990:
-            description: Government policy focused on improvement in governance and regulation of the electricity sector. Policies also aimed to increase captive power generation.
+            description: "Government policy focused on improvement in governance and regulation of the electricity sector. Policies also aimed to increase captive power generation."
             policy_barriers:           
              - <dl><dt>The Electricity Regulatory Commissions Act established Central Electricity Regulatory Commission and State</dt></dl>
              - <dl><dt>Electricity Commissions, 1998</dt><dd>Commissions determined tariffis for generation and transmission</dd><dd>Aimed to improve State Electricity Board health</dd><dd>Central Electricity Regulatory Commission was responsible for regulation of inter-state sale of power</dd></dl>
@@ -499,7 +499,7 @@ india:
              - <dl><dt>GDP grew nearly 94% (from USD 150.86 billion in 1980 to USD 292.92 billion in 1990) (World Bank 2012)</dt></dl>
 
           _1990:
-            description: India took on major industrial reforms in 1991 as the country faced an unprecedented balance of payments crisis.
+            description: "India took on major industrial reforms in 1991 as the country faced an unprecedented balance of payments crisis."
             policy_barriers: 
              - <dl><dt>New Industrial Policy, 1991</dt><dd>Removed licensing requirements for the majority of industries, with only 15 industries requiring compulsory licensing post-April 1993</dd><dd>Foreign investment permitted up to 51% in high priority sectors (e.g., software, electrical equipment, hotel and tourism)</dd><dd>Reduced number of industries exclusively reserved for public sector from 17 to 8 sectors</dd></dl>
             underlying_changes:
@@ -552,7 +552,7 @@ us:
              - <dl><dt>Suburbanization trend that began mid-century continued</dt></dl>
 
           _1990:
-            description: The 1990s saw wider and more stringent building code adoption due to federal requirements and assistance. Federal appliance standards and voluntary programs increased in scope. A residential construction boom began in the latter half of the decade.
+            description: "The 1990s saw wider and more stringent building code adoption due to federal requirements and assistance. Federal appliance standards and voluntary programs increased in scope. A residential construction boom began in the latter half of the decade."
             policy_barriers:           
              - <dl><dt>Montreal Protocol to phase out halocarbons entered into force in 1989</dt></dl>
              - <dl><dt>First close federal involvement in state code creation with assistance in creating ASHRAE 1989 (PNNL 1994)</dt></dl>
@@ -596,7 +596,7 @@ us:
              - <dl><dt>Rapid changes to light duty fleet mix</dt><dd>Light truck share increased from 16% to 30%</dd><dd>Car share decreased from 83% to 70% (ORNL 2012)</dd></dl>
 
           _1990:
-            description: The 1990s saw stable energy prices and an associated drop in attention towards increasing overall energy efficiency. Consumption behavior shifted towards larger, amenity-rich vehicles.
+            description: "The 1990s saw stable energy prices and an associated drop in attention towards increasing overall energy efficiency. Consumption behavior shifted towards larger, amenity-rich vehicles."
             policy_barriers:            
              - <dl><dt>No change to CAFE standards</dt></dl>
              - <dl><dt>Gas taxes raised from 9 to 18 cents from 1990 to 1993, the last time federal gas taxes increased significantly</dt></dl>
@@ -640,7 +640,7 @@ us:
              - <dl><dt>High oil prices, and the beginning of the phase out of oil-fired generation</dt></dl>
 
           _1990:
-            description: The government implemented federal tax incentives for renewable energy. The fuel mix composition changed with increasing nuclear availability and improvements in natural gas generation.
+            description: "The government implemented federal tax incentives for renewable energy. The fuel mix composition changed with increasing nuclear availability and improvements in natural gas generation."
             policy_barriers: 
              - <dl><dt>Power sector deregulation throughout decade</dt></dl>
              - <dl><dt>Clean Air Act Amendments, 1990</dt><dd>Acid Rain Program</dd><dd>Established cap and trade system to limit SOx emissions from coal-fired EGUs.</dd><dd>Limited NOx emissions from EGUs</dd></dl>
@@ -679,7 +679,7 @@ us:
              - <dl><dt>Shift from integrated mills to minimills in steel sector</dt></dl>
 
           _1990:
-            description: The continued deregulation of the power sector spurred a reduction in funding towards demand-side management programs. There was increased attention on appliance standards with the Energy Policy Act.
+            description: "The continued deregulation of the power sector spurred a reduction in funding towards demand-side management programs. There was increased attention on appliance standards with the Energy Policy Act."
             policy_barriers: 
              - <dl><dt>Policy shifted to partnership programs between EPA, DOE, and industry</dt><dd>Energy Star voluntary energy efficiency labeling program began, 1992</dd><dd>Increased use of IAC audits</dd></dl>
              - <dl><dt>Deregulation of utilities after 1994 led to a decrease in demand-side management spending (RFF 2004), (ACEEE 2006)</dt></dl>
