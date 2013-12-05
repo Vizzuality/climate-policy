@@ -14,7 +14,5 @@
 /log/*.log
 /tmp
 
-_site/
 .DS_Store
 .ruby-version
-.sass-cache/
